@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useRef } from 'react';
@@ -24,7 +25,7 @@ const newSectionCards = [
   {
     title: 'Nuestros<br />Productos',
     description: 'Mantente al día con las normativas y procedimientos esenciales para tu rol en la organización.',
-    imageUrl: 'https://i.pinimg.com/736x/e2/00/af/e200aff0214fe32efda49a789620e78b.jpg',
+    imageUrl: 'https://i.pinimg.com/736x/af/01/88/af01887c1e43f95d84e68ed40ffb5e90.jpg',
   },
   {
     title: 'Nuestra<br />Marca',
