@@ -20,7 +20,7 @@ const newSectionCards = [
   {
     title: 'ADN<br />Banesco Seguros',
     description: 'Mantente al día con las normativas y procedimientos esenciales para tu rol en la organización.',
-    imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(20).png?raw=true',
+    imageUrl: 'https://i.pinimg.com/1200x/bd/19/e1/bd19e102540dfdb7526b069d007e2853.jpg',
   },
   {
     title: 'Nuestros<br />Productos',
