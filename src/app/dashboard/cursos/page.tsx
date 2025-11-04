@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useRef } from 'react';
@@ -15,22 +14,22 @@ const newSectionCards = [
   {
     title: 'Cursos<br />Regulatorios',
     description: 'Mantente al día con las normativas y procedimientos esenciales para tu rol en la organización.',
-    imageUrl: 'https://images.unsplash.com/photo-1519682337058-a94d519337bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsaWJyb3N8ZW58MHx8fHwxNzYyMjcxMzkzfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    imageUrl: 'https://i.pinimg.com/1200x/bd/19/e1/bd19e102540dfdb7526b069d007e2853.jpg',
   },
   {
     title: 'ADN<br />Banesco Seguros',
     description: 'Mantente al día con las normativas y procedimientos esenciales para tu rol en la organización.',
-    imageUrl: 'https://i.pinimg.com/1200x/bd/19/e1/bd19e102540dfdb7526b069d007e2853.jpg',
+    imageUrl: 'https://i.pinimg.com/736x/c8/9d/7f/c89d7fbfae8c8a487220b7a8efe5d3af.jpg',
   },
   {
     title: 'Nuestros<br />Productos',
     description: 'Mantente al día con las normativas y procedimientos esenciales para tu rol en la organización.',
-    imageUrl: 'https://images.unsplash.com/photo-1554224155-169544351742?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxvZmZpY2UlMjB3b3JrfGVufDB8fHx8MTc2MDkxOTU0OHww&ixlib=rb-4.1.0&q=80&w=1080',
+    imageUrl: 'https://i.pinimg.com/736x/e2/00/af/e200aff0214fe32efda49a789620e78b.jpg',
   },
   {
     title: 'Nuestra<br />Marca',
     description: 'Mantente al día con las normativas y procedimientos esenciales para tu rol en la organización.',
-    imageUrl: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdXJzb3N8ZW58MHx8fHwxNzYyMjcxMzc5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    imageUrl: 'https://i.pinimg.com/736x/22/3f/96/223f965de36b48c42d7898aad5944094.jpg',
   },
 ];
 
