@@ -15,7 +15,7 @@ const newSectionCards = [
   {
     title: 'Cursos<br />Regulatorios',
     description: 'Mantente al día con las normativas y procedimientos esenciales para tu rol en la organización.',
-    imageUrl: 'https://images.unsplash.com/photo-1554224155-169544351742?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxvZmZpY2UlMjB3b3JrfGVufDB8fHx8MTc2MDkxOTU0OHww&ixlib=rb-4.1.0&q=80&w=1080',
+    imageUrl: 'https://images.unsplash.com/photo-1519682337058-a94d519337bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsaWJyb3N8ZW58MHx8fHwxNzYyMjcxMzkzfDA&ixlib=rb-4.1.0&q=80&w=1080',
   },
   {
     title: 'ADN<br />Banesco Seguros',
