@@ -19,17 +19,17 @@ const newSectionCards = [
   },
   {
     title: 'ADN<br />Banesco Seguros',
-    description: 'Mantente al día con las normativas y procedimientos esenciales para tu rol en la organización.',
+    description: 'Conoce nuestra historia, valores y la cultura que nos define como organización.',
     imageUrl: 'https://i.pinimg.com/736x/c8/9d/7f/c89d7fbfae8c8a487220b7a8efe5d3af.jpg',
   },
   {
     title: 'Nuestros<br />Productos',
-    description: 'Mantente al día con las normativas y procedimientos esenciales para tu rol en la organización.',
+    description: 'Explora en detalle nuestro portafolio de productos y los beneficios que ofrecemos a nuestros clientes.',
     imageUrl: 'https://i.pinimg.com/736x/af/01/88/af01887c1e43f95d84e68ed40ffb5e90.jpg',
   },
   {
     title: 'Nuestra<br />Marca',
-    description: 'Mantente al día con las normativas y procedimientos esenciales para tu rol en la organización.',
+    description: 'Aprende a aplicar correctamente nuestra identidad de marca en todas tus comunicaciones.',
     imageUrl: 'https://i.pinimg.com/736x/22/3f/96/223f965de36b48c42d7898aad5944094.jpg',
   },
 ];
