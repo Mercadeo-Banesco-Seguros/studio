@@ -30,7 +30,7 @@ const newSectionCards = [
   {
     title: 'Nuestra<br />Marca',
     description: 'Mantente al día con las normativas y procedimientos esenciales para tu rol en la organización.',
-    imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(20).png?raw=true',
+    imageUrl: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdXJzb3N8ZW58MHx8fHwxNzYyMjcxMzc5fDA&ixlib=rb-4.1.0&q=80&w=1080',
   },
 ];
 
