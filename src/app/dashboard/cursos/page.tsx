@@ -108,7 +108,7 @@ export default function CursosPage() {
                   src={card.imageUrl}
                   alt={card.title.replace('<br />', ' ')}
                   layout="fill"
-                  objectFit="cover"
+                  objectFit="contain"
                   className="transition-transform duration-300 group-hover:scale-105"
                   data-ai-hint="office work"
                 />
