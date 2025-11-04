@@ -112,8 +112,8 @@ export default function CursosPage() {
                   className="transition-transform duration-300 group-hover:scale-105"
                   data-ai-hint="office work"
                 />
-                <div className="absolute inset-0 bg-blue-900/50" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white">
+                <div className="absolute inset-0 bg-blue-900/50 pointer-events-none" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                   <h3 className="text-5xl font-bold" dangerouslySetInnerHTML={{ __html: card.title }} />
                   <p className="text-sm mt-2 max-w-xs">{card.description}</p>
                 </div>
