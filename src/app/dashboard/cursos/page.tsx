@@ -13,22 +13,22 @@ import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 
 const newSectionCards = [
   {
-    title: 'Cursos<br />Regulatorios',
+    title: 'Cursos Regulatorios',
     description: 'Mantente al día con las normativas y procedimientos esenciales para tu rol en la organización.',
     imageUrl: 'https://i.pinimg.com/1200x/bd/19/e1/bd19e102540dfdb7526b069d007e2853.jpg',
   },
   {
-    title: 'ADN<br />Banesco Seguros',
+    title: 'ADN Banesco Seguros',
     description: 'Conoce nuestra historia, valores y la cultura que nos define como organización.',
     imageUrl: 'https://i.pinimg.com/736x/c8/9d/7f/c89d7fbfae8c8a487220b7a8efe5d3af.jpg',
   },
   {
-    title: 'Nuestros<br />Productos',
+    title: 'Nuestros Productos',
     description: 'Explora en detalle nuestro portafolio de productos y los beneficios que ofrecemos a nuestros clientes.',
     imageUrl: 'https://i.pinimg.com/736x/af/01/88/af01887c1e43f95d84e68ed40ffb5e90.jpg',
   },
   {
-    title: 'Nuestra<br />Marca',
+    title: 'Nuestra Marca',
     description: 'Aprende a aplicar correctamente nuestra identidad de marca en todas tus comunicaciones.',
     imageUrl: 'https://i.pinimg.com/736x/22/3f/96/223f965de36b48c42d7898aad5944094.jpg',
   },
@@ -98,30 +98,6 @@ export default function CursosPage() {
   return (
     <div className="bg-muted min-h-screen p-4 sm:p-8">
       <div className="max-w-7xl mx-auto space-y-12">
-        {/* New Section */}
-        <div>
-          <h2 className="text-5xl font-extrabold tracking-tight text-center mb-8">Descubre todo lo que Banesco Seguros tiene para ti</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {newSectionCards.map((card, index) => (
-              <Card key={index} className="relative rounded-2xl overflow-hidden shadow-lg aspect-[16/10] group">
-                <Image
-                  src={card.imageUrl}
-                  alt={card.title.replace('<br />', ' ')}
-                  layout="fill"
-                  objectFit="contain"
-                  className="transition-transform duration-300 group-hover:scale-105"
-                  data-ai-hint="office work"
-                />
-                <div className="absolute inset-0 bg-blue-900/50 pointer-events-none" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
-                  <h3 className="text-5xl font-bold" dangerouslySetInnerHTML={{ __html: card.title }} />
-                  <p className="text-sm mt-2 max-w-xs">{card.description}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-
         {/* Existing Courses Section */}
         <div>
             <h1 className="text-5xl font-extrabold tracking-tight">
@@ -192,6 +168,41 @@ export default function CursosPage() {
             className="min-h-[250px]"
             imageClassName="w-[180px] h-[180px] bottom-4 right-4"
           />
+
+          <CategoryCard
+            title="Cursos Regulatorios"
+            description="Mantente al día con las normativas y procedimientos esenciales para tu rol en la organización."
+            imageUrl="https://i.pinimg.com/1200x/bd/19/e1/bd19e102540dfdb7526b069d007e2853.jpg"
+            bgColor="bg-rose-500"
+            textColor="text-white"
+            label="Regulatorio"
+            className="min-h-[250px]"
+            imageClassName="w-[180px] h-[180px] bottom-4 right-4"
+          />
+
+          <CategoryCard
+            title="ADN Banesco Seguros"
+            description="Conoce nuestra historia, valores y la cultura que nos define como organización."
+            imageUrl="https://i.pinimg.com/736x/c8/9d/7f/c89d7fbfae8c8a487220b7a8efe5d3af.jpg"
+            bgColor="bg-amber-100"
+            textColor="text-amber-900"
+            label="Cultura"
+            className="min-h-[250px]"
+            imageClassName="w-[180px] h-[180px] bottom-4 right-4"
+            isLightCard={true}
+          />
+          
+          <CategoryCard
+            title="Nuestros Productos"
+            description="Explora en detalle nuestro portafolio de productos y los beneficios que ofrecemos a nuestros clientes."
+            imageUrl="https://i.pinimg.com/736x/af/01/88/af01887c1e43f95d84e68ed40ffb5e90.jpg"
+            bgColor="bg-teal-500"
+            textColor="text-white"
+            label="Productos"
+            className="min-h-[250px]"
+            imageClassName="w-[180px] h-[180px] bottom-4 right-4"
+          />
+
         </div>
       </div>
     </div>
