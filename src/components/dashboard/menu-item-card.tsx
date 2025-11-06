@@ -4,67 +4,51 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import type { MenuItem } from "@/ai/flows/get-menu-items-flow";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
-import { Utensils, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/button";
 
 interface MenuItemCardProps {
   item: MenuItem;
-  isCurrentDay?: boolean;
 }
 
-export function MenuItemCard({ item, isCurrentDay }: MenuItemCardProps) {
+export function MenuItemCard({ item }: MenuItemCardProps) {
   return (
-    <Card className="w-96 flex-shrink-0 overflow-hidden rounded-2xl shadow-lg transition-shadow hover:shadow-xl flex flex-col h-[420px]">
-        <CardHeader className="p-0 relative h-3/5">
-            <div className="relative w-full h-full">
-                {item.imageUrl ? (
-                    <Image
-                    src={item.imageUrl}
-                    alt={item.name}
-                    layout="fill"
-                    objectFit="cover"
-                    data-ai-hint={item.dataAiHint || ''}
-                    />
-                ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-muted">
-                        <Utensils className="h-16 w-16 text-muted-foreground/50" />
-                    </div>
-                )}
-            </div>
-            
-            {isCurrentDay && (
-                <Badge variant="secondary" className="absolute top-3 left-3 z-10 bg-black/50 text-white backdrop-blur-sm">
-                    Plato del Día
-                </Badge>
-            )}
-             <div className="absolute top-3 right-3 h-8 w-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md">
-                 <Utensils className="h-4 w-4 text-foreground"/>
-             </div>
-
-        </CardHeader>
-        <CardContent className="p-4 flex flex-col flex-grow bg-card">
-            <div className="flex-grow">
-                <p className="text-sm font-bold text-foreground mb-1">{item.name}</p>
-                 <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <span>{item.day}</span>
+    <Card className="overflow-hidden rounded-2xl shadow-sm transition-shadow hover:shadow-md w-full">
+      <CardContent className="p-4 flex items-center gap-4">
+        <div className="relative h-24 w-24 flex-shrink-0">
+            {item.imageUrl ? (
+                <Image
+                src={item.imageUrl}
+                alt={item.name}
+                layout="fill"
+                objectFit="contain"
+                data-ai-hint={item.dataAiHint || ''}
+                />
+            ) : null}
+        </div>
+        <div className="flex-grow">
+            <div className="flex justify-between items-center mb-1">
+                <div className="flex items-center gap-2">
+                    <p className="text-xs text-muted-foreground">{item.day}</p>
                     <Badge variant="default" className="text-[10px] px-2 py-0.5">{item.type}</Badge>
                 </div>
-                 <CardDescription className="text-xs text-muted-foreground mt-2 line-clamp-2">
-                    {item.description}
-                </CardDescription>
             </div>
-
-            <div className="flex justify-between items-center mt-4">
+            <p className="text-md font-bold text-foreground">{item.name}</p>
+            <CardDescription className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                {item.description}
+            </CardDescription>
+             <div className="flex justify-between items-center mt-2">
                 {item.price && (
-                     <Badge variant="outline" className="text-xs font-semibold rounded-lg px-3 py-1">
+                     <Badge variant="outline" className="text-xs font-semibold rounded-lg px-2 py-0.5">
                         {item.price}
                     </Badge>
                 )}
-                <Button size="icon" className="rounded-full h-9 w-9 flex-shrink-0">
+                <Button variant="ghost" size="icon" className="rounded-full h-8 w-8 flex-shrink-0 ml-auto">
                     <ArrowRight className="h-4 w-4" />
                 </Button>
             </div>
-        </CardContent>
+        </div>
+      </CardContent>
     </Card>
   );
 }

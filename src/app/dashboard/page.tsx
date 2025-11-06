@@ -52,7 +52,8 @@ import {
   Lightbulb,
   Shield,
   Handshake,
-  Play
+  Play,
+  ChefHat
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -199,6 +200,7 @@ const activityHighlights = [
 
 // Helper function to normalize day names for comparison
 const normalizeDayName = (name: string) => {
+  if (!name) return '';
   return name
     .toLowerCase()
     .normalize("NFD") // Decompose accented characters
@@ -463,37 +465,50 @@ export default function DashboardPage() {
 
         {/* Menus Section */}
         <div id="menu">
-            <SectionWrapper>
-                <div className="flex flex-col items-center text-center mb-8">
-                    <h2 className="text-4xl font-bold text-foreground tracking-tight">Menú del Día</h2>
+             <SectionWrapper>
+                <div className="flex flex-col md:flex-row items-center text-center md:text-left gap-8 mb-8">
+                    <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom.png-Photoroom.png?raw=true" alt="Chef Hat" width={100} height={100} className="flex-shrink-0" />
+                    <div>
+                        <h2 className="text-4xl font-bold text-foreground tracking-tight">Menú del Comedor</h2>
+                        <p className="mt-2 text-muted-foreground max-w-2xl">
+                           Revise la oferta gastronómica completa preparada para hoy. Encontrará el plato principal, las alternativas del día y las opciones de postre, garantizando siempre una alimentación balanceada.
+                        </p>
+                    </div>
                 </div>
+                
                 {isLoadingMenu ? (
-                  <div className="flex flex-wrap justify-center gap-6">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {Array.from({ length: 3 }).map((_, index) => (
-                      <Card key={index} className="w-96 flex-shrink-0">
-                        <Skeleton className="h-48 w-full" />
-                        <CardContent className="p-4 space-y-2">
-                          <Skeleton className="h-4 w-1/4" />
-                          <Skeleton className="h-6 w-3/4" />
-                          <Skeleton className="h-4 w-full" />
-                          <Skeleton className="h-4 w-2/3" />
-                        </CardContent>
+                      <Card key={index} className="overflow-hidden">
+                        <div className="flex items-center p-4 gap-4">
+                            <Skeleton className="h-24 w-24 rounded-full" />
+                            <div className="space-y-2 flex-1">
+                                <Skeleton className="h-4 w-1/4" />
+                                <Skeleton className="h-6 w-3/4" />
+                                <Skeleton className="h-4 w-full" />
+                                <Skeleton className="h-4 w-2/3" />
+                            </div>
+                        </div>
                       </Card>
                     ))}
                   </div>
                 ) : todaysMenus.length > 0 ? (
-                    <div className="flex flex-wrap justify-center gap-6">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {todaysMenus.map(item => (
-                            <MenuItemCard key={item.id} item={item} isCurrentDay={true} />
+                            <MenuItemCard key={item.id} item={item} />
                         ))}
                     </div>
                 ) : (
-                    <p className="text-center text-muted-foreground">No hay menú disponible para hoy.</p>
+                     <Card className="col-span-full">
+                        <CardContent className="p-8 text-center text-muted-foreground">
+                            <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
+                        </CardContent>
+                    </Card>
                 )}
                  <div className="text-center mt-8">
-                    <Button asChild size="sm" className="rounded-full text-xs">
+                    <Button asChild size="sm" className="rounded-full text-xs" variant="outline">
                         <Link href="/dashboard/bienestar">
-                            Menú Semanal <ArrowRight className="ml-2 h-4 w-4" />
+                            Ver Menú Semanal <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                     </Button>
                 </div>
