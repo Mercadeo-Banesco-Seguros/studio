@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home, CalendarDays, FileText, Archive, Menu, Search, Bell, Clock, Target, User, LogOut, GraduationCap, HeartPulse } from "lucide-react"; 
+import { Home, CalendarDays, FileText, Library, Menu, Search, Bell, Clock, Target, User, LogOut, GraduationCap, HeartPulse } from "lucide-react"; 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import React, { useEffect, useState, useRef } from "react";
@@ -36,7 +36,7 @@ const navItemsDesktop = [
   { name: "Bienestar", href: "/dashboard/bienestar", icon: HeartPulse, activePaths: ["/dashboard/bienestar", "/dashboard/actividades"] },
   { name: "Actívate", href: "/dashboard/cursos", icon: GraduationCap, activePaths: ["/dashboard/cursos"] },
   { name: "Requerimientos", href: "/dashboard/requerimientos", icon: FileText, activePaths: ["/dashboard/requerimientos"] },
-  { name: "Biblioteca", href: "/dashboard/biblioteca", icon: Archive, activePaths: ["/dashboard/biblioteca"] },
+  { name: "Biblioteca", href: "/dashboard/biblioteca", icon: Library, activePaths: ["/dashboard/biblioteca"] },
 ];
 
 const UserProfileButton = () => {
@@ -238,7 +238,7 @@ export function Header() {
                 <div className="flex items-center justify-between p-4 border-b">
                     <h4 className="font-semibold">Notificaciones</h4>
                     <Button variant="ghost" size="sm" onClick={handleArchiveAll} disabled={notifications.length === 0}>
-                        <Archive className="mr-2 h-4 w-4"/> Archivar todo
+                        <Library className="mr-2 h-4 w-4"/> Archivar todo
                     </Button>
                 </div>
                 <ScrollArea className="h-96">
@@ -333,3 +333,5 @@ export function Header() {
     </header>
   );
 }
+
+    
