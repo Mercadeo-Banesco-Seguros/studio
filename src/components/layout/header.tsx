@@ -87,8 +87,6 @@ export function Header() {
     { name: "Buscar", href: "#", icon: Search, isSearch: true, activePaths: [] }, 
   ];
   
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-
   useEffect(() => {
     const today = new Date();
     const todayStr = format(today, 'yyyy-MM-dd');
@@ -154,53 +152,56 @@ export function Header() {
   };
 
   const activeItemIndex = navItemsDesktop.findIndex(checkIsActive);
+  const activeItem = navItemsDesktop[activeItemIndex];
 
 
   return (
     <header className="sticky top-0 z-50 w-full flex h-24 items-center justify-center px-4">
-      <nav className="hidden md:flex items-center justify-center">
-        <div 
-            className="relative flex items-center gap-2 rounded-full bg-card p-2 shadow-lg border"
-            onMouseLeave={() => setHoveredItem(null)}
-        >
-          {navItemsDesktop.map((item, index) => {
-            const isActive = checkIsActive(item);
-            const isHovered = hoveredItem === item.name;
+      <div className="flex items-center gap-4">
+        <nav className="hidden md:flex items-center justify-center">
+          <div 
+              className="relative flex items-center gap-1 rounded-full bg-card p-2 shadow-lg border"
+          >
+            {navItemsDesktop.map((item, index) => {
+              const isActive = checkIsActive(item);
 
-            return (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={cn(
-                  "relative flex items-center justify-center gap-2 z-10 transition-all duration-300 rounded-full",
-                  isActive ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground",
-                  isActive ? "h-10 px-4" : "h-10 w-10"
-                )}
-                onMouseEnter={() => setHoveredItem(item.name)}
-              >
-                <item.icon className="h-5 w-5 flex-shrink-0" />
-                <span className={cn(
-                    "text-sm font-medium whitespace-nowrap transition-all duration-300",
-                    isActive ? "opacity-100 w-auto" : "opacity-0 w-0"
-                )}>
-                  {item.name}
-                </span>
-              </Link>
-            );
-          })}
-          
-          {activeItemIndex !== -1 && (
-             <div
-              className="absolute top-2 h-10 rounded-full bg-primary transition-all duration-500 ease-in-out"
-              style={{
-                left: `${activeItemIndex * 56 + 8}px`, // 56px = 3.5rem (w-14)
-                width: '120px', // Approximate width of expanded item
-              }}
-            />
-          )}
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    "relative flex items-center justify-center z-10 transition-colors duration-300 rounded-full",
+                    isActive ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground",
+                    isActive ? "h-10 px-6" : "h-10 w-10"
+                  )}
+                >
+                  <item.icon className="h-5 w-5 flex-shrink-0" />
+                  <span className={cn(
+                      "text-sm font-medium whitespace-nowrap transition-all duration-300",
+                      isActive ? "ml-2 opacity-100" : "opacity-0 w-0 ml-0"
+                  )}>
+                    {item.name}
+                  </span>
+                </Link>
+              );
+            })}
+            
+            {activeItem && (
+               <div
+                className="absolute top-2 h-10 rounded-full bg-primary transition-all duration-500 ease-in-out"
+                style={{
+                  left: `${activeItemIndex * 44 + 8}px`, // 44px = w-10 (40px) + gap-1 (4px)
+                  width: activeItem.name === 'Requerimientos' ? '150px' : '130px', 
+                }}
+              />
+            )}
 
+          </div>
+        </nav>
+        <div className="hidden md:block">
+            <UserProfileButton />
         </div>
-      </nav>
+      </div>
 
       {/* Mobile Header */}
       <div className="flex md:hidden w-full items-center justify-between">
@@ -262,4 +263,3 @@ export function Header() {
     </header>
   );
 }
-
