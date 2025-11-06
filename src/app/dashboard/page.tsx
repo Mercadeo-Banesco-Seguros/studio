@@ -275,7 +275,7 @@ export default function DashboardPage() {
     <div className="bg-background">
         
         {/* Hero Section */}
-        <section className="w-full bg-white">
+        <section className="w-full bg-background">
           <div className="container mx-auto grid md:grid-cols-2 min-h-[calc(100vh-6rem)]">
             <div className="flex flex-col justify-center py-12 md:py-24 px-4 sm:px-6 lg:px-8">
                 <Badge variant="outline" className="w-fit">Portal Interno</Badge>
@@ -517,7 +517,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib-rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib=rb-4.1.0&q=80&w=1080"
                         alt="Recomendaciones de viaje"
                         layout="fill"
                         objectFit="cover"
