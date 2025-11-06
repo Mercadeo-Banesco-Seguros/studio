@@ -291,7 +291,7 @@ export default function DashboardPage() {
 
     fetchMenu();
 
-  }, [currentDayName]);
+  }, []);
 
   return (
     <div className="bg-background">
@@ -945,54 +945,3 @@ export default function DashboardPage() {
     </div>
   );
 }
-    
-
-
-    
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-
-    
-
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-    
-
-
-
-
-
-
-
-
