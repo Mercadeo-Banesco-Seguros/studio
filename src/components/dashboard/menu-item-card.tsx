@@ -14,7 +14,7 @@ interface MenuItemCardProps {
 export function MenuItemCard({ item }: MenuItemCardProps) {
   return (
     <div className="flex items-center gap-8">
-        <div className="relative h-32 w-32 flex-shrink-0">
+        <div className="relative h-40 w-40 flex-shrink-0">
             {item.imageUrl ? (
                 <Image
                 src={item.imageUrl}
