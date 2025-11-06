@@ -481,7 +481,7 @@ export default function DashboardPage() {
                 <div className="flex flex-col md:flex-row items-center text-center md:text-left gap-8 mb-8">
                     <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom.png-Photoroom.png?raw=true" alt="Chef Hat" width={100} height={100} className="flex-shrink-0" />
                     <div>
-                        <h2 className="text-4xl font-bold text-foreground tracking-tight">Menú del Comedor</h2>
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">Menú del Comedor</h2>
                         <p className="mt-2 text-muted-foreground max-w-2xl">
                            Revise la oferta gastronómica completa preparada para hoy. Encontrará el plato principal, las alternativas del día y las opciones de postre, garantizando siempre una alimentación balanceada.
                         </p>
@@ -491,7 +491,7 @@ export default function DashboardPage() {
                 <div className="relative flex items-center justify-center">
                     {isLoadingMenu ? (
                         <div className="w-full max-w-4xl">
-                            <Skeleton className="h-[250px] w-full rounded-2xl" />
+                            <Skeleton className="h-[420px] w-full rounded-2xl" />
                         </div>
                     ) : todaysMenus.length > 0 && currentMenu ? (
                         <>
@@ -815,7 +815,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1502101872923-d48509bff386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdGFpcnN8ZW58MHx8fHwxNzUyNjAwMzk4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Protocolos" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="process diagram" />
+                        <Image src="https://images.unsplash.com/photo-1502101872923-d48509bff386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdGFpcnN8ZW58MHx8fHwxNzUyNjAwMzk4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Protocolos" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="process diagram" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Protocolos</h4>
                             <p className="text-xs mt-1 text-white/90">Siga los pasos para cada caso.</p>
