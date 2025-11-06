@@ -160,8 +160,8 @@ export function Header() {
           <Image
             src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BANESCO%20LOGO%20A%20COLOR.png?raw=true"
             alt="Banesco Seguros Logo"
-            width={80}
-            height={20}
+            width={64}
+            height={16}
           />
         </Link>
         <nav className="flex items-center justify-center gap-1" ref={navRef}>
@@ -333,4 +333,5 @@ export function Header() {
     </header>
   );
 }
+
 
