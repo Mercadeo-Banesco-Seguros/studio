@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home, CalendarDays, FileText, Library, Menu, Search, Bell, Clock, Target, User, LogOut, GraduationCap, Activity, CircleCheckBig, ActivitySquare } from "lucide-react"; 
+import { Home, CalendarDays, FileText, Library, Menu, Search, Bell, Clock, Target, User, LogOut, GraduationCap, Activity, CircleCheckBig, ActivitySquare, Landmark } from "lucide-react"; 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import React, { useEffect, useState, useRef } from "react";
@@ -31,9 +31,9 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const navItemsDesktop = [
   { name: "General", href: "/dashboard", icon: Home, activePaths: ["/dashboard"] },
-  { name: "Nosotros", href: "/dashboard/mapa-clientes", icon: Target, activePaths: ["/dashboard/mapa-clientes", "/dashboard/objetivos", "/dashboard/objetivos-smart"] },
+  { name: "Nosotros", href: "/dashboard/mapa-clientes", icon: Landmark, activePaths: ["/dashboard/mapa-clientes", "/dashboard/objetivos", "/dashboard/objetivos-smart"] },
   { name: "Calendario", href: "/dashboard/calendario", icon: CalendarDays, activePaths: ["/dashboard/calendario"] },
-  { name: "Bienestar", href: "/dashboard/bienestar", icon: ActivitySquare, activePaths: ["/dashboard/bienestar", "/dashboard/actividades"] },
+  { name: "Bienestar", href: "/dashboard/bienestar", icon: Activity, activePaths: ["/dashboard/bienestar", "/dashboard/actividades"] },
   { name: "Actívate", href: "/dashboard/cursos", icon: GraduationCap, activePaths: ["/dashboard/cursos"] },
   { name: "Requerimientos", href: "/dashboard/requerimientos", icon: FileText, activePaths: ["/dashboard/requerimientos"] },
   { name: "Biblioteca", href: "/dashboard/biblioteca", icon: Library, activePaths: ["/dashboard/biblioteca"] },
@@ -337,3 +337,5 @@ export function Header() {
     
 
     
+
+  
