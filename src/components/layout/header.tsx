@@ -82,9 +82,7 @@ export function Header() {
   const { toast } = useToast();
   
   const navRef = useRef<HTMLDivElement>(null);
-  const activeItemRef = useRef<HTMLAnchorElement>(null);
-  const [indicatorStyle, setIndicatorStyle] = useState({});
-
+  
   const navItemsMobile = [
     ...navItemsDesktop,
     { name: "Recordatorios", href: "#", icon: Bell, isReminders: true, activePaths: [] }, 
@@ -147,20 +145,6 @@ export function Header() {
     return item.href !== '/dashboard' && item.activePaths.some(p => pathname.startsWith(p));
   };
 
-  useEffect(() => {
-    if (activeItemRef.current && navRef.current) {
-        const navRect = navRef.current.getBoundingClientRect();
-        const itemRect = activeItemRef.current.getBoundingClientRect();
-        setIndicatorStyle({
-            left: `${itemRect.left - navRect.left}px`,
-            width: `${itemRect.width}px`,
-            opacity: 1,
-        });
-    } else {
-        setIndicatorStyle({ opacity: 0 });
-    }
-}, [pathname]);
-
   const handleMobileLinkClick = () => {
     setIsMobileMenuOpen(false);
   };
@@ -171,40 +155,33 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full flex h-24 items-center justify-center px-4">
-      <div className="hidden md:flex items-center justify-between rounded-full bg-card p-2 shadow-lg border w-auto">
-        <nav className="flex items-center justify-center" ref={navRef}>
-          <div className="relative flex items-center gap-1">
-            {navItemsDesktop.map((item, index) => {
+      <div className="flex items-center justify-between rounded-full bg-card p-2 shadow-lg border w-auto">
+        <nav className="flex items-center justify-center gap-1" ref={navRef}>
+            {navItemsDesktop.map((item) => {
               const isActive = checkIsActive(item);
-
               return (
                 <Link
                   key={item.name}
                   href={item.href}
-                  ref={isActive ? activeItemRef : null}
                   data-active={isActive}
                   className={cn(
-                    "relative flex items-center justify-center z-10 transition-colors duration-300 rounded-full",
-                    isActive ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground",
-                    "h-10 px-6"
+                    "relative flex items-center justify-center z-10 transition-all duration-300 rounded-full h-10",
+                    "text-muted-foreground hover:text-foreground",
+                    isActive ? "bg-primary text-primary-foreground px-6" : "w-10"
                   )}
                 >
-                  <item.icon className="h-5 w-5 flex-shrink-0" />
-                  <span className={cn(
-                      "text-[11px] font-light whitespace-nowrap transition-all duration-300",
-                      isActive ? "ml-2" : "opacity-0 w-0 ml-0"
-                  )}>
-                    {item.name}
-                  </span>
+                  <div className="flex items-center justify-center gap-2">
+                    <item.icon className={cn("h-5 w-5 flex-shrink-0 transition-all duration-300")} />
+                    <span className={cn(
+                        "text-[11px] font-light whitespace-nowrap transition-all duration-300",
+                        isActive ? "w-auto opacity-100 ml-2" : "w-0 opacity-0 ml-0"
+                    )}>
+                      {item.name}
+                    </span>
+                  </div>
                 </Link>
               );
             })}
-            
-            <div
-              className="absolute top-0 h-10 rounded-full bg-primary transition-all duration-500 ease-in-out"
-              style={indicatorStyle}
-            />
-          </div>
         </nav>
         <div className="flex items-center gap-1 pl-2">
             <Popover open={isSearchPopoverOpen} onOpenChange={setIsSearchPopoverOpen}>
@@ -346,7 +323,5 @@ export function Header() {
     </header>
   );
 }
-
-    
 
     
