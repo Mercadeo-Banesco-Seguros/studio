@@ -131,7 +131,7 @@ const AnimatedContactButton = ({ href, type, label, number, icon: Icon, classNam
           isClicked ? "left-2" : "right-2",
         )}
       >
-         {isClicked ? <Check className="h-5 w-5 text-green-500" /> : <Icon className={cn("h-5 w-5", iconClassName)} />}
+         {isClicked ? <Check className="h-4 w-4 text-green-500" /> : <Icon className={cn("h-4 w-4", iconClassName)} />}
       </div>
     </Link>
   );
@@ -408,7 +408,7 @@ export default function DashboardPage() {
               </div>
               <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                      src="https://images.unsplash.com/photo-1529180979161-06b8b6d6f2be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8ZmFtaWx5fGVufDB8fHx8MTc1MjYwNTY2Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1529180979161-06b8b6d6f2be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8ZmFtaWx5fGVufDB8fHx8MTc1MjYwNTY2Nnww&ixlib-rb-4.1.0&q=80&w=1080"
                       alt="Cliente satisfecho"
                       width={400}
                       height={400}
@@ -418,7 +418,7 @@ export default function DashboardPage() {
               </div>
               <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                      src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib-rb-4.1.0&q=80&w=1080"
                       alt="Oficina de Banesco"
                       width={400}
                       height={400}
@@ -477,7 +477,7 @@ export default function DashboardPage() {
 
         {/* Menus Section */}
         <div id="menu">
-            <SectionWrapper>
+            <SectionWrapper className="min-h-screen flex flex-col justify-center">
                 <div className="flex flex-col md:flex-row items-center text-center md:text-left gap-8 mb-8">
                     <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom.png-Photoroom.png?raw=true" alt="Chef Hat" width={100} height={100} className="flex-shrink-0" />
                     <div>
@@ -504,9 +504,7 @@ export default function DashboardPage() {
                                 <ChevronLeft className="h-6 w-6" />
                             </Button>
                             
-                            <div className="w-full max-w-4xl">
-                                <MenuItemCard item={currentMenu} />
-                            </div>
+                            <MenuItemCard item={currentMenu} />
                             
                             <Button 
                                 variant="ghost" 
@@ -850,7 +848,7 @@ export default function DashboardPage() {
                     </p>
                     <Button asChild size="lg" className="mt-8 bg-white text-foreground hover:bg-white/90">
                         <Link href="/dashboard/espacio-ejecutivo">
-                            Acceder Ahora <ArrowRight className="ml-2 h-5 w-5" />
+                            Acceder Ahora <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                     </Button>
                 </div>
