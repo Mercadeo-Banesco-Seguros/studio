@@ -156,6 +156,14 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full flex h-24 items-center justify-center px-4">
       <div className="flex items-center justify-between rounded-full bg-card p-2 shadow-lg border w-auto">
+        <Link href="/dashboard" className="flex items-center justify-center pl-2 pr-1">
+          <Image
+            src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BANESCO%20LOGO%20A%20COLOR.png?raw=true"
+            alt="Banesco Seguros Logo"
+            width={80}
+            height={20}
+          />
+        </Link>
         <nav className="flex items-center justify-center gap-1" ref={navRef}>
             {navItemsDesktop.map((item) => {
               const isActive = checkIsActive(item);
@@ -168,7 +176,8 @@ export function Header() {
                     "relative flex items-center justify-center z-10 transition-all duration-300 rounded-full h-10",
                     isActive 
                       ? "bg-primary text-primary-foreground px-6" 
-                      : "w-10 text-muted-foreground hover:text-foreground"
+                      : "w-10 text-muted-foreground",
+                    !isActive && "hover:text-foreground"
                   )}
                 >
                   <div className="flex items-center justify-center gap-2">
