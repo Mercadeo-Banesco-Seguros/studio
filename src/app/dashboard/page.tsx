@@ -215,6 +215,7 @@ export default function DashboardPage() {
     src: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(32).png?raw=true",
     hint: "sun behind cloud"
   });
+  const [heroGradient, setHeroGradient] = useState("from-[#84a9ff] to-[#f5f8ff]");
   const [activeFaqCategory, setActiveFaqCategory] = useState<'General' | 'Soporte' | 'Otros'>('General');
   const [todaysMenus, setTodaysMenus] = useState<MenuItem[]>([]);
   const [isLoadingMenu, setIsLoadingMenu] = useState(true);
@@ -251,14 +252,12 @@ export default function DashboardPage() {
     const dayName = todayDate.toLocaleDateString('es-ES', { weekday: 'long' });
     setCurrentDayName(dayName.charAt(0).toUpperCase() + dayName.slice(1));
 
-     // Set time and image based on time of day
-    const updateTimeAndImage = () => {
+    const updateTimeAndAssets = () => {
       const now = new Date();
       setCurrentTime(now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }));
 
       const currentHour = now.getHours();
-      const currentMinute = now.getMinutes();
-      const timeInMinutes = currentHour * 60 + currentMinute;
+      const timeInMinutes = currentHour * 60 + now.getMinutes();
       
       const morningStart = 5 * 60; // 5:00 AM
       const afternoonStart = 14 * 60 + 30; // 2:30 PM
@@ -269,21 +268,24 @@ export default function DashboardPage() {
           src: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(32).png?raw=true",
           hint: "sun behind cloud"
         });
+        setHeroGradient("from-[#84a9ff] to-[#f5f8ff]");
       } else if (timeInMinutes >= afternoonStart && timeInMinutes < nightStart) {
         setHeroImage({
           src: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_rjwsk7rjwsk7rjws-Photoroom.png?raw=true",
           hint: "sun setting"
         });
+        setHeroGradient("from-[#e66074] to-[#ffe1a4]");
       } else {
         setHeroImage({
           src: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_gkqyk1gkqyk1gkqy-Photoroom.png?raw=true",
           hint: "moon and stars"
         });
+        setHeroGradient("from-[#001f6a] to-[#6895fd]");
       }
     };
     
-    updateTimeAndImage();
-    const timerId = setInterval(updateTimeAndImage, 60000); // Update every minute
+    updateTimeAndAssets();
+    const timerId = setInterval(updateTimeAndAssets, 60000); // Update every minute
     
     const fetchMenu = async () => {
       setIsLoadingMenu(true);
@@ -314,7 +316,6 @@ export default function DashboardPage() {
         <section className="w-full relative overflow-hidden">
             <div className="container mx-auto">
                 <div className="grid md:grid-cols-10 min-h-[calc(100vh-6rem)] relative">
-                    {/* Text Content */}
                     <div className="md:col-span-7 flex flex-col justify-center py-12 md:py-24 px-4 sm:px-6 lg:px-8 z-10">
                         <div className="flex items-center gap-4">
                            <Badge variant="outline">Portal Interno</Badge>
@@ -341,10 +342,8 @@ export default function DashboardPage() {
                         </div>
                     </div>
 
-                    {/* Right side background */}
-                    <div className="hidden md:block md:col-span-3 bg-gradient-to-br from-blue-200 via-blue-100 to-purple-200"></div>
+                    <div className={cn("md:col-span-3 hidden md:flex items-center justify-center relative bg-gradient-to-br", heroGradient)}></div>
 
-                    {/* Image Content - Positioned Absolutely */}
                     <div className="hidden md:flex absolute top-1/2 left-[70%] -translate-y-1/2 -translate-x-1/2 items-center justify-center pointer-events-none">
                         <div className="relative w-[500px] h-[500px]">
                            <Image
@@ -355,7 +354,7 @@ export default function DashboardPage() {
                             className="z-10"
                             data-ai-hint={heroImage.hint}
                             key={heroImage.src}
-                            quality={100} 
+                            quality={100}
                            />
                         </div>
                     </div>
@@ -983,3 +982,5 @@ export default function DashboardPage() {
     </div>
   );
 }
+
+    
