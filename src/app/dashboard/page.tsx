@@ -51,7 +51,8 @@ import {
   Cog,
   Lightbulb,
   Shield,
-  Handshake
+  Handshake,
+  Play
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -201,7 +202,7 @@ const normalizeDayName = (name: string) => {
   return name
     .toLowerCase()
     .normalize("NFD") // Decompose accented characters
-    .replace(/[\u0300-\u036f]/g, ""); // Remove diacritical marks
+    .replace(/[\u0000-\u007f]/g, ""); // Remove diacritical marks
 };
 
 
@@ -246,27 +247,8 @@ export default function DashboardPage() {
   
   useEffect(() => {
     const todayDate = new Date();
-    const currentHour = todayDate.getHours();
     const dayName = todayDate.toLocaleDateString('es-ES', { weekday: 'long' });
     setCurrentDayName(dayName.charAt(0).toUpperCase() + dayName.slice(1));
-    
-    // Set hero image based on time of day
-    if (currentHour >= 6 && currentHour < 14) { // Morning (6am to 1:59pm)
-      setHeroImage({
-        src: "https://images.unsplash.com/photo-1542349314-b0ceb4d90f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxudWJlc3xlbnwwfHx8fDE3NTI2MDU1MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-        hint: "clear sky"
-      });
-    } else if (currentHour >= 14 && currentHour < 17) { // Afternoon (2pm to 4:59pm)
-      setHeroImage({
-        src: "https://images.unsplash.com/photo-1517685633466-403d6955aeab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxBVEFSREVDRVJ8ZW58MHx8fHwxNzUyNjEyMDE2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-        hint: "sunset sky"
-      });
-    } else { // Evening/Night (5pm onwards)
-      setHeroImage({
-        src: "https://images.unsplash.com/photo-1590418606746-018840f9cd0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxOSUdIVHxlbnwwfHx8fDE3NTM5OTY3NjN8MA&ixlib-rb-4.1.0&q=80&w=1080",
-        hint: "night sky"
-      });
-    }
     
     const fetchMenu = async () => {
       setIsLoadingMenu(true);
@@ -293,32 +275,49 @@ export default function DashboardPage() {
     <div className="bg-background">
         
         {/* Hero Section */}
-        <section className="relative h-screen w-full bg-card">
-            <Image
-                src={heroImage.src}
-                alt="Fondo abstracto del portal"
-                layout="fill"
-                objectFit="cover"
-                data-ai-hint={heroImage.hint}
-                className="opacity-60"
-                priority
-            />
-            <div className="absolute inset-0 bg-black/20"></div>
-            <div className="container mx-auto h-full flex flex-col justify-center items-start text-left p-4 md:pl-12 lg:pl-24 z-10 relative">
-                <h1 className="text-white font-extrabold">
-                    <span className="block text-6xl md:text-8xl">BIENVENIDO</span>
-                    <span className="block text-2xl md:text-4xl mt-2">AL ENTORNO BANESCO SEGUROS</span>
+        <section className="w-full bg-white">
+          <div className="container mx-auto grid md:grid-cols-2 min-h-[calc(100vh-6rem)]">
+            <div className="flex flex-col justify-center py-12 md:py-24 px-4 sm:px-6 lg:px-8">
+                <Badge variant="outline" className="w-fit">Portal Interno</Badge>
+                <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mt-4 text-foreground">
+                  Bienvenido al Entorno <br /> Banesco Seguros
                 </h1>
-                <p className="mt-6 max-w-xl text-base text-white">
-                    Bienvenido al espacio donde encontrarás todas las herramientas, recursos y actividades para tu día a día en Banesco Seguros.
+                <p className="mt-4 max-w-md text-muted-foreground">
+                  Tu espacio central para herramientas, recursos y actividades. Optimiza tu día a día y potencia tu desarrollo con nosotros.
                 </p>
-                <Button asChild size="lg" className="mt-8">
-                    <Link href="/dashboard/bienestar">
-                        Explorar Bienestar
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                </Button>
+                <div className="mt-8 flex items-center gap-4">
+                    <Button size="lg" asChild>
+                      <Link href="#requerimientos">
+                        Comenzar
+                      </Link>
+                    </Button>
+                    <Button size="lg" variant="ghost" asChild>
+                       <Link href="/dashboard/bienestar">
+                        <Play className="h-4 w-4 mr-2 fill-current" />
+                        Ver Actividades
+                      </Link>
+                    </Button>
+                </div>
             </div>
+            <div className="relative hidden md:flex items-center justify-center bg-[#EBEBFF] overflow-hidden">
+                {/* Decorative squares */}
+                <div className="absolute top-1/4 left-10 w-8 h-8 bg-amber-400 rounded-md"></div>
+                <div className="absolute top-1/3 right-1/4 w-12 h-12 bg-primary rounded-lg"></div>
+                <div className="absolute bottom-1/4 left-1/3 w-6 h-6 bg-white rounded-sm"></div>
+                <div className="absolute bottom-1/3 right-12 w-16 h-16 bg-primary rounded-xl"></div>
+                <div className="absolute bottom-10 left-10 w-4 h-4 bg-amber-400 rounded-sm"></div>
+                <div className="absolute top-10 right-10 w-5 h-5 bg-white rounded-sm"></div>
+
+                <Image
+                  src="https://picsum.photos/seed/humaans/600/600"
+                  alt="Ilustración de una persona interactuando con elementos digitales"
+                  width={600}
+                  height={600}
+                  className="relative z-10"
+                  data-ai-hint="person illustration"
+                />
+            </div>
+          </div>
         </section>
 
         {/* Mision y Valores Section */}
@@ -518,7 +517,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib=rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib-rb-4.1.0&q=80&w=1080"
                         alt="Recomendaciones de viaje"
                         layout="fill"
                         objectFit="cover"
