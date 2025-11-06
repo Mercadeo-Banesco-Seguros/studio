@@ -175,7 +175,7 @@ export function Header() {
                 >
                   <item.icon className="h-5 w-5 flex-shrink-0" />
                   <span className={cn(
-                      "text-sm font-medium whitespace-nowrap transition-all duration-300",
+                      "text-xs font-medium whitespace-nowrap transition-all duration-300",
                       isActive ? "ml-2 opacity-100" : "opacity-0 w-0 ml-0"
                   )}>
                     {item.name}
@@ -189,7 +189,7 @@ export function Header() {
                 className="absolute top-0 h-10 rounded-full bg-primary transition-all duration-500 ease-in-out"
                 style={{
                   left: `${activeItemIndex * 44}px`, 
-                  width: activeItem.name === 'Requerimientos' ? '150px' : (activeItem.name === 'Calendario' || activeItem.name === 'Biblioteca' ? '130px' : '110px'),
+                  width: activeItem.name === 'Requerimientos' ? '150px' : (activeItem.name === 'Calendario' || activeItem.name === 'Biblioteca' || activeItem.name === 'Actívate' ? '130px' : '110px'),
                 }}
               />
             )}
