@@ -155,8 +155,8 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full flex h-24 items-center justify-center px-4">
-      <div className="flex items-center justify-between rounded-full bg-card p-2 shadow-lg border w-auto">
-        <Link href="/dashboard" className="flex items-center justify-center pl-2 pr-1">
+      <div className="flex items-center justify-center rounded-full bg-card p-2 px-4 shadow-lg border gap-2">
+        <Link href="/dashboard" className="flex items-center justify-center">
           <Image
             src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BANESCO%20LOGO%20A%20COLOR.png?raw=true"
             alt="Banesco Seguros Logo"
@@ -193,7 +193,7 @@ export function Header() {
               );
             })}
         </nav>
-        <div className="flex items-center gap-1 pl-2">
+        <div className="flex items-center gap-1">
             <Popover open={isSearchPopoverOpen} onOpenChange={setIsSearchPopoverOpen}>
               <PopoverTrigger asChild>
                 <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 transition-transform hover:scale-110 hover:bg-transparent">
@@ -339,6 +339,8 @@ export function Header() {
 
 
 
+
+    
 
     
 
