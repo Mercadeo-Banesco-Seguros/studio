@@ -48,7 +48,7 @@ const UserProfileButton = () => {
             <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="relative h-10 w-10 rounded-full group focus-visible:ring-0 focus-visible:ring-offset-0 transition-transform hover:scale-110 hover:bg-transparent">
                     <Avatar className="h-9 w-9 transition-transform group-hover:scale-110 group-data-[state=open]:scale-110">
-                        <AvatarFallback className="bg-primary text-primary-foreground">{userInitials}</AvatarFallback>
+                        <AvatarFallback className="bg-primary-foreground text-primary">{userInitials}</AvatarFallback>
                     </Avatar>
                 </Button>
             </DropdownMenuTrigger>
@@ -155,10 +155,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full flex h-24 items-center justify-center px-4">
-      <div className="flex items-center justify-center rounded-full bg-card p-2 px-4 shadow-lg border gap-4">
+      <div className="flex items-center justify-center rounded-full bg-primary p-2 px-4 shadow-lg border-primary/80 gap-4">
         <Link href="/dashboard" className="flex items-center justify-center mr-2">
           <Image
-            src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BANESCO%20LOGO%20A%20COLOR.png?raw=true"
+            src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BANESCO%20LOGO%20BLANCO.png?raw=true"
             alt="Banesco Seguros Logo"
             width={36}
             height={5}
@@ -175,9 +175,9 @@ export function Header() {
                   className={cn(
                     "relative flex items-center justify-center z-10 transition-all duration-300 rounded-full h-10",
                     isActive 
-                      ? "bg-primary text-primary-foreground px-6" 
-                      : "w-10 text-muted-foreground",
-                    !isActive && "hover:text-foreground"
+                      ? "bg-primary-foreground text-primary px-6" 
+                      : "w-10 text-primary-foreground/70",
+                    !isActive && "hover:text-primary-foreground"
                   )}
                 >
                   <div className="flex items-center justify-center gap-2">
@@ -193,10 +193,10 @@ export function Header() {
               );
             })}
         </nav>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 text-primary-foreground/70">
             <Popover open={isSearchPopoverOpen} onOpenChange={setIsSearchPopoverOpen}>
               <PopoverTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 transition-transform hover:scale-110 hover:bg-transparent">
+                <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 transition-transform hover:scale-110 hover:bg-transparent hover:text-primary-foreground">
                   <Search className="h-5 w-5" />
                 </Button>
               </PopoverTrigger>
@@ -224,7 +224,7 @@ export function Header() {
             
             <Popover>
               <PopoverTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 relative transition-transform hover:scale-110 hover:bg-transparent">
+                <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 relative transition-transform hover:scale-110 hover:bg-transparent hover:text-primary-foreground">
                   <Bell className="h-5 w-5" />
                   {notifications.length > 0 && (
                     <span className="absolute top-1.5 right-1.5 flex h-2.5 w-2.5">
@@ -348,5 +348,7 @@ export function Header() {
 
 
 
+
+    
 
     
