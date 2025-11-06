@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home, CalendarDays, FileText, Library, Menu, Search, Bell, Clock, Users, User, LogOut, GraduationCap, Activity, CircleCheckBig, ActivitySquare, Landmark, TrendingUp } from "lucide-react"; 
+import { Home, CalendarDays, FileText, Library, Menu, Search, Bell, Clock, Users, User, LogOut, GraduationCap, Activity, CircleCheckBig, ActivitySquare, Landmark, TrendingUp, Leaf } from "lucide-react"; 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import React, { useEffect, useState, useRef } from "react";
@@ -33,7 +33,7 @@ const navItemsDesktop = [
   { name: "General", href: "/dashboard", icon: Home, activePaths: ["/dashboard"] },
   { name: "Nosotros", href: "/dashboard/mapa-clientes", icon: TrendingUp, activePaths: ["/dashboard/mapa-clientes", "/dashboard/objetivos", "/dashboard/objetivos-smart"] },
   { name: "Calendario", href: "/dashboard/calendario", icon: CalendarDays, activePaths: ["/dashboard/calendario"] },
-  { name: "Bienestar", href: "/dashboard/bienestar", icon: Activity, activePaths: ["/dashboard/bienestar", "/dashboard/actividades"] },
+  { name: "Bienestar", href: "/dashboard/bienestar", icon: Leaf, activePaths: ["/dashboard/bienestar", "/dashboard/actividades"] },
   { name: "Actívate", href: "/dashboard/cursos", icon: GraduationCap, activePaths: ["/dashboard/cursos"] },
   { name: "Requerimientos", href: "/dashboard/requerimientos", icon: FileText, activePaths: ["/dashboard/requerimientos"] },
   { name: "Biblioteca", href: "/dashboard/biblioteca", icon: Library, activePaths: ["/dashboard/biblioteca"] },
@@ -339,4 +339,5 @@ export function Header() {
     
 
   
+
 
