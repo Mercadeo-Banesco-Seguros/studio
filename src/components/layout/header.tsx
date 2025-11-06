@@ -157,11 +157,9 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full flex h-24 items-center justify-center px-4">
-      <div className="flex items-center gap-4">
-        <nav className="hidden md:flex items-center justify-center">
-          <div 
-              className="relative flex items-center gap-1 rounded-full bg-card p-2 shadow-lg border"
-          >
+      <div className="hidden md:flex items-center justify-between rounded-full bg-card p-2 shadow-lg border w-auto">
+        <nav className="flex items-center justify-center">
+          <div className="relative flex items-center gap-1">
             {navItemsDesktop.map((item, index) => {
               const isActive = checkIsActive(item);
 
@@ -188,17 +186,91 @@ export function Header() {
             
             {activeItem && (
                <div
-                className="absolute top-2 h-10 rounded-full bg-primary transition-all duration-500 ease-in-out"
+                className="absolute top-0 h-10 rounded-full bg-primary transition-all duration-500 ease-in-out"
                 style={{
-                  left: `${activeItemIndex * 44 + 8}px`, // 44px = w-10 (40px) + gap-1 (4px)
-                  width: activeItem.name === 'Requerimientos' ? '150px' : (activeItem.name === 'Calendario' || activeItem.name === 'Biblioteca' ? '130px' : '110px'), 
+                  left: `${activeItemIndex * 44}px`, 
+                  width: activeItem.name === 'Requerimientos' ? '150px' : (activeItem.name === 'Calendario' || activeItem.name === 'Biblioteca' ? '130px' : '110px'),
                 }}
               />
             )}
-
           </div>
         </nav>
-        <div className="hidden md:block">
+        <div className="flex items-center gap-1 pl-2">
+            <Popover open={isSearchPopoverOpen} onOpenChange={setIsSearchPopoverOpen}>
+              <PopoverTrigger asChild>
+                <Button variant="ghost" size="icon" className="rounded-full h-10 w-10">
+                  <Search className="h-5 w-5" />
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-80">
+                <div className="grid gap-4">
+                  <div className="space-y-2">
+                    <h4 className="font-medium leading-none">Búsqueda Rápida</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Busca secciones en la página principal (ej. "cursos", "faq").
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Input 
+                      placeholder="Escribe aquí..." 
+                      className="flex-1"
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+                    />
+                    <Button onClick={handleSearch}>Buscar</Button>
+                  </div>
+                </div>
+              </PopoverContent>
+            </Popover>
+            
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 relative">
+                  <Bell className="h-5 w-5" />
+                  {notifications.length > 0 && (
+                    <span className="absolute top-1.5 right-1.5 flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
+                    </span>
+                  )}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-96 p-0">
+                <div className="flex items-center justify-between p-4 border-b">
+                    <h4 className="font-semibold">Notificaciones</h4>
+                    <Button variant="ghost" size="sm" onClick={handleArchiveAll} disabled={notifications.length === 0}>
+                        <Archive className="mr-2 h-4 w-4"/> Archivar todo
+                    </Button>
+                </div>
+                <ScrollArea className="h-96">
+                   {notifications.length > 0 ? (
+                        <div className="p-2">
+                        {notifications.map((notification) => {
+                            const Icon = notification.icon;
+                            return (
+                                <div key={notification.id} className="flex items-start p-3 rounded-lg hover:bg-muted">
+                                <div className={cn("flex h-8 w-8 shrink-0 items-center justify-center rounded-full", notification.iconColor)}>
+                                    <Icon className="h-4 w-4" />
+                                </div>
+                                <div className="ml-4 flex-1">
+                                    <p className="text-sm font-medium">{notification.title}</p>
+                                    <p className="text-sm text-muted-foreground">{notification.description}</p>
+                                    <p className="text-xs text-muted-foreground mt-1 flex items-center"><Clock className="mr-1.5 h-3 w-3"/>{notification.time}</p>
+                                </div>
+                                </div>
+                            )
+                        })}
+                        </div>
+                   ) : (
+                        <div className="text-center text-sm text-muted-foreground py-16">
+                            No tienes notificaciones nuevas.
+                        </div>
+                   )}
+                </ScrollArea>
+              </PopoverContent>
+            </Popover>
+            
             <UserProfileButton />
         </div>
       </div>
