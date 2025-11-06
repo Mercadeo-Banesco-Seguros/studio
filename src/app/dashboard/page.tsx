@@ -221,6 +221,7 @@ export default function DashboardPage() {
   const [activeFaqCategory, setActiveFaqCategory] = useState<'General' | 'Soporte' | 'Otros'>('General');
   const [todaysMenus, setTodaysMenus] = useState<MenuItem[]>([]);
   const [isLoadingMenu, setIsLoadingMenu] = useState(true);
+  const [currentMenuIndex, setCurrentMenuIndex] = useState(0);
 
   const faqCategories = [
     { id: 'General', label: 'General', icon: Home },
@@ -246,6 +247,15 @@ export default function DashboardPage() {
       });
     }
   };
+
+  const handleMenuChange = (direction: 'next' | 'prev') => {
+    if (direction === 'next') {
+      setCurrentMenuIndex((prevIndex) => (prevIndex + 1) % todaysMenus.length);
+    } else {
+      setCurrentMenuIndex((prevIndex) => (prevIndex - 1 + todaysMenus.length) % todaysMenus.length);
+    }
+  };
+
 
   const currentCourse = mockCourses[currentCourseIndex];
   
@@ -310,6 +320,8 @@ export default function DashboardPage() {
 
      return () => clearInterval(timerId); // Cleanup interval on component unmount
   }, []);
+
+  const currentMenu = todaysMenus[currentMenuIndex];
 
   return (
     <div className="bg-background">
@@ -406,7 +418,7 @@ export default function DashboardPage() {
               </div>
               <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                      src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib-rb-4.1.0&q=80&w=1080"
                       alt="Oficina de Banesco"
                       width={400}
                       height={400}
@@ -465,7 +477,7 @@ export default function DashboardPage() {
 
         {/* Menus Section */}
         <div id="menu">
-             <SectionWrapper>
+            <SectionWrapper>
                 <div className="flex flex-col md:flex-row items-center text-center md:text-left gap-8 mb-8">
                     <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom.png-Photoroom.png?raw=true" alt="Chef Hat" width={100} height={100} className="flex-shrink-0" />
                     <div>
@@ -476,33 +488,44 @@ export default function DashboardPage() {
                     </div>
                 </div>
                 
-                {isLoadingMenu ? (
-                  <div className="space-y-8 max-w-3xl mx-auto">
-                    {Array.from({ length: 3 }).map((_, index) => (
-                      <div key={index} className="flex items-center gap-8">
-                          <Skeleton className="h-32 w-32 rounded-full" />
-                          <div className="space-y-2 flex-1">
-                              <Skeleton className="h-4 w-1/4" />
-                              <Skeleton className="h-6 w-3/4" />
-                              <Skeleton className="h-4 w-full" />
-                              <Skeleton className="h-4 w-2/3" />
-                          </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : todaysMenus.length > 0 ? (
-                    <div className="space-y-8 max-w-3xl mx-auto">
-                        {todaysMenus.map(item => (
-                            <MenuItemCard key={item.id} item={item} />
-                        ))}
-                    </div>
-                ) : (
-                     <Card className="col-span-full max-w-3xl mx-auto">
-                        <CardContent className="p-8 text-center text-muted-foreground">
-                            <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
-                        </CardContent>
-                    </Card>
-                )}
+                <div className="relative flex items-center justify-center">
+                    {isLoadingMenu ? (
+                        <div className="w-full max-w-4xl">
+                            <Skeleton className="h-[250px] w-full rounded-2xl" />
+                        </div>
+                    ) : todaysMenus.length > 0 && currentMenu ? (
+                        <>
+                            <Button 
+                                variant="ghost" 
+                                size="icon" 
+                                onClick={() => handleMenuChange('prev')}
+                                className="absolute left-0 top-1/2 -translate-y-1/2 rounded-full h-12 w-12 hidden md:inline-flex"
+                            >
+                                <ChevronLeft className="h-6 w-6" />
+                            </Button>
+                            
+                            <div className="w-full max-w-4xl">
+                                <MenuItemCard item={currentMenu} />
+                            </div>
+                            
+                            <Button 
+                                variant="ghost" 
+                                size="icon" 
+                                onClick={() => handleMenuChange('next')}
+                                className="absolute right-0 top-1/2 -translate-y-1/2 rounded-full h-12 w-12 hidden md:inline-flex"
+                            >
+                                <ChevronRight className="h-6 w-6" />
+                            </Button>
+                        </>
+                    ) : (
+                        <Card className="col-span-full max-w-3xl mx-auto">
+                            <CardContent className="p-8 text-center text-muted-foreground">
+                                <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
+                            </CardContent>
+                        </Card>
+                    )}
+                </div>
+
                  <div className="text-center mt-12">
                     <Button asChild size="sm" className="rounded-full text-xs" variant="outline">
                         <Link href="/dashboard/bienestar">
@@ -792,7 +815,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1502101872923-d48509bff386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdGFpcnN8ZW58MHx8fHwxNzUyNjAwMzk4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Protocolos" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="process diagram" />
+                        <Image src="https://images.unsplash.com/photo-1502101872923-d48509bff386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdGFpcnN8ZW58MHx8fHwxNzUyNjAwMzk4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Protocolos" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="process diagram" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Protocolos</h4>
                             <p className="text-xs mt-1 text-white/90">Siga los pasos para cada caso.</p>
@@ -932,7 +955,7 @@ export default function DashboardPage() {
                         className="w-full justify-start gap-3"
                         onClick={() => setActiveFaqCategory(cat.id as any)}
                         >
-                        <Icon className="h-5 w-5" />
+                        <Icon className="h-4 w-4" />
                         <span>{cat.label}</span>
                         </Button>
                     )
