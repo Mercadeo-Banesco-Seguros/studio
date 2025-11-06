@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home, CalendarDays, FileText, BookOpen, Menu, Search, Bell, Clock, Target, User, Archive, LogOut, GraduationCap, HeartPulse } from "lucide-react"; 
+import { Home, CalendarDays, FileText, Archive, Menu, Search, Bell, Clock, Target, User, LogOut, GraduationCap, HeartPulse } from "lucide-react"; 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import React, { useEffect, useState, useRef } from "react";
@@ -36,7 +36,7 @@ const navItemsDesktop = [
   { name: "Bienestar", href: "/dashboard/bienestar", icon: HeartPulse, activePaths: ["/dashboard/bienestar", "/dashboard/actividades"] },
   { name: "Actívate", href: "/dashboard/cursos", icon: GraduationCap, activePaths: ["/dashboard/cursos"] },
   { name: "Requerimientos", href: "/dashboard/requerimientos", icon: FileText, activePaths: ["/dashboard/requerimientos"] },
-  { name: "Biblioteca", href: "/dashboard/biblioteca", icon: BookOpen, activePaths: ["/dashboard/biblioteca"] },
+  { name: "Biblioteca", href: "/dashboard/biblioteca", icon: Archive, activePaths: ["/dashboard/biblioteca"] },
 ];
 
 const UserProfileButton = () => {
@@ -48,7 +48,7 @@ const UserProfileButton = () => {
             <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="relative h-10 w-10 rounded-full group focus-visible:ring-0 focus-visible:ring-offset-0 transition-transform hover:scale-110 hover:bg-transparent">
                     <Avatar className="h-9 w-9 transition-transform group-hover:scale-110 group-data-[state=open]:scale-110">
-                        <AvatarFallback className="bg-primary-foreground text-primary">{userInitials}</AvatarFallback>
+                        <AvatarFallback className="bg-primary text-primary-foreground">{userInitials}</AvatarFallback>
                     </Avatar>
                 </Button>
             </DropdownMenuTrigger>
@@ -155,7 +155,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full flex h-24 items-center justify-center px-4">
-      <div className="flex items-center justify-center rounded-full bg-primary p-2 pr-4 pl-6 shadow-lg border-primary/80 gap-4">
+      <div className="flex items-center justify-center rounded-full bg-primary p-2 pl-6 pr-4 shadow-lg border-primary/80 gap-4">
         <Link href="/dashboard" className="flex items-center justify-center mr-2">
           <Image
             src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BANESCO%20LOGO%20BLANCO.png?raw=true"
