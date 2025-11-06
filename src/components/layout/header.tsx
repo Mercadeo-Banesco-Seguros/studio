@@ -86,6 +86,8 @@ export function Header() {
     { name: "Recordatorios", href: "#", icon: Bell, isReminders: true, activePaths: [] }, 
     { name: "Buscar", href: "#", icon: Search, isSearch: true, activePaths: [] }, 
   ];
+  
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   useEffect(() => {
     const today = new Date();
@@ -151,129 +153,52 @@ export function Header() {
     setNotifications([]);
   };
 
+  const activeItemIndex = navItemsDesktop.findIndex(checkIsActive);
+
 
   return (
     <header className="sticky top-0 z-50 w-full flex h-24 items-center justify-center px-4">
-      <nav className="hidden md:grid w-full max-w-7xl grid-cols-3 items-center bg-primary backdrop-blur-sm px-6 py-2 rounded-full shadow-lg border-primary/20">
-        <div className="flex items-center justify-start">
-          <Link href="/dashboard" className="flex items-center space-x-2 flex-shrink-0">
-            <Image
-              src="https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_auto,s_webp:avif/banescointernacional.com/wp-content/uploads/2024/11/Isotipo.png"
-              alt="Banesco Seguros Logo"
-              width={32}
-              height={32}
-              priority
-              style={{ filter: 'brightness(0) invert(1)' }}
-            />
-          </Link>
-        </div>
-
-        <div className="flex items-center justify-center space-x-1">
-          {navItemsDesktop.map((item) => {
+      <nav className="hidden md:flex items-center justify-center">
+        <div 
+            className="relative flex items-center gap-2 rounded-full bg-card p-2 shadow-lg border"
+            onMouseLeave={() => setHoveredItem(null)}
+        >
+          {navItemsDesktop.map((item, index) => {
             const isActive = checkIsActive(item);
+            const isHovered = hoveredItem === item.name;
+
             return (
               <Link
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "transition-colors px-3 py-1.5 rounded-full text-xs font-medium",
-                  isActive
-                    ? "bg-primary-foreground text-primary"
-                    : "text-primary-foreground/70 hover:text-primary-foreground"
+                  "relative flex items-center justify-center gap-2 z-10 transition-all duration-300 rounded-full",
+                  isActive ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground",
+                  isActive ? "h-10 px-4" : "h-10 w-10"
                 )}
+                onMouseEnter={() => setHoveredItem(item.name)}
               >
-                {item.name}
+                <item.icon className="h-5 w-5 flex-shrink-0" />
+                <span className={cn(
+                    "text-sm font-medium whitespace-nowrap transition-all duration-300",
+                    isActive ? "opacity-100 w-auto" : "opacity-0 w-0"
+                )}>
+                  {item.name}
+                </span>
               </Link>
             );
           })}
-        </div>
-
-        <div className="flex items-center justify-self-end space-x-1">
-          <Popover open={isSearchPopoverOpen} onOpenChange={setIsSearchPopoverOpen}>
-            <PopoverTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-primary-foreground/80 hover:text-primary-foreground group hover:bg-white/10">
-                <Search className="h-5 w-5 transition-transform group-hover:scale-110" />
-                <span className="sr-only">Buscar</span>
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-80 p-0 border-0 bg-transparent shadow-none" align="end" sideOffset={16}>
-              <div className="relative flex w-full items-center rounded-full bg-card shadow-lg">
-                <Input
-                  type="search"
-                  placeholder="Buscar..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-                  className="h-12 w-full rounded-full border-0 bg-transparent pl-6 pr-14 text-sm focus-visible:ring-0 focus-visible:ring-offset-0"
-                />
-                <Button
-                  type="submit"
-                  size="icon"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-primary text-primary-foreground shadow-md transition-transform hover:scale-105"
-                  onClick={handleSearch}
-                >
-                  <Search className="h-5 w-5" />
-                </Button>
-              </div>
-            </PopoverContent>
-          </Popover>
-
-          <Popover>
-            <PopoverTrigger asChild>
-               <Button variant="ghost" size="icon" className="text-primary-foreground/80 hover:text-primary-foreground relative group hover:bg-white/10">
-                <Bell className="h-5 w-5 transition-transform group-hover:scale-110" />
-                {notifications.length > 0 && (
-                  <span className="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white">
-                    {notifications.length}
-                  </span>
-                )}
-                <span className="sr-only">Notificaciones</span>
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-96 p-0" align="end">
-              <div className="p-4 pr-6">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <h4 className="font-semibold text-sm">Notificaciones</h4>
-                    <p className="text-xs text-muted-foreground">Tienes {notifications.length} notificaciones nuevas.</p>
-                  </div>
-                  <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground group hover:bg-transparent" onClick={handleArchiveAll}>
-                    <Archive className="h-4 w-4 transition-transform group-hover:scale-110" />
-                  </Button>
-                </div>
-              </div>
-
-              <div className="w-full border-b border-dashed border-border"></div>
-              
-              <ScrollArea className="h-96">
-                <div className="p-4 pr-6 space-y-2">
-                  {notifications.length > 0 ? (
-                    notifications.map((notification) => (
-                      <div key={notification.id} className="relative flex gap-3 items-start timeline-item">
-                        <div className="timeline-line"></div>
-                        <div className={cn("mt-1 flex-shrink-0 h-8 w-8 rounded-full flex items-center justify-center z-10", notification.iconColor)}>
-                          <notification.icon className="h-4 w-4" />
-                        </div>
-                        <div className="flex-grow">
-                          <div className="flex justify-between items-center">
-                            <p className="font-medium text-xs">{notification.title}</p>
-                            <p className="text-[10px] text-muted-foreground">{notification.time}</p>
-                          </div>
-                          <p className="text-xs text-muted-foreground">{notification.description}</p>
-                        </div>
-                      </div>
-                    ))
-                  ) : (
-                     <div className="text-center py-16 text-muted-foreground">
-                        <p className="text-sm">No tienes notificaciones nuevas.</p>
-                      </div>
-                  )}
-                </div>
-              </ScrollArea>
-            </PopoverContent>
-          </Popover>
           
-          <UserProfileButton />
+          {activeItemIndex !== -1 && (
+             <div
+              className="absolute top-2 h-10 rounded-full bg-primary transition-all duration-500 ease-in-out"
+              style={{
+                left: `${activeItemIndex * 56 + 8}px`, // 56px = 3.5rem (w-14)
+                width: '120px', // Approximate width of expanded item
+              }}
+            />
+          )}
+
         </div>
       </nav>
 
@@ -337,3 +262,4 @@ export function Header() {
     </header>
   );
 }
+
