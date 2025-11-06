@@ -82,6 +82,7 @@ export function Header() {
   const { toast } = useToast();
   
   const navRef = useRef<HTMLDivElement>(null);
+  const activeItemRef = useRef<HTMLAnchorElement>(null);
   const [indicatorStyle, setIndicatorStyle] = useState({});
 
   const navItemsMobile = [
@@ -147,10 +148,9 @@ export function Header() {
   };
 
   useEffect(() => {
-    const activeItem = navRef.current?.querySelector('[data-active="true"]');
-    if (activeItem && navRef.current) {
+    if (activeItemRef.current && navRef.current) {
         const navRect = navRef.current.getBoundingClientRect();
-        const itemRect = activeItem.getBoundingClientRect();
+        const itemRect = activeItemRef.current.getBoundingClientRect();
         setIndicatorStyle({
             left: `${itemRect.left - navRect.left}px`,
             width: `${itemRect.width}px`,
@@ -181,11 +181,12 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
+                  ref={isActive ? activeItemRef : null}
                   data-active={isActive}
                   className={cn(
                     "relative flex items-center justify-center z-10 transition-colors duration-300 rounded-full",
                     isActive ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground",
-                    "h-10 px-4" // Use padding instead of fixed width for flexibility
+                    "h-10 px-6"
                   )}
                 >
                   <item.icon className="h-5 w-5 flex-shrink-0" />
