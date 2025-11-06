@@ -210,9 +210,10 @@ export default function DashboardPage() {
   const dressCodeScrollRef = useRef<HTMLDivElement>(null);
   const [currentDayName, setCurrentDayName] = useState('');
   const [currentCourseIndex, setCurrentCourseIndex] = useState(0);
+  const [currentTime, setCurrentTime] = useState('');
   const [heroImage, setHeroImage] = useState({
-    src: "https://picsum.photos/seed/humaans/600/600",
-    hint: "person illustration"
+    src: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(32).png?raw=true",
+    hint: "sun behind cloud"
   });
   const [activeFaqCategory, setActiveFaqCategory] = useState<'General' | 'Soporte' | 'Otros'>('General');
   const [todaysMenus, setTodaysMenus] = useState<MenuItem[]>([]);
@@ -249,6 +250,40 @@ export default function DashboardPage() {
     const todayDate = new Date();
     const dayName = todayDate.toLocaleDateString('es-ES', { weekday: 'long' });
     setCurrentDayName(dayName.charAt(0).toUpperCase() + dayName.slice(1));
+
+     // Set time and image based on time of day
+    const updateTimeAndImage = () => {
+      const now = new Date();
+      setCurrentTime(now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }));
+
+      const currentHour = now.getHours();
+      const currentMinute = now.getMinutes();
+      const timeInMinutes = currentHour * 60 + currentMinute;
+      
+      const morningStart = 5 * 60; // 5:00 AM
+      const afternoonStart = 14 * 60 + 30; // 2:30 PM
+      const nightStart = 17 * 60 + 30; // 5:30 PM
+
+      if (timeInMinutes >= morningStart && timeInMinutes < afternoonStart) {
+        setHeroImage({
+          src: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(32).png?raw=true",
+          hint: "sun behind cloud"
+        });
+      } else if (timeInMinutes >= afternoonStart && timeInMinutes < nightStart) {
+        setHeroImage({
+          src: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_rjwsk7rjwsk7rjws-Photoroom.png?raw=true",
+          hint: "sun setting"
+        });
+      } else {
+        setHeroImage({
+          src: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_gkqyk1gkqyk1gkqy-Photoroom.png?raw=true",
+          hint: "moon and stars"
+        });
+      }
+    };
+    
+    updateTimeAndImage();
+    const timerId = setInterval(updateTimeAndImage, 60000); // Update every minute
     
     const fetchMenu = async () => {
       setIsLoadingMenu(true);
@@ -269,6 +304,7 @@ export default function DashboardPage() {
 
     fetchMenu();
 
+     return () => clearInterval(timerId); // Cleanup interval on component unmount
   }, []);
 
   return (
@@ -276,50 +312,51 @@ export default function DashboardPage() {
         
         {/* Hero Section */}
         <section className="w-full bg-background relative overflow-hidden">
-          <div className="container mx-auto min-h-[calc(100vh-6rem)] relative">
-            {/* Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-background to-[#EBEBFF] md:from-60% md:via-60% md:to-40%"></div>
-            
-            <div className="grid md:grid-cols-2 min-h-[calc(100vh-6rem)]">
-              {/* Text Content */}
-              <div className="flex flex-col justify-center py-12 md:py-24 px-4 sm:px-6 lg:px-8 relative z-20">
-                <Badge variant="outline" className="w-fit">Portal Interno</Badge>
-                <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mt-4 text-foreground">
-                  Bienvenido al Entorno <br /> Banesco Seguros
-                </h1>
-                <p className="mt-4 max-w-md text-muted-foreground">
-                  Tu espacio central para herramientas, recursos y actividades. Optimiza tu día a día y potencia tu desarrollo con nosotros.
-                </p>
-                <div className="mt-8 flex items-center gap-4">
-                  <Button size="lg" asChild>
-                    <Link href="#requerimientos">
-                      Comenzar
-                    </Link>
-                  </Button>
-                  <Button size="lg" variant="ghost" asChild>
-                     <Link href="/dashboard/bienestar">
-                      <Play className="h-4 w-4 mr-2 fill-current" />
-                      Ver Actividades
-                    </Link>
-                  </Button>
+            <div className="container mx-auto">
+                <div className="grid md:grid-cols-2 min-h-[calc(100vh-6rem)]">
+                    {/* Text Content */}
+                    <div className="flex flex-col justify-center py-12 md:py-24 px-4 sm:px-6 lg:px-8 z-10">
+                        <div className="flex items-center gap-4">
+                           <Badge variant="outline">Portal Interno</Badge>
+                           <p className="font-medium text-sm text-muted-foreground">{currentTime}</p>
+                        </div>
+                        <h1 className="text-5xl md:text-6xl font-bold tracking-tight mt-4 text-foreground">
+                            Bienvenido al Entorno <br /> Banesco Seguros
+                        </h1>
+                        <p className="mt-4 max-w-md text-muted-foreground">
+                            Tu espacio central para herramientas, recursos y actividades. Optimiza tu día a día y potencia tu desarrollo con nosotros.
+                        </p>
+                        <div className="mt-8 flex items-center gap-4">
+                            <Button size="lg" asChild>
+                                <Link href="#requerimientos">
+                                    Comenzar
+                                </Link>
+                            </Button>
+                            <Button size="lg" variant="ghost" asChild>
+                                <Link href="/dashboard/bienestar">
+                                    <Play className="h-4 w-4 mr-2 fill-current" />
+                                    Ver Actividades
+                                </Link>
+                            </Button>
+                        </div>
+                    </div>
+
+                    {/* Image Content */}
+                    <div className="hidden md:flex items-center justify-center relative bg-gradient-to-br from-blue-200 via-blue-100 to-purple-200">
+                        <div className="relative w-[500px] h-[500px]">
+                           <Image
+                            src={heroImage.src}
+                            alt={heroImage.hint}
+                            layout="fill"
+                            objectFit="contain"
+                            className="z-10"
+                            data-ai-hint={heroImage.hint}
+                            key={heroImage.src} // Add key to force re-render on src change
+                           />
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            
-            {/* Image Content */}
-            <div className="absolute right-0 top-0 h-full w-1/2 hidden md:flex items-center justify-center z-10 pointer-events-none">
-              <div className="absolute right-[50%] translate-x-1/2 w-[600px] h-[600px]">
-                <Image
-                  src={heroImage.src}
-                  alt="Ilustración de una persona interactuando con elementos digitales"
-                  width={600}
-                  height={600}
-                  className="relative z-10 max-w-full h-auto"
-                  data-ai-hint={heroImage.hint}
-                />
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* Mision y Valores Section */}
