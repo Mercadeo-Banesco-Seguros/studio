@@ -182,7 +182,7 @@ export function Header() {
                   )}
                 >
                   <div className="flex items-center justify-center gap-2">
-                    <Icon className={cn("h-5 w-5 flex-shrink-0 transition-all duration-300", item.name === 'Actívate' && 'h-6 w-6')} />
+                    <Icon className={cn("h-4 w-4 flex-shrink-0 transition-all duration-300")} />
                     <span className={cn(
                         "text-[11px] font-light whitespace-nowrap transition-all duration-300",
                         isActive ? "w-auto opacity-100 ml-2" : "w-0 opacity-0 ml-0"
@@ -198,7 +198,7 @@ export function Header() {
             <Popover open={isSearchPopoverOpen} onOpenChange={setIsSearchPopoverOpen}>
               <PopoverTrigger asChild>
                 <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 transition-transform hover:scale-110 hover:bg-transparent hover:text-primary-foreground">
-                  <Search className="h-5 w-5" />
+                  <Search className="h-4 w-4" />
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-80">
@@ -226,7 +226,7 @@ export function Header() {
             <Popover>
               <PopoverTrigger asChild>
                 <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 relative transition-transform hover:scale-110 hover:bg-transparent hover:text-primary-foreground">
-                  <Bell className="h-5 w-5" />
+                  <Bell className="h-4 w-4" />
                   {notifications.length > 0 && (
                     <span className="absolute top-1.5 right-1.5 flex h-2.5 w-2.5">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
@@ -334,13 +334,3 @@ export function Header() {
     </header>
   );
 }
-
-    
-
-    
-
-  
-
-
-
-
