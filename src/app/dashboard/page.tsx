@@ -277,7 +277,7 @@ export default function DashboardPage() {
         {/* Hero Section */}
         <section className="w-full bg-background">
           <div className="container mx-auto grid md:grid-cols-5 min-h-[calc(100vh-6rem)]">
-            <div className="md:col-span-3 flex flex-col justify-center py-12 md:py-24 px-4 sm:px-6 lg:px-8">
+            <div className="md:col-span-4 flex flex-col justify-center py-12 md:py-24 px-4 sm:px-6 lg:px-8">
                 <Badge variant="outline" className="w-fit">Portal Interno</Badge>
                 <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mt-4 text-foreground">
                   Bienvenido al Entorno <br /> Banesco Seguros
@@ -299,7 +299,7 @@ export default function DashboardPage() {
                     </Button>
                 </div>
             </div>
-            <div className="md:col-span-2 relative hidden md:flex items-center justify-center bg-[#EBEBFF] overflow-hidden">
+            <div className="md:col-span-1 relative hidden md:flex items-center justify-center bg-[#EBEBFF] overflow-hidden">
                 {/* Decorative squares */}
                 <div className="absolute top-1/4 left-10 w-8 h-8 bg-amber-400 rounded-md"></div>
                 <div className="absolute top-1/3 right-1/4 w-12 h-12 bg-primary rounded-lg"></div>
