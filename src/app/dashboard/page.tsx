@@ -465,7 +465,7 @@ export default function DashboardPage() {
              <SectionWrapper className="min-h-screen flex flex-col justify-center">
                 <div className="grid md:grid-cols-12 items-center gap-8 md:gap-16">
                     <div className="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-left">
-                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_87kjuj87kjuj87kj-Photoroom.png?raw=true" alt="Chef Hat" width={100} height={100} className="mb-4" />
+                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_87kjuj87kjuj87kj-Photoroom.png?raw=true" alt="Chef Hat" width={150} height={150} className="mb-4" />
                         <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">Menú del Comedor</h2>
                         <p className="mt-4 text-muted-foreground max-w-md">
                            Revise la oferta gastronómica completa preparada para hoy. Encontrará el plato principal, las alternativas del día y las opciones de postre, garantizando siempre una alimentación balanceada.
