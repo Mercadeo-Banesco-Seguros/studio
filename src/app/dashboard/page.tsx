@@ -85,6 +85,14 @@ const pilaresData = [
     { number: "04", title: "Responsabilidad", text: "Cumplimos con nuestros compromisos; brindamos seguridad y confianza.", icon: Handshake, color: "bg-sky-400" },
 ];
 
+const activityHighlights = [
+  { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell },
+  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake },
+  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck },
+  { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck }
+];
+
+
 const AnimatedContactButton = ({ href, type, label, number, icon: Icon, className, iconClassName }: {
   href: string;
   type: 'whatsapp' | 'phone' | 'email';
@@ -454,7 +462,7 @@ export default function DashboardPage() {
 
         {/* Menus Section */}
         <div id="menu">
-            <SectionWrapper className="min-h-screen flex flex-col justify-center">
+             <SectionWrapper className="min-h-screen flex flex-col justify-center">
                 <div className="grid md:grid-cols-12 items-center gap-8 md:gap-16">
                     <div className="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-left">
                          <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_87kjuj87kjuj87kj-Photoroom.png?raw=true" alt="Chef Hat" width={100} height={100} className="mb-4" />
@@ -467,7 +475,19 @@ export default function DashboardPage() {
                         {isLoadingMenu ? (
                             <Skeleton className="h-[250px] w-full rounded-2xl" />
                         ) : todaysMenus.length > 0 && currentMenu ? (
-                             <MenuItemCard item={currentMenu} />
+                            <div className="relative">
+                                <MenuItemCard item={currentMenu} />
+                                {todaysMenus.length > 1 && (
+                                    <>
+                                        <Button variant="outline" size="icon" className="absolute top-1/2 -translate-y-1/2 -left-5 h-10 w-10 rounded-full shadow-md" onClick={() => handleMenuChange('prev')}>
+                                            <ChevronLeft className="h-4 w-4" />
+                                        </Button>
+                                        <Button variant="outline" size="icon" className="absolute top-1/2 -translate-y-1/2 -right-5 h-10 w-10 rounded-full shadow-md" onClick={() => handleMenuChange('next')}>
+                                            <ChevronRight className="h-4 w-4" />
+                                        </Button>
+                                    </>
+                                )}
+                            </div>
                         ) : (
                             <Card className="col-span-full">
                                 <CardContent className="p-8 text-center text-muted-foreground">
@@ -531,7 +551,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8cGxhbmV8ZW58MHx8fHwxNzUyNTA2MTEzfDA&ixlib-rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8cGxhbmV8ZW58MHx8fHwxNzUyNTA2MTEzfDA&ixlib=rb-4.1.0&q=80&w=1080"
                         alt="Fechas Disponibles"
                         layout="fill"
                         objectFit="cover"
@@ -546,7 +566,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib-rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib=rb-4.1.0&q=80&w=1080"
                         alt="Recomendaciones de viaje"
                         layout="fill"
                         objectFit="cover"
@@ -644,7 +664,7 @@ export default function DashboardPage() {
           <SectionWrapper>
             <Card className="relative overflow-hidden rounded-2xl shadow-lg min-h-[500px] flex flex-col md:flex-row">
               <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib-rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
