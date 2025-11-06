@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Home, CalendarDays, HeartHandshake, FileText, BookOpen, Menu, Search, Bell, Clock, Target, User, Archive, LogOut, GraduationCap } from "lucide-react"; 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
@@ -80,6 +80,9 @@ export function Header() {
   const pathname = usePathname();
   const [searchTerm, setSearchTerm] = useState('');
   const { toast } = useToast();
+  
+  const navRef = useRef<HTMLDivElement>(null);
+  const [indicatorStyle, setIndicatorStyle] = useState({});
 
   const navItemsMobile = [
     ...navItemsDesktop,
@@ -143,6 +146,21 @@ export function Header() {
     return item.href !== '/dashboard' && item.activePaths.some(p => pathname.startsWith(p));
   };
 
+  useEffect(() => {
+    const activeItem = navRef.current?.querySelector('[data-active="true"]');
+    if (activeItem && navRef.current) {
+        const navRect = navRef.current.getBoundingClientRect();
+        const itemRect = activeItem.getBoundingClientRect();
+        setIndicatorStyle({
+            left: `${itemRect.left - navRect.left}px`,
+            width: `${itemRect.width}px`,
+            opacity: 1,
+        });
+    } else {
+        setIndicatorStyle({ opacity: 0 });
+    }
+}, [pathname]);
+
   const handleMobileLinkClick = () => {
     setIsMobileMenuOpen(false);
   };
@@ -151,14 +169,10 @@ export function Header() {
     setNotifications([]);
   };
 
-  const activeItemIndex = navItemsDesktop.findIndex(checkIsActive);
-  const activeItem = navItemsDesktop[activeItemIndex];
-
-
   return (
     <header className="sticky top-0 z-50 w-full flex h-24 items-center justify-center px-4">
       <div className="hidden md:flex items-center justify-between rounded-full bg-card p-2 shadow-lg border w-auto">
-        <nav className="flex items-center justify-center">
+        <nav className="flex items-center justify-center" ref={navRef}>
           <div className="relative flex items-center gap-1">
             {navItemsDesktop.map((item, index) => {
               const isActive = checkIsActive(item);
@@ -167,16 +181,17 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
+                  data-active={isActive}
                   className={cn(
                     "relative flex items-center justify-center z-10 transition-colors duration-300 rounded-full",
                     isActive ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground",
-                    isActive ? "h-10 px-6" : "h-10 w-10"
+                    "h-10 px-4" // Use padding instead of fixed width for flexibility
                   )}
                 >
                   <item.icon className="h-5 w-5 flex-shrink-0" />
                   <span className={cn(
                       "text-xs font-medium whitespace-nowrap transition-all duration-300",
-                      isActive ? "ml-2 opacity-100" : "opacity-0 w-0 ml-0"
+                      isActive ? "ml-2" : "opacity-0 w-0 ml-0"
                   )}>
                     {item.name}
                   </span>
@@ -184,21 +199,16 @@ export function Header() {
               );
             })}
             
-            {activeItem && (
-               <div
-                className="absolute top-0 h-10 rounded-full bg-primary transition-all duration-500 ease-in-out"
-                style={{
-                  left: `${activeItemIndex * 44}px`, 
-                  width: activeItem.name === 'Requerimientos' ? '150px' : (activeItem.name === 'Calendario' || activeItem.name === 'Biblioteca' || activeItem.name === 'Actívate' ? '130px' : '110px'),
-                }}
-              />
-            )}
+            <div
+              className="absolute top-0 h-10 rounded-full bg-primary transition-all duration-500 ease-in-out"
+              style={indicatorStyle}
+            />
           </div>
         </nav>
         <div className="flex items-center gap-1 pl-2">
             <Popover open={isSearchPopoverOpen} onOpenChange={setIsSearchPopoverOpen}>
               <PopoverTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 hover:bg-transparent transition-transform hover:scale-110">
+                <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 transition-transform hover:scale-110 hover:bg-transparent">
                   <Search className="h-5 w-5" />
                 </Button>
               </PopoverTrigger>
@@ -226,7 +236,7 @@ export function Header() {
             
             <Popover>
               <PopoverTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 relative hover:bg-transparent transition-transform hover:scale-110">
+                <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 relative transition-transform hover:scale-110 hover:bg-transparent">
                   <Bell className="h-5 w-5" />
                   {notifications.length > 0 && (
                     <span className="absolute top-1.5 right-1.5 flex h-2.5 w-2.5">
