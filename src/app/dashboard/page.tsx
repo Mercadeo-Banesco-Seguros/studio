@@ -201,7 +201,7 @@ const normalizeDayName = (name: string) => {
   return name
     .toLowerCase()
     .normalize("NFD") // Decompose accented characters
-    .replace(/[\u0000-\u007f]/g, ""); // Remove diacritical marks
+    .replace(/[\u0300-\u036f]/g, ""); // Remove diacritical marks
 };
 
 
@@ -263,7 +263,7 @@ export default function DashboardPage() {
       });
     } else { // Evening/Night (5pm onwards)
       setHeroImage({
-        src: "https://images.unsplash.com/photo-1590418606746-018840f9cd0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxOSUdIVHxlbnwwfHx8fDE3NTM5OTY3NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        src: "https://images.unsplash.com/photo-1590418606746-018840f9cd0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxOSUdIVHxlbnwwfHx8fDE3NTM5OTY3NjN8MA&ixlib-rb-4.1.0&q=80&w=1080",
         hint: "night sky"
       });
     }
@@ -272,14 +272,10 @@ export default function DashboardPage() {
       setIsLoadingMenu(true);
       try {
         const allMenus = await getMenuItems();
-        const capitalizedDayName = new Date().toLocaleDateString('es-ES', { weekday: 'long' });
-        const normalizedToday = normalizeDayName(capitalizedDayName);
+        const normalizedToday = normalizeDayName(dayName);
         
-        const classicMenu = allMenus.find(item => normalizeDayName(item.day) === normalizedToday && item.type === 'Clásico');
-        const dietMenu = allMenus.find(item => normalizeDayName(item.day) === normalizedToday && item.type === 'Dieta');
-        const executiveMenu = allMenus.find(item => normalizeDayName(item.day) === normalizedToday && item.type === 'Ejecutivo');
-        
-        const menusForToday = [classicMenu, dietMenu, executiveMenu].filter(Boolean) as MenuItem[];
+        const menusForToday = allMenus.filter(item => normalizeDayName(item.day) === normalizedToday);
+
         setTodaysMenus(menusForToday);
       } catch (error) {
         console.error("Failed to fetch menu items", error);
