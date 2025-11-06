@@ -28,7 +28,7 @@ export function MenuItemCard({ item }: MenuItemCardProps) {
               <p className="text-sm text-muted-foreground">{item.day}</p>
               <Badge variant="default" className="text-xs px-3 py-1">{item.type}</Badge>
           </div>
-          <h3 className="text-4xl font-bold text-foreground">{item.name}</h3>
+          <h3 className="text-4xl font-bold text-foreground tracking-tight">{item.name}</h3>
           <p className="text-base text-muted-foreground mt-4 max-w-md mx-auto md:mx-0">
               {item.description}
           </p>
