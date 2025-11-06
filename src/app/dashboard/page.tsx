@@ -276,8 +276,8 @@ export default function DashboardPage() {
         
         {/* Hero Section */}
         <section className="w-full bg-background">
-          <div className="container mx-auto grid md:grid-cols-2 min-h-[calc(100vh-6rem)]">
-            <div className="flex flex-col justify-center py-12 md:py-24 px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto grid md:grid-cols-5 min-h-[calc(100vh-6rem)]">
+            <div className="md:col-span-3 flex flex-col justify-center py-12 md:py-24 px-4 sm:px-6 lg:px-8">
                 <Badge variant="outline" className="w-fit">Portal Interno</Badge>
                 <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mt-4 text-foreground">
                   Bienvenido al Entorno <br /> Banesco Seguros
@@ -299,7 +299,7 @@ export default function DashboardPage() {
                     </Button>
                 </div>
             </div>
-            <div className="relative hidden md:flex items-center justify-center bg-[#EBEBFF] overflow-hidden">
+            <div className="md:col-span-2 relative hidden md:flex items-center justify-center bg-[#EBEBFF] overflow-hidden">
                 {/* Decorative squares */}
                 <div className="absolute top-1/4 left-10 w-8 h-8 bg-amber-400 rounded-md"></div>
                 <div className="absolute top-1/3 right-1/4 w-12 h-12 bg-primary rounded-lg"></div>
@@ -461,7 +461,7 @@ export default function DashboardPage() {
         {/* Gestión de Vacaciones Section */}
         <div id="vacaciones">
             <SectionWrapper>
-            <div className="bg-card shadow-lg rounded-2xl overflow-hidden min-h-[700px] flex flex-col md:flex-row">
+            <Card className="bg-card shadow-lg rounded-2xl overflow-hidden min-h-[700px] flex flex-col md:flex-row">
                 {/* Left Panel */}
                 <div className="w-full md:w-2/3 relative min-h-[400px] md:min-h-full">
                 <Image
@@ -532,7 +532,7 @@ export default function DashboardPage() {
                     </div>
                 </div>
                 </div>
-            </div>
+            </Card>
             </SectionWrapper>
         </div>
         
