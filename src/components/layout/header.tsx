@@ -191,7 +191,7 @@ export function Header() {
                 className="absolute top-2 h-10 rounded-full bg-primary transition-all duration-500 ease-in-out"
                 style={{
                   left: `${activeItemIndex * 44 + 8}px`, // 44px = w-10 (40px) + gap-1 (4px)
-                  width: activeItem.name === 'Requerimientos' ? '150px' : '130px', 
+                  width: activeItem.name === 'Requerimientos' ? '150px' : (activeItem.name === 'Calendario' || activeItem.name === 'Biblioteca' ? '130px' : '110px'), 
                 }}
               />
             )}
