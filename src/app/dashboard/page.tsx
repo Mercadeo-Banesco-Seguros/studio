@@ -345,7 +345,7 @@ export default function DashboardPage() {
                     <div className="hidden md:block md:col-span-3 bg-gradient-to-br from-blue-200 via-blue-100 to-purple-200"></div>
 
                     {/* Image Content - Positioned Absolutely */}
-                    <div className="hidden md:flex absolute top-1/2 left-3/4 -translate-y-1/2 -translate-x-1/2 items-center justify-center pointer-events-none">
+                    <div className="hidden md:flex absolute top-1/2 left-[70%] -translate-y-1/2 -translate-x-1/2 items-center justify-center pointer-events-none">
                         <div className="relative w-[500px] h-[500px]">
                            <Image
                             src={heroImage.src}
@@ -354,7 +354,8 @@ export default function DashboardPage() {
                             objectFit="contain"
                             className="z-10"
                             data-ai-hint={heroImage.hint}
-                            key={heroImage.src} 
+                            key={heroImage.src}
+                            quality={100} 
                            />
                         </div>
                     </div>
