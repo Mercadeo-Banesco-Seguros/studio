@@ -321,7 +321,7 @@ export default function DashboardPage() {
                            <Badge variant="outline">Portal Interno</Badge>
                            <Badge variant="default">{currentTime}</Badge>
                         </div>
-                        <h1 className="text-5xl md:text-6xl font-bold tracking-tight mt-4 text-foreground">
+                        <h1 className="text-5xl md:text-6xl font-extrabold mt-4 text-foreground">
                             Bienvenido al Entorno <br /> Banesco Seguros
                         </h1>
                         <p className="mt-4 max-w-md text-muted-foreground">
@@ -982,5 +982,7 @@ export default function DashboardPage() {
     </div>
   );
 }
+
+    
 
     
