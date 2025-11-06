@@ -211,8 +211,8 @@ export default function DashboardPage() {
   const [currentDayName, setCurrentDayName] = useState('');
   const [currentCourseIndex, setCurrentCourseIndex] = useState(0);
   const [heroImage, setHeroImage] = useState({
-    src: "https://images.unsplash.com/photo-1542349314-b0ceb4d90f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxudWJlc3xlbnwwfHx8fDE3NTI2MDU1MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    hint: "clear sky"
+    src: "https://picsum.photos/seed/humaans/600/600",
+    hint: "person illustration"
   });
   const [activeFaqCategory, setActiveFaqCategory] = useState<'General' | 'Soporte' | 'Otros'>('General');
   const [todaysMenus, setTodaysMenus] = useState<MenuItem[]>([]);
@@ -276,20 +276,21 @@ export default function DashboardPage() {
         
         {/* Hero Section */}
         <section className="w-full bg-background relative overflow-hidden">
-          <div className="container mx-auto min-h-[calc(100vh-6rem)] relative flex items-center">
+          <div className="container mx-auto min-h-[calc(100vh-6rem)] relative">
             {/* Background Gradient */}
             <div className="absolute inset-0 bg-gradient-to-r from-background via-background to-[#EBEBFF] md:from-60% md:via-60% md:to-40%"></div>
             
-            {/* Text Content */}
-            <div className="md:w-3/5 flex flex-col justify-center py-12 md:py-24 px-4 sm:px-6 lg:px-8 relative z-20">
-              <Badge variant="outline" className="w-fit">Portal Interno</Badge>
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mt-4 text-foreground">
-                Bienvenido al Entorno <br /> Banesco Seguros
-              </h1>
-              <p className="mt-4 max-w-md text-muted-foreground">
-                Tu espacio central para herramientas, recursos y actividades. Optimiza tu día a día y potencia tu desarrollo con nosotros.
-              </p>
-              <div className="mt-8 flex items-center gap-4">
+            <div className="grid md:grid-cols-2 min-h-[calc(100vh-6rem)]">
+              {/* Text Content */}
+              <div className="flex flex-col justify-center py-12 md:py-24 px-4 sm:px-6 lg:px-8 relative z-20">
+                <Badge variant="outline" className="w-fit">Portal Interno</Badge>
+                <h1 className="text-4xl md:text-5xl font-bold tracking-tighter mt-4 text-foreground">
+                  Bienvenido al Entorno <br /> Banesco Seguros
+                </h1>
+                <p className="mt-4 max-w-md text-muted-foreground">
+                  Tu espacio central para herramientas, recursos y actividades. Optimiza tu día a día y potencia tu desarrollo con nosotros.
+                </p>
+                <div className="mt-8 flex items-center gap-4">
                   <Button size="lg" asChild>
                     <Link href="#requerimientos">
                       Comenzar
@@ -301,27 +302,22 @@ export default function DashboardPage() {
                       Ver Actividades
                     </Link>
                   </Button>
+                </div>
               </div>
             </div>
-
+            
             {/* Image Content */}
-            <div className="absolute right-[10%] top-1/2 -translate-y-1/2 w-2/5 h-full hidden md:flex items-center justify-center z-10">
-              {/* Decorative squares */}
-              <div className="absolute top-1/4 left-10 w-8 h-8 bg-amber-400 rounded-md"></div>
-              <div className="absolute top-1/3 right-1/4 w-12 h-12 bg-primary rounded-lg"></div>
-              <div className="absolute bottom-1/4 left-1/3 w-6 h-6 bg-white rounded-sm"></div>
-              <div className="absolute bottom-1/3 right-12 w-16 h-16 bg-primary rounded-xl"></div>
-              <div className="absolute bottom-10 left-10 w-4 h-4 bg-amber-400 rounded-sm"></div>
-              <div className="absolute top-10 right-10 w-5 h-5 bg-white rounded-sm"></div>
-              
-              <Image
-                src="https://picsum.photos/seed/humaans/600/600"
-                alt="Ilustración de una persona interactuando con elementos digitales"
-                width={600}
-                height={600}
-                className="relative z-10 max-w-full h-auto"
-                data-ai-hint="person illustration"
-              />
+            <div className="absolute right-0 top-0 h-full w-1/2 hidden md:flex items-center justify-center z-10 pointer-events-none">
+              <div className="absolute right-[50%] translate-x-1/2 w-[600px] h-[600px]">
+                <Image
+                  src={heroImage.src}
+                  alt="Ilustración de una persona interactuando con elementos digitales"
+                  width={600}
+                  height={600}
+                  className="relative z-10 max-w-full h-auto"
+                  data-ai-hint={heroImage.hint}
+                />
+              </div>
             </div>
           </div>
         </section>
