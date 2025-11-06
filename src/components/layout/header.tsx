@@ -46,7 +46,7 @@ const UserProfileButton = () => {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="relative h-10 w-10 rounded-full group focus-visible:ring-0 focus-visible:ring-offset-0 hover:bg-transparent">
+                <Button variant="ghost" className="relative h-10 w-10 rounded-full group focus-visible:ring-0 focus-visible:ring-offset-0 hover:bg-transparent transition-transform hover:scale-110">
                     <Avatar className="h-9 w-9 transition-transform group-hover:scale-110 group-data-[state=open]:scale-110">
                         <AvatarFallback className="bg-primary text-primary-foreground">{userInitials}</AvatarFallback>
                     </Avatar>
@@ -190,7 +190,7 @@ export function Header() {
                 >
                   <item.icon className="h-5 w-5 flex-shrink-0" />
                   <span className={cn(
-                      "text-xs font-light whitespace-nowrap transition-all duration-300",
+                      "text-[11px] font-light whitespace-nowrap transition-all duration-300",
                       isActive ? "ml-2" : "opacity-0 w-0 ml-0"
                   )}>
                     {item.name}
@@ -345,5 +345,7 @@ export function Header() {
     </header>
   );
 }
+
+    
 
     
