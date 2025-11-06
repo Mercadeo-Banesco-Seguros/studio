@@ -164,7 +164,7 @@ export function Header() {
             height={5}
           />
         </Link>
-        <nav className="flex items-center justify-center gap-1" ref={navRef}>
+        <nav className="flex items-center justify-center gap-2" ref={navRef}>
             {navItemsDesktop.map((item) => {
               const isActive = checkIsActive(item);
               return (
@@ -193,7 +193,7 @@ export function Header() {
               );
             })}
         </nav>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
             <Popover open={isSearchPopoverOpen} onOpenChange={setIsSearchPopoverOpen}>
               <PopoverTrigger asChild>
                 <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 transition-transform hover:scale-110 hover:bg-transparent">
