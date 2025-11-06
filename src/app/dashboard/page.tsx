@@ -202,7 +202,7 @@ const normalizeDayName = (name: string) => {
   return name
     .toLowerCase()
     .normalize("NFD") // Decompose accented characters
-    .replace(/[\u0000-\u007f]/g, ""); // Remove diacritical marks
+    .replace(/[\u0300-\u036f]/g, ""); // Remove diacritical marks
 };
 
 
@@ -291,10 +291,10 @@ export default function DashboardPage() {
       setIsLoadingMenu(true);
       try {
         const allMenus = await getMenuItems();
+        const todayDate = new Date();
+        const dayName = todayDate.toLocaleDateString('es-ES', { weekday: 'long' });
         const normalizedToday = normalizeDayName(dayName);
-        
         const menusForToday = allMenus.filter(item => normalizeDayName(item.day) === normalizedToday);
-
         setTodaysMenus(menusForToday);
       } catch (error) {
         console.error("Failed to fetch menu items", error);
