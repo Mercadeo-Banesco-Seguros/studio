@@ -38,7 +38,7 @@ import {
   LifeBuoy,
   Mail,
   BookCheck,
-  TrendingUp as TrendingUpIcon,
+  TrendingUp,
   Award,
   CalendarCheck,
   HeartHandshake,
@@ -418,7 +418,7 @@ export default function DashboardPage() {
               </div>
               <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                      src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib-rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib=rb-4.1.0&q=80&w=1080"
                       alt="Oficina de Banesco"
                       width={400}
                       height={400}
