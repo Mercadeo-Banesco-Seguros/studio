@@ -311,11 +311,11 @@ export default function DashboardPage() {
     <div className="bg-background">
         
         {/* Hero Section */}
-        <section className="w-full bg-background relative overflow-hidden">
+        <section className="w-full relative overflow-hidden">
             <div className="container mx-auto">
-                <div className="grid md:grid-cols-2 min-h-[calc(100vh-6rem)]">
+                <div className="grid md:grid-cols-10 min-h-[calc(100vh-6rem)] relative">
                     {/* Text Content */}
-                    <div className="flex flex-col justify-center py-12 md:py-24 px-4 sm:px-6 lg:px-8 z-10">
+                    <div className="md:col-span-3 flex flex-col justify-center py-12 md:py-24 px-4 sm:px-6 lg:px-8 z-10">
                         <div className="flex items-center gap-4">
                            <Badge variant="outline">Portal Interno</Badge>
                            <p className="font-medium text-sm text-muted-foreground">{currentTime}</p>
@@ -341,8 +341,11 @@ export default function DashboardPage() {
                         </div>
                     </div>
 
-                    {/* Image Content */}
-                    <div className="hidden md:flex items-center justify-center relative bg-gradient-to-br from-blue-200 via-blue-100 to-purple-200">
+                    {/* Right side background */}
+                    <div className="hidden md:block md:col-span-7 bg-gradient-to-br from-blue-200 via-blue-100 to-purple-200"></div>
+
+                    {/* Image Content - Positioned Absolutely */}
+                    <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 items-center justify-center pointer-events-none" style={{ left: '30%' }}>
                         <div className="relative w-[500px] h-[500px]">
                            <Image
                             src={heroImage.src}
@@ -351,7 +354,7 @@ export default function DashboardPage() {
                             objectFit="contain"
                             className="z-10"
                             data-ai-hint={heroImage.hint}
-                            key={heroImage.src} // Add key to force re-render on src change
+                            key={heroImage.src} 
                            />
                         </div>
                     </div>
