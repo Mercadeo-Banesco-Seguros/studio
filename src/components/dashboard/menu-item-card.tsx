@@ -7,9 +7,10 @@ import { Badge } from "@/components/ui/badge";
 
 interface MenuItemCardProps {
   item: MenuItem;
+  isCurrentDay?: boolean;
 }
 
-export function MenuItemCard({ item }: MenuItemCardProps) {
+export function MenuItemCard({ item, isCurrentDay }: MenuItemCardProps) {
   return (
     <Card className="w-full max-w-4xl mx-auto rounded-xl shadow-lg p-8 flex flex-col md:flex-row items-center gap-8 bg-card">
       <div className="flex-grow text-center md:text-left">
@@ -27,7 +28,7 @@ export function MenuItemCard({ item }: MenuItemCardProps) {
               </Badge>
           )}
       </div>
-       <div className="relative h-64 w-64 flex-shrink-0">
+       <div className="relative h-80 w-80 flex-shrink-0">
           {item.imageUrl ? (
               <Image
               src={item.imageUrl}
