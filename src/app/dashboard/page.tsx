@@ -319,7 +319,7 @@ export default function DashboardPage() {
                     <div className="md:col-span-7 flex flex-col justify-center py-12 md:py-24 px-4 sm:px-6 lg:px-8 z-10">
                         <div className="flex items-center gap-4">
                            <Badge variant="outline">Portal Interno</Badge>
-                           <p className="font-medium text-sm text-muted-foreground">{currentTime}</p>
+                           <Badge variant="default">{currentTime}</Badge>
                         </div>
                         <h1 className="text-5xl md:text-6xl font-bold tracking-tight mt-4 text-foreground">
                             Bienvenido al Entorno <br /> Banesco Seguros
