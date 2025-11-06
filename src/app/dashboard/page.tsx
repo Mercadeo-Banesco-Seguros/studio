@@ -308,7 +308,7 @@ export default function DashboardPage() {
                 priority
             />
             <div className="absolute inset-0 bg-black/20"></div>
-            <div className="container mx-auto h-full flex flex-col justify-center items-start text-left p-4 z-10 relative">
+            <div className="container mx-auto h-full flex flex-col justify-center items-start text-left p-4 md:pl-12 lg:pl-24 z-10 relative">
                 <h1 className="text-white font-extrabold">
                     <span className="block text-6xl md:text-8xl">BIENVENIDO</span>
                     <span className="block text-2xl md:text-4xl mt-2">AL ENTORNO BANESCO SEGUROS</span>
