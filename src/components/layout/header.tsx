@@ -190,7 +190,7 @@ export function Header() {
                 >
                   <item.icon className="h-5 w-5 flex-shrink-0" />
                   <span className={cn(
-                      "text-xs font-medium whitespace-nowrap transition-all duration-300",
+                      "text-xs font-light whitespace-nowrap transition-all duration-300",
                       isActive ? "ml-2" : "opacity-0 w-0 ml-0"
                   )}>
                     {item.name}
@@ -345,3 +345,5 @@ export function Header() {
     </header>
   );
 }
+
+    
