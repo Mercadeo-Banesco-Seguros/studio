@@ -46,7 +46,7 @@ const UserProfileButton = () => {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="relative h-10 w-10 rounded-full group focus-visible:ring-0 focus-visible:ring-offset-0 hover:bg-transparent transition-transform hover:scale-110">
+                <Button variant="ghost" className="relative h-10 w-10 rounded-full group focus-visible:ring-0 focus-visible:ring-offset-0 transition-transform hover:scale-110">
                     <Avatar className="h-9 w-9 transition-transform group-hover:scale-110 group-data-[state=open]:scale-110">
                         <AvatarFallback className="bg-primary text-primary-foreground">{userInitials}</AvatarFallback>
                     </Avatar>
@@ -166,8 +166,9 @@ export function Header() {
                   data-active={isActive}
                   className={cn(
                     "relative flex items-center justify-center z-10 transition-all duration-300 rounded-full h-10",
-                    "text-muted-foreground hover:text-foreground",
-                    isActive ? "bg-primary text-primary-foreground px-6" : "w-10"
+                    isActive 
+                      ? "bg-primary text-primary-foreground px-6" 
+                      : "w-10 text-muted-foreground hover:text-foreground"
                   )}
                 >
                   <div className="flex items-center justify-center gap-2">
@@ -186,7 +187,7 @@ export function Header() {
         <div className="flex items-center gap-1 pl-2">
             <Popover open={isSearchPopoverOpen} onOpenChange={setIsSearchPopoverOpen}>
               <PopoverTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 transition-transform hover:scale-110 hover:bg-transparent">
+                <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 transition-transform hover:scale-110">
                   <Search className="h-5 w-5" />
                 </Button>
               </PopoverTrigger>
@@ -214,7 +215,7 @@ export function Header() {
             
             <Popover>
               <PopoverTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 relative transition-transform hover:scale-110 hover:bg-transparent">
+                <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 relative transition-transform hover:scale-110">
                   <Bell className="h-5 w-5" />
                   {notifications.length > 0 && (
                     <span className="absolute top-1.5 right-1.5 flex h-2.5 w-2.5">
@@ -323,5 +324,3 @@ export function Header() {
     </header>
   );
 }
-
-    
