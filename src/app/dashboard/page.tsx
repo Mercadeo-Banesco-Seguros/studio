@@ -406,7 +406,7 @@ export default function DashboardPage() {
               </div>
               <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                      src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib-rb-4.1.0&q=80&w=1080"
                       alt="Oficina de Banesco"
                       width={400}
                       height={400}
@@ -477,35 +477,33 @@ export default function DashboardPage() {
                 </div>
                 
                 {isLoadingMenu ? (
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="space-y-8">
                     {Array.from({ length: 3 }).map((_, index) => (
-                      <Card key={index} className="overflow-hidden">
-                        <div className="flex items-center p-4 gap-4">
-                            <Skeleton className="h-24 w-24 rounded-full" />
-                            <div className="space-y-2 flex-1">
-                                <Skeleton className="h-4 w-1/4" />
-                                <Skeleton className="h-6 w-3/4" />
-                                <Skeleton className="h-4 w-full" />
-                                <Skeleton className="h-4 w-2/3" />
-                            </div>
-                        </div>
-                      </Card>
+                      <div key={index} className="flex items-center gap-8">
+                          <Skeleton className="h-32 w-32 rounded-full" />
+                          <div className="space-y-2 flex-1">
+                              <Skeleton className="h-4 w-1/4" />
+                              <Skeleton className="h-6 w-3/4" />
+                              <Skeleton className="h-4 w-full" />
+                              <Skeleton className="h-4 w-2/3" />
+                          </div>
+                      </div>
                     ))}
                   </div>
                 ) : todaysMenus.length > 0 ? (
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="space-y-8 max-w-3xl mx-auto">
                         {todaysMenus.map(item => (
                             <MenuItemCard key={item.id} item={item} />
                         ))}
                     </div>
                 ) : (
-                     <Card className="col-span-full">
+                     <Card className="col-span-full max-w-3xl mx-auto">
                         <CardContent className="p-8 text-center text-muted-foreground">
                             <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
                         </CardContent>
                     </Card>
                 )}
-                 <div className="text-center mt-8">
+                 <div className="text-center mt-12">
                     <Button asChild size="sm" className="rounded-full text-xs" variant="outline">
                         <Link href="/dashboard/bienestar">
                             Ver Menú Semanal <ArrowRight className="ml-2 h-4 w-4" />
@@ -559,7 +557,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8cGxhbmV8ZW58MHx8fHwxNzUyNTA2MTEzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8cGxhbmV8ZW58MHx8fHwxNzUyNTA2MTEzfDA&ixlib-rb-4.1.0&q=80&w=1080"
                         alt="Fechas Disponibles"
                         layout="fill"
                         objectFit="cover"
@@ -574,7 +572,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib=rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib-rb-4.1.0&q=80&w=1080"
                         alt="Recomendaciones de viaje"
                         layout="fill"
                         objectFit="cover"
@@ -774,7 +772,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
@@ -794,7 +792,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1502101872923-d48509bff386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdGFpcnN8ZW58MHx8fHwxNzUyNjAwMzk4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Protocolos" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="process diagram" />
+                        <Image src="https://images.unsplash.com/photo-1502101872923-d48509bff386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdGFpcnN8ZW58MHx8fHwxNzUyNjAwMzk4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Protocolos" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="process diagram" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Protocolos</h4>
                             <p className="text-xs mt-1 text-white/90">Siga los pasos para cada caso.</p>
