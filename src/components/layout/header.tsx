@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home, CalendarDays, FileText, Library, Menu, Search, Bell, Clock, Users, User, LogOut, GraduationCap, Activity, CircleCheckBig, Landmark, TrendingUp, Leaf, Mail, Film } from "lucide-react"; 
+import { Home, CalendarDays, FileText, Library, Menu, Search, Bell, Clock, Users, User, LogOut, GraduationCap, Activity, CircleCheckBig, Landmark, TrendingUp, Leaf, Mail, Film, Video } from "lucide-react"; 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import React, { useEffect, useState, useRef } from "react";
@@ -35,7 +35,7 @@ const navItemsDesktop = [
   { name: "Calendario", href: "/dashboard/calendario", icon: CalendarDays, activePaths: ["/dashboard/calendario"] },
   { name: "Bienestar", href: "/dashboard/bienestar", icon: Leaf, activePaths: ["/dashboard/bienestar", "/dashboard/actividades"] },
   { name: "Actívate", href: "/dashboard/cursos", icon: GraduationCap, activePaths: ["/dashboard/cursos", "/dashboard/cursos/google-workspace", "/dashboard/cursos/google-sheets", "/dashboard/cursos/google-slides", "/dashboard/cursos/google-sites"] },
-  { name: "Multimedia", href: "/dashboard/biblioteca-digital", icon: Film, activePaths: ["/dashboard/biblioteca-digital"] },
+  { name: "Multimedia", href: "/dashboard/biblioteca-digital", icon: Video, activePaths: ["/dashboard/biblioteca-digital"] },
   { name: "Requerimientos", href: "/dashboard/requerimientos", icon: Mail, activePaths: ["/dashboard/requerimientos"] },
   { name: "Biblioteca", href: "/dashboard/biblioteca", icon: Library, activePaths: ["/dashboard/biblioteca"] },
 ];
@@ -140,18 +140,12 @@ export function Header() {
   };
 
   const checkIsActive = (item: { name: string, href: string, activePaths: string[] }) => {
-    // Exact match for the main page
-    if (pathname === item.href) {
-      return true;
+    // Stricter check: only main pages of "Nosotros" and "Actívate" and their children are active.
+    if (item.name === "Nosotros" || item.name === "Actívate") {
+      return item.activePaths.some(p => pathname.startsWith(p));
     }
-    // Special handling for sections with sub-pages
-    if (item.name === "Actívate" || item.name === "Nosotros" || item.name === "Bienestar" || item.name === "Requerimientos") {
-        return item.activePaths.some(p => pathname.startsWith(p));
-    }
-    
-    // For all other items, only an exact match of their primary href counts.
-    // This prevents "Biblioteca" from being active on "/dashboard/biblioteca-digital"
-    return false;
+    // For all other items, require an exact match.
+    return pathname === item.href;
   };
 
 
@@ -344,3 +338,5 @@ export function Header() {
     </header>
   );
 }
+
+    
