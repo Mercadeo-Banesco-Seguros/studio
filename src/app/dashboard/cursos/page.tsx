@@ -5,7 +5,7 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight, X, Library } from 'lucide-react';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
@@ -170,14 +170,15 @@ export default function CursosPage() {
           />
 
           <CategoryCard
-            title="Cursos Regulatorios"
-            description="Mantente al día con las normativas y procedimientos esenciales para tu rol en la organización."
-            imageUrl="https://i.pinimg.com/1200x/bd/19/e1/bd19e102540dfdb7526b069d007e2853.jpg"
-            bgColor="bg-rose-500"
+            title="Biblioteca Digital"
+            description="Accede a manuales, presentaciones y recursos visuales para potenciar tu trabajo."
+            imageUrl="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BIBLIOTECA%20DIGITAL.png?raw=true"
+            bgColor="bg-orange-500"
             textColor="text-white"
-            label="Regulatorio"
+            label="Recursos"
             className="min-h-[250px]"
             imageClassName="w-[180px] h-[180px] bottom-4 right-4"
+            href="/dashboard/biblioteca-digital"
           />
 
           <CategoryCard
