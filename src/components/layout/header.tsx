@@ -34,7 +34,7 @@ const navItemsDesktop = [
   { name: "Nosotros", href: "/dashboard/mapa-clientes", icon: TrendingUp, activePaths: ["/dashboard/mapa-clientes", "/dashboard/objetivos", "/dashboard/objetivos-smart"] },
   { name: "Calendario", href: "/dashboard/calendario", icon: CalendarDays, activePaths: ["/dashboard/calendario"] },
   { name: "Bienestar", href: "/dashboard/bienestar", icon: Leaf, activePaths: ["/dashboard/bienestar", "/dashboard/actividades"] },
-  { name: "Actívate", href: "/dashboard/cursos", icon: GraduationCap, activePaths: ["/dashboard/cursos", "/dashboard/cursos/google-workspace"] },
+  { name: "Actívate", href: "/dashboard/cursos", icon: GraduationCap, activePaths: ["/dashboard/cursos", "/dashboard/cursos/google-workspace", "/dashboard/cursos/google-sheets", "/dashboard/cursos/google-slides", "/dashboard/cursos/google-sites"] },
   { name: "Multimedia", href: "/dashboard/biblioteca-digital", icon: Film, activePaths: ["/dashboard/biblioteca-digital"] },
   { name: "Requerimientos", href: "/dashboard/requerimientos", icon: Mail, activePaths: ["/dashboard/requerimientos"] },
   { name: "Biblioteca", href: "/dashboard/biblioteca", icon: Library, activePaths: ["/dashboard/biblioteca"] },
@@ -139,12 +139,21 @@ export function Header() {
     }
   };
 
-  const checkIsActive = (item: { href: string, activePaths: string[] }) => {
-    if (item.href === '/dashboard' && pathname === '/dashboard') {
-        return true;
+  const checkIsActive = (item: { name: string, href: string, activePaths: string[] }) => {
+    // Exact match for the main page
+    if (pathname === item.href) {
+      return true;
     }
-    return item.href !== '/dashboard' && item.activePaths.some(p => pathname.startsWith(p));
+    // Special handling for sections with sub-pages
+    if (item.name === "Actívate" || item.name === "Nosotros" || item.name === "Bienestar" || item.name === "Requerimientos") {
+        return item.activePaths.some(p => pathname.startsWith(p));
+    }
+    
+    // For all other items, only an exact match of their primary href counts.
+    // This prevents "Biblioteca" from being active on "/dashboard/biblioteca-digital"
+    return false;
   };
+
 
   const handleMobileLinkClick = () => {
     setIsMobileMenuOpen(false);
