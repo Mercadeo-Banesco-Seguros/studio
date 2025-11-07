@@ -36,7 +36,7 @@ const navItemsDesktop = [
   { name: "Bienestar", href: "/dashboard/bienestar", icon: Leaf, activePaths: ["/dashboard/bienestar", "/dashboard/actividades"] },
   { name: "Actívate", href: "/dashboard/cursos", icon: GraduationCap, activePaths: ["/dashboard/cursos", "/dashboard/biblioteca-digital"] },
   { name: "Requerimientos", href: "/dashboard/requerimientos", icon: Mail, activePaths: ["/dashboard/requerimientos"] },
-  { name: "Biblioteca", href: "/dashboard/biblioteca-digital", icon: Library, activePaths: ["/dashboard/biblioteca"] },
+  { name: "Biblioteca", href: "/dashboard/biblioteca", icon: Library, activePaths: ["/dashboard/biblioteca"] },
 ];
 
 const UserProfileButton = () => {
