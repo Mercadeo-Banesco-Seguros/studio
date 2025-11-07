@@ -170,18 +170,6 @@ export default function CursosPage() {
           />
 
           <CategoryCard
-            title="Centro de Recursos Multimedia"
-            description="Accede a manuales, presentaciones y recursos visuales para potenciar tu trabajo."
-            imageUrl="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BIBLIOTECA%20DIGITAL.png?raw=true"
-            bgColor="bg-orange-500"
-            textColor="text-white"
-            label="Recursos"
-            className="min-h-[250px]"
-            imageClassName="w-[180px] h-[180px] bottom-4 right-4"
-            href="/dashboard/biblioteca-digital"
-          />
-
-          <CategoryCard
             title="ADN Banesco Seguros"
             description="Conoce nuestra historia, valores y la cultura que nos define como organización."
             imageUrl="https://i.pinimg.com/736x/c8/9d/7f/c89d7fbfae8c8a487220b7a8efe5d3af.jpg"
