@@ -170,7 +170,7 @@ export default function CursosPage() {
           />
 
           <CategoryCard
-            title="Biblioteca Digital"
+            title="Centro de Recursos Multimedia"
             description="Accede a manuales, presentaciones y recursos visuales para potenciar tu trabajo."
             imageUrl="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BIBLIOTECA%20DIGITAL.png?raw=true"
             bgColor="bg-orange-500"
