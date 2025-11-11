@@ -123,14 +123,14 @@ const DocumentCard = ({ doc }: { doc: DocumentResource }) => {
 const MainCategoryCard = ({ category, onClick }: { category: typeof mainCategories[0], onClick: () => void }) => {
     return (
         <Card
-            className="group relative p-6 bg-card shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl cursor-pointer overflow-hidden aspect-square flex flex-col justify-between items-center text-center"
+            className="group relative p-6 bg-card shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl cursor-pointer overflow-hidden flex flex-col justify-between items-center text-center"
             onClick={onClick}
         >
             <div className="relative z-10 w-full">
                 <Badge variant="secondary" className="mb-2 text-[10px] bg-neutral-500 text-white font-normal">{category.description}</Badge>
                 <h3 className="text-2xl font-bold text-foreground mt-1 tracking-tight">{category.title}</h3>
             </div>
-            <div className="relative z-10 w-full h-32 transform group-hover:scale-110 transition-transform duration-300">
+            <div className="relative z-10 w-full h-40 transform group-hover:scale-110 transition-transform duration-300">
                 <Image
                     src={category.image}
                     alt={category.title}
