@@ -136,7 +136,7 @@ const MainCategoryCard = ({ category, onClick }: { category: typeof mainCategori
                         data-ai-hint={category.dataAiHint}
                     />
                 </div>
-                <Badge variant="outline" className="mb-2 text-xs">{category.description}</Badge>
+                <Badge variant="secondary" className="mb-2 text-xs bg-white/20 text-white backdrop-blur-sm">{category.description}</Badge>
                 <h3 className="text-2xl font-bold text-foreground mt-1 tracking-tight">{category.title}</h3>
             </div>
         </Card>
