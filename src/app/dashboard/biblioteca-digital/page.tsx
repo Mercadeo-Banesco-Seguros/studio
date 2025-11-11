@@ -86,7 +86,7 @@ export default function BibliotecaDigitalPage() {
                         <Button
                             key={name}
                             variant={activeCategory === name ? 'secondary' : 'ghost'}
-                            className="w-full justify-start gap-3 text-sm font-normal"
+                            className="w-full justify-start gap-3 text-xs font-normal"
                             onClick={() => setActiveCategory(name)}
                         >
                             <Icon className="h-4 w-4 text-muted-foreground" />
