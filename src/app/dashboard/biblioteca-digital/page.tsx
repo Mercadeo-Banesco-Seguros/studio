@@ -123,7 +123,7 @@ export default function BibliotecaDigitalPage() {
                     </div>
                 </header>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {filteredDocuments.map(doc => (
                         <DocumentCard key={doc.id} doc={doc} />
                     ))}
