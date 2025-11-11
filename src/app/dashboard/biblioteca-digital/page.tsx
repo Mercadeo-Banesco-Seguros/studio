@@ -50,7 +50,7 @@ const mainCategories = [
     { 
         id: 'Corporativo', 
         title: 'Corporativo', 
-        description: 'Recursos y guías generales', 
+        description: 'Generales', 
         icon: Megaphone, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(31).png?raw=true',
         dataAiHint: 'megaphone illustration',
@@ -60,7 +60,7 @@ const mainCategories = [
     { 
         id: 'Productos', 
         title: 'Productos', 
-        description: 'Información y materiales', 
+        description: 'Información', 
         icon: ZoomIn, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(29).png?raw=true',
         dataAiHint: 'magnifying glass',
@@ -70,7 +70,7 @@ const mainCategories = [
     { 
         id: 'Marca', 
         title: 'Marca', 
-        description: 'Identidad visual y manuales', 
+        description: 'Identidad', 
         icon: BadgeCheck, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(27).png?raw=true',
         dataAiHint: 'verified badge',
@@ -80,7 +80,7 @@ const mainCategories = [
     { 
         id: 'Finanzas', 
         title: 'Finanzas', 
-        description: 'Planes de cuentas y reportes', 
+        description: 'Reportes', 
         icon: CircleDollarSign,
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(30).png?raw=true',
         dataAiHint: 'money bills',
@@ -90,7 +90,7 @@ const mainCategories = [
     { 
         id: 'Comercial', 
         title: 'Comercial', 
-        description: 'Intermediación de Productos', 
+        description: 'Intermediación', 
         icon: ShoppingBag, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(28).png?raw=true',
         dataAiHint: 'shopping bag',
@@ -100,7 +100,7 @@ const mainCategories = [
     { 
         id: 'Desarrollo', 
         title: 'Desarrollo', 
-        description: 'Cursos y planes de carrera', 
+        description: 'Crecimiento', 
         icon: Target, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(26).png?raw=true',
         dataAiHint: 'target icon',
