@@ -127,7 +127,7 @@ const MainCategoryCard = ({ category, onClick }: { category: typeof mainCategori
             onClick={onClick}
         >
             <div className="relative z-10 w-full">
-                <Badge variant="secondary" className="mb-2 text-[10px] bg-neutral-500 text-white font-normal">{category.description}</Badge>
+                <Badge variant="secondary" className="mb-2 text-[10px] bg-accent text-accent-foreground font-normal">{category.description}</Badge>
                 <h3 className="text-2xl font-bold text-foreground mt-1 tracking-tight">{category.title}</h3>
             </div>
             <div className="relative z-10 w-full h-40 transform group-hover:scale-110 transition-transform duration-300">
