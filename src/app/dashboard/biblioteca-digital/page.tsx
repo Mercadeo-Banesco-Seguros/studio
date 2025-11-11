@@ -19,7 +19,8 @@ import {
     Search,
     Download,
     Mail,
-    Plus
+    Plus,
+    ChevronDown
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -61,6 +62,7 @@ const DocumentCard = ({ doc }: { doc: DocumentResource }) => {
 export default function BibliotecaDigitalPage() {
     const [activeCategory, setActiveCategory] = useState<'Todos' | DocumentResource['category'] | 'Destacados'>('Todos');
     const [activeArea, setActiveArea] = useState('Todos');
+    const [showAllAreas, setShowAllAreas] = useState(false);
 
     const filteredDocuments = useMemo(() => {
         return mockDocuments.filter(doc => {
@@ -99,8 +101,26 @@ export default function BibliotecaDigitalPage() {
             {/* Main Content */}
             <main className="flex-1 p-6 md:p-8">
                 <header className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-                    <div className="flex items-center gap-2 overflow-x-auto pb-2 w-full">
-                         {areas.map(area => (
+                    <div className="flex items-center gap-2 flex-wrap pb-2 w-full">
+                         <Button
+                            variant={activeArea === 'Todos' ? 'default' : 'ghost'}
+                            size="sm"
+                            className="rounded-full flex-shrink-0 text-xs h-7 px-3"
+                            onClick={() => setActiveArea('Todos')}
+                        >
+                            Todos
+                        </Button>
+                        <Button
+                            variant='outline'
+                            size="sm"
+                            className="rounded-full flex-shrink-0 text-xs h-7 px-3"
+                            onClick={() => setShowAllAreas(!showAllAreas)}
+                        >
+                            Ver Áreas
+                            <ChevronDown className={cn("h-4 w-4 ml-2 transition-transform", showAllAreas && "rotate-180")} />
+                        </Button>
+
+                         {showAllAreas && areas.filter(area => area !== 'Todos').map(area => (
                             <Button
                                 key={area}
                                 variant={activeArea === area ? 'default' : 'ghost'}
@@ -111,9 +131,11 @@ export default function BibliotecaDigitalPage() {
                                 {area}
                             </Button>
                         ))}
-                         <Button variant="ghost" size="icon" className="text-muted-foreground h-8 w-8 ml-auto">
-                            <Search className="h-4 w-4" />
-                        </Button>
+                         <div className="flex items-center gap-2 ml-auto">
+                            <Button variant="ghost" size="icon" className="text-muted-foreground h-8 w-8">
+                                <Search className="h-4 w-4" />
+                            </Button>
+                        </div>
                     </div>
                 </header>
 
