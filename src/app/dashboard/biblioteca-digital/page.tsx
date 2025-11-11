@@ -54,8 +54,8 @@ const mainCategories = [
         icon: Megaphone, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(31).png?raw=true',
         dataAiHint: 'megaphone illustration',
-        badgeBg: 'bg-blue-100',
-        badgeText: 'text-blue-800'
+        badgeBg: 'bg-blue-600',
+        badgeText: 'text-white'
     },
     { 
         id: 'Productos', 
@@ -64,8 +64,8 @@ const mainCategories = [
         icon: ZoomIn, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(29).png?raw=true',
         dataAiHint: 'magnifying glass',
-        badgeBg: 'bg-indigo-100',
-        badgeText: 'text-indigo-800'
+        badgeBg: 'bg-indigo-600',
+        badgeText: 'text-white'
     },
     { 
         id: 'Marca', 
@@ -74,8 +74,8 @@ const mainCategories = [
         icon: BadgeCheck, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(27).png?raw=true',
         dataAiHint: 'verified badge',
-        badgeBg: 'bg-sky-100',
-        badgeText: 'text-sky-800'
+        badgeBg: 'bg-sky-600',
+        badgeText: 'text-white'
     },
     { 
         id: 'Finanzas', 
@@ -84,8 +84,8 @@ const mainCategories = [
         icon: CircleDollarSign,
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(30).png?raw=true',
         dataAiHint: 'money bills',
-        badgeBg: 'bg-purple-100',
-        badgeText: 'text-purple-800'
+        badgeBg: 'bg-purple-600',
+        badgeText: 'text-white'
     },
     { 
         id: 'Comercial', 
@@ -94,8 +94,8 @@ const mainCategories = [
         icon: ShoppingBag, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(28).png?raw=true',
         dataAiHint: 'shopping bag',
-        badgeBg: 'bg-blue-100',
-        badgeText: 'text-blue-800'
+        badgeBg: 'bg-blue-600',
+        badgeText: 'text-white'
     },
     { 
         id: 'Desarrollo', 
@@ -104,8 +104,8 @@ const mainCategories = [
         icon: Target, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(26).png?raw=true',
         dataAiHint: 'target icon',
-        badgeBg: 'bg-indigo-100',
-        badgeText: 'text-indigo-800'
+        badgeBg: 'bg-indigo-600',
+        badgeText: 'text-white'
     }
 ];
 
