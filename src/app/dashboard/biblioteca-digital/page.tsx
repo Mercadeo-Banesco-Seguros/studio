@@ -53,7 +53,9 @@ const mainCategories = [
         description: 'Recursos y guías generales', 
         icon: Megaphone, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(31).png?raw=true',
-        dataAiHint: 'megaphone illustration'
+        dataAiHint: 'megaphone illustration',
+        badgeBg: 'bg-blue-100',
+        badgeText: 'text-blue-800'
     },
     { 
         id: 'Productos', 
@@ -61,7 +63,9 @@ const mainCategories = [
         description: 'Información y materiales', 
         icon: ZoomIn, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(29).png?raw=true',
-        dataAiHint: 'magnifying glass'
+        dataAiHint: 'magnifying glass',
+        badgeBg: 'bg-indigo-100',
+        badgeText: 'text-indigo-800'
     },
     { 
         id: 'Marca', 
@@ -69,7 +73,9 @@ const mainCategories = [
         description: 'Identidad visual y manuales', 
         icon: BadgeCheck, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(27).png?raw=true',
-        dataAiHint: 'verified badge'
+        dataAiHint: 'verified badge',
+        badgeBg: 'bg-sky-100',
+        badgeText: 'text-sky-800'
     },
     { 
         id: 'Finanzas', 
@@ -77,7 +83,9 @@ const mainCategories = [
         description: 'Planes de cuentas y reportes', 
         icon: CircleDollarSign,
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(30).png?raw=true',
-        dataAiHint: 'money bills'
+        dataAiHint: 'money bills',
+        badgeBg: 'bg-purple-100',
+        badgeText: 'text-purple-800'
     },
     { 
         id: 'Comercial', 
@@ -85,7 +93,9 @@ const mainCategories = [
         description: 'Intermediación de Productos', 
         icon: ShoppingBag, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(28).png?raw=true',
-        dataAiHint: 'shopping bag'
+        dataAiHint: 'shopping bag',
+        badgeBg: 'bg-blue-100',
+        badgeText: 'text-blue-800'
     },
     { 
         id: 'Desarrollo', 
@@ -93,7 +103,9 @@ const mainCategories = [
         description: 'Cursos y planes de carrera', 
         icon: Target, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(26).png?raw=true',
-        dataAiHint: 'target icon'
+        dataAiHint: 'target icon',
+        badgeBg: 'bg-indigo-100',
+        badgeText: 'text-indigo-800'
     }
 ];
 
@@ -127,7 +139,7 @@ const MainCategoryCard = ({ category, onClick }: { category: typeof mainCategori
             onClick={onClick}
         >
             <div className="relative z-10 w-full">
-                <Badge variant="secondary" className="mb-2 text-[10px] bg-accent text-accent-foreground font-normal">{category.description}</Badge>
+                <Badge variant="secondary" className={cn("mb-2 text-[10px] font-normal", category.badgeBg, category.badgeText)}>{category.description}</Badge>
                 <h3 className="text-2xl font-bold text-foreground mt-1 tracking-tight">{category.title}</h3>
             </div>
             <div className="relative z-10 w-full h-40 transform group-hover:scale-110 transition-transform duration-300">
