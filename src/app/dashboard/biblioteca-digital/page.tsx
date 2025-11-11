@@ -116,10 +116,6 @@ export default function BibliotecaDigitalPage() {
                         <Button variant="ghost" size="icon" className="text-muted-foreground h-8 w-8">
                             <Search className="h-4 w-4" />
                         </Button>
-                        <Button variant="destructive" size="sm" className="text-xs h-8">
-                            <Plus className="h-4 w-4 mr-1.5" />
-                            Solicitudes
-                        </Button>
                     </div>
                 </header>
 
