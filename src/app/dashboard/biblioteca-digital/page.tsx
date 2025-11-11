@@ -136,7 +136,7 @@ const MainCategoryCard = ({ category, onClick }: { category: typeof mainCategori
                     />
                 </div>
                 <p className="text-xs font-semibold text-primary uppercase tracking-wider">{category.description}</p>
-                <h3 className="text-2xl font-bold text-foreground mt-1">{category.title}</h3>
+                <h3 className="text-2xl font-bold text-foreground mt-1 tracking-tight">{category.title}</h3>
             </div>
         </Card>
     );
