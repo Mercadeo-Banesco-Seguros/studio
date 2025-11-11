@@ -62,7 +62,7 @@ const mainCategories = [
         title: 'Productos', 
         description: 'Información', 
         icon: ZoomIn, 
-        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(29).png?raw=true',
+        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(39).png?raw=true',
         dataAiHint: 'magnifying glass',
         badgeBg: 'bg-blue-600',
         badgeText: 'text-white'
@@ -72,7 +72,7 @@ const mainCategories = [
         title: 'Marca', 
         description: 'Identidad', 
         icon: BadgeCheck, 
-        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(27).png?raw=true',
+        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(35).png?raw=true',
         dataAiHint: 'verified badge',
         badgeBg: 'bg-sky-600',
         badgeText: 'text-white'
@@ -82,7 +82,7 @@ const mainCategories = [
         title: 'Finanzas', 
         description: 'Reportes', 
         icon: CircleDollarSign,
-        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(30).png?raw=true',
+        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(36).png?raw=true',
         dataAiHint: 'money bills',
         badgeBg: 'bg-blue-600',
         badgeText: 'text-white'
@@ -92,7 +92,7 @@ const mainCategories = [
         title: 'Comercial', 
         description: 'Intermediación', 
         icon: ShoppingBag, 
-        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(28).png?raw=true',
+        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_gmx1ljgmx1ljgmx1-Photoroom.png?raw=true',
         dataAiHint: 'shopping bag',
         badgeBg: 'bg-blue-600',
         badgeText: 'text-white'
@@ -102,7 +102,7 @@ const mainCategories = [
         title: 'Desarrollo', 
         description: 'Crecimiento', 
         icon: Target, 
-        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(26).png?raw=true',
+        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(37).png?raw=true',
         dataAiHint: 'target icon',
         badgeBg: 'bg-indigo-600',
         badgeText: 'text-white'
