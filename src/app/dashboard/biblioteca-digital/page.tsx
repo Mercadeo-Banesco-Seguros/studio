@@ -30,6 +30,7 @@ import {
 import type { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { Badge } from '@/components/ui/badge';
 
 const documentCategories: { name: DocumentResource['category'] | 'Destacados' | 'Todos', icon: LucideIcon }[] = [
     { name: 'Todos', icon: LayoutGrid },
@@ -135,7 +136,7 @@ const MainCategoryCard = ({ category, onClick }: { category: typeof mainCategori
                         data-ai-hint={category.dataAiHint}
                     />
                 </div>
-                <p className="text-xs font-semibold text-primary uppercase tracking-wider">{category.description}</p>
+                <Badge variant="outline" className="mb-2 text-xs">{category.description}</Badge>
                 <h3 className="text-2xl font-bold text-foreground mt-1 tracking-tight">{category.title}</h3>
             </div>
         </Card>
