@@ -92,7 +92,7 @@ export default function BibliotecaDigitalPage() {
                                 key={name}
                                 variant={isActive ? 'default' : 'ghost'}
                                 className={cn(
-                                    "w-full justify-start gap-3 text-sm font-normal",
+                                    "w-full justify-start gap-3 text-xs font-normal",
                                     !isActive && "text-muted-foreground hover:bg-muted/50 hover:text-foreground",
                                 )}
                                 onClick={() => setActiveCategory(name)}
