@@ -64,7 +64,7 @@ const mainCategories = [
         icon: ZoomIn, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(29).png?raw=true',
         dataAiHint: 'magnifying glass',
-        badgeBg: 'bg-indigo-600',
+        badgeBg: 'bg-blue-600',
         badgeText: 'text-white'
     },
     { 
@@ -135,7 +135,7 @@ const DocumentCard = ({ doc }: { doc: DocumentResource }) => {
 const MainCategoryCard = ({ category, onClick }: { category: typeof mainCategories[0], onClick: () => void }) => {
     return (
         <Card
-            className="group relative p-6 bg-card shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl cursor-pointer overflow-hidden flex flex-col justify-between items-center text-center"
+            className="group relative p-6 bg-card shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl cursor-pointer overflow-hidden flex flex-col justify-between items-start"
             onClick={onClick}
         >
             <div className="relative z-10 w-full">
