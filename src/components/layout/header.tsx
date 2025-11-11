@@ -159,7 +159,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full flex h-24 items-center justify-center px-4">
-      <div className="flex items-center justify-center rounded-full bg-primary p-2 pl-8 pr-4 shadow-lg border-primary/80 gap-4">
+      <div className="flex items-center justify-center rounded-full bg-primary p-2 pl-8 pr-4 shadow-lg border-primary/80 gap-8">
         <Link href="/dashboard" className="flex items-center justify-center mr-2">
           <Image
             src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BANESCO%20LOGO%20BLANCO.png?raw=true"
