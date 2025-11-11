@@ -83,7 +83,6 @@ export default function BibliotecaDigitalPage() {
                 <div className="flex items-center gap-3 mb-6">
                     {/* Placeholder for a logo if needed */}
                 </div>
-                <hr className="border-border/60 mb-6"/>
                 <nav className="flex flex-col gap-1">
                     {categories.map(({ name, icon: Icon }) => {
                         const isActive = activeCategory === name;
