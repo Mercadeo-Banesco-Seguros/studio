@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useMemo } from 'react';
@@ -79,7 +80,7 @@ export default function BibliotecaDigitalPage() {
     return (
         <div className="flex min-h-screen bg-background text-foreground">
             {/* Sidebar */}
-            <aside className="w-56 flex-shrink-0 p-6 border-r border-border/60 hidden md:flex flex-col">
+            <aside className="w-56 flex-shrink-0 p-6 hidden md:flex flex-col">
                 <div className="flex items-center gap-3 mb-6">
                     {/* Placeholder for a logo if needed */}
                 </div>
