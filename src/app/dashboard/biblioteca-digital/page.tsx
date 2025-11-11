@@ -25,7 +25,7 @@ import {
     ShoppingBag,
     CircleDollarSign,
     ZoomIn,
-    CheckBadge
+    BadgeCheck
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -66,7 +66,7 @@ const mainCategories = [
         id: 'Marca', 
         title: 'Marca', 
         description: 'Identidad visual y manuales', 
-        icon: CheckBadge, 
+        icon: BadgeCheck, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(27).png?raw=true',
         dataAiHint: 'verified badge'
     },
