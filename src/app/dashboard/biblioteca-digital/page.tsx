@@ -84,17 +84,20 @@ export default function BibliotecaDigitalPage() {
                 </div>
                 <hr className="border-border/60 mb-6"/>
                 <nav className="flex flex-col gap-1">
-                    {categories.map(({ name, icon: Icon }) => (
-                        <Button
-                            key={name}
-                            variant={activeCategory === name ? 'secondary' : 'ghost'}
-                            className="w-full justify-start gap-3 text-xs font-normal"
-                            onClick={() => setActiveCategory(name)}
-                        >
-                            <Icon className="h-4 w-4 text-muted-foreground" />
-                            <span>{name}</span>
-                        </Button>
-                    ))}
+                    {categories.map(({ name, icon: Icon }) => {
+                        const isActive = activeCategory === name;
+                        return (
+                            <Button
+                                key={name}
+                                variant={isActive ? 'default' : 'ghost'}
+                                className="w-full justify-start gap-3 text-xs font-normal"
+                                onClick={() => setActiveCategory(name)}
+                            >
+                                <Icon className={cn("h-4 w-4", isActive ? "text-primary-foreground" : "text-muted-foreground")} />
+                                <span>{name}</span>
+                            </Button>
+                        )
+                    })}
                 </nav>
             </aside>
 
@@ -139,7 +142,7 @@ export default function BibliotecaDigitalPage() {
                     </div>
                 </header>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {filteredDocuments.map(doc => (
                         <DocumentCard key={doc.id} doc={doc} />
                     ))}
