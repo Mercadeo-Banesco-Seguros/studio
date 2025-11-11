@@ -84,7 +84,7 @@ const mainCategories = [
         icon: CircleDollarSign,
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(30).png?raw=true',
         dataAiHint: 'money bills',
-        badgeBg: 'bg-purple-600',
+        badgeBg: 'bg-blue-600',
         badgeText: 'text-white'
     },
     { 
