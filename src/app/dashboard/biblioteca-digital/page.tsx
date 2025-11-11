@@ -235,7 +235,7 @@ export default function BibliotecaDigitalPage() {
                                 key={line}
                                 variant={activeBusinessLine === line ? 'default' : 'ghost'}
                                 size="sm"
-                                className="rounded-full text-xs h-7 px-4"
+                                className="rounded-full text-xs h-7 px-4 font-light"
                                 onClick={() => setActiveBusinessLine(line)}
                             >
                                 {line}
