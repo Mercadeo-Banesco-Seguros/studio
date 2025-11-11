@@ -99,7 +99,7 @@ export default function BibliotecaDigitalPage() {
             {/* Main Content */}
             <main className="flex-1 p-6 md:p-8">
                 <header className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-                    <div className="flex items-center gap-2 overflow-x-auto pb-2 w-full md:w-auto">
+                    <div className="flex items-center gap-2 overflow-x-auto pb-2 w-full">
                          {areas.map(area => (
                             <Button
                                 key={area}
@@ -111,9 +111,7 @@ export default function BibliotecaDigitalPage() {
                                 {area}
                             </Button>
                         ))}
-                    </div>
-                    <div className="flex items-center gap-2 flex-shrink-0">
-                        <Button variant="ghost" size="icon" className="text-muted-foreground h-8 w-8">
+                         <Button variant="ghost" size="icon" className="text-muted-foreground h-8 w-8 ml-auto">
                             <Search className="h-4 w-4" />
                         </Button>
                     </div>
