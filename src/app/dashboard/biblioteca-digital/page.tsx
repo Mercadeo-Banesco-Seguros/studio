@@ -35,7 +35,7 @@ import { Badge } from '@/components/ui/badge';
 const documentCategories: { name: DocumentResource['category'] | 'Destacados' | 'Todos', icon: LucideIcon }[] = [
     { name: 'Todos', icon: LayoutGrid },
     { name: 'Destacados', icon: Star },
-    { name: 'Recursos Visuales', icon: ImageIcon },
+    { name: 'Visuales', icon: ImageIcon },
     { name: 'Herramientas', icon: Code },
     { name: 'Presentaciones', icon: Presentation },
     { name: 'Manuales', icon: BookOpen },
