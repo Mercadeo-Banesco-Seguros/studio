@@ -216,7 +216,7 @@ export default function BibliotecaDigitalPage() {
             </aside>
 
             {/* Main Content */}
-            <main className="flex-1 p-6 md:p-8">
+            <main className="flex-1 p-6 sm:p-8 md:p-10">
                 <header className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
                      <div className="flex items-center gap-2 flex-wrap w-full">
                         {selectedMainCategory && (
