@@ -52,7 +52,7 @@ const mainCategories = [
         title: 'Corporativo', 
         description: 'Generales', 
         icon: Megaphone, 
-        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(31).png?raw=true',
+        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(41).png?raw=true',
         dataAiHint: 'megaphone illustration',
         badgeBg: 'bg-blue-600',
         badgeText: 'text-white'
