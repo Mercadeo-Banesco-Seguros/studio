@@ -187,7 +187,7 @@ export default function BibliotecaDigitalPage() {
     }, [activeDocCategory, activeBusinessLine, selectedMainCategory]);
 
     return (
-        <div className="flex min-h-screen bg-background text-foreground">
+        <div className="flex min-h-screen bg-background text-foreground px-8">
             {/* Sidebar */}
             <aside className="w-56 flex-shrink-0 p-6 hidden md:flex flex-col">
                  <div className="flex items-center gap-3 mb-6">
