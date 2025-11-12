@@ -25,7 +25,8 @@ import {
     ShoppingBag,
     CircleDollarSign,
     ZoomIn,
-    BadgeCheck
+    BadgeCheck,
+    Library
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
