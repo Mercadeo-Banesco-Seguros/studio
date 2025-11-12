@@ -123,7 +123,7 @@ const DocumentCard = ({ doc }: { doc: DocumentResource }) => {
 
 
     return (
-        <Card className="p-4 py-6 bg-card shadow-sm hover:shadow-lg transition-shadow duration-300 rounded-2xl cursor-pointer flex flex-col justify-between">
+        <Card className="p-4 py-8 bg-card shadow-sm hover:shadow-lg transition-shadow duration-300 rounded-2xl cursor-pointer flex flex-col justify-between">
             <div>
                 <div className="flex items-center gap-2 mb-4">
                     <Badge className={cn("text-[10px] font-normal", areaBadgeClass)}>{doc.area}</Badge>
