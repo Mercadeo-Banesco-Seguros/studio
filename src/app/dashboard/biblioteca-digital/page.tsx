@@ -202,7 +202,6 @@ export default function BibliotecaDigitalPage() {
             {/* Sidebar */}
             <aside className="w-56 flex-shrink-0 p-6 hidden md:flex flex-col">
                  <div className="flex items-center gap-3 mb-6">
-                    <h2 className="font-bold text-2xl tracking-tight">Centro de Recursos Multimedia</h2>
                 </div>
                 <nav className="flex flex-col gap-1">
                     {documentCategories.map(({ name, icon: Icon }) => {
@@ -295,3 +294,5 @@ export default function BibliotecaDigitalPage() {
         </div>
     );
 }
+
+    
