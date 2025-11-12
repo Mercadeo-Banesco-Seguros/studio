@@ -139,7 +139,7 @@ const DocumentCard = ({ doc }: { doc: DocumentResource }) => {
                             data-ai-hint={doc.dataAiHint}
                          />
                     </div>
-                    <h3 className="font-bold text-sm text-foreground leading-tight">{doc.title}</h3>
+                    <h3 className="font-bold text-foreground leading-tight">{doc.title}</h3>
                 </div>
             </div>
         </Card>
