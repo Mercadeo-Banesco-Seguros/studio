@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useMemo } from 'react';
@@ -38,14 +37,14 @@ import { Badge } from '@/components/ui/badge';
 const documentCategories: { name: DocumentResource['category'] | 'Destacados' | 'Todos', icon: LucideIcon }[] = [
     { name: 'Todos', icon: LayoutGrid },
     { name: 'Destacados', icon: Star },
-    { name: 'Visuales', icon: ImageIcon },
-    { name: 'Herramientas', icon: Code },
-    { name: 'Presentaciones', icon: Presentation },
-    { name: 'Manuales', icon: BookOpen },
+    { name: 'Aplicaciones', icon: AppWindow },
     { name: 'Documentos', icon: FileText },
-    { name: 'Videos', icon: Video },
+    { name: 'Herramientas', icon: Code },
+    { name: 'Manuales', icon: BookOpen },
     { name: 'Música', icon: Music },
-    { name: 'Aplicaciones', icon: AppWindow }
+    { name: 'Presentaciones', icon: Presentation },
+    { name: 'Videos', icon: Video },
+    { name: 'Visuales', icon: ImageIcon },
 ];
 
 const businessLines: (DocumentResource['businessLine'] | 'Todos')[] = ["Todos", "Automóvil", "Personas", "Patrimoniales", "Salud"];
@@ -315,3 +314,5 @@ export default function BibliotecaDigitalPage() {
         </div>
     );
 }
+
+    
