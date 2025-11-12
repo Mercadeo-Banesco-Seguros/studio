@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useMemo } from 'react';
@@ -26,7 +27,8 @@ import {
     CircleDollarSign,
     ZoomIn,
     BadgeCheck,
-    Library
+    Library,
+    AppWindow
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -42,7 +44,8 @@ const documentCategories: { name: DocumentResource['category'] | 'Destacados' | 
     { name: 'Manuales', icon: BookOpen },
     { name: 'Documentos', icon: FileText },
     { name: 'Videos', icon: Video },
-    { name: 'Música', icon: Music }
+    { name: 'Música', icon: Music },
+    { name: 'Aplicaciones', icon: AppWindow }
 ];
 
 const businessLines: (DocumentResource['businessLine'] | 'Todos')[] = ["Todos", "Automóvil", "Personas", "Patrimoniales", "Salud"];
