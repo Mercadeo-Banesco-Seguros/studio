@@ -179,6 +179,7 @@ export default function BibliotecaDigitalPage() {
     const [activeBusinessLine, setActiveBusinessLine] = useState<(typeof businessLines)[number]>('Todos');
     const [selectedMainCategory, setSelectedMainCategory] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState('');
+    const [isSearchVisible, setIsSearchVisible] = useState(false);
 
     const filteredDocuments = useMemo(() => {
         let documents = mockDocuments;
@@ -223,7 +224,7 @@ export default function BibliotecaDigitalPage() {
         return documents;
     }, [activeDocCategory, activeBusinessLine, selectedMainCategory, searchTerm]);
 
-    const showDocumentsView = selectedMainCategory !== null || activeDocCategory !== 'Todos';
+    const showDocumentsView = selectedMainCategory !== null || activeDocCategory !== 'Todos' || searchTerm !== '';
 
     return (
         <div className="flex min-h-screen bg-background text-foreground px-10">
@@ -286,11 +287,18 @@ export default function BibliotecaDigitalPage() {
                             </Button>
                         ))}
                          <div className="flex items-center gap-2 ml-auto">
-                            <div className="relative">
-                                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                            <div 
+                                className="relative flex items-center"
+                                onMouseEnter={() => setIsSearchVisible(true)}
+                                onMouseLeave={() => setIsSearchVisible(false)}
+                            >
+                                <Search className="h-4 w-4 text-muted-foreground transition-colors hover:text-foreground cursor-pointer" />
                                 <Input
-                                    placeholder="Buscar documentos..."
-                                    className="pl-9 h-8 w-48 text-xs"
+                                    placeholder="Buscar..."
+                                    className={cn(
+                                        "h-8 text-xs transition-all duration-300 ease-in-out",
+                                        isSearchVisible ? "w-48 px-3 ml-2" : "w-0 p-0 border-transparent"
+                                    )}
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                 />
@@ -334,3 +342,5 @@ export default function BibliotecaDigitalPage() {
         </div>
     );
 }
+
+    
