@@ -64,7 +64,7 @@ const mainCategories = [
         icon: ZoomIn, 
         image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(39).png?raw=true',
         dataAiHint: 'magnifying glass',
-        badgeBg: 'bg-blue-600',
+        badgeBg: 'bg-sky-600',
         badgeText: 'text-white'
     },
     { 
@@ -167,14 +167,13 @@ export default function BibliotecaDigitalPage() {
         // 1. Filter by main category if one is selected
         if (selectedMainCategory) {
             const mainCatLower = selectedMainCategory.toLowerCase();
-             // A simple mapping from main category to document areas
             const areaMap: { [key: string]: DocumentResource['area'][] } = {
-                corporativo: ['General', 'Legal', 'Capital Humano'],
+                corporativo: ['General', 'Legal', 'Capital Humano', 'Procesos'],
                 productos: ['Suscripción', 'Actuarial'],
                 marca: ['Mercadeo'],
                 finanzas: ['Finanzas'],
                 comercial: ['Comercial'],
-                desarrollo: ['Capital Humano', 'Procesos'],
+                desarrollo: ['Capital Humano', 'Tecnologia'],
             };
 
             const relevantAreas = areaMap[mainCatLower] || [];
