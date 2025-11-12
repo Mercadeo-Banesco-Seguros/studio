@@ -181,7 +181,7 @@ export default function BibliotecaDigitalPage() {
     const filteredDocuments = useMemo(() => {
         let documents = mockDocuments;
         
-        // 1. Filter by main category if one is selected
+        // Filter by main category if one is selected
         if (selectedMainCategory) {
             const mainCatLower = selectedMainCategory.toLowerCase();
             const areaMap: { [key: string]: DocumentResource['area'][] } = {
@@ -197,7 +197,7 @@ export default function BibliotecaDigitalPage() {
             documents = documents.filter(doc => relevantAreas.includes(doc.area));
         }
 
-        // 2. Filter by document category (sidebar)
+        // Filter by document category (sidebar)
         if (activeDocCategory !== 'Todos') {
             if (activeDocCategory === 'Destacados') {
                 documents = documents.filter(doc => doc.isFeatured);
@@ -206,13 +206,15 @@ export default function BibliotecaDigitalPage() {
             }
         }
         
-        // 3. Filter by business line (top bar)
+        // Filter by business line (top bar)
         if (activeBusinessLine !== 'Todos') {
             documents = documents.filter(doc => doc.businessLine === activeBusinessLine);
         }
 
         return documents;
     }, [activeDocCategory, activeBusinessLine, selectedMainCategory]);
+
+    const showDocumentsView = selectedMainCategory !== null || activeDocCategory !== 'Todos';
 
     return (
         <div className="flex min-h-screen bg-background text-foreground px-10">
@@ -249,12 +251,15 @@ export default function BibliotecaDigitalPage() {
             <main className="flex-1 p-6 sm:p-8 md:p-10">
                 <header className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
                      <div className="flex items-center gap-2 flex-wrap w-full">
-                        {selectedMainCategory && (
+                        {(selectedMainCategory || activeDocCategory !== 'Todos') && (
                              <Button
                                 variant="ghost"
                                 size="sm"
                                 className="rounded-full text-xs h-7 px-3 flex items-center gap-2"
-                                onClick={() => setSelectedMainCategory(null)}
+                                onClick={() => {
+                                    setSelectedMainCategory(null);
+                                    setActiveDocCategory('Todos');
+                                }}
                             >
                                 <ArrowLeft className="h-3 w-3" />
                                 Volver
@@ -285,7 +290,7 @@ export default function BibliotecaDigitalPage() {
                     </div>
                 </header>
 
-                {selectedMainCategory === null ? (
+                {!showDocumentsView ? (
                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {mainCategories.map(cat => (
                             <MainCategoryCard 
@@ -314,5 +319,3 @@ export default function BibliotecaDigitalPage() {
         </div>
     );
 }
-
-    
