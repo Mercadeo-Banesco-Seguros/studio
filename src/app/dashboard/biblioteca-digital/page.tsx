@@ -110,27 +110,41 @@ const mainCategories = [
 ];
 
 const DocumentCard = ({ doc }: { doc: DocumentResource }) => {
+    const AreaIcon = doc.icon || FileText;
+
+    const areaBadgeClass = "bg-primary text-primary-foreground";
+    const categoryBadgeClasses: {[key: string]: string} = {
+        'Documentos': "bg-blue-100 text-blue-800",
+        'Presentaciones': "bg-red-100 text-red-800",
+        'Manuales': "bg-pink-100 text-pink-800",
+    }
+    const categoryBadgeClass = categoryBadgeClasses[doc.category] || "bg-muted text-muted-foreground";
+
+
     return (
-        <Card className="p-4 bg-card shadow-sm hover:shadow-lg transition-shadow duration-300 rounded-lg cursor-pointer h-full flex flex-col">
-             <div className="flex justify-between items-center mb-4">
-                <span className="text-xs text-primary font-semibold">{doc.businessLine || doc.area}</span>
-                <span className="text-xs text-muted-foreground">{doc.category}</span>
-            </div>
-            <div className="text-center my-auto">
-                <h3 className="font-semibold text-sm text-foreground mb-1">{doc.title}</h3>
-                <div className="relative w-24 h-24 mx-auto mt-4">
-                     <Image
-                        src={doc.imageUrl}
-                        alt={doc.title}
-                        layout="fill"
-                        objectFit="contain"
-                        data-ai-hint={doc.dataAiHint}
-                     />
+        <Card className="p-4 bg-card shadow-sm hover:shadow-lg transition-shadow duration-300 rounded-2xl cursor-pointer flex flex-col justify-between">
+            <div>
+                <div className="flex items-center gap-2 mb-4">
+                    <Badge className={cn("text-[10px] font-normal", areaBadgeClass)}>{doc.area}</Badge>
+                    <Badge className={cn("text-[10px] font-normal", categoryBadgeClass)}>{doc.category}</Badge>
+                </div>
+                <div className="flex items-center gap-4">
+                    <div className="relative w-12 h-12 flex-shrink-0">
+                         <Image
+                            src={doc.imageUrl}
+                            alt={doc.title}
+                            layout="fill"
+                            objectFit="contain"
+                            data-ai-hint={doc.dataAiHint}
+                         />
+                    </div>
+                    <h3 className="font-bold text-sm text-foreground leading-tight">{doc.title}</h3>
                 </div>
             </div>
         </Card>
     );
 };
+
 
 const MainCategoryCard = ({ category, onClick }: { category: typeof mainCategories[0], onClick: () => void }) => {
     return (
@@ -277,7 +291,7 @@ export default function BibliotecaDigitalPage() {
                     </div>
                 ) : (
                     <>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-6">
                             {filteredDocuments.map(doc => (
                                 <DocumentCard key={doc.id} doc={doc} />
                             ))}
@@ -294,5 +308,3 @@ export default function BibliotecaDigitalPage() {
         </div>
     );
 }
-
-    

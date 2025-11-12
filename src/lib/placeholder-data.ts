@@ -1,4 +1,3 @@
-
 import { Users, Megaphone, FolderKanban, Shield, BarChart2, Briefcase, FileText, Bot, BookOpen, Scale, FileSignature, HardHat, Plane, Cpu, PiggyBank, CreditCard, Landmark, CalendarClock, MessageCircleQuestion, Bell, Utensils, Star, Video, Presentation, Image as ImageIcon, Code, Music, AlertTriangle, CheckCircle, CalendarDays, MessageSquare as MessageSquareIcon, Music2, Home, User, Cog, Lightbulb, Handshake, Award, FileBarChart } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -48,13 +47,14 @@ export interface DocumentResource {
   id: string;
   title: string;
   category: 'Visuales' | 'Herramientas' | 'Presentaciones' | 'Manuales' | 'Documentos' | 'Videos' | 'Destacados' | 'Música';
-  area: 'Comercial' | 'Suscripción' | 'Legal' | 'Mercadeo' | 'Capital Humano' | 'Procesos' | 'Actuarial' | 'General' | 'Finanzas' | 'Tecnologia';
+  area: 'Comercial' | 'Suscripción' | 'Legal' | 'Mercadeo' | 'Capital Humano' | 'Procesos' | 'Actuarial' | 'General' | 'Finanzas' | 'Tecnologia' | 'Productos' | 'Marca';
   businessLine?: 'Automóvil' | 'Personas' | 'Patrimoniales' | 'Salud';
   description: string;
   imageUrl: string;
   dataAiHint: string;
   isFeatured: boolean;
   linkUrl?: string; // For playlists
+  icon?: LucideIcon;
 }
 
 
@@ -226,7 +226,7 @@ export const mockCourses: Course[] = [
     id: "jerarquizacion-de-portafolio",
     title: "Jerarquización de Portafolio",
     description: "Las Direcciones Corporativas de Finanzas y Estrategia te invitan a formar parte de esta formación virtual que pretende profundizar en la metodología para la jerarquización de iniciativas, con énfasis en la aplicación de la herramienta “Matriz Costo Beneficio”.",
-    imageUrl: "https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxET0NVTUVOVFN8ZW58MHx8fHwxNzU0NDEwNjg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxET0NVTUVOVFN8ZW58MHx8fHwxNzU0NDEwNjg0fDA&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "portfolio management",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -236,7 +236,7 @@ export const mockCourses: Course[] = [
     id: "gestion-de-proveedores",
     title: "Gestión de Proveedores",
     description: "Aquí podrás  obtener información de herramientas y mejores prácticas para ser efectivos en la búsqueda, selección, evaluación y gestión de proveedores, mediante la planificación asociada a la negociación, que finalmente servirá como retroalimentación constante para el desarrollo tanto de la organización como de los proveedores.",
-    imageUrl: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxERUxJVkVSWXxlbnwwfHx8fDE3NTc3MDMxMzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxERUxJVkVSWXxlbnwwfHx8fDE3NTc3MDMxMzN8MA&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "supplier management",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -246,7 +246,7 @@ export const mockCourses: Course[] = [
     id: "reuniones-efectivas",
     title: "Reuniones Efectivas",
     description: "Aquí podrás  obtener tips de como tener una reunión efectiva, donde es importante considerar que una gran parte de la eficacia y productividad del equipo de trabajo se obtiene a partir de la efectividad con que se desarrollan estas reuniones.",
-    imageUrl: "https://images.unsplash.com/photo-1553877522-43269d4ea984?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyZXVuaSVDMyVCM258ZW58MHx8fHwxNzU0NDIwMzY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1553877522-43269d4ea984?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyZXVuaSVDMyVCM258ZW58MHx8fHwxNzU0NDIwMzY0fDA&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "effective meeting",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -256,7 +256,7 @@ export const mockCourses: Course[] = [
     id: "gestion-comercial",
     title: "Gestión Comercial",
     description: "Aquí podrás  obtener información de cuáles son nuestros productos, cómo manejar el Site de Sistemática, entre otros.",
-    imageUrl: "https://images.unsplash.com/photo-1634117622592-114e3024ff27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxncmFmaWNvfGVufDB8fHx8fDE3NTQ0MjEzMDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1634117622592-114e3024ff27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxncmFmaWNvfGVufDB8fHx8fDE3NTQ0MjEzMDN8MA&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "sales management",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -266,7 +266,7 @@ export const mockCourses: Course[] = [
     id: "otras-opciones-desarrollo",
     title: "Otras opciones para tu desarrollo",
     description: "Aquí podrás encontrar el link de otras páginas que te ayudarán a tu crecimiento profesional.",
-    imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlLWxlYXJuaW5nfGVufDB8fHx8fDE3NTQ0MTM4OTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlLWxlYXJuaW5nfGVufDB8fHx8fDE3NTQ0MTM4OTB8MA&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "e-learning development",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -281,7 +281,7 @@ export const mockActivities: Activity[] = [
     title: "Yoga",
     date: "2025-07-01",
     location: "Triadas - Ciudad Banesco",
-    imageUrl: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx5b2dhfGVufDB8fHx8MTc1MDk0NDg2M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx5b2dhfGVufDB8fHx8MTc1MDk0NDg2M3ww&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "yoga fitness",
     description: "¡Conecta tu cuerpo y mente!\nAcompáñanos en la clase de yoga, conformada por una serie de ejercicios físicos y de respiración diseñados para disminuir el estrés y las dolencias corporales, con el propósito de mejorar la salud, tanto física como mental.\nPara asistir a las clases solo necesitas:\n- Un mat o esterilla de yoga.\n- Ropa deportiva y cómoda, preferiblemente licras o monos largos y camisas cómodas.\n- Una botella de agua para tu hidratación.\n\nDónde y cuándo son las clases:\nLunes y miércoles, 5:00 P.M."
   },
@@ -290,7 +290,7 @@ export const mockActivities: Activity[] = [
     title: "Ejercicios funcionales",
     date: "2025-07-01",
     location: "Terraza - Ciudad Banesco",
-    imageUrl: "https://images.unsplash.com/photo-1591291621164-2c6367723315?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGNlcmNpc2V8ZW58MHx8fHwxNzUwOTQ0OTE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1591291621164-2c6367723315?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGNlcmNpc2V8ZW58MHx8fHwxNzUwOTQ0OTE1fDA&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "functional training",
     description: "¡Mejora tu rendimiento físico y cuida tu salud!\n\nTe invitamos a participar en la actividad de entrenamiento funcional y en circuito, la cual ayuda a mejorar las capacidades físicas como  fuerza, resistencia, velocidad, coordinación y flexibilidad. Se puede realizar con o sin implementos.\nPara asistir a las clases solo necesitas:\n- Ropa deportiva y cómoda, preferiblemente licras o monos largos y camisas cómodas.\n- Una botella de agua para tu hidratación.\n\nDónde y cuándo son las clases:\nLunes y miércoles, 5:00 P.M.",
     isRecommended: true,
@@ -300,7 +300,7 @@ export const mockActivities: Activity[] = [
     title: "Clases de cuatro",
     date: "2025-07-01",
     location: "Triadas - Ciudad Banesco",
-    imageUrl: "https://images.unsplash.com/photo-1707699164633-0e584b2da329?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxVS0VMRUxFfGVufDB8fHx8MTc1ODU2NDUxNHww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1707699164633-0e584b2da329?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxVS0VMRUxFfGVufDB8fHx8MTc1ODU2NDUxNHww&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "music lessons",
     description: "Si tienes talento para tocar un instrumento musical o quieres aprender, es tú momento.\nÚnete al grupo, no necesitas experiencia previa para formar parte de la actividad.\nPara asistir a las clases solo necesitas:\n- Una botella de agua para tu hidratación.\n\nDónde y cuándo son las clases:\nLunes o jueves, 5:00 P.M."
   },
@@ -309,7 +309,7 @@ export const mockActivities: Activity[] = [
     title: "Clases de bailoterapia",
     date: "2025-07-01",
     location: "Terraza - Ciudad Banesco",
-    imageUrl: "https://images.unsplash.com/photo-1495791185843-c73f2269f669?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8ZGFuY2V8ZW58MHx8fHwxNzUwOTQ1MTc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1495791185843-c73f2269f669?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8ZGFuY2V8ZW58MHx8fHwxNzUwOTQ1MTc0fDA&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "dance therapy",
     description: "Sorpréndete con la variedad de estilos y ritmos en nuestra clase de bailoterapia y disfruta de los múltiples beneficios de esta técnica:\n- Fortalece el corazón y la circulación de la sangre.\n- Reduce el estrés, la ansiedad y la tristeza.\n- Combate los dolores musculares.\nPara asistir a las clases solo necesitas:\n- Ropa deportiva y cómoda, preferiblemente licras o monos largos y camisas cómodas.\n- Una botella de agua para tu hidratación.\nDónde y cuándo son las clases:\nJueves, 5:00 P.M."
   },
@@ -459,153 +459,58 @@ export const mockDepartments: Department[] = [
 export const mockDocuments: DocumentResource[] = [
   { 
     id: "doc1", 
-    title: "Comprendiendo la Brecha de Entrega Móvil", 
-    category: "Manuales", 
-    area: "Procesos",
-    businessLine: "Salud",
-    description: "Un análisis profundo de los desafíos en la entrega de servicios móviles y cómo superarlos.", 
-    imageUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxicmlkZ2V8ZW58MHx8fHwxNzUzMzA2NzM1fDA&ixlib=rb-4.1.0&q=80&w=1080", 
-    dataAiHint: "bridge landscape",
+    title: "Manual de Suscripción de Riesgos de Propiedad", 
+    category: "Documentos", 
+    area: "Productos",
+    description: "Manual detallado para la suscripción de riesgos de propiedad.", 
+    imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/cd7bbf9ba57d92b66470bc0bdebe0241-Photoroom.png?raw=true", 
+    dataAiHint: "document icon",
     isFeatured: true,
+    icon: FileText,
   },
   { 
     id: "doc2", 
-    title: "Nuestro Código de Ética", 
-    category: "Documentos", 
-    area: "Legal",
-    description: "Principios y valores que guían nuestro comportamiento y toma de decisiones.", 
-    imageUrl: "https://images.unsplash.com/photo-1446776811953-b23d5795b4e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlYXJ0aCUyMGZyb20lMjBzcGFjZXxlbnwwfHx8fDE3NTMzMDY4MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    dataAiHint: "earth from space",
+    title: "Capacitación de Agentes Exclusivos e Intermediarios", 
+    category: "Presentaciones", 
+    area: "Comercial",
+    description: "Presentación para la capacitación de nuevos agentes.", 
+    imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/d1e5bd3fb3dbfe72692465ea5ecf8fc1-Photoroom.png?raw=true",
+    dataAiHint: "presentation icon",
     isFeatured: true,
+    icon: Presentation,
   },
   { 
     id: "doc3", 
-    title: "Guiones de Atención al Cliente", 
+    title: "Manual de Marca e Identidad Visual", 
     category: "Manuales", 
-    area: "Comercial",
-    businessLine: "Personas",
-    description: "Guía para ofrecer un servicio de excelencia y estandarizado a nuestros clientes.",
-    imageUrl: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWV0aW5nfGVufDB8fHx8MTc1MzMwNjg3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-    dataAiHint: "team meeting",
-    isFeatured: true
+    area: "Marca",
+    description: "Guía de estilo para el uso de la marca Banesco Seguros.",
+    imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/8e3c1e6e903f8a42bf37dd17817d6c25-Photoroom.png?raw=true",
+    dataAiHint: "manual icon",
+    isFeatured: true,
+    icon: BookOpen,
   },
   { 
     id: "doc4", 
-    title: "Manual de Marca", 
+    title: "Imágenes de Colaboradores 2025", 
     category: "Visuales", 
-    area: "Mercadeo",
-    businessLine: "Patrimoniales",
-    description: "Directrices para el uso correcto de nuestra identidad visual y verbal.",
-    imageUrl: "https://images.unsplash.com/photo-1598289431512-b970a521d892?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxncmFwZXN8ZW58MHx8fHwxNzUzMzA2OTI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    dataAiHint: "grapes fruit",
+    area: "Marca",
+    description: "Banco de imágenes de los colaboradores para uso interno y externo.",
+    imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/c5f37eaf1aa79a6e3fe681279bd29e20-Photoroom.png?raw=true",
+    dataAiHint: "image gallery",
     isFeatured: false,
+    icon: ImageIcon,
   },
   { 
     id: "doc5", 
-    title: "Guía de Inspección Digital de Autos", 
-    category: "Documentos", 
-    area: "Suscripción",
-    businessLine: "Automóvil",
-    description: "Procedimiento para realizar inspecciones de vehículos de forma remota y eficiente.",
-    imageUrl: "https://images.unsplash.com/photo-1532384749327-1453d1225585?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHhydW5uaW5nfGVufDB8fHx8MTc1MzMwNzAwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
-    dataAiHint: "woman running",
+    title: "Videos Corporativos", 
+    category: "Videos", 
+    area: "Marca",
+    description: "Colección de videos institucionales.",
+    imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/3d5ef20a09085a388f19c2d6b57a6751-Photoroom.png?raw=true",
+    dataAiHint: "video reel",
     isFeatured: false,
-  },
-  { 
-    id: "doc6", 
-    title: "Procesos de Suscripción", 
-    category: "Manuales", 
-    area: "Suscripción",
-    businessLine: "Personas",
-    description: "Documentación detallada sobre los flujos y políticas de suscripción de pólizas.",
-    imageUrl: "https://images.unsplash.com/photo-1575478422368-2793b2e35b7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoZWxpY29wdGVyfGVufDB8fHx8MTc1MzMwNzA2M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-    dataAiHint: "helicopter sky",
-    isFeatured: false,
-  },
-  { 
-    id: "doc7", 
-    title: "Hemeroteca de Cumplimiento", 
-    category: "Documentos", 
-    area: "Legal",
-    description: "Archivo de noticias y documentos relevantes para el cumplimiento normativo.",
-    imageUrl: "https://images.unsplash.com/photo-1542838132-92c53300491e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2Rpbmd8ZW58MHx8fHwxNzUzMzA3MTIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    dataAiHint: "coding programming",
-    isFeatured: false,
-  },
-  {
-    id: "doc8",
-    title: "Guía de Inducción para Nuevos Empleados",
-    category: "Documentos",
-    area: "Capital Humano",
-    description: "Todo lo que necesitas saber para empezar con buen pie en nuestra organización.",
-    imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxvbmJvYXJkaW5nfGVufDB8fHx8fDE3NTMzMDczNjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    dataAiHint: "onboarding meeting",
-    isFeatured: false,
-  },
-  {
-    id: "doc9",
-    title: "Presentación Corporativa Q1 2025",
-    category: "Presentaciones",
-    area: "General",
-    description: "Resumen de los resultados y objetivos del primer trimestre del año.",
-    imageUrl: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzUzMzA3NDEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    dataAiHint: "business presentation",
-    isFeatured: false,
-  },
-  {
-    id: "doc10",
-    title: "Plan de Cuentas Contable",
-    category: "Documentos",
-    area: "Finanzas",
-    description: "Estructura detallada de las cuentas contables de la empresa.",
-    imageUrl: "https://images.unsplash.com/photo-1554224155-8d04421cd6c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhY2NvdW50aW5nfGVufDB8fHx8fDE3NTMzMDc1MDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    dataAiHint: "accounting calculator",
-    isFeatured: true,
-  },
-  // Playlists as DocumentResources
-  { 
-    id: "P001", 
-    title: "Clásicos en Inglés", 
-    category: "Música", 
-    area: "Mercadeo",
-    description: "Los éxitos que marcaron una época.",
-    imageUrl: "https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib=rb-4.1.0&q=80&w=1080", 
-    linkUrl: "#", 
-    dataAiHint: "classic rock",
-    isFeatured: false,
-  },
-  { 
-    id: "P002", 
-    title: "Rock Suave", 
-    category: "Música", 
-    area: "Mercadeo",
-    description: "La selección perfecta para concentrarse.",
-    imageUrl: "https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxndWl0YXJ8ZW58MHx8fHwxNzUyNjA3MjEwfDA&ixlib=rb-4.1.0&q=80&w=1080", 
-    linkUrl: "#", 
-    dataAiHint: "soft rock",
-    isFeatured: false,
-  },
-  { 
-    id: "P003", 
-    title: "Salsa y Merengue", 
-    category: "Música", 
-    area: "Mercadeo",
-    description: "Ritmos latinos para subir el ánimo.",
-    imageUrl: "https://images.unsplash.com/photo-1570299437488-d430e1e677c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdWJhfGVufDB8fHx8MTc1MjYwNzI5Mnww&ixlib=rb-4.1.0&q=80&w=1080", 
-    linkUrl: "#", 
-    dataAiHint: "latin dance",
-    isFeatured: false,
-  },
-  { 
-    id: "P004", 
-    title: "Solo Éxitos Pop", 
-    category: "Música", 
-    area: "Mercadeo",
-    description: "Las canciones más populares del momento.",
-    imageUrl: "https://images.unsplash.com/photo-1729338043193-3a8464eb20c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8Y29tZXR8ZW58MHx8fHwxNzUyNjAwMDI4fDA&ixlib=rb-4.1.0&q=80&w=1080", 
-    linkUrl: "#", 
-    dataAiHint: "pop music",
-    isFeatured: false,
+    icon: Video,
   },
 ];
 
@@ -819,21 +724,21 @@ export const mockDressCodeItems: DressCodeItem[] = [
     id: "DC002",
     title: "Casual de Negocios",
     description: "Pantalones de vestir o chinos, camisa o blusa, blazer o suéter opcional. Zapatos cerrados.",
-    imageUrl: "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8U0hJUlR8ZW58MHx8fHwxNzU4MjIzMTkwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8U0hJUlR8ZW58MHx8fHwxNzU4MjIzMTkwfDA&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "business casual"
   },
   {
     id: "DC003",
     title: "Smart Casual",
     description: "Vaqueros oscuros (sin roturas), camisa o polo, blusa elegante. Chaqueta deportiva o cárdigan. Zapatos limpios y cuidados.",
-    imageUrl: "https://images.unsplash.com/photo-1598554747436-c9293d6a588f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxKRUFOU3xlbnwwfHx8fDE3NTgyMjQ4NzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1598554747436-c9293d6a588f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxKRUFOU3xlbnwwfHx8fDE3NTgyMjQ4NzB8MA&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "smart casual"
   },
   {
     id: "DC004",
     title: "Viernes Casual",
     description: "Vestimenta más relajada, pero manteniendo profesionalismo. Vaqueros permitidos (limpios), camisetas tipo polo o blusas casuales.",
-    imageUrl: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxUU0hJUlR8ZW58MHx8fHwxNzU4MjI0NzMzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxUU0hJUlR8ZW58MHx8fHwxNzU4MjI0NzMzfDA&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "casual friday"
   },
 ];
@@ -901,7 +806,7 @@ export const mockPlaylist: PlaylistItem[] = [
     id: "P001", 
     title: "Clásicos en Inglés", 
     description: "Los éxitos que marcaron una época.",
-    albumArtUrl: "https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib=rb-4.1.0&q=80&w=1080", 
+    albumArtUrl: "https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib.rb-4.1.0&q=80&w=1080", 
     linkUrl: "#", 
     dataAiHint: "classic rock" 
   },
@@ -909,7 +814,7 @@ export const mockPlaylist: PlaylistItem[] = [
     id: "P002", 
     title: "Rock Suave", 
     description: "La selección perfecta para concentrarse.",
-    albumArtUrl: "https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxndWl0YXJ8ZW58MHx8fHwxNzUyNjA3MjEwfDA&ixlib=rb-4.1.0&q=80&w=1080", 
+    albumArtUrl: "https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxndWl0YXJ8ZW58MHx8fHwxNzUyNjA3MjEwfDA&ixlib.rb-4.1.0&q=80&w=1080", 
     linkUrl: "#", 
     dataAiHint: "soft rock" 
   },
@@ -917,7 +822,7 @@ export const mockPlaylist: PlaylistItem[] = [
     id: "P003", 
     title: "Salsa y Merengue", 
     description: "Ritmos latinos para subir el ánimo.",
-    albumArtUrl: "https://images.unsplash.com/photo-1570299437488-d430e1e677c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdWJhfGVufDB8fHx8MTc1MjYwNzI5Mnww&ixlib=rb-4.1.0&q=80&w=1080", 
+    albumArtUrl: "https://images.unsplash.com/photo-1570299437488-d430e1e677c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdWJhfGVufDB8fHx8MTc1MjYwNzI5Mnww&ixlib.rb-4.1.0&q=80&w=1080", 
     linkUrl: "#", 
     dataAiHint: "latin dance" 
   },
@@ -925,7 +830,7 @@ export const mockPlaylist: PlaylistItem[] = [
     id: "P004", 
     title: "Solo Éxitos Pop", 
     description: "Las canciones más populares del momento.",
-    albumArtUrl: "https://images.unsplash.com/photo-1729338043193-3a8464eb20c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8Y29tZXR8ZW58MHx8fHwxNzUyNjAwMDI4fDA&ixlib=rb-4.1.0&q=80&w=1080", 
+    albumArtUrl: "https://images.unsplash.com/photo-1729338043193-3a8464eb20c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8Y29tZXR8ZW58MHx8fHwxNzUyNjAwMDI4fDA&ixlib.rb-4.1.0&q=80&w=1080", 
     linkUrl: "#", 
     dataAiHint: "pop music"
   },
@@ -979,6 +884,7 @@ export const mockCustomerFeedback: CustomerFeedback[] = [
     
 
   
+
 
 
 
