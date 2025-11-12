@@ -186,7 +186,7 @@ export const mockCourses: Course[] = [
     id: "balanced-scorecard",
     title: "Balanced Scorecard",
     description: "Es herramienta de planeación estratégica que permite a la empresa crear y controlar sus propios indicadores de gestión relacionados dentro de cuatro perspectiva: Financiera, Procesos Internos, Cliente y Formación y Crecimiento",
-    imageUrl: "https://images.unsplash.com/photo-1556155092-8707de31f9c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZXRyaWNzfGVufDB8fHx8fDE3NTQzNDAzMjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1556155092-8707de31f9c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZXRyaWNzfGVufDB8fHx8fDE3NTQzNDAzMjd8MA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "balance chart",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -196,7 +196,7 @@ export const mockCourses: Course[] = [
     id: "como-hacer-feedback",
     title: "¿Cómo hacer Feedback?",
     description: "Es importante tomar en consideración este proceso comunicativo, ya que es toda respuesta o reacción que el receptor envía al emisor de un mensaje. Si las partes no se entienden el mensaje no es claro; Aquí te dejamos algunas recomendaciones.",
-    imageUrl: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb211bmljYXRpb258ZW58MHx8fHwxNzU0MzQxNjIzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb211bmljYXRpb258ZW58MHx8fHwxNzU0MzQxNjIzfDA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "feedback conversation",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -206,7 +206,7 @@ export const mockCourses: Course[] = [
     id: "presentaciones-efectivas",
     title: "Presentaciones Efectivas",
     description: "En este curso obtendrás las habilidades para el diseño de presentaciones corporativas que permitirán alinear la comunicación dentro de la organización adaptándola a las necesidades de la audiencia a la que se dirija.",
-    imageUrl: "https://images.unsplash.com/photo-1541872705-1f73c6400ec9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3BlZWNofGVufDB8fHx8MTc1NDM0MjE4M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1541872705-1f73c6400ec9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3BlZWNofGVufDB8fHx8MTc1NDM0MjE4M3ww&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "conference presentation",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -216,7 +216,7 @@ export const mockCourses: Course[] = [
     id: "plan-de-desarrollo",
     title: "Plan de Desarrollo",
     description: "Aquí podrás  obtener algunos tips para el desarrollo de tu eficiencia, agilidad y el balance entre el trabajo y las exigencias del puesto.",
-    imageUrl: "https://images.unsplash.com/photo-1730382624709-81e52dd294d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9ncmVzc3xlbnwwfHx8fDE3NTQzNDMyNDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1730382624709-81e52dd294d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9ncmVzc3xlbnwwfHx8fDE3NTQzNDMyNDh8MA&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "growth plan",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -327,7 +327,7 @@ export const mockActivities: Activity[] = [
     title: "Teatro",
     date: "2025-07-01",
     location: "Tríadas - Ciudad Banesco",
-    imageUrl: "https://images.unsplash.com/photo-1594908900066-3f47337549d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxBQ1RPUnxlbnwwfHx8fDE3NTA5NTkwODh8MA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1594908900066-3f47337549d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxBQ1RPUnxlbnwwfHx8fDE3NTA5NTkwODh8MA&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "theater workshop",
     description: "Te invitamos a esta maravillosa actividad, en la que desarrollarás competencias para romper el hielo, desenvolverte en diversos contextos con tranquilidad, mejorarás la dicción y oratoria para comunicarte asertivamente.  A partir del 12 de marzo.\n\nDónde y cuándo son las clases:\nMartes y Jueves, 5:00 P.M."
   },
@@ -461,7 +461,8 @@ export const mockDocuments: DocumentResource[] = [
     id: "doc1", 
     title: "Manual de Suscripción de Riesgos de Propiedad", 
     category: "Documentos", 
-    area: "Productos",
+    area: "Suscripción",
+    businessLine: "Patrimoniales",
     description: "Manual detallado para la suscripción de riesgos de propiedad.", 
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/cd7bbf9ba57d92b66470bc0bdebe0241-Photoroom.png?raw=true", 
     dataAiHint: "document icon",
@@ -473,6 +474,7 @@ export const mockDocuments: DocumentResource[] = [
     title: "Capacitación de Agentes Exclusivos e Intermediarios", 
     category: "Presentaciones", 
     area: "Comercial",
+    businessLine: "Personas",
     description: "Presentación para la capacitación de nuevos agentes.", 
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/d1e5bd3fb3dbfe72692465ea5ecf8fc1-Photoroom.png?raw=true",
     dataAiHint: "presentation icon",
@@ -494,7 +496,7 @@ export const mockDocuments: DocumentResource[] = [
     id: "doc4", 
     title: "Imágenes de Colaboradores 2025", 
     category: "Visuales", 
-    area: "Marca",
+    area: "Capital Humano",
     description: "Banco de imágenes de los colaboradores para uso interno y externo.",
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/c5f37eaf1aa79a6e3fe681279bd29e20-Photoroom.png?raw=true",
     dataAiHint: "image gallery",
@@ -511,6 +513,29 @@ export const mockDocuments: DocumentResource[] = [
     dataAiHint: "video reel",
     isFeatured: false,
     icon: Video,
+  },
+  { 
+    id: "doc6", 
+    title: "Calculadora de Primas", 
+    category: "Herramientas", 
+    area: "Actuarial",
+    businessLine: "Automóvil",
+    description: "Herramienta en Excel para el cálculo de primas de seguros de automóvil.",
+    imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_gmx1ljgmx1ljgmx1-Photoroom.png?raw=true",
+    dataAiHint: "calculator icon",
+    isFeatured: false,
+    icon: Code,
+  },
+  { 
+    id: "doc7", 
+    title: "Música de Espera Telefónica", 
+    category: "Música", 
+    area: "Mercadeo",
+    description: "Pista de audio oficial para el sistema de espera telefónica de la empresa.",
+    imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_4qha2p4qha2p4qha-Photoroom.png?raw=true",
+    dataAiHint: "music icon",
+    isFeatured: false,
+    icon: Music,
   },
 ];
 
@@ -884,6 +909,7 @@ export const mockCustomerFeedback: CustomerFeedback[] = [
     
 
   
+
 
 
 
