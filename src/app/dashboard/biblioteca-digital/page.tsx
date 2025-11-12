@@ -122,7 +122,7 @@ const DocumentCard = ({ doc }: { doc: DocumentResource }) => {
 
 
     return (
-        <Card className="p-4 bg-card shadow-sm hover:shadow-lg transition-shadow duration-300 rounded-2xl cursor-pointer flex flex-col justify-between">
+        <Card className="p-4 py-6 bg-card shadow-sm hover:shadow-lg transition-shadow duration-300 rounded-2xl cursor-pointer flex flex-col justify-between">
             <div>
                 <div className="flex items-center gap-2 mb-4">
                     <Badge className={cn("text-[10px] font-normal", areaBadgeClass)}>{doc.area}</Badge>
@@ -183,8 +183,8 @@ export default function BibliotecaDigitalPage() {
             const mainCatLower = selectedMainCategory.toLowerCase();
             const areaMap: { [key: string]: DocumentResource['area'][] } = {
                 corporativo: ['General', 'Legal', 'Capital Humano', 'Procesos'],
-                productos: ['Suscripción', 'Actuarial'],
-                marca: ['Mercadeo'],
+                productos: ['Suscripción', 'Actuarial', 'Productos'],
+                marca: ['Marca', 'Mercadeo'],
                 finanzas: ['Finanzas'],
                 comercial: ['Comercial'],
                 desarrollo: ['Capital Humano', 'Tecnologia'],
@@ -214,8 +214,11 @@ export default function BibliotecaDigitalPage() {
     return (
         <div className="flex min-h-screen bg-background text-foreground px-10">
             {/* Sidebar */}
-            <aside className="w-56 flex-shrink-0 p-6 hidden md:flex flex-col">
+            <aside className="w-64 flex-shrink-0 p-6 hidden md:flex flex-col">
                  <div className="flex items-center gap-3 mb-6">
+                    <div className="p-2 bg-muted rounded-md">
+                        <Library className="h-6 w-6 text-primary" />
+                    </div>
                 </div>
                 <nav className="flex flex-col gap-1">
                     {documentCategories.map(({ name, icon: Icon }) => {
