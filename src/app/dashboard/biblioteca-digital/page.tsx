@@ -33,6 +33,7 @@ import type { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
 
 const documentCategories: { name: DocumentResource['category'] | 'Destacados' | 'Todos', icon: LucideIcon }[] = [
     { name: 'Todos', icon: LayoutGrid },
@@ -177,6 +178,7 @@ export default function BibliotecaDigitalPage() {
     const [activeDocCategory, setActiveDocCategory] = useState<(typeof documentCategories)[number]['name']>('Todos');
     const [activeBusinessLine, setActiveBusinessLine] = useState<(typeof businessLines)[number]>('Todos');
     const [selectedMainCategory, setSelectedMainCategory] = useState<string | null>(null);
+    const [searchTerm, setSearchTerm] = useState('');
 
     const filteredDocuments = useMemo(() => {
         let documents = mockDocuments;
@@ -211,8 +213,15 @@ export default function BibliotecaDigitalPage() {
             documents = documents.filter(doc => doc.businessLine === activeBusinessLine);
         }
 
+        // Filter by search term
+        if (searchTerm) {
+            documents = documents.filter(doc =>
+                doc.title.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+        }
+
         return documents;
-    }, [activeDocCategory, activeBusinessLine, selectedMainCategory]);
+    }, [activeDocCategory, activeBusinessLine, selectedMainCategory, searchTerm]);
 
     const showDocumentsView = selectedMainCategory !== null || activeDocCategory !== 'Todos';
 
@@ -277,9 +286,15 @@ export default function BibliotecaDigitalPage() {
                             </Button>
                         ))}
                          <div className="flex items-center gap-2 ml-auto">
-                            <Button variant="ghost" size="icon" className="text-muted-foreground h-8 w-8">
-                                <Search className="h-4 w-4" />
-                            </Button>
+                            <div className="relative">
+                                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                                <Input
+                                    placeholder="Buscar documentos..."
+                                    className="pl-9 h-8 w-48 text-xs"
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                />
+                            </div>
                             <Button variant="ghost" size="icon" className="text-muted-foreground h-8 w-8">
                                 <Mail className="h-4 w-4" />
                             </Button>
