@@ -416,77 +416,75 @@ export default function DashboardPage() {
         </SectionWrapper>
         
         {/* Portal de Requerimientos Section */}
-        <div id="requerimientos">
-            <SectionWrapper className="bg-background" cardClassName="bg-transparent" contentClassName="p-0">
-                <div className="bg-primary text-primary-foreground relative py-16 px-4 md:px-8 overflow-hidden">
-                    <div className="absolute inset-0 z-0 opacity-10">
-                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="line-pattern" patternUnits="userSpaceOnUse" width="60" height="60" patternTransform="rotate(45)"><line x1="0" y1="0" x2="60" y2="0" stroke="white" strokeWidth="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#line-pattern)"/></svg>
-                    </div>
-                    <div className="container mx-auto text-center relative z-10">
-                        <h2 className="text-4xl md:text-5xl font-bold">Ready to build your team's dream CRM?</h2>
-                        <div className="mt-8 flex justify-center gap-4">
-                            <Button asChild variant="secondary" className="bg-white/90 text-primary hover:bg-white">
-                                <Link href="/dashboard/requerimientos">Start for free</Link>
-                            </Button>
-                            <Button asChild variant="outline" className="border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
-                                <Link href="#">Talk to sales</Link>
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-                <div className="bg-foreground text-background/80 py-16 px-4 md:px-8">
-                    <div className="container mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
-                        <div>
-                            <h4 className="font-semibold mb-3 text-white">Product</h4>
-                            <ul className="space-y-2 text-sm">
-                                <li><Link href="#" className="hover:text-white">Changelog</Link></li>
-                                <li><Link href="#" className="hover:text-white">Customer stories</Link></li>
-                                <li><Link href="#" className="hover:text-white">Security</Link></li>
-                                <li><Link href="#" className="hover:text-white">Chrome extension</Link></li>
-                                <li><Link href="#" className="hover:text-white">iOS app</Link></li>
-                                <li><Link href="#" className="hover:text-white">Android app</Link></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="font-semibold mb-3 text-white">Company</h4>
-                            <ul className="space-y-2 text-sm">
-                                <li><Link href="#" className="hover:text-white">About</Link></li>
-                                <li><Link href="#" className="hover:text-white">Careers</Link></li>
-                                <li><Link href="#" className="hover:text-white">Blog</Link></li>
-                                <li><Link href="#" className="hover:text-white">Startup program</Link></li>
-                            </ul>
-                        </div>
-                         <div>
-                            <h4 className="font-semibold mb-3 text-white">Attio for</h4>
-                            <ul className="space-y-2 text-sm">
-                                <li><Link href="#" className="hover:text-white">Startups</Link></li>
-                                <li><Link href="#" className="hover:text-white">Deal flow</Link></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="font-semibold mb-3 text-white">Support</h4>
-                            <ul className="space-y-2 text-sm">
-                                <li><Link href="#" className="hover:text-white">Help center</Link></li>
-                                <li><Link href="#" className="hover:text-white">Talk to support</Link></li>
-                                <li><Link href="#" className="hover:text-white">API docs</Link></li>
-                                <li><Link href="#" className="hover:text-white">System status</Link></li>
-                            </ul>
-                        </div>
-                        <div>
-                           <h4 className="font-semibold mb-3 text-white">Ready to build?</h4>
-                            <div className="flex flex-col gap-2">
-                                <Button asChild className="bg-neutral-700 hover:bg-neutral-600 text-white justify-center">
-                                    <Link href="#">Start for free</Link>
-                                </Button>
-                                <Button asChild variant="outline" className="text-neutral-300 border-neutral-600 hover:bg-neutral-800 hover:text-white justify-center">
-                                    <Link href="#">Talk to sales</Link>
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </SectionWrapper>
-        </div>
+        <section id="requerimientos" className="w-full">
+          <div className="bg-primary text-primary-foreground relative py-16 overflow-hidden">
+              <div className="absolute inset-0 z-0 opacity-10">
+                  <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="line-pattern" patternUnits="userSpaceOnUse" width="60" height="60" patternTransform="rotate(45)"><line x1="0" y1="0" x2="60" y2="0" stroke="white" strokeWidth="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#line-pattern)"/></svg>
+              </div>
+              <div className="container mx-auto text-center relative z-10 px-4 md:px-8">
+                  <h2 className="text-4xl md:text-5xl font-bold">Ready to build your team's dream CRM?</h2>
+                  <div className="mt-8 flex justify-center gap-4">
+                      <Button asChild variant="secondary" className="bg-white/90 text-primary hover:bg-white">
+                          <Link href="/dashboard/requerimientos">Start for free</Link>
+                      </Button>
+                      <Button asChild variant="outline" className="border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
+                          <Link href="#">Talk to sales</Link>
+                      </Button>
+                  </div>
+              </div>
+          </div>
+          <div className="bg-foreground text-background/80 py-16">
+              <div className="container mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 px-4 md:px-8">
+                  <div>
+                      <h4 className="font-semibold mb-3 text-white">Product</h4>
+                      <ul className="space-y-2 text-sm">
+                          <li><Link href="#" className="hover:text-white">Changelog</Link></li>
+                          <li><Link href="#" className="hover:text-white">Customer stories</Link></li>
+                          <li><Link href="#" className="hover:text-white">Security</Link></li>
+                          <li><Link href="#" className="hover:text-white">Chrome extension</Link></li>
+                          <li><Link href="#" className="hover:text-white">iOS app</Link></li>
+                          <li><Link href="#" className="hover:text-white">Android app</Link></li>
+                      </ul>
+                  </div>
+                  <div>
+                      <h4 className="font-semibold mb-3 text-white">Company</h4>
+                      <ul className="space-y-2 text-sm">
+                          <li><Link href="#" className="hover:text-white">About</Link></li>
+                          <li><Link href="#" className="hover:text-white">Careers</Link></li>
+                          <li><Link href="#" className="hover:text-white">Blog</Link></li>
+                          <li><Link href="#" className="hover:text-white">Startup program</Link></li>
+                      </ul>
+                  </div>
+                   <div>
+                      <h4 className="font-semibold mb-3 text-white">Attio for</h4>
+                      <ul className="space-y-2 text-sm">
+                          <li><Link href="#" className="hover:text-white">Startups</Link></li>
+                          <li><Link href="#" className="hover:text-white">Deal flow</Link></li>
+                      </ul>
+                  </div>
+                  <div>
+                      <h4 className="font-semibold mb-3 text-white">Support</h4>
+                      <ul className="space-y-2 text-sm">
+                          <li><Link href="#" className="hover:text-white">Help center</Link></li>
+                          <li><Link href="#" className="hover:text-white">Talk to support</Link></li>
+                          <li><Link href="#" className="hover:text-white">API docs</Link></li>
+                          <li><Link href="#" className="hover:text-white">System status</Link></li>
+                      </ul>
+                  </div>
+                  <div>
+                     <h4 className="font-semibold mb-3 text-white">Ready to build?</h4>
+                      <div className="flex flex-col gap-2">
+                          <Button asChild className="bg-neutral-700 hover:bg-neutral-600 text-white justify-center">
+                              <Link href="#">Start for free</Link>
+                          </Button>
+                          <Button asChild variant="outline" className="text-neutral-300 border-neutral-600 hover:bg-neutral-800 hover:text-white justify-center">
+                              <Link href="#">Talk to sales</Link>
+                          </Button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </section>
 
 
         {/* Menus Section */}
@@ -541,7 +539,7 @@ export default function DashboardPage() {
                 {/* Left Panel */}
                 <div className="w-full md:w-2/3 relative min-h-[400px] md:min-h-full">
                 <Image
-                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Playa tropical para representar vacaciones"
                     layout="fill"
                     objectFit="cover"
@@ -783,7 +781,7 @@ export default function DashboardPage() {
                 <div className="bg-muted/50 p-12 flex items-center">
                     <div className="w-full grid grid-cols-2 gap-8">
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
+                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Beneficios</h4>
                             <p className="text-xs mt-1 text-white/90">Descubra todas sus ventajas.</p>
@@ -1016,4 +1014,3 @@ export default function DashboardPage() {
     </div>
   );
 }
-
