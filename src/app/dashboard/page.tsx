@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
@@ -421,13 +420,13 @@ export default function DashboardPage() {
         
         {/* Portal de Requerimientos Section */}
         <section id="requerimientos" className="w-full">
-            <div className="bg-primary text-primary-foreground relative py-16">
+            <div style={{'--tw-bg-opacity': '1', backgroundColor: 'rgb(88 101 242 / var(--tw-bg-opacity))'}} className="text-primary-foreground relative py-16">
                 <div className="container mx-auto px-4 md:px-8 relative z-10 text-left">
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
                         Visita nuestro <br /> Portal de Requerimientos
                     </h2>
                     <div className="flex justify-start gap-4">
-                        <Link href="/dashboard/requerimientos" className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-xs font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 px-3 bg-white text-primary hover:bg-white/90">
+                        <Link href="/dashboard/requerimientos" className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-xs font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 px-4 bg-white text-blue-600 hover:bg-white/90">
                             Acceder
                         </Link>
                         <Button asChild variant="outline" className="bg-transparent border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
@@ -437,58 +436,50 @@ export default function DashboardPage() {
                 </div>
             </div>
             <div className="bg-foreground text-background/80 py-16">
-                <div className="container mx-auto px-4 md:px-8 grid grid-cols-2 md:grid-cols-6 gap-8">
-                    <div className="md:col-span-1">
-                        <svg width="40" height="18" viewBox="0 0 40 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white"><path d="M19.7222 5.54545L14.1768 18H9.36364L15.3409 4.90909C16.4318 2.40909 17.6591 0 20.0682 0C22.4773 0 23.7045 2.40909 24.7955 4.90909L30.7727 18H25.9591L20.4136 5.54545H19.7222Z" fill="currentColor"></path><path d="M5.44773 18H0L9.07955 0H14.1364L5.44773 18Z" fill="currentColor"></path><path d="M34.5523 18H40L30.9205 0H25.8636L34.5523 18Z" fill="currentColor"></path></svg>
-                    </div>
+                <div className="container mx-auto px-4 md:px-8 grid grid-cols-2 md:grid-cols-5 gap-8">
                     <div>
-                        <h4 className="font-semibold mb-3 text-white">Product</h4>
+                        <h4 className="font-semibold mb-3 text-white">Capital Humano</h4>
                         <ul className="space-y-2 text-sm">
-                            <li><Link href="#" className="hover:text-white">Changelog</Link></li>
-                            <li><Link href="#" className="hover:text-white">Customer stories</Link></li>
-                            <li><Link href="#" className="hover:text-white">Security</Link></li>
-                            <li><Link href="#" className="hover:text-white">Chrome extension <ArrowUpRight className="inline h-3 w-3" /></Link></li>
-                            <li><Link href="#" className="hover:text-white">iOS app <ArrowUpRight className="inline h-3 w-3" /></Link></li>
-                            <li><Link href="#" className="hover:text-white">Android app <ArrowUpRight className="inline h-3 w-3" /></Link></li>
-                            <li><Link href="#" className="hover:text-white">Zapier <ArrowUpRight className="inline h-3 w-3" /></Link></li>
-                            <li><Link href="#" className="hover:text-white">Integromat <ArrowUpRight className="inline h-3 w-3" /></Link></li>
+                            <li><Link href="#" className="hover:text-white">Vacaciones</Link></li>
+                            <li><Link href="#" className="hover:text-white">Carta de Trabajo</Link></li>
+                            <li><Link href="#" className="hover:text-white">Inquietudes</Link></li>
+                            <li><Link href="#" className="hover:text-white">Solicitudes</Link></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-semibold mb-3 text-white">Company</h4>
+                        <h4 className="font-semibold mb-3 text-white">Comercial</h4>
                         <ul className="space-y-2 text-sm">
-                            <li><Link href="#" className="hover:text-white">About</Link></li>
-                            <li><Link href="#" className="hover:text-white">Careers</Link></li>
-                            <li><Link href="#" className="hover:text-white">Blog</Link></li>
-                            <li><Link href="#" className="hover:text-white">Startup program</Link></li>
+                            <li><Link href="#" className="hover:text-white">Sistemática Comercial</Link></li>
+                            <li><Link href="#" className="hover:text-white">Mercadeo</Link></li>
+                            <li><Link href="#" className="hover:text-white">Comunicaciones</Link></li>
                         </ul>
                     </div>
                      <div>
-                        <h4 className="font-semibold mb-3 text-white">Attio for</h4>
+                        <h4 className="font-semibold mb-3 text-white">Tecnología</h4>
                         <ul className="space-y-2 text-sm">
-                            <li><Link href="#" className="hover:text-white">Startups</Link></li>
-                            <li><Link href="#" className="hover:text-white">Deal flow</Link></li>
+                            <li><Link href="#" className="hover:text-white">Seguridad</Link></li>
+                            <li><Link href="#" className="hover:text-white">Actualizaciones</Link></li>
+                            <li><Link href="#" className="hover:text-white">Solicitudes</Link></li>
+                            <li><Link href="#" className="hover:text-white">Problemas</Link></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-semibold mb-3 text-white">Support</h4>
+                        <h4 className="font-semibold mb-3 text-white">Suscripción</h4>
                         <ul className="space-y-2 text-sm">
-                            <li><Link href="#" className="hover:text-white">Help center</Link></li>
-                            <li><Link href="#" className="hover:text-white">Talk to support</Link></li>
-                            <li><Link href="#" className="hover:text-white">API docs <ArrowUpRight className="inline h-3 w-3" /></Link></li>
-                            <li><Link href="#" className="hover:text-white">System status <ArrowUpRight className="inline h-3 w-3" /></Link></li>
+                            <li><Link href="#" className="hover:text-white">Salud</Link></li>
+                            <li><Link href="#" className="hover:text-white">Patrimonial</Link></li>
+                            <li><Link href="#" className="hover:text-white">Automóvil</Link></li>
+                            <li><Link href="#" className="hover:text-white">Personas</Link></li>
                         </ul>
                     </div>
                     <div>
-                     <h4 className="font-semibold mb-3 text-white">Ready to build?</h4>
-                      <div className="flex flex-col gap-2">
-                          <Button asChild className="bg-neutral-700 hover:bg-neutral-600 text-white justify-center">
-                              <Link href="#">Start for free</Link>
-                          </Button>
-                          <Button asChild variant="outline" className="text-neutral-300 border-neutral-600 hover:bg-neutral-800 hover:text-white justify-center">
-                              <Link href="#">Talk to sales</Link>
-                          </Button>
-                      </div>
+                     <h4 className="font-semibold mb-3 text-white">Suscripción</h4>
+                        <ul className="space-y-2 text-sm">
+                            <li><Link href="#" className="hover:text-white">Salud</Link></li>
+                            <li><Link href="#" className="hover:text-white">Patrimonial</Link></li>
+                            <li><Link href="#" className="hover:text-white">Automóvil</Link></li>
+                            <li><Link href="#" className="hover:text-white">Personas</Link></li>
+                        </ul>
                   </div>
                 </div>
             </div>
