@@ -383,7 +383,7 @@ export default function DashboardPage() {
             <div className="relative grid grid-cols-2 grid-rows-2 gap-4 h-[500px]">
               <div className="col-span-1 row-span-2 rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                      src="https://images.unsplash.com/photo-1599351234741-727bff276c9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNzaW5lc3xlbnwwfHx8fDE3NTI2MDU4MzJ8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1599351234741-727bff276c9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNzaW5lc3xlbnwwfHx8fDE3NTI2MDU4MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                       alt="Equipo de Banesco Seguros"
                       width={400}
                       height={600}
@@ -417,60 +417,77 @@ export default function DashboardPage() {
         
         {/* Portal de Requerimientos Section */}
         <div id="requerimientos">
-             <SectionWrapper className="bg-foreground" cardClassName="bg-transparent" contentClassName="p-0">
-                <div className="bg-primary text-primary-foreground py-16 px-4 md:px-8">
-                    <div className="container mx-auto">
-                        <h2 className="text-4xl md:text-5xl font-bold text-center">Visita nuestro Portal de Requerimientos</h2>
-                        <p className="mt-4 max-w-2xl mx-auto text-center text-primary-foreground/80">
-                            Centraliza tus solicitudes y gestiona tus necesidades en un solo lugar. Encuentra rápidamente lo que necesitas usando nuestros atajos.
-                        </p>
+            <SectionWrapper className="bg-background" cardClassName="bg-transparent" contentClassName="p-0">
+                <div className="bg-primary text-primary-foreground relative py-16 px-4 md:px-8 overflow-hidden">
+                    <div className="absolute inset-0 z-0 opacity-10">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="line-pattern" patternUnits="userSpaceOnUse" width="60" height="60" patternTransform="rotate(45)"><line x1="0" y1="0" x2="60" y2="0" stroke="white" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#line-pattern)"/></svg>
+                    </div>
+                    <div className="container mx-auto text-center relative z-10">
+                        <h2 className="text-4xl md:text-5xl font-bold">Ready to build your team's dream CRM?</h2>
                         <div className="mt-8 flex justify-center gap-4">
                             <Button asChild variant="secondary" className="bg-white/90 text-primary hover:bg-white">
-                                <Link href="/dashboard/requerimientos">Ir al Portal</Link>
+                                <Link href="/dashboard/requerimientos">Start for free</Link>
                             </Button>
-                             <Button asChild variant="outline" className="border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
-                                <Link href="/dashboard/requerimientos">Solicitudes Especiales</Link>
+                            <Button asChild variant="outline" className="border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
+                                <Link href="#">Talk to sales</Link>
                             </Button>
                         </div>
                     </div>
                 </div>
-                 <div className="py-16 px-4 md:px-8">
-                    <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-primary-foreground">
+                <div className="bg-foreground text-background/80 py-16 px-4 md:px-8">
+                    <div className="container mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
                         <div>
-                            <h4 className="font-semibold mb-3 text-white">Capital Humano</h4>
-                            <ul className="space-y-2 text-sm text-white/70">
-                                <li><Link href="/dashboard/requerimientos/capital-humano" className="hover:text-white">Carta de Trabajo</Link></li>
-                                <li><Link href="/dashboard/requerimientos/capital-humano" className="hover:text-white">Carnet y Tarjeta</Link></li>
-                                <li><Link href="/dashboard/requerimientos/capital-humano" className="hover:text-white">IVSS y FAOV</Link></li>
+                            <h4 className="font-semibold mb-3 text-white">Product</h4>
+                            <ul className="space-y-2 text-sm">
+                                <li><Link href="#" className="hover:text-white">Changelog</Link></li>
+                                <li><Link href="#" className="hover:text-white">Customer stories</Link></li>
+                                <li><Link href="#" className="hover:text-white">Security</Link></li>
+                                <li><Link href="#" className="hover:text-white">Chrome extension</Link></li>
+                                <li><Link href="#" className="hover:text-white">iOS app</Link></li>
+                                <li><Link href="#" className="hover:text-white">Android app</Link></li>
                             </ul>
                         </div>
                         <div>
-                            <h4 className="font-semibold mb-3 text-white">Soporte</h4>
-                            <ul className="space-y-2 text-sm text-white/70">
-                                <li><Link href="/dashboard/requerimientos/ti" className="hover:text-white">Soporte TI</Link></li>
-                                <li><Link href="/dashboard/requerimientos/seguridad-informacion" className="hover:text-white">Seguridad</Link></li>
-                                <li><Link href="/dashboard/faq" className="hover:text-white">Preguntas Frecuentes</Link></li>
+                            <h4 className="font-semibold mb-3 text-white">Company</h4>
+                            <ul className="space-y-2 text-sm">
+                                <li><Link href="#" className="hover:text-white">About</Link></li>
+                                <li><Link href="#" className="hover:text-white">Careers</Link></li>
+                                <li><Link href="#" className="hover:text-white">Blog</Link></li>
+                                <li><Link href="#" className="hover:text-white">Startup program</Link></li>
+                            </ul>
+                        </div>
+                         <div>
+                            <h4 className="font-semibold mb-3 text-white">Attio for</h4>
+                            <ul className="space-y-2 text-sm">
+                                <li><Link href="#" className="hover:text-white">Startups</Link></li>
+                                <li><Link href="#" className="hover:text-white">Deal flow</Link></li>
                             </ul>
                         </div>
                         <div>
-                            <h4 className="font-semibold mb-3 text-white">Gestiones</h4>
-                            <ul className="space-y-2 text-sm text-white/70">
-                                <li><Link href="/dashboard/vacaciones" className="hover:text-white">Vacaciones</Link></li>
-                                <li><Link href="/dashboard/requerimientos/procura" className="hover:text-white">Procura</Link></li>
-                                <li><Link href="/dashboard/requerimientos/mercadeo" className="hover:text-white">Mercadeo</Link></li>
+                            <h4 className="font-semibold mb-3 text-white">Support</h4>
+                            <ul className="space-y-2 text-sm">
+                                <li><Link href="#" className="hover:text-white">Help center</Link></li>
+                                <li><Link href="#" className="hover:text-white">Talk to support</Link></li>
+                                <li><Link href="#" className="hover:text-white">API docs</Link></li>
+                                <li><Link href="#" className="hover:text-white">System status</Link></li>
                             </ul>
                         </div>
                         <div>
-                            <h4 className="font-semibold mb-3 text-white">Legal</h4>
-                            <ul className="space-y-2 text-sm text-white/70">
-                                <li><Link href="/dashboard/requerimientos/consultoria-juridica" className="hover:text-white">Consultoría Jurídica</Link></li>
-                                <li><Link href="/dashboard/biblioteca" className="hover:text-white">Biblioteca</Link></li>
-                            </ul>
+                           <h4 className="font-semibold mb-3 text-white">Ready to build?</h4>
+                            <div className="flex flex-col gap-2">
+                                <Button asChild className="bg-neutral-700 hover:bg-neutral-600 text-white justify-center">
+                                    <Link href="#">Start for free</Link>
+                                </Button>
+                                <Button asChild variant="outline" className="text-neutral-300 border-neutral-600 hover:bg-neutral-800 hover:text-white justify-center">
+                                    <Link href="#">Talk to sales</Link>
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </SectionWrapper>
         </div>
+
 
         {/* Menus Section */}
         <div id="menu">
@@ -576,7 +593,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib.rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib-rb-4.1.0&q=80&w=1080"
                         alt="Recomendaciones de viaje"
                         layout="fill"
                         objectFit="cover"
