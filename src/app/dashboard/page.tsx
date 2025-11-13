@@ -418,7 +418,7 @@ export default function DashboardPage() {
         {/* Portal de Requerimientos Section */}
         <div id="requerimientos">
             <SectionWrapper className="flex flex-col justify-center py-12 md:py-16">
-              <Card className="relative w-full overflow-hidden rounded-2xl bg-[#0F4C5C] text-primary-foreground shadow-2xl">
+              <Card className="relative w-full overflow-hidden rounded-2xl bg-primary text-primary-foreground shadow-2xl">
                   <div className="p-8 md:p-12">
                     <div className="grid md:grid-cols-2 gap-8 items-center w-full">
                         <div className="relative z-10 space-y-4">
@@ -443,11 +443,11 @@ export default function DashboardPage() {
                         </div>
                     </div>
                   </div>
-                  <div className="bg-[#0D434F] p-8 md:p-12">
+                  <div className="bg-secondary p-8 md:p-12">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         <div>
                           <h4 className="font-semibold mb-3">Capital Humano</h4>
-                          <ul className="space-y-2 text-sm text-primary-foreground/80">
+                          <ul className="space-y-2 text-sm text-secondary-foreground/80">
                             <li><Link href="/dashboard/requerimientos/capital-humano" className="hover:text-white">Carta de Trabajo</Link></li>
                             <li><Link href="/dashboard/requerimientos/capital-humano" className="hover:text-white">Carnet y Tarjeta</Link></li>
                             <li><Link href="/dashboard/requerimientos/capital-humano" className="hover:text-white">IVSS y FAOV</Link></li>
@@ -455,7 +455,7 @@ export default function DashboardPage() {
                         </div>
                          <div>
                           <h4 className="font-semibold mb-3">Soporte</h4>
-                          <ul className="space-y-2 text-sm text-primary-foreground/80">
+                          <ul className="space-y-2 text-sm text-secondary-foreground/80">
                             <li><Link href="/dashboard/requerimientos/ti" className="hover:text-white">Soporte TI</Link></li>
                             <li><Link href="/dashboard/requerimientos/seguridad-informacion" className="hover:text-white">Seguridad</Link></li>
                             <li><Link href="/dashboard/faq" className="hover:text-white">Preguntas Frecuentes</Link></li>
@@ -463,7 +463,7 @@ export default function DashboardPage() {
                         </div>
                         <div>
                           <h4 className="font-semibold mb-3">Gestiones</h4>
-                           <ul className="space-y-2 text-sm text-primary-foreground/80">
+                           <ul className="space-y-2 text-sm text-secondary-foreground/80">
                             <li><Link href="/dashboard/vacaciones" className="hover:text-white">Vacaciones</Link></li>
                             <li><Link href="/dashboard/requerimientos/procura" className="hover:text-white">Procura</Link></li>
                             <li><Link href="/dashboard/requerimientos/mercadeo" className="hover:text-white">Mercadeo</Link></li>
@@ -471,7 +471,7 @@ export default function DashboardPage() {
                         </div>
                         <div>
                           <h4 className="font-semibold mb-3">Legal</h4>
-                           <ul className="space-y-2 text-sm text-primary-foreground/80">
+                           <ul className="space-y-2 text-sm text-secondary-foreground/80">
                             <li><Link href="/dashboard/requerimientos/consultoria-juridica" className="hover:text-white">Consultoría Jurídica</Link></li>
                             <li><Link href="/dashboard/biblioteca" className="hover:text-white">Biblioteca</Link></li>
                           </ul>
@@ -534,7 +534,7 @@ export default function DashboardPage() {
                 {/* Left Panel */}
                 <div className="w-full md:w-2/3 relative min-h-[400px] md:min-h-full">
                 <Image
-                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib-rb-4.1.0&q=80&w=1080"
                     alt="Playa tropical para representar vacaciones"
                     layout="fill"
                     objectFit="cover"
@@ -684,7 +684,7 @@ export default function DashboardPage() {
           <SectionWrapper>
             <Card className="relative overflow-hidden rounded-2xl shadow-lg min-h-[500px] flex flex-col md:flex-row">
               <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib=rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib-rb-4.1.0&q=80&w=1080"
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
@@ -827,7 +827,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
