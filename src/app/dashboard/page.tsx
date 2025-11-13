@@ -420,7 +420,7 @@ export default function DashboardPage() {
             <SectionWrapper className="bg-background" cardClassName="bg-transparent" contentClassName="p-0">
                 <div className="bg-primary text-primary-foreground relative py-16 px-4 md:px-8 overflow-hidden">
                     <div className="absolute inset-0 z-0 opacity-10">
-                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="line-pattern" patternUnits="userSpaceOnUse" width="60" height="60" patternTransform="rotate(45)"><line x1="0" y1="0" x2="60" y2="0" stroke="white" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#line-pattern)"/></svg>
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="line-pattern" patternUnits="userSpaceOnUse" width="60" height="60" patternTransform="rotate(45)"><line x1="0" y1="0" x2="60" y2="0" stroke="white" strokeWidth="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#line-pattern)"/></svg>
                     </div>
                     <div className="container mx-auto text-center relative z-10">
                         <h2 className="text-4xl md:text-5xl font-bold">Ready to build your team's dream CRM?</h2>
@@ -593,7 +593,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib-rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib.rb-4.1.0&q=80&w=1080"
                         alt="Recomendaciones de viaje"
                         layout="fill"
                         objectFit="cover"
@@ -691,7 +691,7 @@ export default function DashboardPage() {
           <SectionWrapper>
             <Card className="relative overflow-hidden rounded-2xl shadow-lg min-h-[500px] flex flex-col md:flex-row">
               <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib-rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
@@ -1016,3 +1016,4 @@ export default function DashboardPage() {
     </div>
   );
 }
+
