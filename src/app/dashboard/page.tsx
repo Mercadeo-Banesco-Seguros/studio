@@ -393,7 +393,7 @@ export default function DashboardPage() {
               </div>
               <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                      src="https://images.unsplash.com/photo-1529180979161-06b8b6d6f2be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8ZmFtaWx5fGVufDB8fHx8MTc1MjYwNTY2Nnww&ixlib-rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1529180979161-06b8b6d6f2be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8ZmFtaWx5fGVufDB8fHx8MTc1MjYwNTY2Nnww&ixlib=rb-4.1.0&q=80&w=1080"
                       alt="Cliente satisfecho"
                       width={400}
                       height={400}
@@ -418,45 +418,30 @@ export default function DashboardPage() {
         {/* Portal de Requerimientos Section */}
         <div id="requerimientos">
             <SectionWrapper className="flex flex-col justify-center py-12 md:py-16">
-            <Card className="relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-secondary to-primary p-8 md:p-12 text-primary-foreground shadow-2xl min-h-[500px] flex flex-col justify-center">
-                <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-white/5"></div>
-                <div className="absolute -right-10 -top-10 w-60 h-60 rounded-full bg-white/5"></div>
-                <div className="absolute right-0 top-0 w-40 h-40 rounded-full bg-white/5"></div>
-                <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
-                    <div className="space-y-4">
-                        <h2 className="text-4xl md:text-5xl font-bold">Portal de Requerimientos</h2>
-                        <p className="max-w-md text-primary-foreground/80">
-                            Centraliza tus solicitudes y gestiona tus necesidades en un solo lugar.
-                        </p>
-                    </div>
-                    <div className="space-y-3">
-                        <Link href="/dashboard/requerimientos/rh" className="group flex items-center justify-between p-3 pl-4 bg-black/20 rounded-full hover:bg-black/30 transition-colors">
-                            <span className="text-sm font-medium">Recursos Humanos</span>
-                            <div className="h-6 w-6 rounded-full bg-primary-foreground/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <ArrowRight className="h-4 w-4 text-white" />
-                            </div>
-                        </Link>
-                        <Link href="/dashboard/requerimientos/it" className="group flex items-center justify-between p-3 pl-4 bg-black/20 rounded-full hover:bg-black/30 transition-colors">
-                            <span className="text-sm font-medium">Soporte TI</span>
-                            <div className="h-6 w-6 rounded-full bg-primary-foreground/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <ArrowRight className="h-4 w-4 text-white" />
-                            </div>
-                        </Link>
-                        <Link href="/dashboard/requerimientos/servicios" className="group flex items-center justify-between p-3 pl-4 bg-black/20 rounded-full hover:bg-black/30 transition-colors">
-                            <span className="text-sm font-medium">Servicios Generales</span>
-                            <div className="h-6 w-6 rounded-full bg-primary-foreground/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <ArrowRight className="h-4 w-4 text-white" />
-                            </div>
-                        </Link>
-                        <Link href="/dashboard/requerimientos" className="group flex items-center justify-between p-3 pl-4 bg-black/20 rounded-full hover:bg-black/30 transition-colors">
-                            <span className="text-sm font-medium">Ver todos</span>
-                            <div className="h-6 w-6 rounded-full bg-primary-foreground/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                <ArrowRight className="h-4 w-4 text-white" />
-                            </div>
-                        </Link>
-                    </div>
-                </div>
-            </Card>
+              <Card className="relative w-full overflow-hidden rounded-2xl bg-[#0F4C5C] p-8 md:p-12 text-primary-foreground shadow-2xl min-h-[300px] flex items-center">
+                  <div className="grid md:grid-cols-2 gap-8 items-center w-full">
+                      <div className="relative z-10 space-y-4">
+                          <h2 className="text-4xl md:text-5xl font-bold">Visita nuestro Portal de Requerimientos</h2>
+                          <p className="max-w-md text-primary-foreground/80">
+                              Centraliza tus solicitudes y gestiona tus necesidades en un solo lugar.
+                          </p>
+                           <Button asChild variant="secondary" className="mt-4 bg-white/90 text-foreground hover:bg-white">
+                            <Link href="/dashboard/requerimientos">
+                              Ir al Portal
+                            </Link>
+                          </Button>
+                      </div>
+                      <div className="relative h-64 w-full hidden md:block">
+                           <Image
+                              src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_g9y9e3g9y9e3g9y9-Photoroom.png?raw=true"
+                              alt="Buzón de correo"
+                              layout="fill"
+                              objectFit="contain"
+                              data-ai-hint="mailbox letter"
+                          />
+                      </div>
+                  </div>
+              </Card>
             </SectionWrapper>
         </div>
 
@@ -512,7 +497,7 @@ export default function DashboardPage() {
                 {/* Left Panel */}
                 <div className="w-full md:w-2/3 relative min-h-[400px] md:min-h-full">
                 <Image
-                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Playa tropical para representar vacaciones"
                     layout="fill"
                     objectFit="cover"
@@ -774,7 +759,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib.rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
+                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Centros de Atención</h4>
                             <p className="text-xs mt-1 text-white/90">Encuentre la clínica más cercana.</p>
