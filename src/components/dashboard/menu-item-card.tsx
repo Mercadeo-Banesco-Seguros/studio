@@ -4,6 +4,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import type { MenuItem } from "@/ai/flows/get-menu-items-flow";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "../ui/button";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 interface MenuItemCardProps {
   item: MenuItem;
@@ -22,11 +25,18 @@ export function MenuItemCard({ item, isCurrentDay }: MenuItemCardProps) {
           <p className="text-sm text-muted-foreground mt-2 max-w-md mx-auto md:mx-0">
               {item.description}
           </p>
-          {item.price && (
-              <Badge variant="secondary" className="text-sm font-semibold rounded-md px-3 py-1 mt-4">
-                  {item.price}
-              </Badge>
-          )}
+          <div className="mt-4 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+            {item.price && (
+                <Badge variant="secondary" className="text-sm font-semibold rounded-md px-3 py-1">
+                    {item.price}
+                </Badge>
+            )}
+            <Button asChild size="sm" className="rounded-full text-xs" variant="outline">
+                <Link href="/dashboard/bienestar">
+                    Ver Menú Semanal <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+            </Button>
+          </div>
       </div>
        <div className="relative h-80 w-80 flex-shrink-0">
           {item.imageUrl ? (

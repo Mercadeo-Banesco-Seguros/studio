@@ -471,7 +471,7 @@ export default function DashboardPage() {
                            Revise la oferta gastronómica completa preparada para hoy. Encontrará el plato principal, las alternativas del día y las opciones de postre, garantizando siempre una alimentación balanceada.
                         </p>
                     </div>
-                    <div className="md:col-span-7 flex justify-center items-center">
+                    <div className="md:col-span-7 flex flex-col justify-center items-center">
                         {isLoadingMenu ? (
                             <Skeleton className="h-[450px] w-full rounded-2xl" />
                         ) : todaysMenus.length > 0 && currentMenu ? (
@@ -492,16 +492,14 @@ export default function DashboardPage() {
                             <Card className="col-span-full">
                                 <CardContent className="p-8 text-center text-muted-foreground">
                                     <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
+                                    <Button asChild size="sm" className="rounded-full text-xs mt-4" variant="outline">
+                                        <Link href="/dashboard/bienestar">
+                                            Ver Menú Semanal <ArrowRight className="ml-2 h-4 w-4" />
+                                        </Link>
+                                    </Button>
                                 </CardContent>
                             </Card>
                         )}
-                         <div className="text-center mt-8">
-                            <Button asChild size="sm" className="rounded-full text-xs" variant="outline">
-                                <Link href="/dashboard/bienestar">
-                                    Ver Menú Semanal <ArrowRight className="ml-2 h-4 w-4" />
-                                </Link>
-                            </Button>
-                        </div>
                     </div>
                 </div>
             </SectionWrapper>
@@ -536,7 +534,7 @@ export default function DashboardPage() {
                 <div className="space-y-4 my-auto">
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib.rb-4.1.0&q=80&w=1080"
                         alt="Solicitudes de vacaciones"
                         layout="fill"
                         objectFit="cover"
