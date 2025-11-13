@@ -407,7 +407,7 @@ export default function DashboardPage() {
               </div>
               <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                      src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib.rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib-rb-4.1.0&q=80&w=1080"
                       alt="Oficina de Banesco"
                       width={400}
                       height={400}
@@ -427,9 +427,9 @@ export default function DashboardPage() {
                         Visita nuestro <br /> Portal de Requerimientos
                     </h2>
                     <div className="flex justify-start gap-4">
-                         <Link href="/dashboard/requerimientos" className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-xs font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 px-4 bg-white text-primary hover:bg-white/90">
-                            Acceder
-                        </Link>
+                        <Button asChild className="text-xs h-9 px-4 bg-white text-primary hover:bg-white/90">
+                            <Link href="/dashboard/requerimientos">Acceder</Link>
+                        </Button>
                         <Button asChild variant="outline" className="bg-transparent border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground text-xs h-9 px-4">
                             <Link href="#">Consultar</Link>
                         </Button>
@@ -437,24 +437,26 @@ export default function DashboardPage() {
                 </div>
             </div>
             <div className="bg-foreground text-background/80 py-16">
-                <div className="container mx-auto px-4 md:px-8 grid grid-cols-2 md:grid-cols-5 gap-8">
-                    <div>
-                        <h4 className="font-semibold mb-3 text-white">Capital Humano</h4>
-                        <ul className="space-y-2 text-sm">
-                            <li><Link href="#" className="hover:text-white">Vacaciones</Link></li>
-                            <li><Link href="#" className="hover:text-white">Carta de Trabajo</Link></li>
-                            <li><Link href="#" className="hover:text-white">Inquietudes</Link></li>
-                            <li><Link href="#" className="hover:text-white">Solicitudes</Link></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="font-semibold mb-3 text-white">Comercial</h4>
-                        <ul className="space-y-2 text-sm">
-                            <li><Link href="#" className="hover:text-white">Sistemática Comercial</Link></li>
-                            <li><Link href="#" className="hover:text-white">Mercadeo</Link></li>
-                            <li><Link href="#" className="hover:text-white">Comunicaciones</Link></li>
-                        </ul>
-                    </div>
+                <div className="container mx-auto px-4 md:px-8">
+                  <h3 className="font-semibold mb-4 text-white">Atajos</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                      <div>
+                          <h4 className="font-semibold mb-3 text-white">Capital Humano</h4>
+                          <ul className="space-y-2 text-sm">
+                              <li><Link href="#" className="hover:text-white">Vacaciones</Link></li>
+                              <li><Link href="#" className="hover:text-white">Carta de Trabajo</Link></li>
+                              <li><Link href="#" className="hover:text-white">Inquietudes</Link></li>
+                              <li><Link href="#" className="hover:text-white">Solicitudes</Link></li>
+                          </ul>
+                      </div>
+                      <div>
+                          <h4 className="font-semibold mb-3 text-white">Comercial</h4>
+                          <ul className="space-y-2 text-sm">
+                              <li><Link href="#" className="hover:text-white">Sistemática Comercial</Link></li>
+                              <li><Link href="#" className="hover:text-white">Mercadeo</Link></li>
+                              <li><Link href="#" className="hover:text-white">Comunicaciones</Link></li>
+                          </ul>
+                      </div>
                      <div>
                         <h4 className="font-semibold mb-3 text-white">Tecnología</h4>
                         <ul className="space-y-2 text-sm">
@@ -473,14 +475,6 @@ export default function DashboardPage() {
                             <li><Link href="#" className="hover:text-white">Personas</Link></li>
                         </ul>
                     </div>
-                    <div>
-                     <h4 className="font-semibold mb-3 text-white">Suscripción</h4>
-                        <ul className="space-y-2 text-sm">
-                            <li><Link href="#" className="hover:text-white">Salud</Link></li>
-                            <li><Link href="#" className="hover:text-white">Patrimonial</Link></li>
-                            <li><Link href="#" className="hover:text-white">Automóvil</Link></li>
-                            <li><Link href="#" className="hover:text-white">Personas</Link></li>
-                        </ul>
                   </div>
                 </div>
             </div>
@@ -534,7 +528,7 @@ export default function DashboardPage() {
                 {/* Left Panel */}
                 <div className="w-full md:w-2/3 relative min-h-[400px] md:min-h-full">
                 <Image
-                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Playa tropical para representar vacaciones"
                     layout="fill"
                     objectFit="cover"
@@ -776,7 +770,7 @@ export default function DashboardPage() {
                 <div className="bg-muted/50 p-12 flex items-center">
                     <div className="w-full grid grid-cols-2 gap-8">
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
+                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Beneficios</h4>
                             <p className="text-xs mt-1 text-white/90">Descubra todas sus ventajas.</p>
@@ -786,7 +780,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
