@@ -422,13 +422,13 @@ export default function DashboardPage() {
         {/* Portal de Requerimientos Section */}
         <section id="requerimientos" className="w-full">
             <div className="bg-primary text-primary-foreground relative py-16">
-                <div className="container mx-auto text-left relative z-10">
-                    <h2 className="text-5xl md:text-6xl font-bold">Visita nuestro <br /> Portal de Requerimientos</h2>
-                    <div className="mt-8 flex justify-start gap-4">
+                <div className="container mx-auto text-center relative z-10">
+                    <h2 className="text-4xl md:text-5xl font-bold">Visita nuestro Portal de Requerimientos</h2>
+                    <div className="mt-8 flex justify-center gap-4">
                         <Button asChild variant="secondary" className="bg-white text-primary hover:bg-white/90">
                             <Link href="/dashboard/requerimientos">Acceder</Link>
                         </Button>
-                        <Button asChild variant="outline" className="border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
+                        <Button asChild variant="outline" className="border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground bg-transparent">
                             <Link href="#">Consultar</Link>
                         </Button>
                     </div>
@@ -540,7 +540,7 @@ export default function DashboardPage() {
                 {/* Left Panel */}
                 <div className="w-full md:w-2/3 relative min-h-[400px] md:min-h-full">
                 <Image
-                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib-rb-4.1.0&q=80&w=1080"
                     alt="Playa tropical para representar vacaciones"
                     layout="fill"
                     objectFit="cover"
