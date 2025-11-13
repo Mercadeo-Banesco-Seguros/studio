@@ -418,28 +418,65 @@ export default function DashboardPage() {
         {/* Portal de Requerimientos Section */}
         <div id="requerimientos">
             <SectionWrapper className="flex flex-col justify-center py-12 md:py-16">
-              <Card className="relative w-full overflow-hidden rounded-2xl bg-[#0F4C5C] p-8 md:p-12 text-primary-foreground shadow-2xl min-h-[300px] flex items-center">
-                  <div className="grid md:grid-cols-2 gap-8 items-center w-full">
-                      <div className="relative z-10 space-y-4">
-                          <h2 className="text-4xl md:text-5xl font-bold">Visita nuestro Portal de Requerimientos</h2>
-                          <p className="max-w-md text-primary-foreground/80">
-                              Centraliza tus solicitudes y gestiona tus necesidades en un solo lugar.
-                          </p>
-                           <Button asChild variant="secondary" className="mt-4 bg-white/90 text-foreground hover:bg-white">
-                            <Link href="/dashboard/requerimientos">
-                              Ir al Portal
-                            </Link>
-                          </Button>
-                      </div>
-                      <div className="relative h-64 w-full hidden md:block">
-                           <Image
-                              src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_g9y9e3g9y9e3g9y9-Photoroom.png?raw=true"
-                              alt="Buzón de correo"
-                              layout="fill"
-                              objectFit="contain"
-                              data-ai-hint="mailbox letter"
-                          />
-                      </div>
+              <Card className="relative w-full overflow-hidden rounded-2xl bg-[#0F4C5C] text-primary-foreground shadow-2xl">
+                  <div className="p-8 md:p-12">
+                    <div className="grid md:grid-cols-2 gap-8 items-center w-full">
+                        <div className="relative z-10 space-y-4">
+                            <h2 className="text-4xl md:text-5xl font-bold">Visita nuestro Portal de Requerimientos</h2>
+                            <p className="max-w-md text-primary-foreground/80">
+                                Centraliza tus solicitudes y gestiona tus necesidades en un solo lugar.
+                            </p>
+                            <Button asChild variant="secondary" className="mt-4 bg-white/90 text-foreground hover:bg-white">
+                              <Link href="/dashboard/requerimientos">
+                                Ir al Portal
+                              </Link>
+                            </Button>
+                        </div>
+                        <div className="relative h-64 w-full hidden md:block">
+                            <Image
+                                src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(44).png?raw=true"
+                                alt="Buzón de correo"
+                                layout="fill"
+                                objectFit="contain"
+                                data-ai-hint="mailbox letter"
+                            />
+                        </div>
+                    </div>
+                  </div>
+                  <div className="bg-[#0D434F] p-8 md:p-12">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div>
+                          <h4 className="font-semibold mb-3">Capital Humano</h4>
+                          <ul className="space-y-2 text-sm text-primary-foreground/80">
+                            <li><Link href="/dashboard/requerimientos/capital-humano" className="hover:text-white">Carta de Trabajo</Link></li>
+                            <li><Link href="/dashboard/requerimientos/capital-humano" className="hover:text-white">Carnet y Tarjeta</Link></li>
+                            <li><Link href="/dashboard/requerimientos/capital-humano" className="hover:text-white">IVSS y FAOV</Link></li>
+                          </ul>
+                        </div>
+                         <div>
+                          <h4 className="font-semibold mb-3">Soporte</h4>
+                          <ul className="space-y-2 text-sm text-primary-foreground/80">
+                            <li><Link href="/dashboard/requerimientos/ti" className="hover:text-white">Soporte TI</Link></li>
+                            <li><Link href="/dashboard/requerimientos/seguridad-informacion" className="hover:text-white">Seguridad</Link></li>
+                            <li><Link href="/dashboard/faq" className="hover:text-white">Preguntas Frecuentes</Link></li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-3">Gestiones</h4>
+                           <ul className="space-y-2 text-sm text-primary-foreground/80">
+                            <li><Link href="/dashboard/vacaciones" className="hover:text-white">Vacaciones</Link></li>
+                            <li><Link href="/dashboard/requerimientos/procura" className="hover:text-white">Procura</Link></li>
+                            <li><Link href="/dashboard/requerimientos/mercadeo" className="hover:text-white">Mercadeo</Link></li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-3">Legal</h4>
+                           <ul className="space-y-2 text-sm text-primary-foreground/80">
+                            <li><Link href="/dashboard/requerimientos/consultoria-juridica" className="hover:text-white">Consultoría Jurídica</Link></li>
+                            <li><Link href="/dashboard/biblioteca" className="hover:text-white">Biblioteca</Link></li>
+                          </ul>
+                        </div>
+                    </div>
                   </div>
               </Card>
             </SectionWrapper>
@@ -461,7 +498,7 @@ export default function DashboardPage() {
                             <Skeleton className="h-[450px] w-full rounded-2xl" />
                         ) : todaysMenus.length > 0 && currentMenu ? (
                             <div className="relative">
-                                <MenuItemCard item={currentMenu} />
+                                <MenuItemCard item={currentMenu} isCurrentDay={true} />
                                 {todaysMenus.length > 1 && (
                                     <>
                                         <Button variant="outline" size="icon" className="absolute top-1/2 -translate-y-1/2 -left-5 h-10 w-10 rounded-full shadow-md" onClick={() => handleMenuChange('prev')}>
@@ -519,7 +556,7 @@ export default function DashboardPage() {
                 <div className="space-y-4 my-auto">
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib.rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib-rb-4.1.0&q=80&w=1080"
                         alt="Solicitudes de vacaciones"
                         layout="fill"
                         objectFit="cover"
@@ -534,7 +571,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8cGxhbmV8ZW58MHx8fHwxNzUyNTA2MTEzfDA&ixlib.rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8cGxhbmV8ZW58MHx8fHwxNzUyNTA2MTEzfDA&ixlib-rb-4.1.0&q=80&w=1080"
                         alt="Fechas Disponibles"
                         layout="fill"
                         objectFit="cover"
@@ -749,7 +786,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
