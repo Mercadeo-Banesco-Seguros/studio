@@ -383,7 +383,7 @@ export default function DashboardPage() {
             <div className="relative grid grid-cols-2 grid-rows-2 gap-4 h-[500px]">
               <div className="col-span-1 row-span-2 rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                      src="https://images.unsplash.com/photo-1599351234741-727bff276c9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNzaW5lc3xlbnwwfHx8fDE3NTI2MDU4MzJ8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1599351234741-727bff276c9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNzaW5lc3xlbnwwfHx8fDE3NTI2MDU4MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                       alt="Equipo de Banesco Seguros"
                       width={400}
                       height={600}
@@ -444,38 +444,38 @@ export default function DashboardPage() {
                         </div>
                     </div>
                 </Card>
-                <Card className="w-full overflow-hidden rounded-2xl bg-secondary text-secondary-foreground shadow-2xl">
+                <Card className="w-full overflow-hidden rounded-2xl bg-muted/50 shadow-2xl">
                     <div className="p-8 md:p-12">
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                             <div>
-                                <h4 className="font-semibold mb-3">Capital Humano</h4>
-                                <ul className="space-y-2 text-sm text-secondary-foreground/80">
-                                    <li><Link href="/dashboard/requerimientos/capital-humano" className="hover:text-white">Carta de Trabajo</Link></li>
-                                    <li><Link href="/dashboard/requerimientos/capital-humano" className="hover:text-white">Carnet y Tarjeta</Link></li>
-                                    <li><Link href="/dashboard/requerimientos/capital-humano" className="hover:text-white">IVSS y FAOV</Link></li>
+                                <h4 className="font-semibold mb-3 text-primary">Capital Humano</h4>
+                                <ul className="space-y-2 text-sm text-muted-foreground">
+                                    <li><Link href="/dashboard/requerimientos/capital-humano" className="hover:text-primary">Carta de Trabajo</Link></li>
+                                    <li><Link href="/dashboard/requerimientos/capital-humano" className="hover:text-primary">Carnet y Tarjeta</Link></li>
+                                    <li><Link href="/dashboard/requerimientos/capital-humano" className="hover:text-primary">IVSS y FAOV</Link></li>
                                 </ul>
                             </div>
                             <div>
-                                <h4 className="font-semibold mb-3">Soporte</h4>
-                                <ul className="space-y-2 text-sm text-secondary-foreground/80">
-                                    <li><Link href="/dashboard/requerimientos/ti" className="hover:text-white">Soporte TI</Link></li>
-                                    <li><Link href="/dashboard/requerimientos/seguridad-informacion" className="hover:text-white">Seguridad</Link></li>
-                                    <li><Link href="/dashboard/faq" className="hover:text-white">Preguntas Frecuentes</Link></li>
+                                <h4 className="font-semibold mb-3 text-primary">Soporte</h4>
+                                <ul className="space-y-2 text-sm text-muted-foreground">
+                                    <li><Link href="/dashboard/requerimientos/ti" className="hover:text-primary">Soporte TI</Link></li>
+                                    <li><Link href="/dashboard/requerimientos/seguridad-informacion" className="hover:text-primary">Seguridad</Link></li>
+                                    <li><Link href="/dashboard/faq" className="hover:text-primary">Preguntas Frecuentes</Link></li>
                                 </ul>
                             </div>
                             <div>
-                                <h4 className="font-semibold mb-3">Gestiones</h4>
-                                <ul className="space-y-2 text-sm text-secondary-foreground/80">
-                                    <li><Link href="/dashboard/vacaciones" className="hover:text-white">Vacaciones</Link></li>
-                                    <li><Link href="/dashboard/requerimientos/procura" className="hover:text-white">Procura</Link></li>
-                                    <li><Link href="/dashboard/requerimientos/mercadeo" className="hover:text-white">Mercadeo</Link></li>
+                                <h4 className="font-semibold mb-3 text-primary">Gestiones</h4>
+                                <ul className="space-y-2 text-sm text-muted-foreground">
+                                    <li><Link href="/dashboard/vacaciones" className="hover:text-primary">Vacaciones</Link></li>
+                                    <li><Link href="/dashboard/requerimientos/procura" className="hover:text-primary">Procura</Link></li>
+                                    <li><Link href="/dashboard/requerimientos/mercadeo" className="hover:text-primary">Mercadeo</Link></li>
                                 </ul>
                             </div>
                             <div>
-                                <h4 className="font-semibold mb-3">Legal</h4>
-                                <ul className="space-y-2 text-sm text-secondary-foreground/80">
-                                    <li><Link href="/dashboard/requerimientos/consultoria-juridica" className="hover:text-white">Consultoría Jurídica</Link></li>
-                                    <li><Link href="/dashboard/biblioteca" className="hover:text-white">Biblioteca</Link></li>
+                                <h4 className="font-semibold mb-3 text-primary">Legal</h4>
+                                <ul className="space-y-2 text-sm text-muted-foreground">
+                                    <li><Link href="/dashboard/requerimientos/consultoria-juridica" className="hover:text-primary">Consultoría Jurídica</Link></li>
+                                    <li><Link href="/dashboard/biblioteca" className="hover:text-primary">Biblioteca</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -798,7 +798,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib.rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
+                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Centros de Atención</h4>
                             <p className="text-xs mt-1 text-white/90">Encuentre la clínica más cercana.</p>
