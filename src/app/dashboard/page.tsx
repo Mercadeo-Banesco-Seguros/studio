@@ -443,9 +443,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </div>
-                </Card>
-                <Card className="w-full overflow-hidden rounded-2xl bg-transparent shadow-none border-none">
-                    <div className="p-8 md:p-12">
+                     <div className="bg-muted/50 p-8 md:p-12 text-foreground">
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                             <div>
                                 <h4 className="font-semibold mb-3 text-primary">Capital Humano</h4>
@@ -686,7 +684,7 @@ export default function DashboardPage() {
           <SectionWrapper>
             <Card className="relative overflow-hidden rounded-2xl shadow-lg min-h-[500px] flex flex-col md:flex-row">
               <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib=rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib-rb-4.1.0&q=80&w=1080"
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
