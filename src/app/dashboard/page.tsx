@@ -421,14 +421,14 @@ export default function DashboardPage() {
         
         {/* Portal de Requerimientos Section */}
         <section id="requerimientos" className="w-full">
-            <div className="bg-[#63a5Fa] text-white relative py-24">
+            <div className="bg-[#63a5Fa] text-primary-foreground relative py-24">
                 <div className="container mx-auto px-4 md:px-8 relative z-10 text-left">
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
                         Visita nuestro <br /> Portal de Requerimientos
                     </h2>
                     <div className="flex justify-start gap-4">
-                        <Link href="/dashboard/requerimientos" className="text-xs h-9 px-4 bg-white text-[#63a5Fa] hover:bg-white/90 inline-flex items-center justify-center rounded-md font-medium">Acceder</Link>
-                        <Button asChild variant="outline" className="text-xs bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white h-9 px-4">
+                        <a className="text-xs h-9 px-4 bg-white text-[#63a5Fa] hover:bg-white/90 inline-flex items-center justify-center rounded-md font-medium" href="/dashboard/requerimientos">Acceder</a>
+                        <Button asChild variant="outline" className="text-xs bg-transparent border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground h-9 px-4">
                             <Link href="#">Consultar</Link>
                         </Button>
                     </div>
@@ -486,7 +486,7 @@ export default function DashboardPage() {
                     <div className="md:col-span-5 flex flex-col justify-center items-center md:items-start text-center md:text-left">
                          <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_87kjuj87kjuj87kj-Photoroom.png?raw=true" alt="Chef Hat" width={180} height={180} className="mb-4" />
                         <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">Menú del Comedor</h2>
-                        <p className="mt-4 text-muted-foreground max-w-md">
+                        <p className="mt-4 text-muted-foreground max-w-md text-sm">
                            Revise la oferta gastronómica completa preparada para hoy. Encontrará el plato principal, las alternativas del día y las opciones de postre, garantizando siempre una alimentación balanceada.
                         </p>
                     </div>
@@ -526,7 +526,7 @@ export default function DashboardPage() {
                 {/* Left Panel */}
                 <div className="w-full md:w-2/3 relative min-h-[400px] md:min-h-full">
                 <Image
-                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Playa tropical para representar vacaciones"
                     layout="fill"
                     objectFit="cover"
@@ -768,7 +768,7 @@ export default function DashboardPage() {
                 <div className="bg-muted/50 p-12 flex items-center">
                     <div className="w-full grid grid-cols-2 gap-8">
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib.rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
+                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Beneficios</h4>
                             <p className="text-xs mt-1 text-white/90">Descubra todas sus ventajas.</p>
@@ -1002,6 +1002,7 @@ export default function DashboardPage() {
   );
 
     
+
 
 
 
