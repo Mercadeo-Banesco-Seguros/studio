@@ -427,7 +427,7 @@ export default function DashboardPage() {
                         Visita nuestro <br /> Portal de Requerimientos
                     </h2>
                     <div className="flex justify-start gap-4">
-                        <Link href="/dashboard/requerimientos" className="text-xs h-9 px-4 bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center rounded-md font-medium">Acceder</Link>
+                        <Link href="/dashboard/requerimientos" className="text-xs h-9 px-4 bg-white text-primary hover:bg-white/90 inline-flex items-center justify-center rounded-md font-medium">Acceder</Link>
                         <Button asChild variant="outline" className="text-xs bg-transparent border-secondary-foreground/50 text-secondary-foreground hover:bg-secondary-foreground/10 hover:text-secondary-foreground h-9 px-4">
                             <Link href="#">Consultar</Link>
                         </Button>
@@ -578,7 +578,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib.rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib-rb-4.1.0&q=80&w=1080"
                         alt="Recomendaciones de viaje"
                         layout="fill"
                         objectFit="cover"
@@ -1002,6 +1002,7 @@ export default function DashboardPage() {
   );
 
     
+
 
 
 
