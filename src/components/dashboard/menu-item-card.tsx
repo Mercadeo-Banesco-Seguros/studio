@@ -27,7 +27,7 @@ export function MenuItemCard({ item, isCurrentDay }: MenuItemCardProps) {
           </p>
           <div className="mt-4 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
             {item.price && (
-                <Badge variant="secondary" className="text-sm font-semibold rounded-md px-3 py-1">
+                <Badge variant="secondary" className="text-xs font-light rounded-md px-3 py-1">
                     {item.price}
                 </Badge>
             )}
