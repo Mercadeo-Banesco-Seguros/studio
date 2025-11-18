@@ -31,7 +31,7 @@ export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
     <div
       className={cn(
         "group/card relative p-6 rounded-2xl overflow-hidden transition-all duration-500 ease-in-out bg-card shadow-lg",
-        "flex-1 group-hover:flex-grow-[1.5]"
+        "flex-1 hover:flex-grow-[1.5]"
       )}
     >
         {/* Expanded Content - Visible on hover */}
@@ -73,19 +73,6 @@ export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
                 </div>
             )}
         </div>
-        
-        {/* Image for expanded state */}
-        {item.imageUrl && (
-            <div className="absolute bottom-0 right-0 h-56 w-56 opacity-0 group-hover/card:opacity-100 group-hover/card:scale-100 scale-75 transition-all duration-500 ease-in-out z-0">
-                <Image 
-                    src={item.imageUrl}
-                    alt={item.name}
-                    layout="fill"
-                    objectFit="contain"
-                    data-ai-hint={item.dataAiHint || ''}
-                />
-            </div>
-        )}
     </div>
   );
 };
