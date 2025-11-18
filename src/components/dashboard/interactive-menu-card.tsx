@@ -62,8 +62,8 @@ export const InteractiveMenuCard = ({ item, isInitiallyOpen = false }: Interacti
       
       <div className={cn(
           "absolute right-6 top-1/2 -translate-y-1/2 h-48 w-48 transition-all duration-500 ease-in-out opacity-0",
-          "group-hover:opacity-100 group-hover:right-1/2 group-hover:translate-x-[150%]",
-           isInitiallyOpen && "opacity-100 right-1/2 translate-x-[150%]"
+          "group-hover:opacity-100 group-hover:right-[45%] group-hover:translate-x-1/2",
+           isInitiallyOpen && "opacity-100 right-[45%] translate-x-1/2"
         )}
       >
           {item.imageUrl && (
