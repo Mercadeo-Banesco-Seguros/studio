@@ -30,12 +30,11 @@ export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
     <div
       className={cn(
         "group/card relative p-6 rounded-2xl overflow-hidden transition-all duration-500 ease-in-out bg-card shadow-lg",
-        "w-1/3 group-hover:w-1/2", // The card being hovered on
-        "group-hover:group-[:not(:hover)]/card:w-1/4" // The other cards
+        "w-1/3 group-hover:group-[:not(:hover)]/card:w-1/4 group-hover:w-1/2"
       )}
     >
-        {/* Expanded State Content - visible on hover */}
-        <div className="absolute inset-0 p-6 flex flex-col justify-between opacity-0 group-hover/card:opacity-100 transition-all duration-300 ease-in-out delay-200">
+        {/* Expanded State Content */}
+        <div className="absolute inset-0 p-6 flex flex-col justify-between opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 ease-in-out delay-200">
             <div>
                 <div className="flex items-center gap-3">
                     <Badge className={cn("transition-colors duration-300 text-xs", getBadgeClass())}>
@@ -53,14 +52,11 @@ export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
             </div>
         </div>
 
-        {/* Default & Collapsed State Content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center p-4 transition-all duration-300 ease-in-out opacity-100 group-hover/card:opacity-0">
-            <h3 className="text-xl font-bold text-foreground mb-4 opacity-0 transition-opacity duration-300">
-                {item.name}
-            </h3>
+        {/* Collapsed State Content for other cards on hover */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-4 transition-all duration-300 ease-in-out opacity-0 group-hover:group-[:not(:hover)]/card:opacity-100">
             {item.imageUrl && (
-                <div className="relative h-32 w-32">
-                    <Image 
+                <div className="relative h-40 w-40">
+                    <Image
                         src={item.imageUrl}
                         alt={item.name}
                         layout="fill"
@@ -71,10 +67,10 @@ export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
             )}
         </div>
 
-        {/* Collapsed state for non-hovered cards */}
-         <div className="absolute inset-0 flex flex-col items-center justify-center p-4 transition-all duration-300 ease-in-out opacity-0 group-hover:group-[:not(:hover)]/card:opacity-100">
+        {/* Default State Content */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-4 transition-all duration-300 ease-in-out opacity-100 group-hover:opacity-0">
              {item.imageUrl && (
-                <div className="relative h-32 w-32">
+                <div className="relative h-48 w-48">
                     <Image 
                         src={item.imageUrl}
                         alt={item.name}
@@ -89,13 +85,13 @@ export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
         {/* Image for expanded state */}
         {item.imageUrl && (
             <div className="absolute bottom-0 right-0 h-56 w-56 opacity-0 group-hover/card:opacity-100 group-hover/card:scale-100 scale-75 transition-all duration-500 ease-in-out z-0">
-            <Image 
-                src={item.imageUrl}
-                alt={item.name}
-                layout="fill"
-                objectFit="contain"
-                data-ai-hint={item.dataAiHint || ''}
-            />
+                <Image 
+                    src={item.imageUrl}
+                    alt={item.name}
+                    layout="fill"
+                    objectFit="contain"
+                    data-ai-hint={item.dataAiHint || ''}
+                />
             </div>
         )}
     </div>
