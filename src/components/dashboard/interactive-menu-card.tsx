@@ -28,7 +28,7 @@ export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
   return (
     <div className={cn(
       "group/card relative h-full flex-1 p-6 rounded-2xl overflow-hidden transition-all duration-300 ease-in-out bg-card shadow-lg flex flex-col justify-between",
-      "hover:flex-[2]"
+      "peer-hover:flex-[0.5] hover:flex-[2]"
     )}>
       <div className="flex items-center gap-3 z-10">
         <Badge className={cn("transition-colors duration-300 text-xs", getBadgeClass())}>
@@ -38,7 +38,7 @@ export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
       </div>
 
       <div className="mt-4 z-10">
-        <h3 className="text-2xl font-bold tracking-tight text-foreground transition-opacity duration-300 group-hover/card:opacity-100 opacity-100 group-hover:opacity-0 group-hover:group-[:not(:hover)]/card:opacity-100">
+        <h3 className="text-2xl font-bold tracking-tight text-foreground transition-opacity duration-300 group-hover/card:opacity-100 max-w-[150px]">
           {item.name}
         </h3>
         <p className={cn(
