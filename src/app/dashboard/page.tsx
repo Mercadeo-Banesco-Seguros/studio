@@ -211,6 +211,7 @@ export default function DashboardPage() {
   const [todaysMenus, setTodaysMenus] = useState<MenuItem[]>([]);
   const [isLoadingMenu, setIsLoadingMenu] = useState(true);
   const [currentMenuIndex, setCurrentMenuIndex] = useState(0);
+  const [showShortcuts, setShowShortcuts] = useState(false);
 
   const faqCategories = [
     { id: 'General', label: 'General', icon: Home },
@@ -430,55 +431,60 @@ export default function DashboardPage() {
                         <Button asChild size="sm" className="text-xs h-9 px-4 bg-white text-[#63a5Fa] hover:bg-white/90">
                            <Link href="/dashboard/requerimientos">Acceder</Link>
                         </Button>
-                        <Button asChild variant="outline" size="sm" className="text-xs h-9 px-4 bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white">
-                            <Link href="#requerimientos-atajos">Atajos</Link>
+                        <Button variant="outline" size="sm" className="text-xs h-9 px-4 bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white" onClick={() => setShowShortcuts(!showShortcuts)}>
+                            Atajos
                         </Button>
                     </div>
                 </div>
             </div>
-            <div id="requerimientos-atajos" className="bg-muted/50 py-16">
-                <div className="container mx-auto px-4 md:px-8">
-                  <div className="text-center mb-8">
-                      <h3 className="text-2xl font-bold tracking-tight text-foreground">Atajos</h3>
-                  </div>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className={cn(
+                "transition-all duration-500 ease-in-out overflow-hidden",
+                showShortcuts ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+            )}>
+              <div id="requerimientos-atajos" className="bg-muted/50 py-16">
+                  <div className="container mx-auto px-4 md:px-8">
+                    <div className="text-center mb-8">
+                        <h3 className="text-2xl font-bold tracking-tight text-foreground">Atajos</h3>
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div>
+                            <h4 className="font-bold tracking-tight mb-3 text-foreground">Capital Humano</h4>
+                            <ul className="space-y-2 text-sm text-muted-foreground">
+                                <li><Link href="#" className="hover:text-primary">Vacaciones</Link></li>
+                                <li><Link href="#" className="hover:text-primary">Carta de Trabajo</Link></li>
+                                <li><Link href="#" className="hover:text-primary">Inquietudes</Link></li>
+                                <li><Link href="#" className="hover:text-primary">Solicitudes</Link></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="font-bold tracking-tight mb-3 text-foreground">Comercial</h4>
+                            <ul className="space-y-2 text-sm text-muted-foreground">
+                                <li><Link href="#" className="hover:text-primary">Sistemática Comercial</Link></li>
+                                <li><Link href="#" className="hover:text-primary">Mercadeo</Link></li>
+                                <li><Link href="#" className="hover:text-primary">Comunicaciones</Link></li>
+                            </ul>
+                        </div>
                       <div>
-                          <h4 className="font-bold tracking-tight mb-3 text-foreground">Capital Humano</h4>
+                          <h4 className="font-bold tracking-tight mb-3 text-foreground">Tecnología</h4>
                           <ul className="space-y-2 text-sm text-muted-foreground">
-                              <li><Link href="#" className="hover:text-primary">Vacaciones</Link></li>
-                              <li><Link href="#" className="hover:text-primary">Carta de Trabajo</Link></li>
-                              <li><Link href="#" className="hover:text-primary">Inquietudes</Link></li>
+                              <li><Link href="#" className="hover:text-primary">Seguridad</Link></li>
+                              <li><Link href="#" className="hover:text-primary">Actualizaciones</Link></li>
                               <li><Link href="#" className="hover:text-primary">Solicitudes</Link></li>
+                              <li><Link href="#" className="hover:text-primary">Problemas</Link></li>
                           </ul>
                       </div>
                       <div>
-                          <h4 className="font-bold tracking-tight mb-3 text-foreground">Comercial</h4>
+                          <h4 className="font-bold tracking-tight mb-3 text-foreground">Suscripción</h4>
                           <ul className="space-y-2 text-sm text-muted-foreground">
-                              <li><Link href="#" className="hover:text-primary">Sistemática Comercial</Link></li>
-                              <li><Link href="#" className="hover:text-primary">Mercadeo</Link></li>
-                              <li><Link href="#" className="hover:text-primary">Comunicaciones</Link></li>
+                              <li><Link href="#" className="hover:text-primary">Salud</Link></li>
+                              <li><Link href="#" className="hover:text-primary">Patrimonial</Link></li>
+                              <li><Link href="#" className="hover:text-primary">Automóvil</Link></li>
+                              <li><Link href="#" className="hover:text-primary">Personas</Link></li>
                           </ul>
                       </div>
-                     <div>
-                        <h4 className="font-bold tracking-tight mb-3 text-foreground">Tecnología</h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                            <li><Link href="#" className="hover:text-primary">Seguridad</Link></li>
-                            <li><Link href="#" className="hover:text-primary">Actualizaciones</Link></li>
-                            <li><Link href="#" className="hover:text-primary">Solicitudes</Link></li>
-                            <li><Link href="#" className="hover:text-primary">Problemas</Link></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 className="font-bold tracking-tight mb-3 text-foreground">Suscripción</h4>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                            <li><Link href="#" className="hover:text-primary">Salud</Link></li>
-                            <li><Link href="#" className="hover:text-primary">Patrimonial</Link></li>
-                            <li><Link href="#" className="hover:text-primary">Automóvil</Link></li>
-                            <li><Link href="#" className="hover:text-primary">Personas</Link></li>
-                        </ul>
                     </div>
                   </div>
-                </div>
+              </div>
             </div>
         </section>
 
@@ -772,7 +778,7 @@ export default function DashboardPage() {
                 <div className="bg-muted/50 p-12 flex items-center">
                     <div className="w-full grid grid-cols-2 gap-8">
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
+                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Beneficios</h4>
                             <p className="text-xs mt-1 text-white/90">Descubra todas sus ventajas.</p>
@@ -782,7 +788,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
@@ -1006,6 +1012,7 @@ export default function DashboardPage() {
   );
 
     
+
 
 
 
