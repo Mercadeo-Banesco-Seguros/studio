@@ -25,32 +25,45 @@ export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
   };
 
   return (
-    <div className={cn(
-      "group/card relative h-full flex-1 p-6 rounded-2xl overflow-hidden transition-all duration-300 ease-in-out bg-card shadow-lg flex flex-col justify-between"
-    )}>
-      <div className="flex items-center gap-3 z-10">
-        <Badge className={cn("transition-colors duration-300 text-xs", getBadgeClass())}>
-          {item.type}
-        </Badge>
-        <p className="text-sm text-muted-foreground">{item.day}</p>
-      </div>
+    <div
+      className={cn(
+        "group/card peer relative h-full flex-1 p-6 rounded-2xl overflow-hidden transition-all duration-500 ease-in-out bg-card shadow-lg flex flex-col justify-between",
+        "peer-hover:flex-grow-[8]" // The hovered card expands
+      )}
+    >
+      {/* Text Content */}
+      <div className="z-10 transition-all duration-300">
+        <div className="flex items-center gap-3">
+          <Badge className={cn("transition-colors duration-300 text-xs", getBadgeClass())}>
+            {item.type}
+          </Badge>
+          <p className="text-sm text-muted-foreground">{item.day}</p>
+        </div>
 
-      <div className="mt-4 z-10">
-        <h3 className="text-2xl font-bold tracking-tight text-foreground transition-opacity duration-300 group-hover:opacity-100 opacity-100 group-hover:group-[:not(:hover)]/card:opacity-100">
-          {item.name}
-        </h3>
-        <p className={cn(
-          "text-sm text-muted-foreground mt-2 max-w-[250px] transition-all duration-300",
-          "h-0 opacity-0 group-hover/card:h-auto group-hover/card:opacity-100"
-        )}>
-          {item.description}
-        </p>
+        <div className="mt-4">
+          {/* Title: Always visible by default, shrinks on other card hover */}
+          <h3 className="text-2xl font-bold tracking-tight text-foreground transition-all duration-500 group-hover/card:opacity-100 group-hover:peer-hover/card:opacity-0">
+            {item.name}
+          </h3>
+          {/* Description: Only visible on hover */}
+          <p className={cn(
+            "text-sm text-muted-foreground mt-2 max-w-[250px] transition-all duration-300",
+            "h-0 opacity-0 group-hover/card:h-auto group-hover/card:opacity-100"
+          )}>
+            {item.description}
+          </p>
+        </div>
       </div>
       
+      {/* Image Container */}
       <div className={cn(
-          "absolute right-1/2 top-1/2 -translate-y-1/2 h-48 w-48 transition-all duration-500 ease-in-out",
-           "group-hover/card:right-8 group-hover/card:translate-x-0 group-hover/card:top-16 group-hover/card:-translate-y-0",
-           "group-hover:opacity-0 group-hover:group-[:not(:hover)]/card:opacity-100"
+          "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-56 w-56 transition-all duration-500 ease-in-out z-0",
+          // Default state (no hover on any peer)
+          "group-hover:opacity-100 opacity-100",
+          // When THIS card is hovered
+          "group-hover/card:left-auto group-hover/card:right-8 group-hover/card:translate-x-0 group-hover/card:top-16 group-hover/card:-translate-y-0",
+          // When ANOTHER card is hovered
+          "group-hover:peer-hover/card:left-auto group-hover:peer-hover/card:right-8 group-hover:peer-hover/card:translate-x-0"
         )}
       >
           {item.imageUrl && (
@@ -64,6 +77,7 @@ export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
           )}
       </div>
 
+      {/* Button that appears on hover */}
       <div className="mt-auto opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 z-10">
           {/* You can add a button or more info here for the expanded state */}
       </div>
