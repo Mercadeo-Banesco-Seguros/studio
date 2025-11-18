@@ -38,7 +38,7 @@ export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
         </Badge>
         <p className={cn(
             "text-sm text-muted-foreground transition-all duration-500 opacity-100",
-            isClasico ? "group-hover:opacity-0 peer-hover:opacity-100" : "group-hover:opacity-0",
+            isClasico ? "peer-hover:opacity-0" : "group-hover:opacity-0",
             !isClasico && "peer-hover:opacity-0"
           )}
         >
@@ -54,8 +54,8 @@ export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
           {item.name}
         </h3>
         <p className={cn(
-            "text-sm text-muted-foreground mt-2 max-w-[200px] transition-all duration-500 opacity-0 h-0",
-            isClasico ? "opacity-100 h-auto peer-hover:opacity-0 peer-hover:h-0" : "group-hover:opacity-100 group-hover:h-auto"
+            "text-sm text-muted-foreground mt-2 max-w-[200px] transition-all duration-500 h-auto",
+             isClasico ? "opacity-100 peer-hover:opacity-0 peer-hover:h-0" : "opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto"
           )}
         >
           {item.description}
@@ -63,8 +63,8 @@ export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
       </div>
       
       <div className={cn(
-          "absolute right-1/2 top-1/2 -translate-y-1/2 h-56 w-56 transition-all duration-500 ease-in-out opacity-0 translate-x-1/2",
-          isClasico ? "opacity-100 right-[45%] peer-hover:opacity-0 peer-hover:right-1/2" : "group-hover:opacity-100 group-hover:right-[45%]"
+          "absolute right-1/2 top-1/2 -translate-y-1/2 h-56 w-56 transition-all duration-500 ease-in-out translate-x-1/2",
+          isClasico ? "opacity-100 right-[45%] peer-hover:opacity-0" : "opacity-0 group-hover:opacity-100 group-hover:right-[45%]"
         )}
       >
           {item.imageUrl && (
