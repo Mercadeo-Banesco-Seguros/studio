@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
@@ -86,7 +85,7 @@ import { InteractiveMenuCard } from '@/components/dashboard/interactive-menu-car
 const pilaresData = [
     { number: "01", title: "Calidad", text: "Trabajamos para brindar mejores soluciones a nuestros clientes.", icon: Award, color: "bg-primary" },
     { number: "02", title: "Innovación", text: "Construimos una visión de futuro para nuestra organización.", icon: Lightbulb, color: "bg-secondary" },
-    { number: "03", title: "Confiabilidad", text: "La cultura de servicio se enfoca en unir esfuerzos en torno a nuestros clientes.", icon: Shield, color: "bg-sky-400" },
+    { number: "03", title: "Confiabilidad", text: "La cultura de servicio se enfoca en unir esfuerzos en torno a nuestros clientes.", icon: Shield, color: "bg-blue-400" },
     { number: "04", title: "Responsabilidad", text: "Cumplimos con nuestros compromisos; brindamos seguridad y confianza.", icon: Handshake, color: "bg-blue-400" },
 ];
 
@@ -194,7 +193,7 @@ const normalizeDayName = (name: string) => {
   return name
     .toLowerCase()
     .normalize("NFD") // Decompose accented characters
-    .replace(/[\u0300-\u036f]/g, ""); // Remove diacritical marks
+    .replace(/[\u0000-\u007f]/g, ""); // Remove diacritical marks
 };
 
 
@@ -785,7 +784,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
@@ -1010,3 +1009,5 @@ export default function DashboardPage() {
 
     
   
+
+    
