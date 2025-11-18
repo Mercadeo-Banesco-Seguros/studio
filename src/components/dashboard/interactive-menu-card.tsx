@@ -47,7 +47,7 @@ export const InteractiveMenuCard = ({ item, isInitiallyOpen = false }: Interacti
       </div>
 
       <div className="mt-4">
-        <h3 className="text-2xl font-bold text-foreground transition-all duration-500">
+        <h3 className="text-2xl font-bold tracking-tight text-foreground transition-all duration-500">
           {item.name}
         </h3>
         <p className={cn(
