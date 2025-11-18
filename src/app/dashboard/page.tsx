@@ -194,7 +194,7 @@ const normalizeDayName = (name: string) => {
   return name
     .toLowerCase()
     .normalize("NFD") // Decompose accented characters
-    .replace(/[\u0000-\u007f]/g, ""); // Remove diacritical marks
+    .replace(/[\u0300-\u036f]/g, ""); // Remove diacritical marks
 };
 
 
@@ -1012,3 +1012,4 @@ export default function DashboardPage() {
   
 
     
+
