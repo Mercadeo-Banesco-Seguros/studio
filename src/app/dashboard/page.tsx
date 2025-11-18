@@ -421,56 +421,57 @@ export default function DashboardPage() {
         
         {/* Portal de Requerimientos Section */}
         <section id="requerimientos" className="w-full">
-            <div className="bg-[#63a5Fa] text-primary-foreground relative py-24">
-                <div className="container mx-auto px-4 md:px-8 relative z-10 text-left">
+            <div className="bg-[#63a5Fa] text-white relative py-24">
+                <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
                         Visita nuestro <br /> Portal de Requerimientos
                     </h2>
-                    <div className="flex justify-start gap-4">
-                        <a className="text-xs h-9 px-4 bg-white text-[#63a5Fa] hover:bg-white/90 inline-flex items-center justify-center rounded-md font-medium" href="/dashboard/requerimientos">Acceder</a>
-                        <Button asChild variant="outline" className="text-xs bg-transparent border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground h-9 px-4">
-                            <Link href="#">Consultar</Link>
+                    <div className="flex justify-center gap-4">
+                        <Button asChild size="sm" className="text-xs h-9 px-4 bg-white text-[#63a5Fa] hover:bg-white/90">
+                           <Link href="/dashboard/requerimientos">Acceder</Link>
+                        </Button>
+                        <Button asChild variant="outline" size="sm" className="text-xs h-9 px-4 bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white">
+                            <Link href="#requerimientos-atajos">Atajos</Link>
                         </Button>
                     </div>
                 </div>
             </div>
-            <div className="bg-foreground text-background/80 py-16">
+            <div id="requerimientos-atajos" className="bg-muted/50 py-16">
                 <div className="container mx-auto px-4 md:px-8">
-                  <h3 className="text-2xl font-bold tracking-tight mb-4 text-white">Atajos</h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                       <div>
-                          <h4 className="font-semibold mb-3 text-white">Capital Humano</h4>
-                          <ul className="space-y-2 text-sm">
-                              <li><Link href="#" className="hover:text-white">Vacaciones</Link></li>
-                              <li><Link href="#" className="hover:text-white">Carta de Trabajo</Link></li>
-                              <li><Link href="#" className="hover:text-white">Inquietudes</Link></li>
-                              <li><Link href="#" className="hover:text-white">Solicitudes</Link></li>
+                          <h4 className="font-semibold mb-3 text-foreground">Capital Humano</h4>
+                          <ul className="space-y-2 text-sm text-muted-foreground">
+                              <li><Link href="#" className="hover:text-primary">Vacaciones</Link></li>
+                              <li><Link href="#" className="hover:text-primary">Carta de Trabajo</Link></li>
+                              <li><Link href="#" className="hover:text-primary">Inquietudes</Link></li>
+                              <li><Link href="#" className="hover:text-primary">Solicitudes</Link></li>
                           </ul>
                       </div>
                       <div>
-                          <h4 className="font-semibold mb-3 text-white">Comercial</h4>
-                          <ul className="space-y-2 text-sm">
-                              <li><Link href="#" className="hover:text-white">Sistemática Comercial</Link></li>
-                              <li><Link href="#" className="hover:text-white">Mercadeo</Link></li>
-                              <li><Link href="#" className="hover:text-white">Comunicaciones</Link></li>
+                          <h4 className="font-semibold mb-3 text-foreground">Comercial</h4>
+                          <ul className="space-y-2 text-sm text-muted-foreground">
+                              <li><Link href="#" className="hover:text-primary">Sistemática Comercial</Link></li>
+                              <li><Link href="#" className="hover:text-primary">Mercadeo</Link></li>
+                              <li><Link href="#" className="hover:text-primary">Comunicaciones</Link></li>
                           </ul>
                       </div>
                      <div>
-                        <h4 className="font-semibold mb-3 text-white">Tecnología</h4>
-                        <ul className="space-y-2 text-sm">
-                            <li><Link href="#" className="hover:text-white">Seguridad</Link></li>
-                            <li><Link href="#" className="hover:text-white">Actualizaciones</Link></li>
-                            <li><Link href="#" className="hover:text-white">Solicitudes</Link></li>
-                            <li><Link href="#" className="hover:text-white">Problemas</Link></li>
+                        <h4 className="font-semibold mb-3 text-foreground">Tecnología</h4>
+                        <ul className="space-y-2 text-sm text-muted-foreground">
+                            <li><Link href="#" className="hover:text-primary">Seguridad</Link></li>
+                            <li><Link href="#" className="hover:text-primary">Actualizaciones</Link></li>
+                            <li><Link href="#" className="hover:text-primary">Solicitudes</Link></li>
+                            <li><Link href="#" className="hover:text-primary">Problemas</Link></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-semibold mb-3 text-white">Suscripción</h4>
-                        <ul className="space-y-2 text-sm">
-                            <li><Link href="#" className="hover:text-white">Salud</Link></li>
-                            <li><Link href="#" className="hover:text-white">Patrimonial</Link></li>
-                            <li><Link href="#" className="hover:text-white">Automóvil</Link></li>
-                            <li><Link href="#" className="hover:text-white">Personas</Link></li>
+                        <h4 className="font-semibold mb-3 text-foreground">Suscripción</h4>
+                        <ul className="space-y-2 text-sm text-muted-foreground">
+                            <li><Link href="#" className="hover:text-primary">Salud</Link></li>
+                            <li><Link href="#" className="hover:text-primary">Patrimonial</Link></li>
+                            <li><Link href="#" className="hover:text-primary">Automóvil</Link></li>
+                            <li><Link href="#" className="hover:text-primary">Personas</Link></li>
                         </ul>
                     </div>
                   </div>
@@ -526,7 +527,7 @@ export default function DashboardPage() {
                 {/* Left Panel */}
                 <div className="w-full md:w-2/3 relative min-h-[400px] md:min-h-full">
                 <Image
-                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Playa tropical para representar vacaciones"
                     layout="fill"
                     objectFit="cover"
@@ -548,7 +549,7 @@ export default function DashboardPage() {
                 <div className="space-y-4 my-auto">
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib.rb-4.1.0&q=80&w=1080"
                         alt="Solicitudes de vacaciones"
                         layout="fill"
                         objectFit="cover"
@@ -578,7 +579,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib-rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib.rb-4.1.0&q=80&w=1080"
                         alt="Recomendaciones de viaje"
                         layout="fill"
                         objectFit="cover"
@@ -676,7 +677,7 @@ export default function DashboardPage() {
           <SectionWrapper>
             <Card className="relative overflow-hidden rounded-2xl shadow-lg min-h-[500px] flex flex-col md:flex-row">
               <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib-rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
@@ -768,7 +769,7 @@ export default function DashboardPage() {
                 <div className="bg-muted/50 p-12 flex items-center">
                     <div className="w-full grid grid-cols-2 gap-8">
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
+                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Beneficios</h4>
                             <p className="text-xs mt-1 text-white/90">Descubra todas sus ventajas.</p>
@@ -778,7 +779,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
@@ -788,7 +789,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
+                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib.rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Centros de Atención</h4>
                             <p className="text-xs mt-1 text-white/90">Encuentre la clínica más cercana.</p>
@@ -819,7 +820,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
@@ -1002,6 +1003,7 @@ export default function DashboardPage() {
   );
 
     
+
 
 
 
