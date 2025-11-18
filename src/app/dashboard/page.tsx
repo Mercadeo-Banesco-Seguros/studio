@@ -438,9 +438,12 @@ export default function DashboardPage() {
             </div>
             <div id="requerimientos-atajos" className="bg-muted/50 py-16">
                 <div className="container mx-auto px-4 md:px-8">
+                  <div className="text-center mb-8">
+                      <h3 className="text-2xl font-bold tracking-tight text-foreground">Atajos</h3>
+                  </div>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                       <div>
-                          <h4 className="font-semibold mb-3 text-foreground">Capital Humano</h4>
+                          <h4 className="font-bold tracking-tight mb-3 text-foreground">Capital Humano</h4>
                           <ul className="space-y-2 text-sm text-muted-foreground">
                               <li><Link href="#" className="hover:text-primary">Vacaciones</Link></li>
                               <li><Link href="#" className="hover:text-primary">Carta de Trabajo</Link></li>
@@ -449,7 +452,7 @@ export default function DashboardPage() {
                           </ul>
                       </div>
                       <div>
-                          <h4 className="font-semibold mb-3 text-foreground">Comercial</h4>
+                          <h4 className="font-bold tracking-tight mb-3 text-foreground">Comercial</h4>
                           <ul className="space-y-2 text-sm text-muted-foreground">
                               <li><Link href="#" className="hover:text-primary">Sistemática Comercial</Link></li>
                               <li><Link href="#" className="hover:text-primary">Mercadeo</Link></li>
@@ -457,7 +460,7 @@ export default function DashboardPage() {
                           </ul>
                       </div>
                      <div>
-                        <h4 className="font-semibold mb-3 text-foreground">Tecnología</h4>
+                        <h4 className="font-bold tracking-tight mb-3 text-foreground">Tecnología</h4>
                         <ul className="space-y-2 text-sm text-muted-foreground">
                             <li><Link href="#" className="hover:text-primary">Seguridad</Link></li>
                             <li><Link href="#" className="hover:text-primary">Actualizaciones</Link></li>
@@ -466,7 +469,7 @@ export default function DashboardPage() {
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-semibold mb-3 text-foreground">Suscripción</h4>
+                        <h4 className="font-bold tracking-tight mb-3 text-foreground">Suscripción</h4>
                         <ul className="space-y-2 text-sm text-muted-foreground">
                             <li><Link href="#" className="hover:text-primary">Salud</Link></li>
                             <li><Link href="#" className="hover:text-primary">Patrimonial</Link></li>
@@ -527,7 +530,7 @@ export default function DashboardPage() {
                 {/* Left Panel */}
                 <div className="w-full md:w-2/3 relative min-h-[400px] md:min-h-full">
                 <Image
-                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib-rb-4.1.0&q=80&w=1080"
                     alt="Playa tropical para representar vacaciones"
                     layout="fill"
                     objectFit="cover"
@@ -549,7 +552,7 @@ export default function DashboardPage() {
                 <div className="space-y-4 my-auto">
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib.rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib-rb-4.1.0&q=80&w=1080"
                         alt="Solicitudes de vacaciones"
                         layout="fill"
                         objectFit="cover"
@@ -1003,6 +1006,7 @@ export default function DashboardPage() {
   );
 
     
+
 
 
 
