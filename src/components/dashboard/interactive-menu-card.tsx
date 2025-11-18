@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -24,47 +25,33 @@ export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
     }
   };
 
-  const isClasico = item.type === 'Clásico';
-
   return (
     <div className={cn(
-        "group relative h-full flex-1 p-6 rounded-2xl overflow-hidden transition-all duration-500 ease-out bg-card shadow-lg flex flex-col justify-between",
-        isClasico ? "flex-[3] peer-hover:flex-1" : "hover:flex-[3]"
-      )}
-    >
-      <div className="flex items-center gap-3">
-        <Badge className={cn("transition-all duration-500 text-xs", getBadgeClass())}>
+      "group/card relative h-full flex-1 p-6 rounded-2xl overflow-hidden transition-all duration-300 ease-in-out bg-card shadow-lg flex flex-col justify-between",
+      "hover:flex-[2]"
+    )}>
+      <div className="flex items-center gap-3 z-10">
+        <Badge className={cn("transition-colors duration-300 text-xs", getBadgeClass())}>
           {item.type}
         </Badge>
-        <p className={cn(
-            "text-sm text-muted-foreground transition-all duration-500 opacity-100",
-            isClasico ? "peer-hover:opacity-0" : "group-hover:opacity-0",
-            !isClasico && "peer-hover:opacity-0"
-          )}
-        >
-          {item.day}
-        </p>
+        <p className="text-sm text-muted-foreground">{item.day}</p>
       </div>
 
-      <div className="mt-4">
-        <h3 className={cn(
-          "text-2xl font-bold tracking-tight text-foreground transition-all duration-500",
-           isClasico ? "peer-hover:text-2xl" : ""
-          )}>
+      <div className="mt-4 z-10">
+        <h3 className="text-2xl font-bold tracking-tight text-foreground transition-opacity duration-300 group-hover/card:opacity-100 opacity-100 group-hover:opacity-0 group-hover:group-[:not(:hover)]/card:opacity-100">
           {item.name}
         </h3>
         <p className={cn(
-            "text-sm text-muted-foreground mt-2 max-w-[200px] transition-all duration-500 h-auto",
-             isClasico ? "opacity-100 peer-hover:opacity-0 peer-hover:h-0" : "opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto"
-          )}
-        >
+          "text-sm text-muted-foreground mt-2 max-w-[250px] transition-all duration-300",
+          "h-0 opacity-0 group-hover/card:h-auto group-hover/card:opacity-100"
+        )}>
           {item.description}
         </p>
       </div>
       
       <div className={cn(
           "absolute right-1/2 top-1/2 -translate-y-1/2 h-56 w-56 transition-all duration-500 ease-in-out translate-x-1/2",
-          isClasico ? "opacity-100 right-[45%] peer-hover:opacity-0" : "opacity-0 group-hover:opacity-100 group-hover:right-[45%]"
+           "group-hover/card:right-8 group-hover/card:translate-x-0 group-hover/card:top-16 group-hover/card:-translate-y-0"
         )}
       >
           {item.imageUrl && (
@@ -78,7 +65,7 @@ export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
           )}
       </div>
 
-      <div className="mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+      <div className="mt-auto opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 z-10">
           {/* You can add a button or more info here for the expanded state */}
       </div>
     </div>
