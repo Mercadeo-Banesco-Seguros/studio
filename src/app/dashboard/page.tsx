@@ -409,7 +409,7 @@ export default function DashboardPage() {
               </div>
               <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                      src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib.rb-4.1.0&q=80&w=1080"
                       alt="Oficina de Banesco"
                       width={400}
                       height={400}
@@ -429,10 +429,10 @@ export default function DashboardPage() {
                         Visita nuestro <br /> Portal de Requerimientos
                     </h2>
                     <div className="flex justify-center gap-4">
-                        <Button asChild size="sm" className="text-xs h-9 px-4 bg-white text-[#63a5Fa] hover:bg-white/90">
+                        <Button asChild size="lg" className="h-11 px-8 bg-white text-[#63a5Fa] hover:bg-white/90">
                            <Link href="/dashboard/requerimientos">Acceder</Link>
                         </Button>
-                        <Button variant="outline" size="sm" className="text-xs h-9 px-4 bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white" onClick={() => setShowShortcuts(!showShortcuts)}>
+                        <Button variant="outline" size="lg" className="h-11 px-8 bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white" onClick={() => setShowShortcuts(!showShortcuts)}>
                             Atajos
                         </Button>
                     </div>
@@ -513,7 +513,7 @@ export default function DashboardPage() {
                 ) : todaysMenus.length > 0 ? (
                     <div className="flex justify-center gap-4 h-[450px] peer">
                        {todaysMenus.map((item) => (
-                           <InteractiveMenuCard key={item.id} item={item} isInitiallyOpen={item.type === 'Clásico'}/>
+                           <InteractiveMenuCard key={item.id} item={item} />
                        ))}
                     </div>
                 ) : (
@@ -585,7 +585,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib.rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib-rb-4.1.0&q=80&w=1080"
                         alt="Recomendaciones de viaje"
                         layout="fill"
                         objectFit="cover"
@@ -1009,6 +1009,7 @@ export default function DashboardPage() {
   );
 
     
+
 
 
 

@@ -9,10 +9,9 @@ import { cn } from '@/lib/utils';
 
 interface InteractiveMenuCardProps {
   item: MenuItem;
-  isInitiallyOpen?: boolean;
 }
 
-export const InteractiveMenuCard = ({ item, isInitiallyOpen = false }: InteractiveMenuCardProps) => {
+export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
   const getBadgeClass = () => {
     switch (item.type) {
       case 'Clásico':
@@ -26,10 +25,12 @@ export const InteractiveMenuCard = ({ item, isInitiallyOpen = false }: Interacti
     }
   };
 
+  const isClasico = item.type === 'Clásico';
+
   return (
     <div className={cn(
         "group relative h-full flex-1 p-6 rounded-2xl overflow-hidden transition-all duration-500 ease-out bg-card shadow-lg flex flex-col justify-between hover:flex-[3] peer-hover:flex-1",
-        isInitiallyOpen && "flex-[3]"
+        isClasico && "peer-hover:flex-1 flex-[3]"
       )}
     >
       <div className="flex items-center gap-3">
@@ -39,7 +40,7 @@ export const InteractiveMenuCard = ({ item, isInitiallyOpen = false }: Interacti
         <p className={cn(
             "text-sm text-muted-foreground transition-all duration-500 opacity-100",
             "group-hover:opacity-0 group-hover:w-0",
-            isInitiallyOpen && "opacity-0 w-0"
+            isClasico && "peer-hover:opacity-0 peer-hover:w-0"
           )}
         >
           {item.day}
@@ -53,7 +54,7 @@ export const InteractiveMenuCard = ({ item, isInitiallyOpen = false }: Interacti
         <p className={cn(
             "text-sm text-muted-foreground mt-2 max-w-[200px] transition-all duration-500 opacity-0 h-0",
             "group-hover:opacity-100 group-hover:h-auto",
-            isInitiallyOpen && "opacity-100 h-auto"
+            isClasico && "peer-hover:opacity-0 peer-hover:h-0 opacity-100 h-auto"
           )}
         >
           {item.description}
@@ -61,9 +62,9 @@ export const InteractiveMenuCard = ({ item, isInitiallyOpen = false }: Interacti
       </div>
       
       <div className={cn(
-          "absolute right-[45%] top-1/2 -translate-y-1/2 h-56 w-56 transition-all duration-500 ease-in-out opacity-0 translate-x-1/2",
+          "absolute right-1/2 top-1/2 -translate-y-1/2 h-56 w-56 transition-all duration-500 ease-in-out opacity-0 translate-x-1/2",
           "group-hover:opacity-100 group-hover:right-[45%]",
-           isInitiallyOpen && "opacity-100 right-[45%]"
+           isClasico && "peer-hover:opacity-0 peer-hover:right-1/2 opacity-100 right-[45%]"
         )}
       >
           {item.imageUrl && (
