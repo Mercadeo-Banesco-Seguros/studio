@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -54,14 +55,14 @@ export const InteractiveMenuCard = ({ item }: InteractiveMenuCardProps) => {
 
       {/* Default/Collapsed State Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center p-4 transition-all duration-300 ease-in-out opacity-100 group-hover/card:opacity-0">
-          <div className='absolute top-4 left-4 flex items-center gap-2'>
+          <div className='absolute top-6 left-6 flex items-center gap-2'>
             <Badge className={cn("transition-colors duration-300 text-xs", getBadgeClass())}>
                 {item.type}
             </Badge>
             <p className="text-sm text-muted-foreground">{item.day}</p>
           </div>
           {item.imageUrl && (
-              <div className="relative h-48 w-48 transition-all duration-300 ease-in-out group-hover:group-[:hover]/card:opacity-0 group-hover:group-[:not(:hover)]/card:h-40 group-hover:group-[:not(:hover)]/card:w-40">
+              <div className="relative h-48 w-48 transition-all duration-300 ease-in-out">
                   <Image 
                       src={item.imageUrl}
                       alt={item.name}
