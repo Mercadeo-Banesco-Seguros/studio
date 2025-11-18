@@ -80,6 +80,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { PlaylistCard } from '@/components/dashboard/playlist-card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { DressCodeCard } from '@/components/dashboard/dress-code-card';
+import { InteractiveMenuCard } from '@/components/dashboard/interactive-menu-card';
 
 
 const pilaresData = [
@@ -488,41 +489,40 @@ export default function DashboardPage() {
 
         {/* Menus Section */}
         <div id="menu">
-             <SectionWrapper className="min-h-screen flex flex-col justify-center">
-                <div className="grid md:grid-cols-12 items-center gap-8 md:gap-16">
-                    <div className="md:col-span-5 flex flex-col justify-center items-center md:items-start text-center md:text-left">
-                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_87kjuj87kjuj87kj-Photoroom.png?raw=true" alt="Chef Hat" width={180} height={180} className="mb-4" />
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">Menú del Comedor</h2>
-                        <p className="text-sm mt-4 text-muted-foreground max-w-md">
-                           Revise la oferta gastronómica completa preparada para hoy. Encontrará el plato principal, las alternativas del día y las opciones de postre, garantizando siempre una alimentación balanceada.
-                        </p>
+             <SectionWrapper className="bg-muted/30">
+                <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
+                    <div>
+                        <h2 className="text-5xl font-extrabold tracking-tight">¿Qué hay de comer hoy?</h2>
+                         <Button asChild variant="link" className="px-0 mt-4 text-muted-foreground">
+                           <Link href="/dashboard/bienestar#menu">
+                             Menú Semanal <ArrowRight className="ml-2 h-4 w-4" />
+                           </Link>
+                         </Button>
                     </div>
-                    <div className="md:col-span-7 flex flex-col justify-center items-center">
-                        {isLoadingMenu ? (
-                            <Skeleton className="h-[450px] w-full rounded-2xl" />
-                        ) : todaysMenus.length > 0 && currentMenu ? (
-                            <div className="relative">
-                                <MenuItemCard item={currentMenu} isCurrentDay={true} />
-                                {todaysMenus.length > 1 && (
-                                    <>
-                                        <Button variant="outline" size="icon" className="absolute top-1/2 -translate-y-1/2 -left-5 h-10 w-10 rounded-full shadow-md" onClick={() => handleMenuChange('prev')}>
-                                            <ChevronLeft className="h-4 w-4" />
-                                        </Button>
-                                        <Button variant="outline" size="icon" className="absolute top-1/2 -translate-y-1/2 -right-5 h-10 w-10 rounded-full shadow-md" onClick={() => handleMenuChange('next')}>
-                                            <ChevronRight className="h-4 w-4" />
-                                        </Button>
-                                    </>
-                                )}
-                            </div>
-                        ) : (
-                            <Card className="col-span-full">
-                                <CardContent className="p-8 text-center text-muted-foreground">
-                                    <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
-                                </CardContent>
-                            </Card>
-                        )}
-                    </div>
+                    <p className="text-muted-foreground">
+                        Mantente al día con las opciones de almuerzo que Banesco Seguros ofrece para ti
+                    </p>
                 </div>
+
+                {isLoadingMenu ? (
+                    <div className="flex justify-center gap-4 h-[450px]">
+                        <Skeleton className="w-1/3 h-full" />
+                        <Skeleton className="w-1/3 h-full" />
+                        <Skeleton className="w-1/3 h-full" />
+                    </div>
+                ) : todaysMenus.length > 0 ? (
+                    <div className="flex justify-center gap-4 h-[450px]">
+                       {todaysMenus.map((item) => (
+                           <InteractiveMenuCard key={item.id} item={item} />
+                       ))}
+                    </div>
+                ) : (
+                    <Card className="col-span-full">
+                        <CardContent className="p-8 text-center text-muted-foreground">
+                            <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
+                        </CardContent>
+                    </Card>
+                )}
             </SectionWrapper>
         </div>
       
@@ -1009,6 +1009,7 @@ export default function DashboardPage() {
   );
 
     
+
 
 
 

@@ -59,7 +59,10 @@ export default {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
-  			}
+  			},
+            'menu-clasico': 'hsl(var(--menu-clasico))',
+            'menu-dieta': 'hsl(var(--menu-dieta))',
+            'menu-ejecutivo': 'hsl(var(--menu-ejecutivo))',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

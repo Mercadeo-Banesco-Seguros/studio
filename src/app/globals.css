@@ -41,6 +41,10 @@
     --chart-3: 210 90% 70%;  /* Azul Claro */
     --chart-4: 208 100% 35%; /* Tono más claro del nuevo azul principal #003C71 */
     --chart-5: 210 70% 55%; /* Tono más claro del Nuevo Azul Secundario #5E9CD4 */
+
+    --menu-clasico: 210 100% 65%; /* Azul claro brillante */
+    --menu-dieta: 145 100% 40%; /* Verde brillante */
+    --menu-ejecutivo: 38 100% 60%; /* Naranja brillante */
   }
 
   .dark {
@@ -79,6 +83,10 @@
     --chart-3: 210 90% 70%;  /* Azul Claro */
     --chart-4: 223 19% 65%; /* Variante más clara de Azul Acero */
     --chart-5: 210 65% 45%; /* #367BB6 Variante más clara del Nuevo Azul Secundario oscuro */
+
+    --menu-clasico: 210 100% 65%;
+    --menu-dieta: 145 100% 40%;
+    --menu-ejecutivo: 38 100% 60%;
   }
 }
 
