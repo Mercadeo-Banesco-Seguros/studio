@@ -3,7 +3,7 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
-import { CourseCard } from "@/components/dashboard/course-card";
+import { CourseCard, NewCourseCard } from "@/components/dashboard/course-card";
 import { ActivityCard } from "@/components/dashboard/activity-card";
 import { mockCourses, mockActivities, mockDepartments, mockPlaylist, faqData, mockDressCodeItems } from "@/lib/placeholder-data";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
@@ -94,6 +94,29 @@ const activityHighlights = [
   { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake },
   { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck },
   { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck }
+];
+
+const newSectionCards = [
+  {
+    title: 'Cursos Regulatorios',
+    description: 'Mantente al día con las normativas y procedimientos esenciales para tu rol en la organización.',
+    imageUrl: 'https://i.pinimg.com/1200x/bd/19/e1/bd19e102540dfdb7526b069d007e2853.jpg',
+  },
+  {
+    title: 'ADN Banesco Seguros',
+    description: 'Conoce nuestra historia, valores y la cultura que nos define como organización.',
+    imageUrl: 'https://i.pinimg.com/736x/c8/9d/7f/c89d7fbfae8c8a487220b7a8efe5d3af.jpg',
+  },
+  {
+    title: 'Nuestros Productos',
+    description: 'Explora en detalle nuestro portafolio de productos y los beneficios que ofrecemos a nuestros clientes.',
+    imageUrl: 'https://i.pinimg.com/736x/af/01/88/af01887c1e43f95d84e68ed40ffb5e90.jpg',
+  },
+  {
+    title: 'Nuestra Marca',
+    description: 'Aprende a aplicar correctamente nuestra identidad de marca en todas tus comunicaciones.',
+    imageUrl: 'https://i.pinimg.com/736x/22/3f/96/223f965de36b48c42d7898aad5944094.jpg',
+  },
 ];
 
 
@@ -549,7 +572,7 @@ export default function DashboardPage() {
                 <div className="space-y-4 my-auto">
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib.rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib-rb-4.1.0&q=80&w=1080"
                         alt="Solicitudes de vacaciones"
                         layout="fill"
                         objectFit="cover"
@@ -600,75 +623,19 @@ export default function DashboardPage() {
         
         {/* Cursos Section */}
         <div id="cursos" className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionWrapper className="overflow-hidden bg-primary rounded-2xl shadow-sm text-primary-foreground">
-            <div className="grid md:grid-cols-2 gap-8 min-h-[600px]">
-                <div className="p-8 md:p-12 flex flex-col justify-center">
-                <div className="space-y-4">
-                    <div className="space-y-4">
-                    <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-                        Cursos <br />
-                        <span className="text-primary-foreground font-bold opacity-80">Disponibles</span>
-                    </h2>
-                    <p className="text-primary-foreground/80 mb-4 max-w-lg">
-                        {currentCourse.description}
+            <SectionWrapper>
+                <div className="mb-12 text-center">
+                    <Badge variant="outline" className="mb-4">Actívate</Badge>
+                    <h2 className="text-3xl md:text-5xl font-bold text-foreground tracking-tight">Cursos Disponibles</h2>
+                    <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
+                        Potencia tus habilidades y crece con nosotros. Explora nuestra oferta formativa.
                     </p>
-                    </div>
                 </div>
-                <Button asChild size="lg" variant="secondary" className="w-fit mt-4 bg-white/20 text-white backdrop-blur-sm">
-                    <Link href="/dashboard/bienestar#cursos">
-                    Explorar Cursos
-                    </Link>
-                </Button>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {newSectionCards.map((card, index) => (
+                        <NewCourseCard key={index} {...card} />
+                    ))}
                 </div>
-                <div className="relative min-h-[400px] md:min-h-full">
-                <Image
-                    src={currentCourse.imageUrl}
-                    alt={currentCourse.title}
-                    layout="fill"
-                    objectFit="cover"
-                    data-ai-hint={currentCourse.dataAiHint}
-                    className="brightness-90"
-                    key={currentCourse.id}
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center p-8">
-                        <Card className="w-full max-w-sm bg-background/80 backdrop-blur-lg shadow-2xl rounded-xl">
-                            <CardHeader>
-                            <div className="flex justify-between items-center">
-                                <Badge variant="secondary" className="flex items-center gap-1">
-                                <Star className="h-3 w-3" /> {currentCourse.category}
-                                </Badge>
-                                <div className="flex gap-1">
-                                    <Button variant="outline" size="icon" className="h-7 w-7" onClick={() => handleCourseChange('prev')}>
-                                        <ChevronLeft className="h-4 w-4" />
-                                    </Button>
-                                    <Button variant="outline" size="icon" className="h-7 w-7" onClick={() => handleCourseChange('next')}>
-                                        <ChevronRight className="h-4 w-4" />
-                                    </Button>
-                                </div>
-                            </div>
-                            <CardTitle className="text-lg pt-2">{currentCourse.title}</CardTitle>
-                            </CardHeader>
-                            <CardContent className="space-y-4">
-                            <p className="text-sm text-muted-foreground h-10 text-ellipsis overflow-hidden">{currentCourse.description}</p>
-                            <Separator />
-                            <div className="flex justify-between text-sm">
-                                    <div className="flex items-center gap-2 text-muted-foreground"><Award className="h-4 w-4 text-primary" /><span>Certificado</span></div>
-                                    <div className="font-medium text-foreground">Sí</div>
-                            </div>
-                            <div className="flex justify-between text-sm">
-                                    <div className="flex items-center gap-2 text-muted-foreground"><Clock className="h-4 w-4 text-primary" /><span>Duración</span></div>
-                                    <div className="font-medium text-foreground">{currentCourse.duration}</div>
-                            </div>
-                            </CardContent>
-                            <CardContent>
-                            <Button asChild className="w-full">
-                                <Link href={`/dashboard/cursos/${currentCourse.id}`}>Más Información</Link>
-                            </Button>
-                            </CardContent>
-                        </Card>
-                    </div>
-                </div>
-            </div>
             </SectionWrapper>
         </div>
 
@@ -1013,6 +980,7 @@ export default function DashboardPage() {
     
 
     
+
 
 
 

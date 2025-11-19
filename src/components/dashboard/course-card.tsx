@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import type { Course } from "@/lib/placeholder-data";
 import { Badge } from "@/components/ui/badge";
-import { Clock, Tag, PlayCircle } from "lucide-react";
+import { Clock, Tag, PlayCircle, BookOpen } from "lucide-react";
 import { Progress } from "../ui/progress";
 
 interface CourseCardProps {
@@ -42,4 +42,32 @@ export function CourseCard({ course }: CourseCardProps) {
       </Card>
     </Link>
   );
+}
+
+interface NewCourseCardProps {
+    title: string;
+    description: string;
+    imageUrl: string;
+}
+
+export const NewCourseCard = ({ title, description, imageUrl }: NewCourseCardProps) => {
+    return (
+        <Card className="group relative w-full h-[450px] overflow-hidden rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl">
+            <Image
+                src={imageUrl}
+                alt={title}
+                layout="fill"
+                objectFit="cover"
+                className="z-0 transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10" />
+            <CardContent className="relative z-20 flex h-full flex-col justify-end p-6 text-white">
+                <div className="p-3 bg-white/10 backdrop-blur-sm rounded-lg w-fit mb-4">
+                    <BookOpen className="h-5 w-5 text-white" />
+                </div>
+                <h3 className="text-lg font-bold">{title}</h3>
+                <p className="mt-1 text-xs text-white/80">{description}</p>
+            </CardContent>
+        </Card>
+    )
 }
