@@ -397,7 +397,7 @@ export default function DashboardPage() {
                     ¡Cumplimos lo que prometemos!
                 </p>
                 <div className="flex gap-4">
-                    <Button asChild>
+                    <Button asChild className="font-light">
                     <Link href="/dashboard/mapa-clientes">Conocer más</Link>
                     </Button>
                 </div>
@@ -446,10 +446,10 @@ export default function DashboardPage() {
                         Visita nuestro <br /> Portal de Requerimientos
                     </h2>
                     <div className="flex justify-center gap-4">
-                        <Button asChild size="lg" className="h-11 px-8 bg-white text-[#63a5Fa] hover:bg-white/90">
+                        <Button asChild size="lg" className="h-11 px-8 bg-white text-[#63a5Fa] hover:bg-white/90 font-light">
                            <Link href="/dashboard/requerimientos">Acceder</Link>
                         </Button>
-                        <Button variant="outline" size="lg" className="h-11 px-8 bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white" onClick={() => setShowShortcuts(!showShortcuts)}>
+                        <Button variant="outline" size="lg" className="h-11 px-8 bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white font-light" onClick={() => setShowShortcuts(!showShortcuts)}>
                             Atajos
                         </Button>
                     </div>
@@ -510,7 +510,7 @@ export default function DashboardPage() {
                 <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
                     <div>
                         <h2 className="text-5xl font-extrabold tracking-tight">¿Qué hay de comer hoy?</h2>
-                         <Button asChild variant="link" className="px-0 mt-4 text-muted-foreground">
+                         <Button asChild variant="link" className="px-0 mt-4 text-muted-foreground font-light">
                            <Link href="/dashboard/bienestar#menu">
                              Menú Semanal <ArrowRight className="ml-2 h-4 w-4" />
                            </Link>
@@ -550,7 +550,7 @@ export default function DashboardPage() {
                 {/* Left Panel */}
                 <div className="w-full md:w-2/3 relative min-h-[400px] md:min-h-full">
                 <Image
-                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0h8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib.rb-4.1.0&q=80&w=1080"
                     alt="Playa tropical para representar vacaciones"
                     layout="fill"
                     objectFit="cover"
@@ -561,7 +561,7 @@ export default function DashboardPage() {
                     <p className="mt-4 max-w-md text-white/90">
                     Planifica tu viaje con las mejores recomendaciones y gestiona tus solicitudes de forma sencilla.
                     </p>
-                    <Button asChild className="mt-6 w-fit pointer-events-auto">
+                    <Button asChild className="mt-6 w-fit pointer-events-auto font-light">
                     <Link href="/dashboard/vacaciones">Explorar</Link>
                     </Button>
                 </div>
@@ -644,7 +644,7 @@ export default function DashboardPage() {
           <SectionWrapper>
             <Card className="relative overflow-hidden rounded-2xl shadow-lg min-h-[500px] flex flex-col md:flex-row">
               <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib=rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib-rb-4.1.0&q=80&w=1080"
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
@@ -661,7 +661,7 @@ export default function DashboardPage() {
                     <p className="mt-4 max-w-sm text-white/90">
                     Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
                     </p>
-                    <Button asChild variant="secondary" className="mt-6 bg-white/90 text-foreground hover:bg-white">
+                    <Button asChild variant="secondary" className="mt-6 bg-white/90 text-foreground hover:bg-white font-light">
                     <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
                     </Button>
                 </div>
@@ -736,11 +736,11 @@ export default function DashboardPage() {
                 <div className="bg-muted/50 p-12 flex items-center">
                     <div className="w-full grid grid-cols-2 gap-8">
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
+                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib.rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Beneficios</h4>
                             <p className="text-xs mt-1 text-white/90">Descubra todas sus ventajas.</p>
-                            <Button variant="secondary" size="sm" className="mt-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm pointer-events-auto">
+                            <Button variant="secondary" size="sm" className="mt-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm pointer-events-auto font-light">
                             Consultar
                             </Button>
                         </div>
@@ -750,7 +750,7 @@ export default function DashboardPage() {
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
-                            <Button variant="secondary" size="sm" className="mt-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm pointer-events-auto">
+                            <Button variant="secondary" size="sm" className="mt-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm pointer-events-auto font-light">
                             Consultar
                             </Button>
                         </div>
@@ -760,7 +760,7 @@ export default function DashboardPage() {
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Centros de Atención</h4>
                             <p className="text-xs mt-1 text-white/90">Encuentre la clínica más cercana.</p>
-                            <Button variant="secondary" size="sm" className="mt-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm pointer-events-auto">
+                            <Button variant="secondary" size="sm" className="mt-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm pointer-events-auto font-light">
                             Consultar
                             </Button>
                         </div>
@@ -770,7 +770,7 @@ export default function DashboardPage() {
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Protocolos</h4>
                             <p className="text-xs mt-1 text-white/90">Siga los pasos para cada caso.</p>
-                            <Button variant="secondary" size="sm" className="mt-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm pointer-events-auto">
+                            <Button variant="secondary" size="sm" className="mt-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm pointer-events-auto font-light">
                             Consultar
                             </Button>
                         </div>
@@ -787,7 +787,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
@@ -799,7 +799,7 @@ export default function DashboardPage() {
                     <p className="mt-4 max-w-xl text-primary-foreground/80">
                         Recursos, calendarios y herramientas exclusivas para la gerencia.
                     </p>
-                    <Button asChild size="lg" className="mt-8 bg-white text-foreground hover:bg-white/90">
+                    <Button asChild size="lg" className="mt-8 bg-white text-foreground hover:bg-white/90 font-light">
                         <Link href="/dashboard/espacio-ejecutivo">
                             Acceder Ahora <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
@@ -825,7 +825,7 @@ export default function DashboardPage() {
                     Descubra un mundo de bienestar con nuestras actividades exclusivas, diseñadas para apoyar su salud física y mental en cada etapa de la vida.
                     </p>
                     <div className="flex flex-wrap gap-3">
-                    <Button asChild variant="default" size="lg">
+                    <Button asChild variant="default" size="lg" className="font-light">
                         <Link href="/dashboard/bienestar">Ver Todas las Actividades</Link>
                     </Button>
                     </div>
@@ -873,7 +873,7 @@ export default function DashboardPage() {
                     <h2 className="text-3xl font-bold text-foreground tracking-tight">Nuestra Playlist Banesco Seguros</h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto">La banda sonora para un día de trabajo productivo y agradable. Haz clic en una playlist para escucharla.</p>
                 </div>
-                <Button asChild variant="secondary" className="mt-4 rounded-full bg-muted text-muted-foreground hover:bg-muted/90 hover:text-foreground transition-colors">
+                <Button asChild variant="secondary" className="mt-4 rounded-full bg-muted text-muted-foreground hover:bg-muted/90 hover:text-foreground transition-colors font-light">
                     <Link href="/dashboard/playlist">
                     Playlists
                     </Link>
@@ -903,7 +903,7 @@ export default function DashboardPage() {
                         <Button
                         key={cat.id}
                         variant={activeFaqCategory === cat.id ? "secondary" : "ghost"}
-                        className="w-full justify-start gap-3"
+                        className="w-full justify-start gap-3 font-light"
                         onClick={() => setActiveFaqCategory(cat.id as any)}
                         >
                         <Icon className="h-4 w-4" />
@@ -980,6 +980,7 @@ export default function DashboardPage() {
     
 
     
+
 
 
 
