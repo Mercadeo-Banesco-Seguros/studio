@@ -308,9 +308,9 @@ export default function DashboardPage() {
         
         {/* Hero Section */}
         <section className="w-full relative overflow-hidden">
-            <div className="container mx-auto">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid md:grid-cols-10 min-h-[calc(100vh-6rem)] relative">
-                    <div className="md:col-span-7 flex flex-col justify-center py-12 md:py-24 px-4 sm:px-6 lg:px-8 z-10">
+                    <div className="md:col-span-7 flex flex-col justify-center py-12 md:py-24 z-10">
                         <div className="flex items-center gap-4">
                            <Badge variant="outline">Portal Interno</Badge>
                            <Badge variant="default">{currentTime}</Badge>
@@ -357,63 +357,65 @@ export default function DashboardPage() {
         </section>
 
         {/* Mision y Valores Section */}
-        <SectionWrapper>
-          <div className="grid md:grid-cols-2 gap-16 items-center md:pl-8 lg:pl-20">
-            <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">
-                Nuestra Oferta de Valor
-              </h2>
-              <p className="text-muted-foreground max-w-lg">
-                Somos una empresa de seguros reconocida por su excelencia y calidad, orientada a satisfacer las necesidades de nuestros clientes, intermediarios y organización, brindando asesoría y protección con soluciones ágiles y oportunas.
-              </p>
-              <p className="font-semibold text-foreground">
-                ¡Cumplimos lo que prometemos!
-              </p>
-              <div className="flex gap-4">
-                <Button asChild>
-                  <Link href="/dashboard/mapa-clientes">Conocer más</Link>
-                </Button>
-              </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionWrapper>
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+                <div className="space-y-6">
+                <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">
+                    Nuestra Oferta de Valor
+                </h2>
+                <p className="text-muted-foreground max-w-lg">
+                    Somos una empresa de seguros reconocida por su excelencia y calidad, orientada a satisfacer las necesidades de nuestros clientes, intermediarios y organización, brindando asesoría y protección con soluciones ágiles y oportunas.
+                </p>
+                <p className="font-semibold text-foreground">
+                    ¡Cumplimos lo que prometemos!
+                </p>
+                <div className="flex gap-4">
+                    <Button asChild>
+                    <Link href="/dashboard/mapa-clientes">Conocer más</Link>
+                    </Button>
+                </div>
+                </div>
+                <div className="relative grid grid-cols-2 grid-rows-2 gap-4 h-[500px]">
+                <div className="col-span-1 row-span-2 rounded-2xl overflow-hidden shadow-lg">
+                    <Image
+                        src="https://images.unsplash.com/photo-1599351234741-727bff276c9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNzaW5lc3xlbnwwfHx8fDE3NTI2MDU4MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                        alt="Equipo de Banesco Seguros"
+                        width={400}
+                        height={600}
+                        className="w-full h-full object-cover"
+                        data-ai-hint="team meeting"
+                    />
+                </div>
+                <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg">
+                    <Image
+                        src="https://images.unsplash.com/photo-1529180979161-06b8b6d6f2be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8ZmFtaWx5fGVufDB8fHx8MTc1MjYwNTY2Nnww&ixlib.rb-4.1.0&q=80&w=1080"
+                        alt="Cliente satisfecho"
+                        width={400}
+                        height={400}
+                        className="w-full h-full object-cover"
+                        data-ai-hint="happy client"
+                    />
+                </div>
+                <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg">
+                    <Image
+                        src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib.rb-4.1.0&q=80&w=1080"
+                        alt="Oficina de Banesco"
+                        width={400}
+                        height={400}
+                        className="w-full h-full object-cover"
+                        data-ai-hint="car"
+                    />
+                </div>
+                </div>
             </div>
-            <div className="relative grid grid-cols-2 grid-rows-2 gap-4 h-[500px]">
-              <div className="col-span-1 row-span-2 rounded-2xl overflow-hidden shadow-lg">
-                  <Image
-                      src="https://images.unsplash.com/photo-1599351234741-727bff276c9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNzaW5lc3xlbnwwfHx8fDE3NTI2MDU4MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                      alt="Equipo de Banesco Seguros"
-                      width={400}
-                      height={600}
-                      className="w-full h-full object-cover"
-                      data-ai-hint="team meeting"
-                  />
-              </div>
-              <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg">
-                  <Image
-                      src="https://images.unsplash.com/photo-1529180979161-06b8b6d6f2be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8ZmFtaWx5fGVufDB8fHx8MTc1MjYwNTY2Nnww&ixlib.rb-4.1.0&q=80&w=1080"
-                      alt="Cliente satisfecho"
-                      width={400}
-                      height={400}
-                      className="w-full h-full object-cover"
-                      data-ai-hint="happy client"
-                  />
-              </div>
-              <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg">
-                  <Image
-                      src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib.rb-4.1.0&q=80&w=1080"
-                      alt="Oficina de Banesco"
-                      width={400}
-                      height={400}
-                      className="w-full h-full object-cover"
-                      data-ai-hint="car"
-                  />
-              </div>
-            </div>
-          </div>
-        </SectionWrapper>
+            </SectionWrapper>
+        </div>
         
         {/* Portal de Requerimientos Section */}
         <section id="requerimientos" className="w-full">
             <div className="bg-[#63a5Fa] text-white relative py-24">
-                <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
                         Visita nuestro <br /> Portal de Requerimientos
                     </h2>
@@ -432,7 +434,7 @@ export default function DashboardPage() {
                 showShortcuts ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
             )}>
               <div id="requerimientos-atajos" className="bg-muted/50 py-16">
-                  <div className="container mx-auto px-4 md:px-8">
+                  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         <div>
                             <h4 className="font-bold tracking-tight mb-3 text-foreground">Capital Humano</h4>
@@ -477,7 +479,7 @@ export default function DashboardPage() {
 
 
         {/* Menus Section */}
-        <div id="menu">
+        <div id="menu" className="container mx-auto px-4 sm:px-6 lg:px-8">
              <SectionWrapper className="bg-muted/30">
                 <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
                     <div>
@@ -488,7 +490,7 @@ export default function DashboardPage() {
                            </Link>
                          </Button>
                     </div>
-                    <p className="text-sm text-muted-foreground max-w-md">
+                    <p className="text-sm text-muted-foreground">
                         Revise la oferta gastronómica completa preparada para hoy. Encontrará el plato principal, las alternativas del día y las opciones de postre, garantizando siempre una alimentación balanceada.
                     </p>
                 </div>
@@ -516,7 +518,7 @@ export default function DashboardPage() {
         </div>
       
         {/* Gestión de Vacaciones Section */}
-        <div id="vacaciones">
+        <div id="vacaciones" className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionWrapper>
             <Card className="bg-card shadow-lg rounded-2xl overflow-hidden min-h-[700px] flex flex-col md:flex-row">
                 {/* Left Panel */}
@@ -594,7 +596,7 @@ export default function DashboardPage() {
         </div>
         
         {/* Cursos Section */}
-        <div id="cursos">
+        <div id="cursos" className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionWrapper className="overflow-hidden bg-primary rounded-2xl shadow-sm text-primary-foreground">
             <div className="grid md:grid-cols-2 gap-8 min-h-[600px]">
                 <div className="p-8 md:p-12 flex flex-col justify-center">
@@ -668,7 +670,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Dress Code Section */}
-        <div id="dress-code">
+        <div id="dress-code" className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionWrapper>
             <Card className="relative overflow-hidden rounded-2xl shadow-lg min-h-[500px] flex flex-col md:flex-row">
               <Image
@@ -719,7 +721,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Póliza HCM Section */}
-        <div id="poliza">
+        <div id="poliza" className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionWrapper>
             <Card className="overflow-hidden bg-card shadow-lg border-none">
                 <div className="grid md:grid-cols-2">
@@ -811,7 +813,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Espacio Ejecutivo Section */}
-        <div id="espacio-ejecutivo" className="scroll-mt-20">
+        <div id="espacio-ejecutivo" className="scroll-mt-20 container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
@@ -839,7 +841,7 @@ export default function DashboardPage() {
 
 
         {/* Actividades Section */}
-        <div id="actividades">
+        <div id="actividades" className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionWrapper>
             <div className="bg-card p-8 md:p-12 rounded-2xl shadow-sm">
                 <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-8 md:mb-12">
@@ -894,7 +896,7 @@ export default function DashboardPage() {
         </div>
       
         {/* Playlist Section */}
-        <div id="playlist">
+        <div id="playlist" className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionWrapper>
             <div className="flex flex-col items-center text-center mb-8">
                 <div className="space-y-1">
@@ -916,7 +918,7 @@ export default function DashboardPage() {
         </div>
         
         {/* FAQ Section */}
-        <div id="faq">
+        <div id="faq" className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionWrapper>
             <div className="grid md:grid-cols-3 gap-12">
                 <div className="md:col-span-1 space-y-4">
@@ -960,7 +962,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Pilares Section */}
-        <div id="pilares">
+        <div id="pilares" className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionWrapper>
             <div className="grid md:grid-cols-2 gap-16 items-center">
                 <div className="flex items-center justify-center">
@@ -1008,3 +1010,4 @@ export default function DashboardPage() {
     
 
     
+
