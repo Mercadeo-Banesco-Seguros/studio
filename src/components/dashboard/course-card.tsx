@@ -52,7 +52,7 @@ interface NewCourseCardProps {
 
 export const NewCourseCard = ({ title, description, imageUrl }: NewCourseCardProps) => {
     return (
-        <Card className="group relative w-full h-[450px] overflow-hidden rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl">
+        <Card className="group relative w-full h-[380px] overflow-hidden rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl">
             <Image
                 src={imageUrl}
                 alt={title}
