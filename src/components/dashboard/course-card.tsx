@@ -80,7 +80,7 @@ export const NewCourseCard = ({ title, category, details, imageUrl, dataAiHint, 
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-0" />
 
             <div className="relative z-10">
-                <p className={mutedTextColorClass}>{category}</p>
+                <p className={cn("text-sm", mutedTextColorClass)}>{category}</p>
                  <div className="flex items-center gap-2 mt-4">
                     {Icon && <Icon className={cn("h-6 w-6", textColorClass)} />}
                     <h3 className={cn("text-2xl font-bold", textColorClass)}>{title}</h3>
