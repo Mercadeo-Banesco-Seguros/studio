@@ -34,10 +34,11 @@ export function MenuItemCard({ item, isCurrentDay }: MenuItemCardProps) {
                 <Image 
                     src={item.imageUrl}
                     alt={item.name}
-                    layout="fill"
+                    width={400}
+                    height={300}
                     objectFit="cover"
                     data-ai-hint={item.dataAiHint || ''}
-                    className="rounded-t-2xl"
+                    className="w-full h-full rounded-t-2xl"
                 />
             ) : (
                 <div className="w-full h-full flex items-center justify-center bg-muted rounded-t-2xl">
