@@ -58,7 +58,8 @@ import {
   Briefcase,
   Scale,
   FolderKanban,
-  FileSignature
+  FileSignature,
+  Bot
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -549,7 +550,7 @@ export default function DashboardPage() {
                 <div className="space-y-4 my-auto">
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib.rb-4.1.0&q=80&w=1080"
                         alt="Solicitudes de vacaciones"
                         layout="fill"
                         objectFit="cover"
@@ -579,7 +580,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib-rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib.rb-4.1.0&q=80&w=1080"
                         alt="Recomendaciones de viaje"
                         layout="fill"
                         objectFit="cover"
@@ -603,29 +604,28 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-2 gap-6 h-[700px] lg:h-[600px]">
                     <NewCourseCard
-                        title="Leadership challenges in turbulent times"
-                        category="Learn with the experts"
-                        details={["8 seats left, starting Tomorrow", "Learn Leadership"]}
-                        imageUrl="https://images.unsplash.com/photo-1600878459138-e1120b6d41df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8c2lsaG91ZXR0ZSUyMHBlcnNvbnxlbnwwfHx8fDE3NTkzMzgyNzR8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                        dataAiHint="person silhouette"
-                        className="row-span-2 bg-red-900/70"
-                        imageClassName="opacity-60"
-                        icon={Users}
+                        title="Inteligencia Artificial"
+                        category="El Futuro es Ahora"
+                        details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
+                        imageUrl="https://images.unsplash.com/photo-1599058917212-d750089bc07e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhaXxlbnwwfHx8fDE3NTkzOTk3ODR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                        dataAiHint="artificial intelligence"
+                        className="row-span-2 bg-primary text-primary-foreground"
+                        imageClassName="opacity-30"
+                        icon={Bot}
                     />
                     <NewCourseCard
-                        title="Foundations of Project Management"
-                        category="Start small with a popular nugget"
-                        details={["89%", "7 min to complete", "Learn Management"]}
-                        progress={89}
-                        author="From Becoming a Product Manager"
-                        className="bg-green-900/80"
-                    />
-                    <NewCourseCard
-                        title="Working in groups and teams"
-                        category="Step up your collaboration game"
-                        details={["25 min", "Learn Feedback and Teamwork"]}
-                        className="bg-amber-100 text-amber-900"
+                        title="Google Workspace"
+                        category="Potencia tu Productividad"
+                        details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
+                        author="Banesco Seguros"
+                        className="bg-card text-card-foreground"
                         isLight
+                    />
+                    <NewCourseCard
+                        title="Comunicaciones Efectivas"
+                        category="Mejora tus Habilidades"
+                        details={["Presentaciones", "Feedback", "Oratoria"]}
+                        className="bg-secondary text-secondary-foreground"
                     />
                 </div>
             </SectionWrapper>
@@ -636,7 +636,7 @@ export default function DashboardPage() {
           <SectionWrapper>
             <Card className="relative overflow-hidden rounded-2xl shadow-lg min-h-[500px] flex flex-col md:flex-row">
               <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib-rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib.rb-4.1.0&q=80&w=1080"
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
@@ -738,7 +738,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
@@ -985,4 +985,5 @@ export default function DashboardPage() {
     
 
     
+
 

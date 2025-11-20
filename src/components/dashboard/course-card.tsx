@@ -62,8 +62,11 @@ interface NewCourseCardProps {
 }
 
 export const NewCourseCard = ({ title, category, details, imageUrl, dataAiHint, className, imageClassName, icon: Icon, progress, author, isLight }: NewCourseCardProps) => {
+    const textColorClass = isLight ? "text-card-foreground" : "text-primary-foreground";
+    const mutedTextColorClass = isLight ? "text-muted-foreground" : "text-primary-foreground/80";
+
     return (
-        <Card className={cn("group relative w-full h-full overflow-hidden rounded-2xl shadow-lg flex flex-col justify-between p-6 text-white transition-all duration-300 hover:shadow-xl", className)}>
+        <Card className={cn("group relative w-full h-full overflow-hidden rounded-2xl shadow-lg flex flex-col justify-between p-6 transition-all duration-300 hover:shadow-xl", className)}>
             {imageUrl && (
                 <Image
                     src={imageUrl}
@@ -74,13 +77,13 @@ export const NewCourseCard = ({ title, category, details, imageUrl, dataAiHint, 
                     data-ai-hint={dataAiHint}
                 />
             )}
-            <div className="absolute inset-0 bg-black/30 z-0" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-0" />
 
             <div className="relative z-10">
-                <p className={cn("text-xs", isLight ? "text-muted-foreground" : "text-white/80")}>{category}</p>
+                <p className={mutedTextColorClass}>{category}</p>
                  <div className="flex items-center gap-2 mt-4">
-                    {Icon && <Icon className="h-6 w-6" />}
-                    <h3 className="text-2xl font-bold">{title}</h3>
+                    {Icon && <Icon className={cn("h-6 w-6", textColorClass)} />}
+                    <h3 className={cn("text-2xl font-bold", textColorClass)}>{title}</h3>
                 </div>
             </div>
             
@@ -92,17 +95,17 @@ export const NewCourseCard = ({ title, category, details, imageUrl, dataAiHint, 
                     <span>{progress}%</span>
                   </div>
                 )}
-                <div className="flex items-center gap-4 text-xs">
+                <div className={cn("flex items-center gap-4 text-xs", mutedTextColorClass)}>
                     {details.map((detail, index) => (
-                        <span key={index} className={cn(isLight ? "text-muted-foreground" : "text-white/80")}>{detail}</span>
+                        <span key={index}>{detail}</span>
                     ))}
                 </div>
 
                 <div className="flex items-center gap-2 mt-4">
-                    <Button variant={isLight ? "secondary" : "secondary"} size="sm" className={cn("text-xs font-light", isLight ? "" : "bg-white/20 text-white hover:bg-white/30")}>
+                    <Button variant={isLight ? "secondary" : "secondary"} size="sm" className={cn("text-xs font-light", !isLight && "bg-white/20 text-white hover:bg-white/30")}>
                         Preview
                     </Button>
-                    <Button variant="link" size="sm" className={cn("text-xs font-light", isLight ? "text-muted-foreground" : "text-white/80")}>
+                    <Button variant="link" size="sm" className={cn("text-xs font-light", mutedTextColorClass)}>
                         Details
                     </Button>
                 </div>
