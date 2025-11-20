@@ -47,7 +47,7 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
   }
 
   return (
-    <section className="relative w-full bg-primary text-primary-foreground rounded-2xl overflow-hidden shadow-2xl my-16 min-h-[500px] flex items-center">
+    <section className="relative w-full bg-primary text-primary-foreground overflow-hidden shadow-2xl min-h-[500px] flex items-center">
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-blue-800 opacity-80"></div>
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/az-subtle.png')] opacity-5"></div>
       
