@@ -425,7 +425,7 @@ export default function DashboardPage() {
                 </div>
                 <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg">
                     <Image
-                        src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib.rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib=rb-4.1.0&q=80&w=1080"
                         alt="Oficina de Banesco"
                         width={400}
                         height={400}
@@ -546,7 +546,7 @@ export default function DashboardPage() {
         {/* Gestión de Vacaciones Section */}
         <div id="vacaciones" className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionWrapper>
-            <Card className="bg-card shadow-lg rounded-2xl overflow-hidden min-h-[600px] flex flex-col md:flex-row">
+            <Card className="bg-card shadow-lg rounded-2xl overflow-hidden min-h-[500px] flex flex-col md:flex-row">
                 {/* Left Panel */}
                 <div className="w-full md:w-2/3 relative min-h-[400px] md:min-h-full">
                 <Image
@@ -572,7 +572,7 @@ export default function DashboardPage() {
                 <div className="space-y-4 my-auto">
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib.rb-4.1.0&q=80&w=1080"
                         alt="Solicitudes de vacaciones"
                         layout="fill"
                         objectFit="cover"
@@ -989,5 +989,7 @@ export default function DashboardPage() {
 
 
 
+
+    
 
     
