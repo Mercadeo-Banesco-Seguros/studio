@@ -35,7 +35,7 @@ export function MenuItemCard({ item, isCurrentDay }: MenuItemCardProps) {
                     src={item.imageUrl}
                     alt={item.name}
                     layout="fill"
-                    objectFit="cover"
+                    objectFit="contain"
                     data-ai-hint={item.dataAiHint || ''}
                 />
             ) : (
