@@ -1,11 +1,9 @@
 
-
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
-import { CourseCard, NewCourseCard } from "@/components/dashboard/course-card";
-import { ActivityCard } from "@/components/dashboard/activity-card";
+import { NewCourseCard } from "@/components/dashboard/course-card";
 import { mockCourses, mockActivities, mockDepartments, mockPlaylist, faqData, mockDressCodeItems } from "@/lib/placeholder-data";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
@@ -82,6 +80,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { PlaylistCard } from '@/components/dashboard/playlist-card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { DressCodeCard } from '@/components/dashboard/dress-code-card';
+import { InteractiveMenuBanner } from '@/components/dashboard/interactive-menu-banner';
 
 
 const pilaresData = [
@@ -484,41 +483,21 @@ export default function DashboardPage() {
 
         {/* Menus Section */}
         <div id="menu" className="container mx-auto px-4 sm:px-6 lg:px-8">
-             <SectionWrapper>
-                <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
-                    <div>
-                        <h2 className="text-5xl font-extrabold tracking-tight">¿Qué hay de comer hoy?</h2>
-                         <Button asChild variant="link" className="px-0 mt-4 text-muted-foreground font-light">
-                           <Link href="/dashboard/bienestar#menu">
-                             Menú Semanal <ArrowRight className="ml-2 h-4 w-4" />
-                           </Link>
-                         </Button>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                        Revise la oferta gastronómica completa preparada para hoy. Encontrará el plato principal, las alternativas del día y las opciones de postre, garantizando siempre una alimentación balanceada. Recuerde que el horario del comedor es de 11:30 a.m. a 2:30 p.m.
-                    </p>
-                </div>
-
-                {isLoadingMenu ? (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <Skeleton className="h-[500px] w-full" />
-                        <Skeleton className="h-[500px] w-full" />
-                        <Skeleton className="h-[500px] w-full" />
-                    </div>
-                ) : todaysMenus.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                       {todaysMenus.map((item) => (
-                           <MenuItemCard key={item.id} item={item} />
-                       ))}
-                    </div>
-                ) : (
+            {isLoadingMenu ? (
+                <SectionWrapper>
+                    <Skeleton className="h-[600px] w-full rounded-2xl" />
+                </SectionWrapper>
+            ) : todaysMenus.length > 0 ? (
+                <InteractiveMenuBanner menuItems={todaysMenus} />
+            ) : (
+                <SectionWrapper>
                     <Card className="col-span-full">
                         <CardContent className="p-8 text-center text-muted-foreground">
                             <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
                         </CardContent>
                     </Card>
-                )}
-            </SectionWrapper>
+                </SectionWrapper>
+            )}
         </div>
       
         {/* Gestión de Vacaciones Section */}
@@ -636,7 +615,7 @@ export default function DashboardPage() {
           <SectionWrapper>
             <Card className="relative overflow-hidden rounded-2xl shadow-lg min-h-[500px] flex flex-col md:flex-row">
               <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib.rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib-rb-4.1.0&q=80&w=1080"
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
@@ -748,7 +727,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib.rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
+                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Centros de Atención</h4>
                             <p className="text-xs mt-1 text-white/90">Encuentre la clínica más cercana.</p>
@@ -779,7 +758,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
@@ -985,5 +964,6 @@ export default function DashboardPage() {
     
 
     
+
 
 
