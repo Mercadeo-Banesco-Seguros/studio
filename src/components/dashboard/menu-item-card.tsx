@@ -29,17 +29,18 @@ export function MenuItemCard({ item, isCurrentDay }: MenuItemCardProps) {
 
   return (
     <Card className="w-full h-full flex flex-col rounded-2xl shadow-lg bg-card overflow-hidden">
-        <CardHeader className="p-0 relative h-48">
+        <CardHeader className="p-0 relative h-48 rounded-t-2xl">
              {item.imageUrl ? (
                 <Image 
                     src={item.imageUrl}
                     alt={item.name}
                     layout="fill"
-                    objectFit="contain"
+                    objectFit="cover"
                     data-ai-hint={item.dataAiHint || ''}
+                    className="rounded-t-2xl"
                 />
             ) : (
-                <div className="w-full h-full flex items-center justify-center bg-muted">
+                <div className="w-full h-full flex items-center justify-center bg-muted rounded-t-2xl">
                     <Utensils className="h-16 w-16 text-muted-foreground/50" />
                 </div>
             )}
