@@ -42,21 +42,37 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
     handleThumbnailClick(types[nextIndex]);
   };
 
+  const backgroundImages = {
+    Clásico: classicMenu?.imageUrl || '',
+    Dieta: dietaMenu?.imageUrl || '',
+    Ejecutivo: ejecutivoMenu?.imageUrl || '',
+  };
+
   if (!menuItems || menuItems.length === 0) {
     return null; // Don't render anything if there's no menu
   }
 
   return (
     <section className="relative w-full bg-primary text-primary-foreground overflow-hidden shadow-2xl min-h-[500px] flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-blue-800 opacity-80"></div>
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/az-subtle.png')] opacity-5"></div>
+        {backgroundImages[selectedType] && (
+            <Image
+                key={selectedType}
+                src={backgroundImages[selectedType]}
+                alt={`Fondo para menú ${selectedType}`}
+                layout="fill"
+                objectFit="cover"
+                className={cn("absolute inset-0 z-0 transition-opacity duration-700", isAnimating ? "opacity-50" : "opacity-100")}
+                data-ai-hint="food background"
+            />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent pointer-events-none z-10"></div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           
           {/* Left Side: Main Image */}
           <div className="relative h-80 w-full transform -translate-y-4 md:translate-y-0">
-             {selectedMenuItem && (
+             {selectedMenuItem && selectedMenuItem.imageUrl && (
               <div className={cn("transition-opacity duration-300", isAnimating ? "opacity-0" : "opacity-100")}>
                 <Image
                     src={selectedMenuItem.imageUrl}
@@ -72,10 +88,10 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
           {/* Right Side: Details & Thumbnails */}
           <div className="relative">
             {selectedMenuItem && (
-                <div className={cn("transition-opacity duration-300", isAnimating ? "opacity-0" : "opacity-100")}>
-                    <p className="text-sm font-light text-primary-foreground/80 mb-2">Menú {selectedMenuItem.type.toLowerCase()}</p>
+                <div className={cn("transition-opacity duration-300 text-white", isAnimating ? "opacity-0" : "opacity-100")}>
+                    <p className="text-sm font-light text-white/80 mb-2">Menú {selectedMenuItem.type.toLowerCase()}</p>
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">{selectedMenuItem.name}</h2>
-                    <p className="text-sm text-primary-foreground/80 max-w-sm mb-8">{selectedMenuItem.description}</p>
+                    <p className="text-sm text-white/80 max-w-sm mb-8">{selectedMenuItem.description}</p>
                 </div>
             )}
 
@@ -89,7 +105,7 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
                 {/* Thumbnails */}
                 <div className="flex items-center gap-3">
                   {[classicMenu, dietaMenu, ejecutivoMenu].map(menu => {
-                    if (!menu) return null;
+                    if (!menu || !menu.imageUrl) return null;
                     const isSelected = selectedType === menu.type;
                     return (
                       <button
