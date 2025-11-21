@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useMemo, useEffect } from 'react';
@@ -41,12 +40,13 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
     const nextIndex = (currentIndex + 1) % types.length;
     handleThumbnailClick(types[nextIndex]);
   };
-
+  
   const backgroundImages = {
-    Clásico: classicMenu?.imageUrl || 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8d2hpdGV8ZW58MHx8fHwxNzYzNjc0MTMzfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    Dieta: dietaMenu?.imageUrl || 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8d2hpdGV8ZW58MHx8fHwxNzYzNjc0MTMzfDA&ixlib-rb-4.1.0&q=80&w=1080',
-    Ejecutivo: ejecutivoMenu?.imageUrl || 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8d2hpdGV8ZW58MHx8fHwxNzYzNjc0MTMzfDA&ixlib-rb-4.1.0&q=80&w=1080',
+    Clásico: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8d2hpdGV8ZW58MHx8fHwxNzYzNjc0MTMzfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    Dieta: dietaMenu?.imageUrl || 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8d2hpdGV8ZW58MHx8fHwxNzYzNjc0MTMzfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    Ejecutivo: ejecutivoMenu?.imageUrl || 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8d2hpdGV8ZW58MHx8fHwxNzYzNjc0MTMzfDA&ixlib=rb-4.1.0&q=80&w=1080',
   };
+
 
   if (!menuItems || menuItems.length === 0) {
     return null; // Don't render anything if there's no menu
