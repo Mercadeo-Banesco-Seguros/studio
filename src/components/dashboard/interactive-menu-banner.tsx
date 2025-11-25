@@ -44,8 +44,8 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
   
   const backgroundImages = {
     Clásico: 'https://images.unsplash.com/photo-1708724195876-1156245fce21?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8',
-    Dieta: 'https://images.unsplash.com/photo-1708724195876-1156245fce21?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8',
-    Ejecutivo: 'https://images.unsplash.com/photo-1708724195876-1156245fce21?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8',
+    Dieta: 'https://media.istockphoto.com/id/1486754158/es/vector/dise%C3%B1o-abstracto-de-fondo-de-malla-degradada-azul-borroso-para-su-presentaci%C3%B3n-fondo-de.jpg?s=612x612&w=0&k=20&c=cnr5uFzkM0LCONayeBdiR3oNr8guNrAPHwZMhUzgyLg=',
+    Ejecutivo: 'https://wallpapers.com/images/hd/white-abstract-wave-art-ero2eidpwjeft0a3.jpg',
   };
 
 
