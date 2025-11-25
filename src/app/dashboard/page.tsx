@@ -83,6 +83,7 @@ import { PlaylistCard } from '@/components/dashboard/playlist-card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { DressCodeCard } from '@/components/dashboard/dress-code-card';
 import { InteractiveMenuBanner } from '@/components/dashboard/interactive-menu-banner';
+import { useToast } from '@/hooks/use-toast';
 
 
 const pilaresData = [
@@ -215,6 +216,7 @@ export default function DashboardPage() {
   const [isLoadingMenu, setIsLoadingMenu] = useState(true);
   const [showShortcuts, setShowShortcuts] = useState(false);
   const [isMissionView, setIsMissionView] = useState(false);
+  const { toast } = useToast();
 
   const faqCategories = [
     { id: 'General', label: 'General', icon: Home },
@@ -376,10 +378,10 @@ export default function DashboardPage() {
               <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 w-full max-w-7xl mx-auto p-8 md:p-12">
                   <div className="space-y-4">
                       <Badge 
-                          variant="outline" 
-                           style={isMissionView 
-                            ? { borderColor: 'hsl(var(--secondary))', color: 'hsl(var(--secondary))' } 
-                            : { borderColor: '#543db8', color: '#543db8' }}
+                        variant="outline" 
+                        style={isMissionView 
+                          ? { borderColor: 'hsl(var(--secondary))', color: 'hsl(var(--secondary))' } 
+                          : { borderColor: '#543db8', color: '#543db8' }}
                       >
                           Acerca de Nosotros
                       </Badge>
@@ -544,10 +546,10 @@ export default function DashboardPage() {
                             Visita nuestro <br /> Portal de Requerimientos
                         </h2>
                         <div className="flex justify-center gap-4">
-                           <Button asChild size="default" className="bg-white text-primary hover:bg-white/90 font-light">
+                           <Button asChild size="default" className="bg-white text-primary hover:bg-white/90 font-light text-xs">
                                <Link href="/dashboard/requerimientos">Acceder</Link>
                            </Button>
-                           <Button variant="outline" size="default" className="bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white font-light" onClick={() => setShowShortcuts(true)}>
+                           <Button variant="outline" size="default" className="bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white font-light text-xs" onClick={() => setShowShortcuts(true)}>
                                Atajos
                            </Button>
                         </div>
@@ -611,7 +613,7 @@ export default function DashboardPage() {
                         category="El Futuro es Ahora"
                         details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                         imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                        dataAiHint="artificial intelligence"
+                        data-ai-hint="artificial intelligence"
                         className="row-span-2 bg-primary text-primary-foreground"
                         imageClassName="opacity-30"
                         icon={Bot}
@@ -623,7 +625,7 @@ export default function DashboardPage() {
                         author="Banesco Seguros"
                         className="bg-card text-card-foreground"
                         imageUrl="https://images.unsplash.com/photo-1592096304832-62463bfdc822?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8Z29vZ2xlfGVufDB8fHx8MTc2NDA4NTA4N3ww&ixlib=rb-4.1.0&q=80&w=1080"
-                        dataAiHint="collaboration tools"
+                        data-ai-hint="collaboration tools"
                         imageClassName="opacity-30"
                         isLight
                     />
@@ -633,7 +635,7 @@ export default function DashboardPage() {
                         details={["Presentaciones", "Feedback", "Oratoria"]}
                         className="bg-secondary text-secondary-foreground"
                         imageUrl="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwdWJsaWMlMjBzcGVha2luZ3xlbnwwfHx8fDE3NjM4ODUxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                        dataAiHint="public speaking"
+                        data-ai-hint="public speaking"
                         imageClassName="opacity-30"
                     />
                 </div>
@@ -757,7 +759,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib.rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
+                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Centros de Atención</h4>
                             <p className="text-xs mt-1 text-white/90">Encuentre la clínica más cercana.</p>
@@ -788,7 +790,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
