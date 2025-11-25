@@ -42,9 +42,9 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
   };
   
   const backgroundImages = {
-    Clásico: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8d2hpdGV8ZW58MHx8fHwxNzYzNjc0MTMzfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    Dieta: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8d2hpdGV8ZW58MHx8fHwxNzYzNjc0MTMzfDA&ixlib.rb-4.1.0&q=80&w=1080',
-    Ejecutivo: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8d2hpdGV8ZW58MHx8fHwxNzYzNjc0MTMzfDA&ixlib.rb-4.1.0&q=80&w=1080',
+    Clásico: 'https://images.unsplash.com/photo-1708724195876-1156245fce21?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8',
+    Dieta: 'https://images.unsplash.com/photo-1708724195876-1156245fce21?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8',
+    Ejecutivo: 'https://images.unsplash.com/photo-1708724195876-1156245fce21?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8',
   };
 
 
