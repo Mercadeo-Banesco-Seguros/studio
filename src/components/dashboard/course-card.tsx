@@ -48,14 +48,14 @@ export function CourseCard({ course }: CourseCardProps) {
 }
 
 const AvailabilityRing = ({ percentage }: { percentage: number }) => {
-  const radius = 40;
-  const stroke = 5;
+  const radius = 50;
+  const stroke = 6;
   const normalizedRadius = radius - stroke / 2;
   const circumference = normalizedRadius * 2 * Math.PI;
   const strokeDashoffset = circumference - (percentage / 100) * circumference;
 
   return (
-    <div className="relative flex items-center justify-center w-24 h-24 flex-shrink-0">
+    <div className="relative flex items-center justify-center w-32 h-32 flex-shrink-0">
       <svg
         height={radius * 2}
         width={radius * 2}
@@ -82,8 +82,8 @@ const AvailabilityRing = ({ percentage }: { percentage: number }) => {
           className="transition-all duration-700 ease-out"
         />
       </svg>
-      <span className="absolute text-[10px] font-medium text-primary-foreground tracking-wider">
-        Disponibilidad
+      <span className="absolute text-sm font-medium text-primary-foreground tracking-wider">
+        Cupos
       </span>
     </div>
   );
