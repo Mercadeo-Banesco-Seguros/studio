@@ -399,7 +399,7 @@ export default function DashboardPage() {
                               asChild 
                               className={cn(
                                 "font-light hover:opacity-90 text-primary-foreground",
-                                isMissionView ? "bg-secondary hover:bg-secondary/90" : "bg-[#543db8] hover:bg-[#543db8]/90"
+                                isMissionView ? "bg-secondary hover:bg-secondary/90" : "bg-[#543DB8] hover:bg-[#543DB8]/90"
                               )}
                           >
                               <Link href="/dashboard/mapa-clientes">Nosotros</Link>
@@ -623,7 +623,7 @@ export default function DashboardPage() {
                         details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
                         author="Banesco Seguros"
                         className="bg-secondary text-secondary-foreground min-h-[400px]"
-                        imageUrl="https://images.unsplash.com/photo-1592096304832-62463bfdc822?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8Z29vZ2xlfGVufDB8fHx8MTc2NDA4NTA4N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                        imageUrl="https://www.sage.com/en-us/blog/wp-content/uploads/sites/2/2023/02/shutterstock_1761488276_c2222.jpg"
                         dataAiHint="collaboration tools"
                         imageClassName="opacity-30"
                         availability={75}
@@ -633,7 +633,7 @@ export default function DashboardPage() {
                         category="El Futuro es Ahora"
                         details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                         className="bg-secondary text-secondary-foreground min-h-[400px]"
-                        imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                        imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                         dataAiHint="artificial intelligence"
                         imageClassName="opacity-30"
                         icon={Bot}
@@ -659,7 +659,7 @@ export default function DashboardPage() {
           <SectionWrapper>
             <Card className="relative overflow-hidden rounded-2xl shadow-lg min-h-[500px] flex flex-col md:flex-row">
               <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib-rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
