@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
@@ -57,7 +56,8 @@ import {
   Scale,
   FolderKanban,
   FileSignature,
-  Bot
+  Bot,
+  RefreshCw,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -212,6 +212,7 @@ export default function DashboardPage() {
   const [todaysMenus, setTodaysMenus] = useState<MenuItem[]>([]);
   const [isLoadingMenu, setIsLoadingMenu] = useState(true);
   const [showShortcuts, setShowShortcuts] = useState(false);
+  const [isMissionView, setIsMissionView] = useState(false);
 
   const faqCategories = [
     { id: 'General', label: 'General', icon: Home },
@@ -362,56 +363,48 @@ export default function DashboardPage() {
         {/* Mision y Valores Section */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionWrapper>
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-                <div className="space-y-6">
-                <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">
-                    Nuestra Oferta de Valor
-                </h2>
-                <p className="text-muted-foreground max-w-lg">
-                    Somos una empresa de seguros reconocida por su excelencia y calidad, orientada a satisfacer las necesidades de nuestros clientes, intermediarios y organización, brindando asesoría y protección con soluciones ágiles y oportunas.
-                </p>
-                <p className="font-semibold text-foreground">
-                    ¡Cumplimos lo que prometemos!
-                </p>
-                <div className="flex gap-4">
-                    <Button asChild className="font-light">
-                    <Link href="/dashboard/mapa-clientes">Conocer más</Link>
-                    </Button>
-                </div>
-                </div>
-                <div className="relative grid grid-cols-2 grid-rows-2 gap-4 h-[500px]">
-                <div className="col-span-1 row-span-2 rounded-2xl overflow-hidden shadow-lg">
-                    <Image
-                        src="https://images.unsplash.com/photo-1599351234741-727bff276c9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNzaW5lc3xlbnwwfHx8fDE3NTI2MDU4MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                        alt="Equipo de Banesco Seguros"
-                        width={400}
-                        height={600}
-                        className="w-full h-full object-cover"
-                        data-ai-hint="team meeting"
-                    />
-                </div>
-                <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg">
-                    <Image
-                        src="https://images.unsplash.com/photo-1529180979161-06b8b6d6f2be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8ZmFtaWx5fGVufDB8fHx8MTc1MjYwNTY2Nnww&ixlib.rb-4.1.0&q=80&w=1080"
-                        alt="Cliente satisfecho"
-                        width={400}
-                        height={400}
-                        className="w-full h-full object-cover"
-                        data-ai-hint="happy client"
-                    />
-                </div>
-                <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden shadow-lg">
-                    <Image
-                        src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXJ8ZW58MHx8fHwxNzU0MzMzNjcxfDA&ixlib.rb-4.1.0&q=80&w=1080"
-                        alt="Oficina de Banesco"
-                        width={400}
-                        height={400}
-                        className="w-full h-full object-cover"
-                        data-ai-hint="car"
-                    />
-                </div>
-                </div>
-            </div>
+              <div className="relative rounded-2xl overflow-hidden shadow-xl min-h-[500px] flex items-center p-8 md:p-12 bg-card">
+                  <Image
+                      src="https://images.unsplash.com/photo-1636955816868-fcb881e57954?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZvbmRvJTIwYWJzdHJhY3RvJTIwYmxhbmNvfGVufDB8fDB8fHww"
+                      alt="Abstract background"
+                      layout="fill"
+                      objectFit="cover"
+                      className="opacity-50"
+                  />
+                  <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 w-full">
+                      <div className="space-y-4">
+                          <Badge variant="outline" className="border-primary/30 text-primary">Acerca de Nosotros</Badge>
+                          <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">
+                              {isMissionView ? "Nuestra Misión" : "Nuestra Oferta de Valor"}
+                          </h2>
+                          <p className="text-muted-foreground max-w-lg">
+                              {isMissionView 
+                                  ? "Ser la empresa de seguros preferida del mercado, reconocida por su excelencia, calidad de servicio y compromiso con la satisfacción de nuestros clientes, intermediarios y colaboradores."
+                                  : "Somos una empresa de seguros reconocida por su excelencia y calidad, orientada a satisfacer las necesidades de nuestros clientes, intermediarios y organización, brindando asesoría y protección con soluciones ágiles y oportunas."
+                              }
+                          </p>
+                          <div className="flex gap-4 pt-4">
+                              <Button asChild style={{ backgroundColor: '#8A2BE2', color: 'white' }} className="font-light hover:opacity-90">
+                                  <Link href="/dashboard/mapa-clientes">Nosotros</Link>
+                              </Button>
+                              <Button variant="ghost" onClick={() => setIsMissionView(!isMissionView)} className="text-muted-foreground hover:text-foreground">
+                                  <RefreshCw className={cn("mr-2 h-4 w-4", isMissionView && "rotate-180 transition-transform")}/>
+                                  {isMissionView ? "Ver Oferta de Valor" : "Ver Misión"}
+                              </Button>
+                          </div>
+                      </div>
+                      <div className="relative h-80 w-full">
+                           <Image
+                              src={isMissionView ? "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(48).png?raw=true" : "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(47).png?raw=true"}
+                              alt={isMissionView ? "Ilustración de misión" : "Ilustración de oferta de valor"}
+                              layout="fill"
+                              objectFit="contain"
+                              data-ai-hint={isMissionView ? "target mission" : "puzzle solution"}
+                              className={cn("transition-all duration-500", isMissionView ? "opacity-100" : "opacity-100")}
+                            />
+                      </div>
+                  </div>
+              </div>
             </SectionWrapper>
         </div>
         
@@ -532,7 +525,7 @@ export default function DashboardPage() {
                 <div className="space-y-4 my-auto">
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib.rb-4.1.0&q=80&w=1080"
                         alt="Solicitudes de vacaciones"
                         layout="fill"
                         objectFit="cover"
@@ -967,6 +960,7 @@ export default function DashboardPage() {
     
 
     
+
 
 
 
