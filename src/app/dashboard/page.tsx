@@ -363,7 +363,7 @@ export default function DashboardPage() {
 
         {/* Mision y Valores Section */}
         <div className="w-full py-12 md:py-16">
-          <div className="relative overflow-hidden min-h-[500px] flex items-center bg-card">
+          <div className="relative overflow-hidden min-h-[500px] flex items-center bg-card shadow-xl">
               <Image
                   src="https://images.unsplash.com/photo-1636955816868-fcb881e57954?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZvbmRvJTIwYWJzdHJhY3RvJTIwYmxhbmNvfGVufDB8fDB8fHww"
                   alt="Abstract background"
@@ -606,6 +606,9 @@ export default function DashboardPage() {
                         details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
                         author="Banesco Seguros"
                         className="bg-card text-card-foreground"
+                        imageUrl="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb2xsYWJvcmF0aW9uJTIwdG9vbHN8ZW58MHx8fHwxNzYzODg1MTEwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                        dataAiHint="collaboration tools"
+                        imageClassName="opacity-30"
                         isLight
                     />
                     <NewCourseCard
@@ -613,6 +616,9 @@ export default function DashboardPage() {
                         category="Mejora tus Habilidades"
                         details={["Presentaciones", "Feedback", "Oratoria"]}
                         className="bg-secondary text-secondary-foreground"
+                        imageUrl="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwdWJsaWMlMjBzcGVha2luZ3xlbnwwfHx8fDE3NjM4ODUxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                        dataAiHint="public speaking"
+                        imageClassName="opacity-30"
                     />
                 </div>
             </SectionWrapper>
@@ -766,7 +772,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
@@ -972,6 +978,7 @@ export default function DashboardPage() {
     
 
     
+
 
 
 
