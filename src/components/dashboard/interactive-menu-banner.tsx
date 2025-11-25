@@ -97,7 +97,7 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
             )}
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                <Button asChild variant="secondary" className="bg-white/90 text-primary hover:bg-white font-light rounded-full text-xs">
+                <Button asChild variant="default" className="bg-primary text-primary-foreground hover:bg-primary/90 font-light rounded-full text-xs">
                     <Link href="/dashboard/bienestar#menu">
                         Menú Semanal
                     </Link>
