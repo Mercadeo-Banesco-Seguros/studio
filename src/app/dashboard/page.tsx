@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
@@ -361,9 +362,9 @@ export default function DashboardPage() {
         </section>
 
         {/* Mision y Valores Section */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionWrapper>
-              <div className="relative rounded-2xl overflow-hidden shadow-xl min-h-[500px] flex items-center p-8 md:p-12 bg-card">
+        <div className="w-full">
+            <SectionWrapper className="p-0">
+              <div className="relative overflow-hidden shadow-xl min-h-[500px] flex items-center p-8 md:p-12 bg-card">
                   <Image
                       src="https://images.unsplash.com/photo-1636955816868-fcb881e57954?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZvbmRvJTIwYWJzdHJhY3RvJTIwYmxhbmNvfGVufDB8fDB8fHww"
                       alt="Abstract background"
@@ -371,7 +372,7 @@ export default function DashboardPage() {
                       objectFit="cover"
                       className="opacity-50"
                   />
-                  <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 w-full">
+                  <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 w-full max-w-7xl mx-auto">
                       <div className="space-y-4">
                           <Badge variant="outline" className="border-primary/30 text-primary">Acerca de Nosotros</Badge>
                           <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">
@@ -754,7 +755,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
@@ -960,6 +961,7 @@ export default function DashboardPage() {
     
 
     
+
 
 
 
