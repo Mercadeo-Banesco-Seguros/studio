@@ -609,7 +609,7 @@ export default function DashboardPage() {
         <div id="cursos" className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionWrapper>
                 <div className="grid lg:grid-cols-2 gap-6">
-                    <div className="p-6 flex flex-col justify-center">
+                    <div className="p-6 flex flex-col justify-center rounded-2xl">
                         <Badge variant="outline" className="text-primary w-fit">Actívate</Badge>
                         <h2 className="text-4xl font-bold tracking-tight mt-4 text-foreground">¡Aprende algo nuevo cada día!</h2>
                         <Button asChild variant="default" className="rounded-full font-light mt-6 w-fit text-xs">
@@ -621,7 +621,7 @@ export default function DashboardPage() {
                         category="Potencia tu Productividad"
                         details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
                         author="Banesco Seguros"
-                        className="bg-secondary text-secondary-foreground"
+                        className="bg-secondary text-secondary-foreground min-h-[400px]"
                         imageUrl="https://images.unsplash.com/photo-1592096304832-62463bfdc822?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8Z29vZ2xlfGVufDB8fHx8MTc2NDA4NTA4N3ww&ixlib=rb-4.1.0&q=80&w=1080"
                         dataAiHint="collaboration tools"
                         imageClassName="opacity-30"
@@ -630,7 +630,7 @@ export default function DashboardPage() {
                         title="Inteligencia Artificial"
                         category="El Futuro es Ahora"
                         details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
-                        className="bg-secondary text-secondary-foreground"
+                        className="bg-secondary text-secondary-foreground min-h-[400px]"
                         imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib.rb-4.1.0&q=80&w=1080"
                         dataAiHint="artificial intelligence"
                         imageClassName="opacity-30"
@@ -640,7 +640,7 @@ export default function DashboardPage() {
                         title="Comunicaciones Efectivas"
                         category="Mejora tus Habilidades"
                         details={["Presentaciones", "Feedback", "Oratoria"]}
-                        className="bg-secondary text-secondary-foreground"
+                        className="bg-secondary text-secondary-foreground min-h-[400px]"
                         imageUrl="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwdWJsaWMlMjBzcGVha2luZ3xlbnwwfHx8fDE3NjM4ODUxNzZ8MA&ixlib.rb-4.1.0&q=80&w=1080"
                         dataAiHint="public speaking"
                         imageClassName="opacity-30"
@@ -798,7 +798,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
