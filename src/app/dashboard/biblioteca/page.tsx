@@ -17,7 +17,7 @@ export default function BibliotecaPage() {
              <div className="mt-16 flex flex-col items-center justify-center gap-8">
                 <Button asChild size="lg">
                     <Link href="https://www.appsheet.com/start/410a1959-0f25-4a71-8e93-d61b3d312d8a" target="_blank" rel="noopener noreferrer">
-                        Acceder a la Biblioteca
+                        Acceder
                         <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                 </Button>
