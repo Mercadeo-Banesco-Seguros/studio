@@ -54,7 +54,7 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
   }
 
   return (
-    <section className="relative w-full bg-primary text-primary-foreground overflow-hidden shadow-2xl min-h-[500px] flex items-center">
+    <section className="relative w-full bg-primary text-primary-foreground overflow-hidden min-h-[500px] flex items-center">
         {backgroundImages[selectedType] && (
             <Image
                 key={selectedType}
