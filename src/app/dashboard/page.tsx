@@ -507,7 +507,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
                     <Image
-                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib.rb-4.1.0&q=80&w=1080"
+                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib=rb-4.1.0&q=80&w=1080"
                         alt="Recomendaciones de viaje"
                         layout="fill"
                         objectFit="cover"
@@ -606,45 +606,49 @@ export default function DashboardPage() {
         {/* Cursos Section */}
         <div id="cursos" className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionWrapper>
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
-                    <div className="space-y-4">
+                <div className="grid lg:grid-cols-2 gap-6">
+                    <div className="flex flex-col justify-center p-6">
                         <Badge variant="outline">Actívate</Badge>
-                        <h2 className="text-4xl font-bold tracking-tight text-foreground">¡Aprende algo nuevo cada día!</h2>
-                        <Button asChild variant="default" className="rounded-full font-light">
+                        <h2 className="text-4xl font-bold tracking-tight text-foreground mt-4">¡Aprende algo nuevo cada día!</h2>
+                        <Button asChild variant="default" className="rounded-full font-light mt-6 w-fit">
                             <Link href="/dashboard/cursos">Cursos Disponibles</Link>
                         </Button>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <NewCourseCard
-                            title="Google Workspace"
-                            category="Potencia tu Productividad"
-                            details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                            author="Banesco Seguros"
-                            className="bg-card text-card-foreground h-full"
-                            imageUrl="https://images.unsplash.com/photo-1592096304832-62463bfdc822?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8Z29vZ2xlfGVufDB8fHx8MTc2NDA4NTA4N3ww&ixlib=rb-4.1.0&q=80&w=1080"
-                            data-ai-hint="collaboration tools"
-                            imageClassName="opacity-30"
-                            isLight
-                        />
-                         <NewCourseCard
-                            title="Inteligencia Artificial"
-                            category="El Futuro es Ahora"
-                            details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
-                            imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                            data-ai-hint="artificial intelligence"
-                            className="bg-primary text-primary-foreground h-full"
-                            imageClassName="opacity-30"
-                            icon={Bot}
-                        />
-                        <NewCourseCard
-                            title="Comunicaciones Efectivas"
-                            category="Mejora tus Habilidades"
-                            details={["Presentaciones", "Feedback", "Oratoria"]}
-                            className="bg-secondary text-secondary-foreground h-full"
-                            imageUrl="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwdWJsaWMlMjBzcGVha2luZ3xlbnwwfHx8fDE3NjM4ODUxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                            data-ai-hint="public speaking"
-                            imageClassName="opacity-30"
-                        />
+                    <div className="grid grid-cols-1 gap-6">
+                        <div className="col-span-1">
+                            <NewCourseCard
+                                title="Google Workspace"
+                                category="Potencia tu Productividad"
+                                details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
+                                author="Banesco Seguros"
+                                className="bg-card text-card-foreground"
+                                imageUrl="https://images.unsplash.com/photo-1592096304832-62463bfdc822?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8Z29vZ2xlfGVufDB8fHx8MTc2NDA4NTA4N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                                dataAiHint="collaboration tools"
+                                imageClassName="opacity-30"
+                                isLight
+                            />
+                        </div>
+                        <div className="grid grid-cols-2 gap-6">
+                             <NewCourseCard
+                                title="Inteligencia Artificial"
+                                category="El Futuro es Ahora"
+                                details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
+                                imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                                dataAiHint="artificial intelligence"
+                                className="bg-primary text-primary-foreground"
+                                imageClassName="opacity-30"
+                                icon={Bot}
+                            />
+                            <NewCourseCard
+                                title="Comunicaciones Efectivas"
+                                category="Mejora tus Habilidades"
+                                details={["Presentaciones", "Feedback", "Oratoria"]}
+                                className="bg-secondary text-secondary-foreground"
+                                imageUrl="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwdWJsaWMlMjBzcGVha2luZ3xlbnwwfHx8fDE3NjM4ODUxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                                dataAiHint="public speaking"
+                                imageClassName="opacity-30"
+                            />
+                        </div>
                     </div>
                 </div>
             </SectionWrapper>
@@ -656,7 +660,7 @@ export default function DashboardPage() {
           <SectionWrapper>
             <Card className="relative overflow-hidden rounded-2xl shadow-lg min-h-[500px] flex flex-col md:flex-row">
               <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib=rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib-rb-4.1.0&q=80&w=1080"
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
@@ -748,7 +752,7 @@ export default function DashboardPage() {
                 <div className="bg-muted/50 p-12 flex items-center">
                     <div className="w-full grid grid-cols-2 gap-8">
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
+                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Beneficios</h4>
                             <p className="text-xs mt-1 text-white/90">Descubra todas sus ventajas.</p>
@@ -768,7 +772,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
+                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib.rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Centros de Atención</h4>
                             <p className="text-xs mt-1 text-white/90">Encuentre la clínica más cercana.</p>
@@ -1032,6 +1036,7 @@ export default function DashboardPage() {
 
 
     
+
 
 
 
