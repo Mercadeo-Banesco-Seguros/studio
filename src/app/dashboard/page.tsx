@@ -377,12 +377,12 @@ export default function DashboardPage() {
               />
               <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 w-full max-w-7xl mx-auto p-8 md:p-12">
                   <div className="space-y-4">
-                      <Badge 
-                        variant="outline" 
-                        style={isMissionView 
-                          ? { borderColor: 'hsl(var(--secondary))', color: 'hsl(var(--secondary))' } 
-                          : { borderColor: '#543db8', color: '#543db8' }}
-                      >
+                       <Badge 
+                            variant="outline" 
+                            style={isMissionView 
+                                ? { borderColor: 'hsl(var(--secondary))', color: 'hsl(var(--secondary))' } 
+                                : { borderColor: '#543db8', color: '#543db8' }}
+                        >
                           Acerca de Nosotros
                       </Badge>
                       <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">
@@ -528,8 +528,8 @@ export default function DashboardPage() {
         </div>
         
         {/* Portal de Requerimientos Section */}
-        <section id="requerimientos" className="w-full container mx-auto px-4 sm:px-6 lg:px-8">
-            <Card className="relative text-white rounded-2xl overflow-hidden min-h-[400px] flex items-center justify-center">
+        <section id="requerimientos" className="w-full">
+            <Card className="relative text-white overflow-hidden min-h-[400px] flex items-center justify-center">
                 <Image
                     src="https://t3.ftcdn.net/jpg/06/95/87/10/360_F_695871006_kiJGsslOmA5BOEk9ET9QDYgNrfevMEoz.jpg"
                     alt="Abstract background"
@@ -545,7 +545,7 @@ export default function DashboardPage() {
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
                             Visita nuestro <br /> Portal de Requerimientos
                         </h2>
-                        <div className="flex justify-center gap-4">
+                        <div className="mt-8 flex justify-center gap-4">
                            <Button asChild size="default" className="bg-white text-primary hover:bg-white/90 font-light text-xs">
                                <Link href="/dashboard/requerimientos">Acceder</Link>
                            </Button>
@@ -759,7 +759,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
+                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib.rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Centros de Atención</h4>
                             <p className="text-xs mt-1 text-white/90">Encuentre la clínica más cercana.</p>
@@ -790,7 +790,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
@@ -1023,3 +1023,4 @@ export default function DashboardPage() {
 
 
     
+
