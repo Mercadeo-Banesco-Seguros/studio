@@ -363,7 +363,7 @@ export default function DashboardPage() {
 
         {/* Mision y Valores Section */}
         <div className="w-full py-12 md:py-16">
-          <div className="relative overflow-hidden min-h-[500px] flex items-center bg-card shadow-xl">
+          <div className="relative overflow-hidden min-h-[500px] flex items-center bg-card">
               <Image
                   src="https://images.unsplash.com/photo-1636955816868-fcb881e57954?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZvbmRvJTIwYWJzdHJhY3RvJTIwYmxhbmNvfGVufDB8fDB8fHww"
                   alt="Abstract background"
@@ -606,7 +606,7 @@ export default function DashboardPage() {
                         details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
                         author="Banesco Seguros"
                         className="bg-card text-card-foreground"
-                        imageUrl="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb2xsYWJvcmF0aW9uJTIwdG9vbHN8ZW58MHx8fHwxNzYzODg1MTEwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                        imageUrl="https://images.unsplash.com/photo-1592096304832-62463bfdc822?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8Z29vZ2xlfGVufDB8fHx8MTc2NDA4NTA4N3ww&ixlib=rb-4.1.0&q=80&w=1080"
                         dataAiHint="collaboration tools"
                         imageClassName="opacity-30"
                         isLight
@@ -633,7 +633,7 @@ export default function DashboardPage() {
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
-                data-ai-hint="closet fashion"
+                dataAiHint="closet fashion"
                 className="brightness-90"
               />
               
@@ -731,7 +731,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
@@ -999,3 +999,6 @@ export default function DashboardPage() {
 
 
 
+
+
+    
