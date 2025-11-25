@@ -82,7 +82,7 @@ const AvailabilityRing = ({ percentage }: { percentage: number }) => {
           className="transition-all duration-700 ease-out"
         />
       </svg>
-      <span className="absolute text-sm font-medium text-primary-foreground tracking-wider">
+      <span className="absolute text-sm text-primary-foreground">
         Cupos
       </span>
     </div>
