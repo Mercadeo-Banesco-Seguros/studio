@@ -15,7 +15,6 @@ export default function BibliotecaPage() {
             descriptionClassName="text-lg text-muted-foreground"
           >
              <div className="mt-16 flex flex-col items-center justify-center gap-8">
-                <Library className="h-32 w-32 text-primary/10" strokeWidth={1} />
                 <Button asChild size="lg">
                     <Link href="https://www.appsheet.com/start/410a1959-0f25-4a71-8e93-d61b3d312d8a" target="_blank" rel="noopener noreferrer">
                         Acceder a la Biblioteca
