@@ -44,7 +44,7 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
   
   const backgroundImages = {
     Clásico: 'https://images.unsplash.com/photo-1708724195876-1156245fce21?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8',
-    Dieta: 'https://media.istockphoto.com/id/1486754158/es/vector/dise%C3%B1o-abstracto-de-fondo-de-malla-degradada-azul-borroso-para-su-presentaci%C3%B3n-fondo-de.jpg?s=612x612&w=0&k=20&c=cnr5uFzkM0LCONayeBdiR3oNr8guNrAPHwZMhUzgyLg=',
+    Dieta: 'https://images.unsplash.com/photo-1657215374010-786fefd1dbbc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Zm9uZG8lMjBkZSUyMHBhbnRhbGxhJTIwdHVycXVlc2F8ZW58MHx8MHx8fDA%3D',
     Ejecutivo: 'https://images.unsplash.com/photo-1663497653290-1b8f327096f7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBkZSUyMHBhbnRhbGxhJTIwYmVpZ2V8ZW58MHx8MHx8fDA%3D',
   };
 
