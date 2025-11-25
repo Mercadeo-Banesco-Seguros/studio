@@ -377,7 +377,7 @@ export default function DashboardPage() {
                   <div className="space-y-4">
                       <Badge 
                           variant="outline" 
-                          style={isMissionView 
+                           style={isMissionView 
                             ? { borderColor: 'hsl(var(--secondary))', color: 'hsl(var(--secondary))' } 
                             : { borderColor: '#543db8', color: '#543db8' }}
                       >
@@ -537,12 +537,20 @@ export default function DashboardPage() {
                     data-ai-hint="abstract waves"
                 />
                 <div className="absolute inset-0 bg-black/40 z-0"></div>
-                <div className="relative z-10 w-full h-full p-8 flex flex-col items-center justify-center">
+                <div className="relative z-10 w-full h-full p-8 flex flex-col items-center justify-center text-center">
                     
-                    <div className={cn("text-center transition-all duration-500", showShortcuts ? "opacity-0 scale-95" : "opacity-100 scale-100")}>
-                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
+                    <div className={cn("transition-all duration-500", showShortcuts ? "opacity-0 scale-95" : "opacity-100 scale-100")}>
+                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
                             Visita nuestro <br /> Portal de Requerimientos
                         </h2>
+                        <div className="flex justify-center gap-4">
+                           <Button asChild size="default" className="bg-white text-primary hover:bg-white/90 font-light">
+                               <Link href="/dashboard/requerimientos">Acceder</Link>
+                           </Button>
+                           <Button variant="outline" size="default" className="bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white font-light" onClick={() => setShowShortcuts(true)}>
+                               Atajos
+                           </Button>
+                        </div>
                     </div>
 
                     <div className={cn(
@@ -590,15 +598,6 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </div>
-
-                    <div className="flex justify-center gap-4 absolute bottom-12">
-                        <Button asChild size="lg" className="h-11 px-8 bg-white text-primary hover:bg-white/90 font-light">
-                           <Link href="/dashboard/requerimientos">Acceder</Link>
-                        </Button>
-                        <Button variant="outline" size="lg" className="h-11 px-8 bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white font-light" onClick={() => setShowShortcuts(!showShortcuts)}>
-                            {showShortcuts ? "Ocultar Atajos" : "Atajos"}
-                        </Button>
-                    </div>
                 </div>
             </Card>
         </section>
@@ -612,7 +611,7 @@ export default function DashboardPage() {
                         category="El Futuro es Ahora"
                         details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                         imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                        data-ai-hint="artificial intelligence"
+                        dataAiHint="artificial intelligence"
                         className="row-span-2 bg-primary text-primary-foreground"
                         imageClassName="opacity-30"
                         icon={Bot}
@@ -624,7 +623,7 @@ export default function DashboardPage() {
                         author="Banesco Seguros"
                         className="bg-card text-card-foreground"
                         imageUrl="https://images.unsplash.com/photo-1592096304832-62463bfdc822?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8Z29vZ2xlfGVufDB8fHx8MTc2NDA4NTA4N3ww&ixlib=rb-4.1.0&q=80&w=1080"
-                        data-ai-hint="collaboration tools"
+                        dataAiHint="collaboration tools"
                         imageClassName="opacity-30"
                         isLight
                     />
@@ -634,7 +633,7 @@ export default function DashboardPage() {
                         details={["Presentaciones", "Feedback", "Oratoria"]}
                         className="bg-secondary text-secondary-foreground"
                         imageUrl="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwdWJsaWMlMjBzcGVha2luZ3xlbnwwfHx8fDE3NjM4ODUxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                        data-ai-hint="public speaking"
+                        dataAiHint="public speaking"
                         imageClassName="opacity-30"
                     />
                 </div>
@@ -646,7 +645,7 @@ export default function DashboardPage() {
           <SectionWrapper>
             <Card className="relative overflow-hidden rounded-2xl shadow-lg min-h-[500px] flex flex-col md:flex-row">
               <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib-rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
@@ -789,7 +788,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
