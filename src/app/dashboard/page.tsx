@@ -363,51 +363,60 @@ export default function DashboardPage() {
 
         {/* Mision y Valores Section */}
         <div className="w-full py-12 md:py-16">
-            <div className="relative overflow-hidden min-h-[500px] flex items-center bg-card">
-                <Image
-                    src="https://images.unsplash.com/photo-1636955816868-fcb881e57954?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZvbmRvJTIwYWJzdHJhY3RvJTIwYmxhbmNvfGVufDB8fDB8fHww"
-                    alt="Abstract background"
-                    layout="fill"
-                    objectFit="cover"
-                    className="opacity-50"
-                />
-                <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 w-full max-w-7xl mx-auto p-8 md:p-12">
-                    <div className="space-y-4">
-                        <Badge variant="outline" style={{ borderColor: 'rgba(84, 61, 184, 0.3)', color: '#543db8' }}>Acerca de Nosotros</Badge>
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">
-                            {isMissionView ? "Nuestra Misión" : "Nuestra Oferta de Valor"}
-                        </h2>
-                        <p className="text-muted-foreground max-w-lg">
-                            {isMissionView 
-                                ? "Ser la empresa de seguros preferida del mercado, reconocida por su excelencia, calidad de servicio y compromiso con la satisfacción de nuestros clientes, intermediarios y colaboradores."
-                                : "Somos una empresa de seguros reconocida por su excelencia y calidad, orientada a satisfacer las necesidades de nuestros clientes, intermediarios y organización, brindando asesoría y protección con soluciones ágiles y oportunas."
-                            }
-                        </p>
-                        <div className="flex gap-4 pt-4">
-                            <Button asChild style={{ backgroundColor: '#543db8', color: 'white' }} className="font-light hover:opacity-90">
-                                <Link href="/dashboard/mapa-clientes">Nosotros</Link>
-                            </Button>
-                            <Button variant="ghost" onClick={() => setIsMissionView(!isMissionView)} className="text-muted-foreground hover:text-foreground">
-                                <RefreshCw className={cn("mr-2 h-4 w-4", isMissionView && "rotate-180 transition-transform")}/>
-                                {isMissionView ? "Ver Oferta de Valor" : "Ver Misión"}
-                            </Button>
-                        </div>
-                    </div>
-                    <div className={cn("relative h-96 w-full transition-all duration-500", !isMissionView ? 'md:ml-auto' : '')}>
-                        <Image
-                            src={isMissionView ? "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(48).png?raw=true" : "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(47).png?raw=true"}
-                            alt={isMissionView ? "Ilustración de misión" : "Ilustración de oferta de valor"}
-                            layout="fill"
-                            objectFit="contain"
-                            data-ai-hint={isMissionView ? "target mission" : "puzzle solution"}
-                            className={cn(
-                                "transition-all duration-500", 
-                                !isMissionView && "object-right"
-                            )}
-                        />
-                    </div>
-                </div>
-            </div>
+          <div className="relative overflow-hidden min-h-[500px] flex items-center bg-card">
+              <Image
+                  src="https://images.unsplash.com/photo-1636955816868-fcb881e57954?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZvbmRvJTIwYWJzdHJhY3RvJTIwYmxhbmNvfGVufDB8fDB8fHww"
+                  alt="Abstract background"
+                  layout="fill"
+                  objectFit="cover"
+                  className="opacity-50"
+              />
+              <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 w-full max-w-7xl mx-auto p-8 md:p-12">
+                  <div className="space-y-4">
+                      <Badge 
+                          variant="outline" 
+                          style={isMissionView ? { borderColor: 'hsl(var(--primary))', color: 'hsl(var(--primary))' } : { borderColor: '#543db8', color: '#543db8' }}
+                      >
+                          Acerca de Nosotros
+                      </Badge>
+                      <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">
+                          {isMissionView ? "Nuestra Misión" : "Nuestra Oferta de Valor"}
+                      </h2>
+                      <p className="text-muted-foreground max-w-lg">
+                          {isMissionView 
+                              ? "Ser la empresa de seguros preferida del mercado, reconocida por su excelencia, calidad de servicio y compromiso con la satisfacción de nuestros clientes, intermediarios y colaboradores."
+                              : "Somos una empresa de seguros reconocida por su excelencia y calidad, orientada a satisfacer las necesidades de nuestros clientes, intermediarios y organización, brindando asesoría y protección con soluciones ágiles y oportunas."
+                          }
+                      </p>
+                      <div className="flex gap-4 pt-4">
+                          <Button 
+                              asChild 
+                              className="font-light hover:opacity-90"
+                              style={isMissionView ? {} : { backgroundColor: '#543db8', color: 'white' }}
+                          >
+                              <Link href="/dashboard/mapa-clientes">Nosotros</Link>
+                          </Button>
+                          <Button variant="ghost" onClick={() => setIsMissionView(!isMissionView)} className="text-muted-foreground hover:text-foreground">
+                              <RefreshCw className={cn("mr-2 h-4 w-4", isMissionView && "rotate-180 transition-transform")}/>
+                              {isMissionView ? "Ver Oferta de Valor" : "Ver Misión"}
+                          </Button>
+                      </div>
+                  </div>
+                  <div className={cn("relative h-96 w-full transition-all duration-500", !isMissionView ? 'md:ml-auto' : '')}>
+                      <Image
+                          src={isMissionView ? "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(48).png?raw=true" : "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(47).png?raw=true"}
+                          alt={isMissionView ? "Ilustración de misión" : "Ilustración de oferta de valor"}
+                          layout="fill"
+                          objectFit="contain"
+                          data-ai-hint={isMissionView ? "target mission" : "puzzle solution"}
+                          className={cn(
+                              "transition-all duration-500", 
+                              !isMissionView && "object-right"
+                          )}
+                      />
+                  </div>
+              </div>
+          </div>
         </div>
         
         {/* Portal de Requerimientos Section */}
@@ -584,7 +593,7 @@ export default function DashboardPage() {
                         title="Inteligencia Artificial"
                         category="El Futuro es Ahora"
                         details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
-                        imageUrl="https://images.unsplash.com/photo-1599058917212-d750089bc07e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhaXxlbnwwfHx8fDE3NTkzOTk3ODR8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                        imageUrl="https://images.unsplash.com/photo-1599058917212-d750089bc07e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhaXxlbnwwfHx8fDE3NTkzOTk3ODR8MA&ixlib=rb-4.1.0&q=80&w=1080"
                         dataAiHint="artificial intelligence"
                         className="row-span-2 bg-primary text-primary-foreground"
                         imageClassName="opacity-30"
@@ -613,7 +622,7 @@ export default function DashboardPage() {
           <SectionWrapper>
             <Card className="relative overflow-hidden rounded-2xl shadow-lg min-h-[500px] flex flex-col md:flex-row">
               <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib.rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
@@ -705,7 +714,7 @@ export default function DashboardPage() {
                 <div className="bg-muted/50 p-12 flex items-center">
                     <div className="w-full grid grid-cols-2 gap-8">
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
+                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Beneficios</h4>
                             <p className="text-xs mt-1 text-white/90">Descubra todas sus ventajas.</p>
@@ -715,7 +724,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
@@ -756,7 +765,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
@@ -962,6 +971,7 @@ export default function DashboardPage() {
     
 
     
+
 
 
 
