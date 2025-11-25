@@ -72,9 +72,9 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
         <div className="grid md:grid-cols-2 gap-12 items-center">
           
           {/* Left Side: Main Image */}
-          <div className="relative h-80 w-full transform -translate-y-4 md:translate-y-0">
+          <div className="relative h-96 w-full transform -translate-y-4 md:translate-y-0">
              {selectedMenuItem && selectedMenuItem.imageUrl && (
-              <div className={cn("transition-opacity duration-300", isAnimating ? "opacity-0" : "opacity-100")}>
+              <div className={cn("transition-opacity duration-300 w-full h-full", isAnimating ? "opacity-0" : "opacity-100")}>
                 <Image
                     src={selectedMenuItem.imageUrl}
                     alt={selectedMenuItem.name}
