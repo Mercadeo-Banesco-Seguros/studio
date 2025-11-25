@@ -393,7 +393,7 @@ export default function DashboardPage() {
                             </Button>
                         </div>
                     </div>
-                    <div className={cn("relative h-80 w-full transition-all duration-500", !isMissionView ? 'md:ml-auto' : '')}>
+                    <div className={cn("relative h-96 w-full transition-all duration-500", !isMissionView ? 'md:ml-auto' : '')}>
                         <Image
                             src={isMissionView ? "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(48).png?raw=true" : "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(47).png?raw=true"}
                             alt={isMissionView ? "Ilustración de misión" : "Ilustración de oferta de valor"}
@@ -705,7 +705,7 @@ export default function DashboardPage() {
                 <div className="bg-muted/50 p-12 flex items-center">
                     <div className="w-full grid grid-cols-2 gap-8">
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
+                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Beneficios</h4>
                             <p className="text-xs mt-1 text-white/90">Descubra todas sus ventajas.</p>
@@ -715,7 +715,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
@@ -756,7 +756,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
@@ -962,6 +962,7 @@ export default function DashboardPage() {
     
 
     
+
 
 
 
