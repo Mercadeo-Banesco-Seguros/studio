@@ -397,8 +397,10 @@ export default function DashboardPage() {
                       <div className="flex gap-4 pt-4">
                            <Button 
                               asChild 
-                              variant={isMissionView ? "secondary" : "default"}
-                              className="font-light hover:opacity-90"
+                              className={cn(
+                                "font-light hover:opacity-90",
+                                isMissionView ? "bg-secondary hover:bg-secondary/90" : "bg-[#543db8] hover:bg-[#543db8]/90"
+                              )}
                           >
                               <Link href="/dashboard/mapa-clientes">Nosotros</Link>
                           </Button>
@@ -534,7 +536,7 @@ export default function DashboardPage() {
                     alt="Abstract background"
                     layout="fill"
                     objectFit="cover"
-                    className="z-0 opacity-80"
+                    className="z-0"
                     data-ai-hint="abstract waves"
                 />
                 <div className="absolute inset-0 bg-black/40 z-0"></div>
@@ -607,13 +609,13 @@ export default function DashboardPage() {
         <div id="cursos" className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionWrapper>
                 <div className="grid lg:grid-cols-2 gap-6">
-                    <div className="bg-transparent text-foreground p-6 flex flex-col justify-center rounded-2xl">
-                        <Badge variant="secondary" className="bg-muted text-muted-foreground font-light w-fit">Actívate</Badge>
+                    <Card className="bg-primary text-primary-foreground p-6 flex flex-col justify-center rounded-2xl">
+                        <Badge variant="secondary" className="bg-primary-foreground text-primary font-light w-fit">Actívate</Badge>
                         <h2 className="text-4xl font-bold tracking-tight mt-4">¡Aprende algo nuevo cada día!</h2>
-                        <Button asChild variant="default" className="bg-primary text-primary-foreground rounded-full font-light mt-6 w-fit text-xs">
+                        <Button asChild variant="secondary" className="bg-primary-foreground text-primary rounded-full font-light mt-6 w-fit text-xs">
                             <Link href="/dashboard/cursos">Cursos Disponibles</Link>
                         </Button>
-                    </div>
+                    </Card>
                      <NewCourseCard
                         title="Google Workspace"
                         category="Potencia tu Productividad"
@@ -653,7 +655,7 @@ export default function DashboardPage() {
           <SectionWrapper>
             <Card className="relative overflow-hidden rounded-2xl shadow-lg min-h-[500px] flex flex-col md:flex-row">
               <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib=rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib-rb-4.1.0&q=80&w=1080"
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
@@ -1029,6 +1031,7 @@ export default function DashboardPage() {
 
 
     
+
 
 
 
