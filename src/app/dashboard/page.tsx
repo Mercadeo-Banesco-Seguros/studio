@@ -399,7 +399,7 @@ export default function DashboardPage() {
                               asChild 
                               className={cn(
                                 "font-light hover:opacity-90 text-primary-foreground",
-                                isMissionView ? "bg-secondary hover:bg-secondary/90" : "bg-[#543DB8] hover:bg-[#543DB8]/90"
+                                isMissionView ? "bg-secondary hover:bg-secondary/90" : "bg-[#543db8] hover:bg-[#543db8]/90"
                               )}
                           >
                               <Link href="/dashboard/mapa-clientes">Nosotros</Link>
@@ -608,10 +608,12 @@ export default function DashboardPage() {
         {/* Cursos Section */}
         <div id="cursos" className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionWrapper>
-                <div className="grid lg:grid-cols-2 gap-6">
+                 <div className="grid lg:grid-cols-2 gap-6">
                     <div className="p-6 flex flex-col justify-center">
                         <Badge variant="outline" className="text-primary w-fit">Actívate</Badge>
-                        <h2 className="text-5xl font-bold tracking-tight mt-4 text-foreground">¡Aprende algo <br /> nuevo cada día!</h2>
+                        <h2 className="text-5xl font-bold tracking-tight mt-4 text-foreground">
+                            ¡Aprende algo <br /> nuevo cada día!
+                        </h2>
                         <p className="mt-2 text-muted-foreground">Explora nuestros cursos y desarrolla nuevas habilidades.</p>
                         <Button asChild variant="default" className="rounded-full font-light mt-6 w-fit text-xs">
                             <Link href="/dashboard/cursos">Cursos Disponibles</Link>
@@ -644,7 +646,7 @@ export default function DashboardPage() {
                         category="Mejora tus Habilidades"
                         details={["Presentaciones", "Feedback", "Oratoria"]}
                         className="bg-secondary text-secondary-foreground min-h-[400px]"
-                        imageUrl="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwdWJsaWMlMjBzcGVha2luZ3xlbnwwfHx8fDE3NjM4ODUxNzZ8MA&ixlib.rb-4.1.0&q=80&w=1080"
+                        imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                         dataAiHint="public speaking"
                         imageClassName="opacity-30"
                         availability={90}
@@ -771,7 +773,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib.rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
+                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Centros de Atención</h4>
                             <p className="text-xs mt-1 text-white/90">Encuentre la clínica más cercana.</p>
