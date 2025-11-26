@@ -40,7 +40,7 @@ export default function BibliotecaPage() {
                         </div>
                     </div>
                     {/* Right side image */}
-                    <div className="relative h-64 md:h-96 w-full">
+                    <div className="relative h-64 md:h-[28rem] w-full">
                          <Image
                             src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(50).png?raw=true"
                             alt="Abstract 3D shapes"
