@@ -18,7 +18,7 @@ export default function BibliotecaPage() {
             />
             <div className="relative z-10 text-center p-8">
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-                    Gestión Documental <br /> a la Velocidad de la Luz
+                    Biblioteca de Gestión Documental
                 </h1>
                 <p className="mt-6 max-w-2xl mx-auto text-lg text-white/80">
                     Accede a todos nuestros procesos y documentos normativos con solo un clic.
