@@ -494,80 +494,57 @@ export default function DashboardPage() {
       
         {/* Gestión de Vacaciones Section */}
         <div id="vacaciones" className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionWrapper>
-            <div className="rounded-2xl overflow-hidden min-h-[500px] flex flex-col md:flex-row">
-                {/* Left Panel */}
-                <div className="w-full md:w-2/3 relative min-h-[400px] md:min-h-full">
+          <SectionWrapper>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[300px] flex items-end p-8 text-white">
                 <Image
-                    src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8QkVBQ0H8ZW58MHx8fHwxNzUyNTA3OTA0fDA&ixlib-rb-4.1.0&q=80&w=1080"
-                    alt="Playa tropical para representar vacaciones"
+                  src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxiZWFjaHxlbnwwfHx8fDE3NjQxNDE3OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                  alt="Spatial Logic"
+                  layout="fill"
+                  objectFit="cover"
+                  className="z-0 brightness-75"
+                  data-ai-hint="person silhouette"
+                />
+                <div className="relative z-10">
+                  <h3 className="text-3xl font-bold">Gestiona tus Próximas Vacaciones</h3>
+                  <p className="text-white/80 mt-1">Planifica tu viaje y gestiona tus solicitudes.</p>
+                </div>
+              </Card>
+              <Card className="relative rounded-2xl overflow-hidden min-h-[300px] flex items-end p-8 text-white bg-secondary">
+                 <Image
+                    src="https://images.unsplash.com/photo-1551821899-7157b0d37a28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidWlsZGluZyUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3NjQxNDI1Nzd8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                    alt="Improvement"
                     layout="fill"
                     objectFit="cover"
-                    data-ai-hint="beach vacation"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-12 text-white pointer-events-none">
-                    <h2 className="text-5xl font-extrabold leading-tight">¡Gestiona tus Próximas Vacaciones!</h2>
-                    <p className="mt-4 max-w-md text-white/90">
-                    Planifica tu viaje con las mejores recomendaciones y gestiona tus solicitudes de forma sencilla.
-                    </p>
-                    <Button asChild className="mt-6 w-fit pointer-events-auto font-light">
-                    <Link href="/dashboard/vacaciones">Explorar</Link>
-                    </Button>
+                    className="z-0 opacity-20"
+                    data-ai-hint="building architecture"
+                  />
+                <div className="relative z-10">
+                  <p className="text-sm">Mis solicitudes</p>
+                  <p className="text-5xl font-bold mt-2">+10 días</p>
+                  <p className="text-sm text-white/80 mt-2">Días disponibles para disfrutar.</p>
                 </div>
+              </Card>
+              <Card className="relative rounded-2xl overflow-hidden min-h-[300px] group">
+                 <Image
+                    src="https://images.unsplash.com/photo-1542157585-2c8163353455?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwYXBlciUyMHBsYW5lfGVufDB8fHx8fDE3NjQxNDI3MTB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                    alt="View Case"
+                    layout="fill"
+                    objectFit="cover"
+                    className="z-0 brightness-90 group-hover:brightness-75 transition-all"
+                    data-ai-hint="orange circle"
+                  />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <div className="relative z-10 flex flex-col justify-end h-full p-8">
+                  <Button asChild variant="secondary" className="bg-white/90 text-foreground hover:bg-white w-fit">
+                    <Link href="/dashboard/vacaciones">
+                      Ver Calendario
+                    </Link>
+                  </Button>
                 </div>
-
-                {/* Right Panel */}
-                <div className="w-full md:w-1/3 p-8 flex flex-col">
-                <div className="space-y-4 my-auto">
-                    <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
-                    <Image
-                        src="https://images.unsplash.com/photo-1615317779547-2078d82c549a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFuZXxlbnwwfHx8fDE3NTI1MDYxMTN8MA&ixlib.rb-4.1.0&q=80&w=1080"
-                        alt="Solicitudes de vacaciones"
-                        layout="fill"
-                        objectFit="cover"
-                        data-ai-hint="plane"
-                        className="group-hover:scale-105 transition-transform"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
-                    <div className="absolute bottom-4 left-4 text-white pointer-events-none">
-                        <h4 className="font-bold text-lg">Mis Solicitudes</h4>
-                        <p className="text-xs">Consulta el estado de tus solicitudes de vacaciones.</p>
-                    </div>
-                    </div>
-                    <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
-                    <Image
-                        src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8cGxhbmV8ZW58MHx8fHwxNzUyNTA2MTEzfDA&ixlib.rb-4.1.0&q=80&w=1080"
-                        alt="Fechas Disponibles"
-                        layout="fill"
-                        objectFit="cover"
-                        data-ai-hint="plane"
-                        className="group-hover:scale-105 transition-transform"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
-                    <div className="absolute bottom-4 left-4 text-white pointer-events-none">
-                        <h4 className="font-bold text-lg">Fechas Disponibles</h4>
-                        <p className="text-xs">Consulta el calendario y planifica tu próximo viaje.</p>
-                    </div>
-                    </div>
-                    <div className="relative h-48 w-full rounded-2xl overflow-hidden group">
-                    <Image
-                        src="https://images.unsplash.com/photo-1534396579421-7c278108bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWx0byUyMGFuZ2VsfGVufDB8fHx8MTc1MjU4NzIxMHww&ixlib.rb-4.1.0&q=80&w=1080"
-                        alt="Recomendaciones de viaje"
-                        layout="fill"
-                        objectFit="cover"
-                        data-ai-hint="travel guide"
-                        className="group-hover:scale-105 transition-transform"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
-                    <div className="absolute bottom-4 left-4 text-white pointer-events-none">
-                        <h4 className="font-bold text-lg">Recomendaciones</h4>
-                        <p className="text-xs">Descubre destinos y consejos para tu próximo viaje.</p>
-                    </div>
-                    </div>
-                </div>
-                </div>
+              </Card>
             </div>
-            </SectionWrapper>
+          </SectionWrapper>
         </div>
         
         {/* Portal de Requerimientos Section */}
@@ -677,7 +654,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                       dataAiHint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
@@ -688,7 +665,7 @@ export default function DashboardPage() {
                       category="Mejora tus Habilidades"
                       details={["Presentaciones", "Feedback", "Oratoria"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib.rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                       dataAiHint="public speaking"
                       imageClassName="opacity-30"
                       availability={90}
@@ -795,7 +772,7 @@ export default function DashboardPage() {
                 <div className="bg-muted/50 p-12 flex items-center">
                     <div className="w-full grid grid-cols-2 gap-8">
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
+                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Beneficios</h4>
                             <p className="text-xs mt-1 text-white/90">Descubra todas sus ventajas.</p>
@@ -805,7 +782,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
@@ -815,7 +792,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
+                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib.rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Centros de Atención</h4>
                             <p className="text-xs mt-1 text-white/90">Encuentre la clínica más cercana.</p>
@@ -846,7 +823,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
