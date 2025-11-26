@@ -25,7 +25,7 @@ export default function BibliotecaPage() {
                             Biblioteca de Gestión Documental
                         </h1>
                         <p className="mt-6 max-w-md text-lg text-neutral-600">
-                            Accede a todos nuestros procesos y documentos normativos con solo un clic.
+                            Esta sección administra y centraliza toda la documentación corporativa. Garantiza que usted acceda siempre a la versión vigente, válida y autorizada de cada documento, optimizando la eficiencia y la toma de decisiones.
                         </p>
                         <div className="mt-10">
                             <Button asChild size="lg" className="bg-neutral-800 text-white hover:bg-neutral-700 font-semibold rounded-full shadow-lg transition-transform hover:scale-105">
