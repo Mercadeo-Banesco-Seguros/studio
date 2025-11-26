@@ -521,7 +521,7 @@ export default function DashboardPage() {
                   />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 <div className="relative z-10 flex flex-col justify-center h-full p-8">
-                  <Button asChild variant="secondary" className="bg-white/90 text-foreground hover:bg-white w-fit">
+                  <Button asChild variant="secondary" className="bg-white/90 text-foreground hover:bg-white w-fit font-light">
                     <Link href="#">
                       Consultar Solicitudes
                     </Link>
@@ -539,7 +539,7 @@ export default function DashboardPage() {
                   />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 <div className="relative z-10 flex flex-col justify-center h-full p-8">
-                  <Button asChild variant="secondary" className="bg-white/90 text-foreground hover:bg-white w-fit">
+                  <Button asChild variant="secondary" className="bg-white/90 text-foreground hover:bg-white w-fit font-light">
                     <Link href="/dashboard/vacaciones">
                       Ver Calendario
                     </Link>
@@ -557,7 +557,7 @@ export default function DashboardPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 <div className="relative z-10 flex flex-col justify-center h-full p-8">
-                  <Button asChild variant="secondary" className="bg-white/90 text-foreground hover:bg-white w-fit">
+                  <Button asChild variant="secondary" className="bg-white/90 text-foreground hover:bg-white w-fit font-light">
                     <Link href="#">
                       Recomendaciones
                     </Link>
@@ -686,7 +686,7 @@ export default function DashboardPage() {
                       category="Mejora tus Habilidades"
                       details={["Presentaciones", "Feedback", "Oratoria"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib-rb-4.1.0&q=80&w=1080"
                       dataAiHint="public speaking"
                       imageClassName="opacity-30"
                       availability={90}
