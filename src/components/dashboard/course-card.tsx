@@ -48,14 +48,14 @@ export function CourseCard({ course }: CourseCardProps) {
 }
 
 const AvailabilityRing = ({ percentage }: { percentage: number }) => {
-  const radius = 50;
-  const stroke = 6;
+  const radius = 60;
+  const stroke = 8;
   const normalizedRadius = radius - stroke / 2;
   const circumference = normalizedRadius * 2 * Math.PI;
   const strokeDashoffset = circumference - (percentage / 100) * circumference;
 
   return (
-    <div className="relative flex items-center justify-center w-32 h-32 flex-shrink-0">
+    <div className="relative flex items-center justify-center w-36 h-36 flex-shrink-0">
       <svg
         height={radius * 2}
         width={radius * 2}
@@ -140,10 +140,10 @@ export const NewCourseCard = ({ title, category, details, imageUrl, dataAiHint, 
                         </div>
                         <div className="flex items-center gap-2 mt-4">
                             <Button variant={isLight ? "secondary" : "secondary"} size="sm" className={cn("text-xs font-light", !isLight && "bg-white/20 text-white hover:bg-white/30")}>
-                                Preview
+                                Vista Previa
                             </Button>
                             <Button variant="link" size="sm" className={cn("text-xs font-light", mutedTextColorClass)}>
-                                Details
+                                Detalles
                             </Button>
                         </div>
                     </div>
