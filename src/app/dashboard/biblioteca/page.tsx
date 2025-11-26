@@ -10,7 +10,7 @@ export default function BibliotecaPage() {
         <div className="relative w-full flex flex-col justify-center text-foreground overflow-hidden py-32">
             {/* Background Image */}
             <Image
-                src="https://wallpapers.com/images/featured/4k-blanco-i308ljad82204626.jpg"
+                src="https://server.wallpaperalchemy.com/storage/wallpapers/154/windows-11-abstract-waves-wallpaper-4k-ultra-hd-orange-pink-gradient-desktop-background.png"
                 alt="Fondo abstracto blanco"
                 layout="fill"
                 objectFit="cover"
