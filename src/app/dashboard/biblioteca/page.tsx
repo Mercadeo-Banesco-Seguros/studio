@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export default function BibliotecaPage() {
     return (
-        <div className="relative w-full min-h-screen flex flex-col justify-center bg-[#f0f0f0] text-foreground overflow-hidden">
+        <div className="relative w-full flex flex-col justify-center bg-[#f0f0f0] text-foreground overflow-hidden py-32">
             {/* Grid background */}
             <div 
                 className="absolute inset-0 z-0" 
