@@ -498,8 +498,8 @@ export default function DashboardPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card className="md:col-span-3 relative rounded-2xl overflow-hidden min-h-[300px] flex flex-col justify-center items-center p-8 text-center text-white">
                 <Image
-                  src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxiZWFjaHxlbnwwfHx8fDE3NjQxODc5NTh8MA&lib=rb-4.1.0&q=80&w=1080"
-                  alt="Spatial Logic"
+                  src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxiZWFjaHxlbnwwfHx8fDE3NjQxODc5NTh8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                  alt="person silhouette"
                   layout="fill"
                   objectFit="cover"
                   className="z-0 brightness-75"
@@ -510,7 +510,7 @@ export default function DashboardPage() {
                   <p className="text-white/80 mt-1">Planifica tu viaje y gestiona tus solicitudes.</p>
                 </div>
               </Card>
-              <Card className="relative rounded-2xl overflow-hidden min-h-[300px] flex flex-col justify-center items-center p-8 text-center text-white bg-secondary">
+              <Card className="relative rounded-2xl overflow-hidden min-h-[300px] group flex flex-col justify-center items-center p-8 text-center text-white bg-secondary">
                  <Image
                     src="https://images.unsplash.com/photo-1551821899-7157b0d37a28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidWlsZGluZyUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3NjQxNDI1Nzd8MA&lib=rb-4.1.0&q=80&w=1080"
                     alt="Improvement"
@@ -542,21 +542,24 @@ export default function DashboardPage() {
                   </Button>
                 </div>
               </Card>
-                <Card className="relative rounded-2xl overflow-hidden min-h-[300px] group flex flex-col justify-center items-center p-8 text-center text-white bg-primary">
+              <Card className="relative rounded-2xl overflow-hidden min-h-[300px] group flex flex-col justify-center items-center">
                 <Image
-                    src="https://images.unsplash.com/photo-1520442036124-a29a00a583e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkb2N1bWVudHxlbnwwfHx8fDE3NjQxNDM1OTZ8MA&lib=rb-4.1.0&q=80&w=1080"
-                    alt="Ver solicitudes"
+                    src="https://images.unsplash.com/photo-1502101872923-d48509bff386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdGFpcnN8ZW58MHx8fHwxNzUyNjAwMzk4fDA&ixlib.rb-4.1.0&q=80&w=1080"
+                    alt="Recomendaciones"
                     layout="fill"
                     objectFit="cover"
-                    className="z-0 opacity-20"
-                    data-ai-hint="documents folder"
+                    className="z-0 brightness-90 group-hover:brightness-75 transition-all"
+                    data-ai-hint="recommendations"
                 />
-                <div className="relative z-10">
-                    <p className="text-sm">Mis solicitudes</p>
-                    <p className="text-5xl font-bold mt-2">10%</p>
-                    <p className="text-sm text-white/80 mt-2">Días disponibles para disfrutar.</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <div className="relative z-10 flex flex-col justify-center h-full p-8">
+                  <Button asChild variant="secondary" className="bg-white/90 text-foreground hover:bg-white w-fit">
+                    <Link href="#">
+                      Recomendaciones
+                    </Link>
+                  </Button>
                 </div>
-                </Card>
+              </Card>
             </div>
           </SectionWrapper>
         </div>
@@ -679,7 +682,7 @@ export default function DashboardPage() {
                       category="Mejora tus Habilidades"
                       details={["Presentaciones", "Feedback", "Oratoria"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib-rb-4.1.0&q=80&w=1080"
                       dataAiHint="public speaking"
                       imageClassName="opacity-30"
                       availability={90}
@@ -694,7 +697,7 @@ export default function DashboardPage() {
           <SectionWrapper>
             <Card className="relative overflow-hidden rounded-2xl shadow-lg min-h-[500px] flex flex-col md:flex-row">
               <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib=rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8MTc1ODIxNzIzOXww&ixlib-rb-4.1.0&q=80&w=1080"
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
@@ -796,7 +799,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white pointer-events-none">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
