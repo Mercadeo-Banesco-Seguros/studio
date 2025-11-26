@@ -10,7 +10,7 @@ export default function BibliotecaPage() {
         <div className="relative w-full flex flex-col justify-center text-foreground overflow-hidden py-32">
             {/* Background Image */}
             <Image
-                src="https://www.chromethemer.com/wallpapers/chromebook-wallpapers/images/960/windows-11-chromebook-wallpaper.jpg"
+                src="https://wallpapers.com/images/hd/white-pc-plzg245ab7b4lw41.jpg"
                 alt="Fondo abstracto blanco"
                 layout="fill"
                 objectFit="cover"
