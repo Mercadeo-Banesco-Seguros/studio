@@ -496,7 +496,7 @@ export default function DashboardPage() {
         <div id="vacaciones" className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionWrapper>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[300px] flex items-end p-8 text-white">
+              <Card className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[300px] flex flex-col justify-center items-center p-8 text-center text-white">
                 <Image
                   src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxiZWFjaHxlbnwwfHx8fDE3NjQxNDE3OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Spatial Logic"
@@ -510,7 +510,7 @@ export default function DashboardPage() {
                   <p className="text-white/80 mt-1">Planifica tu viaje y gestiona tus solicitudes.</p>
                 </div>
               </Card>
-              <Card className="relative rounded-2xl overflow-hidden min-h-[300px] flex items-end p-8 text-white bg-secondary">
+              <Card className="relative rounded-2xl overflow-hidden min-h-[300px] flex flex-col justify-center items-center p-8 text-center text-white bg-secondary">
                  <Image
                     src="https://images.unsplash.com/photo-1551821899-7157b0d37a28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidWlsZGluZyUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3NjQxNDI1Nzd8MA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Improvement"
@@ -525,9 +525,9 @@ export default function DashboardPage() {
                   <p className="text-sm text-white/80 mt-2">Días disponibles para disfrutar.</p>
                 </div>
               </Card>
-              <Card className="relative rounded-2xl overflow-hidden min-h-[300px] group">
+              <Card className="relative rounded-2xl overflow-hidden min-h-[300px] group flex flex-col justify-center items-center">
                  <Image
-                    src="https://images.unsplash.com/photo-1542157585-2c8163353455?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwYXBlciUyMHBsYW5lfGVufDB8fHx8fDE3NjQxNDI3MTB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1542157585-2c8163353455?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwYXBlciUyMHBsYW5lfGVufDB8fHx8fDE3NjQxNDI3MTB8MA&ixlib.rb-4.1.0&q=80&w=1080"
                     alt="View Case"
                     layout="fill"
                     objectFit="cover"
@@ -535,7 +535,7 @@ export default function DashboardPage() {
                     data-ai-hint="orange circle"
                   />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                <div className="relative z-10 flex flex-col justify-end h-full p-8">
+                <div className="relative z-10 flex flex-col justify-center h-full p-8">
                   <Button asChild variant="secondary" className="bg-white/90 text-foreground hover:bg-white w-fit">
                     <Link href="/dashboard/vacaciones">
                       Ver Calendario
@@ -665,7 +665,7 @@ export default function DashboardPage() {
                       category="Mejora tus Habilidades"
                       details={["Presentaciones", "Feedback", "Oratoria"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib.rb-4.1.0&q=80&w=1080"
                       dataAiHint="public speaking"
                       imageClassName="opacity-30"
                       availability={90}
