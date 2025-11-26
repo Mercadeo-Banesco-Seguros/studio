@@ -17,7 +17,7 @@ export default function BibliotecaPage() {
                 className="z-0"
                 data-ai-hint="abstract white"
             />
-            <div className="absolute inset-0 bg-black/20 z-0" />
+            <div className="absolute inset-0 bg-blue-300/20 z-0" />
 
             <div className="container mx-auto px-8 relative z-10">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
