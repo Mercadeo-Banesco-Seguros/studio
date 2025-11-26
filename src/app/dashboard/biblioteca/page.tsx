@@ -16,6 +16,7 @@ export default function BibliotecaPage() {
                 objectFit="cover"
                 className="z-0"
                 data-ai-hint="abstract white"
+                quality={100}
             />
             <div className="absolute inset-0 bg-blue-300/20 z-0" />
 
@@ -41,7 +42,7 @@ export default function BibliotecaPage() {
                     {/* Right side image */}
                     <div className="relative h-64 md:h-96 w-full">
                          <Image
-                            src="https://images.unsplash.com/photo-1695423588926-820f44c4245c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhYnN0cmFjdCUyMHdoaXRlJTIwM2R8ZW58MHx8fHwxNzYzOTg1MTA5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                            src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(50).png?raw=true"
                             alt="Abstract 3D shapes"
                             layout="fill"
                             objectFit="contain"
