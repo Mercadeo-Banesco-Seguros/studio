@@ -30,7 +30,7 @@ export default function BibliotecaPage() {
                             Esta sección administra y centraliza toda la documentación corporativa. Garantiza que usted acceda siempre a la versión vigente, válida y autorizada de cada documento, optimizando la eficiencia y la toma de decisiones.
                         </p>
                         <div className="mt-10">
-                            <Button asChild size="lg" className="bg-neutral-800 text-white hover:bg-neutral-700 font-semibold rounded-full shadow-lg transition-transform hover:scale-105">
+                            <Button asChild size="lg" className="font-semibold rounded-full shadow-lg transition-transform hover:scale-105">
                                 <Link href="https://www.appsheet.com/start/410a1959-0f25-4a71-8e93-d61b3d312d8a" target="_blank" rel="noopener noreferrer">
                                     Empezar
                                     <ArrowRight className="ml-2 h-4 w-4" />
