@@ -7,29 +7,46 @@ import Image from 'next/image';
 
 export default function BibliotecaPage() {
     return (
-        <div className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden">
-            <Image
-                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxvZmZpY2V8ZW58MHx8fHwxNzU4NjgzODExfDA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="People working in an office"
-                layout="fill"
-                objectFit="cover"
-                className="z-0 brightness-50"
-                data-ai-hint="office work"
+        <div className="relative w-full min-h-screen flex flex-col justify-center bg-[#f0f0f0] text-foreground overflow-hidden">
+            {/* Grid background */}
+            <div 
+                className="absolute inset-0 z-0" 
+                style={{
+                    backgroundImage: 'linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)',
+                    backgroundSize: '20px 20px',
+                }}
             />
-            <div className="relative z-10 text-center p-8">
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-                    Biblioteca de Gestión Documental
-                </h1>
-                <p className="mt-6 max-w-2xl mx-auto text-lg text-white/80">
-                    Accede a todos nuestros procesos y documentos normativos con solo un clic.
-                </p>
-                <div className="mt-10">
-                    <Button asChild size="lg" className="bg-white text-foreground hover:bg-white/90 font-semibold">
-                        <Link href="https://www.appsheet.com/start/410a1959-0f25-4a71-8e93-d61b3d312d8a" target="_blank" rel="noopener noreferrer">
-                            Empezar
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                    </Button>
+
+            <div className="container mx-auto px-8 relative z-10">
+                <div className="grid md:grid-cols-2 gap-16 items-center">
+                    {/* Left side content */}
+                    <div className="text-left">
+                        <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-neutral-800 leading-tight">
+                            Biblioteca de Gestión Documental
+                        </h1>
+                        <p className="mt-6 max-w-md text-lg text-neutral-600">
+                            Accede a todos nuestros procesos y documentos normativos con solo un clic.
+                        </p>
+                        <div className="mt-10">
+                            <Button asChild size="lg" className="bg-neutral-800 text-white hover:bg-neutral-700 font-semibold rounded-full shadow-lg transition-transform hover:scale-105">
+                                <Link href="https://www.appsheet.com/start/410a1959-0f25-4a71-8e93-d61b3d312d8a" target="_blank" rel="noopener noreferrer">
+                                    Empezar
+                                    <ArrowRight className="ml-2 h-4 w-4" />
+                                </Link>
+                            </Button>
+                        </div>
+                    </div>
+                    {/* Right side image */}
+                    <div className="relative h-64 md:h-96 w-full">
+                         <Image
+                            src="https://images.unsplash.com/photo-1695423588926-820f44c4245c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhYnN0cmFjdCUyMHdoaXRlJTIwM2R8ZW58MHx8fHwxNzYzOTg1MTA5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Abstract 3D shapes"
+                            layout="fill"
+                            objectFit="contain"
+                            data-ai-hint="abstract 3d"
+                            className="drop-shadow-2xl"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
