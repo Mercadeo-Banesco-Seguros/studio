@@ -7,15 +7,17 @@ import Image from 'next/image';
 
 export default function BibliotecaPage() {
     return (
-        <div className="relative w-full flex flex-col justify-center bg-[#f0f0f0] text-foreground overflow-hidden py-32">
-            {/* Grid background */}
-            <div 
-                className="absolute inset-0 z-0" 
-                style={{
-                    backgroundImage: 'linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)',
-                    backgroundSize: '20px 20px',
-                }}
+        <div className="relative w-full flex flex-col justify-center text-foreground overflow-hidden py-32">
+            {/* Background Image */}
+            <Image
+                src="https://wallpapers.com/images/featured/4k-blanco-i308ljad82204626.jpg"
+                alt="Fondo abstracto blanco"
+                layout="fill"
+                objectFit="cover"
+                className="z-0"
+                data-ai-hint="abstract white"
             />
+            <div className="absolute inset-0 bg-black/20 z-0" />
 
             <div className="container mx-auto px-8 relative z-10">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
