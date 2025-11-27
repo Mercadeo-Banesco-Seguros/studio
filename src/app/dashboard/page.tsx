@@ -512,7 +512,7 @@ export default function DashboardPage() {
               </Card>
               <Card className="relative rounded-2xl overflow-hidden min-h-[300px] group flex flex-col justify-center items-center">
                  <Image
-                    src="https://media.staticontent.com/media/pictures/96745f9a-8a29-44b0-9713-51057f541bdf"
+                    src="https://http2.mlstatic.com/D_NQ_NP_660493-MLA79812773640_102024-B.webp"
                     alt="Consultar Solicitudes"
                     layout="fill"
                     objectFit="cover"
@@ -697,55 +697,55 @@ export default function DashboardPage() {
 
 
         {/* Dress Code Section */}
-        <div id="dress-code" className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionWrapper>
-            <Card className="relative overflow-hidden rounded-2xl shadow-lg min-h-[500px] flex flex-col md:flex-row">
-              <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8fDE3NTgyMTcyMzN8MA&ixlib-rb-4.1.0&q=80&w=1080"
-                alt="Modelo con ropa moderna"
-                layout="fill"
-                objectFit="cover"
-                data-ai-hint="closet fashion"
-                className="brightness-90"
-              />
-              
-              <div className="relative z-10 p-8 md:p-12 text-white flex flex-col justify-between w-full md:w-1/2">
-                <div>
-                    <p className="text-sm uppercase tracking-wider text-white/80">Viste Seguro</p>
-                    <h2 className="text-4xl md:text-5xl font-bold mt-2">Banesco Seguros</h2>
-                </div>
-                <div>
-                    <p className="mt-4 max-w-sm text-white/90">
-                    Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
-                    </p>
-                    <Button asChild variant="secondary" className="mt-6 bg-white/90 text-foreground hover:bg-white font-light">
-                    <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
-                    </Button>
-                </div>
-                </div>
-                <div className="relative z-10 p-8 md:p-12 w-full md:w-1/2 flex items-center">
-                    <div ref={dressCodeScrollRef} className="w-full">
-                        <ScrollArea>
-                            <div className="flex w-max space-x-6 pb-4">
-                            {mockDressCodeItems.map((item) => (
-                                <DressCodeCard key={item.id} item={item} />
-                            ))}
-                            </div>
-                            <ScrollBar orientation="horizontal" className="invisible" />
-                        </ScrollArea>
+        <section id="dress-code" className="w-full">
+            <SectionWrapper className="px-0 container-fluid" cardClassName="rounded-none">
+                <Card className="relative overflow-hidden shadow-lg min-h-[500px] flex flex-col md:flex-row rounded-none">
+                  <Image
+                    src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8fDE3NTgyMTcyMzN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                    alt="Modelo con ropa moderna"
+                    layout="fill"
+                    objectFit="cover"
+                    data-ai-hint="closet fashion"
+                    className="brightness-90"
+                  />
+                  
+                  <div className="relative z-10 p-8 md:p-12 text-white flex flex-col justify-between w-full md:w-1/2">
+                    <div>
+                        <p className="text-sm uppercase tracking-wider text-white/80">Viste Seguro</p>
+                        <h2 className="text-4xl md:text-5xl font-bold mt-2">Banesco Seguros</h2>
                     </div>
-                     <div className="absolute right-4 bottom-4 flex gap-2">
-                        <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('left')}>
-                            <ChevronLeft className="h-4 w-4" />
-                        </Button>
-                        <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('right')}>
-                            <ChevronRight className="h-4 w-4" />
+                    <div>
+                        <p className="mt-4 max-w-sm text-white/90">
+                        Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
+                        </p>
+                        <Button asChild variant="secondary" className="mt-6 bg-white/90 text-foreground hover:bg-white font-light">
+                        <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
                         </Button>
                     </div>
-                </div>
-            </Card>
-          </SectionWrapper>
-        </div>
+                    </div>
+                    <div className="relative z-10 p-8 md:p-12 w-full md:w-1/2 flex items-center">
+                        <div ref={dressCodeScrollRef} className="w-full">
+                            <ScrollArea>
+                                <div className="flex w-max space-x-6 pb-4">
+                                {mockDressCodeItems.map((item) => (
+                                    <DressCodeCard key={item.id} item={item} />
+                                ))}
+                                </div>
+                                <ScrollBar orientation="horizontal" className="invisible" />
+                            </ScrollArea>
+                        </div>
+                         <div className="absolute right-4 bottom-4 flex gap-2">
+                            <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('left')}>
+                                <ChevronLeft className="h-4 w-4" />
+                            </Button>
+                            <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('right')}>
+                                <ChevronRight className="h-4 w-4" />
+                            </Button>
+                        </div>
+                    </div>
+                </Card>
+            </SectionWrapper>
+        </section>
 
         {/* Póliza HCM Section */}
         <div id="poliza" className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -793,7 +793,7 @@ export default function DashboardPage() {
                 <div className="bg-muted/50 p-12 flex items-center">
                     <div className="w-full grid grid-cols-2 gap-8">
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
+                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white">
                             <h4 className="text-xl font-bold">Beneficios</h4>
                             <p className="text-xs mt-1 text-white/90">Descubra todas sus ventajas.</p>
@@ -803,7 +803,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
@@ -813,7 +813,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib.rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
+                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white">
                             <h4 className="text-xl font-bold">Centros de Atención</h4>
                             <p className="text-xs mt-1 text-white/90">Encuentre la clínica más cercana.</p>
