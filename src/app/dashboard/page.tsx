@@ -498,7 +498,7 @@ export default function DashboardPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card className="md:col-span-3 relative rounded-2xl overflow-hidden min-h-[300px] flex flex-col justify-center items-center p-8 text-center text-white">
                 <Image
-                  src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwYWlzYWplfGVufDB8fHx8MTc2NDI0OTIwNnww&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://www.viagenscinematograficas.com.br/wp-content/uploads/2020/03/Punta-Cana-O-que-Fazer-Capa.jpg"
                   alt="beach landscape"
                   layout="fill"
                   objectFit="cover"
@@ -521,7 +521,7 @@ export default function DashboardPage() {
                   />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20" />
                 <div className="relative z-10 flex flex-col justify-center h-full p-8">
-                  <Button asChild variant="secondary" className="bg-white/90 text-foreground hover:bg-white w-fit font-light">
+                  <Button asChild variant="default" className="w-fit font-light">
                     <Link href="#">
                       Consultar Solicitudes
                     </Link>
@@ -530,7 +530,7 @@ export default function DashboardPage() {
               </Card>
               <Card className="relative rounded-2xl overflow-hidden min-h-[300px] group flex flex-col justify-center items-center">
                  <Image
-                    src="https://www.woodenson.com/wp-content/uploads/2018/03/sotorincon-08.jpg"
+                    src="https://thumbs.dreamstime.com/b/calendario-en-blanco-sobre-un-escritorio-moderno-sin-marca-situado-y-elegante-con-decoraci%C3%B3n-minimalista-e-iluminaci%C3%B3n-natural-397358645.jpg"
                     alt="View Case"
                     layout="fill"
                     objectFit="cover"
@@ -539,7 +539,7 @@ export default function DashboardPage() {
                   />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20" />
                 <div className="relative z-10 flex flex-col justify-center h-full p-8">
-                  <Button asChild variant="secondary" className="bg-white/90 text-foreground hover:bg-white w-fit font-light">
+                  <Button asChild variant="default" className="w-fit font-light">
                     <Link href="/dashboard/vacaciones">
                       Ver Calendario
                     </Link>
@@ -557,7 +557,7 @@ export default function DashboardPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20" />
                 <div className="relative z-10 flex flex-col justify-center h-full p-8">
-                  <Button asChild variant="secondary" className="bg-white/90 text-foreground hover:bg-white w-fit font-light">
+                  <Button asChild variant="default" className="w-fit font-light">
                     <Link href="#">
                       Recomendaciones
                     </Link>
@@ -698,8 +698,8 @@ export default function DashboardPage() {
 
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full py-12 md:py-16">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <Card className="relative overflow-hidden shadow-lg min-h-[500px] flex flex-col md:flex-row rounded-2xl">
+            <div className="container-fluid px-0">
+                <div className="relative overflow-hidden min-h-[500px] flex flex-col md:flex-row">
                   <Image
                     src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8fDE3NTgyMTcyMzN8MA&ixlib-rb-4.1.0&q=80&w=1080"
                     alt="Modelo con ropa moderna"
@@ -743,7 +743,7 @@ export default function DashboardPage() {
                             </Button>
                         </div>
                     </div>
-                </Card>
+                </div>
             </div>
         </section>
 
