@@ -499,31 +499,29 @@ export default function DashboardPage() {
               <Card className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[400px] flex items-center">
                 <div className="absolute inset-0 z-0">
                   <Image
-                    src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwYWlzYWplfGVufDB8fHx8MTc2NDI0OTIwNnww&ixlib=rb-4.1.0&q=80&w=1080"
-                    alt="Paisaje"
+                    src="https://wallpapers.com/images/hd/4k-beach-background-my1ejjxhxwgubswg.jpg"
+                    alt="Paisaje de playa"
                     layout="fill"
                     objectFit="cover"
                     className="brightness-75"
-                    data-ai-hint="person silhouette"
+                    data-ai-hint="beach landscape"
                   />
                   <div className="absolute inset-0 bg-black/30"></div>
                 </div>
                 <div className="relative z-10 p-8 md:p-12 text-white w-full md:w-1/2 flex flex-col justify-center">
                   <Badge variant="secondary" className="mb-4 bg-white/20 text-white backdrop-blur-sm w-fit">Capital Humano</Badge>
-                    <h3 className="text-4xl md:text-5xl tracking-tight">
-                        <span className="font-light">Gestiona tus</span> <br/> <span className="font-bold">Próximas Vacaciones</span>
-                    </h3>
+                  <h3 className="text-4xl md:text-5xl tracking-tight">
+                    <span className="font-light">Gestiona tus</span> <br /> <span className="font-bold">Próximas Vacaciones</span>
+                  </h3>
                   <p className="mt-4 max-w-sm text-white/90">
                     Planifica tu viaje y gestiona tus solicitudes.
                   </p>
                   <Button asChild variant="default" className="mt-6 font-light rounded-full w-fit">
-                    <Link href="/dashboard/vacaciones">
-                      Gestionar Solicitudes
-                    </Link>
+                    <Link href="/dashboard/vacaciones">Gestionar Solicitudes</Link>
                   </Button>
                 </div>
               </Card>
-              <Card className="relative rounded-2xl overflow-hidden group min-h-[300px]">
+              <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
                 <Image
                   src="https://thumbs.dreamstime.com/b/calendario-en-blanco-sobre-un-escritorio-moderno-sin-marca-situado-y-elegante-con-decoraci%C3%B3n-minimalista-e-iluminaci%C3%B3n-natural-397358645.jpg"
                   alt="Consultar Solicitudes"
@@ -538,14 +536,13 @@ export default function DashboardPage() {
                   <p className="text-sm mt-1 text-white/80">Revisa el estado de tus solicitudes.</p>
                   <div className="flex justify-end w-full mt-4">
                     <Button asChild variant="default" className="rounded-full font-light text-xs">
-                      <Link href="/dashboard/vacaciones">
-                        Explorar
-                      </Link>
+                      <Link href="/dashboard/vacaciones">Explorar</Link>
                     </Button>
                   </div>
                 </div>
               </Card>
-              <div className="relative rounded-2xl overflow-hidden group min-h-[300px]">
+              <div className="relative rounded-2xl overflow-hidden group min-h-[400px]">
+                {/* The Link was removed from here to allow image interaction */}
                 <Image
                   src="https://www.aviationgroup.es/wp-content/uploads/2023/03/avion-volando-con-un-motor.jpg"
                   alt="Ver Destinos"
@@ -554,15 +551,14 @@ export default function DashboardPage() {
                   className="z-0"
                   data-ai-hint="airplane sky"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
+                {/* This overlay was also removed to allow direct image interaction but I'm keeping a darker one for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
                   <h4 className="text-2xl font-bold">Ver Destinos</h4>
-                   <p className="text-sm mt-1 text-white/80">Descubre lugares para tu próximo viaje.</p>
+                  <p className="text-sm mt-1 text-white/80">Descubre lugares para tu próximo viaje.</p>
                   <div className="flex justify-end w-full mt-4">
                     <Button asChild variant="default" className="rounded-full font-light text-xs">
-                      <Link href="#">
-                        Explorar
-                      </Link>
+                      <Link href="#">Explorar</Link>
                     </Button>
                   </div>
                 </div>
@@ -669,7 +665,7 @@ export default function DashboardPage() {
                       author="Banesco Seguros"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageUrl="https://www.sage.com/en-us/blog/wp-content/uploads/sites/2/2023/02/shutterstock_1761488276_c2222.jpg"
-                      data-ai-hint="collaboration tools"
+                      dataAiHint="collaboration tools"
                       imageClassName="opacity-30"
                       availability={75}
                   />
@@ -679,7 +675,7 @@ export default function DashboardPage() {
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                      data-ai-hint="artificial intelligence"
+                      dataAiHint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
                       availability={40}
@@ -690,7 +686,7 @@ export default function DashboardPage() {
                       details={["Presentaciones", "Feedback", "Oratoria"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib.rb-4.1.0&q=80&w=1080"
-                      data-ai-hint="public speaking"
+                      dataAiHint="public speaking"
                       imageClassName="opacity-30"
                       availability={90}
                   />
@@ -701,41 +697,45 @@ export default function DashboardPage() {
 
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full py-12 md:py-16">
-          <div className="relative overflow-hidden min-h-[600px] flex flex-col md:flex-row">
-              <div className="relative z-10 p-8 md:p-12 text-white flex flex-col justify-between w-full md:w-1/2">
-                  <div>
-                      <p className="text-sm uppercase tracking-wider text-white/80">Viste Seguro</p>
-                      <h2 className="text-4xl md:text-5xl font-bold mt-2">Banesco Seguros</h2>
-                  </div>
-                  <div>
-                      <p className="mt-4 max-w-sm text-white/90">
-                      Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
-                      </p>
-                      <Button asChild variant="secondary" className="mt-6 bg-white/90 text-foreground hover:bg-white font-light">
-                      <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
-                      </Button>
-                  </div>
+          <div className="relative overflow-hidden min-h-[600px]">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
+              <div className="flex flex-col md:flex-row h-full">
+                <div className="relative z-10 p-8 md:p-12 text-white flex flex-col justify-between w-full md:w-1/2">
+                    <div>
+                        <p className="text-sm uppercase tracking-wider text-white/80">Viste Seguro</p>
+                        <h2 className="text-4xl md:text-5xl font-bold mt-2">Banesco Seguros</h2>
+                    </div>
+                    <div>
+                        <p className="mt-4 max-w-sm text-white/90">
+                        Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
+                        </p>
+                        <Button asChild variant="secondary" className="mt-6 bg-white/90 text-foreground hover:bg-white font-light">
+                        <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
+                        </Button>
+                    </div>
+                </div>
+                <div className="relative z-10 p-8 md:p-12 w-full md:w-1/2 flex items-center">
+                    <div ref={dressCodeScrollRef} className="w-full">
+                        <ScrollArea>
+                            <div className="flex w-max space-x-6 pb-4">
+                            {mockDressCodeItems.map((item) => (
+                                <DressCodeCard key={item.id} item={item} />
+                            ))}
+                            </div>
+                            <ScrollBar orientation="horizontal" className="invisible" />
+                        </ScrollArea>
+                    </div>
+                    <div className="absolute right-4 bottom-4 flex gap-2">
+                        <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('left')}>
+                            <ChevronLeft className="h-4 w-4" />
+                        </Button>
+                        <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('right')}>
+                            <ChevronRight className="h-4 w-4" />
+                        </Button>
+                    </div>
+                </div>
               </div>
-              <div className="relative z-10 p-8 md:p-12 w-full md:w-1/2 flex items-center">
-                  <div ref={dressCodeScrollRef} className="w-full">
-                      <ScrollArea>
-                          <div className="flex w-max space-x-6 pb-4">
-                          {mockDressCodeItems.map((item) => (
-                              <DressCodeCard key={item.id} item={item} />
-                          ))}
-                          </div>
-                          <ScrollBar orientation="horizontal" className="invisible" />
-                      </ScrollArea>
-                  </div>
-                   <div className="absolute right-4 bottom-4 flex gap-2">
-                      <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('left')}>
-                          <ChevronLeft className="h-4 w-4" />
-                      </Button>
-                      <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('right')}>
-                          <ChevronRight className="h-4 w-4" />
-                      </Button>
-                  </div>
-              </div>
+            </div>
 
                <Image
                   src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8fDE3NTgyMTcyMzN8MA&ixlib-rb-4.1.0&q=80&w=1080"
@@ -804,7 +804,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
@@ -814,7 +814,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
+                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib.rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white">
                             <h4 className="text-xl font-bold">Centros de Atención</h4>
                             <p className="text-xs mt-1 text-white/90">Encuentre la clínica más cercana.</p>
@@ -824,7 +824,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1502101872923-d48509bff386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdGFpcnN8ZW58MHx8fHwxNzUyNjAwMzk4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Protocolos" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="process diagram" />
+                        <Image src="https://images.unsplash.com/photo-1502101872923-d48509bff386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdGFpcnN8ZW58MHx8fHwxNzUyNjAwMzk4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Protocolos" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="process diagram" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white">
                             <h4 className="text-xl font-bold">Protocolos</h4>
                             <p className="text-xs mt-1 text-white/90">Siga los pasos para cada caso.</p>
@@ -845,7 +845,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
