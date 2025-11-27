@@ -506,7 +506,6 @@ export default function DashboardPage() {
                     className="brightness-75"
                     data-ai-hint="beach landscape"
                   />
-                  <div className="absolute inset-0 bg-black/30"></div>
                 </div>
                 <div className="relative z-10 p-8 md:p-12 text-white w-full md:w-1/2 flex flex-col justify-center">
                   <Badge variant="secondary" className="mb-4 bg-white/20 text-white backdrop-blur-sm w-fit">Capital Humano</Badge>
@@ -533,7 +532,7 @@ export default function DashboardPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                 <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
                   <h4 className="text-2xl font-bold tracking-tight">Consultar Solicitudes</h4>
-                  <p className="text-sm mt-1 text-white/80">Revisa el estado de tus solicitudes.</p>
+                   <p className="text-sm mt-1 text-white/80">Revisa el estado de tus solicitudes.</p>
                   <div className="flex justify-end w-full mt-4">
                     <Button asChild variant="default" className="rounded-full font-light text-xs">
                       <Link href="/dashboard/vacaciones">Explorar</Link>
@@ -542,15 +541,6 @@ export default function DashboardPage() {
                 </div>
               </Card>
               <div className="relative rounded-2xl overflow-hidden group min-h-[400px]">
-                {/* The Link was removed from here to allow image interaction */}
-                <Image
-                  src="https://www.aviationgroup.es/wp-content/uploads/2023/03/avion-volando-con-un-motor.jpg"
-                  alt="Ver Destinos"
-                  layout="fill"
-                  objectFit="cover"
-                  className="z-0"
-                  data-ai-hint="airplane sky"
-                />
                 {/* This overlay was also removed to allow direct image interaction but I'm keeping a darker one for text readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
@@ -562,6 +552,14 @@ export default function DashboardPage() {
                     </Button>
                   </div>
                 </div>
+                <Image
+                  src="https://www.aviationgroup.es/wp-content/uploads/2023/03/avion-volando-con-un-motor.jpg"
+                  alt="Ver Destinos"
+                  layout="fill"
+                  objectFit="cover"
+                  className="z-0"
+                  data-ai-hint="airplane sky"
+                />
               </div>
             </div>
           </SectionWrapper>
@@ -698,43 +696,41 @@ export default function DashboardPage() {
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full py-12 md:py-16">
           <div className="relative overflow-hidden min-h-[600px]">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
-              <div className="flex flex-col md:flex-row h-full">
-                <div className="relative z-10 p-8 md:p-12 text-white flex flex-col justify-between w-full md:w-1/2">
-                    <div>
-                        <p className="text-sm uppercase tracking-wider text-white/80">Viste Seguro</p>
-                        <h2 className="text-4xl md:text-5xl font-bold mt-2">Banesco Seguros</h2>
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+                <div className="flex flex-col md:flex-row h-full w-full">
+                    <div className="relative z-10 p-8 md:p-12 text-white flex flex-col justify-center w-full md:w-1/2">
+                        <div className='space-y-4'>
+                            <p className="text-sm uppercase tracking-wider text-white/80">Viste Seguro</p>
+                            <h2 className="text-4xl md:text-5xl font-bold mt-2">Banesco Seguros</h2>
+                            <p className="mt-4 max-w-sm text-white/90">
+                            Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
+                            </p>
+                            <Button asChild variant="secondary" className="mt-6 bg-white/90 text-foreground hover:bg-white font-light">
+                            <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
+                            </Button>
+                        </div>
                     </div>
-                    <div>
-                        <p className="mt-4 max-w-sm text-white/90">
-                        Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
-                        </p>
-                        <Button asChild variant="secondary" className="mt-6 bg-white/90 text-foreground hover:bg-white font-light">
-                        <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
-                        </Button>
+                    <div className="relative z-10 p-8 md:p-12 w-full md:w-1/2 flex items-center">
+                        <div ref={dressCodeScrollRef} className="w-full">
+                            <ScrollArea>
+                                <div className="flex w-max space-x-6 pb-4">
+                                {mockDressCodeItems.map((item) => (
+                                    <DressCodeCard key={item.id} item={item} />
+                                ))}
+                                </div>
+                                <ScrollBar orientation="horizontal" className="invisible" />
+                            </ScrollArea>
+                        </div>
+                        <div className="absolute right-4 bottom-4 flex gap-2">
+                            <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('left')}>
+                                <ChevronLeft className="h-4 w-4" />
+                            </Button>
+                            <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('right')}>
+                                <ChevronRight className="h-4 w-4" />
+                            </Button>
+                        </div>
                     </div>
                 </div>
-                <div className="relative z-10 p-8 md:p-12 w-full md:w-1/2 flex items-center">
-                    <div ref={dressCodeScrollRef} className="w-full">
-                        <ScrollArea>
-                            <div className="flex w-max space-x-6 pb-4">
-                            {mockDressCodeItems.map((item) => (
-                                <DressCodeCard key={item.id} item={item} />
-                            ))}
-                            </div>
-                            <ScrollBar orientation="horizontal" className="invisible" />
-                        </ScrollArea>
-                    </div>
-                    <div className="absolute right-4 bottom-4 flex gap-2">
-                        <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('left')}>
-                            <ChevronLeft className="h-4 w-4" />
-                        </Button>
-                        <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('right')}>
-                            <ChevronRight className="h-4 w-4" />
-                        </Button>
-                    </div>
-                </div>
-              </div>
             </div>
 
                <Image
@@ -845,7 +841,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
