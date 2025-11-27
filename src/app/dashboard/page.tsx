@@ -499,12 +499,12 @@ export default function DashboardPage() {
               <Card className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[400px] flex items-center">
                 <div className="absolute inset-0 z-0">
                   <Image
-                    src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwYWlzYWplfGVufDB8fHx8MTc2NDI0OTIwNnww&ixlib=rb-4.1.0&q=80&w=1080"
+                    src="https://wallpapers.com/images/hd/4k-beach-background-my1ejjxhxwgubswg.jpg"
                     alt="Paisaje"
                     layout="fill"
                     objectFit="cover"
                     className="brightness-75"
-                    data-ai-hint="landscape"
+                    data-ai-hint="beach landscape"
                   />
                   <div className="absolute inset-0 bg-black/30"></div>
                 </div>
@@ -678,7 +678,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib-rb-4.1.0&q=80&w=1080"
                       data-ai-hint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
@@ -701,52 +701,50 @@ export default function DashboardPage() {
 
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full py-12 md:py-16">
-          <div className="container mx-auto px-0">
-            <div className="relative overflow-hidden min-h-[600px] flex flex-col md:flex-row">
-                <div className="relative z-10 p-8 md:p-12 text-white flex flex-col justify-between w-full md:w-1/2">
-                    <div>
-                        <p className="text-sm uppercase tracking-wider text-white/80">Viste Seguro</p>
-                        <h2 className="text-4xl md:text-5xl font-bold mt-2">Banesco Seguros</h2>
-                    </div>
-                    <div>
-                        <p className="mt-4 max-w-sm text-white/90">
-                        Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
-                        </p>
-                        <Button asChild variant="secondary" className="mt-6 bg-white/90 text-foreground hover:bg-white font-light">
-                        <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
-                        </Button>
-                    </div>
-                </div>
-                <div className="relative z-10 p-8 md:p-12 w-full md:w-1/2 flex items-center">
-                    <div ref={dressCodeScrollRef} className="w-full">
-                        <ScrollArea>
-                            <div className="flex w-max space-x-6 pb-4">
-                            {mockDressCodeItems.map((item) => (
-                                <DressCodeCard key={item.id} item={item} />
-                            ))}
-                            </div>
-                            <ScrollBar orientation="horizontal" className="invisible" />
-                        </ScrollArea>
-                    </div>
-                     <div className="absolute right-4 bottom-4 flex gap-2">
-                        <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('left')}>
-                            <ChevronLeft className="h-4 w-4" />
-                        </Button>
-                        <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('right')}>
-                            <ChevronRight className="h-4 w-4" />
-                        </Button>
-                    </div>
-                </div>
+          <div className="relative overflow-hidden min-h-[600px] flex flex-col md:flex-row">
+              <div className="relative z-10 p-8 md:p-12 text-white flex flex-col justify-between w-full md:w-1/2">
+                  <div>
+                      <p className="text-sm uppercase tracking-wider text-white/80">Viste Seguro</p>
+                      <h2 className="text-4xl md:text-5xl font-bold mt-2">Banesco Seguros</h2>
+                  </div>
+                  <div>
+                      <p className="mt-4 max-w-sm text-white/90">
+                      Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
+                      </p>
+                      <Button asChild variant="secondary" className="mt-6 bg-white/90 text-foreground hover:bg-white font-light">
+                      <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
+                      </Button>
+                  </div>
+              </div>
+              <div className="relative z-10 p-8 md:p-12 w-full md:w-1/2 flex items-center">
+                  <div ref={dressCodeScrollRef} className="w-full">
+                      <ScrollArea>
+                          <div className="flex w-max space-x-6 pb-4">
+                          {mockDressCodeItems.map((item) => (
+                              <DressCodeCard key={item.id} item={item} />
+                          ))}
+                          </div>
+                          <ScrollBar orientation="horizontal" className="invisible" />
+                      </ScrollArea>
+                  </div>
+                   <div className="absolute right-4 bottom-4 flex gap-2">
+                      <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('left')}>
+                          <ChevronLeft className="h-4 w-4" />
+                      </Button>
+                      <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('right')}>
+                          <ChevronRight className="h-4 w-4" />
+                      </Button>
+                  </div>
+              </div>
 
-                 <Image
-                    src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8fDE3NTgyMTcyMzN8MA&ixlib-rb-4.1.0&q=80&w=1080"
-                    alt="Modelo con ropa moderna"
-                    layout="fill"
-                    objectFit="cover"
-                    data-ai-hint="closet fashion"
-                    className="brightness-90"
-                  />
-            </div>
+               <Image
+                  src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8fDE3NTgyMTcyMzN8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                  alt="Modelo con ropa moderna"
+                  layout="fill"
+                  objectFit="cover"
+                  data-ai-hint="closet fashion"
+                  className="brightness-90"
+                />
           </div>
         </section>
 
