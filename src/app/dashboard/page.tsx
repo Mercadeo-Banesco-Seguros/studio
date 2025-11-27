@@ -196,7 +196,7 @@ const normalizeDayName = (name: string) => {
   return name
     .toLowerCase()
     .normalize("NFD") // Decompose accented characters
-    .replace(/[\u0000-\u007f]/g, "") // Remove diacritical marks
+    .replace(/[\u0300-\u036f]/g, "") // Remove diacritical marks
     .replace(/[^a-z]/g, ''); // remove non-alphabetic chars
 };
 
@@ -703,7 +703,8 @@ export default function DashboardPage() {
                     data-ai-hint="abstract background"
                     className="brightness-90"
                 />
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+                <div className="absolute inset-0 bg-black/10" />
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
                     <div className="flex flex-col md:flex-row h-full w-full">
                         <div className="relative z-10 p-8 md:p-12 text-white flex flex-col justify-center w-full md:w-1/2">
                             <div className="space-y-4">
@@ -712,7 +713,7 @@ export default function DashboardPage() {
                                 <p className="mt-4 max-w-sm text-white/90">
                                 Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
                                 </p>
-                                <Button asChild variant="default" className="mt-6 font-light bg-primary text-primary-foreground hover:bg-primary/90">
+                                <Button asChild className="mt-6 font-light bg-primary text-primary-foreground hover:bg-primary/90">
                                     <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
                                 </Button>
                             </div>
@@ -839,7 +840,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
