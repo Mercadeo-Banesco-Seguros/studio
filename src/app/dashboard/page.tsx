@@ -518,7 +518,7 @@ export default function DashboardPage() {
                             <p className="mt-4 max-w-sm text-white/90">
                                 Planifica tu viaje y gestiona tus solicitudes.
                             </p>
-                            <Button asChild variant="primary" className="mt-6 font-light rounded-full w-fit">
+                            <Button asChild variant="primary" className="mt-6 font-light rounded-full w-fit bg-primary text-primary-foreground">
                                 <Link href="/dashboard/vacaciones">Gestionar Solicitudes</Link>
                             </Button>
                         </div>
@@ -535,7 +535,7 @@ export default function DashboardPage() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                         <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
                             <h4 className="text-2xl font-bold tracking-tight">Consultar Solicitudes</h4>
-                            <p className="text-sm mt-1 text-white/80">Revisa el estado de tus solicitudes.</p>
+                             <p className="text-sm mt-1 text-white/80">Revisa el estado de tus solicitudes.</p>
                             <div className="flex justify-end w-full mt-4">
                                 <Button asChild variant="default" className="rounded-full font-light text-xs">
                                     <Link href="/dashboard/vacaciones">Explorar</Link>
@@ -544,17 +544,15 @@ export default function DashboardPage() {
                         </div>
                     </Card>
                     <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
-                        <div className="absolute inset-0 z-0">
-                            <Image
-                                src="https://www.aviationgroup.es/wp-content/uploads/2023/03/avion-volando-con-un-motor.jpg"
-                                alt="Ver Destinos"
-                                layout="fill"
-                                objectFit="cover"
-                                className="z-0 brightness-75"
-                                data-ai-hint="airplane sky"
-                            />
-                        </div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
+                       <Image
+                            src="https://www.aviationgroup.es/wp-content/uploads/2023/03/avion-volando-con-un-motor.jpg"
+                            alt="Ver Destinos"
+                            layout="fill"
+                            objectFit="cover"
+                            className="z-0 brightness-75"
+                            data-ai-hint="airplane sky"
+                        />
+                         <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                         <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
                             <h4 className="text-2xl font-bold">Ver Destinos</h4>
                             <p className="text-sm mt-1 text-white/80">Descubre lugares para tu próximo viaje.</p>
@@ -701,7 +699,7 @@ export default function DashboardPage() {
         <section id="dress-code" className="w-full py-12 md:py-16">
           <div className="relative overflow-hidden min-h-[600px]">
             <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8fDE3NTgyMTcyMzN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8fDE3NTgyMTcyMzN8MA&ixlib-rb-4.1.0&q=80&w=1080"
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
@@ -793,7 +791,7 @@ export default function DashboardPage() {
                 <div className="bg-muted/50 p-12 flex items-center">
                     <div className="w-full grid grid-cols-2 gap-8">
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
+                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white">
                             <h4 className="text-xl font-bold">Beneficios</h4>
                             <p className="text-xs mt-1 text-white/90">Descubra todas sus ventajas.</p>
@@ -844,7 +842,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
