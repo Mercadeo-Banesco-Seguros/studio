@@ -509,8 +509,8 @@ export default function DashboardPage() {
                    <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                 </div>
                 <div className="relative z-10 p-8 md:p-12 text-white w-full md:w-1/2 flex flex-col justify-center">
-                  <h3 className="text-4xl md:text-5xl tracking-tight">
-                    <span className="font-light">Gestiona tus</span> <br /> <span className="font-bold">Próximas Vacaciones</span>
+                  <h3 className="text-4xl md:text-5xl font-bold tracking-tight">
+                     <span className="font-light">Gestiona tus</span> <br /> <span className="font-bold">Próximas Vacaciones</span>
                   </h3>
                   <p className="mt-4 max-w-sm text-white/90">
                     Planifica tu viaje y gestiona tus solicitudes.
@@ -534,31 +534,31 @@ export default function DashboardPage() {
                   <h4 className="text-2xl font-bold tracking-tight">Consultar Solicitudes</h4>
                   <p className="text-sm mt-1 text-white/80">Revisa el estado de tus solicitudes.</p>
                   <div className="flex justify-end w-full mt-4">
-                    <Button asChild variant="default" className="rounded-full font-light text-xs">
+                    <Button asChild variant="secondary" className="rounded-full font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
                       <Link href="/dashboard/vacaciones">Explorar</Link>
                     </Button>
                   </div>
                 </div>
               </Card>
               <div className="relative rounded-2xl overflow-hidden group min-h-[400px]">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
-                  <h4 className="text-2xl font-bold">Ver Destinos</h4>
-                  <p className="text-sm mt-1 text-white/80">Descubre lugares para tu próximo viaje.</p>
-                  <div className="flex justify-end w-full mt-4">
-                    <Button asChild variant="default" className="rounded-full font-light text-xs">
-                      <Link href="#">Explorar</Link>
-                    </Button>
-                  </div>
-                </div>
                 <Image
                   src="https://www.aviationgroup.es/wp-content/uploads/2023/03/avion-volando-con-un-motor.jpg"
                   alt="Ver Destinos"
                   layout="fill"
                   objectFit="cover"
-                  className="z-0"
+                  className="z-0 brightness-75"
                   data-ai-hint="airplane sky"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
+                <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
+                  <h4 className="text-2xl font-bold">Ver Destinos</h4>
+                  <p className="text-sm mt-1 text-white/80">Descubre lugares para tu próximo viaje.</p>
+                  <div className="flex justify-end w-full mt-4">
+                    <Button asChild variant="secondary" className="rounded-full font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
+                      <Link href="#">Explorar</Link>
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
           </SectionWrapper>
@@ -733,7 +733,7 @@ export default function DashboardPage() {
             </div>
 
                <Image
-                  src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8fDE3NTgyMTcyMzN8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8fDE3NTgyMTcyMzN8MA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Modelo con ropa moderna"
                   layout="fill"
                   objectFit="cover"
@@ -840,7 +840,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
