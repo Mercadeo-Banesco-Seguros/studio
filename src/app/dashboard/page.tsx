@@ -499,12 +499,12 @@ export default function DashboardPage() {
                     <Card className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[400px] flex items-center">
                         <div className="absolute inset-0 z-0">
                             <Image
-                                src="https://images.unsplash.com/photo-1519046904884-53103b34b206?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8cGxheWF8ZW58MHx8fHwxNzY0MjcwNjU1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                                src="https://rare-gallery.com/uploads/posts/389777-4k-wallpaper.jpg"
                                 alt="Paisaje de playa"
                                 layout="fill"
                                 objectFit="cover"
                                 className="brightness-75"
-                                data-ai-hint="beach landscape"
+                                data-ai-hint="beach sunset"
                             />
                         </div>
                         <div className="relative z-10 p-8 md:p-12 text-white w-full md:w-2/3 flex flex-col justify-center">
@@ -819,7 +819,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1502101872923-d48509bff386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdGFpcnN8ZW58MHx8fHwxNzUyNjAwMzk4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Protocolos" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="process diagram" />
+                        <Image src="https://images.unsplash.com/photo-1502101872923-d48509bff386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdGFpcnN8ZW58MHx8fHwxNzUyNjAwMzk4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Protocolos" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="process diagram" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white">
                             <h4 className="text-xl font-bold">Protocolos</h4>
                             <p className="text-xs mt-1 text-white/90">Siga los pasos para cada caso.</p>
