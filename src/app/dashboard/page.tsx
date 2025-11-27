@@ -512,14 +512,14 @@ export default function DashboardPage() {
               </Card>
               <Card className="relative rounded-2xl overflow-hidden min-h-[300px] group flex flex-col justify-center items-center">
                  <Image
-                    src="https://http2.mlstatic.com/D_NQ_NP_660493-MLA79812773640_102024-B.webp"
+                    src="https://media.staticontent.com/media/pictures/96745f9a-8a29-44b0-9713-51057f541bdf"
                     alt="Consultar Solicitudes"
                     layout="fill"
                     objectFit="cover"
                     className="z-0 brightness-90 group-hover:brightness-75 transition-all"
                     data-ai-hint="paper plane"
                   />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20" />
                 <div className="relative z-10 flex flex-col justify-center h-full p-8">
                   <Button asChild variant="secondary" className="bg-white/90 text-foreground hover:bg-white w-fit font-light">
                     <Link href="#">
@@ -530,14 +530,14 @@ export default function DashboardPage() {
               </Card>
               <Card className="relative rounded-2xl overflow-hidden min-h-[300px] group flex flex-col justify-center items-center">
                  <Image
-                    src="https://www.woodenson.com/wp-content/uploads/2018/03/sotorincon-08.jpg"
+                    src="https://thumbs.dreamstime.com/b/calendario-en-blanco-sobre-un-escritorio-moderno-sin-marca-situado-y-elegante-con-decoraci%C3%B3n-minimalista-e-iluminaci%C3%B3n-natural-397358645.jpg"
                     alt="View Case"
                     layout="fill"
                     objectFit="cover"
                     className="z-0 brightness-90 group-hover:brightness-75 transition-all"
                     data-ai-hint="orange circle"
                   />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20" />
                 <div className="relative z-10 flex flex-col justify-center h-full p-8">
                   <Button asChild variant="secondary" className="bg-white/90 text-foreground hover:bg-white w-fit font-light">
                     <Link href="/dashboard/vacaciones">
@@ -555,7 +555,7 @@ export default function DashboardPage() {
                     className="z-0 brightness-90 group-hover:brightness-75 transition-all"
                     data-ai-hint="recommendations"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20" />
                 <div className="relative z-10 flex flex-col justify-center h-full p-8">
                   <Button asChild variant="secondary" className="bg-white/90 text-foreground hover:bg-white w-fit font-light">
                     <Link href="#">
@@ -803,7 +803,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
@@ -844,7 +844,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
