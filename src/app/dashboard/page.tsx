@@ -499,7 +499,7 @@ export default function DashboardPage() {
               <Card className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[400px] flex items-center">
                 <div className="absolute inset-0 z-0">
                   <Image
-                    src="https://www.viagenscinematograficas.com.br/wp-content/uploads/2020/03/Punta-Cana-O-que-Fazer-Capa.jpg"
+                    src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwYWlzYWplfGVufDB8fHx8MTc2NDI0OTIwNnww&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Paisaje"
                     layout="fill"
                     objectFit="cover"
@@ -534,7 +534,8 @@ export default function DashboardPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                 <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
-                  <h4 className="text-2xl font-bold">Consultar Solicitudes</h4>
+                  <h4 className="text-2xl font-bold tracking-tight">Consultar Solicitudes</h4>
+                  <p className="text-sm mt-1 text-white/80">Revisa el estado de tus solicitudes.</p>
                   <div className="flex justify-end w-full mt-4">
                     <Button asChild variant="default" className="rounded-full font-light text-xs">
                       <Link href="/dashboard/vacaciones">
@@ -555,7 +556,8 @@ export default function DashboardPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                 <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
-                  <h4 className="text-2xl font-bold">Ver Destinos</h4>
+                  <h4 className="text-2xl font-bold tracking-tight">Ver Destinos</h4>
+                   <p className="text-sm mt-1 text-white/80">Descubre lugares para tu próximo viaje.</p>
                   <div className="flex justify-end w-full mt-4">
                     <Button asChild variant="default" className="rounded-full font-light text-xs">
                       <Link href="#">
@@ -699,7 +701,7 @@ export default function DashboardPage() {
 
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full py-12 md:py-16">
-          <div className="container mx-auto px-0 container-fluid">
+          <div className="container mx-auto px-0">
             <div className="relative overflow-hidden min-h-[600px] flex flex-col md:flex-row">
                 <div className="relative z-10 p-8 md:p-12 text-white flex flex-col justify-between w-full md:w-1/2">
                     <div>
@@ -845,7 +847,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
