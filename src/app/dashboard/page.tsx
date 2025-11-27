@@ -697,51 +697,49 @@ export default function DashboardPage() {
 
 
         {/* Dress Code Section */}
-        <section id="dress-code" className="w-full py-12 md:py-16">
-            <div className="container-fluid px-0">
-                <div className="relative overflow-hidden min-h-[500px] flex flex-col md:flex-row">
-                  <Image
-                    src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8fDE3NTgyMTcyMzN8MA&ixlib-rb-4.1.0&q=80&w=1080"
-                    alt="Modelo con ropa moderna"
-                    layout="fill"
-                    objectFit="cover"
-                    data-ai-hint="closet fashion"
-                    className="brightness-90"
-                  />
-                  
-                  <div className="relative z-10 p-8 md:p-12 text-white flex flex-col justify-between w-full md:w-1/2">
-                    <div>
-                        <p className="text-sm uppercase tracking-wider text-white/80">Viste Seguro</p>
-                        <h2 className="text-4xl md:text-5xl font-bold mt-2">Banesco Seguros</h2>
+        <section id="dress-code" className="w-full">
+            <div className="relative overflow-hidden min-h-[600px] flex flex-col md:flex-row">
+              <Image
+                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8fDE3NTgyMTcyMzN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                alt="Modelo con ropa moderna"
+                layout="fill"
+                objectFit="cover"
+                data-ai-hint="closet fashion"
+                className="brightness-90"
+              />
+              
+              <div className="relative z-10 p-8 md:p-12 text-white flex flex-col justify-between w-full md:w-1/2">
+                <div>
+                    <p className="text-sm uppercase tracking-wider text-white/80">Viste Seguro</p>
+                    <h2 className="text-4xl md:text-5xl font-bold mt-2">Banesco Seguros</h2>
+                </div>
+                <div>
+                    <p className="mt-4 max-w-sm text-white/90">
+                    Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
+                    </p>
+                    <Button asChild variant="secondary" className="mt-6 bg-white/90 text-foreground hover:bg-white font-light">
+                    <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
+                    </Button>
+                </div>
+                </div>
+                <div className="relative z-10 p-8 md:p-12 w-full md:w-1/2 flex items-center">
+                    <div ref={dressCodeScrollRef} className="w-full">
+                        <ScrollArea>
+                            <div className="flex w-max space-x-6 pb-4">
+                            {mockDressCodeItems.map((item) => (
+                                <DressCodeCard key={item.id} item={item} />
+                            ))}
+                            </div>
+                            <ScrollBar orientation="horizontal" className="invisible" />
+                        </ScrollArea>
                     </div>
-                    <div>
-                        <p className="mt-4 max-w-sm text-white/90">
-                        Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
-                        </p>
-                        <Button asChild variant="secondary" className="mt-6 bg-white/90 text-foreground hover:bg-white font-light">
-                        <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
+                     <div className="absolute right-4 bottom-4 flex gap-2">
+                        <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('left')}>
+                            <ChevronLeft className="h-4 w-4" />
                         </Button>
-                    </div>
-                    </div>
-                    <div className="relative z-10 p-8 md:p-12 w-full md:w-1/2 flex items-center">
-                        <div ref={dressCodeScrollRef} className="w-full">
-                            <ScrollArea>
-                                <div className="flex w-max space-x-6 pb-4">
-                                {mockDressCodeItems.map((item) => (
-                                    <DressCodeCard key={item.id} item={item} />
-                                ))}
-                                </div>
-                                <ScrollBar orientation="horizontal" className="invisible" />
-                            </ScrollArea>
-                        </div>
-                         <div className="absolute right-4 bottom-4 flex gap-2">
-                            <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('left')}>
-                                <ChevronLeft className="h-4 w-4" />
-                            </Button>
-                            <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('right')}>
-                                <ChevronRight className="h-4 w-4" />
-                            </Button>
-                        </div>
+                        <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('right')}>
+                            <ChevronRight className="h-4 w-4" />
+                        </Button>
                     </div>
                 </div>
             </div>
