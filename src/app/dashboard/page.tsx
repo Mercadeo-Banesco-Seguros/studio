@@ -499,12 +499,12 @@ export default function DashboardPage() {
               <Card className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[400px] flex items-center">
                 <div className="absolute inset-0 z-0">
                   <Image
-                    src="https://wallpapers.com/images/hd/4k-beach-background-my1ejjxhxwgubswg.jpg"
+                    src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwYWlzYWplfGVufDB8fHx8MTc2NDI0OTIwNnww&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Paisaje"
                     layout="fill"
                     objectFit="cover"
                     className="brightness-75"
-                    data-ai-hint="beach landscape"
+                    data-ai-hint="person silhouette"
                   />
                   <div className="absolute inset-0 bg-black/30"></div>
                 </div>
@@ -525,7 +525,7 @@ export default function DashboardPage() {
               </Card>
               <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
                 <Image
-                  src="https://http2.mlstatic.com/D_NQ_NP_660493-MLA79812773640_102024-B.webp"
+                  src="https://thumbs.dreamstime.com/b/calendario-en-blanco-sobre-un-escritorio-moderno-sin-marca-situado-y-elegante-con-decoraci%C3%B3n-minimalista-e-iluminaci%C3%B3n-natural-397358645.jpg"
                   alt="Consultar Solicitudes"
                   layout="fill"
                   objectFit="cover"
@@ -551,10 +551,9 @@ export default function DashboardPage() {
                   alt="Ver Destinos"
                   layout="fill"
                   objectFit="cover"
-                  className="z-0 brightness-75 group-hover:brightness-60 transition-all"
+                  className="z-0"
                   data-ai-hint="airplane sky"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                 <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
                   <h4 className="text-2xl font-bold tracking-tight">Ver Destinos</h4>
                    <p className="text-sm mt-1 text-white/80">Descubre lugares para tu próximo viaje.</p>
@@ -678,7 +677,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
