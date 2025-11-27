@@ -512,7 +512,7 @@ export default function DashboardPage() {
               </Card>
               <Card className="relative rounded-2xl overflow-hidden min-h-[300px] group flex flex-col justify-center items-center">
                  <Image
-                    src="https://media.staticontent.com/media/pictures/96745f9a-8a29-44b0-9713-51057f541bdf"
+                    src="https://http2.mlstatic.com/D_NQ_NP_660493-MLA79812773640_102024-B.webp"
                     alt="Consultar Solicitudes"
                     layout="fill"
                     objectFit="cover"
@@ -666,7 +666,7 @@ export default function DashboardPage() {
                       author="Banesco Seguros"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageUrl="https://www.sage.com/en-us/blog/wp-content/uploads/sites/2/2023/02/shutterstock_1761488276_c2222.jpg"
-                      dataAiHint="collaboration tools"
+                      data-ai-hint="collaboration tools"
                       imageClassName="opacity-30"
                       availability={75}
                   />
@@ -676,7 +676,7 @@ export default function DashboardPage() {
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                      dataAiHint="artificial intelligence"
+                      data-ai-hint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
                       availability={40}
@@ -687,7 +687,7 @@ export default function DashboardPage() {
                       details={["Presentaciones", "Feedback", "Oratoria"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib.rb-4.1.0&q=80&w=1080"
-                      dataAiHint="public speaking"
+                      data-ai-hint="public speaking"
                       imageClassName="opacity-30"
                       availability={90}
                   />
@@ -705,7 +705,7 @@ export default function DashboardPage() {
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
-                dataAiHint="closet fashion"
+                data-ai-hint="closet fashion"
                 className="brightness-90"
               />
               
@@ -803,7 +803,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
@@ -844,7 +844,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
