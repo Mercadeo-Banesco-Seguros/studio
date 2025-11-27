@@ -496,19 +496,21 @@ export default function DashboardPage() {
         <div id="vacaciones" className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionWrapper>
              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Card className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[400px] flex items-center bg-muted">
-                    <div className="w-1/2 h-full relative hidden md:block">
+                <Card className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[400px] flex items-center">
+                    <div className="absolute inset-0 z-0">
                         <Image
-                            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwYWlzYWplfGVufDB8fHx8MTc2NDI0OTIwNnww&ixlib=rb-4.1.0&q=80&w=1080"
+                            src="https://www.viagenscinematograficas.com.br/wp-content/uploads/2020/03/Punta-Cana-O-que-Fazer-Capa.jpg"
                             alt="Paisaje de vacaciones"
                             layout="fill"
                             objectFit="cover"
+                            className="brightness-75"
                             data-ai-hint="landscape"
                         />
+                         <div className="absolute inset-0 bg-black/20"></div>
                     </div>
-                    <div className="w-full md:w-1/2 p-8 md:p-12">
-                        <h3 className="text-4xl font-bold tracking-tight text-foreground">Gestiona tus Próximas Vacaciones</h3>
-                        <p className="text-muted-foreground mt-2">Planifica tu viaje, gestiona tus solicitudes y consulta el calendario.</p>
+                    <div className="relative z-10 p-8 md:p-12 text-white">
+                        <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Gestiona tus Próximas Vacaciones</h3>
+                        <p className="mt-2 max-w-lg">Planifica tu viaje, gestiona tus solicitudes y consulta el calendario.</p>
                         <Button asChild className="mt-6 font-light" variant="default" size="sm">
                           <Link href="/dashboard/vacaciones">
                               Explorar
@@ -516,9 +518,9 @@ export default function DashboardPage() {
                         </Button>
                     </div>
                 </Card>
-                <Card className="relative rounded-2xl overflow-hidden group min-h-[300px]">
+                <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
                     <Image
-                      src="https://http2.mlstatic.com/D_NQ_NP_660493-MLA79812773640_102024-B.webp"
+                      src="https://media.staticontent.com/media/pictures/96745f9a-8a29-44b0-9713-51057f541bdf"
                       alt="Consultar Solicitudes"
                       layout="fill"
                       objectFit="cover"
@@ -529,7 +531,7 @@ export default function DashboardPage() {
                     <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
                         <h4 className="font-bold">Consultar Solicitudes</h4>
                         <div className="flex justify-end w-full">
-                           <Button asChild variant="link" className="p-0 h-auto text-white/80 hover:text-white">
+                           <Button asChild variant="default" className="p-0 h-auto text-white/80 hover:text-white font-light">
                                 <Link href="#">
                                     <ArrowRight className="h-4 w-4"/>
                                 </Link>
@@ -537,9 +539,9 @@ export default function DashboardPage() {
                         </div>
                     </div>
                 </Card>
-                 <Card className="relative rounded-2xl overflow-hidden group min-h-[300px]">
+                 <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
                     <Image
-                      src="https://www.woodenson.com/wp-content/uploads/2018/03/sotorincon-08.jpg"
+                      src="https://thumbs.dreamstime.com/b/calendario-en-blanco-sobre-un-escritorio-moderno-sin-marca-situado-y-elegante-con-decoraci%C3%B3n-minimalista-e-iluminaci%C3%B3n-natural-397358645.jpg"
                       alt="View Case"
                       layout="fill"
                       objectFit="cover"
@@ -550,8 +552,29 @@ export default function DashboardPage() {
                      <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
                         <h4 className="font-bold">Ver Calendario</h4>
                         <div className="flex justify-end w-full">
-                           <Button asChild variant="link" className="p-0 h-auto text-white/80 hover:text-white">
+                           <Button asChild variant="default" className="p-0 h-auto text-white/80 hover:text-white font-light">
                                 <Link href="/dashboard/vacaciones">
+                                    <ArrowRight className="h-4 w-4"/>
+                                </Link>
+                           </Button>
+                        </div>
+                    </div>
+                </Card>
+                <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
+                    <Image
+                      src="https://www.aviationgroup.es/wp-content/uploads/2023/03/avion-volando-con-un-motor.jpg"
+                      alt="Recomendaciones"
+                      layout="fill"
+                      objectFit="cover"
+                      className="z-0 brightness-90 group-hover:brightness-75 transition-all"
+                      data-ai-hint="recommendations"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
+                     <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
+                        <h4 className="font-bold">Recomendaciones</h4>
+                        <div className="flex justify-end w-full">
+                           <Button asChild variant="default" className="p-0 h-auto text-white/80 hover:text-white font-light">
+                                <Link href="#">
                                     <ArrowRight className="h-4 w-4"/>
                                 </Link>
                            </Button>
@@ -692,30 +715,20 @@ export default function DashboardPage() {
 
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full py-12 md:py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative overflow-hidden min-h-[600px] flex flex-col md:flex-row rounded-2xl">
-              <Image
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8fDE3NTgyMTcyMzN8MA&ixlib-rb-4.1.0&q=80&w=1080"
-                alt="Modelo con ropa moderna"
-                layout="fill"
-                objectFit="cover"
-                data-ai-hint="closet fashion"
-                className="brightness-90"
-              />
-              
-              <div className="relative z-10 p-8 md:p-12 text-white flex flex-col justify-between w-full md:w-1/2">
-                <div>
-                    <p className="text-sm uppercase tracking-wider text-white/80">Viste Seguro</p>
-                    <h2 className="text-4xl md:text-5xl font-bold mt-2">Banesco Seguros</h2>
-                </div>
-                <div>
-                    <p className="mt-4 max-w-sm text-white/90">
-                    Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
-                    </p>
-                    <Button asChild variant="secondary" className="mt-6 bg-white/90 text-foreground hover:bg-white font-light">
-                    <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
-                    </Button>
-                </div>
+            <div className="relative overflow-hidden min-h-[600px] flex flex-col md:flex-row">
+                <div className="relative z-10 p-8 md:p-12 text-white flex flex-col justify-between w-full md:w-1/2">
+                    <div>
+                        <p className="text-sm uppercase tracking-wider text-white/80">Viste Seguro</p>
+                        <h2 className="text-4xl md:text-5xl font-bold mt-2">Banesco Seguros</h2>
+                    </div>
+                    <div>
+                        <p className="mt-4 max-w-sm text-white/90">
+                        Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
+                        </p>
+                        <Button asChild variant="secondary" className="mt-6 bg-white/90 text-foreground hover:bg-white font-light">
+                        <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
+                        </Button>
+                    </div>
                 </div>
                 <div className="relative z-10 p-8 md:p-12 w-full md:w-1/2 flex items-center">
                     <div ref={dressCodeScrollRef} className="w-full">
@@ -737,8 +750,16 @@ export default function DashboardPage() {
                         </Button>
                     </div>
                 </div>
+
+                 <Image
+                    src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjbG9zZXQlMjBmYXNoaW9ufGVufDB8fHx8fDE3NTgyMTcyMzN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                    alt="Modelo con ropa moderna"
+                    layout="fill"
+                    objectFit="cover"
+                    data-ai-hint="closet fashion"
+                    className="brightness-90"
+                  />
             </div>
-          </div>
         </section>
 
         {/* Póliza HCM Section */}
@@ -838,7 +859,7 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
