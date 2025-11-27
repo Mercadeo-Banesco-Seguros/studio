@@ -694,9 +694,9 @@ export default function DashboardPage() {
 
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full py-12 md:py-16">
-            <div className="relative overflow-hidden min-h-[600px]">
+            <div className="relative overflow-hidden min-h-[500px]">
                 <Image
-                    src="https://images.unsplash.com/photo-1669295384050-a1d4357bd1d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8YWJzdHJhY3R8ZW58MHx8fHwxNzY0MjY5Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1669295384050-a1d4357bd1d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8YWJzdHJhY3R8ZW58MHx8fHwxNzY0MjY5Nzk1fDA&ixlib-rb-4.1.0&q=80&w=1080"
                     alt="Modelo con ropa moderna"
                     layout="fill"
                     objectFit="cover"
@@ -713,7 +713,7 @@ export default function DashboardPage() {
                                 Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
                                 </p>
                                 <Button asChild variant="default" className="mt-6 font-light bg-primary text-primary-foreground hover:bg-primary/90">
-                                <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
+                                    <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
                                 </Button>
                             </div>
                         </div>
