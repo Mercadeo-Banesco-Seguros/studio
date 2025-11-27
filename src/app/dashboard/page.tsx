@@ -196,7 +196,7 @@ const normalizeDayName = (name: string) => {
   return name
     .toLowerCase()
     .normalize("NFD") // Decompose accented characters
-    .replace(/[\u0300-\u036f]/g, "") // Remove diacritical marks
+    .replace(/[\u0000-\u007f]/g, "") // Remove diacritical marks
     .replace(/[^a-z]/g, ''); // remove non-alphabetic chars
 };
 
@@ -521,6 +521,7 @@ export default function DashboardPage() {
                         </div>
                     </Card>
                     <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
+                         <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                         <Image
                             src="https://thumbs.dreamstime.com/b/calendario-en-blanco-sobre-un-escritorio-moderno-sin-marca-situado-y-elegante-con-decoraci%C3%B3n-minimalista-e-iluminaci%C3%B3n-natural-397358645.jpg"
                             alt="Consultar Solicitudes"
@@ -529,7 +530,6 @@ export default function DashboardPage() {
                             className="z-0 brightness-75 group-hover:brightness-60 transition-all"
                             data-ai-hint="desk calendar"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                         <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
                             <h4 className="text-2xl font-bold tracking-tight">Consultar Solicitudes</h4>
                              <p className="text-sm mt-1 text-white/80">Revisa el estado de tus solicitudes.</p>
@@ -541,6 +541,7 @@ export default function DashboardPage() {
                         </div>
                     </Card>
                     <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
+                       <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                        <Image
                             src="https://www.aviationgroup.es/wp-content/uploads/2023/03/avion-volando-con-un-motor.jpg"
                             alt="Ver Destinos"
@@ -549,7 +550,6 @@ export default function DashboardPage() {
                             className="z-0 brightness-75"
                             data-ai-hint="airplane sky"
                         />
-                         <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                         <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
                             <h4 className="text-2xl font-bold">Ver Destinos</h4>
                             <p className="text-sm mt-1 text-white/80">Descubre lugares para tu próximo viaje.</p>
@@ -696,11 +696,11 @@ export default function DashboardPage() {
         <section id="dress-code" className="w-full py-12 md:py-16">
             <div className="relative overflow-hidden min-h-[600px]">
                 <Image
-                    src="https://images.unsplash.com/photo-1619252584172-a83a949b6efd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxibGFuY298ZW58MHx8fHwxNzY0MjY5Mjg4fDA&ixlib.rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1669295384050-a1d4357bd1d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8YWJzdHJhY3R8ZW58MHx8fHwxNzY0MjY5Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Modelo con ropa moderna"
                     layout="fill"
                     objectFit="cover"
-                    data-ai-hint="white abstract background"
+                    data-ai-hint="abstract background"
                     className="brightness-90"
                 />
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
@@ -798,7 +798,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
+                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white">
                             <h4 className="text-xl font-bold">Cobertura</h4>
                             <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
