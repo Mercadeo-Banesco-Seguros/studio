@@ -694,16 +694,16 @@ export default function DashboardPage() {
 
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full py-12 md:py-16">
-            <div className="relative overflow-hidden min-h-[600px] container mx-auto">
+            <div className="relative overflow-hidden min-h-[600px]">
                 <Image
-                    src="https://images.unsplash.com/photo-1619252584172-a83a949b6efd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxibGFuY298ZW58MHx8fHwxNzY0MjY5Mjg4fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1619252584172-a83a949b6efd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxibGFuY298ZW58MHx8fHwxNzY0MjY5Mjg4fDA&ixlib.rb-4.1.0&q=80&w=1080"
                     alt="Modelo con ropa moderna"
                     layout="fill"
                     objectFit="cover"
                     data-ai-hint="white abstract background"
                     className="brightness-90"
                 />
-                <div className="h-full flex items-center">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
                     <div className="flex flex-col md:flex-row h-full w-full">
                         <div className="relative z-10 p-8 md:p-12 text-white flex flex-col justify-center w-full md:w-1/2">
                             <div className='space-y-4'>
@@ -712,7 +712,7 @@ export default function DashboardPage() {
                                 <p className="mt-4 max-w-sm text-white/90">
                                 Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
                                 </p>
-                                <Button asChild variant="default" className="mt-6 font-light">
+                                <Button asChild variant="default" className="mt-6 font-light bg-primary text-primary-foreground hover:bg-primary/90">
                                 <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
                                 </Button>
                             </div>
