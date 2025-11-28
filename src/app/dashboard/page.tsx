@@ -700,49 +700,33 @@ export default function DashboardPage() {
 
 
         {/* Dress Code Section */}
-        <section id="dress-code" className="w-full">
-            <div className="relative overflow-hidden min-h-[500px] flex flex-col justify-center">
-                <Image
-                    src="https://wallpapers.com/images/hd/blue-hd-1920-x-1080-background-6alqcc8fvs6o6s2t.jpg"
-                    alt="Modelo con ropa moderna"
-                    layout="fill"
-                    objectFit="cover"
-                    data-ai-hint="abstract background"
-                />
-                <div className="absolute inset-0 bg-blue-900/10" />
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
-                    <div className="grid md:grid-cols-2 gap-8 items-center w-full">
-                        <div className="relative z-10 text-foreground">
-                            <div className="space-y-4">
-                                <p className="text-sm uppercase tracking-wider text-muted-foreground">Viste Seguro</p>
-                                <h2 className="text-4xl md:text-5xl font-bold mt-2">Banesco Seguros</h2>
-                                <p className="mt-4 max-w-sm text-muted-foreground">
-                                Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
-                                </p>
-                                <Button asChild className="mt-6 font-light bg-primary text-primary-foreground hover:bg-primary/90">
-                                    <Link href="/dashboard/bienestar#dress-code">Explorar Guía</Link>
-                                </Button>
-                            </div>
+        <section id="dress-code" className="w-full bg-card py-12 md:py-24">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <div className="space-y-4">
+                        <p className="font-semibold text-primary uppercase tracking-wider">Lunes</p>
+                        <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">Formal de Negocios</h2>
+                        <p className="text-muted-foreground max-w-sm">Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.</p>
+                        <div className="flex gap-4 pt-4">
+                            <Button asChild className="font-light">
+                                <Link href="#">Explorar Guía</Link>
+                            </Button>
+                             <Button variant="ghost">Caballeros</Button>
+                             <Button variant="ghost">Damas</Button>
                         </div>
-                        <div className="relative z-10 w-full flex items-center">
-                            <div ref={dressCodeScrollRef} className="w-full">
-                                <ScrollArea>
-                                    <div className="flex w-max space-x-6 pb-4">
-                                    {mockDressCodeItems.map((item) => (
-                                        <DressCodeCard key={item.id} item={item} />
-                                    ))}
-                                    </div>
-                                    <ScrollBar orientation="horizontal" className="invisible" />
-                                </ScrollArea>
-                            </div>
-                            <div className="absolute -right-4 bottom-0 flex gap-2">
-                                <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('left')}>
-                                    <ChevronLeft className="h-4 w-4" />
-                                </Button>
-                                <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 text-white backdrop-blur-sm" onClick={() => handleDressCodeScroll('right')}>
-                                    <ChevronRight className="h-4 w-4" />
-                                </Button>
-                            </div>
+                    </div>
+                    <div className="grid grid-cols-4 gap-4 items-end">
+                        <div className="relative h-64">
+                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Casual%20de%20negocios-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Casual de negocios"/>
+                        </div>
+                         <div className="relative h-80">
+                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Formal%20de%20negocios-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Formal de negocios"/>
+                        </div>
+                         <div className="relative h-64">
+                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/viernes%20casual%202-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Viernes casual"/>
+                        </div>
+                         <div className="relative h-64">
+                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/viernes%20casual-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Smart casual"/>
                         </div>
                     </div>
                 </div>
@@ -758,7 +742,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full">
             <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
             <Image
-                src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Equipo ejecutivo en reunión"
                 layout="fill"
                 objectFit="cover"
