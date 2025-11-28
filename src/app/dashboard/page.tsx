@@ -695,7 +695,7 @@ export default function DashboardPage() {
 
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full py-12 md:py-16">
-            <div className="relative overflow-hidden min-h-[500px] flex items-center">
+            <div className="relative overflow-hidden min-h-[500px] flex flex-col justify-center">
                 <Image
                     src="https://wallpapers.com/images/hd/light-silver-background-with-lines-imac-4k-9oy4bbjzci09c1to.jpg"
                     alt="Modelo con ropa moderna"
@@ -836,11 +836,11 @@ export default function DashboardPage() {
         </div>
 
         {/* Espacio Ejecutivo Section */}
-        <div id="espacio-ejecutivo" className="scroll-mt-20 container mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionWrapper>
-                <Card className="relative w-full overflow-hidden rounded-2xl bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
+        <div id="espacio-ejecutivo" className="scroll-mt-20 w-full">
+            <SectionWrapper className="py-0" contentClassName="p-0">
+                <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
                 <Image
-                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
+                    src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Equipo ejecutivo en reunión"
                     layout="fill"
                     objectFit="cover"
