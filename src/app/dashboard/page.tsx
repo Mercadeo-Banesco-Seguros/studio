@@ -499,7 +499,7 @@ export default function DashboardPage() {
                     <Card className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[400px] flex items-center">
                         <div className="absolute inset-0 z-0">
                             <Image
-                                src="https://rare-gallery.com/uploads/posts/389777-4k-wallpaper.jpg"
+                                src="https://wallpapers.com/images/hd/4k-beach-background-my1ejjxhxwgubswg.jpg"
                                 alt="Paisaje de playa"
                                 layout="fill"
                                 objectFit="cover"
@@ -524,7 +524,7 @@ export default function DashboardPage() {
                     <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
                          <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                         <Image
-                            src="https://thumbs.dreamstime.com/b/calendario-en-blanco-sobre-un-escritorio-moderno-sin-marca-situado-y-elegante-con-decoraci%C3%B3n-minimalista-e-iluminaci%C3%B3n-natural-397358645.jpg"
+                            src="https://images.pexels.com/photos/5386754/pexels-photo-5386754.jpeg?cs=srgb&dl=pexels-leeloothefirst-5386754.jpg&fm=jpg"
                             alt="Consultar Solicitudes"
                             layout="fill"
                             objectFit="cover"
@@ -695,7 +695,7 @@ export default function DashboardPage() {
 
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full py-12 md:py-16">
-            <div className="relative overflow-hidden min-h-[500px] flex items-center justify-center">
+            <div className="relative overflow-hidden min-h-[500px]">
                 <Image
                     src="https://wallpapers.com/images/hd/light-silver-background-with-lines-imac-4k-9oy4bbjzci09c1to.jpg"
                     alt="Modelo con ropa moderna"
@@ -704,13 +704,13 @@ export default function DashboardPage() {
                     data-ai-hint="abstract background"
                 />
                 <div className="absolute inset-0 bg-blue-900/10" />
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
                     <div className="grid md:grid-cols-2 gap-8 items-center w-full">
-                        <div className="relative z-10 text-white">
+                        <div className="relative z-10 text-foreground">
                             <div className="space-y-4">
-                                <p className="text-sm uppercase tracking-wider text-white/80">Viste Seguro</p>
+                                <p className="text-sm uppercase tracking-wider text-muted-foreground">Viste Seguro</p>
                                 <h2 className="text-4xl md:text-5xl font-bold mt-2">Banesco Seguros</h2>
-                                <p className="mt-4 max-w-sm text-white/90">
+                                <p className="mt-4 max-w-sm text-muted-foreground">
                                 Conoce nuestros códigos de vestimenta para cada ocasión y proyecta la mejor imagen.
                                 </p>
                                 <Button asChild className="mt-6 font-light bg-primary text-primary-foreground hover:bg-primary/90">
