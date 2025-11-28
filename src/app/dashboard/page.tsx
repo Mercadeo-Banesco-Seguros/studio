@@ -84,6 +84,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { DressCodeCard } from '@/components/dashboard/dress-code-card';
 import { InteractiveMenuBanner } from '@/components/dashboard/interactive-menu-banner';
 import { useToast } from '@/hooks/use-toast';
+import { HcmInteractionCard } from '@/components/dashboard/hcm-interaction-card';
 
 
 const pilaresData = [
@@ -746,92 +747,7 @@ export default function DashboardPage() {
         {/* Póliza HCM Section */}
         <div id="poliza" className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionWrapper>
-            <Card className="overflow-hidden bg-card shadow-lg border-none rounded-2xl">
-                <div className="grid md:grid-cols-2">
-                <div className="p-12 flex flex-col justify-center">
-                    <p className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">Estamos aquí para ayudarte en caso de emergencia</p>
-                    <h2 className="text-4xl font-extrabold text-foreground leading-tight mb-4">
-                    NUESTRA <span className="text-primary font-extrabold">PÓLIZA HCM</span>
-                    </h2>
-                    <p className="text-muted-foreground mb-8">
-                    ¿Busca información detallada sobre su cobertura o necesita asistencia? Navegue por nuestras opciones o contáctenos directamente.
-                    </p>
-                    <div className="space-y-4">
-                    <AnimatedContactButton 
-                        href="https://wa.me/584141234567"
-                        type="whatsapp"
-                        label="WhatsApp"
-                        number="+58 414 123 4567"
-                        icon={MessageSquare}
-                        className="bg-primary"
-                        iconClassName="text-primary"
-                    />
-                    <AnimatedContactButton 
-                        href="tel:+582125011111"
-                        type="phone"
-                        label="Teléfono"
-                        number="+58 212 501 1111"
-                        icon={Phone}
-                        className="bg-secondary"
-                        iconClassName="text-secondary"
-                    />
-                    <AnimatedContactButton 
-                        href="mailto:asistencia@banescoseguros.com"
-                        type="email"
-                        label="Correo Electrónico"
-                        number="asistencia@banescoseguros.com"
-                        icon={Mail}
-                        className="bg-accent"
-                        iconClassName="text-accent-foreground"
-                    />
-                    </div>
-                </div>
-                <div className="bg-muted/50 p-12 flex items-center">
-                    <div className="w-full grid grid-cols-2 gap-8">
-                        <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdGFyc3xlbnwwfHx8fDE3NTI1OTk5ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Beneficios" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="stars" />
-                        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white">
-                            <h4 className="text-xl font-bold">Beneficios</h4>
-                            <p className="text-xs mt-1 text-white/90">Descubra todas sus ventajas.</p>
-                            <Button variant="secondary" size="sm" className="mt-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm pointer-events-auto font-light">
-                            Consultar
-                            </Button>
-                        </div>
-                        </Card>
-                        <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1651069381046-8db0c209a5e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8c3Vuc2hhZGV8ZW58MHx8fHwxNzUyNjAwMzQ4fDA&ixlib-rb-4.1.0&q=80&w=1080" alt="Cobertura" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="security protection" />
-                        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white">
-                            <h4 className="text-xl font-bold">Cobertura</h4>
-                            <p className="text-xs mt-1 text-white/90">Conozca el alcance de su póliza.</p>
-                            <Button variant="secondary" size="sm" className="mt-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm pointer-events-auto font-light">
-                            Consultar
-                            </Button>
-                        </div>
-                        </Card>
-                        <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib.rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
-                        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white">
-                            <h4 className="text-xl font-bold">Centros de Atención</h4>
-                            <p className="text-xs mt-1 text-white/90">Encuentre la clínica más cercana.</p>
-                            <Button variant="secondary" size="sm" className="mt-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm pointer-events-auto font-light">
-                            Consultar
-                            </Button>
-                        </div>
-                        </Card>
-                        <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1502101872923-d48509bff386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdGFpcnN8ZW58MHx8fHwxNzUyNjAwMzk4fDA&ixlib.rb-4.1.0&q=80&w=1080" alt="Protocolos" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="process diagram" />
-                        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white">
-                            <h4 className="text-xl font-bold">Protocolos</h4>
-                            <p className="text-xs mt-1 text-white/90">Siga los pasos para cada caso.</p>
-                            <Button variant="secondary" size="sm" className="mt-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm pointer-events-auto font-light">
-                            Consultar
-                            </Button>
-                        </div>
-                        </Card>
-                    </div>
-                </div>
-                </div>
-            </Card>
+              <HcmInteractionCard />
             </SectionWrapper>
         </div>
 
