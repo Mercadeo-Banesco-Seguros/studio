@@ -697,7 +697,7 @@ export default function DashboardPage() {
         <section id="dress-code" className="w-full py-12 md:py-16">
           <div className="relative overflow-hidden min-h-[500px] flex items-center">
             <Image
-                src="https://images.unsplash.com/photo-1657215374010-786fefd1dbbc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHx8"
+                src="https://wallpapers.com/images/hd/light-silver-background-with-lines-imac-4k-9oy4bbjzci09c1to.jpg"
                 alt="Modelo con ropa moderna"
                 layout="fill"
                 objectFit="cover"
