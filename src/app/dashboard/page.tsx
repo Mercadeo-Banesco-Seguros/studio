@@ -335,8 +335,13 @@ export default function DashboardPage() {
         const todayDate = new Date();
         const dayName = todayDate.toLocaleDateString('es-ES', { weekday: 'long' });
         const normalizedToday = normalizeDayName(dayName);
-        const menusForToday = allMenus.filter(item => normalizeDayName(item.day) === normalizedToday);
+        
+        const menusForToday = allMenus.filter(item => {
+            const normalizedItemDay = normalizeDayName(item.day);
+            return normalizedItemDay === normalizedToday;
+        });
         setTodaysMenus(menusForToday);
+
       } catch (error) {
         console.error("Failed to fetch menu items", error);
         setTodaysMenus([]); // Ensure it's an empty array on error
@@ -745,10 +750,10 @@ export default function DashboardPage() {
         </section>
 
         {/* Póliza HCM Section */}
-        <div id="poliza" className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionWrapper>
-              <HcmInteractionCard />
-            </SectionWrapper>
+        <div id="poliza" className="w-full py-16">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <HcmInteractionCard />
+          </div>
         </div>
 
         {/* Espacio Ejecutivo Section */}
