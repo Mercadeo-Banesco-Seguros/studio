@@ -695,7 +695,7 @@ export default function DashboardPage() {
 
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full py-12 md:py-16">
-            <div className="relative overflow-hidden min-h-[500px]">
+            <div className="relative overflow-hidden min-h-[500px] flex items-center">
                 <Image
                     src="https://wallpapers.com/images/hd/light-silver-background-with-lines-imac-4k-9oy4bbjzci09c1to.jpg"
                     alt="Modelo con ropa moderna"
@@ -704,7 +704,7 @@ export default function DashboardPage() {
                     data-ai-hint="abstract background"
                 />
                 <div className="absolute inset-0 bg-blue-900/10" />
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
                     <div className="grid md:grid-cols-2 gap-8 items-center w-full">
                         <div className="relative z-10 text-foreground">
                             <div className="space-y-4">
@@ -809,7 +809,7 @@ export default function DashboardPage() {
                         </div>
                         </Card>
                         <Card className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib.rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
+                        <Image src="https://images.unsplash.com/photo-1601588243681-2fa6a06300d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8TUVESUNBTCUyMENFTlRFUnxlbnwwfHx8fDE3NTI1MDU1MjB8MA&ixlib-rb-4.1.0&q=80&w=1080" alt="Centros de Atención" layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" data-ai-hint="hospital building" />
                         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center p-4 text-center text-white">
                             <h4 className="text-xl font-bold">Centros de Atención</h4>
                             <p className="text-xs mt-1 text-white/90">Encuentre la clínica más cercana.</p>
