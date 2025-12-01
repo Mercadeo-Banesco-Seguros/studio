@@ -714,7 +714,7 @@ export default function DashboardPage() {
                 <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="space-y-4">
                         <p className="font-semibold text-white/80 uppercase tracking-wider">{currentDayName}</p>
-                        <h2 className="text-4xl md:text-5xl font-bold leading-tight">Casual de Negocios</h2>
+                        <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">Casual de Negocios</h2>
                         
                         <div className="pt-12">
                             <p className="font-semibold text-white/80">Viste Seguro</p>
@@ -724,7 +724,7 @@ export default function DashboardPage() {
                             </Button>
                         </div>
                     </div>
-                    <div className="relative h-full flex flex-col justify-between">
+                     <div className="relative h-full flex flex-col justify-center">
                          <div className="grid grid-cols-5 gap-4 items-end flex-grow">
                             {mockDressCodeItems.map(item => (
                                 <div key={item.id} className="relative h-full w-full">
@@ -742,7 +742,7 @@ export default function DashboardPage() {
         </section>
 
         {/* Póliza HCM Section */}
-        <section id="poliza" className="w-full py-16">
+        <section id="poliza" className="w-full">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <HcmInteractionCard />
             </div>
@@ -752,7 +752,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
