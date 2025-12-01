@@ -677,7 +677,7 @@ export default function DashboardPage() {
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
                       author="Banesco Seguros"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
                       imageClassName="opacity-30"
                       availability={75}
@@ -698,7 +698,7 @@ export default function DashboardPage() {
                       category="Mejora tus Habilidades"
                       details={["Presentaciones", "Feedback", "Oratoria"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="public speaking"
                       imageClassName="opacity-30"
                       availability={90}
@@ -711,15 +711,22 @@ export default function DashboardPage() {
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full mt-24">
             <div className="relative min-h-[600px] w-full flex flex-col justify-center overflow-hidden">
-                <Image
-                    src={dressCodeView === 'caballeros' ? "https://wallpapers.com/images/hd/blue-hd-1920-x-1080-background-6alqcc8fvs6o6s2t.jpg" : "https://images.unsplash.com/photo-1587329929020-5650699a2a7a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
-                    alt="Fondo abstracto de vestimenta"
-                    layout="fill"
-                    objectFit="cover"
-                    className="z-0 transition-all duration-500"
-                    data-ai-hint="abstract texture"
-                />
-                <div className={cn("absolute inset-0 z-0 transition-all duration-500", dressCodeView === 'caballeros' ? "bg-blue-900/50" : "bg-pink-900/30")}></div>
+                {dressCodeView === 'caballeros' ? (
+                    <>
+                        <Image
+                            src="https://wallpapers.com/images/hd/blue-hd-1920-x-1080-background-6alqcc8fvs6o6s2t.jpg"
+                            alt="Fondo abstracto de vestimenta"
+                            layout="fill"
+                            objectFit="cover"
+                            className="z-0 transition-all duration-500"
+                            data-ai-hint="abstract texture"
+                        />
+                        <div className="absolute inset-0 z-0 transition-all duration-500 bg-blue-900/50"></div>
+                    </>
+                ) : (
+                    <div className="absolute inset-0 z-0 transition-all duration-500 bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400"></div>
+                )}
+
 
                 <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
                      <div className="flex flex-col justify-between h-full space-y-4 text-center md:text-left py-12">
@@ -731,7 +738,7 @@ export default function DashboardPage() {
                             <p className="mt-2 text-white/80 max-w-sm mx-auto md:mx-0">{selectedDressCode.description}</p>
                         </div>
                         <div>
-                            <p className="font-light text-white/80">{isMissionView ? "Viste Seguro" : "Viste Seguro"}</p>
+                            <p className="font-light text-white/80">Viste Seguro</p>
                              <h3 className="text-3xl font-bold tracking-tighter">Banesco Seguros</h3>
                             <div className="mt-4 flex gap-2">
                               <Button asChild className="font-light bg-white/90 text-primary hover:bg-white">
@@ -780,7 +787,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
