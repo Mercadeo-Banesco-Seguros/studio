@@ -677,7 +677,7 @@ export default function DashboardPage() {
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
                       author="Banesco Seguros"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib-rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
                       imageClassName="opacity-30"
                       availability={75}
@@ -731,7 +731,7 @@ export default function DashboardPage() {
                             <p className="mt-2 text-white/80 max-w-sm mx-auto md:mx-0">{selectedDressCode.description}</p>
                         </div>
                         <div>
-                             <p className="font-light text-white/80">Viste Seguro</p>
+                            <p className="font-light text-white/80">{isMissionView ? "Viste Seguro" : "Viste Seguro"}</p>
                              <h3 className="text-3xl font-bold tracking-tighter">Banesco Seguros</h3>
                             <div className="mt-4 flex gap-2">
                               <Button asChild className="font-light bg-white/90 text-primary hover:bg-white">
@@ -754,7 +754,9 @@ export default function DashboardPage() {
                                     className={cn(
                                         "relative w-full cursor-pointer transition-all duration-300 transform",
                                         dressCodeView === 'damas' ? 'h-[32rem]' : 'h-[34rem]',
-                                        selectedDressCode.id === item.id ? 'opacity-100 scale-150' : 'opacity-50 scale-90 hover:opacity-75 hover:scale-95'
+                                        selectedDressCode.id === item.id 
+                                            ? `opacity-100 ${dressCodeView === 'damas' ? 'scale-125' : 'scale-150'}` 
+                                            : 'opacity-50 scale-90 hover:opacity-75 hover:scale-95'
                                     )}
                                     onClick={() => setSelectedDressCode(item)}
                                 >
@@ -778,7 +780,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
