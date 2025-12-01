@@ -584,7 +584,7 @@ export default function DashboardPage() {
         <section id="requerimientos" className="w-full mt-24">
             <Card className="relative text-white overflow-hidden min-h-[500px] flex items-center justify-center">
                 <Image
-                    src="https://images.unsplash.com/photo-1724405143873-cdaa5cac918e?fm=jpg&q=60&w=3000&ixlib-rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXp1bCUyMGNsYXJvJTIwYWJzdHJhY3RvfGVufDB8fDB8fHww"
+                    src="https://images.unsplash.com/photo-1724405143873-cdaa5cac918e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXp1bCUyMGNsYXJvJTIwYWJzdHJhY3RvfGVufDB8fDB8fHww"
                     alt="Abstract background"
                     layout="fill"
                     objectFit="cover"
@@ -677,7 +677,7 @@ export default function DashboardPage() {
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
                       author="Banesco Seguros"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
                       imageClassName="opacity-30"
                       availability={75}
@@ -712,7 +712,7 @@ export default function DashboardPage() {
         <section id="dress-code" className="w-full mt-24">
             <div className="relative min-h-[600px] w-full flex flex-col justify-center overflow-hidden">
                 <Image
-                    src={dressCodeView === 'caballeros' ? "https://wallpapers.com/images/hd/blue-hd-1920-x-1080-background-6alqcc8fvs6o6s2t.jpg" : "https://images.unsplash.com/photo-1587329929020-5650699a2a7a?q=80&w=2940&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+                    src={dressCodeView === 'caballeros' ? "https://wallpapers.com/images/hd/blue-hd-1920-x-1080-background-6alqcc8fvs6o6s2t.jpg" : "https://images.unsplash.com/photo-1587329929020-5650699a2a7a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
                     alt="Fondo abstracto de vestimenta"
                     layout="fill"
                     objectFit="cover"
@@ -753,7 +753,7 @@ export default function DashboardPage() {
                                     key={item.id} 
                                     className={cn(
                                         "relative w-full cursor-pointer transition-all duration-300 transform",
-                                        dressCodeView === 'damas' ? 'h-[32rem]' : 'h-[32rem]',
+                                        dressCodeView === 'damas' ? 'h-[32rem]' : 'h-[34rem]',
                                         selectedDressCode.id === item.id ? 'opacity-100 scale-150' : 'opacity-50 scale-90 hover:opacity-75 hover:scale-95'
                                     )}
                                     onClick={() => setSelectedDressCode(item)}
@@ -778,7 +778,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
