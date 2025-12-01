@@ -65,6 +65,7 @@ export interface DressCodeItem {
   description: string;
   imageUrl: string;
   dataAiHint?: string;
+  day: string;
 }
 
 export interface Employee {
@@ -237,7 +238,7 @@ export const mockCourses: Course[] = [
     id: "gestion-de-proveedores",
     title: "Gestión de Proveedores",
     description: "Aquí podrás  obtener información de herramientas y mejores prácticas para ser efectivos en la búsqueda, selección, evaluación y gestión de proveedores, mediante la planificación asociada a la negociación, que finalmente servirá como retroalimentación constante para el desarrollo tanto de la organización como de los proveedores.",
-    imageUrl: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxERUxJVkVSWXxlbnwwfHx8fDE3NTc3MDMxMzN8MA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxERUxJVkVSWXxlbnwwfHx8fDE3NTc3MDMxMzN8MA&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "supplier management",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -744,35 +745,40 @@ export const mockDressCodeItems: DressCodeItem[] = [
     title: "Formal de Negocios",
     description: "Traje completo (saco y pantalón o falda), camisa de vestir, corbata (opcional para mujeres). Zapatos de vestir.",
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/1-Photoroom.png?raw=true",
-    dataAiHint: "business formal"
+    dataAiHint: "business formal",
+    day: "Lunes"
   },
   {
     id: "DC002",
     title: "Casual de Negocios",
     description: "Pantalones de vestir o chinos, camisa o blusa, blazer o suéter opcional. Zapatos cerrados.",
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/2-Photoroom.png?raw=true",
-    dataAiHint: "business casual"
+    dataAiHint: "business casual",
+    day: "Martes"
   },
   {
     id: "DC003",
     title: "Oficina",
     description: "Vestimenta cómoda y profesional para el día a día en la oficina.",
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/3-Photoroom.png?raw=true",
-    dataAiHint: "office wear"
+    dataAiHint: "office wear",
+    day: "Miércoles"
   },
   {
     id: "DC004",
     title: "Comfortable",
     description: "Ropa cómoda pero apropiada para un entorno de trabajo relajado.",
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/4-Photoroom.png?raw=true",
-    dataAiHint: "comfortable clothing"
+    dataAiHint: "comfortable clothing",
+    day: "Jueves"
   },
   {
     id: "DC005",
     title: "Deportivo",
     description: "Vestimenta adecuada para actividades deportivas o de bienestar.",
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/5-Photoroom.png?raw=true",
-    dataAiHint: "sportswear"
+    dataAiHint: "sportswear",
+    day: "Viernes"
   }
 ];
 
@@ -839,7 +845,7 @@ export const mockPlaylist: PlaylistItem[] = [
     id: "P001", 
     title: "Clásicos en Inglés", 
     description: "Los éxitos que marcaron una época.",
-    albumArtUrl: "https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib-rb-4.1.0&q=80&w=1080", 
+    albumArtUrl: "https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib=rb-4.1.0&q=80&w=1080", 
     linkUrl: "#", 
     dataAiHint: "classic rock" 
   },
@@ -915,6 +921,7 @@ export const mockCustomerFeedback: CustomerFeedback[] = [
     
 
   
+
 
 
 
