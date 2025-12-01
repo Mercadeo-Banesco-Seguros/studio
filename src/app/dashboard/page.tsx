@@ -1,9 +1,10 @@
+
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import { NewCourseCard } from "@/components/dashboard/course-card";
-import { mockCourses, mockActivities, mockDepartments, mockPlaylist, faqData, mockDressCodeItems } from "@/lib/placeholder-data";
+import { mockCourses, mockActivities, mockDepartments, mockPlaylist, faqData, mockDressCodeItems, type DressCodeItem } from "@/lib/placeholder-data";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import {
@@ -259,6 +260,8 @@ export default function DashboardPage() {
   const [showShortcuts, setShowShortcuts] = useState(false);
   const [isMissionView, setIsMissionView] = useState(false);
   const { toast } = useToast();
+  const [selectedDressCode, setSelectedDressCode] = useState<DressCodeItem>(mockDressCodeItems[0]);
+
 
   const faqCategories = [
     { id: 'General', label: 'General', icon: Home },
@@ -475,7 +478,7 @@ export default function DashboardPage() {
         </div>
         
         {/* Menus Section */}
-        <div id="menu" className="mt-16">
+        <div id="menu" className="mt-24">
           {isLoadingMenu ? (
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <SectionWrapper>
@@ -677,7 +680,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib-rb-4.1.0&q=80&w=1080"
                       dataAiHint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
@@ -711,14 +714,15 @@ export default function DashboardPage() {
                 />
                 <div className="absolute inset-0 bg-blue-900/50 z-0"></div>
 
-                <div className="relative z-10 grid md:grid-cols-2 gap-8 items-end h-full text-white container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <div className="flex flex-col justify-end h-full space-y-4">
+                <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                    <div className="flex flex-col justify-between h-full space-y-4">
                         <div>
                             <p className="font-semibold text-white/80 uppercase tracking-wider">{currentDayName}</p>
-                            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Casual de Negocios</h2>
+                            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+                                {selectedDressCode.title}
+                            </h2>
                         </div>
-                        
-                        <div className="pt-12">
+                        <div>
                             <p className="font-semibold text-white/80">Viste Seguro</p>
                             <h3 className="text-3xl font-bold tracking-tight">Banesco Seguros</h3>
                             <Button asChild className="mt-4 font-light bg-white/90 text-primary hover:bg-white">
@@ -727,9 +731,16 @@ export default function DashboardPage() {
                         </div>
                     </div>
                      <div className="relative h-full flex flex-col justify-end">
-                         <div className="grid grid-cols-5 gap-4 items-end flex-grow">
+                        <div className="grid grid-cols-5 gap-2 items-end flex-grow">
                             {mockDressCodeItems.map(item => (
-                                <div key={item.id} className="relative h-full w-full">
+                                <div 
+                                    key={item.id} 
+                                    className={cn(
+                                        "relative h-64 w-full cursor-pointer transition-all duration-300 transform",
+                                        selectedDressCode.id === item.id ? 'opacity-100 scale-110' : 'opacity-50 scale-90 hover:opacity-75 hover:scale-95'
+                                    )}
+                                    onClick={() => setSelectedDressCode(item)}
+                                >
                                     <Image src={item.imageUrl} layout="fill" objectFit="contain" alt={item.title}/>
                                 </div>
                             ))}
