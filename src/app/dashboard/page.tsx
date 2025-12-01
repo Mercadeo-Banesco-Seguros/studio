@@ -539,7 +539,7 @@ export default function DashboardPage() {
                     <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
                          <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                         <Image
-                            src="https://images.pexels.com/photos/5386754/pexels-photo-5386754.jpeg?cs=srgb&dl=pexels-leeloothefirst-5386754.jpg&fm=jpg"
+                            src="https://cdn.shopify.com/s/files/1/0229/0839/articles/mejores_libros_sobre_ecommerce_1_c873d090-bda2-45aa-a3d5-73c5d35467f1.jpg?v=1738154252"
                             alt="Consultar Solicitudes"
                             layout="fill"
                             objectFit="cover"
@@ -560,7 +560,7 @@ export default function DashboardPage() {
                     <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
                        <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                        <Image
-                            src="https://images.unsplash.com/photo-1599946347371-e859742e3d53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjZWxlYnJhdGlvbnxlbnwwfHx8fDE3NjQ0ODg4OTV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                            src="https://img.freepik.com/foto-gratis/concepto-exito-fiesta-celebracion-equipo-negocios_53876-47029.jpg?semt=ais_hybrid&w=740&q=80"
                             alt="Eventos del mes"
                             layout="fill"
                             objectFit="cover"
@@ -688,7 +688,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib-rb-4.1.0&q=80&w=1080"
                       dataAiHint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
