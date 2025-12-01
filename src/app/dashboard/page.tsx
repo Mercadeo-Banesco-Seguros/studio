@@ -700,7 +700,7 @@ export default function DashboardPage() {
 
 
         {/* Dress Code Section */}
-        <section id="dress-code" className="w-full bg-card py-12 md:py-16">
+        <section id="dress-code" className="w-full bg-card">
             <div className="relative min-h-[600px] w-full flex items-center">
                 <Image
                     src="https://wallpapers.com/images/hd/blue-hd-1920-x-1080-background-6alqcc8fvs6o6s2t.jpg"
@@ -724,13 +724,15 @@ export default function DashboardPage() {
                             </Button>
                         </div>
                     </div>
-                    <div className="relative grid grid-cols-5 gap-4 items-end h-full">
-                        {mockDressCodeItems.map(item => (
-                            <div key={item.id} className="relative h-full w-full">
-                                <Image src={item.imageUrl} layout="fill" objectFit="contain" alt={item.title}/>
-                            </div>
-                        ))}
-                        <div className="absolute bottom-0 right-0 flex gap-2">
+                    <div className="relative h-full flex flex-col justify-between">
+                         <div className="grid grid-cols-5 gap-4 items-end flex-grow">
+                            {mockDressCodeItems.map(item => (
+                                <div key={item.id} className="relative h-full w-full">
+                                    <Image src={item.imageUrl} layout="fill" objectFit="contain" alt={item.title}/>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="flex gap-2 justify-end mt-4">
                             <Button variant="secondary" size="sm" className="font-light bg-white/90 text-primary hover:bg-white">Caballeros</Button>
                             <Button variant="secondary" size="sm" className="font-light bg-white/90 text-primary hover:bg-white">Damas</Button>
                         </div>
@@ -750,7 +752,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
