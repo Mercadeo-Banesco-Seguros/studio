@@ -675,10 +675,9 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      author="Banesco Seguros"
-                      className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
+                      className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
                       availability={75}
                   />
@@ -698,7 +697,7 @@ export default function DashboardPage() {
                       category="Mejora tus Habilidades"
                       details={["Presentaciones", "Feedback", "Oratoria"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib-rb-4.1.0&q=80&w=1080"
                       data-ai-hint="public speaking"
                       imageClassName="opacity-30"
                       availability={90}
@@ -724,7 +723,7 @@ export default function DashboardPage() {
                         <div className="absolute inset-0 z-0 transition-all duration-500 bg-blue-900/50"></div>
                     </>
                 ) : (
-                    <div className="absolute inset-0 z-0 transition-all duration-500 bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400"></div>
+                    <div className="absolute inset-0 z-0 transition-all duration-500 bg-gradient-to-br from-purple-300 to-purple-500"></div>
                 )}
 
 
