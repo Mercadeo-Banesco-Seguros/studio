@@ -148,7 +148,7 @@ export const mockCourses: Course[] = [
     id: "google-sheets",
     title: "Sheets",
     description: "Aprender a aprovechar Sheets para optimizar tu tiempo y aprender lo más avanzado del aplicativo en pocas horas.",
-    imageUrl: "https://images.unsplash.com/photo-1658203897339-0b8c64a42fba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxleGNlbHxlbnwwfHx8fDE3NTQzMzc0NTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1658203897339-0b8c64a42fba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxleGNlbHxlbnwwfHx8fDE3NTQzMzc0NTB8MA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "spreadsheet data",
     category: "Google Workspace",
     duration: "Auto-gestionado",
@@ -178,7 +178,7 @@ export const mockCourses: Course[] = [
     id: "pensamiento-estrategico",
     title: "Pensamiento Estratégico",
     description: "Asigna prioridades en el destino de los recursos, donde mejora el desempeño de la organización, así permitiendo a la empresa enfrentarse a los principales problemas de la organización, al cambio en el entorno y ver las oportunidades y detectar las amenazas.",
-    imageUrl: "https://images.unsplash.com/photo-1730804518415-75297e8d2a41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHV6emxlfGVufDB8fHx8fDE3NTQzMzk2ODl8MA&ixlib.rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1730804518415-75297e8d2a41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHV6emxlfGVufDB8fHx8fDE3NTQzMzk2ODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
     dataAiHint: "strategy plan",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -228,7 +228,7 @@ export const mockCourses: Course[] = [
     id: "jerarquizacion-de-portafolio",
     title: "Jerarquización de Portafolio",
     description: "Las Direcciones Corporativas de Finanzas y Estrategia te invitan a formar parte de esta formación virtual que pretende profundizar en la metodología para la jerarquización de iniciativas, con énfasis en la aplicación de la herramienta “Matriz Costo Beneficio”.",
-    imageUrl: "https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxET0NVTUVOVFN8ZW58MHx8fHwxNzU0NDEwNjg0fDA&ixlib.rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxET0NVTUVOVFN8ZW58MHx8fHwxNzU0NDEwNjg0fDA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "portfolio management",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -283,7 +283,7 @@ export const mockActivities: Activity[] = [
     title: "Yoga",
     date: "2025-07-01",
     location: "Triadas - Ciudad Banesco",
-    imageUrl: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx5b2dhfGVufDB8fHx8MTc1MDk0NDg2M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx5b2dhfGVufDB8fHx8MTc1MDk0NDg2M3ww&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "yoga fitness",
     description: "¡Conecta tu cuerpo y mente!\nAcompáñanos en la clase de yoga, conformada por una serie de ejercicios físicos y de respiración diseñados para disminuir el estrés y las dolencias corporales, con el propósito de mejorar la salud, tanto física como mental.\nPara asistir a las clases solo necesitas:\n- Un mat o esterilla de yoga.\n- Ropa deportiva y cómoda, preferiblemente licras o monos largos y camisas cómodas.\n- Una botella de agua para tu hidratación.\n\nDónde y cuándo son las clases:\nLunes y miércoles, 5:00 P.M."
   },
@@ -292,7 +292,7 @@ export const mockActivities: Activity[] = [
     title: "Ejercicios funcionales",
     date: "2025-07-01",
     location: "Terraza - Ciudad Banesco",
-    imageUrl: "https://images.unsplash.com/photo-1591291621164-2c6367723315?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGNlcmNpc2V8ZW58MHx8fHwxNzUwOTQ0OTE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1591291621164-2c6367723315?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGNlcmNpc2V8ZW58MHx8fHwxNzUwOTQ0OTE1fDA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "functional training",
     description: "¡Mejora tu rendimiento físico y cuida tu salud!\n\nTe invitamos a participar en la actividad de entrenamiento funcional y en circuito, la cual ayuda a mejorar las capacidades físicas como  fuerza, resistencia, velocidad, coordinación y flexibilidad. Se puede realizar con o sin implementos.\nPara asistir a las clases solo necesitas:\n- Ropa deportiva y cómoda, preferiblemente licras o monos largos y camisas cómodas.\n- Una botella de agua para tu hidratación.\n\nDónde y cuándo son las clases:\nLunes y miércoles, 5:00 P.M.",
     isRecommended: true,
@@ -302,7 +302,7 @@ export const mockActivities: Activity[] = [
     title: "Clases de cuatro",
     date: "2025-07-01",
     location: "Triadas - Ciudad Banesco",
-    imageUrl: "https://images.unsplash.com/photo-1707699164633-0e584b2da329?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxVS0VMRUxFfGVufDB8fHx8MTc1ODU2NDUxNHww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1707699164633-0e584b2da329?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxVS0VMRUxFfGVufDB8fHx8MTc1ODU2NDUxNHww&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "music lessons",
     description: "Si tienes talento para tocar un instrumento musical o quieres aprender, es tú momento.\nÚnete al grupo, no necesitas experiencia previa para formar parte de la actividad.\nPara asistir a las clases solo necesitas:\n- Una botella de agua para tu hidratación.\n\nDónde y cuándo son las clases:\nLunes o jueves, 5:00 P.M."
   },
@@ -311,7 +311,7 @@ export const mockActivities: Activity[] = [
     title: "Clases de bailoterapia",
     date: "2025-07-01",
     location: "Terraza - Ciudad Banesco",
-    imageUrl: "https://images.unsplash.com/photo-1495791185843-c73f2269f669?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8ZGFuY2V8ZW58MHx8fHwxNzUwOTQ1MTc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1495791185843-c73f2269f669?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8ZGFuY2V8ZW58MHx8fHwxNzUwOTQ1MTc0fDA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "dance therapy",
     description: "Sorpréndete con la variedad de estilos y ritmos en nuestra clase de bailoterapia y disfruta de los múltiples beneficios de esta técnica:\n- Fortalece el corazón y la circulación de la sangre.\n- Reduce el estrés, la ansiedad y la tristeza.\n- Combate los dolores musculares.\nPara asistir a las clases solo necesitas:\n- Ropa deportiva y cómoda, preferiblemente licras o monos largos y camisas cómodas.\n- Una botella de agua para tu hidratación.\nDónde y cuándo son las clases:\nJueves, 5:00 P.M."
   },
@@ -743,7 +743,7 @@ export const mockDressCodeItems: DressCodeItem[] = [
   {
     id: "DC001",
     title: "Formal de Negocios",
-    description: "Traje completo (saco y pantalón o falda), camisa de vestir, corbata (opcional para mujeres). Zapatos de vestir.",
+    description: "Ideal para reuniones importantes y eventos corporativos. Incluye traje completo, camisa de vestir y zapatos formales. La corbata es opcional para las damas.",
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/1-Photoroom.png?raw=true",
     dataAiHint: "business formal",
     day: "Lunes"
@@ -751,7 +751,7 @@ export const mockDressCodeItems: DressCodeItem[] = [
   {
     id: "DC002",
     title: "Casual de Negocios",
-    description: "Pantalones de vestir o chinos, camisa o blusa, blazer o suéter opcional. Zapatos cerrados.",
+    description: "Perfecto para el día a día. Combina pantalones de vestir o chinos con una camisa o blusa. Puedes añadir un blazer o suéter para un toque extra de profesionalismo.",
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/2-Photoroom.png?raw=true",
     dataAiHint: "business casual",
     day: "Martes"
@@ -759,7 +759,7 @@ export const mockDressCodeItems: DressCodeItem[] = [
   {
     id: "DC003",
     title: "Casual Elegante",
-    description: "Vestimenta cómoda y profesional para el día a día en la oficina.",
+    description: "Combina comodidad y profesionalismo. Incluye pantalones de vestir, faldas, blusas elegantes o camisas con cuello. Se puede complementar con un blazer o cárdigan.",
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/3-Photoroom.png?raw=true",
     dataAiHint: "office wear",
     day: "Miércoles"
@@ -767,7 +767,7 @@ export const mockDressCodeItems: DressCodeItem[] = [
   {
     id: "DC004",
     title: "Casual de Vestir",
-    description: "Ropa cómoda pero apropiada para un entorno de trabajo relajado.",
+    description: "Un estilo relajado pero pulcro. Permite jeans oscuros sin roturas, camisas tipo polo, suéteres y calzado casual limpio como mocasines o zapatillas de vestir.",
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/4-Photoroom.png?raw=true",
     dataAiHint: "comfortable clothing",
     day: "Jueves"
@@ -775,7 +775,7 @@ export const mockDressCodeItems: DressCodeItem[] = [
   {
     id: "DC005",
     title: "Atuendo Deportivo",
-    description: "Vestimenta adecuada para actividades deportivas o de bienestar.",
+    description: "Ideal para el viernes casual o si participas en actividades de bienestar. Se permiten prendas deportivas como monos, licras, camisetas y zapatillas deportivas.",
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/5-Photoroom.png?raw=true",
     dataAiHint: "sportswear",
     day: "Viernes"
