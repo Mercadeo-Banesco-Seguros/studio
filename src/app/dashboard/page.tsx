@@ -560,19 +560,20 @@ export default function DashboardPage() {
                     <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
                        <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                        <Image
-                            src="https://www.aviationgroup.es/wp-content/uploads/2023/03/avion-volando-con-un-motor.jpg"
-                            alt="Ver Destinos"
+                            src="https://images.unsplash.com/photo-1599946347371-e859742e3d53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjZWxlYnJhdGlvbnxlbnwwfHx8fDE3NjQ0ODg4OTV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Eventos del mes"
                             layout="fill"
                             objectFit="cover"
                             className="z-0 brightness-75"
-                            data-ai-hint="airplane sky"
+                            data-ai-hint="celebration party"
                         />
                         <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
-                            <h4 className="text-2xl font-bold">Ver Destinos</h4>
-                            <p className="text-sm mt-1 text-white/80">Descubre lugares para tu próximo viaje.</p>
+                            <Badge variant="outline" className="text-white border-white/80 w-fit bg-white/10 backdrop-blur-sm mb-4">Bienestar</Badge>
+                            <h4 className="text-2xl font-bold">Eventos de este mes</h4>
+                            <p className="text-sm mt-1 text-white/80">Descubre los próximos eventos y actividades.</p>
                             <div className="flex justify-end w-full mt-4">
                                 <Button asChild variant="default" className="rounded-full font-light text-xs">
-                                    <Link href="#">Explorar</Link>
+                                    <Link href="/dashboard/bienestar#actividades">Explorar</Link>
                                 </Button>
                             </div>
                         </div>
@@ -687,7 +688,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib=rb-4.1.0&q=80&w=1080"
                       dataAiHint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
