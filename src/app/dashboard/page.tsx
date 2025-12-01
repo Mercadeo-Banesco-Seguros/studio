@@ -700,7 +700,7 @@ export default function DashboardPage() {
 
 
         {/* Dress Code Section */}
-        <section id="dress-code" className="w-full bg-card mt-16">
+        <section id="dress-code" className="w-full mt-16">
             <div className="relative min-h-[600px] w-full flex items-center">
                 <Image
                     src="https://wallpapers.com/images/hd/blue-hd-1920-x-1080-background-6alqcc8fvs6o6s2t.jpg"
@@ -708,6 +708,7 @@ export default function DashboardPage() {
                     layout="fill"
                     objectFit="cover"
                     className="z-0"
+                    data-ai-hint="abstract texture"
                 />
                 <div className="absolute inset-0 bg-blue-900/50 z-0"></div>
 
@@ -720,13 +721,13 @@ export default function DashboardPage() {
                         
                         <div className="pt-12">
                             <p className="font-semibold text-white/80">Viste Seguro</p>
-                            <h3 className="text-3xl font-bold">Banesco Seguros</h3>
+                            <h3 className="text-3xl font-bold tracking-tight">Banesco Seguros</h3>
                             <Button asChild className="mt-4 font-light bg-white/90 text-primary hover:bg-white">
                                 <Link href="#">Explorar Guía</Link>
                             </Button>
                         </div>
                     </div>
-                     <div className="relative h-full flex flex-col justify-center">
+                     <div className="relative h-full flex flex-col justify-end pb-12">
                          <div className="grid grid-cols-5 gap-4 items-end flex-grow">
                             {mockDressCodeItems.map(item => (
                                 <div key={item.id} className="relative h-full w-full">
@@ -734,7 +735,6 @@ export default function DashboardPage() {
                                 </div>
                             ))}
                         </div>
-                        
                     </div>
                 </div>
             </div>
