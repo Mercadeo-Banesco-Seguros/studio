@@ -703,7 +703,7 @@ export default function DashboardPage() {
 
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full mt-24">
-            <div className="relative min-h-[600px] w-full flex flex-col justify-center">
+            <div className="relative min-h-[600px] w-full flex flex-col justify-center overflow-hidden">
                 <Image
                     src="https://wallpapers.com/images/hd/blue-hd-1920-x-1080-background-6alqcc8fvs6o6s2t.jpg"
                     alt="Fondo abstracto de vestimenta"
@@ -714,8 +714,8 @@ export default function DashboardPage() {
                 />
                 <div className="absolute inset-0 bg-blue-900/50 z-0"></div>
 
-                <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                     <div className="flex flex-col justify-end h-full space-y-4 text-center md:text-left">
+                <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
+                     <div className="flex flex-col justify-between h-full space-y-4 text-center md:text-left py-12">
                         <div className="flex-grow flex flex-col justify-center">
                              <p className="font-semibold text-white/80 uppercase tracking-wider">{selectedDressCode.day}</p>
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
@@ -736,7 +736,7 @@ export default function DashboardPage() {
                                 <div 
                                     key={item.id} 
                                     className={cn(
-                                        "relative h-64 w-full cursor-pointer transition-all duration-300 transform",
+                                        "relative h-80 w-full cursor-pointer transition-all duration-300 transform",
                                         selectedDressCode.id === item.id ? 'opacity-100 scale-110' : 'opacity-50 scale-90 hover:opacity-75 hover:scale-95'
                                     )}
                                     onClick={() => setSelectedDressCode(item)}
