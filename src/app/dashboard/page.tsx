@@ -712,9 +712,11 @@ export default function DashboardPage() {
                 <div className="absolute inset-0 bg-blue-900/50 z-0"></div>
 
                  <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="space-y-4">
-                        <p className="font-semibold text-white/80 uppercase tracking-wider">{currentDayName}</p>
-                        <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">Casual de Negocios</h2>
+                    <div className="flex flex-col justify-center h-full space-y-4">
+                        <div>
+                            <p className="font-semibold text-white/80 uppercase tracking-wider">{currentDayName}</p>
+                            <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">Casual de Negocios</h2>
+                        </div>
                         
                         <div className="pt-12">
                             <p className="font-semibold text-white/80">Viste Seguro</p>
@@ -732,10 +734,7 @@ export default function DashboardPage() {
                                 </div>
                             ))}
                         </div>
-                        <div className="flex gap-2 justify-end mt-4">
-                            <Button variant="secondary" size="sm" className="font-light bg-white/90 text-primary hover:bg-white">Caballeros</Button>
-                            <Button variant="secondary" size="sm" className="font-light bg-white/90 text-primary hover:bg-white">Damas</Button>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
