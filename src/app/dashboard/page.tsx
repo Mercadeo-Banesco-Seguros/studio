@@ -727,16 +727,16 @@ export default function DashboardPage() {
                         </div>
                         <div className="relative grid grid-cols-4 gap-4 items-end h-full">
                             <div className="relative h-full w-full">
-                                <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Casual%20de%20negocios-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Casual de negocios"/>
-                            </div>
-                            <div className="relative h-full w-full">
                                 <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Formal%20de%20negocios-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Formal de negocios"/>
                             </div>
                             <div className="relative h-full w-full">
-                                <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/viernes%20casual%202-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Viernes casual"/>
+                                <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Casual%20de%20negocios-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Casual de negocios"/>
                             </div>
                             <div className="relative h-full w-full">
                                 <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/viernes%20casual-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Smart casual"/>
+                            </div>
+                            <div className="relative h-full w-full">
+                                <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/viernes%20casual%202-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Viernes casual"/>
                             </div>
 
                             <div className="absolute bottom-0 right-0 flex gap-2">
