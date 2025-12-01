@@ -687,7 +687,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib.rb-4.1.0&q=80&w=1080"
                       data-ai-hint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
@@ -698,7 +698,7 @@ export default function DashboardPage() {
                       category="Mejora tus Habilidades"
                       details={["Presentaciones", "Feedback", "Oratoria"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib-rb-4.1.0&q=80&w=1080"
                       data-ai-hint="public speaking"
                       imageClassName="opacity-30"
                       availability={90}
@@ -752,7 +752,8 @@ export default function DashboardPage() {
                                 <div 
                                     key={item.id} 
                                     className={cn(
-                                        "relative h-[28rem] w-full cursor-pointer transition-all duration-300 transform",
+                                        "relative w-full cursor-pointer transition-all duration-300 transform",
+                                        dressCodeView === 'damas' ? 'h-[32rem]' : 'h-[28rem]',
                                         selectedDressCode.id === item.id ? 'opacity-100 scale-150' : 'opacity-50 scale-90 hover:opacity-75 hover:scale-95'
                                     )}
                                     onClick={() => setSelectedDressCode(item)}
