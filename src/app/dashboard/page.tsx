@@ -197,7 +197,7 @@ const normalizeDayName = (name: string) => {
   return name
     .toLowerCase()
     .normalize("NFD") // Decompose accented characters
-    .replace(/[\u0300-\u036f]/g, "") // Remove diacritical marks
+    .replace(/[\u0000-\u007f]/g, "") // Remove diacritical marks
     .replace(/[^a-z]/g, ''); // remove non-alphabetic chars
 };
 
@@ -715,8 +715,8 @@ export default function DashboardPage() {
                 <div className="absolute inset-0 bg-blue-900/50 z-0"></div>
 
                 <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
-                     <div className="flex flex-col justify-center h-full space-y-4 text-center md:text-left py-12">
-                        <div className="flex-grow">
+                     <div className="flex flex-col justify-between h-full space-y-4 text-center md:text-left py-12">
+                        <div>
                              <p className="font-semibold text-white/80 uppercase tracking-wider">{selectedDressCode.day}</p>
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
                                 {selectedDressCode.title}
@@ -731,7 +731,7 @@ export default function DashboardPage() {
                         </div>
                     </div>
                      <div className="relative h-full flex flex-col justify-end">
-                        <div className="grid grid-cols-5 gap-2 items-end flex-grow">
+                        <div className="grid grid-cols-5 gap-4 items-end flex-grow">
                             {mockDressCodeItems.map(item => (
                                 <div 
                                     key={item.id} 
@@ -761,7 +761,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
