@@ -258,7 +258,7 @@ export default function DashboardPage() {
   const [todaysMenus, setTodaysMenus] = useState<MenuItem[]>([]);
   const [isLoadingMenu, setIsLoadingMenu] = useState(true);
   const [showShortcuts, setShowShortcuts] = useState(false);
-  const [isMissionView, setIsMissionView] = useState(isMissionView);
+  const [isMissionView, setIsMissionView] = useState(true);
   const { toast } = useToast();
   const [selectedDressCode, setSelectedDressCode] = useState<DressCodeItem>(mockDressCodeItems[0]);
 
@@ -680,7 +680,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib.rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                       dataAiHint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
@@ -715,8 +715,8 @@ export default function DashboardPage() {
                 <div className="absolute inset-0 bg-blue-900/50 z-0"></div>
 
                 <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
-                     <div className="flex flex-col justify-between h-full space-y-4 text-center md:text-left py-12">
-                        <div className="flex-grow flex flex-col justify-center">
+                     <div className="flex flex-col justify-center h-full space-y-4 text-center md:text-left py-12">
+                        <div className="flex-grow">
                              <p className="font-semibold text-white/80 uppercase tracking-wider">{selectedDressCode.day}</p>
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
                                 {selectedDressCode.title}
@@ -761,7 +761,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib.rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
@@ -955,5 +955,3 @@ export default function DashboardPage() {
     
 
 }
-
-    
