@@ -547,11 +547,12 @@ export default function DashboardPage() {
                             data-ai-hint="desk calendar"
                         />
                         <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
-                            <h4 className="text-2xl font-bold tracking-tight">Consultar Solicitudes</h4>
-                             <p className="text-sm mt-1 text-white/80">Revisa el estado de tus solicitudes.</p>
+                            <Badge variant="outline" className="text-white border-white/80 w-fit bg-white/10 backdrop-blur-sm mb-4">Nueva Sección</Badge>
+                            <h4 className="text-2xl font-bold tracking-tight">Visita la Biblioteca Documental</h4>
+                             <p className="text-sm mt-1 text-white/80">Encuentra manuales, guías y recursos.</p>
                             <div className="flex justify-end w-full mt-4">
                                 <Button asChild variant="default" className="rounded-full font-light text-xs">
-                                    <Link href="/dashboard/vacaciones">Explorar</Link>
+                                    <Link href="/dashboard/biblioteca-digital">Explorar</Link>
                                 </Button>
                             </div>
                         </div>
@@ -676,7 +677,7 @@ export default function DashboardPage() {
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
                       imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
-                      data-ai-hint="collaboration tools"
+                      dataAiHint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
                       availability={75}
@@ -687,7 +688,7 @@ export default function DashboardPage() {
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib-rb-4.1.0&q=80&w=1080"
-                      data-ai-hint="artificial intelligence"
+                      dataAiHint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
                       availability={40}
@@ -698,7 +699,7 @@ export default function DashboardPage() {
                       details={["Presentaciones", "Feedback", "Oratoria"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageUrl="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib-rb-4.1.0&q=80&w=1080"
-                      data-ai-hint="public speaking"
+                      dataAiHint="public speaking"
                       imageClassName="opacity-30"
                       availability={90}
                   />
@@ -786,7 +787,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
