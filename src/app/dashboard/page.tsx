@@ -675,7 +675,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
@@ -686,7 +686,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib.rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
@@ -697,7 +697,7 @@ export default function DashboardPage() {
                       category="Mejora tus Habilidades"
                       details={["Presentaciones", "Feedback", "Oratoria"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="public speaking"
                       imageClassName="opacity-30"
                       availability={90}
