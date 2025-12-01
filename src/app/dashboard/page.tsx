@@ -701,48 +701,46 @@ export default function DashboardPage() {
 
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full bg-card py-12 md:py-24">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="relative h-[500px] w-full">
-                    <Image
-                      src="https://wallpapers.com/images/hd/blue-hd-1920-x-1080-background-6alqcc8fvs6o6s2t.jpg"
-                      alt="Fondo abstracto de vestimenta"
-                      layout="fill"
-                      objectFit="cover"
-                      className="z-0 rounded-2xl"
-                    />
-                    <div className="absolute inset-0 bg-blue-900/50 z-0 rounded-2xl"></div>
+            <div className="relative h-[500px] w-full">
+                <Image
+                  src="https://wallpapers.com/images/hd/blue-hd-1920-x-1080-background-6alqcc8fvs6o6s2t.jpg"
+                  alt="Fondo abstracto de vestimenta"
+                  layout="fill"
+                  objectFit="cover"
+                  className="z-0"
+                />
+                <div className="absolute inset-0 bg-blue-900/50 z-0"></div>
 
-                    <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white p-8 md:p-12">
-                        <div className="space-y-4">
-                            <p className="font-semibold text-white/80 uppercase tracking-wider">Martes</p>
-                            <h2 className="text-4xl md:text-5xl font-bold leading-tight">Casual de Negocios</h2>
-                            
-                            <div className="pt-12">
-                                <p className="font-semibold text-white/80">Viste Seguro</p>
-                                <h3 className="text-3xl font-bold">Banesco Seguros</h3>
-                                <Button asChild className="mt-4 font-light bg-white/90 text-primary hover:bg-white">
-                                    <Link href="#">Explorar Guía</Link>
-                                </Button>
-                            </div>
+                <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="space-y-4">
+                        <p className="font-semibold text-white/80 uppercase tracking-wider">Martes</p>
+                        <h2 className="text-4xl md:text-5xl font-bold leading-tight">Casual de Negocios</h2>
+                        
+                        <div className="pt-12">
+                            <p className="font-semibold text-white/80">Viste Seguro</p>
+                            <h3 className="text-3xl font-bold">Banesco Seguros</h3>
+                            <Button asChild className="mt-4 font-light bg-white/90 text-primary hover:bg-white">
+                                <Link href="#">Explorar Guía</Link>
+                            </Button>
                         </div>
-                        <div className="relative grid grid-cols-4 gap-4 items-end h-full">
-                            <div className="relative h-full w-full">
-                                <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Formal%20de%20negocios-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Formal de negocios"/>
-                            </div>
-                            <div className="relative h-full w-full">
-                                <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Casual%20de%20negocios-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Casual de negocios"/>
-                            </div>
-                            <div className="relative h-full w-full">
-                                <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/viernes%20casual-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Smart casual"/>
-                            </div>
-                            <div className="relative h-full w-full">
-                                <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/viernes%20casual%202-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Viernes casual"/>
-                            </div>
+                    </div>
+                    <div className="relative grid grid-cols-4 gap-4 items-end h-full">
+                        <div className="relative h-full w-full">
+                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Formal%20de%20negocios-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Formal de negocios"/>
+                        </div>
+                        <div className="relative h-full w-full">
+                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Casual%20de%20negocios-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Casual de negocios"/>
+                        </div>
+                        <div className="relative h-full w-full">
+                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/viernes%20casual-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Smart casual"/>
+                        </div>
+                        <div className="relative h-full w-full">
+                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/viernes%20casual%202-Photoroom.png?raw=true" layout="fill" objectFit="contain" alt="Viernes casual"/>
+                        </div>
 
-                            <div className="absolute bottom-0 right-0 flex gap-2">
-                                <Button variant="secondary" size="sm" className="font-light bg-white/90 text-primary hover:bg-white">Caballeros</Button>
-                                <Button variant="secondary" size="sm" className="font-light bg-white/90 text-primary hover:bg-white">Damas</Button>
-                            </div>
+                        <div className="absolute bottom-0 right-0 flex gap-2">
+                            <Button variant="secondary" size="sm" className="font-light bg-white/90 text-primary hover:bg-white">Caballeros</Button>
+                            <Button variant="secondary" size="sm" className="font-light bg-white/90 text-primary hover:bg-white">Damas</Button>
                         </div>
                     </div>
                 </div>
