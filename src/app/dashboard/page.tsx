@@ -701,7 +701,7 @@ export default function DashboardPage() {
 
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full bg-card py-12 md:py-16">
-            <div className="relative min-h-[500px] w-full flex items-center">
+            <div className="relative min-h-[600px] w-full flex items-center">
                 <Image
                     src="https://wallpapers.com/images/hd/blue-hd-1920-x-1080-background-6alqcc8fvs6o6s2t.jpg"
                     alt="Fondo abstracto de vestimenta"
