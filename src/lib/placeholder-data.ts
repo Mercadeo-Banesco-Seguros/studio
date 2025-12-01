@@ -149,7 +149,7 @@ export const mockCourses: Course[] = [
     id: "google-sheets",
     title: "Sheets",
     description: "Aprender a aprovechar Sheets para optimizar tu tiempo y aprender lo más avanzado del aplicativo en pocas horas.",
-    imageUrl: "https://images.unsplash.com/photo-1658203897339-0b8c64a42fba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxleGNlbHxlbnwwfHx8fDE3NTQzMzc0NTB8MA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1658203897339-0b8c64a42fba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxleGNlbHxlbnwwfHx8fDE3NTQzMzc0NTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
     dataAiHint: "spreadsheet data",
     category: "Google Workspace",
     duration: "Auto-gestionado",
@@ -169,7 +169,7 @@ export const mockCourses: Course[] = [
     id: "google-forms",
     title: "Google Forms",
     description: "Aprovecha los formularios para levantar información y lograr enlaces con otros aplicativos.",
-    imageUrl: "https://images.unsplash.com/photo-1516383274235-5f42d6c6426d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3VydmV5fGVufDB8fHx8MTc1NDMzODkyNHww&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1516383274235-5f42d6c6426d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3VydmV5fGVufDB8fHx8MTc1NDMzODkyNHww&ixlib=rb-4.1.0&q=80&w=1080",
     dataAiHint: "survey form",
     category: "Google Workspace",
     duration: "Auto-gestionado",
@@ -179,7 +179,7 @@ export const mockCourses: Course[] = [
     id: "pensamiento-estrategico",
     title: "Pensamiento Estratégico",
     description: "Asigna prioridades en el destino de los recursos, donde mejora el desempeño de la organización, así permitiendo a la empresa enfrentarse a los principales problemas de la organización, al cambio en el entorno y ver las oportunidades y detectar las amenazas.",
-    imageUrl: "https://images.unsplash.com/photo-1730804518415-75297e8d2a41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHV6emxlfGVufDB8fHx8fDE3NTQzMzk2ODl8MA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1730804518415-75297e8d2a41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHV6emxlfGVufDB8fHx8fDE3NTQzMzk2ODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
     dataAiHint: "strategy plan",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -189,7 +189,7 @@ export const mockCourses: Course[] = [
     id: "balanced-scorecard",
     title: "Balanced Scorecard",
     description: "Es herramienta de planeación estratégica que permite a la empresa crear y controlar sus propios indicadores de gestión relacionados dentro de cuatro perspectiva: Financiera, Procesos Internos, Cliente y Formación y Crecimiento",
-    imageUrl: "https://images.unsplash.com/photo-1556155092-8707de31f9c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZXRyaWNzfGVufDB8fHx8fDE3NTQzNDAzMjd8MA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1556155092-8707de31f9c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZXRyaWNzfGVufDB8fHx8fDE3NTQzNDAzMjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
     dataAiHint: "balance chart",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -199,7 +199,7 @@ export const mockCourses: Course[] = [
     id: "como-hacer-feedback",
     title: "¿Cómo hacer Feedback?",
     description: "Es importante tomar en consideración este proceso comunicativo, ya que es toda respuesta o reacción que el receptor envía al emisor de un mensaje. Si las partes no se entienden el mensaje no es claro; Aquí te dejamos algunas recomendaciones.",
-    imageUrl: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb211bmljYXRpb258ZW58MHx8fHwxNzU0MzQxNjIzfDA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb211bmljYXRpb258ZW58MHx8fHwxNzU0MzQxNjIzfDA&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "feedback conversation",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -209,7 +209,7 @@ export const mockCourses: Course[] = [
     id: "presentaciones-efectivas",
     title: "Presentaciones Efectivas",
     description: "En este curso obtendrás las habilidades para el diseño de presentaciones corporativas que permitirán alinear la comunicación dentro de la organización adaptándola a las necesidades de la audiencia a la que se dirija.",
-    imageUrl: "https://images.unsplash.com/photo-1541872705-1f73c6400ec9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3BlZWNofGVufDB8fHx8MTc1NDM0MjE4M3ww&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1541872705-1f73c6400ec9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3BlZWNofGVufDB8fHx8MTc1NDM0MjE4M3ww&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "conference presentation",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -219,7 +219,7 @@ export const mockCourses: Course[] = [
     id: "plan-de-desarrollo",
     title: "Plan de Desarrollo",
     description: "Aquí podrás  obtener algunos tips para el desarrollo de tu eficiencia, agilidad y el balance entre el trabajo y las exigencias del puesto.",
-    imageUrl: "https://images.unsplash.com/photo-1730382624709-81e52dd294d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9ncmVzc3xlbnwwfHx8fDE3NTQzNDMyNDh8MA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1730382624709-81e52dd294d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9ncmVzc3xlbnwwfHx8fDE3NTQzNDMyNDh8MA&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "growth plan",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -994,6 +994,7 @@ export const mockCustomerFeedback: CustomerFeedback[] = [
 
 
     
+
 
 
 
