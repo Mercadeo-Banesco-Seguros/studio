@@ -740,7 +740,7 @@ export default function DashboardPage() {
                             <p className="font-light text-white/80">Viste Seguro</p>
                              <h3 className="text-3xl font-bold tracking-tighter">Banesco Seguros</h3>
                             <div className="mt-4 flex gap-2">
-                              <Button asChild className="font-light bg-white/90 text-primary hover:bg-white">
+                              <Button asChild className={cn("font-light bg-white/90 hover:bg-white", dressCodeView === 'damas' ? 'text-purple-600' : 'text-primary')}>
                                   <Link href="#">Explorar Guía</Link>
                               </Button>
                               <Button variant="outline" onClick={() => setDressCodeView('caballeros')} className={cn("font-light", dressCodeView === 'caballeros' ? 'bg-white text-primary' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white')}>
