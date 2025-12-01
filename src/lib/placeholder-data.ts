@@ -292,7 +292,7 @@ export const mockActivities: Activity[] = [
     title: "Ejercicios funcionales",
     date: "2025-07-01",
     location: "Terraza - Ciudad Banesco",
-    imageUrl: "https://images.unsplash.com/photo-1591291621164-2c6367723315?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGNlcmNpc2V8ZW58MHx8fHwxNzUwOTQ0OTE1fDA&ixlib.rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1591291621164-2c6367723315?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGNlcmNpc2V8ZW58MHx8fHwxNzUwOTQ0OTE1fDA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "functional training",
     description: "¡Mejora tu rendimiento físico y cuida tu salud!\n\nTe invitamos a participar en la actividad de entrenamiento funcional y en circuito, la cual ayuda a mejorar las capacidades físicas como  fuerza, resistencia, velocidad, coordinación y flexibilidad. Se puede realizar con o sin implementos.\nPara asistir a las clases solo necesitas:\n- Ropa deportiva y cómoda, preferiblemente licras o monos largos y camisas cómodas.\n- Una botella de agua para tu hidratación.\n\nDónde y cuándo son las clases:\nLunes y miércoles, 5:00 P.M.",
     isRecommended: true,
@@ -311,7 +311,7 @@ export const mockActivities: Activity[] = [
     title: "Clases de bailoterapia",
     date: "2025-07-01",
     location: "Terraza - Ciudad Banesco",
-    imageUrl: "https://images.unsplash.com/photo-1495791185843-c73f2269f669?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8ZGFuY2V8ZW58MHx8fHwxNzUwOTQ1MTc0fDA&ixlib.rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1495791185843-c73f2269f669?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8ZGFuY2V8ZW58MHx8fHwxNzUwOTQ1MTc0fDA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "dance therapy",
     description: "Sorpréndete con la variedad de estilos y ritmos en nuestra clase de bailoterapia y disfruta de los múltiples beneficios de esta técnica:\n- Fortalece el corazón y la circulación de la sangre.\n- Reduce el estrés, la ansiedad y la tristeza.\n- Combate los dolores musculares.\nPara asistir a las clases solo necesitas:\n- Ropa deportiva y cómoda, preferiblemente licras o monos largos y camisas cómodas.\n- Una botella de agua para tu hidratación.\nDónde y cuándo son las clases:\nJueves, 5:00 P.M."
   },
@@ -329,7 +329,7 @@ export const mockActivities: Activity[] = [
     title: "Teatro",
     date: "2025-07-01",
     location: "Tríadas - Ciudad Banesco",
-    imageUrl: "https://images.unsplash.com/photo-1594908900066-3f47337549d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxBQ1RPUnxlbnwwfHx8fDE3NTA5NTkwODh8MA&ixlib.rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1594908900066-3f47337549d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxBQ1RPUnxlbnwwfHx8fDE3NTA5NTkwODh8MA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "theater workshop",
     description: "Te invitamos a esta maravillosa actividad, en la que desarrollarás competencias para romper el hielo, desenvolverte en diversos contextos con tranquilidad, mejorarás la dicción y oratoria para comunicarte asertivamente.  A partir del 12 de marzo.\n\nDónde y cuándo son las clases:\nMartes y Jueves, 5:00 P.M."
   },
@@ -739,33 +739,33 @@ export const mockExecutiveMenuItems: MenuItem[] = [
 ];
 
 
-export const mockDressCodeItems: DressCodeItem[] = [
+export const mockDressCodeItemsCaballeros: DressCodeItem[] = [
   {
-    id: "DC001",
+    id: "DCC001",
     title: "Formal de Negocios",
-    description: "Ideal para reuniones importantes y eventos corporativos. Incluye traje completo, camisa de vestir y zapatos formales. La corbata es opcional para las damas.",
+    description: "Ideal para reuniones importantes y eventos corporativos. Incluye traje completo, camisa de vestir y zapatos formales. La corbata es opcional.",
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/1-Photoroom.png?raw=true",
     dataAiHint: "business formal",
     day: "Lunes"
   },
   {
-    id: "DC002",
+    id: "DCC002",
     title: "Casual de Negocios",
-    description: "Perfecto para el día a día. Combina pantalones de vestir o chinos con una camisa o blusa. Puedes añadir un blazer o suéter para un toque extra de profesionalismo.",
+    description: "Perfecto para el día a día. Combina pantalones de vestir o chinos con una camisa. Puedes añadir un blazer para un toque extra de profesionalismo.",
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/2-Photoroom.png?raw=true",
     dataAiHint: "business casual",
     day: "Martes"
   },
   {
-    id: "DC003",
+    id: "DCC003",
     title: "Casual Elegante",
-    description: "Combina comodidad y profesionalismo. Incluye pantalones de vestir, faldas, blusas elegantes o camisas con cuello. Se puede complementar con un blazer o cárdigan.",
+    description: "Una opción versátil que combina comodidad y profesionalismo. Incluye pantalones de vestir o jeans oscuros con una camisa de cuello y un blazer o cárdigan.",
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/3-Photoroom.png?raw=true",
     dataAiHint: "office wear",
     day: "Miércoles"
   },
   {
-    id: "DC004",
+    id: "DCC004",
     title: "Casual de Vestir",
     description: "Un estilo relajado pero pulcro. Permite jeans oscuros sin roturas, camisas tipo polo, suéteres y calzado casual limpio como mocasines o zapatillas de vestir.",
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/4-Photoroom.png?raw=true",
@@ -773,7 +773,7 @@ export const mockDressCodeItems: DressCodeItem[] = [
     day: "Jueves"
   },
   {
-    id: "DC005",
+    id: "DCC005",
     title: "Atuendo Deportivo",
     description: "Ideal para el viernes casual o si participas en actividades de bienestar. Se permiten prendas deportivas como monos, sueteres, camisetas y zapatillas deportivas.",
     imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/5-Photoroom.png?raw=true",
@@ -781,6 +781,50 @@ export const mockDressCodeItems: DressCodeItem[] = [
     day: "Viernes"
   }
 ];
+
+export const mockDressCodeItemsDamas: DressCodeItem[] = [
+  {
+    id: "DCD001",
+    title: "Formal de Negocios",
+    description: "Traje de falda o pantalón, vestidos de corte clásico y blusas elegantes son la clave. Ideal para proyectar máxima profesionalidad.",
+    imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_br9lsfbr9lsfbr9l-Photoroom.png?raw=true",
+    dataAiHint: "female business suit",
+    day: "Lunes"
+  },
+  {
+    id: "DCD002",
+    title: "Casual de Negocios",
+    description: "Combina faldas o pantalones de vestir con blusas o suéteres ligeros. Un blazer puede complementar perfectamente el look.",
+    imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Casual%20de%20negocios%202%20DAMA-Photoroom.png?raw=true",
+    dataAiHint: "female business casual",
+    day: "Martes"
+  },
+  {
+    id: "DCD003",
+    title: "Casual Elegante",
+    description: "Jeans oscuros de corte recto o pantalones anchos con una blusa sofisticada y tacones o flats elegantes. Comodidad sin perder el estilo.",
+    imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_2gtngz2gtngz2gtn-Photoroom.png?raw=true",
+    dataAiHint: "elegant casual woman",
+    day: "Miércoles"
+  },
+  {
+    id: "DCD004",
+    title: "Casual de Vestir",
+    description: "Un estilo relajado y moderno. Perfecto para combinar jeans con camisetas de calidad, cardigans y zapatillas de moda.",
+    imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_8t6e9o8t6e9o8t6e-Photoroom.png?raw=true",
+    dataAiHint: "modern woman outfit",
+    day: "Jueves"
+  },
+  {
+    id: "DCD005",
+    title: "Atuendo Deportivo",
+    description: "Viernes activo con estilo. Conjuntos deportivos cómodos, leggings, tops y zapatillas son bienvenidos para cerrar la semana con energía.",
+    imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_82b8ry82b8ry82b8-Photoroom.png?raw=true",
+    dataAiHint: "female sportswear",
+    day: "Viernes"
+  }
+];
+
 
 export const mockEmployees: Employee[] = [
   { id: 'E001', name: 'Carlos Rodríguez', role: 'Desarrollador Senior', department: 'Tecnología', imageUrl: 'https://placehold.co/400x500.png', dataAiHint: 'person portrait' },
@@ -861,7 +905,7 @@ export const mockPlaylist: PlaylistItem[] = [
     id: "P003", 
     title: "Salsa y Merengue", 
     description: "Ritmos latinos para subir el ánimo.",
-    albumArtUrl: "https://images.unsplash.com/photo-1570299437488-d430e1e677c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdWJhfGVufDB8fHx8MTc1MjYwNzI5Mnww&ixlib.rb-4.1.0&q=80&w=1080", 
+    albumArtUrl: "https://images.unsplash.com/photo-1570299437488-d430e1e677c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdWJhfGVufDB8fHx8MTc1MjYwNzI5Mnww&ixlib-rb-4.1.0&q=80&w=1080", 
     linkUrl: "#", 
     dataAiHint: "latin dance" 
   },
@@ -949,4 +993,5 @@ export const mockCustomerFeedback: CustomerFeedback[] = [
 
 
     
+
 

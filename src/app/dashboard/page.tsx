@@ -4,7 +4,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import { NewCourseCard } from "@/components/dashboard/course-card";
-import { mockCourses, mockActivities, mockDepartments, mockPlaylist, faqData, mockDressCodeItems, type DressCodeItem } from "@/lib/placeholder-data";
+import { mockCourses, mockActivities, mockDepartments, mockPlaylist, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem } from "@/lib/placeholder-data";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import {
@@ -260,8 +260,15 @@ export default function DashboardPage() {
   const [showShortcuts, setShowShortcuts] = useState(false);
   const [isMissionView, setIsMissionView] = useState(true);
   const { toast } = useToast();
-  const [selectedDressCode, setSelectedDressCode] = useState<DressCodeItem>(mockDressCodeItems[0]);
+  
+  const [dressCodeView, setDressCodeView] = useState<'caballeros' | 'damas'>('caballeros');
+  const [selectedDressCode, setSelectedDressCode] = useState<DressCodeItem>(mockDressCodeItemsCaballeros[0]);
+  
+  const dressCodeItems = dressCodeView === 'caballeros' ? mockDressCodeItemsCaballeros : mockDressCodeItemsDamas;
 
+  useEffect(() => {
+    setSelectedDressCode(dressCodeItems[0]);
+  }, [dressCodeView, dressCodeItems]);
 
   const faqCategories = [
     { id: 'General', label: 'General', icon: Home },
@@ -680,7 +687,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bGFwdG9wJTIwY29kZXxlbnwwfHx8fDE3NjQwODQxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
@@ -691,7 +698,7 @@ export default function DashboardPage() {
                       category="Mejora tus Habilidades"
                       details={["Presentaciones", "Feedback", "Oratoria"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1604881991720-f91add269bed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8dGFsa3xlbnwwfHx8fDE3NjQwOTc3MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="public speaking"
                       imageClassName="opacity-30"
                       availability={90}
@@ -705,19 +712,19 @@ export default function DashboardPage() {
         <section id="dress-code" className="w-full mt-24">
             <div className="relative min-h-[600px] w-full flex flex-col justify-center overflow-hidden">
                 <Image
-                    src="https://wallpapers.com/images/hd/blue-hd-1920-x-1080-background-6alqcc8fvs6o6s2t.jpg"
+                    src={dressCodeView === 'caballeros' ? "https://wallpapers.com/images/hd/blue-hd-1920-x-1080-background-6alqcc8fvs6o6s2t.jpg" : "https://images.unsplash.com/photo-1587329929020-5650699a2a7a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
                     alt="Fondo abstracto de vestimenta"
                     layout="fill"
                     objectFit="cover"
-                    className="z-0"
+                    className="z-0 transition-all duration-500"
                     data-ai-hint="abstract texture"
                 />
-                <div className="absolute inset-0 bg-blue-900/50 z-0"></div>
+                <div className={cn("absolute inset-0 z-0 transition-all duration-500", dressCodeView === 'caballeros' ? "bg-blue-900/50" : "bg-pink-900/30")}></div>
 
                 <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
                      <div className="flex flex-col justify-between h-full space-y-4 text-center md:text-left py-12">
                         <div>
-                             <p className="font-semibold text-white/80 uppercase tracking-wider">{selectedDressCode.day}</p>
+                            <p className="font-semibold text-white/80 uppercase tracking-wider">{selectedDressCode.day}</p>
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
                                 {selectedDressCode.title}
                             </h2>
@@ -725,15 +732,23 @@ export default function DashboardPage() {
                         </div>
                         <div>
                              <p className="font-light text-white/80">Viste Seguro</p>
-                             <h3 className="text-3xl font-bold tracking-tight tracking-tighter">Banesco Seguros</h3>
-                            <Button asChild className="mt-4 font-light bg-white/90 text-primary hover:bg-white">
-                                <Link href="#">Explorar Guía</Link>
-                            </Button>
+                             <h3 className="text-3xl font-bold tracking-tighter">Banesco Seguros</h3>
+                            <div className="mt-4 flex gap-2">
+                              <Button asChild className="font-light bg-white/90 text-primary hover:bg-white">
+                                  <Link href="#">Explorar Guía</Link>
+                              </Button>
+                              <Button variant="outline" onClick={() => setDressCodeView('caballeros')} className={cn("font-light", dressCodeView === 'caballeros' ? 'bg-white text-primary' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white')}>
+                                Caballeros
+                              </Button>
+                               <Button variant="outline" onClick={() => setDressCodeView('damas')} className={cn("font-light", dressCodeView === 'damas' ? 'bg-white text-primary' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white')}>
+                                Damas
+                              </Button>
+                            </div>
                         </div>
                     </div>
                      <div className="relative h-full flex flex-col justify-end">
                         <div className="grid grid-cols-5 gap-6 items-end flex-grow">
-                            {mockDressCodeItems.map(item => (
+                            {dressCodeItems.map(item => (
                                 <div 
                                     key={item.id} 
                                     className={cn(
@@ -942,17 +957,4 @@ export default function DashboardPage() {
         </div>
     </div>
   );
-
-    
-  
-
-    
-
-
-
-
-    
-
-    
-
 }
