@@ -514,7 +514,7 @@ export default function DashboardPage() {
                     <Card className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[400px] flex items-center">
                         <div className="absolute inset-0 z-0">
                             <Image
-                                src="https://wallpapers.com/images/hd/4k-beach-background-my1ejjxhxwgubswg.jpg"
+                                src="https://content.r9cdn.net/rimg/dimg/78/70/001b704a-city-15939-1629b33a69c.jpg?crop=true&width=1020&height=498"
                                 alt="Paisaje de playa"
                                 layout="fill"
                                 objectFit="cover"
@@ -688,7 +688,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib-rb-4.1.0&q=80&w=1080"
                       dataAiHint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
@@ -788,7 +788,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
