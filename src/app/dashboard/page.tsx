@@ -710,7 +710,7 @@ export default function DashboardPage() {
                     layout="fill"
                     objectFit="cover"
                     className="z-0"
-                    data-ai-hint="abstract texture"
+                    dataAiHint="abstract texture"
                 />
                 <div className="absolute inset-0 bg-blue-900/50 z-0"></div>
 
@@ -731,13 +731,13 @@ export default function DashboardPage() {
                         </div>
                     </div>
                      <div className="relative h-full flex flex-col justify-end">
-                        <div className="grid grid-cols-5 gap-4 items-end flex-grow">
+                        <div className="grid grid-cols-5 gap-6 items-end flex-grow">
                             {mockDressCodeItems.map(item => (
                                 <div 
                                     key={item.id} 
                                     className={cn(
                                         "relative h-[28rem] w-full cursor-pointer transition-all duration-300 transform",
-                                        selectedDressCode.id === item.id ? 'opacity-100 scale-125' : 'opacity-50 scale-90 hover:opacity-75 hover:scale-95'
+                                        selectedDressCode.id === item.id ? 'opacity-100 scale-150' : 'opacity-50 scale-90 hover:opacity-75 hover:scale-95'
                                     )}
                                     onClick={() => setSelectedDressCode(item)}
                                 >
