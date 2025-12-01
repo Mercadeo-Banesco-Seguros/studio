@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
@@ -499,7 +498,7 @@ export default function DashboardPage() {
         </div>
       
         {/* Gestión de Vacaciones Section */}
-        <div id="vacaciones" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+        <div id="vacaciones" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Card className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[400px] flex items-center">
@@ -572,7 +571,7 @@ export default function DashboardPage() {
         </div>
         
         {/* Portal de Requerimientos Section */}
-        <section id="requerimientos" className="w-full mt-16">
+        <section id="requerimientos" className="w-full mt-24">
             <Card className="relative text-white overflow-hidden min-h-[500px] flex items-center justify-center">
                 <Image
                     src="https://images.unsplash.com/photo-1724405143873-cdaa5cac918e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXp1bCUyMGNsYXJvJTIwYWJzdHJhY3RvfGVufDB8fDB8fHww"
@@ -649,7 +648,7 @@ export default function DashboardPage() {
         </section>
 
         {/* Cursos Section */}
-        <div id="cursos" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+        <div id="cursos" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
           <SectionWrapper>
               <div className="grid lg:grid-cols-2 gap-6">
                   <div className="p-6 flex flex-col justify-center">
@@ -700,8 +699,8 @@ export default function DashboardPage() {
 
 
         {/* Dress Code Section */}
-        <section id="dress-code" className="w-full mt-16">
-            <div className="relative min-h-[600px] w-full flex items-center">
+        <section id="dress-code" className="w-full mt-24">
+            <div className="relative min-h-[600px] w-full flex flex-col justify-center">
                 <Image
                     src="https://wallpapers.com/images/hd/blue-hd-1920-x-1080-background-6alqcc8fvs6o6s2t.jpg"
                     alt="Fondo abstracto de vestimenta"
@@ -712,11 +711,11 @@ export default function DashboardPage() {
                 />
                 <div className="absolute inset-0 bg-blue-900/50 z-0"></div>
 
-                 <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-col justify-center h-full space-y-4">
+                <div className="relative z-10 grid md:grid-cols-2 gap-8 items-end h-full text-white container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                    <div className="flex flex-col justify-end h-full space-y-4">
                         <div>
                             <p className="font-semibold text-white/80 uppercase tracking-wider">{currentDayName}</p>
-                            <h2 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">Casual de Negocios</h2>
+                            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Casual de Negocios</h2>
                         </div>
                         
                         <div className="pt-12">
@@ -727,7 +726,7 @@ export default function DashboardPage() {
                             </Button>
                         </div>
                     </div>
-                     <div className="relative h-full flex flex-col justify-end pb-12">
+                     <div className="relative h-full flex flex-col justify-end">
                          <div className="grid grid-cols-5 gap-4 items-end flex-grow">
                             {mockDressCodeItems.map(item => (
                                 <div key={item.id} className="relative h-full w-full">
@@ -741,14 +740,14 @@ export default function DashboardPage() {
         </section>
 
         {/* Póliza HCM Section */}
-        <section id="poliza" className="w-full mt-16">
+        <section id="poliza" className="w-full mt-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <HcmInteractionCard />
             </div>
         </section>
 
         {/* Espacio Ejecutivo Section */}
-        <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-16">
+        <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
                   src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
@@ -774,7 +773,7 @@ export default function DashboardPage() {
 
 
         {/* Actividades Section */}
-        <div id="actividades" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+        <div id="actividades" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
             <div className="bg-card p-8 md:p-12 rounded-2xl shadow-sm">
                 <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-8 md:mb-12">
@@ -829,7 +828,7 @@ export default function DashboardPage() {
         </div>
       
         {/* Playlist Section */}
-        <div id="playlist" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+        <div id="playlist" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
             <div className="flex flex-col items-center text-center mb-8">
                 <div className="space-y-1">
@@ -851,7 +850,7 @@ export default function DashboardPage() {
         </div>
         
         {/* FAQ Section */}
-        <div id="faq" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+        <div id="faq" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
             <div className="grid md:grid-cols-3 gap-12">
                 <div className="md:col-span-1 space-y-4">
@@ -895,7 +894,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Pilares Section */}
-        <div id="pilares" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+        <div id="pilares" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
             <div className="grid md:grid-cols-2 gap-16 items-center">
                 <div className="flex items-center justify-center">
