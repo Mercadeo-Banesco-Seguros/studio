@@ -362,7 +362,6 @@ export default function DashboardPage() {
                   objectFit="cover"
                   data-ai-hint="abstract waves"
               />
-              <div className="absolute inset-0 bg-primary/80" />
               <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 w-full max-w-7xl mx-auto p-8 md:p-12">
                   <div className="space-y-4 text-white">
                       <Badge variant="outline" className="border-white text-white">
@@ -566,7 +565,7 @@ export default function DashboardPage() {
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
                       imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
-                      dataAiHint="collaboration tools"
+                      data-ai-hint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
                       availability={75}
@@ -577,7 +576,7 @@ export default function DashboardPage() {
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib-rb-4.1.0&q=80&w=1080"
-                      dataAiHint="artificial intelligence"
+                      data-ai-hint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
                       availability={40}
@@ -588,7 +587,7 @@ export default function DashboardPage() {
                       details={["Presentaciones", "Feedback", "Oratoria"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageUrl="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib.rb-4.1.0&q=80&w=1080"
-                      dataAiHint="public speaking"
+                      data-ai-hint="public speaking"
                       imageClassName="opacity-30"
                       availability={90}
                   />
@@ -637,7 +636,7 @@ export default function DashboardPage() {
                        <div>
                             <p className="font-light text-white/80">Viste Seguro</p>
                             <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
-                             <Button asChild variant="outline" className={cn("mt-4 font-light text-xs bg-white hover:bg-white/90", dressCodeView === 'damas' ? 'text-purple-600' : 'text-blue-600')}>
+                             <Button asChild variant="secondary" className={cn("mt-4 font-light text-xs", dressCodeView === 'damas' ? 'bg-white text-purple-600 hover:bg-white/90' : 'bg-white text-blue-600 hover:bg-white/90')}>
                                 <Link href="#">Explorar Guía</Link>
                             </Button>
                         </div>
@@ -692,7 +691,7 @@ export default function DashboardPage() {
                   description="Guías detalladas para la gestión de siniestros y solicitudes."
                   buttonText="Consultar"
                   imageUrl="https://images.unsplash.com/photo-1586473228839-a9134a654378?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2N1bWVudHN8ZW58MHx8fHwxNzU5NjM5NjcxfDA&ixlib-rb-4.1.0&q=80&w=1080"
-                  dataAiHint="documents folder"
+                  data-ai-hint="documents folder"
                 />
                  <HcmCard
                   type="main"
@@ -710,7 +709,7 @@ export default function DashboardPage() {
                   description="Encuentra proveedores de servicios médicos en nuestra red nacional."
                   buttonText="Consultar"
                   imageUrl="https://images.unsplash.com/photo-1586773860417-e4526c49d4ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhdGVuY2klQzMlQjNuJTIwbSVDMyVBOXRpY2F8ZW58MHx8fHwxNzU5NjQyMjg2fDA&ixlib-rb-4.1.0&q=80&w=1080"
-                  dataAiHint="clinic interior"
+                  data-ai-hint="clinic interior"
                 />
               </div>
             </div>
@@ -724,7 +723,7 @@ export default function DashboardPage() {
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
-                  dataAiHint="executive meeting"
+                  data-ai-hint="executive meeting"
                   className="brightness-50 group-hover:brightness-[0.4] transition-all duration-300"
               />
               <div className="relative z-10 flex flex-col items-center">
