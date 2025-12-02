@@ -514,7 +514,7 @@ export default function DashboardPage() {
                     <Card className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[400px] flex items-center">
                         <div className="absolute inset-0 z-0">
                             <Image
-                                src="https://t4.ftcdn.net/jpg/07/03/27/69/360_F_703276967_OHrK7gd6yEZXCacTra9UbjwXo5EaKN86.jpg"
+                                src="https://www.baltana.com/files/wallpapers-9/Four-Seasons-Resort-Bora-Bora-Wallpaper-HD-27212.jpg"
                                 alt="Paisaje de playa"
                                 layout="fill"
                                 objectFit="cover"
