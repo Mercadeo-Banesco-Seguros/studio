@@ -4,7 +4,7 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import { NewCourseCard } from "@/components/dashboard/course-card";
-import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem } from "@/lib/placeholder-data";
+import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem, mockPlaylist } from "@/lib/placeholder-data";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import {
@@ -453,7 +453,6 @@ export default function DashboardPage() {
                          <div className="absolute inset-0 bg-black/40"></div>
                          <div className="relative text-white">
                             <h3 className="text-2xl font-bold tracking-tight">Gestionar Solicitudes</h3>
-                            <p className="mt-1 text-sm text-white/80 max-w-xs">Planifica tu próximo viaje y envía tus solicitudes de vacaciones.</p>
                             <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white/20 hover:bg-white/30 backdrop-blur-sm">
                                 <Link href="/dashboard/vacaciones">Gestionar</Link>
                             </Button>
@@ -470,7 +469,6 @@ export default function DashboardPage() {
                          <div className="absolute inset-0 bg-black/40"></div>
                          <div className="relative text-white">
                              <h3 className="text-2xl font-bold tracking-tight">Consultar Días Disponibles</h3>
-                            <p className="mt-1 text-sm text-white/80 max-w-xs">Revisa cuántos días de vacaciones te quedan y planifica con antelación.</p>
                              <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white/20 hover:bg-white/30 backdrop-blur-sm">
                                 <Link href="/dashboard/vacaciones">Consultar</Link>
                             </Button>
@@ -651,25 +649,27 @@ export default function DashboardPage() {
                         </div>
                     </div>
                     <div className="relative h-full w-full min-h-[500px] flex items-end justify-center gap-3">
-                      {dressCodeItems.map(item => (
-                          <div
-                              key={item.id}
-                              className={cn(
-                                  "relative w-full cursor-pointer transition-all duration-500 ease-in-out",
-                                  currentDressCode?.id === item.id 
-                                      ? `h-[480px] opacity-100 z-10` 
-                                      : 'h-[360px] opacity-50 hover:opacity-75'
-                              )}
-                              onClick={() => setCurrentDressCode(item)}
-                          >
-                              <Image src={item.imageUrl} layout="fill" objectFit="contain" alt={item.title} data-ai-hint={item.dataAiHint}/>
-                              {currentDressCode?.id === item.id && (
-                                  <div className="absolute top-0 right-0 m-2 p-1.5 bg-white rounded-full">
-                                      <Check className="h-4 w-4 text-blue-600"/>
-                                  </div>
-                              )}
-                          </div>
-                      ))}
+                      <div className="absolute bottom-0 flex items-end justify-center gap-3 h-full w-full">
+                        {dressCodeItems.map(item => (
+                            <div
+                                key={item.id}
+                                className={cn(
+                                    "relative w-full cursor-pointer transition-all duration-500 ease-in-out",
+                                    currentDressCode?.id === item.id 
+                                        ? `h-[480px] opacity-100 z-10` 
+                                        : 'h-[360px] opacity-50 hover:opacity-75'
+                                )}
+                                onClick={() => setCurrentDressCode(item)}
+                            >
+                                <Image src={item.imageUrl} layout="fill" objectFit="contain" alt={item.title} data-ai-hint={item.dataAiHint}/>
+                                {currentDressCode?.id === item.id && (
+                                    <div className="absolute top-0 right-0 m-2 p-1.5 bg-white rounded-full">
+                                        <Check className="h-4 w-4 text-blue-600"/>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                      </div>
                     </div>
                 </div>
             </div>
@@ -686,7 +686,7 @@ export default function DashboardPage() {
                   title="Protocolos y Procedimientos"
                   description="Guías detalladas para la gestión de siniestros y solicitudes."
                   buttonText="Consultar"
-                  imageUrl="https://images.unsplash.com/photo-1586473228839-a9134a654378?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2N1bWVudHN8ZW58MHx8fHwxNzU5NjM5NjcxfDA&ixlib-rb-4.1.0&q=80&w=1080"
+                  imageUrl="https://images.unsplash.com/photo-1586473228839-a9134a654378?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2N1bWVudHN8ZW58MHx8fHwxNzU5NjM5NjcxfDA&ixlib=rb-4.1.0&q=80&w=1080"
                   dataAiHint="documents folder"
                 />
                  <HcmCard
