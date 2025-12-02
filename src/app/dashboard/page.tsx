@@ -543,9 +543,9 @@ export default function DashboardPage() {
                         </div>
                     </Card>
                     <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
-                         <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
+                         <div className="absolute inset-0 bg-blue-900/30 z-0"></div><div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                         <Image
-                            src="https://img.freepik.com/fotos-premium/concepto-asociacion-o-trabajo-equipo-dos-hombres-documentos_488220-7004.jpg"
+                            src="https://safestorage.pe/wp-content/uploads/2022/07/consejos-organizar-mejor-documentos-oficina.jpg"
                             alt="Consultar Solicitudes"
                             layout="fill"
                             objectFit="cover"
@@ -565,7 +565,7 @@ export default function DashboardPage() {
                         </div>
                     </Card>
                     <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
-                       <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
+                       <div className="absolute inset-0 bg-blue-900/30 z-0"></div><div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                        <Image
                             src="https://img.freepik.com/foto-gratis/concepto-exito-fiesta-celebracion-equipo-negocios_53876-47029.jpg?semt=ais_hybrid&w=740&q=80"
                             alt="Eventos de este mes"
@@ -685,7 +685,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
                       dataAiHint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
@@ -799,7 +799,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
