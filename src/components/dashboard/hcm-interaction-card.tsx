@@ -37,7 +37,7 @@ export const HcmCard = ({
 
   if (type === 'main') {
     return (
-      <Card className="bg-primary text-primary-foreground rounded-2xl shadow-lg flex flex-col items-center justify-center text-center p-8 min-h-[400px]">
+      <Card className="bg-primary text-primary-foreground rounded-2xl shadow-lg flex flex-col items-center justify-center text-center p-8 min-h-[500px]">
         <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-4">
           <Icon className="h-8 w-8" />
         </div>
@@ -51,7 +51,7 @@ export const HcmCard = ({
   }
 
   return (
-    <Card className="group relative rounded-2xl overflow-hidden shadow-lg min-h-[400px] flex flex-col justify-end">
+    <Card className="group relative rounded-2xl overflow-hidden shadow-lg min-h-[500px] flex flex-col justify-end">
       {imageUrl && (
         <Image 
           src={imageUrl} 
