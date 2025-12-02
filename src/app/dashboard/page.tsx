@@ -500,36 +500,13 @@ export default function DashboardPage() {
             </div>
         </section>
 
-        {/* Menus Section */}
-        <div id="menu" className="mt-24">
-          {isLoadingMenu ? (
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <SectionWrapper>
-                <Skeleton className="h-[600px] w-full rounded-2xl" />
-              </SectionWrapper>
-            </div>
-          ) : todaysMenus.length > 0 ? (
-            <InteractiveMenuBanner menuItems={todaysMenus} />
-          ) : (
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <SectionWrapper>
-                <Card className="col-span-full">
-                  <CardContent className="p-8 text-center text-muted-foreground">
-                    <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
-                  </CardContent>
-                </Card>
-              </SectionWrapper>
-            </div>
-          )}
-        </div>
-
         {/* Gestión de Vacaciones Section */}
         <div id="vacaciones" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
                          <Image
-                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib-rb-4.1.0&q=80&w=1080"
                             alt="Gestionar Solicitudes"
                             layout="fill"
                             objectFit="cover"
@@ -545,7 +522,7 @@ export default function DashboardPage() {
                     </Card>
                      <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
                          <Image
-                            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib.rb-4.1.0&q=80&w=1080"
+                            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib-rb-4.1.0&q=80&w=1080"
                             alt="Consultar Días Disponibles"
                             layout="fill"
                             objectFit="cover"
@@ -659,7 +636,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
@@ -690,6 +667,28 @@ export default function DashboardPage() {
           </SectionWrapper>
         </div>
 
+        {/* Menus Section */}
+        <div id="menu" className="mt-24">
+          {isLoadingMenu ? (
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <SectionWrapper>
+                <Skeleton className="h-[600px] w-full rounded-2xl" />
+              </SectionWrapper>
+            </div>
+          ) : todaysMenus.length > 0 ? (
+            <InteractiveMenuBanner menuItems={todaysMenus} />
+          ) : (
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <SectionWrapper>
+                <Card className="col-span-full">
+                  <CardContent className="p-8 text-center text-muted-foreground">
+                    <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
+                  </CardContent>
+                </Card>
+              </SectionWrapper>
+            </div>
+          )}
+        </div>
 
         {/* Póliza HCM Section */}
         <section id="poliza" className="w-full mt-24">
