@@ -505,7 +505,7 @@ export default function DashboardPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
                          <Image
-                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib-rb-4.1.0&q=80&w=1080"
                             alt="Gestionar Solicitudes"
                             layout="fill"
                             objectFit="cover"
@@ -513,7 +513,8 @@ export default function DashboardPage() {
                          />
                          <div className="absolute inset-0 bg-black/40" />
                          <div className="relative text-white">
-                            <h3 className="text-2xl font-bold tracking-tight">Gestionar Solicitudes</h3>
+                            <p className="text-sm font-light">Gestionar Solicitudes</p>
+                            <h3 className="text-2xl font-bold tracking-tight">Planifica tus Próximas Vacaciones</h3>
                             <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
                                 <Link href="/dashboard/vacaciones">Gestionar</Link>
                             </Button>
@@ -635,7 +636,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
@@ -729,7 +730,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
