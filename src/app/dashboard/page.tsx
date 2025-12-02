@@ -4,7 +4,7 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import { NewCourseCard } from "@/components/dashboard/course-card";
-import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem, mockPlaylist } from "@/lib/placeholder-data";
+import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem } from "@/lib/placeholder-data";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import {
@@ -82,6 +82,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { InteractiveMenuBanner } from '@/components/dashboard/interactive-menu-banner';
 import { useToast } from '@/hooks/use-toast';
 import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
+import { mockPlaylist } from '@/lib/placeholder-data';
 
 
 const pilaresData = [
@@ -364,7 +365,7 @@ export default function DashboardPage() {
               />
               <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 w-full max-w-7xl mx-auto p-8 md:p-12">
                   <div className="space-y-4 text-white">
-                      <Badge variant="outline" className="border-white text-white">
+                       <Badge variant="outline" className="border-white text-white">
                           Acerca de Nosotros
                       </Badge>
                       <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
@@ -609,7 +610,7 @@ export default function DashboardPage() {
                 />
 
                 <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-                    <div
+                   <div
                       className="relative flex items-end justify-center gap-3 w-full h-[400px]"
                       onMouseLeave={() => {
                         const todayDressCode = dressCodeItems.find(item => item.day === currentDayName);
@@ -636,9 +637,6 @@ export default function DashboardPage() {
                        <div>
                             <p className="font-light text-white/80">Viste Seguro</p>
                             <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
-                             <Button asChild variant="secondary" className={cn("mt-4 font-light text-xs", dressCodeView === 'damas' ? 'bg-white text-purple-600 hover:bg-white/90' : 'bg-white text-blue-600 hover:bg-white/90')}>
-                                <Link href="#">Explorar Guía</Link>
-                            </Button>
                         </div>
                         <div className="text-left md:text-right">
                            {currentDressCode && (
@@ -650,7 +648,16 @@ export default function DashboardPage() {
                                 </div>
                             )}
                             <div className="mt-4 flex gap-2 justify-start md:justify-end">
-                              <Button 
+                                <Button 
+                                  variant="outline" 
+                                  asChild
+                                  className={cn(
+                                    "font-light text-xs",
+                                    dressCodeView === 'caballeros' ? 'bg-white text-blue-600 border-white' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white'
+                                  )}>
+                                  <Link href="#">Explorar Guía</Link>
+                                </Button>
+                               <Button 
                                 variant="outline" 
                                 onClick={() => setDressCodeView('caballeros')} 
                                 className={cn(
@@ -690,7 +697,7 @@ export default function DashboardPage() {
                   title="Protocolos y Procedimientos"
                   description="Guías detalladas para la gestión de siniestros y solicitudes."
                   buttonText="Consultar"
-                  imageUrl="https://images.unsplash.com/photo-1586473228839-a9134a654378?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2N1bWVudHN8ZW58MHx8fHwxNzU5NjM5NjcxfDA&ixlib-rb-4.1.0&q=80&w=1080"
+                  imageUrl="https://images.unsplash.com/photo-1520607162513-77705cdebe0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkb2N1bWVudCUyMGJ1c2luZXNzfGVufDB8fHx8MTc2Mzg2ODY1Nnww&ixlib=rb-4.1.0&q=80&w=1080"
                   data-ai-hint="documents folder"
                 />
                  <HcmCard
@@ -708,7 +715,7 @@ export default function DashboardPage() {
                   title="Clínicas Afiliadas"
                   description="Encuentra proveedores de servicios médicos en nuestra red nacional."
                   buttonText="Consultar"
-                  imageUrl="https://images.unsplash.com/photo-1586773860417-e4526c49d4ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhdGVuY2klQzMlQjNuJTIwbSVDMyVBOXRpY2F8ZW58MHx8fHwxNzU5NjQyMjg2fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                  imageUrl="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtZWRpY2FsJTIwY2xpbmljfGVufDB8fHx8MTc2Mzg2ODczN3ww&ixlib=rb-4.1.0&q=80&w=1080"
                   data-ai-hint="clinic interior"
                 />
               </div>
