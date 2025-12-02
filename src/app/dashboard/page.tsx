@@ -4,7 +4,7 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import { NewCourseCard } from "@/components/dashboard/course-card";
-import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem, mockPlaylist } from "@/lib/placeholder-data";
+import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem } from "@/lib/placeholder-data";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import {
@@ -82,6 +82,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { InteractiveMenuBanner } from '@/components/dashboard/interactive-menu-banner';
 import { useToast } from '@/hooks/use-toast';
 import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
+import { mockPlaylist } from '@/lib/placeholder-data';
 
 
 const pilaresData = [
@@ -442,10 +443,23 @@ export default function DashboardPage() {
                         ))}
                     </div>
                     
-                    <div className="grid md:grid-cols-2 gap-8 items-center text-white mt-8">
+                    <div className="grid md:grid-cols-2 gap-8 items-end text-white mt-8">
                        <div>
                             <p className="font-light text-white/80">Viste Seguro</p>
                             <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
+                             <div className="mt-4">
+                                <Button 
+                                  variant="outline"
+                                  onClick={() => {
+                                      toast({
+                                          title: "Guía de Vestimenta",
+                                          description: "Esta función se encuentra en desarrollo. ¡Pronto podrás explorar la guía completa!",
+                                      });
+                                  }}
+                                  className="font-light text-xs bg-white hover:bg-white/90 text-blue-600">
+                                  Explorar Guía
+                                </Button>
+                            </div>
                         </div>
                         <div className="text-left md:text-right">
                            {currentDressCode && (
@@ -457,20 +471,6 @@ export default function DashboardPage() {
                                 </div>
                             )}
                             <div className="mt-4 flex gap-2 justify-start md:justify-end">
-                                <Button 
-                                  variant="outline"
-                                  onClick={() => {
-                                      toast({
-                                          title: "Guía de Vestimenta",
-                                          description: "Esta función se encuentra en desarrollo. ¡Pronto podrás explorar la guía completa!",
-                                      });
-                                  }}
-                                  className={cn(
-                                      "font-light text-xs bg-white hover:bg-white/90",
-                                      dressCodeView === 'caballeros' ? 'text-blue-600' : 'text-purple-600'
-                                  )}>
-                                  Explorar Guía
-                                </Button>
                                <Button 
                                 variant="outline" 
                                 onClick={() => setDressCodeView('caballeros')} 
@@ -636,7 +636,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
