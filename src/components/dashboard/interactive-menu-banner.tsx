@@ -57,7 +57,6 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
             className={cn("absolute inset-0 z-0 transition-opacity duration-700 pointer-events-none", isAnimating ? "opacity-50" : "opacity-100")}
             data-ai-hint="abstract waves"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent pointer-events-none z-10"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -88,7 +87,7 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
             )}
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                <Button asChild variant="default" className="bg-primary text-primary-foreground hover:bg-primary/90 font-light rounded-full text-xs">
+                <Button asChild variant="default" className="bg-white text-primary hover:bg-white/90 font-light rounded-full text-xs">
                     <Link href="/dashboard/bienestar#menu">
                         Menú Semanal
                     </Link>
