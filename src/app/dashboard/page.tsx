@@ -4,7 +4,7 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import { NewCourseCard } from "@/components/dashboard/course-card";
-import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem } from "@/lib/placeholder-data";
+import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem, mockPlaylist } from "@/lib/placeholder-data";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import {
@@ -82,7 +82,6 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { InteractiveMenuBanner } from '@/components/dashboard/interactive-menu-banner';
 import { useToast } from '@/hooks/use-toast';
 import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
-import { mockPlaylist } from '@/lib/placeholder-data';
 
 
 const pilaresData = [
@@ -445,7 +444,6 @@ export default function DashboardPage() {
                             objectFit="cover"
                             className="transition-transform duration-300 group-hover:scale-105"
                          />
-                         <div className="absolute inset-0 bg-black/40"></div>
                          <div className="relative text-white">
                             <h3 className="text-2xl font-bold tracking-tight">Gestionar Solicitudes</h3>
                             <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white text-primary hover:bg-white/90">
@@ -461,7 +459,6 @@ export default function DashboardPage() {
                             objectFit="cover"
                             className="transition-transform duration-300 group-hover:scale-105"
                          />
-                         <div className="absolute inset-0 bg-black/40"></div>
                          <div className="relative text-white">
                              <h3 className="text-2xl font-bold tracking-tight">Consultar Días Disponibles</h3>
                              <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white text-primary hover:bg-white/90">
@@ -628,8 +625,7 @@ export default function DashboardPage() {
                              <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
                             <div className="mt-4 flex gap-2">
                                <Button asChild className={cn(
-                                  "font-light text-xs",
-                                  "bg-white hover:bg-white/90",
+                                  "font-light text-xs bg-white hover:bg-white/90",
                                    dressCodeView === 'damas' ? 'text-purple-600' : 'text-blue-600'
                                 )}>
                                   <Link href="#">Explorar Guía</Link>
