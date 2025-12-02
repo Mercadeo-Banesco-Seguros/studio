@@ -529,7 +529,7 @@ export default function DashboardPage() {
                             </Button>
                         </div>
                         <div className="mt-24">
-                            <h3 className="text-2xl font-bold">Gestionar Solicitudes</h3>
+                            <h3 className="text-2xl font-bold tracking-tight">Gestionar Solicitudes</h3>
                             <p className="text-muted-foreground mt-1 text-sm max-w-xs">Planifica tu próximo viaje y envía tus solicitudes de vacaciones.</p>
                             <Button asChild variant="secondary" className="mt-4 font-light text-xs">
                                 <Link href="/dashboard/vacaciones">Gestionar</Link>
@@ -550,7 +550,7 @@ export default function DashboardPage() {
                             </Button>
                         </div>
                          <div className="mt-24">
-                            <h3 className="text-2xl font-bold">Consultar Días Disponibles</h3>
+                            <h3 className="text-2xl font-bold tracking-tight">Consultar Días Disponibles</h3>
                             <p className="text-muted-foreground mt-1 text-sm max-w-xs">Revisa cuántos días de vacaciones te quedan y planifica con antelación.</p>
                              <Button asChild variant="secondary" className="mt-4 font-light text-xs">
                                 <Link href="/dashboard/vacaciones">Consultar</Link>
@@ -732,28 +732,26 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </div>
-                    <div className="relative h-full flex flex-col justify-end">
-                        <div className="flex items-end justify-center gap-3">
-                            {dressCodeItems.map(item => (
-                                <div
-                                    key={item.id}
-                                    className={cn(
-                                        "relative w-full cursor-pointer transition-all duration-500 ease-in-out",
-                                        currentDressCode?.id === item.id 
-                                            ? `h-[480px] opacity-100 z-10` 
-                                            : 'h-[360px] opacity-50 hover:opacity-75'
-                                    )}
-                                    onClick={() => setCurrentDressCode(item)}
-                                >
-                                    <Image src={item.imageUrl} layout="fill" objectFit="contain" alt={item.title} data-ai-hint={item.dataAiHint}/>
-                                    {currentDressCode?.id === item.id && (
-                                        <div className="absolute top-0 right-0 m-2 p-1.5 bg-white rounded-full">
-                                            <Check className="h-4 w-4 text-blue-600"/>
-                                        </div>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
+                    <div className="relative h-full w-full min-h-[500px] flex items-end justify-center gap-3">
+                        {dressCodeItems.map(item => (
+                            <div
+                                key={item.id}
+                                className={cn(
+                                    "relative w-full cursor-pointer transition-all duration-500 ease-in-out",
+                                    currentDressCode?.id === item.id 
+                                        ? `h-[480px] opacity-100 z-10` 
+                                        : 'h-[360px] opacity-50 hover:opacity-75'
+                                )}
+                                onClick={() => setCurrentDressCode(item)}
+                            >
+                                <Image src={item.imageUrl} layout="fill" objectFit="contain" alt={item.title} data-ai-hint={item.dataAiHint}/>
+                                {currentDressCode?.id === item.id && (
+                                    <div className="absolute top-0 right-0 m-2 p-1.5 bg-white rounded-full">
+                                        <Check className="h-4 w-4 text-blue-600"/>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
