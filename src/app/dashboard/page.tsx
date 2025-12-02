@@ -408,95 +408,93 @@ export default function DashboardPage() {
         
         {/* Viste Seguro Section */}
         <section id="dress-code" className="w-full mt-24">
-            <div className="relative min-h-[700px] w-full flex flex-col justify-end overflow-hidden">
-                <Image
-                    src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
-                    alt="Fondo abstracto de vestimenta"
-                    layout="fill"
-                    objectFit="cover"
-                    className="z-0"
-                    data-ai-hint="abstract waves"
-                />
-
-                <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-                   <div
-                      className="relative flex items-end justify-center gap-3 w-full h-[400px]"
-                      onMouseLeave={() => {
-                        const todayDressCode = dressCodeItems.find(item => item.day === currentDayName);
-                        setCurrentDressCode(todayDressCode || dressCodeItems[0]);
-                      }}
-                    >
-                        {dressCodeItems.map(item => (
-                            <div
-                                key={item.id}
-                                onMouseEnter={() => setCurrentDressCode(item)}
-                                className={cn(
-                                    "relative w-full cursor-pointer transition-all duration-500 ease-in-out",
-                                    currentDressCode?.id === item.id 
-                                        ? `h-[380px]` 
-                                        : 'h-[300px] opacity-70 hover:opacity-100'
-                                )}
-                            >
-                                <Image src={item.imageUrl} layout="fill" objectFit="contain" alt={item.title} data-ai-hint={item.dataAiHint}/>
-                            </div>
-                        ))}
-                    </div>
-                    
-                    <div className="grid md:grid-cols-2 gap-8 items-end text-white mt-8">
-                       <div>
-                            <p className="font-light text-white/80">Viste Seguro</p>
-                            <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
-                            <div className="mt-4">
-                                <Button 
-                                  variant="outline"
-                                  onClick={() => {
-                                      toast({
-                                          title: "Guía de Vestimenta",
-                                          description: "Esta función se encuentra en desarrollo. ¡Pronto podrás explorar la guía completa!",
-                                      });
-                                  }}
-                                  className="font-light text-xs bg-white hover:bg-white/90 text-primary">
-                                  Explorar Guía
-                                </Button>
-                            </div>
-                        </div>
-                        <div className="text-left md:text-right">
-                           {currentDressCode && (
-                                <div>
-                                    <p className="font-semibold text-white/80 uppercase tracking-wider">{currentDressCode.day}</p>
-                                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-                                        {currentDressCode.title}
-                                    </h2>
-                                </div>
+          <div className="relative min-h-[700px] w-full flex flex-col justify-end overflow-hidden">
+            <Image
+                src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
+                alt="Fondo abstracto de vestimenta"
+                layout="fill"
+                objectFit="cover"
+                className="z-0"
+                data-ai-hint="abstract waves"
+            />
+            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+              <div
+                  className="relative flex items-end justify-center gap-3 w-full h-[400px]"
+                  onMouseLeave={() => {
+                    const todayDressCode = dressCodeItems.find(item => item.day === currentDayName);
+                    setCurrentDressCode(todayDressCode || dressCodeItems[0]);
+                  }}
+                >
+                    {dressCodeItems.map(item => (
+                        <div
+                            key={item.id}
+                            onMouseEnter={() => setCurrentDressCode(item)}
+                            className={cn(
+                                "relative w-full cursor-pointer transition-all duration-500 ease-in-out",
+                                currentDressCode?.id === item.id 
+                                    ? `h-[380px]` 
+                                    : 'h-[300px] opacity-70 hover:opacity-100'
                             )}
-                            <div className="mt-4 flex gap-2 justify-start md:justify-end">
-                               <Button 
-                                variant="outline" 
-                                onClick={() => setDressCodeView('caballeros')} 
-                                className={cn(
-                                  "font-light text-xs", 
-                                  dressCodeView === 'caballeros' 
-                                    ? 'bg-white text-blue-600 border-white' 
-                                    : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white'
-                                )}>
-                                Caballeros
-                              </Button>
-                               <Button 
-                                variant="outline" 
-                                onClick={() => setDressCodeView('damas')} 
-                                className={cn(
-                                  "font-light text-xs", 
-                                  dressCodeView === 'damas' 
-                                    ? 'bg-white text-purple-600 border-white' 
-                                    : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white'
-                                )}>
-                                Damas
-                              </Button>
+                        >
+                            <Image src={item.imageUrl} layout="fill" objectFit="contain" alt={item.title} data-ai-hint={item.dataAiHint}/>
+                        </div>
+                    ))}
+                </div>
+                <div className="grid md:grid-cols-2 gap-8 items-end text-white mt-8">
+                    <div>
+                        <p className="font-light text-white/80">Viste Seguro</p>
+                        <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
+                        <div className="mt-4">
+                            <Button 
+                              variant="outline"
+                              onClick={() => {
+                                  toast({
+                                      title: "Guía de Vestimenta",
+                                      description: "Esta función se encuentra en desarrollo. ¡Pronto podrás explorar la guía completa!",
+                                  });
+                              }}
+                              className="font-light text-xs bg-white hover:bg-white/90 text-primary">
+                              Explorar Guía
+                            </Button>
+                        </div>
+                    </div>
+                    <div className="text-left md:text-right">
+                       {currentDressCode && (
+                            <div>
+                                <p className="font-semibold text-white/80 uppercase tracking-wider">{currentDressCode.day}</p>
+                                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
+                                    {currentDressCode.title}
+                                </h2>
                             </div>
+                        )}
+                        <div className="mt-4 flex gap-2 justify-start md:justify-end">
+                           <Button 
+                            variant="outline" 
+                            onClick={() => setDressCodeView('caballeros')} 
+                            className={cn(
+                              "font-light text-xs", 
+                              dressCodeView === 'caballeros' 
+                                ? 'bg-white text-blue-600 border-white' 
+                                : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white'
+                            )}>
+                            Caballeros
+                          </Button>
+                           <Button 
+                            variant="outline" 
+                            onClick={() => setDressCodeView('damas')} 
+                            className={cn(
+                              "font-light text-xs", 
+                              dressCodeView === 'damas' 
+                                ? 'bg-white text-purple-600 border-white' 
+                                : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white'
+                            )}>
+                            Damas
+                          </Button>
                         </div>
                     </div>
                 </div>
             </div>
+          </div>
         </section>
 
         {/* Gestión de Vacaciones Section */}
@@ -505,7 +503,7 @@ export default function DashboardPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
                          <Image
-                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib-rb-4.1.0&q=80&w=1080"
+                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib=rb-4.1.0&q=80&w=1080"
                             alt="Gestionar Solicitudes"
                             layout="fill"
                             objectFit="cover"
@@ -513,8 +511,9 @@ export default function DashboardPage() {
                          />
                          <div className="absolute inset-0 bg-black/40" />
                          <div className="relative text-white">
+                            <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Capital Humano</Badge>
                             <p className="text-sm font-light">Gestionar Solicitudes</p>
-                            <h3 className="text-2xl font-bold tracking-tight">Planifica tus Próximas Vacaciones</h3>
+                            <h3 className="text-3xl font-bold tracking-tight">Planifica tus Próximas Vacaciones</h3>
                             <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
                                 <Link href="/dashboard/vacaciones">Gestionar</Link>
                             </Button>
