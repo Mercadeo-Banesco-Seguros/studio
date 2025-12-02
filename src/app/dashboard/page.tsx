@@ -1,7 +1,6 @@
-
 'use client';
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import { NewCourseCard } from "@/components/dashboard/course-card";
 import { mockCourses, mockActivities, mockDepartments, mockPlaylist, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem } from "@/lib/placeholder-data";
@@ -60,6 +59,7 @@ import {
   Bot,
   RefreshCw,
   X,
+  ClipboardList,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -262,13 +262,12 @@ export default function DashboardPage() {
   const { toast } = useToast();
   
   const [dressCodeView, setDressCodeView] = useState<'caballeros' | 'damas'>('caballeros');
-  const [selectedDressCode, setSelectedDressCode] = useState<DressCodeItem>(mockDressCodeItemsCaballeros[0]);
-  
-  const dressCodeItems = dressCodeView === 'caballeros' ? mockDressCodeItemsCaballeros : mockDressCodeItemsDamas;
+  const [currentDressCode, setCurrentDressCode] = useState<DressCodeItem | null>(null);
 
-  useEffect(() => {
-    setSelectedDressCode(dressCodeItems[0]);
-  }, [dressCodeView, dressCodeItems]);
+  const dressCodeItems = useMemo(() => {
+    return dressCodeView === 'caballeros' ? mockDressCodeItemsCaballeros : mockDressCodeItemsDamas;
+  }, [dressCodeView]);
+  
 
   const faqCategories = [
     { id: 'General', label: 'General', icon: Home },
@@ -300,7 +299,12 @@ export default function DashboardPage() {
   useEffect(() => {
     const todayDate = new Date();
     const dayName = todayDate.toLocaleDateString('es-ES', { weekday: 'long' });
-    setCurrentDayName(dayName.charAt(0).toUpperCase() + dayName.slice(1));
+    const capitalizedDayName = dayName.charAt(0).toUpperCase() + dayName.slice(1);
+    setCurrentDayName(capitalizedDayName);
+
+    const todayDressCode = dressCodeItems.find(item => item.day === capitalizedDayName);
+    setCurrentDressCode(todayDressCode || dressCodeItems[0]);
+
 
     const updateTimeAndAssets = () => {
       const now = new Date();
@@ -362,7 +366,7 @@ export default function DashboardPage() {
     fetchMenu();
 
      return () => clearInterval(timerId); // Cleanup interval on component unmount
-  }, []);
+  }, [dressCodeItems]);
 
   return (
     <div className="bg-background">
@@ -511,78 +515,46 @@ export default function DashboardPage() {
         <div id="vacaciones" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Card className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[400px] flex items-center">
-                        <div className="absolute inset-0 z-0">
-                            <Image
-                                src="https://images.unsplash.com/photo-1671610906694-0fa7917cf763?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8"
-                                alt="Paisaje de playa"
-                                layout="fill"
-                                objectFit="cover"
-                                className="brightness-75"
-                                data-ai-hint="beach landscape"
-                            />
-                             <div className="absolute inset-0 bg-blue-900/30"></div>
-                        </div>
-                        <div className="relative z-10 p-8 md:p-12 text-white w-full md:w-2/3 flex flex-col justify-center">
-                            <Badge variant="outline" className="text-white border-white/80 w-fit bg-white/10 backdrop-blur-sm mb-4">Capital Humano</Badge>
-                            <h3 className="text-4xl md:text-5xl font-bold tracking-tight">
-                                <span className="font-light">Gestiona tus</span> <br /> <span className="font-bold">Próximas Vacaciones</span>
-                            </h3>
-                            <p className="mt-4 max-w-sm text-white/90">
-                                Planifica tu viaje y gestiona tus solicitudes.
-                            </p>
-                            <div className="flex flex-wrap gap-4 mt-6">
-                                <Button asChild className="font-light rounded-full bg-primary text-primary-foreground hover:bg-primary/90 w-fit">
-                                    <Link href="/dashboard/vacaciones">Gestionar Solicitudes</Link>
-                                </Button>
-                                <Button asChild variant="outline" className="font-light rounded-full border-white/80 text-white bg-white/10 backdrop-blur-sm hover:bg-white/20 hover:text-white w-fit">
-                                    <Link href="/dashboard/vacaciones">Consultar</Link>
-                                </Button>
+                    <Card className="bg-muted p-8 rounded-2xl shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div className="flex justify-between items-start">
+                                <div className="flex items-center gap-2">
+                                    <Plane className="h-5 w-5 text-muted-foreground" />
+                                    <p className="text-sm text-muted-foreground">Gestión de solicitudes</p>
+                                </div>
+                                <Badge variant="secondary" className="bg-background">Capital Humano</Badge>
                             </div>
+                            <Button variant="ghost" size="icon" className="absolute top-8 right-8 text-muted-foreground">
+                                <FileText className="h-5 w-5" />
+                            </Button>
+                        </div>
+                        <div className="mt-24">
+                            <h3 className="text-2xl font-bold">Gestionar Solicitudes</h3>
+                            <p className="text-muted-foreground mt-1 text-sm max-w-xs">Planifica tu próximo viaje y envía tus solicitudes de vacaciones.</p>
+                            <Button asChild variant="secondary" className="mt-4 font-light text-xs">
+                                <Link href="/dashboard/vacaciones">Gestionar</Link>
+                            </Button>
                         </div>
                     </Card>
-                    <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
-                         <div className="absolute inset-0 bg-blue-900/30 z-0"></div><div className="absolute inset-0 bg-gradient-to-t from-black/50" />
-                        <Image
-                            src="https://safestorage.pe/wp-content/uploads/2022/07/consejos-organizar-mejor-documentos-oficina.jpg"
-                            alt="Consultar Solicitudes"
-                            layout="fill"
-                            objectFit="cover"
-                            className="z-0 brightness-75 group-hover:brightness-60 transition-all"
-                            data-ai-hint="desk calendar"
-                        />
-                         <div className="absolute inset-0 bg-blue-900/30"></div>
-                        <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
-                            <Badge variant="outline" className="text-white border-white/80 w-fit bg-white/10 backdrop-blur-sm mb-4">Nueva Sección</Badge>
-                            <h4 className="text-2xl font-bold tracking-tight">Visita la Biblioteca Documental</h4>
-                             <p className="text-sm mt-1 text-white/80">Encuentra manuales, guías y recursos.</p>
-                            <div className="flex justify-end w-full mt-4">
-                                <Button asChild variant="default" className="rounded-full font-light text-xs">
-                                    <Link href="/dashboard/biblioteca-digital">Explorar</Link>
-                                </Button>
+                     <Card className="bg-muted p-8 rounded-2xl shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div className="flex justify-between items-start">
+                                <div className="flex items-center gap-2">
+                                    <CalendarCheck className="h-5 w-5 text-muted-foreground" />
+                                    <p className="text-sm text-muted-foreground">Consulta de días disponibles</p>
+                                </div>
+                                <Badge variant="secondary" className="bg-background">Información</Badge>
                             </div>
+                            <Button variant="ghost" size="icon" className="absolute top-8 right-8 text-muted-foreground">
+                                <FileText className="h-5 w-5" />
+                            </Button>
                         </div>
-                    </Card>
-                    <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
-                       <div className="absolute inset-0 bg-blue-900/30 z-0"></div><div className="absolute inset-0 bg-gradient-to-t from-black/50" />
-                       <Image
-                            src="https://img.freepik.com/foto-gratis/concepto-exito-fiesta-celebracion-equipo-negocios_53876-47029.jpg?semt=ais_hybrid&w=740&q=80"
-                            alt="Eventos de este mes"
-                            layout="fill"
-                            objectFit="cover"
-                            className="z-0 brightness-75"
-                            data-ai-hint="celebration party"
-                        />
-                         <div className="absolute inset-0 bg-blue-900/30"></div>
-                        <div className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
-                            <Badge variant="outline" className="text-white border-white/80 w-fit bg-white/10 backdrop-blur-sm mb-4">Bienestar</Badge>
-                            <h4 className="text-2xl font-bold">Eventos de este mes</h4>
-                            <p className="text-sm mt-1 text-white/80">Descubre los próximos eventos y actividades.</p>
-                            <div className="flex justify-end w-full mt-4">
-                                <Button asChild variant="default" className="rounded-full font-light text-xs">
-                                    <Link href="/dashboard/bienestar#actividades">Explorar</Link>
-                                </Button>
-                            </div>
+                         <div className="mt-24">
+                            <h3 className="text-2xl font-bold">Consultar Días Disponibles</h3>
+                            <p className="text-muted-foreground mt-1 text-sm max-w-xs">Revisa cuántos días de vacaciones te quedan y planifica con antelación.</p>
+                             <Button asChild variant="secondary" className="mt-4 font-light text-xs">
+                                <Link href="/dashboard/vacaciones">Consultar</Link>
+                            </Button>
                         </div>
                     </Card>
                 </div>
@@ -735,13 +707,15 @@ export default function DashboardPage() {
 
                 <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
                      <div className="flex flex-col justify-between h-full space-y-4 text-center md:text-left py-12">
-                        <div>
-                            <p className="font-semibold text-white/80 uppercase tracking-wider">{selectedDressCode.day}</p>
-                            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-                                {selectedDressCode.title}
-                            </h2>
-                            <p className="mt-2 text-white/80 max-w-sm mx-auto md:mx-0">{selectedDressCode.description}</p>
-                        </div>
+                        {currentDressCode && (
+                            <div>
+                                <p className="font-semibold text-white/80 uppercase tracking-wider">{currentDressCode.day}</p>
+                                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+                                    {currentDressCode.title}
+                                </h2>
+                                <p className="mt-2 text-white/80 max-w-sm mx-auto md:mx-0">{currentDressCode.description}</p>
+                            </div>
+                        )}
                         <div>
                             <p className="font-light text-white/80">Viste Seguro</p>
                              <h3 className="text-3xl font-bold tracking-tighter">Banesco Seguros</h3>
@@ -758,21 +732,25 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </div>
-                     <div className="relative h-full flex flex-col justify-end">
-                        <div className="grid grid-cols-5 gap-6 items-end flex-grow">
+                    <div className="relative h-full flex flex-col justify-end">
+                        <div className="flex items-end justify-center gap-3">
                             {dressCodeItems.map(item => (
-                                <div 
-                                    key={item.id} 
+                                <div
+                                    key={item.id}
                                     className={cn(
-                                        "relative w-full cursor-pointer transition-all duration-300 transform",
-                                        dressCodeView === 'damas' ? 'h-[32rem]' : 'h-[34rem]',
-                                        selectedDressCode.id === item.id 
-                                            ? `opacity-100 ${dressCodeView === 'damas' ? 'scale-125' : 'scale-150'}` 
-                                            : 'opacity-50 scale-90 hover:opacity-75 hover:scale-95'
+                                        "relative w-full cursor-pointer transition-all duration-500 ease-in-out",
+                                        currentDressCode?.id === item.id 
+                                            ? `h-[480px] opacity-100 z-10` 
+                                            : 'h-[360px] opacity-50 hover:opacity-75'
                                     )}
-                                    onClick={() => setSelectedDressCode(item)}
+                                    onClick={() => setCurrentDressCode(item)}
                                 >
                                     <Image src={item.imageUrl} layout="fill" objectFit="contain" alt={item.title} data-ai-hint={item.dataAiHint}/>
+                                    {currentDressCode?.id === item.id && (
+                                        <div className="absolute top-0 right-0 m-2 p-1.5 bg-white rounded-full">
+                                            <Check className="h-4 w-4 text-blue-600"/>
+                                        </div>
+                                    )}
                                 </div>
                             ))}
                         </div>
