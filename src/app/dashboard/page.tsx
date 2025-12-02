@@ -391,6 +391,7 @@ export default function DashboardPage() {
                              <Button size="default" variant="secondary" asChild className="font-light">
                                 <Link href="#">
                                     Novedades
+                               _next/static/chunks/src_app_dashboard_page_tsx_6b7a5a._.js
                                 </Link>
                             </Button>
                             <Button size="default" variant="default" className="bg-accent text-primary-foreground font-normal" asChild>
@@ -514,7 +515,7 @@ export default function DashboardPage() {
                     <Card className="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[400px] flex items-center">
                         <div className="absolute inset-0 z-0">
                             <Image
-                                src="https://www.baltana.com/files/wallpapers-9/Four-Seasons-Resort-Bora-Bora-Wallpaper-HD-27212.jpg"
+                                src="https://plus.unsplash.com/premium_photo-1678727128629-72543d1c2268?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YWVyb25hdmV8ZW58MHx8MHx8fDA%3D"
                                 alt="Paisaje de playa"
                                 layout="fill"
                                 objectFit="cover"
@@ -795,7 +796,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
