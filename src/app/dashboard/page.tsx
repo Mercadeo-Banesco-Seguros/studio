@@ -4,7 +4,7 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import { NewCourseCard } from "@/components/dashboard/course-card";
-import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem } from "@/lib/placeholder-data";
+import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem, mockPlaylist } from "@/lib/placeholder-data";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import {
@@ -362,6 +362,7 @@ export default function DashboardPage() {
                   objectFit="cover"
                   data-ai-hint="abstract waves"
               />
+              <div className="absolute inset-0 bg-primary/80" />
               <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 w-full max-w-7xl mx-auto p-8 md:p-12">
                   <div className="space-y-4 text-white">
                       <Badge variant="outline" className="border-white text-white">
@@ -441,6 +442,7 @@ export default function DashboardPage() {
                             objectFit="cover"
                             className="transition-transform duration-300 group-hover:scale-105"
                          />
+                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                          <div className="relative text-white">
                             <h3 className="text-2xl font-bold tracking-tight">Gestionar Solicitudes</h3>
                             <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white text-primary hover:bg-white/90">
@@ -456,6 +458,7 @@ export default function DashboardPage() {
                             objectFit="cover"
                             className="transition-transform duration-300 group-hover:scale-105"
                          />
+                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                          <div className="relative text-white">
                              <h3 className="text-2xl font-bold tracking-tight">Consultar Días Disponibles</h3>
                              <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white text-primary hover:bg-white/90">
