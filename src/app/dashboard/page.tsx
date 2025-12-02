@@ -1,9 +1,10 @@
+
 'use client';
 
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import { NewCourseCard } from "@/components/dashboard/course-card";
-import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem, mockPlaylist } from "@/lib/placeholder-data";
+import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem } from "@/lib/placeholder-data";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import {
@@ -81,6 +82,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { InteractiveMenuBanner } from '@/components/dashboard/interactive-menu-banner';
 import { useToast } from '@/hooks/use-toast';
 import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
+import { mockPlaylist } from '@/lib/placeholder-data';
 
 
 const pilaresData = [
@@ -437,12 +439,13 @@ export default function DashboardPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
                          <Image
-                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib-rb-4.1.0&q=80&w=1080"
+                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib=rb-4.1.0&q=80&w=1080"
                             alt="Gestionar Solicitudes"
                             layout="fill"
                             objectFit="cover"
                             className="transition-transform duration-300 group-hover:scale-105"
                          />
+                         <div className="absolute inset-0 bg-black/40"></div>
                          <div className="relative text-white">
                             <h3 className="text-2xl font-bold tracking-tight">Gestionar Solicitudes</h3>
                             <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white text-primary hover:bg-white/90">
@@ -458,6 +461,7 @@ export default function DashboardPage() {
                             objectFit="cover"
                             className="transition-transform duration-300 group-hover:scale-105"
                          />
+                         <div className="absolute inset-0 bg-black/40"></div>
                          <div className="relative text-white">
                              <h3 className="text-2xl font-bold tracking-tight">Consultar Días Disponibles</h3>
                              <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white text-primary hover:bg-white/90">
@@ -608,7 +612,7 @@ export default function DashboardPage() {
                     data-ai-hint="abstract waves"
                 />
 
-                <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="relative z-10 grid md:grid-cols-2 gap-8 items-end h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
                      <div className="flex flex-col justify-between h-full space-y-4 text-center md:text-left py-12">
                         {currentDressCode && (
                             <div>
@@ -626,7 +630,7 @@ export default function DashboardPage() {
                                <Button asChild className={cn(
                                   "font-light text-xs",
                                   "bg-white hover:bg-white/90",
-                                  dressCodeView === 'damas' ? 'text-purple-600' : 'text-blue-600'
+                                   dressCodeView === 'damas' ? 'text-purple-600' : 'text-blue-600'
                                 )}>
                                   <Link href="#">Explorar Guía</Link>
                               </Button>
@@ -640,7 +644,6 @@ export default function DashboardPage() {
                         </div>
                     </div>
                     <div className="relative h-full w-full min-h-[500px] flex items-end justify-center gap-3">
-                      <div className="absolute bottom-0 flex items-end justify-center gap-3 h-full w-full">
                         {dressCodeItems.map(item => (
                             <div
                                 key={item.id}
@@ -655,7 +658,6 @@ export default function DashboardPage() {
                                 <Image src={item.imageUrl} layout="fill" objectFit="contain" alt={item.title} data-ai-hint={item.dataAiHint}/>
                             </div>
                         ))}
-                      </div>
                     </div>
                 </div>
             </div>
