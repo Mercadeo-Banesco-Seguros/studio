@@ -353,7 +353,7 @@ export default function DashboardPage() {
         </section>
 
         {/* Mision y Valores Section */}
-        <div className="w-full py-12 md:py-16 bg-card">
+        <div className="w-full py-12 md:py-16">
           <div className="relative overflow-hidden min-h-[600px] flex items-center">
               <Image
                   src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
@@ -363,7 +363,7 @@ export default function DashboardPage() {
                   data-ai-hint="abstract waves"
               />
               <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 w-full max-w-7xl mx-auto p-8 md:p-12">
-                  <div className="space-y-4">
+                  <div className="space-y-4 text-white">
                       <Badge 
                           variant="outline" 
                            style={isMissionView 
@@ -372,10 +372,10 @@ export default function DashboardPage() {
                       >
                           Acerca de Nosotros
                       </Badge>
-                      <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">
+                      <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
                           {isMissionView ? "Nuestra Misión" : "Nuestra Oferta de Valor"}
                       </h2>
-                      <p className="text-muted-foreground max-w-lg">
+                      <p className="text-white/80 max-w-lg">
                           {isMissionView 
                               ? "Ser la empresa de seguros preferida del mercado, reconocida por su excelencia, calidad de servicio y compromiso con la satisfacción de nuestros clientes, intermediarios y colaboradores."
                               : "Somos una empresa de seguros reconocida por su excelencia y calidad, orientada a satisfacer las necesidades de nuestros clientes, intermediarios y organización, brindando asesoría y protección con soluciones ágiles y oportunas."
@@ -391,7 +391,7 @@ export default function DashboardPage() {
                           >
                               <Link href="/dashboard/mapa-clientes">Nosotros</Link>
                           </Button>
-                          <Button variant="ghost" onClick={() => setIsMissionView(!isMissionView)} className="text-muted-foreground hover:text-foreground">
+                          <Button variant="ghost" onClick={() => setIsMissionView(!isMissionView)} className="text-white/80 hover:text-white">
                               <RefreshCw className={cn("mr-2 h-4 w-4", isMissionView && "rotate-180 transition-transform")}/>
                               {isMissionView ? "Ver Oferta de Valor" : "Ver Misión"}
                           </Button>
@@ -449,6 +449,7 @@ export default function DashboardPage() {
                             objectFit="cover"
                             className="transition-transform duration-300 group-hover:scale-105"
                          />
+                         <div className="absolute inset-0 bg-black/40"></div>
                          <div className="relative text-white">
                             <h3 className="text-2xl font-bold tracking-tight">Gestionar Solicitudes</h3>
                             <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white/20 hover:bg-white/30 backdrop-blur-sm">
@@ -458,12 +459,13 @@ export default function DashboardPage() {
                     </Card>
                      <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
                          <Image
-                            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib-rb-4.1.0&q=80&w=1080"
                             alt="Consultar Días Disponibles"
                             layout="fill"
                             objectFit="cover"
                             className="transition-transform duration-300 group-hover:scale-105"
                          />
+                          <div className="absolute inset-0 bg-black/40"></div>
                          <div className="relative text-white">
                              <h3 className="text-2xl font-bold tracking-tight">Consultar Días Disponibles</h3>
                              <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white/20 hover:bg-white/30 backdrop-blur-sm">
@@ -581,7 +583,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib-rb-4.1.0&q=80&w=1080"
                       dataAiHint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
@@ -592,7 +594,7 @@ export default function DashboardPage() {
                       category="Mejora tus Habilidades"
                       details={["Presentaciones", "Feedback", "Oratoria"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib.rb-4.1.0&q=80&w=1080"
                       dataAiHint="public speaking"
                       imageClassName="opacity-30"
                       availability={90}
@@ -613,17 +615,13 @@ export default function DashboardPage() {
                     className="z-0 transition-all duration-500"
                     data-ai-hint="abstract waves"
                 />
-                <div className={cn(
-                    "absolute inset-0 z-0 transition-colors duration-300",
-                    dressCodeView === 'caballeros' ? 'bg-blue-900/40' : 'bg-purple-900/40'
-                )}></div>
 
                 <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
                      <div className="flex flex-col justify-between h-full space-y-4 text-center md:text-left py-12">
                         {currentDressCode && (
                             <div>
                                 <p className="font-semibold text-white/80 uppercase tracking-wider">{currentDressCode.day}</p>
-                                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+                                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
                                     {currentDressCode.title}
                                 </h2>
                                 <p className="mt-2 text-white/80 max-w-sm mx-auto md:mx-0">{currentDressCode.description}</p>
@@ -631,7 +629,7 @@ export default function DashboardPage() {
                         )}
                         <div>
                             <p className="font-light text-white/80">Viste Seguro</p>
-                             <h3 className="text-3xl font-bold tracking-tighter">Banesco Seguros</h3>
+                             <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
                             <div className="mt-4 flex gap-2">
                               <Button asChild className={cn("font-light text-white", dressCodeView === 'damas' ? 'bg-purple-600 hover:bg-purple-700' : 'bg-blue-600 hover:bg-blue-700')}>
                                   <Link href="#">Explorar Guía</Link>
