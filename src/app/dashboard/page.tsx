@@ -529,6 +529,7 @@ export default function DashboardPage() {
                          />
                          <div className="absolute inset-0 bg-black/40" />
                          <div className="relative text-white">
+                             <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Capital Humano</Badge>
                              <h3 className="text-2xl font-bold tracking-tight">Consultar Días Disponibles</h3>
                              <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
                                 <Link href="/dashboard/vacaciones">Consultar</Link>
