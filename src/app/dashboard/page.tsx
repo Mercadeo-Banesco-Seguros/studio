@@ -443,10 +443,9 @@ export default function DashboardPage() {
                             objectFit="cover"
                             className="transition-transform duration-300 group-hover:scale-105"
                          />
-                         <div className="absolute inset-0 bg-black/40"></div>
                          <div className="relative text-white">
                             <h3 className="text-2xl font-bold tracking-tight">Gestionar Solicitudes</h3>
-                            <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white/20 hover:bg-white/30 backdrop-blur-sm">
+                            <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white text-primary hover:bg-white/90">
                                 <Link href="/dashboard/vacaciones">Gestionar</Link>
                             </Button>
                         </div>
@@ -459,10 +458,9 @@ export default function DashboardPage() {
                             objectFit="cover"
                             className="transition-transform duration-300 group-hover:scale-105"
                          />
-                          <div className="absolute inset-0 bg-black/40"></div>
                          <div className="relative text-white">
                              <h3 className="text-2xl font-bold tracking-tight">Consultar Días Disponibles</h3>
-                             <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white/20 hover:bg-white/30 backdrop-blur-sm">
+                             <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white text-primary hover:bg-white/90">
                                 <Link href="/dashboard/vacaciones">Consultar</Link>
                             </Button>
                         </div>
@@ -627,7 +625,8 @@ export default function DashboardPage() {
                             <div className="mt-4 flex gap-2">
                                <Button asChild className={cn(
                                   "font-light text-xs",
-                                  dressCodeView === 'damas' ? 'bg-white text-purple-600 hover:bg-white/90' : 'bg-white text-blue-600 hover:bg-white/90'
+                                  "bg-white hover:bg-white/90",
+                                  dressCodeView === 'damas' ? 'text-purple-600' : 'text-blue-600'
                                 )}>
                                   <Link href="#">Explorar Guía</Link>
                               </Button>
