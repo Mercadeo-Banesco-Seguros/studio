@@ -4,7 +4,7 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import { NewCourseCard } from "@/components/dashboard/course-card";
-import { mockCourses, mockActivities, mockDepartments, mockPlaylist, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem } from "@/lib/placeholder-data";
+import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem } from "@/lib/placeholder-data";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import {
@@ -76,14 +76,9 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import type { MenuItem } from '@/ai/flows/get-menu-items-flow';
 import { getMenuItems } from '@/ai/flows/get-menu-items-flow';
-import { MenuItemCard } from '@/components/dashboard/menu-item-card';
 import { cn } from '@/lib/utils';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { PlaylistCard } from '@/components/dashboard/playlist-card';
 import { Skeleton } from '@/components/ui/skeleton';
-import { DressCodeCard } from '@/components/dashboard/dress-code-card';
 import { InteractiveMenuBanner } from '@/components/dashboard/interactive-menu-banner';
 import { useToast } from '@/hooks/use-toast';
 import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
@@ -166,33 +161,6 @@ const iconMap: { [key: string]: React.ElementType } = {
   servicios: LifeBuoy
 };
 
-const departmentGridConfig = [
-  { 
-    id: 'rh', 
-    className: "bg-neutral-800 text-white row-span-2 col-span-2", 
-    title: "Recursos Humanos", 
-    description: "Constancias, recibos y más." 
-  },
-  { 
-    id: 'it', 
-    className: "bg-sky-500 text-white col-span-1", 
-    title: "Soporte TI", 
-    description: "Equipos y software." 
-  },
-  { 
-    id: 'servicios', 
-    className: "bg-amber-400 text-neutral-900 col-span-1", 
-    title: "Servicios Generales", 
-    description: "Mantenimiento." 
-  },
-  { 
-    id: 'hcm', 
-    className: "bg-lime-400 text-neutral-900 col-span-2", 
-    title: "Póliza HCM", 
-    description: "Consultas y reembolsos." 
-  }
-];
-
 // Helper function to normalize day names for comparison
 const normalizeDayName = (name: string) => {
   if (!name) return '';
@@ -201,48 +169,6 @@ const normalizeDayName = (name: string) => {
     .normalize("NFD") // Decompose accented characters
     .replace(/[\u0000-\u007f]/g, "") // Remove diacritical marks
     .replace(/[^a-z]/g, ''); // remove non-alphabetic chars
-};
-
-const AvailabilityRing = ({ percentage }: { percentage: number }) => {
-  const radius = 50;
-  const stroke = 6;
-  const normalizedRadius = radius - stroke / 2;
-  const circumference = normalizedRadius * 2 * Math.PI;
-  const strokeDashoffset = circumference - (percentage / 100) * circumference;
-
-  return (
-    <div className="relative flex items-center justify-center w-32 h-32 flex-shrink-0">
-      <svg
-        height={radius * 2}
-        width={radius * 2}
-        className="transform -rotate-90"
-      >
-        <circle
-          stroke="hsla(var(--primary-foreground), 0.2)"
-          fill="transparent"
-          strokeWidth={stroke}
-          r={normalizedRadius}
-          cx={radius}
-          cy={radius}
-        />
-        <circle
-          stroke="hsl(var(--primary-foreground))"
-          fill="transparent"
-          strokeWidth={stroke}
-          strokeDasharray={circumference + ' ' + circumference}
-          style={{ strokeDashoffset }}
-          strokeLinecap="round"
-          r={normalizedRadius}
-          cx={radius}
-          cy={radius}
-          className="transition-all duration-700 ease-out"
-        />
-      </svg>
-      <span className="absolute text-sm text-primary-foreground">
-        Cupos
-      </span>
-    </div>
-  );
 };
 
 
@@ -285,16 +211,6 @@ export default function DashboardPage() {
     }
   };
 
-  const handleDressCodeScroll = (direction: 'left' | 'right') => {
-    const viewport = dressCodeScrollRef.current?.querySelector<HTMLDivElement>('[data-radix-scroll-area-viewport]');
-    if (viewport) {
-      const scrollAmount = 344; // w-80 (320px) + space-x-6 (24px)
-      viewport.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth',
-      });
-    }
-  };
 
   const currentCourse = mockCourses[currentCourseIndex];
   
@@ -370,6 +286,15 @@ export default function DashboardPage() {
      return () => clearInterval(timerId); // Cleanup interval on component unmount
   }, [dressCodeItems]);
 
+  useEffect(() => {
+    // Update currentDressCode when view changes (caballeros/damas)
+    const todayDate = new Date();
+    const dayName = todayDate.toLocaleDateString('es-ES', { weekday: 'long' });
+    const capitalizedDayName = dayName.charAt(0).toUpperCase() + dayName.slice(1);
+    const todayDressCode = dressCodeItems.find(item => item.day === capitalizedDayName);
+    setCurrentDressCode(todayDressCode || dressCodeItems[0]);
+  }, [dressCodeView, dressCodeItems]);
+
   return (
     <div className="bg-background">
         
@@ -431,12 +356,12 @@ export default function DashboardPage() {
         <div className="w-full py-12 md:py-16 bg-card">
           <div className="relative overflow-hidden min-h-[600px] flex items-center">
               <Image
-                  src="https://images.unsplash.com/photo-1636955816868-fcb881e57954?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZvbmRvJTIwYWJzdHJhY3RvJTIwYmxhbmNvfGVufDB8fDB8fHww"
+                  src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
                   alt="Abstract background"
                   layout="fill"
                   objectFit="cover"
                   className="opacity-50"
-                  data-ai-hint="abstract background"
+                  data-ai-hint="abstract waves"
               />
               <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 w-full max-w-7xl mx-auto p-8 md:p-12">
                   <div className="space-y-4">
@@ -527,7 +452,6 @@ export default function DashboardPage() {
                          />
                          <div className="absolute inset-0 bg-black/40"></div>
                          <div className="relative text-white">
-                            
                             <h3 className="text-2xl font-bold tracking-tight">Gestionar Solicitudes</h3>
                             <p className="mt-1 text-sm text-white/80 max-w-xs">Planifica tu próximo viaje y envía tus solicitudes de vacaciones.</p>
                             <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white/20 hover:bg-white/30 backdrop-blur-sm">
@@ -545,7 +469,6 @@ export default function DashboardPage() {
                          />
                          <div className="absolute inset-0 bg-black/40"></div>
                          <div className="relative text-white">
-                            
                              <h3 className="text-2xl font-bold tracking-tight">Consultar Días Disponibles</h3>
                             <p className="mt-1 text-sm text-white/80 max-w-xs">Revisa cuántos días de vacaciones te quedan y planifica con antelación.</p>
                              <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white/20 hover:bg-white/30 backdrop-blur-sm">
@@ -561,7 +484,7 @@ export default function DashboardPage() {
         <section id="requerimientos" className="w-full mt-24">
             <Card className="relative text-white overflow-hidden min-h-[500px] flex items-center justify-center">
                 <Image
-                    src="https://images.unsplash.com/photo-1724405143873-cdaa5cac918e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXp1bCUyMGNsYXJvJTIwYWJzdHJhY3RvfGVufDB8fDB8fHww"
+                    src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
                     alt="Abstract background"
                     layout="fill"
                     objectFit="cover"
@@ -652,7 +575,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
                       dataAiHint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
@@ -688,12 +611,12 @@ export default function DashboardPage() {
         <section id="dress-code" className="w-full mt-24">
             <div className="relative min-h-[600px] w-full flex flex-col justify-center overflow-hidden">
                 <Image
-                    src="https://images.unsplash.com/photo-1636955816868-fcb881e57954?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZvbmRvJTIwYWJzdHJhY3RvJTIwYmxhbmNvfGVufDB8fDB8fHww"
+                    src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
                     alt="Fondo abstracto de vestimenta"
                     layout="fill"
                     objectFit="cover"
                     className="z-0 transition-all duration-500 opacity-50"
-                    data-ai-hint="abstract background"
+                    data-ai-hint="abstract waves"
                 />
                 <div className={cn(
                     "absolute inset-0 z-0 transition-colors duration-300",
@@ -727,26 +650,26 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </div>
-                     <div className="relative h-full w-full min-h-[500px] flex items-end justify-center -ml-16 gap-3">
-                        {dressCodeItems.map(item => (
-                            <div
-                                key={item.id}
-                                className={cn(
-                                    "relative w-full cursor-pointer transition-all duration-500 ease-in-out",
-                                    currentDressCode?.id === item.id 
-                                        ? `h-[480px] opacity-100 z-10` 
-                                        : 'h-[360px] opacity-50 hover:opacity-75'
-                                )}
-                                onClick={() => setCurrentDressCode(item)}
-                            >
-                                <Image src={item.imageUrl} layout="fill" objectFit="contain" alt={item.title} data-ai-hint={item.dataAiHint}/>
-                                {currentDressCode?.id === item.id && (
-                                    <div className="absolute top-0 right-0 m-2 p-1.5 bg-white rounded-full">
-                                        <Check className="h-4 w-4 text-blue-600"/>
-                                    </div>
-                                )}
-                            </div>
-                        ))}
+                    <div className="relative h-full w-full min-h-[500px] flex items-end justify-center gap-3">
+                      {dressCodeItems.map(item => (
+                          <div
+                              key={item.id}
+                              className={cn(
+                                  "relative w-full cursor-pointer transition-all duration-500 ease-in-out",
+                                  currentDressCode?.id === item.id 
+                                      ? `h-[480px] opacity-100 z-10` 
+                                      : 'h-[360px] opacity-50 hover:opacity-75'
+                              )}
+                              onClick={() => setCurrentDressCode(item)}
+                          >
+                              <Image src={item.imageUrl} layout="fill" objectFit="contain" alt={item.title} data-ai-hint={item.dataAiHint}/>
+                              {currentDressCode?.id === item.id && (
+                                  <div className="absolute top-0 right-0 m-2 p-1.5 bg-white rounded-full">
+                                      <Check className="h-4 w-4 text-blue-600"/>
+                                  </div>
+                              )}
+                          </div>
+                      ))}
                     </div>
                 </div>
             </div>

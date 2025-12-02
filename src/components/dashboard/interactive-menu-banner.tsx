@@ -42,30 +42,21 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
     handleThumbnailClick(types[nextIndex]);
   };
   
-  const backgroundImages = {
-    Clásico: 'https://images.unsplash.com/photo-1708724195876-1156245fce21?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8',
-    Dieta: 'https://images.unsplash.com/photo-1657215374010-786fefd1dbbc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Zm9uZG8lMjBkZSUyMHBhbnRhbGxhJTIwdHVycXVlc2F8ZW58MHx8MHx8fDA%3D',
-    Ejecutivo: 'https://images.unsplash.com/photo-1663497653290-1b8f327096f7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBkZSUyMHBhbnRhbGxhJTIwYmVpZ2V8ZW58MHx8MHx8fDA%3D',
-  };
-
-
   if (!menuItems || menuItems.length === 0) {
     return null; // Don't render anything if there's no menu
   }
 
   return (
     <section className="relative w-full bg-primary text-primary-foreground overflow-hidden min-h-[600px] flex items-center">
-        {backgroundImages[selectedType] && (
-            <Image
-                key={selectedType}
-                src={backgroundImages[selectedType]}
-                alt={`Fondo para menú ${selectedType}`}
-                layout="fill"
-                objectFit="cover"
-                className={cn("absolute inset-0 z-0 transition-opacity duration-700 pointer-events-none", isAnimating ? "opacity-50" : "opacity-100")}
-                data-ai-hint="food background"
-            />
-        )}
+        <Image
+            key={selectedType}
+            src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
+            alt={`Fondo para menú ${selectedType}`}
+            layout="fill"
+            objectFit="cover"
+            className={cn("absolute inset-0 z-0 transition-opacity duration-700 pointer-events-none", isAnimating ? "opacity-50" : "opacity-100")}
+            data-ai-hint="abstract waves"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent pointer-events-none z-10"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
