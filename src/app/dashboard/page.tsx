@@ -531,9 +531,14 @@ export default function DashboardPage() {
                             <p className="mt-4 max-w-sm text-white/90">
                                 Planifica tu viaje y gestiona tus solicitudes.
                             </p>
-                            <Button asChild className="mt-6 font-light rounded-full bg-primary text-primary-foreground hover:bg-primary/90 w-fit">
-                                <Link href="/dashboard/vacaciones">Gestionar Solicitudes</Link>
-                            </Button>
+                            <div className="flex flex-wrap gap-4 mt-6">
+                                <Button asChild className="font-light rounded-full bg-primary text-primary-foreground hover:bg-primary/90 w-fit">
+                                    <Link href="/dashboard/vacaciones">Gestionar Solicitudes</Link>
+                                </Button>
+                                <Button asChild variant="outline" className="font-light rounded-full border-white/80 text-white bg-white/10 backdrop-blur-sm hover:bg-white/20 hover:text-white w-fit">
+                                    <Link href="/dashboard/vacaciones">Consultar</Link>
+                                </Button>
+                            </div>
                         </div>
                     </Card>
                     <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
@@ -690,7 +695,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib=rb-4.1.0&q=80&w=1080"
                       dataAiHint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
