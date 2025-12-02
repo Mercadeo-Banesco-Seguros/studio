@@ -1,84 +1,87 @@
 
 'use client';
 
-import React, { useState } from 'react';
-import { cn } from '@/lib/utils';
+import React from 'react';
+import Image from 'next/image';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, Users, FileText } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import type { LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 
-export const HcmInteractionCard = () => {
-    const [isHovered, setIsHovered] = useState(false);
-
-    return (
-        <div 
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            className="relative w-full max-w-4xl mx-auto h-64 rounded-2xl cursor-pointer transition-all duration-500 ease-in-out transform-style-3d"
-        >
-            {/* Front Card (Emergency) */}
-            <div className={cn(
-                "absolute inset-0 w-full h-full bg-destructive text-destructive-foreground rounded-2xl flex items-center justify-center transition-transform duration-500 ease-in-out backface-hidden",
-                isHovered && "rotate-y-180"
-            )}>
-                <h2 className="text-4xl font-black tracking-wider">EN CASO DE EMERGENCIA</h2>
-            </div>
-
-            {/* Back Card (Options) */}
-            <div className={cn(
-                "absolute inset-0 w-full h-full bg-primary text-primary-foreground rounded-2xl flex items-center justify-around p-8 transition-transform duration-500 ease-in-out backface-hidden rotate-y-180",
-                isHovered ? "rotate-y-0" : ""
-            )}>
-                <div className="flex flex-col md:flex-row items-center justify-around w-full gap-8">
-                     {/* Contacto Section */}
-                    <div className="flex flex-col items-center gap-4 text-center">
-                        <h3 className="text-2xl font-bold">Contacto</h3>
-                        <div className="flex gap-3">
-                            <Button asChild variant="secondary" size="icon" className="h-12 w-12 rounded-full bg-white/20 hover:bg-white/30">
-                                <Link href="mailto:asistencia@banescoseguros.com"><Mail className="h-6 w-6" /></Link>
-                            </Button>
-                            <Button asChild variant="secondary" size="icon" className="h-12 w-12 rounded-full bg-white/20 hover:bg-white/30">
-                                <Link href="tel:+582125011111"><Phone className="h-6 w-6" /></Link>
-                            </Button>
-                        </div>
-                    </div>
-
-                     {/* Opciones Section */}
-                    <div className="flex flex-col items-center gap-4 text-center">
-                        <h3 className="text-2xl font-bold">Opciones</h3>
-                        <div className="flex gap-3">
-                            <Button variant="secondary" className="rounded-full bg-white/20 hover:bg-white/30 h-12 px-6 text-xs font-light">
-                                <Users className="mr-2 h-4 w-4" />
-                                Beneficios
-                            </Button>
-                            <Button variant="secondary" className="rounded-full bg-white/20 hover:bg-white/30 h-12 px-6 text-xs font-light">
-                                <FileText className="mr-2 h-4 w-4" />
-                                Cobertura
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-// Add this to your globals.css to handle the 3D flipping
-/*
-@layer utilities {
-  .transform-style-3d {
-    transform-style: preserve-3d;
-  }
-  .rotate-y-180 {
-    transform: rotateY(180deg);
-  }
-   .rotate-y-0 {
-    transform: rotateY(0deg);
-  }
-  .backface-hidden {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
+interface HcmCardProps {
+  type: 'main' | 'info';
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  buttonText: string;
+  badgeText?: string;
+  badgeIcon?: LucideIcon;
+  imageUrl?: string;
+  dataAiHint?: string;
 }
-*/
 
+export const HcmCard = ({ 
+    type, 
+    icon: Icon, 
+    title, 
+    description, 
+    buttonText, 
+    badgeText, 
+    badgeIcon: BadgeIcon,
+    imageUrl, 
+    dataAiHint 
+}: HcmCardProps) => {
+
+  if (type === 'main') {
+    return (
+      <Card className="bg-primary text-primary-foreground rounded-2xl shadow-lg flex flex-col items-center justify-center text-center p-8 min-h-[400px]">
+        <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-4">
+          <Icon className="h-8 w-8" />
+        </div>
+        <p className="text-sm text-primary-foreground/80">{description}</p>
+        <h3 className="text-3xl font-bold my-2">{title}</h3>
+        <Button asChild variant="secondary" className="mt-4 bg-white text-primary hover:bg-white/90">
+          <Link href="#">{buttonText}</Link>
+        </Button>
+      </Card>
+    );
+  }
+
+  return (
+    <Card className="group relative rounded-2xl overflow-hidden shadow-lg min-h-[400px] flex flex-col justify-end">
+      {imageUrl && (
+        <Image 
+          src={imageUrl} 
+          alt={title} 
+          layout="fill" 
+          objectFit="cover" 
+          data-ai-hint={dataAiHint}
+          className="transition-transform duration-300 group-hover:scale-105"
+        />
+      )}
+      <div className="absolute inset-0 bg-black/50"></div>
+      <CardContent className="relative z-10 p-6 text-white">
+        {badgeText && (
+          <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm">
+            {BadgeIcon && <BadgeIcon className="mr-1.5 h-3 w-3" />}
+            {badgeText}
+          </Badge>
+        )}
+        <div className="absolute top-6 right-6 p-2 rounded-full bg-white/20 backdrop-blur-sm">
+            <Icon className="h-4 w-4 text-white"/>
+        </div>
+        <h3 className="text-xl font-bold">{title}</h3>
+        <p className="text-sm text-white/80 mt-1 mb-4">{description}</p>
+        <Button asChild variant="ghost" className="p-0 h-auto text-white/80 hover:text-white hover:bg-transparent">
+          <Link href="#" className="text-sm">
+            {buttonText}
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </Button>
+      </CardContent>
+    </Card>
+  );
+};

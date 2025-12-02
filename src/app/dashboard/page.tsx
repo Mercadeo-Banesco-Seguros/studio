@@ -85,7 +85,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { DressCodeCard } from '@/components/dashboard/dress-code-card';
 import { InteractiveMenuBanner } from '@/components/dashboard/interactive-menu-banner';
 import { useToast } from '@/hooks/use-toast';
-import { HcmInteractionCard } from '@/components/dashboard/hcm-interaction-card';
+import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 
 
 const pilaresData = [
@@ -526,7 +526,7 @@ export default function DashboardPage() {
                          />
                          <div className="absolute inset-0 bg-black/40"></div>
                          <div className="relative text-white">
-                            <Badge variant="secondary" className="bg-white/20 backdrop-blur-sm mb-2">Capital Humano</Badge>
+                            
                             <h3 className="text-2xl font-bold tracking-tight">Gestionar Solicitudes</h3>
                             <p className="mt-1 text-sm text-white/80 max-w-xs">Planifica tu próximo viaje y envía tus solicitudes de vacaciones.</p>
                             <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white/20 hover:bg-white/30 backdrop-blur-sm">
@@ -544,7 +544,7 @@ export default function DashboardPage() {
                          />
                          <div className="absolute inset-0 bg-black/40"></div>
                          <div className="relative text-white">
-                            <Badge variant="secondary" className="bg-white/20 backdrop-blur-sm mb-2">Información</Badge>
+                            
                              <h3 className="text-2xl font-bold tracking-tight">Consultar Días Disponibles</h3>
                             <p className="mt-1 text-sm text-white/80 max-w-xs">Revisa cuántos días de vacaciones te quedan y planifica con antelación.</p>
                              <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white/20 hover:bg-white/30 backdrop-blur-sm">
@@ -651,7 +651,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
                       dataAiHint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
@@ -726,7 +726,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </div>
-                    <div className="relative h-full w-full min-h-[500px] flex items-end justify-center -ml-16 gap-3">
+                     <div className="relative h-full w-full min-h-[500px] flex items-end justify-center -ml-16 gap-3">
                         {dressCodeItems.map(item => (
                             <div
                                 key={item.id}
@@ -754,7 +754,36 @@ export default function DashboardPage() {
         {/* Póliza HCM Section */}
         <section id="poliza" className="w-full mt-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <HcmInteractionCard />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <HcmCard
+                  type="info"
+                  badgeText="Documentación"
+                  icon={FileText}
+                  title="Protocolos y Procedimientos"
+                  description="Guías detalladas para la gestión de siniestros y solicitudes."
+                  buttonText="Consultar"
+                  imageUrl="https://images.unsplash.com/photo-1586473228839-a9134a654378?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2N1bWVudHN8ZW58MHx8fHwxNzU5NjM5NjcxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  dataAiHint="documents folder"
+                />
+                 <HcmCard
+                  type="main"
+                  icon={ShieldCheck}
+                  title="NUESTRA PÓLIZA HCM"
+                  description="Estamos aquí para ayudarte"
+                  buttonText="Acceder"
+                />
+                <HcmCard
+                  type="info"
+                  badgeText="Red de Salud"
+                  badgeIcon={HeartHandshake}
+                  icon={Network}
+                  title="Clínicas Afiliadas"
+                  description="Encuentra proveedores de servicios médicos en nuestra red nacional."
+                  buttonText="Consultar"
+                  imageUrl="https://images.unsplash.com/photo-1586773860417-e4526c49d4ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhdGVuY2klQzMlQjNuJTIwbSVDMyVBOXRpY2F8ZW58MHx8fHwxNzU5NjQyMjg2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  dataAiHint="clinic interior"
+                />
+              </div>
             </div>
         </section>
 
