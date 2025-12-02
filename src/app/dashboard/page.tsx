@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useRef, useState, useEffect, useMemo } from 'react';
@@ -515,44 +516,38 @@ export default function DashboardPage() {
         <div id="vacaciones" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Card className="bg-muted p-8 rounded-2xl shadow-sm flex flex-col justify-between">
-                        <div>
-                            <div className="flex justify-between items-start">
-                                <div className="flex items-center gap-2">
-                                    <Plane className="h-5 w-5 text-muted-foreground" />
-                                    <p className="text-sm text-muted-foreground">Gestión de solicitudes</p>
-                                </div>
-                                <Badge variant="secondary" className="bg-background">Capital Humano</Badge>
-                            </div>
-                            <Button variant="ghost" size="icon" className="absolute top-8 right-8 text-muted-foreground">
-                                <FileText className="h-5 w-5" />
-                            </Button>
-                        </div>
-                        <div className="mt-24">
+                    <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
+                         <Image
+                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Gestionar Solicitudes"
+                            layout="fill"
+                            objectFit="cover"
+                            className="transition-transform duration-300 group-hover:scale-105"
+                         />
+                         <div className="absolute inset-0 bg-black/40"></div>
+                         <div className="relative text-white">
+                            <Badge variant="secondary" className="bg-white/20 backdrop-blur-sm mb-2">Capital Humano</Badge>
                             <h3 className="text-2xl font-bold tracking-tight">Gestionar Solicitudes</h3>
-                            <p className="text-muted-foreground mt-1 text-sm max-w-xs">Planifica tu próximo viaje y envía tus solicitudes de vacaciones.</p>
-                            <Button asChild variant="secondary" className="mt-4 font-light text-xs">
+                            <p className="mt-1 text-sm text-white/80 max-w-xs">Planifica tu próximo viaje y envía tus solicitudes de vacaciones.</p>
+                            <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white/20 hover:bg-white/30 backdrop-blur-sm">
                                 <Link href="/dashboard/vacaciones">Gestionar</Link>
                             </Button>
                         </div>
                     </Card>
-                     <Card className="bg-muted p-8 rounded-2xl shadow-sm flex flex-col justify-between">
-                        <div>
-                            <div className="flex justify-between items-start">
-                                <div className="flex items-center gap-2">
-                                    <CalendarCheck className="h-5 w-5 text-muted-foreground" />
-                                    <p className="text-sm text-muted-foreground">Consulta de días disponibles</p>
-                                </div>
-                                <Badge variant="secondary" className="bg-background">Información</Badge>
-                            </div>
-                            <Button variant="ghost" size="icon" className="absolute top-8 right-8 text-muted-foreground">
-                                <FileText className="h-5 w-5" />
-                            </Button>
-                        </div>
-                         <div className="mt-24">
-                            <h3 className="text-2xl font-bold tracking-tight">Consultar Días Disponibles</h3>
-                            <p className="text-muted-foreground mt-1 text-sm max-w-xs">Revisa cuántos días de vacaciones te quedan y planifica con antelación.</p>
-                             <Button asChild variant="secondary" className="mt-4 font-light text-xs">
+                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
+                         <Image
+                            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                            alt="Consultar Días Disponibles"
+                            layout="fill"
+                            objectFit="cover"
+                            className="transition-transform duration-300 group-hover:scale-105"
+                         />
+                         <div className="absolute inset-0 bg-black/40"></div>
+                         <div className="relative text-white">
+                            <Badge variant="secondary" className="bg-white/20 backdrop-blur-sm mb-2">Información</Badge>
+                             <h3 className="text-2xl font-bold tracking-tight">Consultar Días Disponibles</h3>
+                            <p className="mt-1 text-sm text-white/80 max-w-xs">Revisa cuántos días de vacaciones te quedan y planifica con antelación.</p>
+                             <Button asChild variant="secondary" className="mt-4 font-light text-xs bg-white/20 hover:bg-white/30 backdrop-blur-sm">
                                 <Link href="/dashboard/vacaciones">Consultar</Link>
                             </Button>
                         </div>
@@ -704,7 +699,6 @@ export default function DashboardPage() {
                     dressCodeView === 'caballeros' ? 'bg-blue-900/40' : 'bg-purple-900/40'
                 )}></div>
 
-
                 <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
                      <div className="flex flex-col justify-between h-full space-y-4 text-center md:text-left py-12">
                         {currentDressCode && (
@@ -732,7 +726,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </div>
-                    <div className="relative h-full w-full min-h-[500px] flex items-end justify-center gap-3">
+                    <div className="relative h-full w-full min-h-[500px] flex items-end justify-center -ml-16 gap-3">
                         {dressCodeItems.map(item => (
                             <div
                                 key={item.id}
