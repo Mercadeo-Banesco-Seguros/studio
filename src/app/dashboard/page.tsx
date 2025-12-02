@@ -4,7 +4,7 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import { NewCourseCard } from "@/components/dashboard/course-card";
-import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem, mockPlaylist } from "@/lib/placeholder-data";
+import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem } from "@/lib/placeholder-data";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import {
@@ -379,10 +379,7 @@ export default function DashboardPage() {
                       <div className="flex gap-4 pt-4">
                            <Button 
                               asChild 
-                              className={cn(
-                                "font-light hover:opacity-90 text-primary-foreground",
-                                isMissionView ? "bg-secondary hover:bg-secondary/90" : "bg-[#543db8] hover:bg-[#543db8]/90"
-                              )}
+                              className="font-light bg-white text-primary hover:bg-white/90"
                           >
                               <Link href="/dashboard/mapa-clientes">Nosotros</Link>
                           </Button>
@@ -637,7 +634,7 @@ export default function DashboardPage() {
                        <div>
                             <p className="font-light text-white/80">Viste Seguro</p>
                             <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
-                            <Button asChild variant="outline" className="mt-4 font-light text-xs bg-white text-primary hover:bg-white/90">
+                             <Button asChild variant="outline" className={cn("mt-4 font-light text-xs bg-white hover:bg-white/90", dressCodeView === 'damas' ? 'text-purple-600' : 'text-blue-600')}>
                                 <Link href="#">Explorar Guía</Link>
                             </Button>
                         </div>
@@ -651,10 +648,26 @@ export default function DashboardPage() {
                                 </div>
                             )}
                             <div className="mt-4 flex gap-2 justify-start md:justify-end">
-                              <Button variant="outline" onClick={() => setDressCodeView('caballeros')} className={cn("font-light text-xs", dressCodeView === 'caballeros' ? 'bg-white text-blue-600 border-white' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white')}>
+                              <Button 
+                                variant="outline" 
+                                onClick={() => setDressCodeView('caballeros')} 
+                                className={cn(
+                                  "font-light text-xs", 
+                                  dressCodeView === 'caballeros' 
+                                    ? 'bg-white text-blue-600 border-white' 
+                                    : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white'
+                                )}>
                                 Caballeros
                               </Button>
-                               <Button variant="outline" onClick={() => setDressCodeView('damas')} className={cn("font-light text-xs", dressCodeView === 'damas' ? 'bg-white text-purple-600 border-white' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white')}>
+                               <Button 
+                                variant="outline" 
+                                onClick={() => setDressCodeView('damas')} 
+                                className={cn(
+                                  "font-light text-xs", 
+                                  dressCodeView === 'damas' 
+                                    ? 'bg-white text-purple-600 border-white' 
+                                    : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white'
+                                )}>
                                 Damas
                               </Button>
                             </div>
@@ -708,7 +721,7 @@ export default function DashboardPage() {
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
-                  data-ai-hint="executive meeting"
+                  dataAiHint="executive meeting"
                   className="brightness-50 group-hover:brightness-[0.4] transition-all duration-300"
               />
               <div className="relative z-10 flex flex-col items-center">
