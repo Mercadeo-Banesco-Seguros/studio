@@ -4,7 +4,7 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import { NewCourseCard } from "@/components/dashboard/course-card";
-import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem, mockPlaylist } from "@/lib/placeholder-data";
+import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem } from "@/lib/placeholder-data";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import {
@@ -61,7 +61,6 @@ import {
   RefreshCw,
   X,
   ClipboardList,
-  Network,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -82,6 +81,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { InteractiveMenuBanner } from '@/components/dashboard/interactive-menu-banner';
 import { useToast } from '@/hooks/use-toast';
 import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
+import { Network } from 'lucide-react';
 
 
 const pilaresData = [
@@ -438,7 +438,7 @@ export default function DashboardPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
                          <Image
-                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib-rb-4.1.0&q=80&w=1080"
+                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib=rb-4.1.0&q=80&w=1080"
                             alt="Gestionar Solicitudes"
                             layout="fill"
                             objectFit="cover"
@@ -626,16 +626,16 @@ export default function DashboardPage() {
                             <p className="font-light text-white/80">Viste Seguro</p>
                              <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
                             <div className="mt-4 flex gap-2">
-                              <Button asChild className={cn(
-                                "font-light",
-                                dressCodeView === 'damas' ? 'bg-white text-purple-600 hover:bg-white/90' : 'bg-white text-blue-600 hover:bg-white/90'
-                              )}>
+                               <Button asChild className={cn(
+                                  "font-light text-xs",
+                                  dressCodeView === 'damas' ? 'bg-white text-purple-600 hover:bg-white/90' : 'bg-white text-blue-600 hover:bg-white/90'
+                                )}>
                                   <Link href="#">Explorar Guía</Link>
                               </Button>
-                              <Button variant="outline" onClick={() => setDressCodeView('caballeros')} className={cn("font-light", dressCodeView === 'caballeros' ? 'bg-white text-blue-600 border-white' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white')}>
+                              <Button variant="outline" onClick={() => setDressCodeView('caballeros')} className={cn("font-light text-xs", dressCodeView === 'caballeros' ? 'bg-white text-blue-600 border-white' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white')}>
                                 Caballeros
                               </Button>
-                               <Button variant="outline" onClick={() => setDressCodeView('damas')} className={cn("font-light", dressCodeView === 'damas' ? 'bg-white text-purple-600 border-white' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white')}>
+                               <Button variant="outline" onClick={() => setDressCodeView('damas')} className={cn("font-light text-xs", dressCodeView === 'damas' ? 'bg-white text-purple-600 border-white' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white')}>
                                 Damas
                               </Button>
                             </div>
