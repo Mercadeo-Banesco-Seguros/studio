@@ -1,10 +1,9 @@
-
 'use client';
 
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import { NewCourseCard } from "@/components/dashboard/course-card";
-import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem } from "@/lib/placeholder-data";
+import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeItemsCaballeros, mockDressCodeItemsDamas, type DressCodeItem, mockPlaylist } from "@/lib/placeholder-data";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import {
@@ -61,6 +60,7 @@ import {
   RefreshCw,
   X,
   ClipboardList,
+  Network,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -81,7 +81,6 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { InteractiveMenuBanner } from '@/components/dashboard/interactive-menu-banner';
 import { useToast } from '@/hooks/use-toast';
 import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
-import { Network } from 'lucide-react';
 
 
 const pilaresData = [
@@ -438,7 +437,7 @@ export default function DashboardPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
                          <Image
-                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib-rb-4.1.0&q=80&w=1080"
                             alt="Gestionar Solicitudes"
                             layout="fill"
                             objectFit="cover"
