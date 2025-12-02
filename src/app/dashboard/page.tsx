@@ -545,7 +545,7 @@ export default function DashboardPage() {
                     <Card className="relative rounded-2xl overflow-hidden group min-h-[400px]">
                          <div className="absolute inset-0 bg-gradient-to-t from-black/50" />
                         <Image
-                            src="https://img.itmastersmag.com/wp-content/uploads/2024/06/04135631/gestion-documental.jpg"
+                            src="https://img.freepik.com/fotos-premium/concepto-asociacion-o-trabajo-equipo-dos-hombres-documentos_488220-7004.jpg"
                             alt="Consultar Solicitudes"
                             layout="fill"
                             objectFit="cover"
@@ -750,7 +750,10 @@ export default function DashboardPage() {
                             <p className="font-light text-white/80">Viste Seguro</p>
                              <h3 className="text-3xl font-bold tracking-tighter">Banesco Seguros</h3>
                             <div className="mt-4 flex gap-2">
-                              <Button asChild className={cn("font-light bg-white/90 hover:bg-white", dressCodeView === 'damas' ? 'text-purple-600' : 'text-primary')}>
+                              <Button asChild className={cn(
+                                "font-light bg-white/90 hover:bg-white",
+                                dressCodeView === 'damas' ? 'text-purple-600' : 'text-primary'
+                                )}>
                                   <Link href="#">Explorar Guía</Link>
                               </Button>
                               <Button variant="outline" onClick={() => setDressCodeView('caballeros')} className={cn("font-light", dressCodeView === 'caballeros' ? 'bg-white text-primary' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white')}>
@@ -796,7 +799,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
