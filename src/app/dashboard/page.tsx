@@ -61,6 +61,7 @@ import {
   RefreshCw,
   X,
   ClipboardList,
+  Network,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -518,7 +519,7 @@ export default function DashboardPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
                          <Image
-                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib-rb-4.1.0&q=80&w=1080"
                             alt="Gestionar Solicitudes"
                             layout="fill"
                             objectFit="cover"
@@ -762,7 +763,7 @@ export default function DashboardPage() {
                   title="Protocolos y Procedimientos"
                   description="Guías detalladas para la gestión de siniestros y solicitudes."
                   buttonText="Consultar"
-                  imageUrl="https://images.unsplash.com/photo-1586473228839-a9134a654378?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2N1bWVudHN8ZW58MHx8fHwxNzU5NjM5NjcxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  imageUrl="https://images.unsplash.com/photo-1586473228839-a9134a654378?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2N1bWVudHN8ZW58MHx8fHwxNzU5NjM5NjcxfDA&ixlib-rb-4.1.0&q=80&w=1080"
                   dataAiHint="documents folder"
                 />
                  <HcmCard
@@ -780,7 +781,7 @@ export default function DashboardPage() {
                   title="Clínicas Afiliadas"
                   description="Encuentra proveedores de servicios médicos en nuestra red nacional."
                   buttonText="Consultar"
-                  imageUrl="https://images.unsplash.com/photo-1586773860417-e4526c49d4ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhdGVuY2klQzMlQjNuJTIwbSVDMyVBOXRpY2F8ZW58MHx8fHwxNzU5NjQyMjg2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  imageUrl="https://images.unsplash.com/photo-1586773860417-e4526c49d4ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhdGVuY2klQzMlQjNuJTIwbSVDMyVBOXRpY2F8ZW58MHx8fHwxNzU5NjQyMjg2fDA&ixlib-rb-4.1.0&q=80&w=1080"
                   dataAiHint="clinic interior"
                 />
               </div>
