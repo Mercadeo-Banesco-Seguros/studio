@@ -695,7 +695,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib-rb-4.1.0&q=80&w=1080"
                       dataAiHint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
@@ -727,7 +727,11 @@ export default function DashboardPage() {
                     className="z-0 transition-all duration-500 opacity-50"
                     data-ai-hint="abstract background"
                 />
-                <div className="absolute inset-0 z-0 bg-black/40"></div>
+                <div className={cn(
+                    "absolute inset-0 z-0 transition-colors duration-300",
+                    dressCodeView === 'caballeros' ? 'bg-blue-900/40' : 'bg-purple-900/40'
+                )}></div>
+
 
                 <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
                      <div className="flex flex-col justify-between h-full space-y-4 text-center md:text-left py-12">
