@@ -367,7 +367,7 @@ export default function DashboardPage() {
                       <Badge variant="outline" className="border-white text-white">
                           Acerca de Nosotros
                       </Badge>
-                      <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+                      <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
                           {isMissionView ? "Nuestra Misión" : "Nuestra Oferta de Valor"}
                       </h2>
                       <p className="text-white/80 max-w-lg">
@@ -487,7 +487,7 @@ export default function DashboardPage() {
                 <div className="relative z-10 w-full h-full p-8 flex flex-col items-center justify-center text-center">
                     
                     <div className={cn("transition-all duration-500", showShortcuts ? "opacity-0 scale-95" : "opacity-100 scale-100")}>
-                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">
                             Visita nuestro <br /> Portal de Requerimientos
                         </h2>
                         <div className="mt-8 flex justify-center gap-4">
@@ -616,7 +616,7 @@ export default function DashboardPage() {
                         {currentDressCode && (
                             <div>
                                 <p className="font-semibold text-white/80 uppercase tracking-wider">{currentDressCode.day}</p>
-                                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+                                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
                                     {currentDressCode.title}
                                 </h2>
                                 <p className="mt-2 text-white/80 max-w-sm mx-auto md:mx-0">{currentDressCode.description}</p>
@@ -624,9 +624,12 @@ export default function DashboardPage() {
                         )}
                         <div>
                             <p className="font-light text-white/80">Viste Seguro</p>
-                             <h3 className="text-3xl font-bold tracking-tighter">Banesco Seguros</h3>
+                             <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
                             <div className="mt-4 flex gap-2">
-                              <Button asChild className={cn("font-light", dressCodeView === 'damas' ? 'bg-purple-600 hover:bg-purple-700' : 'bg-blue-600 hover:bg-blue-700')}>
+                              <Button asChild className={cn(
+                                "font-light",
+                                dressCodeView === 'damas' ? 'bg-white text-purple-600 hover:bg-white/90' : 'bg-white text-blue-600 hover:bg-white/90'
+                              )}>
                                   <Link href="#">Explorar Guía</Link>
                               </Button>
                               <Button variant="outline" onClick={() => setDressCodeView('caballeros')} className={cn("font-light", dressCodeView === 'caballeros' ? 'bg-white text-blue-600 border-white' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white')}>
