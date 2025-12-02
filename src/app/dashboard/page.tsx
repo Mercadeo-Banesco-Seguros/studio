@@ -438,7 +438,7 @@ export default function DashboardPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
                          <Image
-                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib-rb-4.1.0&q=80&w=1080"
                             alt="Gestionar Solicitudes"
                             layout="fill"
                             objectFit="cover"
@@ -599,37 +599,58 @@ export default function DashboardPage() {
 
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full mt-24">
-            <div className="relative min-h-[600px] w-full flex flex-col justify-center overflow-hidden">
+            <div className="relative min-h-[700px] w-full flex flex-col justify-end overflow-hidden">
                 <Image
                     src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
                     alt="Fondo abstracto de vestimenta"
                     layout="fill"
                     objectFit="cover"
-                    className="z-0 transition-all duration-500"
+                    className="z-0"
                     data-ai-hint="abstract waves"
                 />
 
-                <div className="relative z-10 grid md:grid-cols-2 gap-8 items-end h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
-                     <div className="flex flex-col justify-between h-full space-y-4 text-center md:text-left py-12">
-                        {currentDressCode && (
-                            <div>
-                                <p className="font-semibold text-white/80 uppercase tracking-wider">{currentDressCode.day}</p>
-                                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-                                    {currentDressCode.title}
-                                </h2>
-                                <p className="mt-2 text-white/80 max-w-sm mx-auto md:mx-0">{currentDressCode.description}</p>
+                <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+                    <div
+                      className="relative flex items-end justify-center gap-3 w-full h-[400px]"
+                      onMouseLeave={() => {
+                        const todayDressCode = dressCodeItems.find(item => item.day === currentDayName);
+                        setCurrentDressCode(todayDressCode || dressCodeItems[0]);
+                      }}
+                    >
+                        {dressCodeItems.map(item => (
+                            <div
+                                key={item.id}
+                                onMouseEnter={() => setCurrentDressCode(item)}
+                                className={cn(
+                                    "relative w-full cursor-pointer transition-all duration-500 ease-in-out",
+                                    currentDressCode?.id === item.id 
+                                        ? `h-[380px]` 
+                                        : 'h-[300px] opacity-70 hover:opacity-100'
+                                )}
+                            >
+                                <Image src={item.imageUrl} layout="fill" objectFit="contain" alt={item.title} data-ai-hint={item.dataAiHint}/>
                             </div>
-                        )}
-                        <div>
+                        ))}
+                    </div>
+                    
+                    <div className="grid md:grid-cols-2 gap-8 items-center text-white mt-8">
+                       <div>
                             <p className="font-light text-white/80">Viste Seguro</p>
-                             <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
-                            <div className="mt-4 flex gap-2">
-                               <Button asChild className={cn(
-                                  "font-light text-xs bg-white hover:bg-white/90",
-                                   dressCodeView === 'damas' ? 'text-purple-600' : 'text-blue-600'
-                                )}>
-                                  <Link href="#">Explorar Guía</Link>
-                              </Button>
+                            <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
+                            <Button asChild variant="outline" className="mt-4 font-light text-xs bg-white text-primary hover:bg-white/90">
+                                <Link href="#">Explorar Guía</Link>
+                            </Button>
+                        </div>
+                        <div className="text-left md:text-right">
+                           {currentDressCode && (
+                                <div>
+                                    <p className="font-semibold text-white/80 uppercase tracking-wider">{currentDressCode.day}</p>
+                                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
+                                        {currentDressCode.title}
+                                    </h2>
+                                </div>
+                            )}
+                            <div className="mt-4 flex gap-2 justify-start md:justify-end">
                               <Button variant="outline" onClick={() => setDressCodeView('caballeros')} className={cn("font-light text-xs", dressCodeView === 'caballeros' ? 'bg-white text-blue-600 border-white' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white')}>
                                 Caballeros
                               </Button>
@@ -638,22 +659,6 @@ export default function DashboardPage() {
                               </Button>
                             </div>
                         </div>
-                    </div>
-                    <div className="relative h-full w-full min-h-[500px] flex items-end justify-center gap-3">
-                        {dressCodeItems.map(item => (
-                            <div
-                                key={item.id}
-                                className={cn(
-                                    "relative w-full cursor-pointer transition-all duration-500 ease-in-out",
-                                    currentDressCode?.id === item.id 
-                                        ? `h-[480px] opacity-100 z-10` 
-                                        : 'h-[360px] opacity-50 hover:opacity-75'
-                                )}
-                                onClick={() => setCurrentDressCode(item)}
-                            >
-                                <Image src={item.imageUrl} layout="fill" objectFit="contain" alt={item.title} data-ai-hint={item.dataAiHint}/>
-                            </div>
-                        ))}
                     </div>
                 </div>
             </div>
