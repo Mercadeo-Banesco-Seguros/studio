@@ -391,7 +391,6 @@ export default function DashboardPage() {
                              <Button size="default" variant="secondary" asChild className="font-light">
                                 <Link href="#">
                                     Novedades
-                               _next/static/chunks/src_app_dashboard_page_tsx_6b7a5a._.js
                                 </Link>
                             </Button>
                             <Button size="default" variant="default" className="bg-accent text-primary-foreground font-normal" asChild>
@@ -696,7 +695,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib=rb-4.1.0&q=80&w=1080"
                       dataAiHint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
@@ -720,22 +719,15 @@ export default function DashboardPage() {
         {/* Dress Code Section */}
         <section id="dress-code" className="w-full mt-24">
             <div className="relative min-h-[600px] w-full flex flex-col justify-center overflow-hidden">
-                {dressCodeView === 'caballeros' ? (
-                    <>
-                        <Image
-                            src="https://wallpapers.com/images/hd/blue-hd-1920-x-1080-background-6alqcc8fvs6o6s2t.jpg"
-                            alt="Fondo abstracto de vestimenta"
-                            layout="fill"
-                            objectFit="cover"
-                            className="z-0 transition-all duration-500"
-                            data-ai-hint="abstract texture"
-                        />
-                        <div className="absolute inset-0 z-0 transition-all duration-500 bg-blue-900/50"></div>
-                    </>
-                ) : (
-                    <div className="absolute inset-0 z-0 transition-all duration-500 bg-gradient-to-br from-purple-300 to-purple-500"></div>
-                )}
-
+                <Image
+                    src="https://images.unsplash.com/photo-1636955816868-fcb881e57954?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZvbmRvJTIwYWJzdHJhY3RvJTIwYmxhbmNvfGVufDB8fDB8fHww"
+                    alt="Fondo abstracto de vestimenta"
+                    layout="fill"
+                    objectFit="cover"
+                    className="z-0 transition-all duration-500 opacity-50"
+                    data-ai-hint="abstract background"
+                />
+                <div className="absolute inset-0 z-0 bg-black/40"></div>
 
                 <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center h-full text-white container mx-auto px-4 sm:px-6 lg:px-8">
                      <div className="flex flex-col justify-between h-full space-y-4 text-center md:text-left py-12">
@@ -799,7 +791,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
