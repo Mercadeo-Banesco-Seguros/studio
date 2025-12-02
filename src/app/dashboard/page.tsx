@@ -367,7 +367,7 @@ export default function DashboardPage() {
                       <Badge variant="outline" className="border-white text-white">
                           Acerca de Nosotros
                       </Badge>
-                      <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+                      <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
                           {isMissionView ? "Nuestra Misión" : "Nuestra Oferta de Valor"}
                       </h2>
                       <p className="text-white/80 max-w-lg">
@@ -454,7 +454,7 @@ export default function DashboardPage() {
                     </Card>
                      <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
                          <Image
-                            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib.rb-4.1.0&q=80&w=1080"
                             alt="Consultar Días Disponibles"
                             layout="fill"
                             objectFit="cover"
@@ -567,7 +567,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
                       dataAiHint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
@@ -578,7 +578,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib-rb-4.1.0&q=80&w=1080"
                       dataAiHint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
@@ -616,7 +616,7 @@ export default function DashboardPage() {
                         {currentDressCode && (
                             <div>
                                 <p className="font-semibold text-white/80 uppercase tracking-wider">{currentDressCode.day}</p>
-                                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
+                                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
                                     {currentDressCode.title}
                                 </h2>
                                 <p className="mt-2 text-white/80 max-w-sm mx-auto md:mx-0">{currentDressCode.description}</p>
@@ -624,15 +624,15 @@ export default function DashboardPage() {
                         )}
                         <div>
                             <p className="font-light text-white/80">Viste Seguro</p>
-                             <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
+                             <h3 className="text-3xl font-bold tracking-tighter">Banesco Seguros</h3>
                             <div className="mt-4 flex gap-2">
-                              <Button asChild className={cn("font-light text-white", dressCodeView === 'damas' ? 'bg-purple-600 hover:bg-purple-700' : 'bg-blue-600 hover:bg-blue-700')}>
+                              <Button asChild className={cn("font-light", dressCodeView === 'damas' ? 'bg-purple-600 hover:bg-purple-700' : 'bg-blue-600 hover:bg-blue-700')}>
                                   <Link href="#">Explorar Guía</Link>
                               </Button>
-                              <Button variant="outline" onClick={() => setDressCodeView('caballeros')} className={cn("font-light", dressCodeView === 'caballeros' ? 'bg-blue-600 text-white border-blue-600' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white')}>
+                              <Button variant="outline" onClick={() => setDressCodeView('caballeros')} className={cn("font-light", dressCodeView === 'caballeros' ? 'bg-white text-blue-600 border-white' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white')}>
                                 Caballeros
                               </Button>
-                               <Button variant="outline" onClick={() => setDressCodeView('damas')} className={cn("font-light", dressCodeView === 'damas' ? 'bg-purple-600 text-white border-purple-600' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white')}>
+                               <Button variant="outline" onClick={() => setDressCodeView('damas')} className={cn("font-light", dressCodeView === 'damas' ? 'bg-white text-purple-600 border-white' : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white')}>
                                 Damas
                               </Button>
                             </div>
@@ -676,7 +676,7 @@ export default function DashboardPage() {
                   title="Protocolos y Procedimientos"
                   description="Guías detalladas para la gestión de siniestros y solicitudes."
                   buttonText="Consultar"
-                  imageUrl="https://images.unsplash.com/photo-1586473228839-a9134a654378?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2N1bWVudHN8ZW58MHx8fHwxNzU5NjM5NjcxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  imageUrl="https://images.unsplash.com/photo-1586473228839-a9134a654378?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2N1bWVudHN8ZW58MHx8fHwxNzU5NjM5NjcxfDA&ixlib-rb-4.1.0&q=80&w=1080"
                   dataAiHint="documents folder"
                 />
                  <HcmCard
