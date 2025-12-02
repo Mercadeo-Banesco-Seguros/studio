@@ -655,11 +655,6 @@ export default function DashboardPage() {
                                 onClick={() => setCurrentDressCode(item)}
                             >
                                 <Image src={item.imageUrl} layout="fill" objectFit="contain" alt={item.title} data-ai-hint={item.dataAiHint}/>
-                                {currentDressCode?.id === item.id && (
-                                    <div className="absolute top-0 right-0 m-2 p-1.5 bg-white rounded-full">
-                                        <Check className="h-4 w-4 text-blue-600"/>
-                                    </div>
-                                )}
                             </div>
                         ))}
                       </div>
