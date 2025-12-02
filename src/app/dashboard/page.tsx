@@ -364,12 +364,7 @@ export default function DashboardPage() {
               />
               <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 w-full max-w-7xl mx-auto p-8 md:p-12">
                   <div className="space-y-4 text-white">
-                      <Badge 
-                          variant="outline" 
-                           style={isMissionView 
-                              ? { borderColor: 'hsl(var(--secondary))', color: 'hsl(var(--secondary))' } 
-                              : { borderColor: '#543db8', color: '#543db8' }}
-                      >
+                      <Badge variant="outline" className="border-white text-white">
                           Acerca de Nosotros
                       </Badge>
                       <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
@@ -443,7 +438,7 @@ export default function DashboardPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
                          <Image
-                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                            src="https://images.unsplash.com/photo-1534329539061-64ca6436f429?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8UExBTklGSUNBfGVufDB8fHx8MTc2MzA3Nzk0Nnww&ixlib-rb-4.1.0&q=80&w=1080"
                             alt="Gestionar Solicitudes"
                             layout="fill"
                             objectFit="cover"
@@ -572,7 +567,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
                       dataAiHint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
@@ -681,7 +676,7 @@ export default function DashboardPage() {
                   title="Protocolos y Procedimientos"
                   description="Guías detalladas para la gestión de siniestros y solicitudes."
                   buttonText="Consultar"
-                  imageUrl="https://images.unsplash.com/photo-1586473228839-a9134a654378?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2N1bWVudHN8ZW58MHx8fHwxNzU5NjM5NjcxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  imageUrl="https://images.unsplash.com/photo-1586473228839-a9134a654378?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2N1bWVudHN8ZW58MHx8fHwxNzU5NjM5NjcxfDA&ixlib-rb-4.1.0&q=80&w=1080"
                   dataAiHint="documents folder"
                 />
                  <HcmCard
