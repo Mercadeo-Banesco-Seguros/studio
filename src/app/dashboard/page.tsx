@@ -337,8 +337,7 @@ export default function DashboardPage() {
                 <div className="grid md:grid-cols-10 min-h-[calc(100vh-6rem)] relative">
                     <div className="md:col-span-7 flex flex-col justify-center py-12 md:py-24 z-10">
                         <div className="flex items-center gap-4">
-                           <Badge variant="outline">Portal Interno</Badge>
-                           <p className="text-4xl font-bold text-primary">Feliz Navidad 2025</p>
+                           <Badge variant="outline">{currentDayName}, {currentTime}</Badge>
                         </div>
                         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mt-4 text-foreground">
                             Bienvenido al Entorno <br /> Banesco Seguros
@@ -948,5 +947,3 @@ export default function DashboardPage() {
     </div>
   );
 }
-
-    
