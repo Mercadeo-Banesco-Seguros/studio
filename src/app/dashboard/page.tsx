@@ -428,9 +428,10 @@ export default function DashboardPage() {
                     {/* Inner Circle */}
                     <div className="absolute inset-4 bg-[#003C71] rounded-full"></div>
                     
-                    {/* Central Image */}
+                    {/* Central Image & Text */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                        <div className="relative w-32 h-32">
+                        <p className="text-sm tracking-widest uppercase">Nuestros Pilares</p>
+                        <div className="relative w-24 h-24 my-4">
                            <Image
                             src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BANESCO%20LOGO%20BLANCO.png?raw=true"
                             alt="Isotipo Banesco Seguros"
@@ -441,17 +442,25 @@ export default function DashboardPage() {
                     </div>
 
                     {/* Pillar Cards */}
-                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                        <div className="bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-lg">Innovación</div>
+                    <div
+                      className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-lg"
+                    >
+                      Innovación
                     </div>
-                     <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2">
-                        <div className="bg-sky-400 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-lg">Responsabilidad</div>
+                    <div
+                      className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 bg-sky-400 text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-lg"
+                    >
+                      Responsabilidad
                     </div>
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
-                        <div className="bg-blue-400 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-lg">Calidad</div>
+                    <div
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-blue-400 text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-lg"
+                    >
+                      Calidad
                     </div>
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2">
-                        <div className="bg-purple-500 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-lg">Confiabilidad</div>
+                    <div
+                      className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-purple-500 text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-lg"
+                    >
+                      Confiabilidad
                     </div>
                  </div>
               ) : (
@@ -712,7 +721,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
