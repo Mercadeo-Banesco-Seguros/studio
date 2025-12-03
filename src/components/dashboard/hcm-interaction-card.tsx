@@ -42,7 +42,7 @@ export const HcmCard = ({
           <Icon className="h-8 w-8" />
         </div>
         <p className="text-sm text-primary-foreground/80">{description}</p>
-        <h3 className="text-3xl font-bold my-2">{title}</h3>
+        <h3 className="text-4xl md:text-5xl font-bold my-2">{title}</h3>
         <div className="flex gap-4 mt-4">
           <Button asChild variant="secondary" className="bg-white text-primary hover:bg-white/90 font-light">
             <Link href="#">{buttonText}</Link>
