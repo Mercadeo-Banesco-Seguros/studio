@@ -435,7 +435,7 @@ export default function DashboardPage() {
         {/* Actividades del Mes Section */}
         <div id="actividades-del-mes" className="w-full mt-24">
           <SectionWrapper>
-            <Card className="relative p-8 rounded-2xl shadow-lg flex flex-col justify-center items-center min-h-[300px] overflow-hidden group bg-gradient-to-br from-primary to-secondary text-primary-foreground">
+            <Card className="relative p-8 rounded-2xl shadow-lg grid md:grid-cols-2 gap-8 items-center min-h-[300px] overflow-hidden group bg-gradient-to-br from-primary to-secondary text-primary-foreground">
                 <Image
                     src="https://www.onlygfx.com/wp-content/uploads/2022/12/white-snowflakes-overlay-4.png"
                     alt="Copos de nieve"
@@ -444,10 +444,20 @@ export default function DashboardPage() {
                     className="absolute inset-0 opacity-10 pointer-events-none"
                     data-ai-hint="snowflakes"
                 />
-              <div className="relative z-10 text-center">
+              <div className="relative z-10 text-center md:text-left">
                 <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight">
                     ¡Feliz Navidad 2025!
                 </h2>
+              </div>
+              <div className="relative h-64 w-full">
+                <Image
+                  src="https://picsum.photos/seed/christmas/600/400"
+                  alt="Imagen Navideña"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
+                  data-ai-hint="christmas celebration"
+                />
               </div>
             </Card>
           </SectionWrapper>
@@ -922,5 +932,3 @@ export default function DashboardPage() {
     </div>
   );
 }
-
-    
