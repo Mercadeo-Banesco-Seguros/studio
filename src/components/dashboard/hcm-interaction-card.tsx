@@ -51,7 +51,7 @@ export const HcmCard = ({
   }
 
   return (
-    <Card className="group relative rounded-2xl overflow-hidden shadow-lg min-h-[500px] flex flex-col justify-end">
+    <Card className="group relative rounded-2xl overflow-hidden shadow-lg min-h-[500px] flex flex-col justify-between">
       {imageUrl && (
         <Image 
           src={imageUrl} 
@@ -63,24 +63,28 @@ export const HcmCard = ({
         />
       )}
       <div className="absolute inset-0 bg-black/50"></div>
-      <CardContent className="relative z-10 p-6 text-white">
-        {badgeText && (
-          <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm">
-            {BadgeIcon && <BadgeIcon className="mr-1.5 h-3 w-3" />}
-            {badgeText}
-          </Badge>
-        )}
-        <div className="absolute top-6 right-6 p-2 rounded-full bg-white/20 backdrop-blur-sm">
-            <Icon className="h-4 w-4 text-white"/>
+      <CardContent className="relative z-10 p-6 text-white flex flex-col h-full">
+        <div className="flex justify-between items-start">
+            {badgeText && (
+            <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm">
+                {BadgeIcon && <BadgeIcon className="mr-1.5 h-3 w-3" />}
+                {badgeText}
+            </Badge>
+            )}
+            <div className="p-2 rounded-full bg-white/20 backdrop-blur-sm ml-auto">
+                <Icon className="h-4 w-4 text-white"/>
+            </div>
         </div>
-        <h3 className="text-xl font-bold">{title}</h3>
-        <p className="text-sm text-white/80 mt-1 mb-4">{description}</p>
-        <Button asChild variant="ghost" className="p-0 h-auto text-white/80 hover:text-white hover:bg-transparent">
-          <Link href="#" className="text-sm">
-            {buttonText}
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </Button>
+        <div className="mt-auto">
+            <h3 className="text-xl font-bold">{title}</h3>
+            <p className="text-sm text-white/80 mt-1 mb-4">{description}</p>
+            <Button asChild variant="ghost" className="p-0 h-auto text-white/80 hover:text-white hover:bg-transparent">
+            <Link href="#" className="text-sm">
+                {buttonText}
+                <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+            </Button>
+        </div>
       </CardContent>
     </Card>
   );
