@@ -166,27 +166,27 @@ const normalizeDayName = (name: string) => {
 
 type AboutView = 'mision' | 'oferta' | 'pilares';
 
-const aboutContent: Record<AboutView, { title: string; description: string; image?: string; dataAiHint?: string, pilares?: { number: string; title: string; text: string; icon: LucideIcon; color: string; }[] }> = {
+const aboutContent: Record<AboutView, { title: string; description: string; image?: string; 'data-ai-hint'?: string, pilares?: { title: string; color: string; }[] }> = {
   mision: {
     title: "Nuestra Misión",
     description: "Ser la empresa de seguros preferida del mercado, reconocida por su excelencia, calidad de servicio y compromiso con la satisfacción de nuestros clientes, intermediarios y colaboradores.",
     image: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(48).png?raw=true",
-    dataAiHint: "target mission",
+    'data-ai-hint': "target mission",
   },
   oferta: {
     title: "Nuestra Oferta de Valor",
     description: "Somos una empresa de seguros reconocida por su excelencia y calidad, orientada a satisfacer las necesidades de nuestros clientes, intermediarios y organización, brindando asesoría y protección con soluciones ágiles y oportunas.",
     image: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(47).png?raw=true",
-    dataAiHint: "puzzle solution",
+    'data-ai-hint': "puzzle solution",
   },
   pilares: {
     title: "Nuestros Pilares",
     description: "Los 4 pilares fundamentales que sostienen nuestra cultura y guían cada una de nuestras acciones.",
     pilares: [
-        { number: "01", title: "Calidad", text: "Trabajamos para brindar mejores soluciones a nuestros clientes.", icon: Award, color: "bg-blue-400/20" },
-        { number: "02", title: "Innovación", text: "Construimos una visión de futuro para nuestra organización.", icon: Lightbulb, color: "bg-sky-400/20" },
-        { number: "03", title: "Confiabilidad", text: "La cultura de servicio se enfoca en unir esfuerzos en torno a nuestros clientes.", icon: Shield, color: "bg-indigo-400/20" },
-        { number: "04", title: "Responsabilidad", text: "Cumplimos con nuestros compromisos; brindamos seguridad y confianza.", icon: Handshake, color: "bg-cyan-400/20" },
+        { title: "Calidad", color: "bg-[#003C71]" },
+        { title: "Innovación", color: "bg-[#3F75C3]" },
+        { title: "Responsabilidad", color: "bg-[#65A3E5]" },
+        { title: "Confiabilidad", color: "bg-[#A9D4F2]" },
     ]
   },
 };
@@ -422,20 +422,22 @@ export default function DashboardPage() {
                   </div>
                   
                   {activeAboutView === 'pilares' ? (
-                     <div className="grid grid-cols-2 gap-6">
-                        {aboutContent.pilares.pilares?.map((pilar) => {
-                            const Icon = pilar.icon;
-                            return (
-                                <Card key={pilar.number} className={cn("p-4 rounded-2xl", pilar.color)}>
-                                    <CardContent className="flex flex-col items-center text-center text-white p-0">
-                                        <div className="p-3 bg-white/20 rounded-full mb-3">
-                                            <Icon className="h-6 w-6" />
-                                        </div>
-                                        <h3 className="font-bold text-lg">{pilar.title}</h3>
-                                    </CardContent>
-                                </Card>
-                            )
-                        })}
+                     <div className="relative flex flex-col items-end justify-center w-full h-80">
+                        {aboutContent.pilares.pilares?.map((pilar, index) => (
+                            <div 
+                                key={pilar.title} 
+                                className={cn(
+                                    "p-4 px-8 rounded-xl text-white font-bold text-lg text-center shadow-lg", 
+                                    pilar.color
+                                )}
+                                style={{
+                                  width: `${100 - index * 10}%`,
+                                  marginBottom: index < 3 ? '-1rem' : '0'
+                                }}
+                            >
+                                {pilar.title}
+                            </div>
+                        ))}
                      </div>
                   ) : (
                     <div className="relative h-96 w-full">
@@ -445,7 +447,7 @@ export default function DashboardPage() {
                                 alt={aboutContent[activeAboutView].title}
                                 layout="fill"
                                 objectFit="contain"
-                                data-ai-hint={aboutContent[activeAboutView].dataAiHint}
+                                data-ai-hint={aboutContent[activeAboutView]['data-ai-hint']}
                             />
                         )}
                     </div>
