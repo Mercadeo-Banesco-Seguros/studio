@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, ArrowLeft, Phone, MessageSquare as WhatsAppIcon } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Phone, MessageSquare as WhatsAppIcon, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { LucideIcon } from 'lucide-react';
 import Link from 'next/link';
@@ -25,7 +25,7 @@ interface HcmCardProps {
 
 const AnimatedContactButton = ({ href, type, label, number, icon: Icon, className, iconClassName }: {
   href: string;
-  type: 'whatsapp' | 'phone';
+  type: 'whatsapp' | 'phone' | 'email';
   label: string;
   number: string;
   icon: React.ElementType;
@@ -44,7 +44,7 @@ const AnimatedContactButton = ({ href, type, label, number, icon: Icon, classNam
     >
       <div className="pl-4 transition-opacity duration-200">
         <p className="text-[10px]">{label}</p>
-        <p className="text-xs font-semibold">{number}</p>
+        <p className={cn("font-semibold", type === 'email' ? "text-[11px]" : "text-xs")}>{number}</p>
       </div>
 
       <div
@@ -120,6 +120,15 @@ export const HcmCard = ({
                                 icon={Phone}
                                 className="bg-[#3b82f6]"
                                 iconClassName="text-[#3b82f6]"
+                            />
+                             <AnimatedContactButton
+                                href="mailto:servicios@banescoseguros.com"
+                                type="email"
+                                label="Correo Electrónico"
+                                number="servicios@banescoseguros.com"
+                                icon={Mail}
+                                className="bg-slate-500"
+                                iconClassName="text-slate-500"
                             />
                         </div>
 
