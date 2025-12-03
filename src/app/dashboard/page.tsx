@@ -183,10 +183,10 @@ const aboutContent: Record<AboutView, { title: string; description: string; imag
     title: "Nuestros Pilares",
     description: "Los 4 pilares fundamentales que sostienen nuestra cultura y guían cada una de nuestras acciones.",
     pilares: [
-        { title: "Calidad", color: "bg-[#003C71]" },
-        { title: "Innovación", color: "bg-[#3F75C3]" },
-        { title: "Responsabilidad", color: "bg-[#65A3E5]" },
-        { title: "Confiabilidad", color: "bg-[#A9D4F2]" },
+      { title: "Calidad", color: "bg-[#003C71]" },
+      { title: "Innovación", color: "bg-[#3F75C3]" },
+      { title: "Responsabilidad", color: "bg-[#65A3E5]" },
+      { title: "Confiabilidad", color: "bg-[#A9D4F2]" },
     ]
   },
 };
@@ -422,22 +422,28 @@ export default function DashboardPage() {
                   </div>
                   
                   {activeAboutView === 'pilares' ? (
-                     <div className="relative flex flex-col items-end justify-center w-full h-80">
-                        {aboutContent.pilares.pilares?.map((pilar, index) => (
-                            <div 
-                                key={pilar.title} 
-                                className={cn(
-                                    "p-4 px-8 rounded-xl text-white font-bold text-lg text-center shadow-lg", 
-                                    pilar.color
-                                )}
-                                style={{
-                                  width: `${100 - index * 10}%`,
-                                  marginBottom: index < 3 ? '-0.75rem' : '0'
-                                }}
-                            >
-                                {pilar.title}
-                            </div>
-                        ))}
+                     <div className="relative w-full h-[350px]">
+                        <svg viewBox="0 0 500 250" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-50">
+                            <path d="M50 200 C 150 50, 350 50, 450 200" stroke="#4F89C8" fill="none" strokeWidth="15" strokeLinecap="round" />
+                        </svg>
+                        
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white">
+                            <p className="text-sm">Nuestros Pilares</p>
+                            <h3 className="text-3xl font-bold">Banesco Seguros</h3>
+                        </div>
+
+                        <div className="absolute top-[35%] left-[5%]" style={{ transform: 'translateY(-50%)'}}>
+                            <div className="bg-[#3F75C3] text-white p-3 px-6 rounded-xl shadow-lg">Calidad</div>
+                        </div>
+                        <div className="absolute top-[10%] left-[25%]" style={{ transform: 'translateY(-50%)'}}>
+                             <div className="bg-[#3b82f6] text-white p-3 px-6 rounded-xl shadow-lg">Innovación</div>
+                        </div>
+                        <div className="absolute top-[10%] right-[25%]" style={{ transform: 'translateY(-50%)'}}>
+                           <div className="bg-[#38bdf8] text-white p-3 px-6 rounded-xl shadow-lg">Responsabilidad</div>
+                        </div>
+                        <div className="absolute top-[35%] right-[5%]" style={{ transform: 'translateY(-50%)'}}>
+                            <div className="bg-[#8b5cf6] text-white p-3 px-6 rounded-xl shadow-lg">Confiabilidad</div>
+                        </div>
                      </div>
                   ) : (
                     <div className="relative h-96 w-full">
@@ -686,7 +692,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
