@@ -85,10 +85,10 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 
 
 const pilaresData = [
-    { number: "01", title: "Calidad", text: "Trabajamos para brindar mejores soluciones a nuestros clientes.", icon: Award, color: "bg-primary" },
-    { number: "02", title: "Innovación", text: "Construimos una visión de futuro para nuestra organización.", icon: Lightbulb, color: "bg-secondary" },
-    { number: "03", title: "Confiabilidad", text: "La cultura de servicio se enfoca en unir esfuerzos en torno a nuestros clientes.", icon: Shield, color: "bg-blue-400" },
-    { number: "04", title: "Responsabilidad", text: "Cumplimos con nuestros compromisos; brindamos seguridad y confianza.", icon: Handshake, color: "bg-blue-400" },
+    { number: "01", title: "Calidad", text: "Trabajamos para brindar mejores soluciones a nuestros clientes.", icon: Award, color: "bg-blue-400/20" },
+    { number: "02", title: "Innovación", text: "Construimos una visión de futuro para nuestra organización.", icon: Lightbulb, color: "bg-sky-400/20" },
+    { number: "03", title: "Confiabilidad", text: "La cultura de servicio se enfoca en unir esfuerzos en torno a nuestros clientes.", icon: Shield, color: "bg-indigo-400/20" },
+    { number: "04", title: "Responsabilidad", text: "Cumplimos con nuestros compromisos; brindamos seguridad y confianza.", icon: Handshake, color: "bg-cyan-400/20" },
 ];
 
 const activityHighlights = [
@@ -171,6 +171,28 @@ const normalizeDayName = (name: string) => {
     .replace(/[^a-z]/g, ''); // remove non-alphabetic chars
 };
 
+type AboutView = 'mision' | 'oferta' | 'pilares';
+
+const aboutContent: Record<AboutView, { title: string; description: string; image?: string; imageHint?: string }> = {
+  mision: {
+    title: "Nuestra Misión",
+    description: "Ser la empresa de seguros preferida del mercado, reconocida por su excelencia, calidad de servicio y compromiso con la satisfacción de nuestros clientes, intermediarios y colaboradores.",
+    image: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(48).png?raw=true",
+    imageHint: "target mission",
+  },
+  oferta: {
+    title: "Nuestra Oferta de Valor",
+    description: "Somos una empresa de seguros reconocida por su excelencia y calidad, orientada a satisfacer las necesidades de nuestros clientes, intermediarios y organización, brindando asesoría y protección con soluciones ágiles y oportunas.",
+    image: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(47).png?raw=true",
+    imageHint: "puzzle solution",
+  },
+  pilares: {
+    title: "Nuestros Pilares",
+    description: "Los 4 pilares fundamentales que sostienen nuestra cultura y guían cada una de nuestras acciones.",
+    // No image for pillars, as we will render cards instead
+  },
+};
+
 
 export default function DashboardPage() {
   const dressCodeScrollRef = useRef<HTMLDivElement>(null);
@@ -186,7 +208,7 @@ export default function DashboardPage() {
   const [todaysMenus, setTodaysMenus] = useState<MenuItem[]>([]);
   const [isLoadingMenu, setIsLoadingMenu] = useState(true);
   const [showShortcuts, setShowShortcuts] = useState(false);
-  const [isMissionView, setIsMissionView] = useState(true);
+  const [activeAboutView, setActiveAboutView] = useState<AboutView>('mision');
   const { toast } = useToast();
   
   const [dressCodeView, setDressCodeView] = useState<'caballeros' | 'damas'>('caballeros');
@@ -368,40 +390,65 @@ export default function DashboardPage() {
                           Acerca de Nosotros
                       </Badge>
                       <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
-                          {isMissionView ? "Nuestra Misión" : "Nuestra Oferta de Valor"}
+                          {aboutContent[activeAboutView].title}
                       </h2>
                       <p className="text-white/80 max-w-lg">
-                          {isMissionView 
-                              ? "Ser la empresa de seguros preferida del mercado, reconocida por su excelencia, calidad de servicio y compromiso con la satisfacción de nuestros clientes, intermediarios y colaboradores."
-                              : "Somos una empresa de seguros reconocida por su excelencia y calidad, orientada a satisfacer las necesidades de nuestros clientes, intermediarios y organización, brindando asesoría y protección con soluciones ágiles y oportunas."
-                          }
+                          {aboutContent[activeAboutView].description}
                       </p>
-                      <div className="flex gap-4 pt-4">
+                      <div className="flex gap-2 pt-4">
                            <Button 
-                              asChild 
-                              className="font-light bg-white text-primary hover:bg-white/90"
-                          >
-                              <Link href="/dashboard/mapa-clientes">Nosotros</Link>
+                              variant={activeAboutView === 'mision' ? 'secondary' : 'ghost'}
+                              onClick={() => setActiveAboutView('mision')}
+                              className={cn(activeAboutView === 'mision' ? 'bg-white text-primary' : 'text-white/80 hover:text-white hover:bg-white/10')}
+                            >
+                              Misión
                           </Button>
-                          <Button variant="ghost" onClick={() => setIsMissionView(!isMissionView)} className="text-white/80 hover:text-white">
-                              <RefreshCw className={cn("mr-2 h-4 w-4", isMissionView && "rotate-180 transition-transform")}/>
-                              {isMissionView ? "Ver Oferta de Valor" : "Ver Misión"}
+                          <Button 
+                              variant={activeAboutView === 'oferta' ? 'secondary' : 'ghost'}
+                              onClick={() => setActiveAboutView('oferta')}
+                              className={cn(activeAboutView === 'oferta' ? 'bg-white text-primary' : 'text-white/80 hover:text-white hover:bg-white/10')}
+                          >
+                              Oferta de Valor
+                          </Button>
+                           <Button 
+                              variant={activeAboutView === 'pilares' ? 'secondary' : 'ghost'}
+                              onClick={() => setActiveAboutView('pilares')}
+                              className={cn(activeAboutView === 'pilares' ? 'bg-white text-primary' : 'text-white/80 hover:text-white hover:bg-white/10')}
+                          >
+                              Pilares
                           </Button>
                       </div>
                   </div>
-                  <div className={cn("relative h-96 w-full transition-all duration-500", !isMissionView ? 'md:ml-auto' : '')}>
-                      <Image
-                          src={isMissionView ? "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(48).png?raw=true" : "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(47).png?raw=true"}
-                          alt={isMissionView ? "Ilustración de misión" : "Ilustración de oferta de valor"}
-                          layout="fill"
-                          objectFit="contain"
-                          data-ai-hint={isMissionView ? "target mission" : "puzzle solution"}
-                          className={cn(
-                              "transition-all duration-500", 
-                              !isMissionView && "object-right"
-                          )}
-                      />
-                  </div>
+                  
+                  {activeAboutView === 'pilares' ? (
+                     <div className="grid grid-cols-2 gap-6">
+                        {pilaresData.map((pilar) => {
+                            const Icon = pilar.icon;
+                            return (
+                                <Card key={pilar.number} className={cn("p-4 rounded-2xl", pilar.color)}>
+                                    <CardContent className="flex flex-col items-center text-center text-white p-0">
+                                        <div className="p-3 bg-white/20 rounded-full mb-3">
+                                            <Icon className="h-6 w-6" />
+                                        </div>
+                                        <h3 className="font-bold text-lg">{pilar.title}</h3>
+                                    </CardContent>
+                                </Card>
+                            )
+                        })}
+                     </div>
+                  ) : (
+                    <div className="relative h-96 w-full">
+                        {aboutContent[activeAboutView].image && (
+                            <Image
+                                src={aboutContent[activeAboutView].image!}
+                                alt={aboutContent[activeAboutView].title}
+                                layout="fill"
+                                objectFit="contain"
+                                data-ai-hint={aboutContent[activeAboutView].imageHint}
+                            />
+                        )}
+                    </div>
+                  )}
               </div>
           </div>
         </div>
@@ -442,21 +489,21 @@ export default function DashboardPage() {
                 </div>
                 <div className="grid md:grid-cols-2 gap-8 items-end text-white mt-8">
                     <div>
-                        <p className="font-light text-white/80">Viste Seguro</p>
-                        <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
-                        <div className="mt-4">
-                            <Button 
-                              variant="outline"
-                              onClick={() => {
-                                  toast({
-                                      title: "Guía de Vestimenta",
-                                      description: "Esta función se encuentra en desarrollo. ¡Pronto podrás explorar la guía completa!",
-                                  });
-                              }}
-                              className="font-light text-xs bg-white hover:bg-white/90 text-primary">
-                              Explorar Guía
-                            </Button>
+                        <div className="mb-4">
+                            <p className="font-light text-white/80">Viste Seguro</p>
+                            <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
                         </div>
+                         <Button 
+                            variant="outline"
+                            onClick={() => {
+                                toast({
+                                    title: "Guía de Vestimenta",
+                                    description: "Esta función se encuentra en desarrollo. ¡Pronto podrás explorar la guía completa!",
+                                });
+                            }}
+                            className="font-light text-xs bg-white hover:bg-white/90 text-primary">
+                            Explorar Guía
+                        </Button>
                     </div>
                     <div className="text-left md:text-right">
                        {currentDressCode && (
@@ -636,7 +683,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
@@ -912,3 +959,5 @@ export default function DashboardPage() {
     </div>
   );
 }
+
+    
