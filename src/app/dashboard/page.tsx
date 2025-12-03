@@ -348,18 +348,13 @@ export default function DashboardPage() {
                         </p>
                         <div className="mt-8 flex items-center gap-4">
                             <Button size="default" asChild className="font-light">
-                                <Link href="/dashboard/bienestar">
-                                    Bienestar
-                                </Link>
-                            </Button>
-                             <Button size="default" variant="secondary" asChild className="font-light">
                                 <Link href="#">
                                     Novedades
                                 </Link>
                             </Button>
-                            <Button size="default" variant="default" className="bg-accent text-primary-foreground font-normal" asChild>
-                                <Link href="/dashboard/cursos">
-                                    Actívate
+                            <Button size="default" variant="outline" asChild className="font-light">
+                                <Link href="#">
+                                    Manual de Empresa
                                 </Link>
                             </Button>
                         </div>
