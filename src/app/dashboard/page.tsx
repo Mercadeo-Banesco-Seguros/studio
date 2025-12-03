@@ -352,7 +352,12 @@ export default function DashboardPage() {
                                     Novedades
                                 </Link>
                             </Button>
-                            <Button size="default" variant="outline" asChild className="font-light">
+                            <Button 
+                                size="default" 
+                                variant="outline" 
+                                asChild 
+                                className="font-light border-primary text-primary hover:bg-primary/10 hover:text-primary"
+                            >
                                 <Link href="#">
                                     Manual de Empresa
                                 </Link>
