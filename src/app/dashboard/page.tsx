@@ -474,7 +474,7 @@ export default function DashboardPage() {
                             className={cn(
                               "font-light text-xs", 
                               dressCodeView === 'caballeros' 
-                                ? 'bg-white text-blue-600 border-white' 
+                                ? 'bg-white text-primary border-white' 
                                 : 'bg-transparent text-white border-white/50 hover:bg-white/10 hover:text-white'
                             )}>
                             Caballeros
@@ -501,7 +501,7 @@ export default function DashboardPage() {
         <div id="vacaciones" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
+                    <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
                          <Image
                             src="https://4kwallpapers.com/images/wallpapers/beach-aerial-view-3840x2160-60.jpg"
                             alt="Planifica tus Próximas Vacaciones"
@@ -519,7 +519,7 @@ export default function DashboardPage() {
                             </Button>
                         </div>
                     </Card>
-                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
+                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
                          <Image
                             src="https://plus.unsplash.com/premium_photo-1678727128583-b7bb1b4763b5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXZpb24lMjBkZSUyMHZpYWplfGVufDB8fDB8fHww"
                             alt="Consultar Días Disponibles"
@@ -636,7 +636,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
