@@ -422,27 +422,33 @@ export default function DashboardPage() {
               </div>
 
               {activeAboutView === 'pilares' ? (
-                <div className="relative w-full h-[350px]">
-                    <svg viewBox="0 0 500 250" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-50">
-                        <path d="M50 200 C 150 50, 350 50, 450 200" stroke="#4F89C8" fill="none" strokeWidth="15" strokeLinecap="round" />
-                    </svg>
-                    
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white">
-                        <p className="text-sm">Nuestros Pilares</p>
-                        <h3 className="text-3xl font-bold">Banesco Seguros</h3>
+                 <div className="relative w-full h-[400px]">
+                    <div className="absolute bottom-0 left-0 right-0 h-[200px] overflow-hidden">
+                      <svg viewBox="0 0 1000 200" preserveAspectRatio="none" className="absolute bottom-0 left-0 w-full h-[200px] translate-y-1/2">
+                          <path d="M-100 -50 C 200 300, 800 300, 1100 -50" stroke="#4F89C8" fill="none" strokeWidth="30" strokeLinecap="round" opacity="0.5"/>
+                      </svg>
                     </div>
 
-                    <div className="absolute top-[35%] left-[5%]" style={{ transform: 'translateY(-50%)'}}>
-                        <div className="bg-[#3F75C3] text-white p-3 px-6 rounded-xl shadow-lg">Calidad</div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full text-center text-white">
+                      <p className="text-sm">Nuestros Pilares</p>
+                      <h3 className="text-3xl font-bold">Banesco Seguros</h3>
                     </div>
-                    <div className="absolute top-[10%] left-[25%]" style={{ transform: 'translateY(-50%)'}}>
-                         <div className="bg-[#3b82f6] text-white p-3 px-6 rounded-xl shadow-lg">Innovación</div>
+
+                    {/* Pilar 1: Calidad */}
+                    <div className="absolute top-[40%] left-[10%] transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="bg-[#003C71] text-white p-3 px-6 rounded-xl shadow-lg">Calidad</div>
                     </div>
-                    <div className="absolute top-[10%] right-[25%]" style={{ transform: 'translateY(-50%)'}}>
-                       <div className="bg-[#38bdf8] text-white p-3 px-6 rounded-xl shadow-lg">Responsabilidad</div>
+                    {/* Pilar 2: Innovación */}
+                    <div className="absolute top-[20%] left-[35%] transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="bg-[#3F75C3] text-white p-3 px-6 rounded-xl shadow-lg">Innovación</div>
                     </div>
-                    <div className="absolute top-[35%] right-[5%]" style={{ transform: 'translateY(-50%)'}}>
-                        <div className="bg-[#8b5cf6] text-white p-3 px-6 rounded-xl shadow-lg">Confiabilidad</div>
+                    {/* Pilar 3: Confiabilidad */}
+                    <div className="absolute top-[20%] right-[25%] transform translate-x-1/2 -translate-y-1/2">
+                      <div className="bg-[#65A3E5] text-white p-3 px-6 rounded-xl shadow-lg">Confiabilidad</div>
+                    </div>
+                    {/* Pilar 4: Responsabilidad */}
+                    <div className="absolute top-[40%] right-[0%] transform translate-x-1/2 -translate-y-1/2">
+                      <div className="bg-[#A9D4F2] text-white p-3 px-6 rounded-xl shadow-lg">Responsabilidad</div>
                     </div>
                  </div>
               ) : (
@@ -692,7 +698,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
