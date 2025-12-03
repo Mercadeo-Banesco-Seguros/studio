@@ -110,7 +110,7 @@ export const HcmCard = ({
                                 number="(0414) 239.84.16"
                                 icon={WhatsAppIcon}
                                 className="bg-secondary"
-                                iconClassName="text-secondary-foreground"
+                                iconClassName="text-primary"
                             />
                             <AnimatedContactButton
                                 href="tel:08007348767"
@@ -119,7 +119,7 @@ export const HcmCard = ({
                                 number="0-800-SEGUROS"
                                 icon={Phone}
                                 className="bg-secondary"
-                                iconClassName="text-secondary-foreground"
+                                iconClassName="text-primary"
                             />
                              <AnimatedContactButton
                                 href="mailto:servicios@banescoseguros.com"
@@ -128,7 +128,7 @@ export const HcmCard = ({
                                 number="servicios@banescoseguros.com"
                                 icon={Mail}
                                 className="bg-secondary"
-                                iconClassName="text-secondary-foreground"
+                                iconClassName="text-primary"
                             />
                         </div>
 
