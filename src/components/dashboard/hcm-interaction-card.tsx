@@ -42,7 +42,7 @@ const AnimatedContactButton = ({ href, type, label, number, icon: Icon, classNam
         className
       )}
     >
-      <div className="pl-4 transition-opacity duration-200">
+      <div className="pl-4 transition-opacity duration-200 text-left">
         <p className="text-[10px]">{label}</p>
         <p className={cn("font-semibold", type === 'email' ? "text-[11px]" : "text-xs")}>{number}</p>
       </div>
