@@ -444,6 +444,19 @@ export default function DashboardPage() {
                     <div>
                         <p className="font-light text-white/80">Viste Seguro</p>
                         <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
+                        <div className="mt-4">
+                            <Button 
+                              variant="outline"
+                              onClick={() => {
+                                  toast({
+                                      title: "Guía de Vestimenta",
+                                      description: "Esta función se encuentra en desarrollo. ¡Pronto podrás explorar la guía completa!",
+                                  });
+                              }}
+                              className="font-light text-xs bg-white hover:bg-white/90 text-primary">
+                              Explorar Guía
+                            </Button>
+                        </div>
                     </div>
                     <div className="text-left md:text-right">
                        {currentDressCode && (
@@ -478,19 +491,6 @@ export default function DashboardPage() {
                             Damas
                           </Button>
                         </div>
-                         <div className="mt-4">
-                            <Button 
-                              variant="outline"
-                              onClick={() => {
-                                  toast({
-                                      title: "Guía de Vestimenta",
-                                      description: "Esta función se encuentra en desarrollo. ¡Pronto podrás explorar la guía completa!",
-                                  });
-                              }}
-                              className="font-light text-xs bg-white hover:bg-white/90 text-primary">
-                              Explorar Guía
-                            </Button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -501,7 +501,7 @@ export default function DashboardPage() {
         <div id="vacaciones" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
+                    <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
                          <Image
                             src="https://4kwallpapers.com/images/wallpapers/beach-aerial-view-3840x2160-60.jpg"
                             alt="Planifica tus Próximas Vacaciones"
@@ -519,7 +519,7 @@ export default function DashboardPage() {
                             </Button>
                         </div>
                     </Card>
-                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
+                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
                          <Image
                             src="https://plus.unsplash.com/premium_photo-1678727128583-b7bb1b4763b5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXZpb24lMjBkZSUyMHZpYWplfGVufDB8fDB8fHww"
                             alt="Consultar Días Disponibles"
@@ -636,7 +636,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
@@ -665,29 +665,6 @@ export default function DashboardPage() {
                   />
               </div>
           </SectionWrapper>
-        </div>
-
-        {/* Menus Section */}
-        <div id="menu" className="mt-24">
-          {isLoadingMenu ? (
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <SectionWrapper>
-                <Skeleton className="h-[600px] w-full rounded-2xl" />
-              </SectionWrapper>
-            </div>
-          ) : todaysMenus.length > 0 ? (
-            <InteractiveMenuBanner menuItems={todaysMenus} />
-          ) : (
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <SectionWrapper>
-                <Card className="col-span-full">
-                  <CardContent className="p-8 text-center text-muted-foreground">
-                    <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
-                  </CardContent>
-                </Card>
-              </SectionWrapper>
-            </div>
-          )}
         </div>
 
         {/* Póliza HCM Section */}
@@ -725,6 +702,30 @@ export default function DashboardPage() {
               </div>
             </div>
         </section>
+
+        {/* Menus Section */}
+        <div id="menu" className="mt-24">
+          {isLoadingMenu ? (
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <SectionWrapper>
+                <Skeleton className="h-[600px] w-full rounded-2xl" />
+              </SectionWrapper>
+            </div>
+          ) : todaysMenus.length > 0 ? (
+            <InteractiveMenuBanner menuItems={todaysMenus} />
+          ) : (
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <SectionWrapper>
+                <Card className="col-span-full">
+                  <CardContent className="p-8 text-center text-muted-foreground">
+                    <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
+                  </CardContent>
+                </Card>
+              </SectionWrapper>
+            </div>
+          )}
+        </div>
+
 
         {/* Espacio Ejecutivo Section */}
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
