@@ -432,7 +432,7 @@ export default function DashboardPage() {
                                 )}
                                 style={{
                                   width: `${100 - index * 10}%`,
-                                  marginBottom: index < 3 ? '-1rem' : '0'
+                                  marginBottom: index < 3 ? '-0.75rem' : '0'
                                 }}
                             >
                                 {pilar.title}
