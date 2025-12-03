@@ -182,12 +182,8 @@ const aboutContent: Record<AboutView, { title: string; description: string; imag
   pilares: {
     title: "Nuestros Pilares",
     description: "Los 4 pilares fundamentales que sostienen nuestra cultura y guían cada una de nuestras acciones.",
-    pilares: [
-      { title: "Calidad", color: "bg-blue-400" },
-      { title: "Innovación", color: "bg-blue-500" },
-      { title: "Responsabilidad", color: "bg-purple-500" },
-      { title: "Confiabilidad", color: "bg-sky-400" },
-    ]
+    image: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_6fia0y6fia0y6fia-Photoroom.png?raw=true",
+    'data-ai-hint': "company pillars",
   },
 };
 
@@ -420,60 +416,17 @@ export default function DashboardPage() {
                 </div>
               </div>
               
-              {activeAboutView === 'pilares' ? (
-                 <div className="relative w-96 h-96 mx-auto">
-                    {/* Outer Circle */}
-                    <div className="absolute inset-0 border-[16px] border-blue-400/50 rounded-full"></div>
-                    {/* Inner Circle */}
-                    <div className="absolute inset-4 bg-[#003C71] rounded-full"></div>
-                    
-                    {/* Central Image & Text */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                        <div className="relative w-24 h-24 my-4">
-                           <Image
-                            src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BANESCO%20LOGO%20BLANCO.png?raw=true"
-                            alt="Isotipo Banesco Seguros"
-                            layout="fill"
-                            objectFit="contain"
-                           />
-                        </div>
-                    </div>
-
-                    {/* Pillar Cards */}
-                    <div
-                      className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-lg"
-                    >
-                      Innovación
-                    </div>
-                    <div
-                      className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 bg-sky-400 text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-lg"
-                    >
-                      Responsabilidad
-                    </div>
-                    <div
-                      className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-blue-400 text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-lg"
-                    >
-                      Calidad
-                    </div>
-                    <div
-                      className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-purple-500 text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-lg"
-                    >
-                      Confiabilidad
-                    </div>
-                 </div>
-              ) : (
-                <div className="relative h-96 w-full">
-                  {aboutContent[activeAboutView].image && (
-                    <Image
-                      src={aboutContent[activeAboutView].image!}
-                      alt={aboutContent[activeAboutView].title}
-                      layout="fill"
-                      objectFit="contain"
-                      data-ai-hint={aboutContent[activeAboutView]['data-ai-hint']}
-                    />
-                  )}
-                </div>
-              )}
+              <div className="relative h-96 w-full">
+                {aboutContent[activeAboutView].image && (
+                  <Image
+                    src={aboutContent[activeAboutView].image!}
+                    alt={aboutContent[activeAboutView].title}
+                    layout="fill"
+                    objectFit="contain"
+                    data-ai-hint={aboutContent[activeAboutView]['data-ai-hint']}
+                  />
+                )}
+              </div>
             </div>
           </div>
         </div>
