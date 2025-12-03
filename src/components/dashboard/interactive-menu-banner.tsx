@@ -13,12 +13,54 @@ interface InteractiveMenuBannerProps {
   menuItems: MenuItem[];
 }
 
+const normalizeDayName = (name: string) => {
+  if (!name) return '';
+  return name
+    .toLowerCase()
+    .normalize("NFD") // Decompose accented characters
+    .replace(/[\u0300-\u036f]/g, "") // Remove diacritical marks
+    .replace(/[^a-z]/g, ''); // remove non-alphabetic chars
+};
+
 export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps) => {
   const [selectedType, setSelectedType] = useState<'Clásico' | 'Dieta' | 'Ejecutivo'>('Clásico');
   const [isAnimating, setIsAnimating] = useState(false);
 
+  useEffect(() => {
+    const dayName = new Date().toLocaleDateString('es-ES', { weekday: 'long' });
+    const normalizedToday = normalizeDayName(dayName);
+    
+    // Find the classic menu for today to set as default if available
+    const todaysClassicMenu = menuItems.find(item => {
+        const normalizedItemDay = normalizeDayName(item.day);
+        return normalizedItemDay === normalizedToday && item.type === 'Clásico';
+    });
+
+    if (todaysClassicMenu) {
+        setSelectedType('Clásico');
+    } else {
+        // Fallback to the first available menu type for today
+        const firstAvailableMenu = menuItems.find(item => {
+            const normalizedItemDay = normalizeDayName(item.day);
+            return normalizedItemDay === normalizedToday;
+        });
+        if(firstAvailableMenu) {
+            setSelectedType(firstAvailableMenu.type);
+        } else {
+            // If no menu for today, default to classic
+            setSelectedType('Clásico');
+        }
+    }
+  }, [menuItems]);
+
   const selectedMenuItem = useMemo(() => {
-    return menuItems.find(item => item.type === selectedType) || null;
+    const dayName = new Date().toLocaleDateString('es-ES', { weekday: 'long' });
+    const normalizedToday = normalizeDayName(dayName);
+    
+    return menuItems.find(item => {
+        const normalizedItemDay = normalizeDayName(item.day);
+        return normalizedItemDay === normalizedToday && item.type === selectedType;
+    }) || menuItems.find(item => item.type === selectedType) || null; // Fallback to first available of type
   }, [menuItems, selectedType]);
 
   const classicMenu = useMemo(() => menuItems.find(item => item.type === 'Clásico'), [menuItems]);

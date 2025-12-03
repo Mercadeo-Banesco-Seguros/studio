@@ -203,7 +203,7 @@ export default function DashboardPage() {
   });
   const [heroGradient, setHeroGradient] = useState("from-[#84a9ff] to-[#f5f8ff]");
   const [activeFaqCategory, setActiveFaqCategory] = useState<'General' | 'Soporte' | 'Otros'>('General');
-  const [todaysMenus, setTodaysMenus] = useState<MenuItem[]>([]);
+  const [allMenuItems, setAllMenuItems] = useState<MenuItem[]>([]);
   const [isLoadingMenu, setIsLoadingMenu] = useState(true);
   const [showShortcuts, setShowShortcuts] = useState(false);
   const [activeAboutView, setActiveAboutView] = useState<AboutView>('oferta');
@@ -295,20 +295,11 @@ export default function DashboardPage() {
     const fetchMenu = async () => {
       setIsLoadingMenu(true);
       try {
-        const allMenus = await getMenuItems();
-        const todayDate = new Date();
-        const dayName = todayDate.toLocaleDateString('es-ES', { weekday: 'long' });
-        const normalizedToday = normalizeDayName(dayName);
-        
-        const menusForToday = allMenus.filter(item => {
-            const normalizedItemDay = normalizeDayName(item.day);
-            return normalizedItemDay === normalizedToday;
-        });
-        setTodaysMenus(menusForToday);
-
+        const menus = await getMenuItems();
+        setAllMenuItems(menus);
       } catch (error) {
         console.error("Failed to fetch menu items", error);
-        setTodaysMenus([]); // Ensure it's an empty array on error
+        setAllMenuItems([]); // Ensure it's an empty array on error
       } finally {
         setIsLoadingMenu(false);
       }
@@ -327,6 +318,15 @@ export default function DashboardPage() {
     const todayDressCode = dressCodeItems.find(item => item.day === capitalizedDayName);
     setCurrentDressCode(todayDressCode || dressCodeItems[0]);
   }, [dressCodeView, dressCodeItems]);
+  
+  const todaysMenus = useMemo(() => {
+    const dayName = new Date().toLocaleDateString('es-ES', { weekday: 'long' });
+    const normalizedToday = normalizeDayName(dayName);
+    return allMenuItems.filter(item => {
+        const normalizedItemDay = normalizeDayName(item.day);
+        return normalizedItemDay === normalizedToday;
+    });
+  }, [allMenuItems]);
 
   return (
     <div className="bg-background">
@@ -784,8 +784,8 @@ export default function DashboardPage() {
                 <Skeleton className="h-[600px] w-full rounded-2xl" />
               </SectionWrapper>
             </div>
-          ) : todaysMenus.length > 0 ? (
-            <InteractiveMenuBanner menuItems={todaysMenus} />
+          ) : allMenuItems.length > 0 ? (
+            <InteractiveMenuBanner menuItems={allMenuItems} />
           ) : (
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <SectionWrapper>
