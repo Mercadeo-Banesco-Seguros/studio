@@ -423,32 +423,16 @@ export default function DashboardPage() {
 
               {activeAboutView === 'pilares' ? (
                  <div className="relative w-full h-[400px]">
-                    <div className="absolute bottom-0 left-0 right-0 h-[200px] overflow-hidden">
-                      <svg viewBox="0 0 1000 200" preserveAspectRatio="none" className="absolute bottom-0 left-0 w-full h-[200px] translate-y-1/2">
-                          <path d="M-100 -50 C 200 300, 800 300, 1100 -50" stroke="#4F89C8" fill="none" strokeWidth="30" strokeLinecap="round" opacity="0.5"/>
-                      </svg>
-                    </div>
-
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full text-center text-white">
+                    <div className="text-center text-white mb-8">
                       <p className="text-sm">Nuestros Pilares</p>
                       <h3 className="text-3xl font-bold">Banesco Seguros</h3>
                     </div>
-
-                    {/* Pilar 1: Calidad */}
-                    <div className="absolute top-[40%] left-[10%] transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="bg-[#003C71] text-white p-3 px-6 rounded-xl shadow-lg">Calidad</div>
-                    </div>
-                    {/* Pilar 2: Innovación */}
-                    <div className="absolute top-[20%] left-[35%] transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="bg-[#3F75C3] text-white p-3 px-6 rounded-xl shadow-lg">Innovación</div>
-                    </div>
-                    {/* Pilar 3: Confiabilidad */}
-                    <div className="absolute top-[20%] right-[25%] transform translate-x-1/2 -translate-y-1/2">
-                      <div className="bg-[#65A3E5] text-white p-3 px-6 rounded-xl shadow-lg">Confiabilidad</div>
-                    </div>
-                    {/* Pilar 4: Responsabilidad */}
-                    <div className="absolute top-[40%] right-[0%] transform translate-x-1/2 -translate-y-1/2">
-                      <div className="bg-[#A9D4F2] text-white p-3 px-6 rounded-xl shadow-lg">Responsabilidad</div>
+                    <div className="grid grid-cols-2 gap-4">
+                      {aboutContent.pilares.pilares?.map((pilar, index) => (
+                        <div key={index} className={cn("text-white p-4 rounded-xl shadow-lg text-center", pilar.color)}>
+                          {pilar.title}
+                        </div>
+                      ))}
                     </div>
                  </div>
               ) : (
@@ -709,7 +693,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
@@ -793,7 +777,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
