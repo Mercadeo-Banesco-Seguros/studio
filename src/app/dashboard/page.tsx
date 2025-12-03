@@ -444,19 +444,6 @@ export default function DashboardPage() {
                     <div>
                         <p className="font-light text-white/80">Viste Seguro</p>
                         <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
-                         <div className="mt-4">
-                            <Button 
-                              variant="outline"
-                              onClick={() => {
-                                  toast({
-                                      title: "Guía de Vestimenta",
-                                      description: "Esta función se encuentra en desarrollo. ¡Pronto podrás explorar la guía completa!",
-                                  });
-                              }}
-                              className="font-light text-xs bg-white hover:bg-white/90 text-primary">
-                              Explorar Guía
-                            </Button>
-                        </div>
                     </div>
                     <div className="text-left md:text-right">
                        {currentDressCode && (
@@ -491,17 +478,30 @@ export default function DashboardPage() {
                             Damas
                           </Button>
                         </div>
+                         <div className="mt-4">
+                            <Button 
+                              variant="outline"
+                              onClick={() => {
+                                  toast({
+                                      title: "Guía de Vestimenta",
+                                      description: "Esta función se encuentra en desarrollo. ¡Pronto podrás explorar la guía completa!",
+                                  });
+                              }}
+                              className="font-light text-xs bg-white hover:bg-white/90 text-primary">
+                              Explorar Guía
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>
           </div>
         </section>
-
+        
         {/* Gestión de Vacaciones Section */}
         <div id="vacaciones" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
+                    <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
                          <Image
                             src="https://4kwallpapers.com/images/wallpapers/beach-aerial-view-3840x2160-60.jpg"
                             alt="Planifica tus Próximas Vacaciones"
@@ -519,7 +519,7 @@ export default function DashboardPage() {
                             </Button>
                         </div>
                     </Card>
-                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[400px] overflow-hidden group">
+                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
                          <Image
                             src="https://plus.unsplash.com/premium_photo-1678727128583-b7bb1b4763b5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXZpb24lMjBkZSUyMHZpYWplfGVufDB8fDB8fHww"
                             alt="Consultar Días Disponibles"
