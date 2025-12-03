@@ -444,7 +444,7 @@ export default function DashboardPage() {
                     <div>
                         <p className="font-light text-white/80">Viste Seguro</p>
                         <h3 className="text-3xl font-bold tracking-tighter text-white">Banesco Seguros</h3>
-                        <div className="mt-4">
+                         <div className="mt-4">
                             <Button 
                               variant="outline"
                               onClick={() => {
@@ -513,7 +513,7 @@ export default function DashboardPage() {
                          <div className="relative text-white">
                             <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Capital Humano</Badge>
                             <p className="text-sm font-light">Gestionar Solicitudes</p>
-                            <h3 className="text-3xl font-bold tracking-tight">Planifica tus Próximas Vacaciones</h3>
+                            <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Planifica tus Próximas Vacaciones</h3>
                             <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
                                 <Link href="/dashboard/vacaciones">Gestionar</Link>
                             </Button>
@@ -647,7 +647,7 @@ export default function DashboardPage() {
                       category="El Futuro es Ahora"
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxBSSUyMGJyYWlufGVufDB8fHx8MTc2NDA5ODAwN3ww&ixlib-rb-4.1.0&q=80&w=1080"
                       data-ai-hint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
@@ -730,7 +730,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
