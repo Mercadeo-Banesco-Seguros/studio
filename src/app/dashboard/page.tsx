@@ -84,13 +84,6 @@ import { useToast } from '@/hooks/use-toast';
 import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 
 
-const pilaresData = [
-    { number: "01", title: "Calidad", text: "Trabajamos para brindar mejores soluciones a nuestros clientes.", icon: Award, color: "bg-blue-400/20" },
-    { number: "02", title: "Innovación", text: "Construimos una visión de futuro para nuestra organización.", icon: Lightbulb, color: "bg-sky-400/20" },
-    { number: "03", title: "Confiabilidad", text: "La cultura de servicio se enfoca en unir esfuerzos en torno a nuestros clientes.", icon: Shield, color: "bg-indigo-400/20" },
-    { number: "04", title: "Responsabilidad", text: "Cumplimos con nuestros compromisos; brindamos seguridad y confianza.", icon: Handshake, color: "bg-cyan-400/20" },
-];
-
 const activityHighlights = [
   { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell },
   { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake },
@@ -173,23 +166,28 @@ const normalizeDayName = (name: string) => {
 
 type AboutView = 'mision' | 'oferta' | 'pilares';
 
-const aboutContent: Record<AboutView, { title: string; description: string; image?: string; imageHint?: string }> = {
+const aboutContent: Record<AboutView, { title: string; description: string; image?: string; dataAiHint?: string, pilares?: { number: string; title: string; text: string; icon: LucideIcon; color: string; }[] }> = {
   mision: {
     title: "Nuestra Misión",
     description: "Ser la empresa de seguros preferida del mercado, reconocida por su excelencia, calidad de servicio y compromiso con la satisfacción de nuestros clientes, intermediarios y colaboradores.",
     image: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(48).png?raw=true",
-    imageHint: "target mission",
+    dataAiHint: "target mission",
   },
   oferta: {
     title: "Nuestra Oferta de Valor",
     description: "Somos una empresa de seguros reconocida por su excelencia y calidad, orientada a satisfacer las necesidades de nuestros clientes, intermediarios y organización, brindando asesoría y protección con soluciones ágiles y oportunas.",
     image: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(47).png?raw=true",
-    imageHint: "puzzle solution",
+    dataAiHint: "puzzle solution",
   },
   pilares: {
     title: "Nuestros Pilares",
     description: "Los 4 pilares fundamentales que sostienen nuestra cultura y guían cada una de nuestras acciones.",
-    // No image for pillars, as we will render cards instead
+    pilares: [
+        { number: "01", title: "Calidad", text: "Trabajamos para brindar mejores soluciones a nuestros clientes.", icon: Award, color: "bg-blue-400/20" },
+        { number: "02", title: "Innovación", text: "Construimos una visión de futuro para nuestra organización.", icon: Lightbulb, color: "bg-sky-400/20" },
+        { number: "03", title: "Confiabilidad", text: "La cultura de servicio se enfoca en unir esfuerzos en torno a nuestros clientes.", icon: Shield, color: "bg-indigo-400/20" },
+        { number: "04", title: "Responsabilidad", text: "Cumplimos con nuestros compromisos; brindamos seguridad y confianza.", icon: Handshake, color: "bg-cyan-400/20" },
+    ]
   },
 };
 
@@ -208,7 +206,7 @@ export default function DashboardPage() {
   const [todaysMenus, setTodaysMenus] = useState<MenuItem[]>([]);
   const [isLoadingMenu, setIsLoadingMenu] = useState(true);
   const [showShortcuts, setShowShortcuts] = useState(false);
-  const [activeAboutView, setActiveAboutView] = useState<AboutView>('mision');
+  const [activeAboutView, setActiveAboutView] = useState<AboutView>('oferta');
   const { toast } = useToast();
   
   const [dressCodeView, setDressCodeView] = useState<'caballeros' | 'damas'>('caballeros');
@@ -217,6 +215,13 @@ export default function DashboardPage() {
   const dressCodeItems = useMemo(() => {
     return dressCodeView === 'caballeros' ? mockDressCodeItemsCaballeros : mockDressCodeItemsDamas;
   }, [dressCodeView]);
+
+  const viewOrder: AboutView[] = ['mision', 'pilares', 'oferta'];
+  const viewLabels: Record<AboutView, string> = {
+    mision: 'Ver Misión',
+    pilares: 'Ver Pilares',
+    oferta: 'Ver Oferta de Valor'
+  };
   
 
   const faqCategories = [
@@ -235,6 +240,12 @@ export default function DashboardPage() {
 
 
   const currentCourse = mockCourses[currentCourseIndex];
+
+  const handleCycleAboutView = () => {
+    const currentIndex = viewOrder.indexOf(activeAboutView);
+    const nextIndex = (currentIndex + 1) % viewOrder.length;
+    setActiveAboutView(viewOrder[nextIndex]);
+  };
   
   useEffect(() => {
     const todayDate = new Date();
@@ -395,34 +406,24 @@ export default function DashboardPage() {
                       <p className="text-white/80 max-w-lg">
                           {aboutContent[activeAboutView].description}
                       </p>
-                      <div className="flex gap-2 pt-4">
-                           <Button 
-                              variant={activeAboutView === 'mision' ? 'secondary' : 'ghost'}
-                              onClick={() => setActiveAboutView('mision')}
-                              className={cn(activeAboutView === 'mision' ? 'bg-white text-primary' : 'text-white/80 hover:text-white hover:bg-white/10')}
-                            >
-                              Misión
+                      <div className="flex items-center gap-4 pt-4">
+                          <Button asChild className="bg-white text-primary hover:bg-white/90">
+                              <Link href="/dashboard/mapa-clientes">Nosotros</Link>
                           </Button>
                           <Button 
-                              variant={activeAboutView === 'oferta' ? 'secondary' : 'ghost'}
-                              onClick={() => setActiveAboutView('oferta')}
-                              className={cn(activeAboutView === 'oferta' ? 'bg-white text-primary' : 'text-white/80 hover:text-white hover:bg-white/10')}
+                              variant="ghost"
+                              onClick={handleCycleAboutView}
+                              className="text-white/80 hover:text-white hover:bg-transparent p-0 h-auto"
                           >
-                              Oferta de Valor
-                          </Button>
-                           <Button 
-                              variant={activeAboutView === 'pilares' ? 'secondary' : 'ghost'}
-                              onClick={() => setActiveAboutView('pilares')}
-                              className={cn(activeAboutView === 'pilares' ? 'bg-white text-primary' : 'text-white/80 hover:text-white hover:bg-white/10')}
-                          >
-                              Pilares
+                            <RefreshCw className="mr-2 h-4 w-4" />
+                            {viewLabels[viewOrder[(viewOrder.indexOf(activeAboutView) + 1) % viewOrder.length]]}
                           </Button>
                       </div>
                   </div>
                   
                   {activeAboutView === 'pilares' ? (
                      <div className="grid grid-cols-2 gap-6">
-                        {pilaresData.map((pilar) => {
+                        {aboutContent.pilares.pilares?.map((pilar) => {
                             const Icon = pilar.icon;
                             return (
                                 <Card key={pilar.number} className={cn("p-4 rounded-2xl", pilar.color)}>
@@ -444,7 +445,7 @@ export default function DashboardPage() {
                                 alt={aboutContent[activeAboutView].title}
                                 layout="fill"
                                 objectFit="contain"
-                                data-ai-hint={aboutContent[activeAboutView].imageHint}
+                                data-ai-hint={aboutContent[activeAboutView].dataAiHint}
                             />
                         )}
                     </div>
@@ -920,44 +921,6 @@ export default function DashboardPage() {
             </div>
             </SectionWrapper>
         </div>
-
-        {/* Pilares Section */}
-        <div id="pilares" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-            <SectionWrapper>
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-                <div className="flex items-center justify-center">
-                <span className="text-[250px] font-black text-primary/10 leading-none">4</span>
-                <span className="text-7xl font-bold text-foreground -ml-4" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
-                    PILARES
-                </span>
-                </div>
-                
-                <div className="space-y-4">
-                {pilaresData.map((pilar, index) => {
-                    const Icon = pilar.icon;
-                    return (
-                    <div 
-                        key={pilar.number}
-                        className={cn("group p-6 rounded-2xl transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105", pilar.color)}
-                    >
-                        <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-white/20 text-white text-lg font-bold">
-                            {pilar.number}
-                        </div>
-                        <div className="text-white">
-                            <h3 className="text-lg font-bold mb-1">{pilar.title}</h3>
-                            <p className="text-sm opacity-90">{pilar.text}</p>
-                        </div>
-                        </div>
-                    </div>
-                    )
-                })}
-                </div>
-            </div>
-            </SectionWrapper>
-        </div>
     </div>
   );
 }
-
-    
