@@ -385,80 +385,80 @@ export default function DashboardPage() {
             </div>
         </section>
 
-        {/* Mision y Valores Section */}
+       {/* Mision y Valores Section */}
         <div className="w-full py-12 md:py-16">
           <div className="relative overflow-hidden min-h-[600px] flex items-center">
-              <Image
-                  src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
-                  alt="Abstract background"
-                  layout="fill"
-                  objectFit="cover"
-                  data-ai-hint="abstract waves"
-              />
-              <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 w-full max-w-7xl mx-auto p-8 md:p-12">
-                  <div className="space-y-4 text-white">
-                       <Badge variant="outline" className="border-white text-white">
-                          Acerca de Nosotros
-                      </Badge>
-                      <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
-                          {aboutContent[activeAboutView].title}
-                      </h2>
-                      <p className="text-white/80 max-w-lg">
-                          {aboutContent[activeAboutView].description}
-                      </p>
-                      <div className="flex items-center gap-4 pt-4">
-                          <Button asChild className="bg-white text-primary hover:bg-white/90">
-                              <Link href="/dashboard/mapa-clientes">Nosotros</Link>
-                          </Button>
-                          <Button 
-                              variant="ghost"
-                              onClick={handleCycleAboutView}
-                              className="text-white/80 hover:text-white hover:bg-transparent p-0 h-auto"
-                          >
-                            <RefreshCw className="mr-2 h-4 w-4" />
-                            {viewLabels[viewOrder[(viewOrder.indexOf(activeAboutView) + 1) % viewOrder.length]]}
-                          </Button>
-                      </div>
-                  </div>
-                  
-                  {activeAboutView === 'pilares' ? (
-                     <div className="relative w-full h-[350px]">
-                        <svg viewBox="0 0 500 250" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-50">
-                            <path d="M50 200 C 150 50, 350 50, 450 200" stroke="#4F89C8" fill="none" strokeWidth="15" strokeLinecap="round" />
-                        </svg>
-                        
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white">
-                            <p className="text-sm">Nuestros Pilares</p>
-                            <h3 className="text-3xl font-bold">Banesco Seguros</h3>
-                        </div>
-
-                        <div className="absolute top-[35%] left-[5%]" style={{ transform: 'translateY(-50%)'}}>
-                            <div className="bg-[#3F75C3] text-white p-3 px-6 rounded-xl shadow-lg">Calidad</div>
-                        </div>
-                        <div className="absolute top-[10%] left-[25%]" style={{ transform: 'translateY(-50%)'}}>
-                             <div className="bg-[#3b82f6] text-white p-3 px-6 rounded-xl shadow-lg">Innovación</div>
-                        </div>
-                        <div className="absolute top-[10%] right-[25%]" style={{ transform: 'translateY(-50%)'}}>
-                           <div className="bg-[#38bdf8] text-white p-3 px-6 rounded-xl shadow-lg">Responsabilidad</div>
-                        </div>
-                        <div className="absolute top-[35%] right-[5%]" style={{ transform: 'translateY(-50%)'}}>
-                            <div className="bg-[#8b5cf6] text-white p-3 px-6 rounded-xl shadow-lg">Confiabilidad</div>
-                        </div>
-                     </div>
-                  ) : (
-                    <div className="relative h-96 w-full">
-                        {aboutContent[activeAboutView].image && (
-                            <Image
-                                src={aboutContent[activeAboutView].image!}
-                                alt={aboutContent[activeAboutView].title}
-                                layout="fill"
-                                objectFit="contain"
-                                data-ai-hint={aboutContent[activeAboutView]['data-ai-hint']}
-                            />
-                        )}
-                    </div>
-                  )}
+            <Image
+              src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
+              alt="Abstract background"
+              layout="fill"
+              objectFit="cover"
+              data-ai-hint="abstract waves"
+            />
+            <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 w-full max-w-7xl mx-auto p-8 md:p-12">
+              <div className="space-y-4 text-white">
+                <Badge variant="outline" className="border-white text-white">
+                  Acerca de Nosotros
+                </Badge>
+                <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+                  {aboutContent[activeAboutView].title}
+                </h2>
+                <p className="text-white/80 max-w-lg">
+                  {aboutContent[activeAboutView].description}
+                </p>
+                <div className="flex items-center gap-4 pt-4">
+                  <Button asChild className="bg-white text-primary hover:bg-white/90">
+                    <Link href="/dashboard/mapa-clientes">Nosotros</Link>
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    onClick={handleCycleAboutView}
+                    className="text-white/80 hover:text-white hover:bg-transparent p-0 h-auto"
+                  >
+                    <RefreshCw className="mr-2 h-4 w-4" />
+                    {viewLabels[viewOrder[(viewOrder.indexOf(activeAboutView) + 1) % viewOrder.length]]}
+                  </Button>
+                </div>
               </div>
+
+              {activeAboutView === 'pilares' ? (
+                <div className="relative w-full h-[350px]">
+                    <svg viewBox="0 0 500 250" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-50">
+                        <path d="M50 200 C 150 50, 350 50, 450 200" stroke="#4F89C8" fill="none" strokeWidth="15" strokeLinecap="round" />
+                    </svg>
+                    
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white">
+                        <p className="text-sm">Nuestros Pilares</p>
+                        <h3 className="text-3xl font-bold">Banesco Seguros</h3>
+                    </div>
+
+                    <div className="absolute top-[35%] left-[5%]" style={{ transform: 'translateY(-50%)'}}>
+                        <div className="bg-[#3F75C3] text-white p-3 px-6 rounded-xl shadow-lg">Calidad</div>
+                    </div>
+                    <div className="absolute top-[10%] left-[25%]" style={{ transform: 'translateY(-50%)'}}>
+                         <div className="bg-[#3b82f6] text-white p-3 px-6 rounded-xl shadow-lg">Innovación</div>
+                    </div>
+                    <div className="absolute top-[10%] right-[25%]" style={{ transform: 'translateY(-50%)'}}>
+                       <div className="bg-[#38bdf8] text-white p-3 px-6 rounded-xl shadow-lg">Responsabilidad</div>
+                    </div>
+                    <div className="absolute top-[35%] right-[5%]" style={{ transform: 'translateY(-50%)'}}>
+                        <div className="bg-[#8b5cf6] text-white p-3 px-6 rounded-xl shadow-lg">Confiabilidad</div>
+                    </div>
+                 </div>
+              ) : (
+                <div className="relative h-96 w-full">
+                  {aboutContent[activeAboutView].image && (
+                    <Image
+                      src={aboutContent[activeAboutView].image!}
+                      alt={aboutContent[activeAboutView].title}
+                      layout="fill"
+                      objectFit="contain"
+                      data-ai-hint={aboutContent[activeAboutView]['data-ai-hint']}
+                    />
+                  )}
+                </div>
+              )}
+            </div>
           </div>
         </div>
         
@@ -692,7 +692,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
