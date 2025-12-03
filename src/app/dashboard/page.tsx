@@ -434,9 +434,7 @@ export default function DashboardPage() {
 
         {/* Actividades del Mes Section */}
         <div id="actividades-del-mes" className="w-full mt-24">
-          <SectionWrapper
-            title="Actividades del Mes"
-          >
+          <SectionWrapper>
             <Card className="relative p-8 rounded-2xl shadow-lg flex flex-col justify-center items-center min-h-[300px] overflow-hidden group bg-gradient-to-br from-primary to-secondary text-primary-foreground">
                 <Image
                     src="https://www.onlygfx.com/wp-content/uploads/2022/12/white-snowflakes-overlay-4.png"
@@ -924,3 +922,5 @@ export default function DashboardPage() {
     </div>
   );
 }
+
+    
