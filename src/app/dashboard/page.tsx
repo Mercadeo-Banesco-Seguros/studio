@@ -512,7 +512,7 @@ export default function DashboardPage() {
                          <div className="absolute inset-0 bg-black/40" />
                          <div className="relative text-white">
                             <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Capital Humano</Badge>
-                            <p className="text-sm font-light">Gestionar Solicitudes</p>
+                            
                             <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Planifica tus Próximas Vacaciones</h3>
                             <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
                                 <Link href="/dashboard/vacaciones">Gestionar</Link>
@@ -636,7 +636,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
