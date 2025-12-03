@@ -25,11 +25,13 @@ const normalizeDayName = (name: string) => {
 export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps) => {
   const [selectedType, setSelectedType] = useState<'Clásico' | 'Dieta' | 'Ejecutivo'>('Clásico');
   const [isAnimating, setIsAnimating] = useState(false);
-
+  const [currentDayName, setCurrentDayName] = useState('');
+  
   useEffect(() => {
     const dayName = new Date().toLocaleDateString('es-ES', { weekday: 'long' });
     const normalizedToday = normalizeDayName(dayName);
-    
+    setCurrentDayName(normalizedToday);
+
     // Find the classic menu for today to set as default if available
     const todaysClassicMenu = menuItems.find(item => {
         const normalizedItemDay = normalizeDayName(item.day);
@@ -54,18 +56,25 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
   }, [menuItems]);
 
   const selectedMenuItem = useMemo(() => {
-    const dayName = new Date().toLocaleDateString('es-ES', { weekday: 'long' });
-    const normalizedToday = normalizeDayName(dayName);
-    
     return menuItems.find(item => {
         const normalizedItemDay = normalizeDayName(item.day);
-        return normalizedItemDay === normalizedToday && item.type === selectedType;
+        return normalizedItemDay === currentDayName && item.type === selectedType;
     }) || menuItems.find(item => item.type === selectedType) || null; // Fallback to first available of type
-  }, [menuItems, selectedType]);
+  }, [menuItems, selectedType, currentDayName]);
 
-  const classicMenu = useMemo(() => menuItems.find(item => item.type === 'Clásico'), [menuItems]);
-  const dietaMenu = useMemo(() => menuItems.find(item => item.type === 'Dieta'), [menuItems]);
-  const ejecutivoMenu = useMemo(() => menuItems.find(item => item.type === 'Ejecutivo'), [menuItems]);
+  const getThumbnailMenu = (type: 'Clásico' | 'Dieta' | 'Ejecutivo') => {
+    // Prioritize today's menu for the thumbnail
+    const todaysMenu = menuItems.find(item => {
+      const normalizedItemDay = normalizeDayName(item.day);
+      return normalizedItemDay === currentDayName && item.type === type;
+    });
+    // Fallback to the first available menu of that type
+    return todaysMenu || menuItems.find(item => item.type === type) || null;
+  };
+  
+  const classicMenu = useMemo(() => getThumbnailMenu('Clásico'), [menuItems, currentDayName]);
+  const dietaMenu = useMemo(() => getThumbnailMenu('Dieta'), [menuItems, currentDayName]);
+  const ejecutivoMenu = useMemo(() => getThumbnailMenu('Ejecutivo'), [menuItems, currentDayName]);
   
   const handleThumbnailClick = (type: 'Clásico' | 'Dieta' | 'Ejecutivo') => {
     if (type !== selectedType) {
