@@ -338,7 +338,7 @@ export default function DashboardPage() {
                     <div className="md:col-span-7 flex flex-col justify-center py-12 md:py-24 z-10">
                         <div className="flex items-center gap-4">
                            <Badge variant="outline">Portal Interno</Badge>
-                           <Badge variant="default">{currentTime}</Badge>
+                           <p className="text-4xl font-bold text-primary">Feliz Navidad 2025</p>
                         </div>
                         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mt-4 text-foreground">
                             Bienvenido al Entorno <br /> Banesco Seguros
@@ -386,7 +386,7 @@ export default function DashboardPage() {
         </section>
 
        {/* Mision y Valores Section */}
-        <div className="w-full py-12 md:py-16">
+        <div id="about-us" className="w-full py-12 md:py-16">
           <div className="relative overflow-hidden min-h-[600px] flex items-center">
             <Image
               src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
@@ -710,7 +710,7 @@ export default function DashboardPage() {
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
                       imageUrl="https://i.pinimg.com/736x/d9/82/35/d9823577cf4f4512cbb7d63d8b7057de.jpg"
-                      data-ai-hint="collaboration tools"
+                      dataAiHint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
                       availability={75}
@@ -721,7 +721,7 @@ export default function DashboardPage() {
                       details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageUrl="https://blogs.worldbank.org/content/dam/sites/blogs/img/detail/mgr/id4d_0.jpg"
-                      data-ai-hint="artificial intelligence"
+                      dataAiHint="artificial intelligence"
                       imageClassName="opacity-30"
                       icon={Bot}
                       availability={40}
@@ -732,7 +732,7 @@ export default function DashboardPage() {
                       details={["Presentaciones", "Feedback", "Oratoria"]}
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageUrl="https://thumbs.dreamstime.com/b/concepto-de-equipo-trabajo-educaci%C3%B3n-empresarial-internet-surfing-project-tecnolog%C3%ADa-la-informaci%C3%B3n-empresarios-reflexivos-386326178.jpg"
-                      data-ai-hint="public speaking"
+                      dataAiHint="public speaking"
                       imageClassName="opacity-30"
                       availability={90}
                   />
@@ -740,6 +740,29 @@ export default function DashboardPage() {
           </SectionWrapper>
         </div>
 
+        {/* Menus Section */}
+        <div id="menu" className="mt-24">
+          {isLoadingMenu ? (
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <SectionWrapper>
+                <Skeleton className="h-[600px] w-full rounded-2xl" />
+              </SectionWrapper>
+            </div>
+          ) : allMenuItems.length > 0 ? (
+            <InteractiveMenuBanner menuItems={allMenuItems} />
+          ) : (
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <SectionWrapper>
+                <Card className="col-span-full">
+                  <CardContent className="p-8 text-center text-muted-foreground">
+                    <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
+                  </CardContent>
+                </Card>
+              </SectionWrapper>
+            </div>
+          )}
+        </div>
+        
         {/* Póliza HCM Section */}
         <section id="poliza" className="w-full mt-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -776,35 +799,11 @@ export default function DashboardPage() {
             </div>
         </section>
 
-        {/* Menus Section */}
-        <div id="menu" className="mt-24">
-          {isLoadingMenu ? (
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <SectionWrapper>
-                <Skeleton className="h-[600px] w-full rounded-2xl" />
-              </SectionWrapper>
-            </div>
-          ) : allMenuItems.length > 0 ? (
-            <InteractiveMenuBanner menuItems={allMenuItems} />
-          ) : (
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <SectionWrapper>
-                <Card className="col-span-full">
-                  <CardContent className="p-8 text-center text-muted-foreground">
-                    <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
-                  </CardContent>
-                </Card>
-              </SectionWrapper>
-            </div>
-          )}
-        </div>
-
-
         {/* Espacio Ejecutivo Section */}
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
@@ -949,3 +948,5 @@ export default function DashboardPage() {
     </div>
   );
 }
+
+    
