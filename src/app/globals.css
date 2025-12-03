@@ -109,18 +109,14 @@
   .timeline-item:last-child .timeline-line::before {
     @apply hidden;
   }
-
+  
   .transform-style-3d {
     transform-style: preserve-3d;
   }
   .rotate-y-180 {
     transform: rotateY(180deg);
   }
-   .rotate-y-0 {
-    transform: rotateY(0deg);
-  }
   .backface-hidden {
     backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
   }
 }
