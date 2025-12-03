@@ -99,7 +99,7 @@ export const HcmCard = ({
                 {/* Back of the card */}
                 <div className="absolute w-full h-full backface-hidden rotate-y-180">
                      <Card className="bg-primary text-primary-foreground rounded-2xl shadow-lg flex flex-col items-center justify-center text-center p-8 h-full">
-                        <h3 className="text-3xl font-bold">Contacto de Emergencia</h3>
+                        <h3 className="text-3xl font-bold">EN CASO DE EMERGENCIA</h3>
                         <p className="text-primary-foreground/80 mt-2 mb-8">Comunícate con nosotros para reportar siniestros o solicitar atención médica inmediata.</p>
                         
                         <div className="space-y-4">
@@ -109,8 +109,8 @@ export const HcmCard = ({
                                 label="Soporte 24/7"
                                 number="(0414) 239.84.16"
                                 icon={WhatsAppIcon}
-                                className="bg-[#25D366]"
-                                iconClassName="text-[#25D366]"
+                                className="bg-secondary"
+                                iconClassName="text-secondary-foreground"
                             />
                             <AnimatedContactButton
                                 href="tel:08007348767"
@@ -118,8 +118,8 @@ export const HcmCard = ({
                                 label="Llamada Gratuita"
                                 number="0-800-SEGUROS"
                                 icon={Phone}
-                                className="bg-[#3b82f6]"
-                                iconClassName="text-[#3b82f6]"
+                                className="bg-secondary"
+                                iconClassName="text-secondary-foreground"
                             />
                              <AnimatedContactButton
                                 href="mailto:servicios@banescoseguros.com"
@@ -127,8 +127,8 @@ export const HcmCard = ({
                                 label="Correo Electrónico"
                                 number="servicios@banescoseguros.com"
                                 icon={Mail}
-                                className="bg-slate-500"
-                                iconClassName="text-slate-500"
+                                className="bg-secondary"
+                                iconClassName="text-secondary-foreground"
                             />
                         </div>
 
