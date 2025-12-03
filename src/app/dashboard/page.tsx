@@ -431,6 +431,29 @@ export default function DashboardPage() {
             </div>
           </div>
         </div>
+
+        {/* Actividades del Mes Section */}
+        <div id="actividades-del-mes" className="w-full mt-24">
+          <SectionWrapper
+            title="Actividades del Mes"
+          >
+            <Card className="relative p-8 rounded-2xl shadow-lg flex flex-col justify-center items-center min-h-[300px] overflow-hidden group bg-gradient-to-br from-primary to-secondary text-primary-foreground">
+                <Image
+                    src="https://www.onlygfx.com/wp-content/uploads/2022/12/white-snowflakes-overlay-4.png"
+                    alt="Copos de nieve"
+                    layout="fill"
+                    objectFit="cover"
+                    className="absolute inset-0 opacity-10 pointer-events-none"
+                    data-ai-hint="snowflakes"
+                />
+              <div className="relative z-10 text-center">
+                <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight">
+                    ¡Feliz Navidad 2025!
+                </h2>
+              </div>
+            </Card>
+          </SectionWrapper>
+        </div>
         
         {/* Viste Seguro Section */}
         <section id="dress-code" className="w-full mt-24">
