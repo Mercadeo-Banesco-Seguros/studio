@@ -185,8 +185,8 @@ const aboutContent: Record<AboutView, { title: string; description: string; imag
     pilares: [
       { title: "Calidad", color: "bg-blue-400" },
       { title: "Innovación", color: "bg-blue-500" },
-      { title: "Confiabilidad", color: "bg-purple-500" },
-      { title: "Responsabilidad", color: "bg-sky-400" },
+      { title: "Responsabilidad", color: "bg-purple-500" },
+      { title: "Confiabilidad", color: "bg-sky-400" },
     ]
   },
 };
@@ -432,7 +432,7 @@ export default function DashboardPage() {
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
                         <div className="relative w-32 h-32">
                            <Image
-                            src="https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_auto,s_webp:avif/banescointernacional.com/wp-content/uploads/2024/11/Isotipo.png"
+                            src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BANESCO%20LOGO%20BLANCO.png?raw=true"
                             alt="Isotipo Banesco Seguros"
                             layout="fill"
                             objectFit="contain"
@@ -441,7 +441,7 @@ export default function DashboardPage() {
                     </div>
 
                     {/* Pillar Cards */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
                         <div className="bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-lg">Innovación</div>
                     </div>
                      <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2">
@@ -701,7 +701,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
