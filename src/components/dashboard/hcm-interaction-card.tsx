@@ -43,9 +43,14 @@ export const HcmCard = ({
         </div>
         <p className="text-sm text-primary-foreground/80">{description}</p>
         <h3 className="text-3xl font-bold my-2">{title}</h3>
-        <Button asChild variant="secondary" className="mt-4 bg-white text-primary hover:bg-white/90">
-          <Link href="#">{buttonText}</Link>
-        </Button>
+        <div className="flex gap-4 mt-4">
+          <Button asChild variant="secondary" className="bg-white text-primary hover:bg-white/90 font-light">
+            <Link href="#">{buttonText}</Link>
+          </Button>
+          <Button asChild variant="outline" className="bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white font-light">
+            <Link href="#">Contacto</Link>
+          </Button>
+        </div>
       </Card>
     );
   }
