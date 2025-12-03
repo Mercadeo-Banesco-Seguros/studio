@@ -424,14 +424,20 @@ export default function DashboardPage() {
               {activeAboutView === 'pilares' ? (
                  <div className="relative w-96 h-96 mx-auto">
                     {/* Outer Circle */}
-                    <div className="absolute inset-0 border-4 border-blue-400/50 rounded-full"></div>
+                    <div className="absolute inset-0 border-[16px] border-blue-400/50 rounded-full"></div>
                     {/* Inner Circle */}
-                    <div className="absolute inset-2 bg-[#003C71] rounded-full"></div>
+                    <div className="absolute inset-4 bg-[#003C71] rounded-full"></div>
                     
-                    {/* Central Text */}
+                    {/* Central Image */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                        <p className="text-sm">Nuestros Pilares</p>
-                        <h3 className="text-3xl font-bold">Banesco Seguros</h3>
+                        <div className="relative w-32 h-32">
+                           <Image
+                            src="https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_auto,s_webp:avif/banescointernacional.com/wp-content/uploads/2024/11/Isotipo.png"
+                            alt="Isotipo Banesco Seguros"
+                            layout="fill"
+                            objectFit="contain"
+                           />
+                        </div>
                     </div>
 
                     {/* Pillar Cards */}
@@ -695,7 +701,7 @@ export default function DashboardPage() {
                       title="Google Workspace"
                       category="Potencia tu Productividad"
                       details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+                      imageUrl="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjollaborationfGVufDB8fHx8MTc2NDA5Nzk5Nnww&ixlib-rb-4.1.0&q=80&w=1080"
                       data-ai-hint="collaboration tools"
                       className="bg-secondary text-secondary-foreground min-h-[400px]"
                       imageClassName="opacity-30"
