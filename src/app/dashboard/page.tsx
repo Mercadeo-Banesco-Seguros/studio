@@ -784,7 +784,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
@@ -830,7 +830,7 @@ export default function DashboardPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {activityHighlights.map((activity, index) => (
                     <Link href="/dashboard/bienestar" key={activity.title} className="group block">
-                        <Card className="relative overflow-hidden rounded-2xl border-none shadow-lg h-80 min-h-[320px] transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                        <Card className="relative overflow-hidden rounded-2xl border-none shadow-lg h-96 min-h-[320px] transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                             <Image
                                 src={activity.imageUrl}
                                 alt={activity.title}
@@ -839,6 +839,7 @@ export default function DashboardPage() {
                                 data-ai-hint={activity.dataAiHint}
                                 className="transition-transform duration-500 ease-in-out group-hover:scale-105"
                             />
+                            <div className="absolute inset-0 bg-blue-900/30"></div>
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                             <CardContent className="relative h-full flex flex-col justify-end p-6 text-white">
                                 <div className="w-12 h-12 mb-4 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
@@ -925,5 +926,6 @@ export default function DashboardPage() {
     </div>
   );
 }
+
 
 
