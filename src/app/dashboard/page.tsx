@@ -193,7 +193,7 @@ const wellnessSlides = [
     {
       id: 'navidad',
       badge: 'Actividades de Bienestar',
-      title: 'Explora los Próximos Eventos del Mes',
+      title: (<>Explora los Próximos <br/> Eventos del Mes</>),
       description: '¡Celebra con nosotros! Descubre las actividades y sorpresas que hemos preparado para esta temporada festiva.',
       imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(51).png?raw=true',
       dataAiHint: 'Christmas tree illustration',
@@ -202,7 +202,7 @@ const wellnessSlides = [
     {
       id: 'eventos',
       badge: 'Eventos Especiales',
-      title: 'Conecta, Crece y Celebra con Nosotros',
+      title: (<>Conecta, Crece y <br/> Celebra con Nosotros</>),
       description: 'Participa en nuestros eventos exclusivos diseñados para fomentar la integración, el aprendizaje y el reconocimiento.',
       imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(52).png?raw=true',
       dataAiHint: 'party popper illustration',
@@ -211,7 +211,7 @@ const wellnessSlides = [
     {
       id: 'actividades',
       badge: 'Actividades Recientes',
-      title: 'Revive los Mejores Momentos del Equipo',
+      title: (<>Revive los Mejores <br/> Momentos del Equipo</>),
       description: 'Explora la galería de nuestras actividades más recientes y comparte los recuerdos de nuestros encuentros.',
       imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(53).png?raw=true',
       dataAiHint: 'activity award illustration',
@@ -833,30 +833,24 @@ export default function DashboardPage() {
 
         {/* New Wellness Section */}
         <div id="actividades" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-            <SectionWrapper>
-                 <Card className="p-8 bg-card rounded-2xl shadow-sm overflow-hidden">
-                    <div className="grid md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <Badge>{wellnessSlides[activeWellnessSlide].badge}</Badge>
-                            <h2 className="text-4xl font-bold tracking-tight mt-4">{wellnessSlides[activeWellnessSlide].title}</h2>
-                            <p className="mt-4 text-muted-foreground">{wellnessSlides[activeWellnessSlide].description}</p>
-                            <Button asChild variant="link" className="p-0 h-auto mt-4 text-primary">
-                                <Link href="/dashboard/bienestar">
-                                    Saber más <ArrowRight className="ml-2 h-4 w-4"/>
-                                </Link>
-                            </Button>
-                        </div>
-                        <div className="relative h-64 w-full">
-                           <Image 
-                             src={wellnessSlides[activeWellnessSlide].imageUrl} 
-                             alt={wellnessSlides[activeWellnessSlide].title}
-                             layout="fill"
-                             objectFit="contain"
-                             data-ai-hint={wellnessSlides[activeWellnessSlide].dataAiHint}
-                             key={activeWellnessSlide}
-                             className="animate-in fade-in duration-500"
-                            />
-                        </div>
+             <SectionWrapper>
+                 <Card className="p-8 bg-card rounded-2xl shadow-sm overflow-hidden text-center">
+                    <div className={cn("transition-all duration-500", `opacity-100`)}>
+                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4">
+                           {wellnessSlides[activeWellnessSlide].title}
+                        </h2>
+                    </div>
+
+                    <div className="relative h-64 w-full max-w-lg mx-auto mt-8">
+                       <Image 
+                         src={wellnessSlides[activeWellnessSlide].imageUrl} 
+                         alt={wellnessSlides[activeWellnessSlide].title as string}
+                         layout="fill"
+                         objectFit="contain"
+                         data-ai-hint={wellnessSlides[activeWellnessSlide].dataAiHint}
+                         key={activeWellnessSlide}
+                         className="animate-in fade-in duration-500"
+                        />
                     </div>
                      <div className="flex justify-center items-center gap-2 mt-8">
                         {wellnessSlides.map((_, index) => (
@@ -864,7 +858,7 @@ export default function DashboardPage() {
                                 key={index}
                                 onClick={() => setActiveWellnessSlide(index)}
                                 className={cn(
-                                    "w-1/4 h-1.5 rounded-full transition-colors",
+                                    "w-1/4 h-1.5 max-w-24 rounded-full transition-colors",
                                     activeWellnessSlide === index ? 'bg-primary' : 'bg-primary/20 hover:bg-primary/40'
                                 )}
                                 aria-label={`Ir a la diapositiva ${index + 1}`}
@@ -943,5 +937,3 @@ export default function DashboardPage() {
     </div>
   );
 }
-
-    
