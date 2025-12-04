@@ -483,7 +483,7 @@ export default function DashboardPage() {
                          <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" />
                     </Card>
                      <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out z-10 group-hover:scale-110">
-                         <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
+                         <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
                     </Card>
                      <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-12 group-hover:rotate-[15deg] group-hover:translate-x-12">
                          <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
@@ -816,7 +816,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
@@ -840,7 +840,7 @@ export default function DashboardPage() {
         {/* New Wellness Section */}
         <div id="actividades" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
-                 <div className="relative rounded-2xl shadow-sm overflow-hidden text-center group">
+                 <div className="relative rounded-2xl shadow-sm overflow-hidden group">
                     <Image
                         src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
                         alt="Fondo abstracto de bienestar"
@@ -849,16 +849,9 @@ export default function DashboardPage() {
                         className="z-0"
                         data-ai-hint="abstract waves"
                     />
-                    <div className="relative z-10 p-8">
-                        <div className={cn("transition-all duration-500", `opacity-100`)}>
-                            <Badge variant="outline" className="text-white border-white/50 mb-4">{wellnessSlides[activeWellnessSlide].badge}</Badge>
-                            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4 text-white">
-                               {wellnessSlides[activeWellnessSlide].title}
-                            </h2>
-                        </div>
-
-                        <div className={cn(
-                            "relative w-full max-w-lg mx-auto mt-8 transition-all duration-300 ease-in-out",
+                    <div className="relative z-10 p-8 grid md:grid-cols-2 gap-8 items-center">
+                        
+                        <div className={cn("relative w-full max-w-lg mx-auto transition-all duration-300 ease-in-out",
                             activeWellnessSlide === 0 ? 'h-[400px]' : activeWellnessSlide === 1 ? 'h-[400px]' : 'h-80'
                           )}>
                            <Image 
@@ -871,19 +864,29 @@ export default function DashboardPage() {
                              className="animate-in fade-in duration-500"
                             />
                         </div>
-                         <div className="flex justify-center items-center gap-2 mt-8">
-                            {wellnessSlides.map((_, index) => (
-                               <button 
-                                    key={index}
-                                    onClick={() => setActiveWellnessSlide(index)}
-                                    className={cn(
-                                        "w-1/4 h-1.5 max-w-24 rounded-full transition-colors",
-                                        activeWellnessSlide === index ? 'bg-white' : 'bg-white/20 hover:bg-white/40'
-                                    )}
-                                    aria-label={`Ir a la diapositiva ${index + 1}`}
-                                />
-                            ))}
+
+                        <div className="text-left">
+                            <div className={cn("transition-all duration-500", `opacity-100`)}>
+                                <Badge variant="outline" className="text-white border-white/50 mb-4">{wellnessSlides[activeWellnessSlide].badge}</Badge>
+                                <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4 text-white">
+                                   {wellnessSlides[activeWellnessSlide].title}
+                                </h2>
+                            </div>
+                             <div className="flex items-center gap-2 mt-8">
+                                {wellnessSlides.map((_, index) => (
+                                   <button 
+                                        key={index}
+                                        onClick={() => setActiveWellnessSlide(index)}
+                                        className={cn(
+                                            "w-1/3 h-1.5 max-w-24 rounded-full transition-colors",
+                                            activeWellnessSlide === index ? 'bg-white' : 'bg-white/20 hover:bg-white/40'
+                                        )}
+                                        aria-label={`Ir a la diapositiva ${index + 1}`}
+                                    />
+                                ))}
+                            </div>
                         </div>
+
                     </div>
                     
                     <Button 
