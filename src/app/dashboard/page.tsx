@@ -88,7 +88,7 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 
 const activityHighlights = [
   { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'gym fitness' },
-  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
+  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
   { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
   { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
 ];
@@ -234,7 +234,7 @@ export default function DashboardPage() {
   const [isLoadingMenu, setIsLoadingMenu] = useState(true);
   const [showShortcuts, setShowShortcuts] = useState(false);
   const [activeAboutView, setActiveAboutView] = useState<AboutView>('oferta');
-  const [activeWellnessSlide, setActiveWellnessSlide] = useState(wellnessSlides[0].id);
+  const [activeWellnessSlide, setActiveWellnessSlide] = useState(0);
   const { toast } = useToast();
   
   const [dressCodeView, setDressCodeView] = useState<'caballeros' | 'damas'>('caballeros');
@@ -463,7 +463,7 @@ export default function DashboardPage() {
             </div>
           </div>
         </div>
-
+        
         {/* Galeria de Recuerdos Section */}
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -474,7 +474,7 @@ export default function DashboardPage() {
                 </div>
                  <div className="relative h-[30rem] w-full flex items-center justify-center group">
                     <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out -rotate-12 group-hover:rotate-[-15deg] group-hover:-translate-x-12">
-                         <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" />
+                         <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" />
                     </Card>
                      <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out z-10 group-hover:scale-110">
                          <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
@@ -834,54 +834,24 @@ export default function DashboardPage() {
         {/* New Wellness Section */}
         <div id="actividades" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
-                <Card className="p-8 bg-card rounded-2xl shadow-sm overflow-hidden">
-                    <div className="grid md:grid-cols-2 gap-8 items-center">
-                        <div className="flex flex-col justify-center">
-                           {wellnessSlides.map((slide) => {
-                                const Icon = slide.icon;
-                                return (
-                                    <div key={slide.id} className={cn("space-y-3 transition-opacity duration-300", activeWellnessSlide === slide.id ? 'opacity-100' : 'opacity-0 hidden')}>
-                                        <Badge variant="default" className="bg-primary text-primary-foreground">
-                                            <Icon className="mr-2 h-4 w-4" />
-                                            {slide.badge}
-                                        </Badge>
-                                        <h2 className="text-4xl font-bold tracking-tight text-foreground">{slide.title}</h2>
-                                        <p className="text-muted-foreground">{slide.description}</p>
-                                        <Button asChild variant="link" className="p-0 text-primary">
-                                            <Link href="/dashboard/bienestar">
-                                                Saber más <ArrowRight className="ml-2 h-4 w-4" />
-                                            </Link>
-                                        </Button>
-                                    </div>
-                                )
-                            })}
-                            <div className="flex items-center gap-2 mt-8">
-                                {wellnessSlides.map(slide => (
-                                    <button 
-                                        key={slide.id} 
-                                        onClick={() => setActiveWellnessSlide(slide.id)}
-                                        className="w-full h-1.5 rounded-full bg-muted"
-                                    >
-                                        <div className={cn("h-full rounded-full bg-primary transition-all duration-300", activeWellnessSlide === slide.id ? 'w-full' : 'w-0')}></div>
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="relative h-80 w-full">
-                           {wellnessSlides.map(slide => (
-                                <Image
-                                    key={slide.id}
-                                    src={slide.imageUrl}
-                                    alt={slide.title}
-                                    layout="fill"
-                                    objectFit="contain"
-                                    data-ai-hint={slide.dataAiHint}
-                                    className={cn("transition-opacity duration-500 ease-in-out", activeWellnessSlide === slide.id ? 'opacity-100' : 'opacity-0')}
-                                />
-                           ))}
-                        </div>
+                 <div className="text-center">
+                    <Badge>Actividades de Bienestar</Badge>
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4">Explora los Recursos que te impulsan a crecer</h2>
+                    <div className="relative h-80 w-full mt-8">
+                        <Image
+                            src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_a1z25ga1z25ga1z2-Photoroom.png?raw=true"
+                            alt="Superhéroe Banesco"
+                            layout="fill"
+                            objectFit="contain"
+                            data-ai-hint="superhero illustration"
+                        />
                     </div>
-                </Card>
+                    <div className="flex justify-center items-center gap-2 mt-8">
+                        <div className="w-1/4 h-1.5 rounded-full bg-blue-200"></div>
+                        <div className="w-1/4 h-1.5 rounded-full bg-primary"></div>
+                        <div className="w-1/4 h-1.5 rounded-full bg-blue-200"></div>
+                    </div>
+                </div>
             </SectionWrapper>
         </div>
       
