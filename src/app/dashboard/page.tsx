@@ -432,34 +432,31 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Actividades del Mes Section */}
+        {/* Galería de Recuerdos Section */}
         <div id="actividades-del-mes" className="w-full mt-24">
           <SectionWrapper>
-            <Card className="relative p-8 rounded-2xl shadow-lg grid md:grid-cols-2 gap-8 items-center min-h-[300px] overflow-hidden group bg-gradient-to-br from-primary to-secondary text-primary-foreground">
-                <Image
-                    src="https://www.onlygfx.com/wp-content/uploads/2022/12/white-snowflakes-overlay-4.png"
-                    alt="Copos de nieve"
-                    layout="fill"
-                    objectFit="cover"
-                    className="absolute inset-0 opacity-10 pointer-events-none"
-                    data-ai-hint="snowflakes"
-                />
-              <div className="relative z-10 text-center md:text-left">
-                <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight">
-                    ¡Feliz Navidad 2025!
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="text-left">
+                <Badge variant="outline">Nuestros Pilares</Badge>
+                <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mt-4">
+                  Galería de Recuerdos
                 </h2>
+                <p className="mt-4 text-muted-foreground max-w-md">
+                  Revive los momentos especiales y experiencias que Banesco Seguros ofrece para ti.
+                </p>
               </div>
-              <div className="relative h-64 w-full">
-                <Image
-                  src="https://picsum.photos/seed/christmas/600/400"
-                  alt="Imagen Navideña"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg"
-                  data-ai-hint="christmas celebration"
-                />
+              <div className="relative h-96 w-full flex items-center justify-center">
+                <Card className="absolute w-[60%] h-64 rounded-2xl overflow-hidden shadow-lg transform -rotate-12 translate-x-12 opacity-80 group-hover:opacity-100 transition-all">
+                  <Image src="https://picsum.photos/seed/gallery1/600/400" alt="Recuerdo 1" layout="fill" objectFit="cover" data-ai-hint="team celebration" />
+                </Card>
+                <Card className="absolute w-[70%] h-80 rounded-2xl overflow-hidden shadow-2xl z-10 group-hover:scale-105 transition-all">
+                   <Image src="https://picsum.photos/seed/gallery2/600/400" alt="Recuerdo 2" layout="fill" objectFit="cover" data-ai-hint="company event" />
+                </Card>
+                <Card className="absolute w-[60%] h-64 rounded-2xl overflow-hidden shadow-lg transform rotate-12 -translate-x-12 opacity-80 group-hover:opacity-100 transition-all">
+                   <Image src="https://picsum.photos/seed/gallery3/600/400" alt="Recuerdo 3" layout="fill" objectFit="cover" data-ai-hint="workshop group" />
+                </Card>
               </div>
-            </Card>
+            </div>
           </SectionWrapper>
         </div>
         
