@@ -89,7 +89,7 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 const activityHighlights = [
   { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'gym fitness' },
   { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
-  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
+  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
   { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
 ];
 
@@ -201,7 +201,7 @@ const wellnessSlides = [
     {
       id: 'eventos',
       badge: 'Eventos Especiales',
-      title: (<>Descubre Actividades de Bienestar <br/> ideales para ti</>),
+      title: (<>Descubre Actividades <br/> ideales para ti</>),
       imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_ln3mqjln3mqjln3m-Photoroom%20(1).png?raw=true',
       dataAiHint: 'party popper illustration',
       icon: PartyPopper
@@ -209,7 +209,7 @@ const wellnessSlides = [
     {
       id: 'actividades',
       badge: 'Actividades Recientes',
-      title: (<>Descubre herramientas que <br/> maximizan tu potencial</>),
+      title: (<>Herramientas que <br/> maximizan tu potencial</>),
       imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_tzyaoetzyaoetzya-Photoroom.png?raw=true',
       dataAiHint: 'activity award illustration',
       icon: Award
@@ -814,9 +814,9 @@ export default function DashboardPage() {
         
         {/* Espacio Ejecutivo Section */}
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
-          <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[500px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
+          <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[600px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
@@ -824,7 +824,7 @@ export default function DashboardPage() {
                   className="brightness-50 group-hover:brightness-[0.4] transition-all duration-300"
               />
               <div className="relative z-10 flex flex-col items-center">
-                  <h2 className="text-4xl md:text-5xl font-extrabold">Espacio Ejecutivo</h2>
+                  <h2 className="text-5xl md:text-6xl font-extrabold">Espacio Ejecutivo</h2>
                   <p className="mt-4 max-w-xl text-primary-foreground/80">
                       Recursos, calendarios y herramientas exclusivas para la gerencia.
                   </p>
@@ -839,77 +839,77 @@ export default function DashboardPage() {
         
         {/* New Wellness Section */}
         <div id="actividades" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-          <SectionWrapper>
-            <div className="relative rounded-2xl shadow-sm overflow-hidden group">
-              <Image
-                src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
-                alt="Fondo abstracto de bienestar"
-                layout="fill"
-                objectFit="cover"
-                className="z-0"
-                data-ai-hint="abstract waves"
-              />
-              <div className="relative z-10 p-8 grid md:grid-cols-2 gap-8 items-center">
-                  <div
-                    className={cn(
-                      "relative w-full max-w-lg mx-auto transition-all duration-300 ease-in-out h-[400px]"
-                    )}
-                  >
-                    <Image
-                      src={wellnessSlides[activeWellnessSlide].imageUrl}
-                      alt={wellnessSlides[activeWellnessSlide].title as string}
+            <SectionWrapper>
+              <div className="relative rounded-2xl shadow-sm overflow-hidden group">
+                  <Image
+                      src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
+                      alt="Fondo abstracto de bienestar"
                       layout="fill"
-                      objectFit="contain"
-                      data-ai-hint={wellnessSlides[activeWellnessSlide].dataAiHint}
-                      key={activeWellnessSlide}
-                      className="animate-in fade-in duration-500"
-                    />
-                  </div>
-          
-                  <div className="text-left">
-                    <div className={cn("transition-all duration-500", "opacity-100")}>
-                      <Badge variant="outline" className="text-white border-white/50 mb-4">
-                        {wellnessSlides[activeWellnessSlide].badge}
-                      </Badge>
-                      <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4 text-white">
-                        {wellnessSlides[activeWellnessSlide].title}
-                      </h2>
-                    </div>
-                    <div className="flex items-center gap-2 mt-8">
-                      {wellnessSlides.map((_, index) => (
-                        <button
-                          key={index}
-                          onClick={() => setActiveWellnessSlide(index)}
+                      objectFit="cover"
+                      className="z-0"
+                      data-ai-hint="abstract waves"
+                  />
+                  <div className="relative z-10 p-8 grid md:grid-cols-2 gap-8 items-center">
+                      <div
                           className={cn(
-                            "w-1/3 h-1.5 max-w-24 rounded-full transition-colors",
-                            activeWellnessSlide === index
-                              ? "bg-white"
-                              : "bg-white/20 hover:bg-white/40"
+                              "relative w-full max-w-lg mx-auto transition-all duration-300 ease-in-out h-[400px]"
                           )}
-                          aria-label={`Ir a la diapositiva ${index + 1}`}
-                        />
-                      ))}
-                    </div>
+                      >
+                          <Image
+                              src={wellnessSlides[activeWellnessSlide].imageUrl}
+                              alt={wellnessSlides[activeWellnessSlide].title as string}
+                              layout="fill"
+                              objectFit="contain"
+                              data-ai-hint={wellnessSlides[activeWellnessSlide].dataAiHint}
+                              key={activeWellnessSlide}
+                              className="animate-in fade-in duration-500"
+                          />
+                      </div>
+              
+                      <div className="text-left">
+                          <div className={cn("transition-all duration-500", "opacity-100")}>
+                              <Badge variant="outline" className="text-white border-white/50 mb-4">
+                                  {wellnessSlides[activeWellnessSlide].badge}
+                              </Badge>
+                              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4 text-white">
+                                  {wellnessSlides[activeWellnessSlide].title}
+                              </h2>
+                          </div>
+                          <div className="flex items-center gap-2 mt-8">
+                              {wellnessSlides.map((_, index) => (
+                                  <button
+                                      key={index}
+                                      onClick={() => setActiveWellnessSlide(index)}
+                                      className={cn(
+                                          "w-1/3 h-1.5 max-w-24 rounded-full transition-colors",
+                                          activeWellnessSlide === index
+                                              ? "bg-white"
+                                              : "bg-white/20 hover:bg-white/40"
+                                      )}
+                                      aria-label={`Ir a la diapositiva ${index + 1}`}
+                                  />
+                              ))}
+                          </div>
+                      </div>
                   </div>
+            
+                  <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => handleWellnessNav('prev')}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full h-10 w-10 text-white/60 hover:bg-white/10 hover:text-white z-20"
+                  >
+                      <ChevronLeft className="h-6 w-6" />
+                  </Button>
+                  <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => handleWellnessNav('next')}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full h-10 w-10 text-white/60 hover:bg-white/10 hover:text-white z-20"
+                  >
+                      <ChevronRight className="h-6 w-6" />
+                  </Button>
               </div>
-        
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleWellnessNav('prev')}
-                className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full h-10 w-10 text-white/60 hover:bg-white/10 hover:text-white z-20"
-              >
-                <ChevronLeft className="h-6 w-6" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => handleWellnessNav('next')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full h-10 w-10 text-white/60 hover:bg-white/10 hover:text-white z-20"
-              >
-                <ChevronRight className="h-6 w-6" />
-              </Button>
-            </div>
           </SectionWrapper>
         </div>
       
