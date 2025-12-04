@@ -436,7 +436,7 @@ export default function DashboardPage() {
         <div id="actividades-del-mes" className="w-full mt-24">
           <SectionWrapper>
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="text-left">
+              <div className="text-left pl-8">
                 <Badge variant="outline">Nuestros Pilares</Badge>
                 <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mt-4">
                   Galería de Recuerdos
