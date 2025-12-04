@@ -89,7 +89,7 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 const activityHighlights = [
   { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'gym fitness' },
   { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
-  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
+  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
   { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
 ];
 
@@ -275,6 +275,15 @@ export default function DashboardPage() {
     setActiveAboutView(viewOrder[nextIndex]);
   };
   
+    const handleWellnessNav = (direction: 'prev' | 'next') => {
+    setActiveWellnessSlide(prev => {
+      if (direction === 'next') {
+        return (prev + 1) % wellnessSlides.length;
+      }
+      return (prev - 1 + wellnessSlides.length) % wellnessSlides.length;
+    });
+  };
+
   useEffect(() => {
     const todayDate = new Date();
     const dayName = todayDate.toLocaleDateString('es-ES', { weekday: 'long' });
@@ -477,7 +486,7 @@ export default function DashboardPage() {
                          <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" />
                     </Card>
                      <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out z-10 group-hover:scale-110">
-                         <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
+                         <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
                     </Card>
                      <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-12 group-hover:rotate-[15deg] group-hover:translate-x-12">
                          <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
@@ -834,7 +843,7 @@ export default function DashboardPage() {
         {/* New Wellness Section */}
         <div id="actividades" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
-                 <div className="relative rounded-2xl shadow-sm overflow-hidden text-center">
+                 <div className="relative rounded-2xl shadow-sm overflow-hidden text-center group">
                     <Image
                         src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
                         alt="Fondo abstracto de bienestar"
@@ -879,6 +888,23 @@ export default function DashboardPage() {
                             ))}
                         </div>
                     </div>
+                    
+                    <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        onClick={() => handleWellnessNav('prev')}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full h-10 w-10 text-white/60 hover:bg-white/10 hover:text-white"
+                    >
+                        <ChevronLeft className="h-6 w-6" />
+                    </Button>
+                    <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        onClick={() => handleWellnessNav('next')}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full h-10 w-10 text-white/60 hover:bg-white/10 hover:text-white"
+                    >
+                        <ChevronRight className="h-6 w-6" />
+                    </Button>
                 </div>
             </SectionWrapper>
         </div>
@@ -951,3 +977,4 @@ export default function DashboardPage() {
     </div>
   );
 }
+
