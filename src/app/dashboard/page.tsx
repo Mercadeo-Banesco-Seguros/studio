@@ -202,7 +202,7 @@ const wellnessSlides = [
     {
       id: 'eventos',
       badge: 'Eventos Especiales',
-      title: (<>Conecta, Crece y <br/> Celebra con Nosotros</>),
+      title: (<>Descubre Actividades de Bienestar <br/> ideales para ti</>),
       description: 'Participa en nuestros eventos exclusivos diseñados para fomentar la integración, el aprendizaje y el reconocimiento.',
       imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(52).png?raw=true',
       dataAiHint: 'party popper illustration',
@@ -477,7 +477,7 @@ export default function DashboardPage() {
                          <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" />
                     </Card>
                      <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out z-10 group-hover:scale-110">
-                         <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
+                         <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
                     </Card>
                      <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-12 group-hover:rotate-[15deg] group-hover:translate-x-12">
                          <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
