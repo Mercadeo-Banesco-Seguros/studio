@@ -809,7 +809,7 @@ export default function DashboardPage() {
         {/* Actividades Section */}
         <div id="actividades" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
-            <div className="bg-card p-8 md:p-12 rounded-2xl shadow-sm">
+            <div className="p-8 md:p-12">
                 <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-8 md:mb-12">
                 <div>
                     <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
@@ -929,3 +929,4 @@ export default function DashboardPage() {
     </div>
   );
 }
+
