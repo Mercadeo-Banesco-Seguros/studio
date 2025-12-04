@@ -88,9 +88,9 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 
 const activityHighlights = [
   { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'gym fitness' },
-  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
+  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
   { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
-  { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
+  { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
 ];
 
 const AnimatedContactButton = ({ href, type, label, number, icon: Icon, className, iconClassName }: {
@@ -849,55 +849,55 @@ export default function DashboardPage() {
                 className="z-0"
                 data-ai-hint="abstract waves"
               />
-              <div className="relative z-10 p-8 grid md:grid-cols-2 gap-8 items-center">
-                <div
-                  className={cn(
-                    "relative w-full max-w-lg mx-auto transition-all duration-300 ease-in-out h-[400px]"
-                  )}
-                >
-                  <Image
-                    src={wellnessSlides[activeWellnessSlide].imageUrl}
-                    alt={wellnessSlides[activeWellnessSlide].title as string}
-                    layout="fill"
-                    objectFit="contain"
-                    data-ai-hint={wellnessSlides[activeWellnessSlide].dataAiHint}
-                    key={activeWellnessSlide}
-                    className="animate-in fade-in duration-500"
-                  />
-                </div>
-        
-                <div className="text-left">
-                  <div className={cn("transition-all duration-500", "opacity-100")}>
-                    <Badge variant="outline" className="text-white border-white/50 mb-4">
-                      {wellnessSlides[activeWellnessSlide].badge}
-                    </Badge>
-                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4 text-white">
-                      {wellnessSlides[activeWellnessSlide].title}
-                    </h2>
+              <div className="relative p-8 grid md:grid-cols-2 gap-8 items-center">
+                  <div
+                    className={cn(
+                      "relative w-full max-w-lg mx-auto transition-all duration-300 ease-in-out h-[400px]"
+                    )}
+                  >
+                    <Image
+                      src={wellnessSlides[activeWellnessSlide].imageUrl}
+                      alt={wellnessSlides[activeWellnessSlide].title as string}
+                      layout="fill"
+                      objectFit="contain"
+                      data-ai-hint={wellnessSlides[activeWellnessSlide].dataAiHint}
+                      key={activeWellnessSlide}
+                      className="animate-in fade-in duration-500"
+                    />
                   </div>
-                  <div className="flex items-center gap-2 mt-8">
-                    {wellnessSlides.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setActiveWellnessSlide(index)}
-                        className={cn(
-                          "w-1/3 h-1.5 max-w-24 rounded-full transition-colors",
-                          activeWellnessSlide === index
-                            ? "bg-white"
-                            : "bg-white/20 hover:bg-white/40"
-                        )}
-                        aria-label={`Ir a la diapositiva ${index + 1}`}
-                      />
-                    ))}
+          
+                  <div className="text-left">
+                    <div className={cn("transition-all duration-500", "opacity-100")}>
+                      <Badge variant="outline" className="text-white border-white/50 mb-4">
+                        {wellnessSlides[activeWellnessSlide].badge}
+                      </Badge>
+                      <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4 text-white">
+                        {wellnessSlides[activeWellnessSlide].title}
+                      </h2>
+                    </div>
+                    <div className="flex items-center gap-2 mt-8">
+                      {wellnessSlides.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setActiveWellnessSlide(index)}
+                          className={cn(
+                            "w-1/3 h-1.5 max-w-24 rounded-full transition-colors",
+                            activeWellnessSlide === index
+                              ? "bg-white"
+                              : "bg-white/20 hover:bg-white/40"
+                          )}
+                          aria-label={`Ir a la diapositiva ${index + 1}`}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
               </div>
         
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => handleWellnessNav('prev')}
-                className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full h-10 w-10 text-white/60 hover:bg-white/10 hover:text-white"
+                className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full h-10 w-10 text-white/60 hover:bg-white/10 hover:text-white z-20"
               >
                 <ChevronLeft className="h-6 w-6" />
               </Button>
@@ -905,7 +905,7 @@ export default function DashboardPage() {
                 variant="ghost"
                 size="icon"
                 onClick={() => handleWellnessNav('next')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full h-10 w-10 text-white/60 hover:bg-white/10 hover:text-white"
+                className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full h-10 w-10 text-white/60 hover:bg-white/10 hover:text-white z-20"
               >
                 <ChevronRight className="h-6 w-6" />
               </Button>
