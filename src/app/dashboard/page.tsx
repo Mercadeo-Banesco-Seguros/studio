@@ -830,18 +830,21 @@ export default function DashboardPage() {
               </div>
           </Card>
         </section>
-
+        
         {/* New Wellness Section */}
         <div id="actividades" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-             <SectionWrapper>
-                 <Card className="p-8 bg-card rounded-2xl shadow-sm overflow-hidden text-center">
+            <SectionWrapper>
+                <Card className="p-8 bg-card rounded-2xl shadow-sm overflow-hidden text-center">
                     <div className={cn("transition-all duration-500", `opacity-100`)}>
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4">
                            {wellnessSlides[activeWellnessSlide].title}
                         </h2>
                     </div>
 
-                    <div className="relative h-96 w-full max-w-lg mx-auto mt-8">
+                    <div className={cn(
+                        "relative w-full max-w-lg mx-auto mt-8 transition-all duration-300 ease-in-out",
+                        activeWellnessSlide === 2 ? 'h-96' : 'h-[450px]'
+                      )}>
                        <Image 
                          src={wellnessSlides[activeWellnessSlide].imageUrl} 
                          alt={wellnessSlides[activeWellnessSlide].title as string}
