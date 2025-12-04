@@ -89,8 +89,8 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 const activityHighlights = [
   { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'gym fitness' },
   { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
-  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
-  { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
+  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
+  { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
 ];
 
 const AnimatedContactButton = ({ href, type, label, number, icon: Icon, className, iconClassName }: {
@@ -477,7 +477,7 @@ export default function DashboardPage() {
                          <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" />
                     </Card>
                      <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out z-10 group-hover:scale-110">
-                         <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
+                         <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
                     </Card>
                      <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-12 group-hover:rotate-[15deg] group-hover:translate-x-12">
                          <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
@@ -834,26 +834,44 @@ export default function DashboardPage() {
         {/* New Wellness Section */}
         <div id="actividades" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
-                 <div className="text-center">
-                    <Badge>Actividades de Bienestar</Badge>
-                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4">
-                      Explora los Recursos <br /> que te impulsan a crecer
-                    </h2>
-                    <div className="relative h-80 w-full mt-8">
-                        <Image
-                            src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_a1z25ga1z25ga1z2-Photoroom.png?raw=true"
-                            alt="Superhéroe Banesco"
-                            layout="fill"
-                            objectFit="contain"
-                            data-ai-hint="superhero illustration"
-                        />
+                 <Card className="p-8 bg-card rounded-2xl shadow-sm overflow-hidden">
+                    <div className="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <Badge>{wellnessSlides[activeWellnessSlide].badge}</Badge>
+                            <h2 className="text-4xl font-bold tracking-tight mt-4">{wellnessSlides[activeWellnessSlide].title}</h2>
+                            <p className="mt-4 text-muted-foreground">{wellnessSlides[activeWellnessSlide].description}</p>
+                            <Button asChild variant="link" className="p-0 h-auto mt-4 text-primary">
+                                <Link href="/dashboard/bienestar">
+                                    Saber más <ArrowRight className="ml-2 h-4 w-4"/>
+                                </Link>
+                            </Button>
+                        </div>
+                        <div className="relative h-64 w-full">
+                           <Image 
+                             src={wellnessSlides[activeWellnessSlide].imageUrl} 
+                             alt={wellnessSlides[activeWellnessSlide].title}
+                             layout="fill"
+                             objectFit="contain"
+                             data-ai-hint={wellnessSlides[activeWellnessSlide].dataAiHint}
+                             key={activeWellnessSlide}
+                             className="animate-in fade-in duration-500"
+                            />
+                        </div>
                     </div>
-                    <div className="flex justify-center items-center gap-2 mt-8">
-                        <div className="w-1/4 h-1.5 rounded-full bg-blue-200"></div>
-                        <div className="w-1/4 h-1.5 rounded-full bg-primary"></div>
-                        <div className="w-1/4 h-1.5 rounded-full bg-blue-200"></div>
+                     <div className="flex justify-center items-center gap-2 mt-8">
+                        {wellnessSlides.map((_, index) => (
+                           <button 
+                                key={index}
+                                onClick={() => setActiveWellnessSlide(index)}
+                                className={cn(
+                                    "w-1/4 h-1.5 rounded-full transition-colors",
+                                    activeWellnessSlide === index ? 'bg-primary' : 'bg-primary/20 hover:bg-primary/40'
+                                )}
+                                aria-label={`Ir a la diapositiva ${index + 1}`}
+                            />
+                        ))}
                     </div>
-                </div>
+                </Card>
             </SectionWrapper>
         </div>
       
@@ -925,3 +943,5 @@ export default function DashboardPage() {
     </div>
   );
 }
+
+    
