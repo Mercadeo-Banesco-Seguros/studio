@@ -62,6 +62,8 @@ import {
   X,
   ClipboardList,
   Network,
+  Gift,
+  PartyPopper
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -87,8 +89,8 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 const activityHighlights = [
   { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'gym fitness' },
   { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
-  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
-  { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
+  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
+  { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
 ];
 
 const AnimatedContactButton = ({ href, type, label, number, icon: Icon, className, iconClassName }: {
@@ -187,6 +189,35 @@ const aboutContent: Record<AboutView, { title: string; description: string; imag
   },
 };
 
+const wellnessSlides = [
+    {
+      id: 'navidad',
+      badge: 'Actividades de Bienestar',
+      title: 'Explora los Próximos Eventos del Mes',
+      description: '¡Celebra con nosotros! Descubre las actividades y sorpresas que hemos preparado para esta temporada festiva.',
+      imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(51).png?raw=true',
+      dataAiHint: 'Christmas tree illustration',
+      icon: Gift
+    },
+    {
+      id: 'eventos',
+      badge: 'Eventos Especiales',
+      title: 'Conecta, Crece y Celebra con Nosotros',
+      description: 'Participa en nuestros eventos exclusivos diseñados para fomentar la integración, el aprendizaje y el reconocimiento.',
+      imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(52).png?raw=true',
+      dataAiHint: 'party popper illustration',
+      icon: PartyPopper
+    },
+    {
+      id: 'actividades',
+      badge: 'Actividades Recientes',
+      title: 'Revive los Mejores Momentos del Equipo',
+      description: 'Explora la galería de nuestras actividades más recientes y comparte los recuerdos de nuestros encuentros.',
+      imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(53).png?raw=true',
+      dataAiHint: 'activity award illustration',
+      icon: Award
+    }
+];
 
 export default function DashboardPage() {
   const dressCodeScrollRef = useRef<HTMLDivElement>(null);
@@ -203,6 +234,7 @@ export default function DashboardPage() {
   const [isLoadingMenu, setIsLoadingMenu] = useState(true);
   const [showShortcuts, setShowShortcuts] = useState(false);
   const [activeAboutView, setActiveAboutView] = useState<AboutView>('oferta');
+  const [activeWellnessSlide, setActiveWellnessSlide] = useState(wellnessSlides[0].id);
   const { toast } = useToast();
   
   const [dressCodeView, setDressCodeView] = useState<'caballeros' | 'damas'>('caballeros');
@@ -432,32 +464,58 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Galería de Recuerdos Section */}
-        <div id="actividades-del-mes" className="w-full mt-24">
-          <SectionWrapper>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="text-left pl-8">
-                <Badge variant="outline">Nuestros Pilares</Badge>
-                <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mt-4">
-                  Galería de Recuerdos
-                </h2>
-                <p className="mt-4 text-muted-foreground max-w-md">
-                  Revive los momentos clave y las experiencias compartidas que definen la solidez de Banesco Seguros. Esta galería celebra la excelencia, el compromiso y la trayectoria de nuestro equipo. Un testimonio visual de los logros que construimos juntos.
-                </p>
-              </div>
-              <div className="relative h-[30rem] w-full flex items-center justify-center group">
-                <Card className="absolute w-[70%] h-[70%] rounded-2xl overflow-hidden shadow-lg transform -rotate-6 transition-all duration-300 group-hover:-rotate-12 group-hover:scale-105">
-                  <Image src="https://picsum.photos/seed/gallery1/600/400" alt="Recuerdo 1" layout="fill" objectFit="cover" data-ai-hint="team celebration" />
+        {/* New Wellness Section */}
+        <div id="actividades" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+            <SectionWrapper>
+                <Card className="p-8 bg-card rounded-2xl shadow-sm overflow-hidden">
+                    <div className="grid md:grid-cols-2 gap-8 items-center">
+                        <div className="flex flex-col justify-center">
+                           {wellnessSlides.map((slide) => {
+                                const Icon = slide.icon;
+                                return (
+                                    <div key={slide.id} className={cn("space-y-3 transition-opacity duration-300", activeWellnessSlide === slide.id ? 'opacity-100' : 'opacity-0 hidden')}>
+                                        <Badge variant="default" className="bg-primary text-primary-foreground">
+                                            <Icon className="mr-2 h-4 w-4" />
+                                            {slide.badge}
+                                        </Badge>
+                                        <h2 className="text-4xl font-bold tracking-tight text-foreground">{slide.title}</h2>
+                                        <p className="text-muted-foreground">{slide.description}</p>
+                                        <Button asChild variant="link" className="p-0 text-primary">
+                                            <Link href="/dashboard/bienestar">
+                                                Saber más <ArrowRight className="ml-2 h-4 w-4" />
+                                            </Link>
+                                        </Button>
+                                    </div>
+                                )
+                            })}
+                            <div className="flex items-center gap-2 mt-8">
+                                {wellnessSlides.map(slide => (
+                                    <button 
+                                        key={slide.id} 
+                                        onClick={() => setActiveWellnessSlide(slide.id)}
+                                        className="w-full h-1.5 rounded-full bg-muted"
+                                    >
+                                        <div className={cn("h-full rounded-full bg-primary transition-all duration-300", activeWellnessSlide === slide.id ? 'w-full' : 'w-0')}></div>
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="relative h-80 w-full">
+                           {wellnessSlides.map(slide => (
+                                <Image
+                                    key={slide.id}
+                                    src={slide.imageUrl}
+                                    alt={slide.title}
+                                    layout="fill"
+                                    objectFit="contain"
+                                    data-ai-hint={slide.dataAiHint}
+                                    className={cn("transition-opacity duration-500 ease-in-out", activeWellnessSlide === slide.id ? 'opacity-100' : 'opacity-0')}
+                                />
+                           ))}
+                        </div>
+                    </div>
                 </Card>
-                <Card className="absolute w-[70%] h-[70%] rounded-2xl overflow-hidden shadow-2xl z-10 transition-all duration-300 group-hover:scale-110">
-                   <Image src="https://picsum.photos/seed/gallery2/600/400" alt="Recuerdo 2" layout="fill" objectFit="cover" data-ai-hint="company event" />
-                </Card>
-                <Card className="absolute w-[70%] h-[70%] rounded-2xl overflow-hidden shadow-lg transform rotate-6 transition-all duration-300 group-hover:rotate-12 group-hover:scale-105">
-                   <Image src="https://picsum.photos/seed/gallery3/600/400" alt="Recuerdo 3" layout="fill" objectFit="cover" data-ai-hint="workshop group" />
-                </Card>
-              </div>
-            </div>
-          </SectionWrapper>
+            </SectionWrapper>
         </div>
         
         {/* Viste Seguro Section */}
@@ -784,7 +842,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
@@ -806,57 +864,6 @@ export default function DashboardPage() {
         </section>
 
 
-        {/* Actividades Section */}
-        <div id="actividades" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-            <SectionWrapper>
-            <div className="p-8 md:p-12">
-                <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-8 md:mb-12">
-                <div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
-                    Explore Nuestras Actividades de Bienestar
-                    </h2>
-                </div>
-                <div className="flex flex-col justify-center">
-                    <p className="text-muted-foreground mb-6">
-                    Descubra un mundo de bienestar con nuestras actividades exclusivas, diseñadas para apoyar su salud física y mental en cada etapa de la vida.
-                    </p>
-                    <div className="flex flex-wrap gap-3">
-                    <Button asChild variant="default" size="lg" className="font-light">
-                        <Link href="/dashboard/bienestar">Ver Todas las Actividades</Link>
-                    </Button>
-                    </div>
-                </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {activityHighlights.map((activity, index) => (
-                    <Link href="/dashboard/bienestar" key={activity.title} className="group block">
-                        <Card className="relative overflow-hidden rounded-2xl border-none shadow-lg h-96 min-h-[320px] transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                            <Image
-                                src={activity.imageUrl}
-                                alt={activity.title}
-                                layout="fill"
-                                objectFit="cover"
-                                data-ai-hint={activity.dataAiHint}
-                                className="transition-transform duration-500 ease-in-out group-hover:scale-105"
-                            />
-                            <div className="absolute inset-0 bg-blue-900/30"></div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                            <CardContent className="relative h-full flex flex-col justify-end p-6 text-white">
-                                <div className="w-12 h-12 mb-4 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                                    <activity.icon className="h-6 w-6 text-white" />
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-xl">{activity.title}</h3>
-                                    <p className="text-sm text-white/80">{activity.description}</p>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </Link>
-                ))}
-                </div>
-            </div>
-            </SectionWrapper>
-        </div>
       
         {/* Playlist Section */}
         <div id="playlist" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
@@ -926,6 +933,7 @@ export default function DashboardPage() {
     </div>
   );
 }
+
 
 
 
