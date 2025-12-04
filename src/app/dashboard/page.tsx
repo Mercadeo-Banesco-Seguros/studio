@@ -445,7 +445,7 @@ export default function DashboardPage() {
                   Revive los momentos clave y las experiencias compartidas que definen la solidez de Banesco Seguros. Esta galería celebra la excelencia, el compromiso y la trayectoria de nuestro equipo. Un testimonio visual de los logros que construimos juntos.
                 </p>
               </div>
-              <div className="relative h-96 w-full flex items-center justify-center group">
+              <div className="relative h-[30rem] w-full flex items-center justify-center group">
                 <Card className="absolute w-[70%] h-[70%] rounded-2xl overflow-hidden shadow-lg transform -rotate-6 transition-all duration-300 group-hover:-rotate-12 group-hover:scale-105">
                   <Image src="https://picsum.photos/seed/gallery1/600/400" alt="Recuerdo 1" layout="fill" objectFit="cover" data-ai-hint="team celebration" />
                 </Card>
@@ -721,29 +721,6 @@ export default function DashboardPage() {
           </SectionWrapper>
         </div>
 
-        {/* Menus Section */}
-        <div id="menu" className="mt-24">
-          {isLoadingMenu ? (
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <SectionWrapper>
-                <Skeleton className="h-[600px] w-full rounded-2xl" />
-              </SectionWrapper>
-            </div>
-          ) : allMenuItems.length > 0 ? (
-            <InteractiveMenuBanner menuItems={allMenuItems} />
-          ) : (
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <SectionWrapper>
-                <Card className="col-span-full">
-                  <CardContent className="p-8 text-center text-muted-foreground">
-                    <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
-                  </CardContent>
-                </Card>
-              </SectionWrapper>
-            </div>
-          )}
-        </div>
-        
         {/* Póliza HCM Section */}
         <section id="poliza" className="w-full mt-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -780,6 +757,29 @@ export default function DashboardPage() {
             </div>
         </section>
 
+        {/* Menus Section */}
+        <div id="menu" className="mt-24">
+          {isLoadingMenu ? (
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <SectionWrapper>
+                <Skeleton className="h-[600px] w-full rounded-2xl" />
+              </SectionWrapper>
+            </div>
+          ) : allMenuItems.length > 0 ? (
+            <InteractiveMenuBanner menuItems={allMenuItems} />
+          ) : (
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <SectionWrapper>
+                <Card className="col-span-full">
+                  <CardContent className="p-8 text-center text-muted-foreground">
+                    <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
+                  </CardContent>
+                </Card>
+              </SectionWrapper>
+            </div>
+          )}
+        </div>
+        
         {/* Espacio Ejecutivo Section */}
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
