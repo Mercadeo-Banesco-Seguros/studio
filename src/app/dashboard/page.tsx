@@ -445,14 +445,14 @@ export default function DashboardPage() {
                   Revive los momentos clave y las experiencias compartidas que definen la solidez de Banesco Seguros. Esta galería celebra la excelencia, el compromiso y la trayectoria de nuestro equipo. Un testimonio visual de los logros que construimos juntos.
                 </p>
               </div>
-              <div className="relative h-96 w-full flex items-center justify-center">
-                <Card className="absolute w-[60%] h-64 rounded-2xl overflow-hidden shadow-lg transform -rotate-12 translate-x-12 opacity-80 group-hover:opacity-100 transition-all">
+              <div className="relative h-96 w-full flex items-center justify-center group">
+                <Card className="absolute w-[70%] h-[70%] rounded-2xl overflow-hidden shadow-lg transform -rotate-6 transition-all duration-300 group-hover:-rotate-12 group-hover:scale-105">
                   <Image src="https://picsum.photos/seed/gallery1/600/400" alt="Recuerdo 1" layout="fill" objectFit="cover" data-ai-hint="team celebration" />
                 </Card>
-                <Card className="absolute w-[70%] h-80 rounded-2xl overflow-hidden shadow-2xl z-10 group-hover:scale-105 transition-all">
+                <Card className="absolute w-[70%] h-[70%] rounded-2xl overflow-hidden shadow-2xl z-10 transition-all duration-300 group-hover:scale-110">
                    <Image src="https://picsum.photos/seed/gallery2/600/400" alt="Recuerdo 2" layout="fill" objectFit="cover" data-ai-hint="company event" />
                 </Card>
-                <Card className="absolute w-[60%] h-64 rounded-2xl overflow-hidden shadow-lg transform rotate-12 -translate-x-12 opacity-80 group-hover:opacity-100 transition-all">
+                <Card className="absolute w-[70%] h-[70%] rounded-2xl overflow-hidden shadow-lg transform rotate-6 transition-all duration-300 group-hover:rotate-12 group-hover:scale-105">
                    <Image src="https://picsum.photos/seed/gallery3/600/400" alt="Recuerdo 3" layout="fill" objectFit="cover" data-ai-hint="workshop group" />
                 </Card>
               </div>
@@ -784,7 +784,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
