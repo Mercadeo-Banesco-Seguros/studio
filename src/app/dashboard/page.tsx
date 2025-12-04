@@ -89,7 +89,7 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 const activityHighlights = [
   { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'gym fitness' },
   { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
-  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
+  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
   { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
 ];
 
@@ -192,7 +192,7 @@ const aboutContent: Record<AboutView, { title: string; description: string; imag
 const wellnessSlides = [
     {
       id: 'navidad',
-      badge: 'Actividades de Bienestar',
+      badge: 'Bienestar',
       title: (<>Explora los Próximos <br/> Eventos del Mes</>),
       description: '¡Celebra con nosotros! Descubre las actividades y sorpresas que hemos preparado para esta temporada festiva.',
       imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_ka2ygrka2ygrka2y-Photoroom.png?raw=true',
@@ -834,7 +834,7 @@ export default function DashboardPage() {
         {/* New Wellness Section */}
         <div id="actividades" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
-                <div className="relative rounded-2xl shadow-sm overflow-hidden">
+                 <div className="relative rounded-2xl shadow-sm overflow-hidden text-center">
                     <Image
                         src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
                         alt="Fondo abstracto de bienestar"
@@ -843,8 +843,9 @@ export default function DashboardPage() {
                         className="z-0"
                         data-ai-hint="abstract waves"
                     />
-                    <div className="relative z-10 p-8 text-center">
+                    <div className="relative z-10 p-8">
                         <div className={cn("transition-all duration-500", `opacity-100`)}>
+                            <Badge variant="outline" className="text-white border-white/50 mb-4">{wellnessSlides[activeWellnessSlide].badge}</Badge>
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4 text-white">
                                {wellnessSlides[activeWellnessSlide].title}
                             </h2>
@@ -852,7 +853,7 @@ export default function DashboardPage() {
 
                         <div className={cn(
                             "relative w-full max-w-lg mx-auto mt-8 transition-all duration-300 ease-in-out",
-                            activeWellnessSlide === 2 ? 'h-96' : 'h-[450px]'
+                            activeWellnessSlide === 0 ? 'h-[450px]' : activeWellnessSlide === 1 ? 'h-[450px]' : 'h-96'
                           )}>
                            <Image 
                              src={wellnessSlides[activeWellnessSlide].imageUrl} 
