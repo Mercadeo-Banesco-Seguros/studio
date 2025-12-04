@@ -721,6 +721,29 @@ export default function DashboardPage() {
           </SectionWrapper>
         </div>
 
+        {/* Menus Section */}
+        <div id="menu" className="mt-24">
+          {isLoadingMenu ? (
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <SectionWrapper>
+                <Skeleton className="h-[600px] w-full rounded-2xl" />
+              </SectionWrapper>
+            </div>
+          ) : allMenuItems.length > 0 ? (
+            <InteractiveMenuBanner menuItems={allMenuItems} />
+          ) : (
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <SectionWrapper>
+                <Card className="col-span-full">
+                  <CardContent className="p-8 text-center text-muted-foreground">
+                    <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
+                  </CardContent>
+                </Card>
+              </SectionWrapper>
+            </div>
+          )}
+        </div>
+
         {/* Póliza HCM Section */}
         <section id="poliza" className="w-full mt-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -756,29 +779,6 @@ export default function DashboardPage() {
               </div>
             </div>
         </section>
-
-        {/* Menus Section */}
-        <div id="menu" className="mt-24">
-          {isLoadingMenu ? (
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <SectionWrapper>
-                <Skeleton className="h-[600px] w-full rounded-2xl" />
-              </SectionWrapper>
-            </div>
-          ) : allMenuItems.length > 0 ? (
-            <InteractiveMenuBanner menuItems={allMenuItems} />
-          ) : (
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <SectionWrapper>
-                <Card className="col-span-full">
-                  <CardContent className="p-8 text-center text-muted-foreground">
-                    <p>No hay menú disponible para hoy ({currentDayName}). Por favor, consulte el menú semanal completo.</p>
-                  </CardContent>
-                </Card>
-              </SectionWrapper>
-            </div>
-          )}
-        </div>
         
         {/* Espacio Ejecutivo Section */}
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
