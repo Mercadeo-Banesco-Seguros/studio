@@ -89,7 +89,7 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 const activityHighlights = [
   { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'gym fitness' },
   { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
-  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
+  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
   { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
 ];
 
@@ -834,41 +834,51 @@ export default function DashboardPage() {
         {/* New Wellness Section */}
         <div id="actividades" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
             <SectionWrapper>
-                <Card className="p-8 bg-card rounded-2xl shadow-sm overflow-hidden text-center">
-                    <div className={cn("transition-all duration-500", `opacity-100`)}>
-                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4">
-                           {wellnessSlides[activeWellnessSlide].title}
-                        </h2>
-                    </div>
+                <div className="relative rounded-2xl shadow-sm overflow-hidden">
+                    <Image
+                        src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
+                        alt="Fondo abstracto de bienestar"
+                        layout="fill"
+                        objectFit="cover"
+                        className="z-0"
+                        data-ai-hint="abstract waves"
+                    />
+                    <div className="relative z-10 p-8 text-center">
+                        <div className={cn("transition-all duration-500", `opacity-100`)}>
+                            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4 text-white">
+                               {wellnessSlides[activeWellnessSlide].title}
+                            </h2>
+                        </div>
 
-                    <div className={cn(
-                        "relative w-full max-w-lg mx-auto mt-8 transition-all duration-300 ease-in-out",
-                        activeWellnessSlide === 2 ? 'h-96' : 'h-[450px]'
-                      )}>
-                       <Image 
-                         src={wellnessSlides[activeWellnessSlide].imageUrl} 
-                         alt={wellnessSlides[activeWellnessSlide].title as string}
-                         layout="fill"
-                         objectFit="contain"
-                         data-ai-hint={wellnessSlides[activeWellnessSlide].dataAiHint}
-                         key={activeWellnessSlide}
-                         className="animate-in fade-in duration-500"
-                        />
-                    </div>
-                     <div className="flex justify-center items-center gap-2 mt-8">
-                        {wellnessSlides.map((_, index) => (
-                           <button 
-                                key={index}
-                                onClick={() => setActiveWellnessSlide(index)}
-                                className={cn(
-                                    "w-1/4 h-1.5 max-w-24 rounded-full transition-colors",
-                                    activeWellnessSlide === index ? 'bg-primary' : 'bg-primary/20 hover:bg-primary/40'
-                                )}
-                                aria-label={`Ir a la diapositiva ${index + 1}`}
+                        <div className={cn(
+                            "relative w-full max-w-lg mx-auto mt-8 transition-all duration-300 ease-in-out",
+                            activeWellnessSlide === 2 ? 'h-96' : 'h-[450px]'
+                          )}>
+                           <Image 
+                             src={wellnessSlides[activeWellnessSlide].imageUrl} 
+                             alt={wellnessSlides[activeWellnessSlide].title as string}
+                             layout="fill"
+                             objectFit="contain"
+                             data-ai-hint={wellnessSlides[activeWellnessSlide].dataAiHint}
+                             key={activeWellnessSlide}
+                             className="animate-in fade-in duration-500"
                             />
-                        ))}
+                        </div>
+                         <div className="flex justify-center items-center gap-2 mt-8">
+                            {wellnessSlides.map((_, index) => (
+                               <button 
+                                    key={index}
+                                    onClick={() => setActiveWellnessSlide(index)}
+                                    className={cn(
+                                        "w-1/4 h-1.5 max-w-24 rounded-full transition-colors",
+                                        activeWellnessSlide === index ? 'bg-white' : 'bg-white/20 hover:bg-white/40'
+                                    )}
+                                    aria-label={`Ir a la diapositiva ${index + 1}`}
+                                />
+                            ))}
+                        </div>
                     </div>
-                </Card>
+                </div>
             </SectionWrapper>
         </div>
       
