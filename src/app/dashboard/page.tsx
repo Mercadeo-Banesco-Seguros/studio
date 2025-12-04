@@ -85,10 +85,10 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 
 
 const activityHighlights = [
-  { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell },
-  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake },
-  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck },
-  { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck }
+  { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'gym fitness' },
+  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
+  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
+  { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
 ];
 
 const AnimatedContactButton = ({ href, type, label, number, icon: Icon, className, iconClassName }: {
@@ -829,32 +829,28 @@ export default function DashboardPage() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {activityHighlights.map((activity, index) => (
-                    <Card 
-                    key={index} 
-                    className={cn(
-                        "border-0 p-6 rounded-xl flex flex-col items-start gap-4 text-left transition-colors",
-                        index === 0 
-                        ? "bg-primary text-primary-foreground" 
-                        : "bg-muted/50"
-                    )}
-                    >
-                    <div className={cn(
-                        "p-3 rounded-full",
-                        index === 0 ? "bg-primary-foreground/10 text-primary-foreground" : "bg-primary/10 text-primary"
-                    )}>
-                        <activity.icon className="h-6 w-6" />
-                    </div>
-                    <div className="space-y-1">
-                        <h3 className={cn(
-                        "font-semibold",
-                        index === 0 ? "text-primary-foreground" : "text-foreground"
-                        )}>{activity.title}</h3>
-                        <p className={cn(
-                        "text-sm",
-                        index === 0 ? "text-primary-foreground/80" : "text-muted-foreground"
-                        )}>{activity.description}</p>
-                    </div>
-                    </Card>
+                    <Link href="/dashboard/bienestar" key={activity.title} className="group block">
+                        <Card className="relative overflow-hidden rounded-2xl border-none shadow-lg h-80 min-h-[320px] transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <Image
+                                src={activity.imageUrl}
+                                alt={activity.title}
+                                layout="fill"
+                                objectFit="cover"
+                                data-ai-hint={activity.dataAiHint}
+                                className="transition-transform duration-500 ease-in-out group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                            <CardContent className="relative h-full flex flex-col justify-end p-6 text-white">
+                                <div className="w-12 h-12 mb-4 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                                    <activity.icon className="h-6 w-6 text-white" />
+                                </div>
+                                <div>
+                                    <h3 className="font-semibold text-xl">{activity.title}</h3>
+                                    <p className="text-sm text-white/80">{activity.description}</p>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    </Link>
                 ))}
                 </div>
             </div>
@@ -929,4 +925,5 @@ export default function DashboardPage() {
     </div>
   );
 }
+
 
