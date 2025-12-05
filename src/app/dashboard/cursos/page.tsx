@@ -55,7 +55,7 @@ export default function CursosPage() {
       <div className="max-w-7xl mx-auto space-y-12">
         
         <section>
-          <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex items-center justify-start text-left p-8">
+          <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex items-center justify-start text-left p-8 md:p-12">
             <Image 
               src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlLWxlYXJuaW5nfGVufDB8fHx8fDE3NTQ0MTM4OTB8MA&ixlib=rb-4.1.0&q=80&w=1080"
               alt="E-learning"
@@ -100,4 +100,3 @@ export default function CursosPage() {
     </div>
   );
 }
-
