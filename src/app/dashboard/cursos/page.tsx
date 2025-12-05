@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -53,31 +54,19 @@ export default function CursosPage() {
       <div className="max-w-7xl mx-auto space-y-12">
         
         <section>
-            <Card className="rounded-2xl shadow-lg overflow-hidden bg-card">
-                 <div className="grid md:grid-cols-2 items-center">
-                    <div className="p-8 md:p-12">
-                        <p className="font-semibold text-primary">Plataforma Educativa</p>
-                        <h2 className="text-3xl font-bold text-foreground mt-2">Desarrolla habilidades que impulsan tu trabajo</h2>
-                        <p className="text-muted-foreground mt-4">
-                            Accede a una biblioteca curada de cursos en línea de las mejores plataformas del mundo para potenciar tu desarrollo profesional.
-                        </p>
-                        <Button asChild className="mt-6 rounded-full" size="lg">
-                            <Link href="#">
-                                Comenzar ahora <ArrowRight className="ml-2 h-4 w-4" />
-                            </Link>
-                        </Button>
-                    </div>
-                    <div className="relative h-64 md:h-full min-h-[300px]">
-                        <Image 
-                            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlLWxlYXJuaW5nfGVufDB8fHx8MTc1NDQxMzg5MHww&ixlib=rb-4.1.0&q=80&w=1080"
-                            alt="E-learning"
-                            layout="fill"
-                            objectFit="cover"
-                            data-ai-hint="e-learning development"
-                        />
-                    </div>
-                 </div>
-            </Card>
+          <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex items-center justify-center text-center p-8">
+            <Image 
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlLWxlYXJuaW5nfGVufDB8fHx8MTc1NDQxMzg5MHww&ixlib=rb-4.1.0&q=80&w=1080"
+              alt="E-learning"
+              layout="fill"
+              objectFit="cover"
+              data-ai-hint="e-learning development"
+              className="brightness-50"
+            />
+            <div className="relative z-10">
+              <h1 className="text-5xl md:text-6xl font-extrabold text-white tracking-tight">Actívate</h1>
+            </div>
+          </Card>
         </section>
 
         <section>
