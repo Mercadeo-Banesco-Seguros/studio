@@ -57,7 +57,7 @@ export default function CursosPage() {
         <section>
           <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex items-center justify-start text-left p-8 md:p-12">
             <Image 
-              src="https://www.unir.net/wp-content/uploads/2024/02/Que-estudiar-online-Universidad-y-otras-opciones3.jpg"
+              src="https://images.unsplash.com/photo-1583508915901-b5f84c1dcde1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZnJlZWxhbmNlfGVufDB8fHx8MTc2NDk0ODUzM3ww&ixlib=rb-4.1.0&q=80&w=1080"
               alt="E-learning"
               layout="fill"
               objectFit="cover"
