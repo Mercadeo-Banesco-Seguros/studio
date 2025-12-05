@@ -56,7 +56,7 @@ export default function CursosPage() {
         <section>
           <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex items-center justify-center text-center p-8">
             <Image 
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlLWxlYXJuaW5nfGVufDB8fHx8MTc1NDQxMzg5MHww&ixlib=rb-4.1.0&q=80&w=1080"
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlLWxlYXJuaW5nfGVufDB8fHx8fDE3NTQ0MTM4OTB8MA&ixlib=rb-4.1.0&q=80&w=1080"
               alt="E-learning"
               layout="fill"
               objectFit="cover"
@@ -64,7 +64,7 @@ export default function CursosPage() {
               className="brightness-50"
             />
             <div className="relative z-10">
-              <h1 className="text-5xl md:text-6xl font-extrabold text-white tracking-tight">Actívate</h1>
+              <h1 className="text-5xl md:text-6xl font-extrabold text-white tracking-tight">Visita Nuestra Academia Banesco Seguros</h1>
             </div>
           </Card>
         </section>
