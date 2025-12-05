@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -52,12 +51,8 @@ const AdnCard = ({ title, description, icon: Icon, href }: AdnCardProps) => (
 export default function CursosPage() {
   return (
     <div className="bg-muted/30 min-h-screen p-4 sm:p-8">
-      <div className="max-w-7xl mx-auto space-y-16">
+      <div className="max-w-7xl mx-auto space-y-12">
         
-        <header>
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">Desarrolla habilidades que impulsan tu trabajo</h1>
-        </header>
-
         <section>
             <Card className="rounded-2xl shadow-lg overflow-hidden bg-card">
                  <div className="grid md:grid-cols-2 items-center">
