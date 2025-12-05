@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, History, Award, Rss, CheckCircle } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 const technologies = [
   { name: 'Google Workspace', iconUrl: 'https://cdn.worldvectorlogo.com/logos/google-workspace-2.svg', dataAiHint: 'google workspace logo' },
@@ -64,7 +65,8 @@ export default function CursosPage() {
               className="brightness-50"
             />
             <div className="relative z-10">
-              <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra Academia Banesco Seguros</h1>
+              <Badge variant="outline" className="text-white border-white/50 mb-4">Academia Banesco Seguros</Badge>
+              <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra Academia <br/> Banesco Seguros</h1>
             </div>
           </Card>
         </section>
@@ -98,3 +100,4 @@ export default function CursosPage() {
     </div>
   );
 }
+
