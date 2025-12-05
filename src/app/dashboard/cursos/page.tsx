@@ -2,11 +2,10 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BookCopy, Building, ChevronRight, DraftingCompass, History, Award, Rss, Code, Bot, BarChart, GraduationCap, CheckCircle } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { ArrowRight, History, Award, Rss, CheckCircle } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 const technologies = [
@@ -58,7 +57,7 @@ export default function CursosPage() {
                  <div className="grid md:grid-cols-2 items-center">
                     <div className="p-8 md:p-12">
                         <p className="font-semibold text-primary">Plataforma Educativa</p>
-                        <h2 className="text-3xl font-bold text-foreground mt-2">Crece con nuestra selección de cursos</h2>
+                        <h2 className="text-3xl font-bold text-foreground mt-2">Desarrolla habilidades que impulsan tu trabajo</h2>
                         <p className="text-muted-foreground mt-4">
                             Accede a una biblioteca curada de cursos en línea de las mejores plataformas del mundo para potenciar tu desarrollo profesional.
                         </p>
