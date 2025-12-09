@@ -10,12 +10,12 @@ import type { LucideIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 const technologies = [
-  { name: 'TypeScript', iconUrl: 'https://cdn.worldvectorlogo.com/logos/typescript.svg', dataAiHint: 'typescript logo' },
-  { name: 'Copilot', iconUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Microsoft_Copilot_Icon.svg/1200px-Microsoft_Copilot_Icon.svg.png', dataAiHint: 'copilot logo' },
-  { name: 'Power BI', iconUrl: 'https://logos-world.net/wp-content/uploads/2022/02/Power-BI-Logo.png', dataAiHint: 'power bi logo' },
-  { name: 'Google Sites', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Google_Sites_2020_Logo.svg/250px-Google_Sites_2020_Logo.svg.png', dataAiHint: 'google sites logo' },
-  { name: 'Google Docs', iconUrl: 'https://cdn.prod.website-files.com/657639ebfb91510f45654149/67b4c2989b84b8a5bd953112_docs_512dp.webp', dataAiHint: 'google docs logo' },
   { name: 'Google Sheets', iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxViZyCe5Vg6NrNijiTsdXSJy9Nt-0_TcvtA&s', dataAiHint: 'google sheets logo' },
+  { name: 'Google Docs', iconUrl: 'https://cdn.prod.website-files.com/657639ebfb91510f45654149/67b4c2989b84b8a5bd953112_docs_512dp.webp', dataAiHint: 'google docs logo' },
+  { name: 'Google Slides', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Google_Slides_2020_Logo.svg/1200px-Google_Slides_2020_Logo.svg.png', dataAiHint: 'google slides logo' },
+  { name: 'Power BI', iconUrl: 'https://logos-world.net/wp-content/uploads/2022/02/Power-BI-Logo.png', dataAiHint: 'power bi logo' },
+  { name: 'Microsoft 365', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png', dataAiHint: 'Microsoft logo' },
+  { name: 'TypeScript', iconUrl: 'https://cdn.worldvectorlogo.com/logos/typescript.svg', dataAiHint: 'typescript logo' },
 ];
 
 const adnCourses = [
@@ -80,7 +80,7 @@ export default function CursosPage() {
               </Card>
             </div>
             <div className="w-[30%]">
-                 <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left transition-transform hover:scale-105">
+                <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left transition-transform hover:scale-105">
                     <Image
                         src="https://capacitacion.uc.cl/images/cursos/Por_qu%C3%A9_deber%C3%ADas_aprender_a_programar_en_Python.jpg"
                         alt="Cursos disponibles"
@@ -109,7 +109,7 @@ export default function CursosPage() {
             <h3 className="text-center text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-6">Domina las herramientas del futuro</h3>
             <div className="flex flex-wrap justify-center items-center gap-x-12 sm:gap-x-16 gap-y-4">
                 {technologies.map(tech => (
-                    <div key={tech.name} className="relative h-10 w-28 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all">
+                    <div key={tech.name} className="relative h-12 w-12 transition-all hover:scale-110">
                         <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" data-ai-hint={tech.dataAiHint} />
                     </div>
                 ))}
