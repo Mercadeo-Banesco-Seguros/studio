@@ -23,7 +23,7 @@ const technologies = [
   { name: 'Flutter', iconUrl: 'https://cdn.worldvectorlogo.com/logos/flutter.svg', 'data-ai-hint': 'flutter logo' },
   { name: 'Microsoft Fabric', iconUrl: 'https://www.brainsell.com/wp-content/uploads/2023/12/Fabric_final_x256.png', 'data-ai-hint': 'microsoft fabric logo' },
   { name: 'Google Sites', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Google_Sites_2020_Logo.svg/1489px-Google_Sites_2020_Logo.svg.png', 'data-ai-hint': 'google sites logo' },
-  { name: 'Microsoft Copilot', iconUrl: 'https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/copilot-color.png', 'data-ai-hint': 'microsoft copilot logo' },
+  { name: 'Microsoft Copilot', iconUrl: 'https://1000logos.net/wp-content/uploads/2023/11/Copilot-Logo.png', 'data-ai-hint': 'microsoft copilot logo' },
   { name: 'Gemini', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Gemini_icon_2025.svg/2048px-Google_Gemini_icon_2025.svg.png', 'data-ai-hint': 'google gemini logo' },
   { name: 'Gmail', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png', 'data-ai-hint': 'gmail logo' },
   { name: 'Power BI', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/2048px-New_Power_BI_Logo.svg.png', 'data-ai-hint': 'power bi logo' },
@@ -152,48 +152,50 @@ export default function CursosPage() {
             <section>
               <div className="flex gap-6">
                 <div className="w-[30%] flex flex-col gap-6">
-                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
-                         <Image
-                            src="https://www.sage.com/es-es/blog/wp-content/uploads/sites/8/2017/12/ThinkstockPhotos-692732544.jpg"
-                            alt="Código de Ética"
-                            layout="fill"
-                            objectFit="cover"
-                            data-ai-hint="code ethics"
-                        />
-                        <div className="absolute inset-0 bg-blue-900/40" />
-                        <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
-                            <div>
-                                <Badge variant="outline" className="text-white border-white/50 mb-2">Código de Ética</Badge>
-                                <h2 className="text-2xl font-bold text-white">Principios y Valores</h2>
+                    <div className="flex-1 flex flex-col gap-6">
+                        <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
+                            <Image
+                                src="https://www.sage.com/es-es/blog/wp-content/uploads/sites/8/2017/12/ThinkstockPhotos-692732544.jpg"
+                                alt="Código de Ética"
+                                layout="fill"
+                                objectFit="cover"
+                                data-ai-hint="code ethics"
+                            />
+                            <div className="absolute inset-0 bg-blue-900/40" />
+                            <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
+                                <div>
+                                    <Badge variant="outline" className="text-white border-white/50 mb-2">Código de Ética</Badge>
+                                    <h2 className="text-2xl font-bold text-white">Principios y Valores</h2>
+                                </div>
+                                <div className="mt-auto">
+                                    <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
+                                        <Link href="#">Explorar</Link>
+                                    </Button>
+                                </div>
                             </div>
-                            <div className="mt-auto">
-                                <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
-                                    <Link href="#">Explorar</Link>
-                                </Button>
+                        </Card>
+                        <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
+                            <Image
+                                src="https://www.puntoseguro.com/blog/wp-content/uploads/2015/04/tipos-de-seguros-1.jpg"
+                                alt="Nuestros Productos"
+                                layout="fill"
+                                objectFit="cover"
+                                data-ai-hint="insurance products"
+                            />
+                            <div className="absolute inset-0 bg-blue-900/40" />
+                            <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
+                                <div>
+                                    <Badge variant="outline" className="text-white border-white/50 mb-2">Nuestros Productos</Badge>
+                                    <h2 className="text-2xl font-bold text-white">Soluciones y Cobertura</h2>
+                                </div>
+                                <div className="mt-auto">
+                                    <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
+                                        <Link href="#">Conocer más</Link>
+                                    </Button>
+                                </div>
                             </div>
-                        </div>
-                    </Card>
-                     <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
-                         <Image
-                            src="https://www.puntoseguro.com/blog/wp-content/uploads/2015/04/tipos-de-seguros-1.jpg"
-                            alt="Nuestros Productos"
-                            layout="fill"
-                            objectFit="cover"
-                            data-ai-hint="insurance products"
-                        />
-                         <div className="absolute inset-0 bg-blue-900/40" />
-                         <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
-                            <div>
-                                <Badge variant="outline" className="text-white border-white/50 mb-2">Nuestros Productos</Badge>
-                                <h2 className="text-2xl font-bold text-white">Soluciones y Cobertura</h2>
-                            </div>
-                            <div className="mt-auto">
-                                <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
-                                    <Link href="#">Conocer más</Link>
-                                </Button>
-                            </div>
-                        </div>
-                    </Card>
+                        </Card>
+                    </div>
                 </div>
                 <div className="w-[70%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left">
@@ -220,28 +222,6 @@ export default function CursosPage() {
                   </Card>
                 </div>
               </div>
-            </section>
-
-            <section>
-                <h3 className="text-center text-xl text-foreground mb-6">
-                    <span className="font-bold">Domina</span> las herramientas del <span className="font-bold">futuro</span>
-                </h3>
-                <div
-                    className="relative w-full overflow-hidden"
-                    style={{
-                        maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
-                    }}
-                >
-                    <div className="animate-scroll flex gap-16 py-8">
-                        {[...technologies, ...technologies].map((tech, index) => (
-                            <div key={`${tech.name}-${index}`} className="flex-shrink-0">
-                                <div className={cn("relative h-16 w-16 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-20')}>
-                                    <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" data-ai-hint={tech['data-ai-hint']} />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
             </section>
         </div>
       </div>
@@ -444,6 +424,27 @@ export default function CursosPage() {
                     </Card>
                 </div>
               </div>
+            </section>
+            <section>
+                <h3 className="text-center text-xl text-foreground mb-6">
+                    <span className="font-bold">Domina</span> las herramientas del <span className="font-bold">futuro</span>
+                </h3>
+                <div
+                    className="relative w-full overflow-hidden"
+                    style={{
+                        maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+                    }}
+                >
+                    <div className="animate-scroll flex gap-16 py-8">
+                        {[...technologies, ...technologies].map((tech, index) => (
+                            <div key={`${tech.name}-${index}`} className="flex-shrink-0">
+                                <div className={cn("relative h-16 w-16 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-20')}>
+                                    <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" data-ai-hint={tech['data-ai-hint']} />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </section>
         </div>
 
