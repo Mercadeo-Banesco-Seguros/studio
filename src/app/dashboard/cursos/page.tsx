@@ -108,7 +108,7 @@ export default function CursosPage() {
 
         <section>
              <h3 className="text-center text-xl text-foreground mb-6">
-                <span className="font-bold">Domina</span> las herramientas del futuro
+                <span className="font-bold">Domina</span> las herramientas del <span className="font-bold">futuro</span>
             </h3>
             <div className="flex flex-wrap justify-center items-center gap-x-12 sm:gap-x-16 gap-y-4">
                 {technologies.map(tech => (
