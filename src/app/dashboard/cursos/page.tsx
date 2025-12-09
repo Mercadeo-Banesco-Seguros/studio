@@ -23,6 +23,10 @@ const technologies = [
   { name: 'Microsoft Fabric', iconUrl: 'https://www.brainsell.com/wp-content/uploads/2023/12/Fabric_final_x256.png', dataAiHint: 'microsoft fabric logo' },
   { name: 'Microsoft Copilot', iconUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Microsoft_Copilot_Icon.svg/1200px-Microsoft_Copilot_Icon.svg.png', dataAiHint: 'microsoft copilot logo' },
   { name: 'TypeScript', iconUrl: 'https://cdn.worldvectorlogo.com/logos/typescript.svg', dataAiHint: 'typescript logo' },
+  { name: 'Google Photos', iconUrl: 'https://numericoach.fr/wp-content/uploads/2024/05/image-1024x1024.png', dataAiHint: 'google photos logo' },
+  { name: 'Google Drive', iconUrl: 'https://cdn.prod.website-files.com/6047a9e35e5dc54ac86ddd90/63018720eab248248ff88ee3_1bd86e15.png', dataAiHint: 'google drive logo' },
+  { name: 'NotebookLM', iconUrl: 'https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/notebooklm.png', dataAiHint: 'notebooklm logo' },
+  { name: 'Gmail', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png', dataAiHint: 'gmail logo' },
 ];
 
 const adnCourses = [
@@ -181,3 +185,4 @@ export default function CursosPage() {
     </div>
   );
 }
+
