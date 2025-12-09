@@ -23,7 +23,7 @@ const technologies = [
   { name: 'Flutter', iconUrl: 'https://cdn.worldvectorlogo.com/logos/flutter.svg', 'data-ai-hint': 'flutter logo' },
   { name: 'Microsoft Fabric', iconUrl: 'https://www.brainsell.com/wp-content/uploads/2023/12/Fabric_final_x256.png', 'data-ai-hint': 'microsoft fabric logo' },
   { name: 'Google Sites', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Google_Sites_2020_Logo.svg/1489px-Google_Sites_2020_Logo.svg.png', 'data-ai-hint': 'google sites logo' },
-  { name: 'Microsoft Copilot', iconUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Microsoft_Copilot_Icon.svg/1200px-Microsoft_Copilot_Icon.svg.png', 'data-ai-hint': 'microsoft copilot logo' },
+  { name: 'Microsoft Copilot', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Microsoft_Copilot_icon.svg/1024px-Microsoft_Copilot_icon.svg.png', 'data-ai-hint': 'microsoft copilot logo' },
   { name: 'Gemini', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Gemini_icon_2025.svg/2048px-Google_Gemini_icon_2025.svg.png', 'data-ai-hint': 'google gemini logo' },
   { name: 'Gmail', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png', 'data-ai-hint': 'gmail logo' },
   { name: 'Power BI', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/2048px-New_Power_BI_Logo.svg.png', 'data-ai-hint': 'power bi logo' },
@@ -375,9 +375,9 @@ export default function CursosPage() {
         <div className="max-w-7xl mx-auto p-4 sm:p-8 space-y-12 mt-12">
            <section>
               <div className="flex gap-6">
-                <div className="w-[30%]">
-                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col text-left transition-transform hover:scale-105">
-                        <Image
+                <div className="w-[30%] flex flex-col gap-6">
+                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
+                         <Image
                             src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxsYXJzfGVufDB8fHx8MTc2MzczMTk1N3ww&ixlib-rb-4.1.0&q=80&w=1080"
                             alt="Nuestros Pilares"
                             layout="fill"
@@ -385,8 +385,8 @@ export default function CursosPage() {
                             data-ai-hint="pillars architecture"
                             className="brightness-50"
                         />
-                        <div className="relative z-10 p-6 w-full flex flex-col h-full">
-                            <div className="flex-grow">
+                        <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
+                            <div>
                                 <Badge variant="outline" className="text-white border-white/50 mb-2">Código de Ética</Badge>
                                 <h2 className="text-lg font-bold text-white">Principios y Valores</h2>
                             </div>
@@ -396,14 +396,22 @@ export default function CursosPage() {
                                 </Button>
                             </div>
                         </div>
-                        <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
-                        <div className="absolute top-0 bottom-0 left-1/2 w-px bg-white/20"></div>
-                        <div className="absolute z-10 p-6 w-full flex flex-col h-full">
-                            <div className="flex-grow text-right pl-[55%]">
+                    </Card>
+                     <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
+                         <Image
+                            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxsYXJzfGVufDB8fHx8MTc2MzczMTk1N3ww&ixlib-rb-4.1.0&q=80&w=1080"
+                            alt="Nuestros Productos"
+                            layout="fill"
+                            objectFit="cover"
+                            data-ai-hint="product solutions"
+                            className="brightness-50"
+                        />
+                         <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
+                            <div>
                                 <Badge variant="outline" className="text-white border-white/50 mb-2">Nuestros Productos</Badge>
                                 <h2 className="text-lg font-bold text-white">Soluciones y Cobertura</h2>
                             </div>
-                            <div className="mt-auto text-right pl-[55%]">
+                            <div className="mt-auto">
                                 <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
                                     <Link href="#">Conocer más</Link>
                                 </Button>
@@ -446,6 +454,7 @@ export default function CursosPage() {
     
 
     
+
 
 
 
