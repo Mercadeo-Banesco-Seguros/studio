@@ -1,16 +1,16 @@
-
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Gavel, Gem, Lightbulb, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Gavel, Gem, Lightbulb, ChevronLeft, ChevronRight, RefreshCw, BarChartHorizontal, TrendingUp, Users, Percent } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
+import { Progress } from '@/components/ui/progress';
 
 
 const technologies = [
@@ -34,6 +34,13 @@ const adnCourses = [
     { title: 'Código de Ética', icon: Gavel, description: 'Principios y normas que guían nuestra conducta.', href: '#' },
     { title: 'Nuestros Productos', icon: Gem, description: 'Explora el portafolio de soluciones que ofrecemos.', href: '#' },
     { title: 'Identidad Banesco Seguros', icon: Lightbulb, description: 'Conoce la esencia de nuestra marca y cómo la comunicamos.', href: '#' },
+];
+
+const trainingStats = [
+    { label: "Retención de Talento", value: 94, description: "de empleados se queda si se invierte en su desarrollo." },
+    { label: "Productividad", value: 25, description: "es el aumento potencial con e-learning bien aplicado." },
+    { label: "Satisfacción", value: 92, description: "de los colaboradores valora la formación planificada." },
+    { label: "Adopción Corporativa", value: 90, description: "de las empresas ya utilizan formación online." },
 ];
 
 interface AdnCardProps {
@@ -149,12 +156,12 @@ export default function CursosPage() {
                 <span className="font-bold">Domina</span> las herramientas del <span className="font-bold">futuro</span>
             </h3>
             <div
-                className="relative w-full overflow-hidden py-8"
+                className="relative w-full overflow-hidden"
                 style={{
                     maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
                 }}
             >
-                <div className="animate-scroll flex gap-16">
+                <div className="animate-scroll flex gap-16 py-8">
                     {[...technologies, ...technologies].map((tech, index) => (
                         <div key={`${tech.name}-${index}`} className="flex-shrink-0">
                             <div className={cn("relative h-16 w-16 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-20')}>
@@ -164,6 +171,37 @@ export default function CursosPage() {
                     ))}
                 </div>
             </div>
+        </section>
+
+        <section>
+            <Card className="bg-card shadow-lg rounded-2xl overflow-hidden">
+                <div className="grid md:grid-cols-2">
+                    <div className="bg-muted/50 p-8 md:p-12 flex flex-col justify-center items-center text-center">
+                         <div className="flex items-end gap-2">
+                            <div className="w-8 h-24 bg-sky-300 rounded-md" />
+                            <div className="w-8 h-40 bg-blue-600 rounded-md" />
+                         </div>
+                        <p className="text-8xl font-extrabold text-foreground mt-4">218%</p>
+                        <p className="text-muted-foreground font-medium">Aumento potencial de ingresos</p>
+                    </div>
+                    <div className="p-8 md:p-12">
+                        <h3 className="text-sm font-semibold uppercase text-primary tracking-widest">Estadísticas de Formación</h3>
+                        <h4 className="text-2xl font-bold text-foreground mt-2 mb-6">Impacto en Cifras</h4>
+                        <div className="space-y-6">
+                            {trainingStats.map(stat => (
+                                <div key={stat.label}>
+                                    <div className="flex justify-between items-center mb-1">
+                                        <p className="text-sm font-medium text-foreground">{stat.label}</p>
+                                        <p className="text-sm font-semibold text-primary">{stat.value}%</p>
+                                    </div>
+                                    <Progress value={stat.value} />
+                                    <p className="text-xs text-muted-foreground mt-1">{stat.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </Card>
         </section>
         
         <section>
