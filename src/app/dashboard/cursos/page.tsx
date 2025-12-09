@@ -55,21 +55,31 @@ export default function CursosPage() {
       <div className="max-w-7xl mx-auto space-y-12">
         
         <section>
-          <div className="w-[70%]">
-            <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex items-center justify-start text-left p-8 md:p-12">
-              <Image 
-                src="https://www.shutterstock.com/image-photo/concentrated-young-female-student-engaged-600nw-2458397479.jpg"
-                alt="E-learning"
-                layout="fill"
-                objectFit="cover"
-                data-ai-hint="e-learning development"
-                className="brightness-50"
-              />
-              <div className="relative z-10">
-                <Badge variant="outline" className="text-white border-white/50 mb-4">Academia Banesco Seguros</Badge>
-                <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra Academia <br/> Banesco Seguros</h1>
-              </div>
-            </Card>
+          <div className="flex gap-6">
+            <div className="w-[70%]">
+              <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex items-center justify-start text-left p-8 md:p-12">
+                <Image 
+                  src="https://www.shutterstock.com/image-photo/concentrated-young-female-student-engaged-600nw-2458397479.jpg"
+                  alt="E-learning"
+                  layout="fill"
+                  objectFit="cover"
+                  data-ai-hint="e-learning development"
+                  className="brightness-50"
+                />
+                <div className="relative z-10">
+                  <Badge variant="outline" className="text-white border-white/50 mb-4">Academia Banesco Seguros</Badge>
+                  <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra Academia <br/> Banesco Seguros</h1>
+                </div>
+              </Card>
+            </div>
+            <div className="w-[30%]">
+                <Link href="/dashboard/cursos/google-workspace">
+                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col items-center justify-center text-center p-8 transition-transform hover:scale-105">
+                        <h2 className="text-3xl font-bold">Ver Cursos Disponibles</h2>
+                        <ArrowRight className="mt-4 h-8 w-8"/>
+                    </Card>
+                </Link>
+            </div>
           </div>
         </section>
 
