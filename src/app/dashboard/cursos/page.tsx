@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useRef } from 'react';
@@ -31,9 +30,9 @@ const technologies = [
 
 
 const adnCourses = [
-    { title: 'Código de Ética', icon: Gavel, description: 'Principios y normas que guían nuestra conducta profesional y personal.', href: '#' },
-    { title: 'Nuestros Productos', icon: Gem, description: 'Explora el portafolio de soluciones que ofrecemos a nuestros clientes.', href: '#' },
-    { title: 'Identidad Banesco Seguros', icon: Lightbulb, description: 'Conoce la esencia de nuestra marca y cómo la comunicamos.', href: '#' },
+    { title: 'Código de Ética', icon: Gavel, description: 'Principios y normas que guían nuestra conducta.', href: '#', iconBg: 'bg-red-500/10', iconColor: 'text-red-500' },
+    { title: 'Nuestros Productos', icon: Gem, description: 'Explora el portafolio de soluciones que ofrecemos.', href: '#', iconBg: 'bg-green-500/10', iconColor: 'text-green-500' },
+    { title: 'Identidad Banesco Seguros', icon: Lightbulb, description: 'Conoce la esencia de nuestra marca y cómo la comunicamos.', href: '#', iconBg: 'bg-yellow-500/10', iconColor: 'text-yellow-500' },
 ];
 
 interface AdnCardProps {
@@ -41,19 +40,23 @@ interface AdnCardProps {
     description: string;
     icon: LucideIcon;
     href: string;
+    iconBg: string;
+    iconColor: string;
 }
 
-const AdnCard = ({ title, description, icon: Icon, href }: AdnCardProps) => (
-    <Link href={href} className="group">
-        <Card className="h-full rounded-2xl shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
-            <CardHeader className="flex-row items-center gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                    <Icon className="h-6 w-6 text-primary" />
+const AdnCard = ({ title, description, icon: Icon, href, iconBg, iconColor }: AdnCardProps) => (
+    <Link href={href} className="group block">
+        <Card className="h-full rounded-2xl shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 bg-card/50 backdrop-blur-sm border-white/10 text-white">
+             <CardContent className="p-6">
+                <div className="flex justify-between items-start">
+                    <div>
+                        <h3 className="text-xl font-bold">{title}</h3>
+                        <p className="text-sm text-white/70 mt-1">{description}</p>
+                    </div>
+                     <div className={cn("p-3 rounded-lg", iconBg)}>
+                        <Icon className={cn("h-6 w-6", iconColor)} />
+                    </div>
                 </div>
-                <CardTitle className="text-lg">{title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <p className="text-sm text-muted-foreground">{description}</p>
             </CardContent>
         </Card>
     </Link>
@@ -140,16 +143,20 @@ export default function CursosPage() {
         </section>
         
         <section>
-            <div className="space-y-2 mb-8">
-                <h2 className="text-3xl font-bold text-foreground tracking-tight">ADN Banesco Seguros</h2>
-                <p className="text-muted-foreground max-w-2xl">
-                    Fortalece tus competencias y conoce a fondo la cultura que nos impulsa a ser líderes en el mercado.
-                </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {adnCourses.map(course => (
-                    <AdnCard key={course.title} {...course} />
-                ))}
+            <div className="bg-primary text-primary-foreground p-8 md:p-12 rounded-2xl shadow-lg">
+                <div className="grid md:grid-cols-3 gap-8 items-center">
+                    <div className="md:col-span-1 space-y-3">
+                        <h2 className="text-4xl font-bold tracking-tight">ADN Banesco Seguros</h2>
+                        <p className="text-primary-foreground/80 max-w-xs">
+                            Fortalece tus competencias y conoce a fondo la cultura que nos impulsa a ser líderes en el mercado.
+                        </p>
+                    </div>
+                    <div className="md:col-span-2 grid grid-cols-1 gap-4">
+                        {adnCourses.map(course => (
+                           <AdnCard key={course.title} {...course} />
+                        ))}
+                    </div>
+                </div>
             </div>
         </section>
 
