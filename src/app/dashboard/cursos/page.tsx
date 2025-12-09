@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Gavel, Gem, Lightbulb, ChevronLeft, ChevronRight, RefreshCw, BarChartHorizontal, TrendingUp, Users, Percent } from 'lucide-react';
+import { ArrowRight, Gavel, Gem, Lightbulb, ChevronLeft, ChevronRight, RefreshCw, BarChartHorizontal, TrendingUp, Users, Percent, Target, Scaling, Goal, Sparkles, Timer } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
@@ -57,7 +57,7 @@ interface AdnCardProps {
 const AdnCard = ({ title, description, icon: Icon, href = '#', isTitleCard = false, className }: AdnCardProps) => {
     
     const cardContent = isTitleCard ? (
-        <CardContent className="p-6 flex flex-col justify-center h-full">
+      <CardContent className="p-6 flex flex-col justify-center h-full">
             <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
             {description && (
                 <p className="text-primary-foreground/80 max-w-xs mt-2 text-sm">{description}</p>
@@ -131,163 +131,168 @@ export default function CursosPage() {
   const defaultStatText = "Invertir en desarrollo profesional no solo retiene al 94% del talento, sino que también puede aumentar la productividad hasta en un 25%.";
 
   return (
-    <div className="bg-muted/30 min-h-screen p-4 sm:p-8">
-      <div className="max-w-7xl mx-auto space-y-12">
-        
-        <section>
-          <div className="flex gap-6">
-            <div className="w-[70%]">
-              <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
-                <Image 
-                  src="https://www.shutterstock.com/image-photo/concentrated-young-female-student-engaged-600nw-2458397479.jpg"
-                  alt="E-learning"
-                  layout="fill"
-                  objectFit="cover"
-                  data-ai-hint="e-learning development"
-                  className="brightness-50"
-                />
-                <div className="relative z-10 p-8 md:p-12">
-                    <Badge variant="outline" className="text-white border-white/50 mb-4">Cursos Disponibles</Badge>
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra<br/> Academia Banesco Seguros</h1>
-                    <div className="pt-8">
-                        <Button asChild className="text-xs font-light">
-                            <Link href="#">
-                                Acceder
-                            </Link>
-                        </Button>
-                    </div>
-                </div>
-              </Card>
-            </div>
-            <div className="w-[30%]">
-                <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col items-start justify-end text-left transition-transform hover:scale-105">
-                    <Image
-                        src="https://capacitacion.uc.cl/images/cursos/Por_qu%C3%A9_deber%C3%ADas_aprender_a_programar_en_Python.jpg"
-                        alt="Cursos disponibles"
-                        layout="fill"
-                        objectFit="cover"
-                        data-ai-hint="business team"
-                        className="brightness-50"
+    <div className="bg-muted/30 min-h-screen">
+      <div className="p-4 sm:p-8 space-y-12">
+        <div className="max-w-7xl mx-auto space-y-12">
+            <section>
+              <div className="flex gap-6">
+                <div className="w-[70%]">
+                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
+                    <Image 
+                      src="https://www.shutterstock.com/image-photo/concentrated-young-female-student-engaged-600nw-2458397479.jpg"
+                      alt="E-learning"
+                      layout="fill"
+                      objectFit="cover"
+                      data-ai-hint="e-learning development"
+                      className="brightness-50"
                     />
-                    <div className="relative z-10 p-8 w-full">
+                    <div className="relative z-10 p-8 md:p-12">
                         <Badge variant="outline" className="text-white border-white/50 mb-4">Cursos Disponibles</Badge>
-                        <h2 className="text-3xl font-bold">Revisar Cursos<br/>Disponibles</h2>
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra<br/> Academia Banesco Seguros</h1>
                         <div className="pt-8">
-                           <Button asChild className="text-xs font-light">
-                               <Link href="/dashboard/cursos/google-workspace">
-                                   Acceder
-                               </Link>
-                           </Button>
+                            <Button asChild className="text-xs font-light">
+                                <Link href="#">
+                                    Acceder
+                                </Link>
+                            </Button>
                         </div>
                     </div>
-                </Card>
-            </div>
-          </div>
-        </section>
-
-        <section>
-            <h3 className="text-center text-xl text-foreground mb-6">
-                <span className="font-bold">Domina</span> las herramientas del <span className="font-bold">futuro</span>
-            </h3>
-            <div
-                className="relative w-full overflow-hidden"
-                style={{
-                    maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
-                }}
-            >
-                <div className="animate-scroll flex gap-16 py-8">
-                    {[...technologies, ...technologies].map((tech, index) => (
-                        <div key={`${tech.name}-${index}`} className="flex-shrink-0">
-                            <div className={cn("relative h-16 w-16 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-20')}>
-                                <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" data-ai-hint={tech.dataAiHint} />
+                  </Card>
+                </div>
+                <div className="w-[30%]">
+                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col items-start justify-end text-left transition-transform hover:scale-105">
+                        <Image
+                            src="https://capacitacion.uc.cl/images/cursos/Por_qu%C3%A9_deber%C3%ADas_aprender_a_programar_en_Python.jpg"
+                            alt="Cursos disponibles"
+                            layout="fill"
+                            objectFit="cover"
+                            data-ai-hint="business team"
+                            className="brightness-50"
+                        />
+                        <div className="relative z-10 p-8 w-full">
+                            <Badge variant="outline" className="text-white border-white/50 mb-4">Cursos Disponibles</Badge>
+                            <h2 className="text-3xl font-bold">Revisar Cursos<br/>Disponibles</h2>
+                            <div className="pt-8">
+                               <Button asChild className="text-xs font-light">
+                                   <Link href="/dashboard/cursos/google-workspace">
+                                       Acceder
+                                   </Link>
+                               </Button>
                             </div>
                         </div>
-                    ))}
+                    </Card>
                 </div>
-            </div>
-        </section>
+              </div>
+            </section>
 
-        <section>
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h3 className="text-sm font-semibold uppercase text-primary tracking-widest">Estadísticas Clave</h3>
-              <h4 className="text-3xl font-bold text-foreground mt-2">El <span className="text-primary">Impacto</span> de la Formación Corporativa</h4>
+            <section>
+                <h3 className="text-center text-xl text-foreground mb-6">
+                    <span className="font-bold">Domina</span> las herramientas del <span className="font-bold">futuro</span>
+                </h3>
+                <div
+                    className="relative w-full overflow-hidden"
+                    style={{
+                        maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+                    }}
+                >
+                    <div className="animate-scroll flex gap-16 py-8">
+                        {[...technologies, ...technologies].map((tech, index) => (
+                            <div key={`${tech.name}-${index}`} className="flex-shrink-0">
+                                <div className={cn("relative h-16 w-16 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-20')}>
+                                    <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" data-ai-hint={tech.dataAiHint} />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </div>
+      </div>
+
+        <section className="w-full bg-muted/40 py-16 md:py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-8">
+              <div className="text-center max-w-3xl mx-auto mb-12">
+                <h3 className="text-sm font-semibold uppercase text-primary tracking-widest">Estadísticas Clave</h3>
+                <h4 className="text-3xl font-bold text-foreground mt-2">El <span className="text-primary">Impacto</span> de la Formación Corporativa</h4>
+              </div>
+              <div className="flex items-end justify-center gap-4 md:gap-8 h-[300px] w-full">
+                  {trainingStats.map(stat => (
+                      <StatCircle 
+                          key={stat.id}
+                          value={stat.value} 
+                          label={stat.label} 
+                          size={stat.size} 
+                          isMax={stat.isMax}
+                          isSelected={selectedStat?.id === stat.id}
+                          onClick={() => setSelectedStat(stat.id === selectedStat?.id ? null : stat)}
+                      />
+                  ))}
+              </div>
+              <p className="text-center text-muted-foreground mt-12 max-w-lg mx-auto">
+                   {selectedStat ? (
+                      <>
+                         {selectedStat.description}
+                      </>
+                  ) : (
+                      defaultStatText
+                  )}
+              </p>
             </div>
-            <div className="flex items-end justify-center gap-4 md:gap-8 h-[300px] w-full">
-                {trainingStats.map(stat => (
-                    <StatCircle 
-                        key={stat.id}
-                        value={stat.value} 
-                        label={stat.label} 
-                        size={stat.size} 
-                        isMax={stat.isMax}
-                        isSelected={selectedStat?.id === stat.id}
-                        onClick={() => setSelectedStat(stat.id === selectedStat?.id ? null : stat)}
-                    />
-                ))}
-            </div>
-            <p className="text-center text-muted-foreground mt-12 max-w-lg mx-auto">
-                 {selectedStat ? (
-                    <>
-                       {selectedStat.description}
-                    </>
-                ) : (
-                    defaultStatText
-                )}
-            </p>
         </section>
         
-        <section>
-          <div className="flex gap-6">
-            <div className="w-[30%]">
-              <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col items-start justify-end text-left transition-transform hover:scale-105">
-                <Image
-                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxsYXJzfGVufDB8fHx8MTc2MzczMTk1N3ww&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Nuestros Pilares"
-                  layout="fill"
-                  objectFit="cover"
-                  data-ai-hint="pillars architecture"
-                  className="brightness-50"
-                />
-                <div className="relative z-10 p-8 w-full">
-                  <Badge variant="outline" className="text-white border-white/50 mb-4">Nuestros Pilares</Badge>
-                  <h2 className="text-xl font-bold">Código de Ética, Productos<br/>e Identidad Corporativa</h2>
-                  <div className="pt-8">
-                    <Button asChild className="text-xs font-light">
-                      <Link href="#">
-                        Explorar
-                      </Link>
-                    </Button>
-                  </div>
+        <div className="max-w-7xl mx-auto p-4 sm:p-8 space-y-12">
+            <section>
+              <div className="flex gap-6">
+                <div className="w-[30%]">
+                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col items-start justify-end text-left transition-transform hover:scale-105">
+                    <Image
+                      src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxsYXJzfGVufDB8fHx8MTc2MzczMTk1N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                      alt="Nuestros Pilares"
+                      layout="fill"
+                      objectFit="cover"
+                      data-ai-hint="pillars architecture"
+                      className="brightness-50"
+                    />
+                    <div className="relative z-10 p-8 w-full">
+                      <Badge variant="outline" className="text-white border-white/50 mb-4">Nuestros Pilares</Badge>
+                      <h2 className="text-xl font-bold">Código de Ética, Productos<br/>e Identidad Corporativa</h2>
+                      <div className="pt-8">
+                        <Button asChild className="text-xs font-light">
+                          <Link href="#">
+                            Explorar
+                          </Link>
+                        </Button>
+                      </div>
+                    </div>
+                  </Card>
                 </div>
-              </Card>
-            </div>
-            <div className="w-[70%]">
-              <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
-                <Image
-                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="ADN Banesco Seguros"
-                  layout="fill"
-                  objectFit="cover"
-                  data-ai-hint="business team"
-                  className="brightness-50"
-                />
-                <div className="relative z-10 p-8 md:p-12">
-                  <Badge variant="outline" className="text-white border-white/50 mb-4">Cultura Corporativa</Badge>
-                  <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">ADN Banesco<br/>Seguros</h1>
-                  <div className="pt-8">
-                    <Button asChild className="text-xs font-light">
-                      <Link href="#">
-                        Conocer más
-                      </Link>
-                    </Button>
-                  </div>
+                <div className="w-[70%]">
+                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
+                    <Image
+                      src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                      alt="ADN Banesco Seguros"
+                      layout="fill"
+                      objectFit="cover"
+                      data-ai-hint="business team"
+                      className="brightness-50"
+                    />
+                    <div className="relative z-10 p-8 md:p-12">
+                      <Badge variant="outline" className="text-white border-white/50 mb-4">Cultura Corporativa</Badge>
+                      <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">ADN Banesco<br/>Seguros</h1>
+                      <div className="pt-8">
+                        <Button asChild className="text-xs font-light">
+                          <Link href="#">
+                            Conocer más
+                          </Link>
+                        </Button>
+                      </div>
+                    </div>
+                  </Card>
                 </div>
-              </Card>
-            </div>
-          </div>
-        </section>
+              </div>
+            </section>
+        </div>
 
-      </div>
     </div>
   );
 }
