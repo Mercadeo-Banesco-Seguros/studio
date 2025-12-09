@@ -151,51 +151,73 @@ export default function CursosPage() {
         <div className="max-w-7xl mx-auto space-y-12">
             <section>
               <div className="flex gap-6">
-                <div className="w-[70%]">
-                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
-                    <Image 
-                      src="https://www.shutterstock.com/image-photo/concentrated-young-female-student-engaged-600nw-2458397479.jpg"
-                      alt="E-learning"
-                      layout="fill"
-                      objectFit="cover"
-                      data-ai-hint="e-learning development"
-                      className="brightness-50"
-                    />
-                    <div className="relative z-10 p-8 md:p-12">
-                        <Badge variant="outline" className="text-white border-white/50 mb-4">Cursos Disponibles</Badge>
-                        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra<br/> Academia Banesco Seguros</h1>
-                        <div className="pt-8">
-                            <Button asChild className="text-xs font-light">
-                                <Link href="#">
-                                    Acceder
-                                </Link>
-                            </Button>
-                        </div>
-                    </div>
-                  </Card>
-                </div>
-                <div className="w-[30%]">
-                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col items-start justify-end text-left transition-transform hover:scale-105">
-                        <Image
-                            src="https://capacitacion.uc.cl/images/cursos/Por_qu%C3%A9_deber%C3%ADas_aprender_a_programar_en_Python.jpg"
-                            alt="Cursos disponibles"
+                <div className="w-[30%] flex flex-col gap-6">
+                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
+                         <Image
+                            src="https://www.sage.com/es-es/blog/wp-content/uploads/sites/8/2017/12/ThinkstockPhotos-692732544.jpg"
+                            alt="Código de Ética"
                             layout="fill"
                             objectFit="cover"
-                            data-ai-hint="business team"
-                            className="brightness-50"
+                            data-ai-hint="code ethics"
                         />
-                        <div className="relative z-10 p-8 w-full">
-                            <Badge variant="outline" className="text-white border-white/50 mb-4">Cursos Disponibles</Badge>
-                            <h2 className="text-3xl font-bold">Revisar Cursos<br/>Disponibles</h2>
-                            <div className="pt-8">
-                               <Button asChild className="text-xs font-light">
-                                   <Link href="/dashboard/cursos/google-workspace">
-                                       Acceder
-                                   </Link>
-                               </Button>
+                        <div className="absolute inset-0 bg-blue-900/40" />
+                        <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
+                            <div>
+                                <Badge variant="outline" className="text-white border-white/50 mb-2">Código de Ética</Badge>
+                                <h2 className="text-2xl font-bold text-white">Principios y Valores</h2>
+                            </div>
+                            <div className="mt-auto">
+                                <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
+                                    <Link href="#">Explorar</Link>
+                                </Button>
                             </div>
                         </div>
                     </Card>
+                     <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
+                         <Image
+                            src="https://www.puntoseguro.com/blog/wp-content/uploads/2015/04/tipos-de-seguros-1.jpg"
+                            alt="Nuestros Productos"
+                            layout="fill"
+                            objectFit="cover"
+                            data-ai-hint="insurance products"
+                        />
+                         <div className="absolute inset-0 bg-blue-900/40" />
+                         <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
+                            <div>
+                                <Badge variant="outline" className="text-white border-white/50 mb-2">Nuestros Productos</Badge>
+                                <h2 className="text-2xl font-bold text-white">Soluciones y Cobertura</h2>
+                            </div>
+                            <div className="mt-auto">
+                                <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
+                                    <Link href="#">Conocer más</Link>
+                                </Button>
+                            </div>
+                        </div>
+                    </Card>
+                </div>
+                <div className="w-[70%]">
+                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left">
+                    <Image
+                      src="https://images.unsplash.com/photo-1680792563719-288027b2a090?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8YWRufGVufDB8fHx8MTc2NTMwOTYxNXww&ixlib=rb-4.1.0&q=80&w=1080"
+                      alt="ADN Banesco Seguros"
+                      layout="fill"
+                      objectFit="cover"
+                      data-ai-hint="business team"
+                      className="brightness-50"
+                    />
+                    <div className="relative z-10 p-8 md:p-12">
+                      <Badge variant="outline" className="text-white border-white/50 mb-4">Cultura Corporativa</Badge>
+                      <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">ADN Banesco<br/>Seguros</h1>
+                       <p className="mt-4 max-w-xl text-primary-foreground/80">Conoce los principios que nos guían y forman la base de nuestra organización.</p>
+                      <div className="pt-8">
+                        <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
+                          <Link href="#">
+                            Conocer más
+                          </Link>
+                        </Button>
+                      </div>
+                    </div>
+                  </Card>
                 </div>
               </div>
             </section>
@@ -373,75 +395,53 @@ export default function CursosPage() {
         </section>
         
         <div className="max-w-7xl mx-auto p-4 sm:p-8 space-y-12 mt-12">
-           <section>
+            <section>
               <div className="flex gap-6">
-                <div className="w-[30%] flex flex-col gap-6">
-                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
-                         <Image
-                            src="https://www.sage.com/es-es/blog/wp-content/uploads/sites/8/2017/12/ThinkstockPhotos-692732544.jpg"
-                            alt="Código de Ética"
-                            layout="fill"
-                            objectFit="cover"
-                            data-ai-hint="code ethics"
-                        />
-                        <div className="absolute inset-0 bg-blue-900/40" />
-                        <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
-                            <div>
-                                <Badge variant="outline" className="text-white border-white/50 mb-2">Código de Ética</Badge>
-                                <h2 className="text-2xl font-bold text-white">Principios y Valores</h2>
-                            </div>
-                            <div className="mt-auto">
-                                <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
-                                    <Link href="#">Explorar</Link>
-                                </Button>
-                            </div>
-                        </div>
-                    </Card>
-                     <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
-                         <Image
-                            src="https://www.puntoseguro.com/blog/wp-content/uploads/2015/04/tipos-de-seguros-1.jpg"
-                            alt="Nuestros Productos"
-                            layout="fill"
-                            objectFit="cover"
-                            data-ai-hint="insurance products"
-                        />
-                         <div className="absolute inset-0 bg-blue-900/40" />
-                         <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
-                            <div>
-                                <Badge variant="outline" className="text-white border-white/50 mb-2">Nuestros Productos</Badge>
-                                <h2 className="text-2xl font-bold text-white">Soluciones y Cobertura</h2>
-                            </div>
-                            <div className="mt-auto">
-                                <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
-                                    <Link href="#">Conocer más</Link>
-                                </Button>
-                            </div>
-                        </div>
-                    </Card>
-                </div>
                 <div className="w-[70%]">
-                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left">
-                    <Image
-                      src="https://images.unsplash.com/photo-1680792563719-288027b2a090?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8YWRufGVufDB8fHx8MTc2NTMwOTYxNXww&ixlib-rb-4.1.0&q=80&w=1080"
-                      alt="ADN Banesco Seguros"
+                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
+                    <Image 
+                      src="https://www.shutterstock.com/image-photo/concentrated-young-female-student-engaged-600nw-2458397479.jpg"
+                      alt="E-learning"
                       layout="fill"
                       objectFit="cover"
-                      data-ai-hint="business team"
+                      data-ai-hint="e-learning development"
                       className="brightness-50"
                     />
                     <div className="relative z-10 p-8 md:p-12">
-                      <Badge variant="outline" className="text-white border-white/50 mb-4">Cultura Corporativa</Badge>
-                      <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">ADN Banesco<br/>Seguros</h1>
-                       <p className="mt-4 max-w-xl text-primary-foreground/80">Conoce los principios que nos guían y forman la base de nuestra organización.</p>
-                      <div className="pt-8">
-                        <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
-                          <Link href="#">
-                            Conocer más
-                          </Link>
-                        </Button>
-                      </div>
+                        <Badge variant="outline" className="text-white border-white/50 mb-4">Cursos Disponibles</Badge>
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra<br/> Academia Banesco Seguros</h1>
+                        <div className="pt-8">
+                            <Button asChild className="text-xs font-light">
+                                <Link href="#">
+                                    Acceder
+                                </Link>
+                            </Button>
+                        </div>
                     </div>
                   </Card>
+                </div>
+                <div className="w-[30%]">
+                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col items-start justify-end text-left transition-transform hover:scale-105">
+                        <Image
+                            src="https://capacitacion.uc.cl/images/cursos/Por_qu%C3%A9_deber%C3%ADas_aprender_a_programar_en_Python.jpg"
+                            alt="Cursos disponibles"
+                            layout="fill"
+                            objectFit="cover"
+                            data-ai-hint="business team"
+                            className="brightness-50"
+                        />
+                        <div className="relative z-10 p-8 w-full">
+                            <Badge variant="outline" className="text-white border-white/50 mb-4">Cursos Disponibles</Badge>
+                            <h2 className="text-3xl font-bold">Revisar Cursos<br/>Disponibles</h2>
+                            <div className="pt-8">
+                               <Button asChild className="text-xs font-light">
+                                   <Link href="/dashboard/cursos/google-workspace">
+                                       Acceder
+                                   </Link>
+                               </Button>
+                            </div>
+                        </div>
+                    </Card>
                 </div>
               </div>
             </section>
