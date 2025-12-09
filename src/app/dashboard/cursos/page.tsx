@@ -171,20 +171,20 @@ export default function CursosPage() {
                 <div className="w-[30%]">
                     <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col items-start justify-end text-left transition-transform hover:scale-105">
                          <Image
-                            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                            alt="ADN Banesco Seguros"
+                            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxsYXJzfGVufDB8fHx8MTc2MzczMTk1N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Nuestros Pilares"
                             layout="fill"
                             objectFit="cover"
-                            data-ai-hint="business team"
+                            data-ai-hint="pillars architecture"
                             className="brightness-50"
                         />
                         <div className="relative z-10 p-8 w-full">
-                            <Badge variant="outline" className="text-white border-white/50 mb-4">Cultura Corporativa</Badge>
-                            <h2 className="text-3xl font-bold">ADN Banesco<br/>Seguros</h2>
+                            <Badge variant="outline" className="text-white border-white/50 mb-4">Nuestros Pilares</Badge>
+                            <h2 className="text-3xl font-bold">Código de Ética, Productos<br/>e Identidad Corporativa</h2>
                              <div className="pt-8">
                                <Button asChild className="text-xs font-light">
                                    <Link href="#">
-                                       Conocer más
+                                       Explorar
                                    </Link>
                                </Button>
                             </div>
@@ -194,20 +194,20 @@ export default function CursosPage() {
                 <div className="w-[70%]">
                     <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
                         <Image 
-                            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxsYXJzfGVufDB8fHx8MTc2MzczMTk1N3ww&ixlib=rb-4.1.0&q=80&w=1080"
-                            alt="Nuestros Pilares"
+                            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="ADN Banesco Seguros"
                             layout="fill"
                             objectFit="cover"
-                            data-ai-hint="pillars architecture"
+                            data-ai-hint="business team"
                             className="brightness-50"
                         />
                         <div className="relative z-10 p-8 md:p-12">
-                            <Badge variant="outline" className="text-white border-white/50 mb-4">Nuestros Pilares</Badge>
-                            <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Código de Ética, Productos<br/>e Identidad Corporativa</h1>
+                            <Badge variant="outline" className="text-white border-white/50 mb-4">Cultura Corporativa</Badge>
+                            <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">ADN Banesco<br/>Seguros</h1>
                             <div className="pt-8">
                                 <Button asChild className="text-xs font-light">
                                     <Link href="#">
-                                        Explorar
+                                        Conocer más
                                     </Link>
                                 </Button>
                             </div>
