@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
@@ -42,9 +42,10 @@ interface AdnCardProps {
     icon?: LucideIcon;
     href?: string;
     isTitleCard?: boolean;
+    className?: string;
 }
 
-const AdnCard = ({ title, description, icon: Icon, href = '#', isTitleCard = false }: AdnCardProps) => {
+const AdnCard = ({ title, description, icon: Icon, href = '#', isTitleCard = false, className }: AdnCardProps) => {
     
     const cardContent = isTitleCard ? (
         <CardContent className="p-8 flex flex-col justify-center h-full">
@@ -68,7 +69,8 @@ const AdnCard = ({ title, description, icon: Icon, href = '#', isTitleCard = fal
         "h-full rounded-2xl shadow-sm transition-all",
         isTitleCard 
             ? "bg-primary text-primary-foreground shadow-lg"
-            : "bg-card/50 backdrop-blur-sm border-white/10 hover:shadow-lg hover:-translate-y-1"
+            : "bg-card/50 backdrop-blur-sm border-white/10 hover:shadow-lg hover:-translate-y-1",
+        className
     );
 
     if (isTitleCard) {
@@ -100,7 +102,7 @@ export default function CursosPage() {
                   alt="E-learning"
                   layout="fill"
                   objectFit="cover"
-                  data-ai-hint="e-learning development"
+                  dataAiHint="e-learning development"
                   className="brightness-50"
                 />
                 <div className="relative z-10 p-8 md:p-12">
@@ -123,7 +125,7 @@ export default function CursosPage() {
                         alt="Cursos disponibles"
                         layout="fill"
                         objectFit="cover"
-                        data-ai-hint="business team"
+                        dataAiHint="business team"
                         className="brightness-50"
                     />
                     <div className="relative z-10 p-8 w-full">
@@ -156,7 +158,7 @@ export default function CursosPage() {
                     {[...technologies, ...technologies].map((tech, index) => (
                         <div key={`${tech.name}-${index}`} className="flex-shrink-0">
                             <div className={cn("relative h-16 w-16 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-20')}>
-                                <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" data-ai-hint={tech.dataAiHint} />
+                                <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" dataAiHint={tech.dataAiHint} />
                             </div>
                         </div>
                     ))}
@@ -165,15 +167,30 @@ export default function CursosPage() {
         </section>
         
         <section>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <AdnCard
                     isTitleCard
                     title="ADN Banesco Seguros"
                     description="Fortalece tus competencias y conoce a fondo la cultura que nos impulsa a ser líderes en el mercado."
+                    className="md:col-span-2"
                 />
-                {adnCourses.map(course => (
-                   <AdnCard key={course.title} title={course.title} icon={course.icon} href={course.href} />
-                ))}
+                <AdnCard 
+                  title={adnCourses[0].title} 
+                  icon={adnCourses[0].icon} 
+                  href={adnCourses[0].href} 
+                />
+                <AdnCard 
+                  title={adnCourses[1].title} 
+                  icon={adnCourses[1].icon} 
+                  href={adnCourses[1].href}
+                  className="md:col-span-3"
+                />
+                 <AdnCard 
+                  title={adnCourses[2].title} 
+                  icon={adnCourses[2].icon} 
+                  href={adnCourses[2].href}
+                  className="md:col-span-3"
+                />
             </div>
         </section>
 
