@@ -102,7 +102,7 @@ export default function CursosPage() {
                   alt="E-learning"
                   layout="fill"
                   objectFit="cover"
-                  dataAiHint="e-learning development"
+                  data-ai-hint="e-learning development"
                   className="brightness-50"
                 />
                 <div className="relative z-10 p-8 md:p-12">
@@ -125,7 +125,7 @@ export default function CursosPage() {
                         alt="Cursos disponibles"
                         layout="fill"
                         objectFit="cover"
-                        dataAiHint="business team"
+                        data-ai-hint="business team"
                         className="brightness-50"
                     />
                     <div className="relative z-10 p-8 w-full">
@@ -158,7 +158,7 @@ export default function CursosPage() {
                     {[...technologies, ...technologies].map((tech, index) => (
                         <div key={`${tech.name}-${index}`} className="flex-shrink-0">
                             <div className={cn("relative h-16 w-16 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-20')}>
-                                <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" dataAiHint={tech.dataAiHint} />
+                                <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" data-ai-hint={tech.dataAiHint} />
                             </div>
                         </div>
                     ))}
