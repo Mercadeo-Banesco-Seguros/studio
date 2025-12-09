@@ -23,7 +23,7 @@ const technologies = [
   { name: 'Flutter', iconUrl: 'https://cdn.worldvectorlogo.com/logos/flutter.svg', 'data-ai-hint': 'flutter logo' },
   { name: 'Microsoft Fabric', iconUrl: 'https://www.brainsell.com/wp-content/uploads/2023/12/Fabric_final_x256.png', 'data-ai-hint': 'microsoft fabric logo' },
   { name: 'Google Sites', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Google_Sites_2020_Logo.svg/1489px-Google_Sites_2020_Logo.svg.png', 'data-ai-hint': 'google sites logo' },
-  { name: 'Microsoft Copilot', iconUrl: 'https://1000logos.net/wp-content/uploads/2023/11/Copilot-Logo.png', 'data-ai-hint': 'microsoft copilot logo' },
+  { name: 'Microsoft Copilot', iconUrl: 'https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/copilot-color.png', 'data-ai-hint': 'microsoft copilot logo' },
   { name: 'Gemini', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Gemini_icon_2025.svg/2048px-Google_Gemini_icon_2025.svg.png', 'data-ai-hint': 'google gemini logo' },
   { name: 'Gmail', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png', 'data-ai-hint': 'gmail logo' },
   { name: 'Power BI', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/2048px-New_Power_BI_Logo.svg.png', 'data-ai-hint': 'power bi logo' },
@@ -34,7 +34,7 @@ const technologies = [
 const trainingStats = [
     { title: "Crecimiento", value: 250, description: "El e-learning corporativo crecerá >250% para 2026 y puede mejorar la productividad hasta un 25%.", isTrend: true, trendData: [{v:0},{v:50},{v:80},{v:150},{v:200},{v:250}] },
     { title: "Satisfacción", value: 92, description: "de los empleados valora los programas de formación bien planificados.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
-    { title: "Adopción", value: 90, description: "de las empresas usan formación online como herramienta clave de capacitación.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
+    { title: "Adopción", value: 90, description: "de las empresas usan formación online como herramienta clave de capacitación.", color: "hsl(var(--primary))", remainingColor: "#f0f0-f0" },
 ];
 
 const jobsData = {
@@ -450,13 +450,3 @@ export default function CursosPage() {
     </div>
   );
 }
-
-    
-
-    
-
-
-
-
-
-
