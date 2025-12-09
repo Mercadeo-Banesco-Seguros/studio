@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, Legend } from 'recharts';
 import { ArrowRight, Gavel, Gem, Lightbulb, ChevronLeft, ChevronRight, RefreshCw, BarChartHorizontal, TrendingUp, Users, Percent, Target, Scaling, Goal, Sparkles, Timer } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -35,6 +35,10 @@ const trainingStats = [
     { title: "Crecimiento", value: 250, description: "El e-learning corporativo crecerá >250% para 2026 y puede mejorar la productividad hasta un 25%.", isTrend: true, trendData: [{v:0},{v:50},{v:80},{v:150},{v:200},{v:250}] },
     { title: "Satisfacción", value: 92, description: "de los empleados valora los programas de formación bien planificados.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
     { title: "Adopción", value: 90, description: "de las empresas usan formación online como herramienta clave de capacitación.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
+];
+
+const jobsData = [
+  { name: 'Empleos', perdidos: 85, creados: 130 },
 ];
 
 const AnimatedNumber = ({ value, duration = 4000 }: { value: number, duration?: number }) => {
@@ -300,35 +304,24 @@ export default function CursosPage() {
                     <div className="flex items-center gap-6">
                        <div className="w-28 h-28 flex-shrink-0 relative">
                             <ResponsiveContainer width="100%" height="100%">
-                                <PieChart>
-                                    <Pie
-                                        data={[{ name: 'Aprendizaje', value: 5 }, { name: 'Jornada', value: 475 }]}
-                                        dataKey="value"
-                                        cx="50%"
-                                        cy="50%"
-                                        innerRadius={35}
-                                        outerRadius={50}
-                                        startAngle={90}
-                                        endAngle={450}
-                                        isAnimationActive={true}
-                                        animationDuration={4000}
-                                        stroke="none"
-                                    >
-                                        <Cell fill="#FFFFFF" />
-                                        <Cell fill="hsl(var(--primary))" />
-                                    </Pie>
-                                </PieChart>
+                                <BarChart data={jobsData} layout="vertical" margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
+                                  <XAxis type="number" hide />
+                                  <YAxis type="category" dataKey="name" hide />
+                                  <Tooltip 
+                                    cursor={{fill: 'transparent'}}
+                                    contentStyle={{ display: 'none' }} 
+                                  />
+                                  <Bar dataKey="creados" name="Nuevos empleos" fill="#FFFFFF" radius={[10, 10, 10, 10]} background={{ fill: 'hsl(var(--primary))', radius: 10 }} />
+                                  <Bar dataKey="perdidos" name="Empleos perdidos" fill="hsla(var(--primary-foreground), 0.3)" radius={[10, 10, 10, 10]} />
+                                </BarChart>
                             </ResponsiveContainer>
-                             <div className="absolute inset-0 flex items-center justify-center">
-                                <span className="text-lg font-bold text-white/90">~1%</span>
-                            </div>
                         </div>
                         <div>
                             <h3 className="text-xl">
-                                <span className="text-5xl font-bold">4-5</span>
-                                <span className="font-normal ml-2">min/día</span>
+                                <span className="text-5xl font-bold">+45M</span>
+                                <span className="font-normal ml-2">Empleos</span>
                             </h3>
-                            <p className="text-primary-foreground/80 text-sm mt-1">El empleado promedio dedica solo 4-5 minutos al día al aprendizaje formal.</p>
+                            <p className="text-primary-foreground/80 text-sm mt-1">La formación crea 130M de empleos vs. 85M perdidos por automatización.</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-6">
@@ -376,7 +369,7 @@ export default function CursosPage() {
                 <div className="w-[70%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left">
                     <Image
-                      src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib=rb-4.1.0&q=80&w=1080"
                       alt="ADN Banesco Seguros"
                       layout="fill"
                       objectFit="cover"
@@ -404,5 +397,7 @@ export default function CursosPage() {
     </div>
   );
 }
+
+    
 
     
