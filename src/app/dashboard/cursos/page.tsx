@@ -16,7 +16,7 @@ import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 const technologies = [
   { name: 'Gemini', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Gemini_icon_2025.svg/2048px-Google_Gemini_icon_2025.svg.png', dataAiHint: 'google gemini logo' },
   { name: 'VS Code', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png', dataAiHint: 'vs code logo' },
-  { name: 'Google Sheets', iconUrl: 'https://static.vecteezy.com/system/resources/previews/027/179/391/non_2x/google-sheet-spreadsheet-icon-logo-symbol-free-png.png', dataAiHint: 'google sheets logo' },
+  { name: 'Google Sheets', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Google_Sheets_2020_Logo.svg/500px-Google_Sheets_2020_Logo.svg.png', dataAiHint: 'google sheets logo' },
   { name: 'Google Sites', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Google_Sites_2020_Logo.svg/1489px-Google_Sites_2020_Logo.svg.png', dataAiHint: 'google sites logo' },
   { name: 'Google Docs', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Google_Docs_logo_%282014-2020%29.svg/1481px-Google_Docs_logo_%282014-2020%29.svg.png', dataAiHint: 'google docs logo' },
   { name: 'Power BI', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/2048px-New_Power_BI_Logo.svg.png', dataAiHint: 'power bi logo' },
@@ -157,5 +157,6 @@ export default function CursosPage() {
     </div>
   );
 }
+
 
 
