@@ -37,11 +37,11 @@ const adnCourses = [
 ];
 
 const trainingStats = [
-    { label: "Retención de Talento", value: 94, description: "de empleados se queda si se invierte en su desarrollo.", color: "bg-primary", textColor: "text-primary-foreground" },
+    { label: "Retención", value: 94, description: "de empleados se queda si se invierte en su desarrollo.", color: "bg-primary", textColor: "text-primary-foreground" },
     { label: "Satisfacción", value: 92, description: "de los colaboradores valora la formación planificada.", color: "bg-blue-500", textColor: "text-white" },
-    { label: "Adopción Corporativa", value: 90, description: "de las empresas ya utilizan formación online.", color: "bg-blue-400", textColor: "text-white" },
+    { label: "Adopción", value: 90, description: "de las empresas ya utilizan formación online.", color: "bg-blue-400", textColor: "text-white" },
     { label: "Productividad", value: 80, description: "de las empresas que invierten en capacitación superan al resto.", color: "bg-sky-400", textColor: "text-white" },
-    { label: "Mejora de Rendimiento", value: 25, description: "es el aumento potencial en la productividad con e-learning.", color: "bg-sky-300", textColor: "text-sky-800" },
+    { label: "Mejora", value: 25, description: "es el aumento potencial en la productividad con e-learning.", color: "bg-sky-300", textColor: "text-sky-800" },
 ];
 
 interface AdnCardProps {
@@ -56,10 +56,10 @@ interface AdnCardProps {
 const AdnCard = ({ title, description, icon: Icon, href = '#', isTitleCard = false, className }: AdnCardProps) => {
     
     const cardContent = isTitleCard ? (
-        <CardContent className="p-8 flex flex-col justify-center h-full">
-            <h2 className="text-4xl font-bold tracking-tight">{title}</h2>
+        <CardContent className="p-6 flex flex-col justify-center h-full">
+            <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
             {description && (
-                <p className="text-primary-foreground/80 max-w-xs mt-3">{description}</p>
+                <p className="text-primary-foreground/80 max-w-xs mt-2 text-sm">{description}</p>
             )}
         </CardContent>
     ) : (
@@ -92,6 +92,33 @@ const AdnCard = ({ title, description, icon: Icon, href = '#', isTitleCard = fal
             </Card>
         </Link>
     );
+};
+
+const StatCircle = ({ value, label, size, isMax }: { value: number, label: string, size: number, isMax?: boolean }) => {
+    const minSize = 60;
+    const maxSize = 200;
+    const finalSize = minSize + (maxSize - minSize) * (size / 100);
+
+    return (
+        <div className="flex flex-col items-center gap-2">
+            <div
+                className={cn(
+                    "relative flex items-center justify-center rounded-full transition-all duration-500",
+                    isMax ? 'bg-gradient-to-br from-green-300 via-primary to-blue-800' : 'bg-gradient-to-br from-primary/40 to-primary/80'
+                )}
+                style={{ width: finalSize, height: finalSize }}
+            >
+                <div 
+                    className={cn(
+                        "absolute inset-2 rounded-full",
+                         isMax ? 'bg-gradient-to-br from-primary/80 to-blue-900/90' : 'bg-gradient-to-br from-primary/60 to-primary'
+                    )}
+                />
+                <span className="relative text-xl font-bold text-white z-10">{value}%</span>
+            </div>
+            <span className="text-sm font-medium text-muted-foreground">{label}</span>
+        </div>
+    )
 };
 
 
@@ -176,21 +203,19 @@ export default function CursosPage() {
 
         <section>
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h3 className="text-sm font-semibold uppercase text-primary tracking-widest">Estadísticas de Formación</h3>
-              <h4 className="text-3xl font-bold text-foreground mt-2">Impacto de la Capacitación en Cifras</h4>
+              <h3 className="text-sm font-semibold uppercase text-primary tracking-widest">Estadísticas Clave</h3>
+              <h4 className="text-3xl font-bold text-foreground mt-2">El <span className="text-primary">Impacto</span> de la Formación Corporativa</h4>
             </div>
-            <div className="flex items-end justify-center gap-2 h-[450px]">
-                {trainingStats.map((stat, index) => (
-                    <div 
-                        key={stat.label} 
-                        className={cn("flex-1 rounded-t-lg p-6 flex flex-col justify-end text-left transition-all duration-300 ease-in-out hover:flex-grow-[1.2]", stat.color)}
-                        style={{ height: `${20 + (index * 15)}%` }}
-                    >
-                        <p className={cn("text-5xl font-extrabold", stat.textColor)}>{stat.value}%</p>
-                        <p className={cn("text-sm mt-2 max-w-[150px]", stat.textColor)}>{stat.label}</p>
-                    </div>
-                ))}
+            <div className="flex items-end justify-center gap-4 md:gap-8 h-[300px] w-full">
+                <StatCircle value={trainingStats[4].value} label={trainingStats[4].label} size={30} />
+                <StatCircle value={trainingStats[3].value} label={trainingStats[3].label} size={80} />
+                <StatCircle value={trainingStats[0].value} label={trainingStats[0].label} size={100} isMax />
+                <StatCircle value={trainingStats[1].value} label={trainingStats[1].label} size={95} />
+                <StatCircle value={trainingStats[2].value} label={trainingStats[2].label} size={90} />
             </div>
+            <p className="text-center text-muted-foreground mt-12 max-w-lg mx-auto">
+                Invertir en desarrollo profesional no solo retiene al <span className="font-semibold text-foreground">94% del talento</span>, sino que también puede aumentar la productividad hasta en un <span className="font-semibold text-foreground">25%</span>.
+            </p>
         </section>
         
         <section>
@@ -207,7 +232,7 @@ export default function CursosPage() {
                         />
                         <div className="relative z-10 p-8 w-full">
                             <Badge variant="outline" className="text-white border-white/50 mb-4">Nuestros Pilares</Badge>
-                            <h2 className="text-3xl font-bold">Código de Ética, Productos<br/>e Identidad Corporativa</h2>
+                            <h2 className="text-xl font-bold">Código de Ética, Productos<br/>e Identidad Corporativa</h2>
                              <div className="pt-8">
                                <Button asChild className="text-xs font-light">
                                    <Link href="#">
