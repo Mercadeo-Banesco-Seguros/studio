@@ -71,7 +71,7 @@ export default function CursosPage() {
                     <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra<br/> Academia Banesco Seguros</h1>
                   </div>
                   <div className="pt-8">
-                    <Button asChild>
+                    <Button asChild className="text-xs font-light">
                         <Link href="#">
                             Acceder
                         </Link>
@@ -96,7 +96,7 @@ export default function CursosPage() {
                             <h2 className="text-3xl font-bold">Revisar Cursos<br/>Disponibles</h2>
                         </div>
                         <div className="pt-8">
-                           <Button asChild>
+                           <Button asChild className="text-xs font-light">
                                <Link href="/dashboard/cursos/google-workspace">
                                    Acceder
                                </Link>
