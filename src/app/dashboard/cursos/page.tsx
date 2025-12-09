@@ -147,7 +147,7 @@ export default function CursosPage() {
                         <div className="flex items-center justify-center gap-x-12 sm:gap-x-16 mx-auto w-max px-4 py-8">
                             {technologies.map(tech => (
                                 <div key={tech.name} className="flex-shrink-0">
-                                    <div className={cn("relative h-12 w-12 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-16')}>
+                                    <div className={cn("relative h-16 w-16 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-20')}>
                                         <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" data-ai-hint={tech.dataAiHint} />
                                     </div>
                                 </div>
