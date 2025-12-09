@@ -388,7 +388,7 @@ export default function CursosPage() {
                         <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
                             <div>
                                 <Badge variant="outline" className="text-white border-white/50 mb-2">Código de Ética</Badge>
-                                <h2 className="text-lg font-bold text-white">Principios y Valores</h2>
+                                <h2 className="text-2xl font-bold text-white">Principios y Valores</h2>
                             </div>
                             <div className="mt-auto">
                                 <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
@@ -409,7 +409,7 @@ export default function CursosPage() {
                          <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
                             <div>
                                 <Badge variant="outline" className="text-white border-white/50 mb-2">Nuestros Productos</Badge>
-                                <h2 className="text-lg font-bold text-white">Soluciones y Cobertura</h2>
+                                <h2 className="text-2xl font-bold text-white">Soluciones y Cobertura</h2>
                             </div>
                             <div className="mt-auto">
                                 <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
@@ -450,5 +450,3 @@ export default function CursosPage() {
     </div>
   );
 }
-
-    
