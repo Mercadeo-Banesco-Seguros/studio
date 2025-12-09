@@ -144,7 +144,7 @@ export default function CursosPage() {
                 </Button>
                 <div ref={scrollAreaRef}>
                     <ScrollArea className="w-full">
-                        <div className="flex items-center justify-center gap-x-12 sm:gap-x-16 mx-auto w-max px-4">
+                        <div className="flex items-center justify-center gap-x-12 sm:gap-x-16 mx-auto w-max px-4 py-8">
                             {technologies.map(tech => (
                                 <div key={tech.name} className="flex-shrink-0">
                                     <div className={cn("relative h-12 w-12 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-16')}>
