@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -90,7 +89,7 @@ export default function CursosPage() {
                         className="brightness-50"
                     />
                     <div className="relative z-10 p-8 w-full">
-                        <Badge variant="outline" className="text-white border-white/50 mb-4">Academia Banesco Seguros</Badge>
+                        <Badge variant="outline" className="text-white border-white/50 mb-4">Cursos Disponibles</Badge>
                         <h2 className="text-3xl font-bold">Revisar Cursos<br/>Disponibles</h2>
                         <div className="pt-8">
                            <Button asChild className="text-xs font-light">
