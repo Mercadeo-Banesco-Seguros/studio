@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useRef, useState, useEffect, useMemo } from 'react';
@@ -15,25 +16,25 @@ import { Progress } from '@/components/ui/progress';
 
 
 const technologies = [
-  { name: 'AppSheet', iconUrl: 'https://numericoach.fr/wp-content/uploads/2024/05/image-1024x1024.png', dataAiHint: 'appsheet logo' },
-  { name: 'TypeScript', iconUrl: 'https://cdn.worldvectorlogo.com/logos/typescript.svg', dataAiHint: 'typescript logo' },
-  { name: 'Google Docs', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Google_Docs_logo_%282014-2020%29.svg/1481px-Google_Docs_logo_%282014-2020%29.svg.png', dataAiHint: 'google docs logo' },
-  { name: 'VS Code', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png', dataAiHint: 'vs code logo' },
-  { name: 'Flutter', iconUrl: 'https://cdn.worldvectorlogo.com/logos/flutter.svg', dataAiHint: 'flutter logo' },
-  { name: 'Microsoft Fabric', iconUrl: 'https://www.brainsell.com/wp-content/uploads/2023/12/Fabric_final_x256.png', dataAiHint: 'microsoft fabric logo' },
-  { name: 'Google Sites', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Google_Sites_2020_Logo.svg/1489px-Google_Sites_2020_Logo.svg.png', dataAiHint: 'google sites logo' },
-  { name: 'Microsoft Copilot', iconUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Microsoft_Copilot_Icon.svg/1200px-Microsoft_Copilot_Icon.svg.png', dataAiHint: 'microsoft copilot logo' },
-  { name: 'Gemini', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Gemini_icon_2025.svg/2048px-Google_Gemini_icon_2025.svg.png', dataAiHint: 'google gemini logo' },
-  { name: 'Gmail', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png', dataAiHint: 'gmail logo' },
-  { name: 'Power BI', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/2048px-New_Power_BI_Logo.svg.png', dataAiHint: 'power bi logo' },
-  { name: 'Google Sheets', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Google_Sheets_2020_Logo.svg/500px-Google_Sheets_2020_Logo.svg.png', dataAiHint: 'google sheets logo' },
-  { name: 'NotebookLM', iconUrl: 'https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/notebooklm.png', dataAiHint: 'notebooklm logo' },
+  { name: 'AppSheet', iconUrl: 'https://numericoach.fr/wp-content/uploads/2024/05/image-1024x1024.png', 'data-ai-hint': 'appsheet logo' },
+  { name: 'TypeScript', iconUrl: 'https://cdn.worldvectorlogo.com/logos/typescript.svg', 'data-ai-hint': 'typescript logo' },
+  { name: 'Google Docs', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Google_Docs_logo_%282014-2020%29.svg/1481px-Google_Docs_logo_%282014-2020%29.svg.png', 'data-ai-hint': 'google docs logo' },
+  { name: 'VS Code', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png', 'data-ai-hint': 'vs code logo' },
+  { name: 'Flutter', iconUrl: 'https://cdn.worldvectorlogo.com/logos/flutter.svg', 'data-ai-hint': 'flutter logo' },
+  { name: 'Microsoft Fabric', iconUrl: 'https://www.brainsell.com/wp-content/uploads/2023/12/Fabric_final_x256.png', 'data-ai-hint': 'microsoft fabric logo' },
+  { name: 'Google Sites', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Google_Sites_2020_Logo.svg/1489px-Google_Sites_2020_Logo.svg.png', 'data-ai-hint': 'google sites logo' },
+  { name: 'Microsoft Copilot', iconUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Microsoft_Copilot_Icon.svg/1200px-Microsoft_Copilot_Icon.svg.png', 'data-ai-hint': 'microsoft copilot logo' },
+  { name: 'Gemini', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Gemini_icon_2025.svg/2048px-Google_Gemini_icon_2025.svg.png', 'data-ai-hint': 'google gemini logo' },
+  { name: 'Gmail', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png', 'data-ai-hint': 'gmail logo' },
+  { name: 'Power BI', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/2048px-New_Power_BI_Logo.svg.png', 'data-ai-hint': 'power bi logo' },
+  { name: 'Google Sheets', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Google_Sheets_2020_Logo.svg/500px-Google_Sheets_2020_Logo.svg.png', 'data-ai-hint': 'google sheets logo' },
+  { name: 'NotebookLM', iconUrl: 'https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/notebooklm.png', 'data-ai-hint': 'notebooklm logo' },
 ];
 
 
 const trainingStats = [
     { title: "Satisfacción", percentage: 92, description: "de los empleados valora los programas de formación bien planificados.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
-    { title: "Retención", percentage: 94, description: "de los empleados permanecerían más tiempo si se invierte en su desarrollo.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
+    { title: "Crecimiento E-learning", percentage: 25, description: "El e-learning corporativo puede mejorar la productividad hasta en un 25% y se espera que crezca más del 250% para 2026.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
     { title: "Adopción", percentage: 90, description: "de las empresas usan formación online como herramienta clave de capacitación.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
 ];
 
@@ -160,7 +161,7 @@ export default function CursosPage() {
                         {[...technologies, ...technologies].map((tech, index) => (
                             <div key={`${tech.name}-${index}`} className="flex-shrink-0">
                                 <div className={cn("relative h-16 w-16 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-20')}>
-                                    <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" data-ai-hint={tech.dataAiHint} />
+                                    <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" data-ai-hint={tech['data-ai-hint']} />
                                 </div>
                             </div>
                         ))}
