@@ -31,12 +31,6 @@ const technologies = [
 ];
 
 
-const adnCourses = [
-    { title: 'Código de Ética', icon: Gavel, description: 'Principios y normas que guían nuestra conducta.', href: '#' },
-    { title: 'Nuestros Productos', icon: Gem, description: 'Explora el portafolio de soluciones que ofrecemos.', href: '#' },
-    { title: 'Identidad Banesco Seguros', icon: Lightbulb, description: 'Conoce la esencia de nuestra marca y cómo la comunicamos.', href: '#' },
-];
-
 const trainingStats = [
     { id: 'retencion', label: "Retención", value: 94, description: "Un 94% de los empleados afirma que se quedaría más tiempo en una empresa si esta invirtiera en su desarrollo profesional.", color: "bg-primary", textColor: "text-primary-foreground", size: 100, isMax: true },
     { id: 'satisfaccion', label: "Satisfacción", value: 92, description: "El 92% de los colaboradores considera que los programas de formación y desarrollo planificados mejoran su satisfacción laboral.", color: "bg-blue-500", textColor: "text-white", size: 95 },
