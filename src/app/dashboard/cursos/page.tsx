@@ -32,7 +32,7 @@ const technologies = [
 ];
 
 const trainingStats = [
-    { title: "Crecimiento", percentage: 250, description: "El e-learning corporativo crecerá más del 250% para 2026 y puede mejorar la productividad hasta en un 25%.", trendData: [{v:0},{v:50},{v:80},{v:150},{v:200},{v=250}] },
+    { title: "Crecimiento", percentage: 250, description: "El e-learning corporativo crecerá más del 250% para 2026 y puede mejorar la productividad hasta en un 25%.", trendData: [{v:0},{v:50},{v:80},{v:150},{v:200},{v:250}] },
     { title: "Satisfacción", percentage: 92, description: "de los empleados valora los programas de formación bien planificados.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
     { title: "Adopción", percentage: 90, description: "de las empresas usan formación online como herramienta clave de capacitación.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
 ];
