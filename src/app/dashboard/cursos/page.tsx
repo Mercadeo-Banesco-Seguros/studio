@@ -33,10 +33,54 @@ const technologies = [
 
 
 const trainingStats = [
-    { title: "Satisfacción", percentage: 92, description: "de los empleados valora los programas de formación bien planificados.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
     { title: "Crecimiento E-learning", percentage: 25, description: "El e-learning corporativo puede mejorar la productividad hasta en un 25% y se espera que crezca más del 250% para 2026.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
+    { title: "Satisfacción", percentage: 92, description: "de los empleados valora los programas de formación bien planificados.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
     { title: "Adopción", percentage: 90, description: "de las empresas usan formación online como herramienta clave de capacitación.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
 ];
+
+const AnimatedNumber = ({ value, duration = 4000 }: { value: number, duration?: number }) => {
+    const [count, setCount] = useState(0);
+    const ref = useRef<HTMLSpanElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    let start = 0;
+                    const end = value;
+                    if (start === end) return;
+
+                    const range = end - start;
+                    const increment = end > start ? 1 : -1;
+                    const stepTime = Math.abs(Math.floor(duration / range));
+                    
+                    const timer = setInterval(() => {
+                        start += increment;
+                        setCount(start);
+                        if (start === end) {
+                            clearInterval(timer);
+                        }
+                    }, stepTime);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        const currentRef = ref.current;
+        if (currentRef) {
+            observer.observe(currentRef);
+        }
+
+        return () => {
+            if (currentRef) {
+                observer.unobserve(currentRef);
+            }
+        };
+    }, [value, duration]);
+
+    return <span ref={ref}>{count}</span>;
+};
 
 
 interface AdnCardProps {
@@ -198,6 +242,8 @@ export default function CursosPage() {
                               endAngle={450}
                               paddingAngle={0}
                               dataKey="value"
+                              isAnimationActive={true}
+                              animationDuration={4000}
                             >
                                 <Cell key="cell-0" fill={data[0].color} stroke={data[0].color} />
                                 <Cell key="cell-1" fill={data[1].color} stroke={data[1].color}/>
@@ -206,8 +252,9 @@ export default function CursosPage() {
                         </ResponsiveContainer>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold">
-                          {stat.title} el {stat.percentage}%
+                        <h3 className="text-xl">
+                          <span className="text-5xl font-bold"><AnimatedNumber value={stat.percentage} />%</span>
+                          <span className="font-normal ml-2">{stat.title}</span>
                         </h3>
                         <p className="text-primary-foreground/80 text-sm mt-1">{stat.description}</p>
                       </div>
