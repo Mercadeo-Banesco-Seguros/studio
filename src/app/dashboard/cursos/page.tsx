@@ -57,7 +57,7 @@ export default function CursosPage() {
         <section>
           <div className="flex gap-6">
             <div className="w-[70%]">
-              <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex items-center justify-start text-left p-8 md:p-12">
+              <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
                 <Image 
                   src="https://www.shutterstock.com/image-photo/concentrated-young-female-student-engaged-600nw-2458397479.jpg"
                   alt="E-learning"
@@ -66,23 +66,21 @@ export default function CursosPage() {
                   data-ai-hint="e-learning development"
                   className="brightness-50"
                 />
-                <div className="relative z-10 flex flex-col justify-between h-full w-full">
-                  <div>
+                <div className="relative z-10 p-8 md:p-12">
                     <Badge variant="outline" className="text-white border-white/50 mb-4">Academia Banesco Seguros</Badge>
                     <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra<br/> Academia Banesco Seguros</h1>
-                  </div>
-                  <div className="pt-8">
-                    <Button asChild className="text-xs font-light">
-                        <Link href="#">
-                            Acceder
-                        </Link>
-                    </Button>
-                  </div>
+                    <div className="pt-8">
+                        <Button asChild className="text-xs font-light">
+                            <Link href="#">
+                                Acceder
+                            </Link>
+                        </Button>
+                    </div>
                 </div>
               </Card>
             </div>
             <div className="w-[30%]">
-                 <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col items-start justify-between text-left p-8 transition-transform hover:scale-105">
+                 <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left transition-transform hover:scale-105">
                     <Image
                         src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzY1MzAwMjUxfDA&ixlib=rb-4.1.0&q=80&w=1080"
                         alt="Cursos disponibles"
@@ -91,11 +89,9 @@ export default function CursosPage() {
                         data-ai-hint="business team"
                         className="brightness-50"
                     />
-                    <div className="relative z-10 w-full h-full flex flex-col justify-between">
-                        <div>
-                            <Badge variant="outline" className="text-white border-white/50 mb-4">Academia Banesco Seguros</Badge>
-                            <h2 className="text-3xl font-bold">Revisar Cursos<br/>Disponibles</h2>
-                        </div>
+                    <div className="relative z-10 p-8 w-full">
+                        <Badge variant="outline" className="text-white border-white/50 mb-4">Academia Banesco Seguros</Badge>
+                        <h2 className="text-3xl font-bold">Revisar Cursos<br/>Disponibles</h2>
                         <div className="pt-8">
                            <Button asChild className="text-xs font-light">
                                <Link href="/dashboard/cursos/google-workspace">
