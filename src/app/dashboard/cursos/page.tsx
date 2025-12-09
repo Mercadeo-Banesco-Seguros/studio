@@ -23,7 +23,7 @@ const technologies = [
   { name: 'Flutter', iconUrl: 'https://cdn.worldvectorlogo.com/logos/flutter.svg', 'data-ai-hint': 'flutter logo' },
   { name: 'Microsoft Fabric', iconUrl: 'https://www.brainsell.com/wp-content/uploads/2023/12/Fabric_final_x256.png', 'data-ai-hint': 'microsoft fabric logo' },
   { name: 'Google Sites', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Google_Sites_2020_Logo.svg/1489px-Google_Sites_2020_Logo.svg.png', 'data-ai-hint': 'google sites logo' },
-  { name: 'Microsoft Copilot', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Microsoft_Copilot_icon.svg/1024px-Microsoft_Copilot_icon.svg.png', 'data-ai-hint': 'microsoft copilot logo' },
+  { name: 'Microsoft Copilot', iconUrl: 'https://1000logos.net/wp-content/uploads/2023/11/Copilot-Logo.png', 'data-ai-hint': 'microsoft copilot logo' },
   { name: 'Gemini', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Gemini_icon_2025.svg/2048px-Google_Gemini_icon_2025.svg.png', 'data-ai-hint': 'google gemini logo' },
   { name: 'Gmail', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png', 'data-ai-hint': 'gmail logo' },
   { name: 'Power BI', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/2048px-New_Power_BI_Logo.svg.png', 'data-ai-hint': 'power bi logo' },
@@ -378,7 +378,7 @@ export default function CursosPage() {
                 <div className="w-[30%] flex flex-col gap-6">
                     <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
                          <Image
-                            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxsYXJzfGVufDB8fHx8MTc2MzczMTk1N3ww&ixlib-rb-4.1.0&q=80&w=1080"
+                            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxsYXJzfGVufDB8fHx8MTc2MzczMTk1N3ww&ixlib=rb-4.1.0&q=80&w=1080"
                             alt="Nuestros Pilares"
                             layout="fill"
                             objectFit="cover"
@@ -399,7 +399,7 @@ export default function CursosPage() {
                     </Card>
                      <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
                          <Image
-                            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxsYXJzfGVufDB8fHx8MTc2MzczMTk1N3ww&ixlib-rb-4.1.0&q=80&w=1080"
+                            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxsYXJzfGVufDB8fHx8MTc2MzczMTk1N3ww&ixlib=rb-4.1.0&q=80&w=1080"
                             alt="Nuestros Productos"
                             layout="fill"
                             objectFit="cover"
@@ -422,7 +422,7 @@ export default function CursosPage() {
                 <div className="w-[70%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left">
                     <Image
-                      src="https://images.unsplash.com/photo-1680792563719-288027b2a090?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8YWRufGVufDB8fHx8MTc2NTMwOTYxNXww&ixlib-rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1680792563719-288027b2a090?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8YWRufGVufDB8fHx8MTc2NTMwOTYxNXww&ixlib=rb-4.1.0&q=80&w=1080"
                       alt="ADN Banesco Seguros"
                       layout="fill"
                       objectFit="cover"
@@ -454,6 +454,7 @@ export default function CursosPage() {
     
 
     
+
 
 
 
