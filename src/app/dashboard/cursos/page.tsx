@@ -138,10 +138,12 @@ export default function CursosPage() {
         <section>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card className="p-8 rounded-2xl bg-primary text-primary-foreground flex flex-col justify-center shadow-lg">
-                    <h2 className="text-4xl font-bold tracking-tight">ADN Banesco Seguros</h2>
-                    <p className="text-primary-foreground/80 max-w-xs mt-3">
-                        Fortalece tus competencias y conoce a fondo la cultura que nos impulsa a ser líderes en el mercado.
-                    </p>
+                    <CardContent className="p-0 flex flex-col justify-center">
+                        <h2 className="text-4xl font-bold tracking-tight">ADN Banesco Seguros</h2>
+                        <p className="text-primary-foreground/80 max-w-xs mt-3">
+                            Fortalece tus competencias y conoce a fondo la cultura que nos impulsa a ser líderes en el mercado.
+                        </p>
+                    </CardContent>
                 </Card>
                 {adnCourses.map(course => (
                    <AdnCard key={course.title} title={course.title} icon={course.icon} href={course.href} />
