@@ -55,7 +55,7 @@ export default function CursosPage() {
       <div className="max-w-7xl mx-auto space-y-12">
         
         <section>
-          <div className="w-[70%] mx-auto">
+          <div className="w-[70%]">
             <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex items-center justify-start text-left p-8 md:p-12">
               <Image 
                 src="https://www.shutterstock.com/image-photo/concentrated-young-female-student-engaged-600nw-2458397479.jpg"
