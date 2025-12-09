@@ -61,18 +61,6 @@ const AdnCard = ({ title, description, icon: Icon, href }: AdnCardProps) => (
 
 
 export default function CursosPage() {
-  const scrollAreaRef = useRef<HTMLDivElement>(null);
-
-  const handleScroll = (direction: 'left' | 'right') => {
-    const viewport = scrollAreaRef.current?.querySelector('[data-radix-scroll-area-viewport]');
-    if (viewport) {
-      const scrollAmount = 300; // Adjust as needed
-      viewport.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth',
-      });
-    }
-  };
 
   return (
     <div className="bg-muted/30 min-h-screen p-4 sm:p-8">
@@ -91,7 +79,7 @@ export default function CursosPage() {
                   className="brightness-50"
                 />
                 <div className="relative z-10 p-8 md:p-12">
-                    <Badge variant="outline" className="text-white border-white/50 mb-4">Academia Banesco Seguros</Badge>
+                    <Badge variant="outline" className="text-white border-white/50 mb-4">Cursos Disponibles</Badge>
                     <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra<br/> Academia Banesco Seguros</h1>
                     <div className="pt-8">
                         <Button asChild className="text-xs font-light">
@@ -133,37 +121,21 @@ export default function CursosPage() {
              <h3 className="text-center text-xl text-foreground mb-6">
                 <span className="font-bold">Domina</span> las herramientas del <span className="font-bold">futuro</span>
             </h3>
-            <div className="relative">
-                 <Button
-                    variant="outline"
-                    size="icon"
-                    className="absolute -left-12 top-1/2 -translate-y-1/2 rounded-full h-8 w-8 z-10"
-                    onClick={() => handleScroll('left')}
-                  >
-                    <ChevronLeft className="h-4 w-4" />
-                </Button>
-                <div ref={scrollAreaRef}>
-                    <ScrollArea className="w-full">
-                        <div className="flex items-center justify-center gap-x-12 sm:gap-x-16 mx-auto w-max px-4 py-8">
-                            {technologies.map(tech => (
-                                <div key={tech.name} className="flex-shrink-0">
-                                    <div className={cn("relative h-16 w-16 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-20')}>
-                                        <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" data-ai-hint={tech.dataAiHint} />
-                                    </div>
-                                </div>
-                            ))}
+            <div
+                className="relative w-full overflow-hidden py-8"
+                style={{
+                    maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+                }}
+            >
+                <div className="animate-scroll flex gap-16">
+                    {[...technologies, ...technologies].map((tech, index) => (
+                        <div key={`${tech.name}-${index}`} className="flex-shrink-0">
+                            <div className={cn("relative h-16 w-16 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-20')}>
+                                <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" data-ai-hint={tech.dataAiHint} />
+                            </div>
                         </div>
-                        <ScrollBar orientation="horizontal" className="invisible" />
-                    </ScrollArea>
+                    ))}
                 </div>
-                <Button
-                    variant="outline"
-                    size="icon"
-                    className="absolute -right-12 top-1/2 -translate-y-1/2 rounded-full h-8 w-8 z-10"
-                    onClick={() => handleScroll('right')}
-                >
-                    <ChevronRight className="h-4 w-4" />
-                </Button>
             </div>
         </section>
         
@@ -185,4 +157,5 @@ export default function CursosPage() {
     </div>
   );
 }
+
 
