@@ -384,7 +384,7 @@ export default function CursosPage() {
                             objectFit="cover"
                             data-ai-hint="code ethics"
                         />
-                        <div className="absolute inset-0 bg-black/40"></div>
+                        <div className="absolute inset-0 bg-blue-900/40" />
                         <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
                             <div>
                                 <Badge variant="outline" className="text-white border-white/50 mb-2">Código de Ética</Badge>
@@ -405,7 +405,7 @@ export default function CursosPage() {
                             objectFit="cover"
                             data-ai-hint="insurance products"
                         />
-                         <div className="absolute inset-0 bg-black/40"></div>
+                         <div className="absolute inset-0 bg-blue-900/40" />
                          <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
                             <div>
                                 <Badge variant="outline" className="text-white border-white/50 mb-2">Nuestros Productos</Badge>
@@ -422,7 +422,7 @@ export default function CursosPage() {
                 <div className="w-[70%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left">
                     <Image
-                      src="https://images.unsplash.com/photo-1680792563719-288027b2a090?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8YWRufGVufDB8fHx8MTc2NTMwOTYxNXww&ixlib=rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1680792563719-288027b2a090?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8YWRufGVufDB8fHx8MTc2NTMwOTYxNXww&ixlib-rb-4.1.0&q=80&w=1080"
                       alt="ADN Banesco Seguros"
                       layout="fill"
                       objectFit="cover"
