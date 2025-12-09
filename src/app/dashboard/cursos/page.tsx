@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useRef, useState, useEffect, useMemo } from 'react';
@@ -6,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, Legend } from 'recharts';
-import { ArrowRight, Gavel, Gem, Lightbulb, ChevronLeft, ChevronRight, RefreshCw, BarChartHorizontal, TrendingUp, Users, Percent, Target, Scaling, Goal, Sparkles, Timer } from 'lucide-react';
+import { ArrowRight, Gavel, Gem, Lightbulb, ChevronLeft, ChevronRight, RefreshCw, BarChartHorizontal, TrendingUp, Users, Percent, Target, Scaling, Goal, Sparkles, Timer, Award } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
@@ -338,14 +339,14 @@ export default function CursosPage() {
                     </div>
                     <div className="flex items-center gap-6">
                         <div className="w-28 h-28 flex-shrink-0 flex items-center justify-center">
-                             <Users className="w-16 h-16 text-white/80" />
+                             <Award className="w-16 h-16 text-white/80" />
                         </div>
                         <div>
                         <h3 className="text-xl">
-                            <span className="text-5xl font-bold"><AnimatedNumber value={375} />M</span>
-                            <span className="font-normal ml-2">Reskilling</span>
+                            <span className="text-5xl font-bold"><AnimatedNumber value={80} />%</span>
+                            <span className="font-normal ml-2">Liderazgo</span>
                         </h3>
-                        <p className="text-primary-foreground/80 text-sm mt-1">375 millones de trabajadores necesitarán reentrenarse para 2030.</p>
+                        <p className="text-primary-foreground/80 text-sm mt-1">de las empresas invierte en programas de desarrollo de liderazgo para 2025.</p>
                         </div>
                     </div>
               </div>
@@ -413,3 +414,4 @@ export default function CursosPage() {
     
 
     
+
