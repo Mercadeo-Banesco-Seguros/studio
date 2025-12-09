@@ -31,29 +31,58 @@ const technologies = [
 
 
 const adnCourses = [
-    { title: 'Código de Ética', icon: Gavel, description: 'Principios y normas que guían nuestra conducta.', href: '#', iconBg: 'bg-red-500/10', iconColor: 'text-red-500' },
-    { title: 'Nuestros Productos', icon: Gem, description: 'Explora el portafolio de soluciones que ofrecemos.', href: '#', iconBg: 'bg-green-500/10', iconColor: 'text-green-500' },
-    { title: 'Identidad Banesco Seguros', icon: Lightbulb, description: 'Conoce la esencia de nuestra marca y cómo la comunicamos.', href: '#', iconBg: 'bg-yellow-500/10', iconColor: 'text-yellow-500' },
+    { title: 'Código de Ética', icon: Gavel, description: 'Principios y normas que guían nuestra conducta.', href: '#' },
+    { title: 'Nuestros Productos', icon: Gem, description: 'Explora el portafolio de soluciones que ofrecemos.', href: '#' },
+    { title: 'Identidad Banesco Seguros', icon: Lightbulb, description: 'Conoce la esencia de nuestra marca y cómo la comunicamos.', href: '#' },
 ];
 
 interface AdnCardProps {
     title: string;
-    icon: LucideIcon;
-    href: string;
+    description?: string;
+    icon?: LucideIcon;
+    href?: string;
+    isTitleCard?: boolean;
 }
 
-const AdnCard = ({ title, icon: Icon, href }: AdnCardProps) => (
-    <Link href={href} className="group block">
-        <Card className="h-full rounded-2xl shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 bg-card/50 backdrop-blur-sm border-white/10">
-             <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full">
+const AdnCard = ({ title, description, icon: Icon, href = '#', isTitleCard = false }: AdnCardProps) => {
+    
+    const cardContent = isTitleCard ? (
+        <CardContent className="p-8 flex flex-col justify-center h-full">
+            <h2 className="text-4xl font-bold tracking-tight">{title}</h2>
+            {description && (
+                <p className="text-primary-foreground/80 max-w-xs mt-3">{description}</p>
+            )}
+        </CardContent>
+    ) : (
+        <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full">
+            {Icon && (
                 <div className="p-3 rounded-lg bg-primary/10 mb-4">
                     <Icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-base font-semibold text-foreground">{title}</h3>
-            </CardContent>
-        </Card>
-    </Link>
-);
+            )}
+            <h3 className="text-base font-semibold text-foreground">{title}</h3>
+        </CardContent>
+    );
+    
+    const cardClasses = cn(
+        "h-full rounded-2xl shadow-sm transition-all",
+        isTitleCard 
+            ? "bg-primary text-primary-foreground shadow-lg"
+            : "bg-card/50 backdrop-blur-sm border-white/10 hover:shadow-lg hover:-translate-y-1"
+    );
+
+    if (isTitleCard) {
+        return <Card className={cardClasses}>{cardContent}</Card>;
+    }
+
+    return (
+        <Link href={href} className="group block h-full">
+            <Card className={cardClasses}>
+                {cardContent}
+            </Card>
+        </Link>
+    );
+};
 
 
 export default function CursosPage() {
@@ -137,14 +166,11 @@ export default function CursosPage() {
         
         <section>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Card className="p-8 rounded-2xl bg-primary text-primary-foreground flex flex-col justify-center shadow-lg">
-                    <CardContent className="p-0 flex flex-col justify-center">
-                        <h2 className="text-4xl font-bold tracking-tight">ADN Banesco Seguros</h2>
-                        <p className="text-primary-foreground/80 max-w-xs mt-3">
-                            Fortalece tus competencias y conoce a fondo la cultura que nos impulsa a ser líderes en el mercado.
-                        </p>
-                    </CardContent>
-                </Card>
+                <AdnCard
+                    isTitleCard
+                    title="ADN Banesco Seguros"
+                    description="Fortalece tus competencias y conoce a fondo la cultura que nos impulsa a ser líderes en el mercado."
+                />
                 {adnCourses.map(course => (
                    <AdnCard key={course.title} title={course.title} icon={course.icon} href={course.href} />
                 ))}
