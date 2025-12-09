@@ -66,17 +66,45 @@ export default function CursosPage() {
                   data-ai-hint="e-learning development"
                   className="brightness-50"
                 />
-                <div className="relative z-10">
-                  <Badge variant="outline" className="text-white border-white/50 mb-4">Academia Banesco Seguros</Badge>
-                  <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra Academia <br/> Banesco Seguros</h1>
+                <div className="relative z-10 flex flex-col justify-between h-full w-full py-4">
+                  <div>
+                    <Badge variant="outline" className="text-white border-white/50 mb-4">Academia Banesco Seguros</Badge>
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra<br/> Academia Banesco Seguros</h1>
+                  </div>
+                  <div className="mt-auto">
+                    <Button asChild size="lg" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full shadow-lg transition-transform hover:scale-105">
+                        <Link href="#">
+                            Acceder
+                        </Link>
+                    </Button>
+                  </div>
                 </div>
               </Card>
             </div>
             <div className="w-[30%]">
                 <Link href="/dashboard/cursos/google-workspace">
-                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col items-center justify-center text-center p-8 transition-transform hover:scale-105">
-                        <h2 className="text-3xl font-bold">Ver Cursos Disponibles</h2>
-                        <ArrowRight className="mt-4 h-8 w-8"/>
+                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col items-start justify-between text-left p-8 transition-transform hover:scale-105">
+                        <Image
+                            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzY1MzAwMjUxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Cursos disponibles"
+                            layout="fill"
+                            objectFit="cover"
+                            data-ai-hint="business team"
+                            className="brightness-50"
+                        />
+                        <div className="relative z-10 w-full h-full flex flex-col justify-between py-4">
+                            <div>
+                                <Badge variant="outline" className="text-white border-white/50 mb-4">Academia Banesco Seguros</Badge>
+                                <h2 className="text-3xl font-bold">Revisar Cursos<br/>Disponibles</h2>
+                            </div>
+                             <div className="mt-auto">
+                                <Button asChild size="lg" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full shadow-lg transition-transform hover:scale-105">
+                                    <Link href="/dashboard/cursos/google-workspace">
+                                        Acceder
+                                    </Link>
+                                </Button>
+                            </div>
+                        </div>
                     </Card>
                 </Link>
             </div>
