@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, History, Award, Rss, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Gavel, Gem, Lightbulb } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
@@ -31,10 +31,9 @@ const technologies = [
 
 
 const adnCourses = [
-    { title: 'Nuestra Historia', icon: History, description: 'Conoce los hitos que han forjado nuestra identidad y éxito.', href: '#' },
-    { title: 'Nuestros Valores', icon: Award, description: 'Los principios que guían cada una de nuestras acciones y decisiones.', href: '#' },
-    { title: 'Visión Cliente Céntrico', icon: Rss, description: 'Estrategias para poner al cliente en el centro de todo lo que hacemos.', href: '#' },
-    { title: 'Cultura de Alto Desempeño', icon: CheckCircle, description: 'Fomenta la excelencia y el rendimiento superior en tu equipo.', href: '#' },
+    { title: 'Código de Ética', icon: Gavel, description: 'Principios y normas que guían nuestra conducta profesional y personal.', href: '#' },
+    { title: 'Nuestros Productos', icon: Gem, description: 'Explora el portafolio de soluciones que ofrecemos a nuestros clientes.', href: '#' },
+    { title: 'Identidad Banesco Seguros', icon: Lightbulb, description: 'Conoce la esencia de nuestra marca y cómo la comunicamos.', href: '#' },
 ];
 
 interface AdnCardProps {
@@ -147,7 +146,7 @@ export default function CursosPage() {
                     Fortalece tus competencias y conoce a fondo la cultura que nos impulsa a ser líderes en el mercado.
                 </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {adnCourses.map(course => (
                     <AdnCard key={course.title} {...course} />
                 ))}
@@ -158,5 +157,3 @@ export default function CursosPage() {
     </div>
   );
 }
-
-
