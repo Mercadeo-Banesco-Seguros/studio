@@ -383,8 +383,8 @@ export default function CursosPage() {
                             layout="fill"
                             objectFit="cover"
                             data-ai-hint="code ethics"
-                            className="brightness-50"
                         />
+                        <div className="absolute inset-0 bg-black/40"></div>
                         <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
                             <div>
                                 <Badge variant="outline" className="text-white border-white/50 mb-2">Código de Ética</Badge>
@@ -404,8 +404,8 @@ export default function CursosPage() {
                             layout="fill"
                             objectFit="cover"
                             data-ai-hint="insurance products"
-                            className="brightness-50"
                         />
+                         <div className="absolute inset-0 bg-black/40"></div>
                          <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
                             <div>
                                 <Badge variant="outline" className="text-white border-white/50 mb-2">Nuestros Productos</Badge>
