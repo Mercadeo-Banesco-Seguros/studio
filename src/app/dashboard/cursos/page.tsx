@@ -14,7 +14,7 @@ const technologies = [
   { name: 'Google Docs', iconUrl: 'https://cdn.prod.website-files.com/657639ebfb91510f45654149/67b4c2989b84b8a5bd953112_docs_512dp.webp', dataAiHint: 'google docs logo' },
   { name: 'Google Slides', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Google_Slides_2020_Logo.svg/1200px-Google_Slides_2020_Logo.svg.png', dataAiHint: 'google slides logo' },
   { name: 'Power BI', iconUrl: 'https://logos-world.net/wp-content/uploads/2022/02/Power-BI-Logo.png', dataAiHint: 'power bi logo' },
-  { name: 'Microsoft 365', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png', dataAiHint: 'Microsoft logo' },
+  { name: 'Microsoft 365', iconUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Microsoft_Copilot_Icon.svg/1200px-Microsoft_Copilot_Icon.svg.png', dataAiHint: 'Microsoft logo' },
   { name: 'TypeScript', iconUrl: 'https://cdn.worldvectorlogo.com/logos/typescript.svg', dataAiHint: 'typescript logo' },
 ];
 
@@ -66,7 +66,7 @@ export default function CursosPage() {
                   data-ai-hint="e-learning development"
                   className="brightness-50"
                 />
-                <div className="relative z-10 p-8 md:p-12">
+                <CardContent className="relative z-10 p-8 md:p-12">
                     <Badge variant="outline" className="text-white border-white/50 mb-4">Academia Banesco Seguros</Badge>
                     <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra<br/> Academia Banesco Seguros</h1>
                     <div className="pt-8">
@@ -76,7 +76,7 @@ export default function CursosPage() {
                             </Link>
                         </Button>
                     </div>
-                </div>
+                </CardContent>
               </Card>
             </div>
             <div className="w-[30%]">
@@ -89,7 +89,7 @@ export default function CursosPage() {
                         data-ai-hint="business team"
                         className="brightness-50"
                     />
-                    <div className="relative z-10 p-8 w-full">
+                    <CardContent className="relative z-10 p-8 w-full">
                         <Badge variant="outline" className="text-white border-white/50 mb-4">Cursos Disponibles</Badge>
                         <h2 className="text-3xl font-bold">Revisar Cursos<br/>Disponibles</h2>
                         <div className="pt-8">
@@ -99,7 +99,7 @@ export default function CursosPage() {
                                </Link>
                            </Button>
                         </div>
-                    </div>
+                    </CardContent>
                 </Card>
             </div>
           </div>
