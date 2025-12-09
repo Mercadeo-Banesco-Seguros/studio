@@ -10,11 +10,12 @@ import type { LucideIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 const technologies = [
-  { name: 'Google Workspace', iconUrl: 'https://cdn.worldvectorlogo.com/logos/google-workspace-2.svg', dataAiHint: 'google workspace logo' },
-  { name: 'Microsoft 365', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg', dataAiHint: 'microsoft logo' },
-  { name: 'Python', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg', dataAiHint: 'python logo' },
-  { name: 'RStudio', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/91/RStudio-logo-ball.svg', dataAiHint: 'rstudio logo' },
-  { name: 'Copilot', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Microsoft_Copilot_Logo.svg', dataAiHint: 'copilot logo' },
+  { name: 'TypeScript', iconUrl: 'https://cdn.worldvectorlogo.com/logos/typescript.svg', dataAiHint: 'typescript logo' },
+  { name: 'Copilot', iconUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Microsoft_Copilot_Icon.svg/1200px-Microsoft_Copilot_Icon.svg.png', dataAiHint: 'copilot logo' },
+  { name: 'Power BI', iconUrl: 'https://logos-world.net/wp-content/uploads/2022/02/Power-BI-Logo.png', dataAiHint: 'power bi logo' },
+  { name: 'Google Sites', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Google_Sites_2020_Logo.svg/250px-Google_Sites_2020_Logo.svg.png', dataAiHint: 'google sites logo' },
+  { name: 'Google Docs', iconUrl: 'https://cdn.prod.website-files.com/657639ebfb91510f45654149/67b4c2989b84b8a5bd953112_docs_512dp.webp', dataAiHint: 'google docs logo' },
+  { name: 'Google Sheets', iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxViZyCe5Vg6NrNijiTsdXSJy9Nt-0_TcvtA&s', dataAiHint: 'google sheets logo' },
 ];
 
 const adnCourses = [
