@@ -33,7 +33,7 @@ const technologies = [
 
 
 const trainingStats = [
-    { title: "Crecimiento E-learning", percentage: 25, description: "El e-learning corporativo puede mejorar la productividad hasta en un 25% y se espera que crezca más del 250% para 2026.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
+    { title: "Crecimiento", percentage: 25, description: "El e-learning corporativo puede mejorar la productividad hasta en un 25% y se espera que crezca más del 250% para 2026.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
     { title: "Satisfacción", percentage: 92, description: "de los empleados valora los programas de formación bien planificados.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
     { title: "Adopción", percentage: 90, description: "de las empresas usan formación online como herramienta clave de capacitación.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
 ];
@@ -269,32 +269,32 @@ export default function CursosPage() {
             <section>
               <div className="flex gap-6">
                 <div className="w-[30%]">
-                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col items-start justify-end text-left transition-transform hover:scale-105">
-                    <Image
-                      src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxsYXJzfGVufDB8fHx8MTc2MzczMTk1N3ww&ixlib=rb-4.1.0&q=80&w=1080"
-                      alt="Nuestros Pilares"
-                      layout="fill"
-                      objectFit="cover"
-                      data-ai-hint="pillars architecture"
-                      className="brightness-50"
-                    />
-                    <div className="relative z-10 p-8 w-full">
-                      <Badge variant="outline" className="text-white border-white/50 mb-4">Nuestros Pilares</Badge>
-                      <h2 className="text-xl font-bold">Código de Ética, Productos<br/>e Identidad Corporativa</h2>
-                      <div className="pt-8">
-                        <Button asChild className="text-xs font-light">
-                          <Link href="#">
-                            Explorar
-                          </Link>
-                        </Button>
-                      </div>
-                    </div>
-                  </Card>
+                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col items-start justify-end text-left transition-transform hover:scale-105">
+                        <Image
+                            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxsYXJzfGVufDB8fHx8MTc2MzczMTk1N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Nuestros Pilares"
+                            layout="fill"
+                            objectFit="cover"
+                            data-ai-hint="pillars architecture"
+                            className="brightness-50"
+                        />
+                         <div className="relative z-10 p-8 w-full text-white">
+                            <Badge variant="outline" className="text-white border-white/50 mb-4">Nuestros Pilares</Badge>
+                            <h2 className="text-xl font-bold">Código de Ética, Productos<br/>e Identidad Corporativa</h2>
+                            <div className="pt-8">
+                                <Button asChild className="text-xs font-light bg-white text-primary hover:bg-white/90">
+                                <Link href="#">
+                                    Explorar
+                                </Link>
+                                </Button>
+                            </div>
+                        </div>
+                    </Card>
                 </div>
                 <div className="w-[70%]">
-                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
+                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left">
                     <Image
-                      src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib-rb-4.1.0&q=80&w=1080"
                       alt="ADN Banesco Seguros"
                       layout="fill"
                       objectFit="cover"
@@ -305,7 +305,7 @@ export default function CursosPage() {
                       <Badge variant="outline" className="text-white border-white/50 mb-4">Cultura Corporativa</Badge>
                       <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">ADN Banesco<br/>Seguros</h1>
                       <div className="pt-8">
-                        <Button asChild className="text-xs font-light">
+                        <Button asChild className="text-xs font-light bg-white text-primary hover:bg-white/90">
                           <Link href="#">
                             Conocer más
                           </Link>
