@@ -338,8 +338,27 @@ export default function CursosPage() {
                         </div>
                     </div>
                     <div className="flex items-center gap-6">
-                        <div className="w-28 h-28 flex-shrink-0 flex items-center justify-center">
-                             <Award className="w-16 h-16 text-white/80" />
+                        <div className="w-28 h-28 flex-shrink-0">
+                           <ResponsiveContainer width="100%" height="100%">
+                             <PieChart>
+                               <Pie
+                                 data={[{ value: 80, color: '#FFFFFF' }, { value: 20, color: 'hsl(var(--primary))' }]}
+                                 cx="50%"
+                                 cy="50%"
+                                 innerRadius={35}
+                                 outerRadius={50}
+                                 startAngle={90}
+                                 endAngle={450}
+                                 paddingAngle={0}
+                                 dataKey="value"
+                                 isAnimationActive={true}
+                                 animationDuration={4000}
+                               >
+                                 <Cell key="cell-0" fill={'#FFFFFF'} stroke={'#FFFFFF'} />
+                                 <Cell key="cell-1" fill={'hsl(var(--primary))'} stroke={'hsl(var(--primary))'} />
+                               </Pie>
+                             </PieChart>
+                           </ResponsiveContainer>
                         </div>
                         <div>
                         <h3 className="text-xl">
@@ -414,4 +433,5 @@ export default function CursosPage() {
     
 
     
+
 
