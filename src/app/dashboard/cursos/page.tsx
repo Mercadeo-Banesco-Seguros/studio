@@ -32,9 +32,9 @@ const technologies = [
 ];
 
 const trainingStats = [
-    { title: "Crecimiento", percentage: 250, description: "El e-learning corporativo crecerá más del 250% para 2026 y puede mejorar la productividad hasta en un 25%.", trendData: [{v:0},{v:50},{v:80},{v:150},{v:200},{v:250}] },
-    { title: "Satisfacción", percentage: 92, description: "de los empleados valora los programas de formación bien planificados.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
-    { title: "Adopción", percentage: 90, description: "de las empresas usan formación online como herramienta clave de capacitación.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
+    { title: "Crecimiento", value: 250, description: "El e-learning corporativo crecerá >250% para 2026 y puede mejorar la productividad hasta un 25%.", isTrend: true, trendData: [{v:0},{v:50},{v:80},{v:150},{v:200},{v:250}] },
+    { title: "Satisfacción", value: 92, description: "de los empleados valora los programas de formación bien planificados.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
+    { title: "Adopción", value: 90, description: "de las empresas usan formación online como herramienta clave de capacitación.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
 ];
 
 const AnimatedNumber = ({ value, duration = 4000 }: { value: number, duration?: number }) => {
@@ -224,14 +224,14 @@ export default function CursosPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {trainingStats.map((stat, index) => {
                   const data = [
-                    { name: 'A', value: stat.percentage, color: '#FFFFFF' },
-                    { name: 'B', value: (stat.trendData ? 250 : 100) - stat.percentage, color: 'hsl(var(--primary))' },
+                    { name: 'A', value: stat.value, color: '#FFFFFF' },
+                    { name: 'B', value: (stat.isTrend ? 250 : 100) - stat.value, color: 'hsl(var(--primary))' },
                   ];
                   return (
                     <div key={index} className="flex items-center gap-6">
                       <div className="w-28 h-28 flex-shrink-0">
                         <ResponsiveContainer width="100%" height="100%">
-                          {stat.trendData ? (
+                          {stat.isTrend ? (
                              <AreaChart data={stat.trendData} margin={{ top: 10, right: 10, left: 10, bottom: 10 }}>
                                 <defs>
                                     <linearGradient id="trendGradient" x1="0" y1="0" x2="0" y2="1">
@@ -265,7 +265,7 @@ export default function CursosPage() {
                       </div>
                       <div>
                         <h3 className="text-xl">
-                          <span className="text-5xl font-bold"><AnimatedNumber value={stat.percentage} />%</span>
+                          <span className="text-5xl font-bold"><AnimatedNumber value={stat.value} />%</span>
                           <span className="font-normal ml-2">{stat.title}</span>
                         </h3>
                         <p className="text-primary-foreground/80 text-sm mt-1">{stat.description}</p>
@@ -354,7 +354,7 @@ export default function CursosPage() {
                 <div className="w-[70%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left">
                     <Image
-                      src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib-rb-4.1.0&q=80&w=1080"
                       alt="ADN Banesco Seguros"
                       layout="fill"
                       objectFit="cover"
