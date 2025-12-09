@@ -1,22 +1,27 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, History, Award, Rss, CheckCircle } from 'lucide-react';
+import { ArrowRight, History, Award, Rss, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
+
 
 const technologies = [
-  { name: 'Google Sheets', iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxViZyCe5Vg6NrNijiTsdXSJy9Nt-0_TcvtA&s', dataAiHint: 'google sheets logo' },
-  { name: 'Google Docs', iconUrl: 'https://cdn.prod.website-files.com/657639ebfb91510f45654149/67b4c2989b84b8a5bd953112_docs_512dp.webp', dataAiHint: 'google docs logo' },
-  { name: 'Google Slides', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Google_Slides_2020_Logo.svg/1200px-Google_Slides_2020_Logo.svg.png', dataAiHint: 'google slides logo' },
-  { name: 'Power BI', iconUrl: 'https://logos-world.net/wp-content/uploads/2022/02/Power-BI-Logo.png', dataAiHint: 'power bi logo' },
-  { name: 'Google Sites', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Google_Sites_2020_Logo.svg/250px-Google_Sites_2020_Logo.svg.png', dataAiHint: 'google sites logo' },
-  { name: 'TypeScript', iconUrl: 'https://cdn.worldvectorlogo.com/logos/typescript.svg', dataAiHint: 'typescript logo' },
+  { name: 'Gemini', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Gemini_icon_2025.svg/2048px-Google_Gemini_icon_2025.svg.png', dataAiHint: 'google gemini logo' },
+  { name: 'VS Code', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png', dataAiHint: 'vs code logo' },
+  { name: 'Google Sheets', iconUrl: 'https://static.vecteezy.com/system/resources/previews/027/179/391/non_2x/google-sheet-spreadsheet-icon-logo-symbol-free-png.png', dataAiHint: 'google sheets logo' },
+  { name: 'Google Sites', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Google_Sites_2020_Logo.svg/1489px-Google_Sites_2020_Logo.svg.png', dataAiHint: 'google sites logo' },
+  { name: 'Google Docs', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Google_Docs_logo_%282014-2020%29.svg/1481px-Google_Docs_logo_%282014-2020%29.svg.png', dataAiHint: 'google docs logo' },
+  { name: 'Power BI', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/2048px-New_Power_BI_Logo.svg.png', dataAiHint: 'power bi logo' },
+  { name: 'Microsoft Fabric', iconUrl: 'https://www.brainsell.com/wp-content/uploads/2023/12/Fabric_final_x256.png', dataAiHint: 'microsoft fabric logo' },
+  { name: 'Microsoft Copilot', iconUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Microsoft_Copilot_Icon.svg/1200px-Microsoft_Copilot_Icon.svg.png', dataAiHint: 'microsoft copilot logo' },
+  { name: 'Python', iconUrl: 'https://cdn-icons-png.flaticon.com/512/2965/2965300.png', dataAiHint: 'python logo' },
 ];
 
 const adnCourses = [
@@ -51,6 +56,19 @@ const AdnCard = ({ title, description, icon: Icon, href }: AdnCardProps) => (
 
 
 export default function CursosPage() {
+  const scrollAreaRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = (direction: 'left' | 'right') => {
+    const viewport = scrollAreaRef.current?.querySelector('[data-radix-scroll-area-viewport]');
+    if (viewport) {
+      const scrollAmount = 300; // Adjust as needed
+      viewport.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <div className="bg-muted/30 min-h-screen p-4 sm:p-8">
       <div className="max-w-7xl mx-auto space-y-12">
@@ -110,12 +128,37 @@ export default function CursosPage() {
              <h3 className="text-center text-xl text-foreground mb-6">
                 <span className="font-bold">Domina</span> las herramientas del <span className="font-bold">futuro</span>
             </h3>
-            <div className="flex flex-wrap justify-center items-center gap-x-12 sm:gap-x-16 gap-y-4">
-                {technologies.map(tech => (
-                    <div key={tech.name} className={cn("relative h-12 w-12 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-16')}>
-                        <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" data-ai-hint={tech.dataAiHint} />
-                    </div>
-                ))}
+            <div className="relative">
+                 <Button
+                    variant="outline"
+                    size="icon"
+                    className="absolute -left-12 top-1/2 -translate-y-1/2 rounded-full h-8 w-8 z-10"
+                    onClick={() => handleScroll('left')}
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                </Button>
+                <div ref={scrollAreaRef}>
+                    <ScrollArea className="w-full">
+                        <div className="flex items-center justify-center gap-x-12 sm:gap-x-16 mx-auto w-max px-4">
+                            {technologies.map(tech => (
+                                <div key={tech.name} className="flex-shrink-0">
+                                    <div className={cn("relative h-12 w-12 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-16')}>
+                                        <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" data-ai-hint={tech.dataAiHint} />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        <ScrollBar orientation="horizontal" className="invisible" />
+                    </ScrollArea>
+                </div>
+                <Button
+                    variant="outline"
+                    size="icon"
+                    className="absolute -right-12 top-1/2 -translate-y-1/2 rounded-full h-8 w-8 z-10"
+                    onClick={() => handleScroll('right')}
+                >
+                    <ChevronRight className="h-4 w-4" />
+                </Button>
             </div>
         </section>
         
