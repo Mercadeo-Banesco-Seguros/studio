@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { ArrowRight, History, Award, Rss, CheckCircle } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
 
 const technologies = [
   { name: 'Google Sheets', iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxViZyCe5Vg6NrNijiTsdXSJy9Nt-0_TcvtA&s', dataAiHint: 'google sheets logo' },
@@ -66,7 +67,7 @@ export default function CursosPage() {
                   data-ai-hint="e-learning development"
                   className="brightness-50"
                 />
-                <CardContent className="relative z-10 p-8 md:p-12">
+                <div className="relative z-10 p-8 md:p-12">
                     <Badge variant="outline" className="text-white border-white/50 mb-4">Academia Banesco Seguros</Badge>
                     <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra<br/> Academia Banesco Seguros</h1>
                     <div className="pt-8">
@@ -76,7 +77,7 @@ export default function CursosPage() {
                             </Link>
                         </Button>
                     </div>
-                </CardContent>
+                </div>
               </Card>
             </div>
             <div className="w-[30%]">
@@ -89,7 +90,7 @@ export default function CursosPage() {
                         data-ai-hint="business team"
                         className="brightness-50"
                     />
-                    <CardContent className="relative z-10 p-8 w-full">
+                    <div className="relative z-10 p-8 w-full">
                         <Badge variant="outline" className="text-white border-white/50 mb-4">Cursos Disponibles</Badge>
                         <h2 className="text-3xl font-bold">Revisar Cursos<br/>Disponibles</h2>
                         <div className="pt-8">
@@ -99,7 +100,7 @@ export default function CursosPage() {
                                </Link>
                            </Button>
                         </div>
-                    </CardContent>
+                    </div>
                 </Card>
             </div>
           </div>
@@ -109,7 +110,7 @@ export default function CursosPage() {
             <h3 className="text-center text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-6">Domina las herramientas del futuro</h3>
             <div className="flex flex-wrap justify-center items-center gap-x-12 sm:gap-x-16 gap-y-4">
                 {technologies.map(tech => (
-                    <div key={tech.name} className="relative h-12 w-12 transition-all hover:scale-110">
+                    <div key={tech.name} className={cn("relative h-12 w-12 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-16')}>
                         <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" data-ai-hint={tech.dataAiHint} />
                     </div>
                 ))}
