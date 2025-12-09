@@ -81,7 +81,7 @@ export default function CursosPage() {
             <div className="w-[30%]">
                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left transition-transform hover:scale-105">
                     <Image
-                        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzY1MzAwMjUxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                        src="https://capacitacion.uc.cl/images/cursos/Por_qu%C3%A9_deber%C3%ADas_aprender_a_programar_en_Python.jpg"
                         alt="Cursos disponibles"
                         layout="fill"
                         objectFit="cover"
