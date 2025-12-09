@@ -401,7 +401,7 @@ export default function CursosPage() {
                 <div className="w-[70%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left">
                     <Image
-                      src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1680792563719-288027b2a090?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8YWRufGVufDB8fHx8MTc2NTMwOTYxNXww&ixlib=rb-4.1.0&q=80&w=1080"
                       alt="ADN Banesco Seguros"
                       layout="fill"
                       objectFit="cover"
@@ -433,5 +433,6 @@ export default function CursosPage() {
     
 
     
+
 
 
