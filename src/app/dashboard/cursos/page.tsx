@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
@@ -37,11 +38,11 @@ const adnCourses = [
 ];
 
 const trainingStats = [
-    { label: "Retención", value: 94, description: "de empleados se queda si se invierte en su desarrollo.", color: "bg-primary", textColor: "text-primary-foreground" },
-    { label: "Satisfacción", value: 92, description: "de los colaboradores valora la formación planificada.", color: "bg-blue-500", textColor: "text-white" },
-    { label: "Adopción", value: 90, description: "de las empresas ya utilizan formación online.", color: "bg-blue-400", textColor: "text-white" },
-    { label: "Productividad", value: 80, description: "de las empresas que invierten en capacitación superan al resto.", color: "bg-sky-400", textColor: "text-white" },
-    { label: "Mejora", value: 25, description: "es el aumento potencial en la productividad con e-learning.", color: "bg-sky-300", textColor: "text-sky-800" },
+    { id: 'retencion', label: "Retención", value: 94, description: "Un 94% de los empleados afirma que se quedaría más tiempo en una empresa si esta invirtiera en su desarrollo profesional.", color: "bg-primary", textColor: "text-primary-foreground", size: 100, isMax: true },
+    { id: 'satisfaccion', label: "Satisfacción", value: 92, description: "El 92% de los colaboradores considera que los programas de formación y desarrollo planificados mejoran su satisfacción laboral.", color: "bg-blue-500", textColor: "text-white", size: 95 },
+    { id: 'adopcion', label: "Adopción", value: 90, description: "Actualmente, el 90% de las corporaciones utilizan el e-learning como herramienta clave para la capacitación de sus equipos.", color: "bg-blue-400", textColor: "text-white", size: 90 },
+    { id: 'productividad', label: "Productividad", value: 80, description: "Según Forbes, el 80% de las empresas que invierten más del 5% de su presupuesto en capacitación superan a sus competidores.", color: "bg-sky-400", textColor: "text-white", size: 80 },
+    { id: 'mejora', label: "Mejora", value: 25, description: "La implementación de e-learning puede aumentar la productividad de los empleados hasta en un 25%.", color: "bg-sky-300", textColor: "text-sky-800", size: 30 },
 ];
 
 interface AdnCardProps {
@@ -94,35 +95,40 @@ const AdnCard = ({ title, description, icon: Icon, href = '#', isTitleCard = fal
     );
 };
 
-const StatCircle = ({ value, label, size, isMax }: { value: number, label: string, size: number, isMax?: boolean }) => {
+const StatCircle = ({ value, label, size, isMax, isSelected, onClick }: { value: number, label: string, size: number, isMax?: boolean, isSelected?: boolean, onClick: () => void }) => {
     const minSize = 60;
     const maxSize = 200;
     const finalSize = minSize + (maxSize - minSize) * (size / 100);
 
     return (
-        <div className="flex flex-col items-center gap-2">
+        <button onClick={onClick} className="flex flex-col items-center gap-2 group focus:outline-none">
             <div
                 className={cn(
-                    "relative flex items-center justify-center rounded-full transition-all duration-500",
-                    isMax ? 'bg-gradient-to-br from-green-300 via-primary to-blue-800' : 'bg-gradient-to-br from-primary/40 to-primary/80'
+                    "relative flex items-center justify-center rounded-full transition-all duration-500 transform",
+                    isMax ? 'bg-gradient-to-br from-green-300 via-primary to-blue-800' : 'bg-gradient-to-br from-primary/40 to-primary/80',
+                    isSelected ? 'scale-110' : 'group-hover:scale-105'
                 )}
                 style={{ width: finalSize, height: finalSize }}
             >
                 <div 
                     className={cn(
-                        "absolute inset-2 rounded-full",
-                         isMax ? 'bg-gradient-to-br from-primary/80 to-blue-900/90' : 'bg-gradient-to-br from-primary/60 to-primary'
+                        "absolute inset-2 rounded-full transition-all",
+                         isMax ? 'bg-gradient-to-br from-primary/80 to-blue-900/90' : 'bg-gradient-to-br from-primary/60 to-primary',
+                         isSelected && 'ring-4 ring-offset-2 ring-offset-muted ring-primary'
                     )}
                 />
                 <span className="relative text-xl font-bold text-white z-10">{value}%</span>
             </div>
-            <span className="text-sm font-medium text-muted-foreground">{label}</span>
-        </div>
+            <span className={cn("text-sm font-medium text-muted-foreground transition-colors", isSelected && "text-primary")}>{label}</span>
+        </button>
     )
 };
 
 
 export default function CursosPage() {
+  const [selectedStat, setSelectedStat] = useState<(typeof trainingStats)[0] | null>(null);
+
+  const defaultStatText = "Invertir en desarrollo profesional no solo retiene al 94% del talento, sino que también puede aumentar la productividad hasta en un 25%.";
 
   return (
     <div className="bg-muted/30 min-h-screen p-4 sm:p-8">
@@ -207,66 +213,78 @@ export default function CursosPage() {
               <h4 className="text-3xl font-bold text-foreground mt-2">El <span className="text-primary">Impacto</span> de la Formación Corporativa</h4>
             </div>
             <div className="flex items-end justify-center gap-4 md:gap-8 h-[300px] w-full">
-                <StatCircle value={trainingStats[4].value} label={trainingStats[4].label} size={30} />
-                <StatCircle value={trainingStats[3].value} label={trainingStats[3].label} size={80} />
-                <StatCircle value={trainingStats[0].value} label={trainingStats[0].label} size={100} isMax />
-                <StatCircle value={trainingStats[1].value} label={trainingStats[1].label} size={95} />
-                <StatCircle value={trainingStats[2].value} label={trainingStats[2].label} size={90} />
+                {trainingStats.map(stat => (
+                    <StatCircle 
+                        key={stat.id}
+                        value={stat.value} 
+                        label={stat.label} 
+                        size={stat.size} 
+                        isMax={stat.isMax}
+                        isSelected={selectedStat?.id === stat.id}
+                        onClick={() => setSelectedStat(stat.id === selectedStat?.id ? null : stat)}
+                    />
+                ))}
             </div>
             <p className="text-center text-muted-foreground mt-12 max-w-lg mx-auto">
-                Invertir en desarrollo profesional no solo retiene al <span className="font-semibold text-foreground">94% del talento</span>, sino que también puede aumentar la productividad hasta en un <span className="font-semibold text-foreground">25%</span>.
+                 {selectedStat ? (
+                    <>
+                       {selectedStat.description}
+                    </>
+                ) : (
+                    defaultStatText
+                )}
             </p>
         </section>
         
         <section>
-            <div className="flex gap-6">
-                <div className="w-[30%]">
-                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col items-start justify-end text-left transition-transform hover:scale-105">
-                         <Image
-                            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxsYXJzfGVufDB8fHx8MTc2MzczMTk1N3ww&ixlib=rb-4.1.0&q=80&w=1080"
-                            alt="Nuestros Pilares"
-                            layout="fill"
-                            objectFit="cover"
-                            data-ai-hint="pillars architecture"
-                            className="brightness-50"
-                        />
-                        <div className="relative z-10 p-8 w-full">
-                            <Badge variant="outline" className="text-white border-white/50 mb-4">Nuestros Pilares</Badge>
-                            <h2 className="text-xl font-bold">Código de Ética, Productos<br/>e Identidad Corporativa</h2>
-                             <div className="pt-8">
-                               <Button asChild className="text-xs font-light">
-                                   <Link href="#">
-                                       Explorar
-                                   </Link>
-                               </Button>
-                            </div>
-                        </div>
-                    </Card>
+          <div className="flex gap-6">
+            <div className="w-[30%]">
+              <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col items-start justify-end text-left transition-transform hover:scale-105">
+                <Image
+                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxsYXJzfGVufDB8fHx8MTc2MzczMTk1N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                  alt="Nuestros Pilares"
+                  layout="fill"
+                  objectFit="cover"
+                  data-ai-hint="pillars architecture"
+                  className="brightness-50"
+                />
+                <div className="relative z-10 p-8 w-full">
+                  <Badge variant="outline" className="text-white border-white/50 mb-4">Nuestros Pilares</Badge>
+                  <h2 className="text-xl font-bold">Código de Ética, Productos<br/>e Identidad Corporativa</h2>
+                  <div className="pt-8">
+                    <Button asChild className="text-xs font-light">
+                      <Link href="#">
+                        Explorar
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
-                <div className="w-[70%]">
-                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
-                        <Image 
-                            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                            alt="ADN Banesco Seguros"
-                            layout="fill"
-                            objectFit="cover"
-                            data-ai-hint="business team"
-                            className="brightness-50"
-                        />
-                        <div className="relative z-10 p-8 md:p-12">
-                            <Badge variant="outline" className="text-white border-white/50 mb-4">Cultura Corporativa</Badge>
-                            <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">ADN Banesco<br/>Seguros</h1>
-                            <div className="pt-8">
-                                <Button asChild className="text-xs font-light">
-                                    <Link href="#">
-                                        Conocer más
-                                    </Link>
-                                </Button>
-                            </div>
-                        </div>
-                    </Card>
-                </div>
+              </Card>
             </div>
+            <div className="w-[70%]">
+              <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
+                <Image
+                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  alt="ADN Banesco Seguros"
+                  layout="fill"
+                  objectFit="cover"
+                  data-ai-hint="business team"
+                  className="brightness-50"
+                />
+                <div className="relative z-10 p-8 md:p-12">
+                  <Badge variant="outline" className="text-white border-white/50 mb-4">Cultura Corporativa</Badge>
+                  <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">ADN Banesco<br/>Seguros</h1>
+                  <div className="pt-8">
+                    <Button asChild className="text-xs font-light">
+                      <Link href="#">
+                        Conocer más
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
         </section>
 
       </div>
