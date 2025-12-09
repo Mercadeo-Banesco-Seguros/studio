@@ -298,15 +298,37 @@ export default function CursosPage() {
                         </div>
                     </div>
                     <div className="flex items-center gap-6">
-                        <div className="w-28 h-28 flex-shrink-0 flex items-center justify-center">
-                            <Timer className="w-16 h-16 text-white/80" />
+                       <div className="w-28 h-28 flex-shrink-0 relative">
+                            <ResponsiveContainer width="100%" height="100%">
+                                <PieChart>
+                                    <Pie
+                                        data={[{ name: 'Aprendizaje', value: 5 }, { name: 'Jornada', value: 475 }]}
+                                        dataKey="value"
+                                        cx="50%"
+                                        cy="50%"
+                                        innerRadius={35}
+                                        outerRadius={50}
+                                        startAngle={90}
+                                        endAngle={450}
+                                        isAnimationActive={true}
+                                        animationDuration={4000}
+                                        stroke="none"
+                                    >
+                                        <Cell fill="#FFFFFF" />
+                                        <Cell fill="hsl(var(--primary))" />
+                                    </Pie>
+                                </PieChart>
+                            </ResponsiveContainer>
+                             <div className="absolute inset-0 flex items-center justify-center">
+                                <span className="text-lg font-bold text-white/90">~1%</span>
+                            </div>
                         </div>
                         <div>
-                        <h3 className="text-xl">
-                            <span className="text-5xl font-bold">4-5</span>
-                            <span className="font-normal ml-2">min/día</span>
-                        </h3>
-                        <p className="text-primary-foreground/80 text-sm mt-1">El empleado promedio dedica solo 4-5 minutos al día al aprendizaje formal.</p>
+                            <h3 className="text-xl">
+                                <span className="text-5xl font-bold">4-5</span>
+                                <span className="font-normal ml-2">min/día</span>
+                            </h3>
+                            <p className="text-primary-foreground/80 text-sm mt-1">El empleado promedio dedica solo 4-5 minutos al día al aprendizaje formal.</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-6">
@@ -382,3 +404,5 @@ export default function CursosPage() {
     </div>
   );
 }
+
+    
