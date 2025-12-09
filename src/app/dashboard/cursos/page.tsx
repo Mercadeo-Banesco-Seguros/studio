@@ -168,7 +168,7 @@ export default function CursosPage() {
                                     <h2 className="text-2xl font-bold text-white">Principios y Valores</h2>
                                 </div>
                                 <div className="mt-auto">
-                                    <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
+                                    <Button asChild className="text-xs font-light">
                                         <Link href="#">Explorar</Link>
                                     </Button>
                                 </div>
@@ -189,7 +189,7 @@ export default function CursosPage() {
                                     <h2 className="text-2xl font-bold text-white">Soluciones y Cobertura</h2>
                                 </div>
                                 <div className="mt-auto">
-                                    <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
+                                    <Button asChild className="text-xs font-light">
                                         <Link href="#">Conocer más</Link>
                                     </Button>
                                 </div>
@@ -212,7 +212,7 @@ export default function CursosPage() {
                       <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">ADN Banesco<br/>Seguros</h1>
                        <p className="mt-4 max-w-xl text-primary-foreground/80">Conoce los principios que nos guían y forman la base de nuestra organización.</p>
                       <div className="pt-8">
-                        <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
+                        <Button asChild className="text-xs font-light">
                           <Link href="#">
                             Conocer más
                           </Link>
