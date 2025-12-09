@@ -31,9 +31,8 @@ const technologies = [
   { name: 'NotebookLM', iconUrl: 'https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/notebooklm.png', 'data-ai-hint': 'notebooklm logo' },
 ];
 
-
 const trainingStats = [
-    { title: "Crecimiento", percentage: 250, description: "El e-learning corporativo crecerá más del 250% para 2026.", trendData: [{v:0},{v:50},{v:80},{v:150},{v:200},{v:250}] },
+    { title: "Crecimiento", percentage: 250, description: "El e-learning corporativo crecerá más del 250% para 2026 y puede mejorar la productividad hasta en un 25%.", trendData: [{v:0},{v:50},{v:80},{v:150},{v:200},{v=250}] },
     { title: "Satisfacción", percentage: 92, description: "de los empleados valora los programas de formación bien planificados.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
     { title: "Adopción", percentage: 90, description: "de las empresas usan formación online como herramienta clave de capacitación.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
 ];
@@ -51,13 +50,14 @@ const AnimatedNumber = ({ value, duration = 4000 }: { value: number, duration?: 
                     if (start === end) return;
 
                     const range = end - start;
-                    const increment = end > start ? 1 : -1;
-                    const stepTime = Math.abs(Math.floor(duration / range));
-                    
+                    let stepTime = Math.abs(Math.floor(duration / range));
+                    if (range === 0) stepTime = duration;
+
                     const timer = setInterval(() => {
-                        start += increment;
+                        start += 1;
                         setCount(start);
-                        if (start === end) {
+                        if (start >= end) {
+                            setCount(end); // Ensure it ends exactly on the value
                             clearInterval(timer);
                         }
                     }, stepTime);
@@ -274,6 +274,54 @@ export default function CursosPage() {
                   );
                 })}
               </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                    <div className="flex items-center gap-6">
+                        <div className="w-28 h-28 flex-shrink-0">
+                        <ResponsiveContainer width="100%" height="100%">
+                            <AreaChart data={[{v:0},{v:50},{v:100},{v:150},{v:200},{v:218}]} margin={{ top: 10, right: 10, left: 10, bottom: 10 }}>
+                                <defs>
+                                    <linearGradient id="incomeGradient" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="5%" stopColor="#FFFFFF" stopOpacity={0.4}/>
+                                        <stop offset="95%" stopColor="#FFFFFF" stopOpacity={0}/>
+                                    </linearGradient>
+                                </defs>
+                                <Area type="monotone" dataKey="v" stroke="#FFFFFF" strokeWidth={2} fill="url(#incomeGradient)" />
+                            </AreaChart>
+                        </ResponsiveContainer>
+                        </div>
+                        <div>
+                        <h3 className="text-xl">
+                            <span className="text-5xl font-bold"><AnimatedNumber value={218} />%</span>
+                            <span className="font-normal ml-2">Ingresos</span>
+                        </h3>
+                        <p className="text-primary-foreground/80 text-sm mt-1">Las empresas con formación integral tienen un 218% más de ingresos por empleado.</p>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-6">
+                        <div className="w-28 h-28 flex-shrink-0 flex items-center justify-center">
+                            <Timer className="w-16 h-16 text-white/80" />
+                        </div>
+                        <div>
+                        <h3 className="text-xl">
+                            <span className="text-5xl font-bold">4-5</span>
+                            <span className="font-normal ml-2">min/día</span>
+                        </h3>
+                        <p className="text-primary-foreground/80 text-sm mt-1">El empleado promedio dedica solo 4-5 minutos al día al aprendizaje formal.</p>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-6">
+                        <div className="w-28 h-28 flex-shrink-0 flex items-center justify-center">
+                             <Users className="w-16 h-16 text-white/80" />
+                        </div>
+                        <div>
+                        <h3 className="text-xl">
+                            <span className="text-5xl font-bold"><AnimatedNumber value={375} />M</span>
+                            <span className="font-normal ml-2">Reskilling</span>
+                        </h3>
+                        <p className="text-primary-foreground/80 text-sm mt-1">375 millones de trabajadores necesitarán reentrenarse para 2030.</p>
+                        </div>
+                    </div>
+              </div>
             </div>
         </section>
         
@@ -283,11 +331,11 @@ export default function CursosPage() {
                 <div className="w-[30%]">
                     <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col items-start justify-end text-left transition-transform hover:scale-105">
                         <Image
-                            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxsYXJzfGVufDB8fHx8MTc2MzczMTk1N3ww&ixlib=rb-4.1.0&q=80&w=1080"
                             alt="Nuestros Pilares"
                             layout="fill"
                             objectFit="cover"
-                            data-ai-hint="business team"
+                            data-ai-hint="pillars architecture"
                             className="brightness-50"
                         />
                          <div className="relative z-10 p-8 w-full text-white">
@@ -306,11 +354,11 @@ export default function CursosPage() {
                 <div className="w-[70%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left">
                     <Image
-                      src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxsYXJzfGVufDB8fHx8MTc2MzczMTk1N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib=rb-4.1.0&q=80&w=1080"
                       alt="ADN Banesco Seguros"
                       layout="fill"
                       objectFit="cover"
-                      data-ai-hint="pillars architecture"
+                      data-ai-hint="business team"
                       className="brightness-50"
                     />
                     <div className="relative z-10 p-8 md:p-12">
