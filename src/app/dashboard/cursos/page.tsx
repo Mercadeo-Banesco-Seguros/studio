@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useRef, useState, useEffect, useMemo } from 'react';
@@ -37,9 +36,14 @@ const trainingStats = [
     { title: "Adopción", value: 90, description: "de las empresas usan formación online como herramienta clave de capacitación.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
 ];
 
-const jobsData = [
-  { name: 'Empleos', perdidos: 85, creados: 130 },
-];
+const jobsData = {
+    net: 45,
+    chartData: [
+        { name: 'Creados', value: 130, color: '#FFFFFF' },
+        { name: 'Perdidos', value: 85, color: 'hsl(var(--primary))' },
+    ]
+};
+
 
 const AnimatedNumber = ({ value, duration = 4000 }: { value: number, duration?: number }) => {
     const [count, setCount] = useState(0);
@@ -304,21 +308,29 @@ export default function CursosPage() {
                     <div className="flex items-center gap-6">
                        <div className="w-28 h-28 flex-shrink-0 relative">
                             <ResponsiveContainer width="100%" height="100%">
-                                <BarChart data={jobsData} layout="vertical" margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-                                  <XAxis type="number" hide />
-                                  <YAxis type="category" dataKey="name" hide />
-                                  <Tooltip 
-                                    cursor={{fill: 'transparent'}}
-                                    contentStyle={{ display: 'none' }} 
-                                  />
-                                  <Bar dataKey="creados" name="Nuevos empleos" fill="#FFFFFF" radius={[10, 10, 10, 10]} background={{ fill: 'hsl(var(--primary))', radius: 10 }} />
-                                  <Bar dataKey="perdidos" name="Empleos perdidos" fill="hsla(var(--primary-foreground), 0.3)" radius={[10, 10, 10, 10]} />
-                                </BarChart>
+                                <PieChart>
+                                    <Pie
+                                    data={jobsData.chartData}
+                                    cx="50%"
+                                    cy="50%"
+                                    innerRadius={35}
+                                    outerRadius={50}
+                                    startAngle={90}
+                                    endAngle={450}
+                                    paddingAngle={0}
+                                    dataKey="value"
+                                    isAnimationActive={true}
+                                    animationDuration={4000}
+                                    >
+                                        <Cell key="cell-0" fill={jobsData.chartData[0].color} stroke={jobsData.chartData[0].color} />
+                                        <Cell key="cell-1" fill={jobsData.chartData[1].color} stroke={jobsData.chartData[1].color}/>
+                                    </Pie>
+                                </PieChart>
                             </ResponsiveContainer>
                         </div>
                         <div>
                             <h3 className="text-xl">
-                                <span className="text-5xl font-bold">+45M</span>
+                                <span className="text-5xl font-bold">+<AnimatedNumber value={jobsData.net} />M</span>
                                 <span className="font-normal ml-2">Empleos</span>
                             </h3>
                             <p className="text-primary-foreground/80 text-sm mt-1">La formación crea 130M de empleos vs. 85M perdidos por automatización.</p>
@@ -369,7 +381,7 @@ export default function CursosPage() {
                 <div className="w-[70%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left">
                     <Image
-                      src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib-rb-4.1.0&q=80&w=1080"
                       alt="ADN Banesco Seguros"
                       layout="fill"
                       objectFit="cover"
