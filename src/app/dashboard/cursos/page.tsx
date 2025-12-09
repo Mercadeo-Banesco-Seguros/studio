@@ -1,11 +1,11 @@
-
 'use client';
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { ArrowRight, Gavel, Gem, Lightbulb, ChevronLeft, ChevronRight, RefreshCw, BarChartHorizontal, TrendingUp, Users, Percent, Target, Scaling, Goal, Sparkles, Timer } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -32,12 +32,11 @@ const technologies = [
 
 
 const trainingStats = [
-    { id: 'retencion', label: "Retención", value: 94, description: "Un 94% de los empleados afirma que se quedaría más tiempo en una empresa si esta invirtiera en su desarrollo profesional.", color: "bg-primary", textColor: "text-primary-foreground", size: 100, isMax: true },
-    { id: 'satisfaccion', label: "Satisfacción", value: 92, description: "El 92% de los colaboradores considera que los programas de formación y desarrollo planificados mejoran su satisfacción laboral.", color: "bg-blue-500", textColor: "text-white", size: 95 },
-    { id: 'adopcion', label: "Adopción", value: 90, description: "Actualmente, el 90% de las corporaciones utilizan el e-learning como herramienta clave para la capacitación de sus equipos.", color: "bg-blue-400", textColor: "text-white", size: 90 },
-    { id: 'productividad', label: "Productividad", value: 80, description: "Según Forbes, el 80% de las empresas que invierten más del 5% de su presupuesto en capacitación superan a sus competidores.", color: "bg-sky-400", textColor: "text-white", size: 80 },
-    { id: 'mejora', label: "Mejora", value: 25, description: "La implementación de e-learning puede aumentar la productividad de los empleados hasta en un 25%.", color: "bg-sky-300", textColor: "text-sky-800", size: 30 },
+    { title: "Satisfacción", percentage: 92, description: "de los empleados valora los programas de formación bien planificados.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
+    { title: "Retención", percentage: 94, description: "de los empleados permanecerían más tiempo si se invierte en su desarrollo.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
+    { title: "Adopción", percentage: 90, description: "de las empresas usan formación online como herramienta clave de capacitación.", color: "hsl(var(--primary))", remainingColor: "#f0f0f0" },
 ];
+
 
 interface AdnCardProps {
     title: string;
@@ -89,40 +88,8 @@ const AdnCard = ({ title, description, icon: Icon, href = '#', isTitleCard = fal
     );
 };
 
-const StatCircle = ({ value, label, size, isMax, isSelected, onClick }: { value: number, label: string, size: number, isMax?: boolean, isSelected?: boolean, onClick: () => void }) => {
-    const minSize = 60;
-    const maxSize = 200;
-    const finalSize = minSize + (maxSize - minSize) * (size / 100);
-
-    return (
-        <button onClick={onClick} className="flex flex-col items-center gap-2 group focus:outline-none">
-            <div
-                className={cn(
-                    "relative flex items-center justify-center rounded-full transition-all duration-500 transform",
-                    isMax ? 'bg-gradient-to-br from-green-300 via-primary to-blue-800' : 'bg-gradient-to-br from-primary/40 to-primary/80',
-                    isSelected ? 'scale-110' : 'group-hover:scale-105'
-                )}
-                style={{ width: finalSize, height: finalSize }}
-            >
-                <div 
-                    className={cn(
-                        "absolute inset-2 rounded-full transition-all",
-                         isMax ? 'bg-gradient-to-br from-primary/80 to-blue-900/90' : 'bg-gradient-to-br from-primary/60 to-primary',
-                         isSelected && 'ring-4 ring-offset-2 ring-offset-muted ring-primary'
-                    )}
-                />
-                <span className="relative text-xl font-bold text-white z-10">{value}%</span>
-            </div>
-            <span className={cn("text-sm font-medium text-muted-foreground transition-colors", isSelected && "text-primary")}>{label}</span>
-        </button>
-    )
-};
-
 
 export default function CursosPage() {
-  const [selectedStat, setSelectedStat] = useState<(typeof trainingStats)[0] | null>(null);
-
-  const defaultStatText = "Invertir en desarrollo profesional no solo retiene al 94% del talento, sino que también puede aumentar la productividad hasta en un 25%.";
 
   return (
     <div className="bg-muted/30 min-h-screen">
@@ -203,38 +170,54 @@ export default function CursosPage() {
         </div>
       </div>
 
-        <section className="w-full bg-muted/40 py-16 md:py-24">
-            <div className="max-w-7xl mx-auto px-4 sm:px-8">
+        <section className="w-full bg-primary text-primary-foreground py-16 md:py-24">
+            <div className="container mx-auto px-4 sm:px-8">
               <div className="text-center max-w-3xl mx-auto mb-12">
-                <h3 className="text-sm font-semibold uppercase text-primary tracking-widest">Estadísticas Clave</h3>
-                <h4 className="text-3xl font-bold text-foreground mt-2">El <span className="text-primary">Impacto</span> de la Formación Corporativa</h4>
+                <Badge variant="secondary" className="bg-white/10 text-white hover:bg-white/20">Estadísticas Clave</Badge>
+                <h2 className="text-4xl font-bold mt-4">El Impacto de la Formación Corporativa</h2>
               </div>
-              <div className="flex items-end justify-center gap-4 md:gap-8 h-[300px] w-full">
-                  {trainingStats.map(stat => (
-                      <StatCircle 
-                          key={stat.id}
-                          value={stat.value} 
-                          label={stat.label} 
-                          size={stat.size} 
-                          isMax={stat.isMax}
-                          isSelected={selectedStat?.id === stat.id}
-                          onClick={() => setSelectedStat(stat.id === selectedStat?.id ? null : stat)}
-                      />
-                  ))}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {trainingStats.map((stat, index) => {
+                  const data = [
+                    { name: 'A', value: stat.percentage, color: '#FFFFFF' },
+                    { name: 'B', value: 100 - stat.percentage, color: 'hsl(var(--primary))' },
+                  ];
+                  return (
+                    <div key={index} className="flex items-center gap-6">
+                      <div className="w-28 h-28 flex-shrink-0">
+                        <ResponsiveContainer width="100%" height="100%">
+                          <PieChart>
+                            <Pie
+                              data={data}
+                              cx="50%"
+                              cy="50%"
+                              innerRadius={35}
+                              outerRadius={50}
+                              startAngle={90}
+                              endAngle={450}
+                              paddingAngle={0}
+                              dataKey="value"
+                            >
+                                <Cell key="cell-0" fill={data[0].color} stroke={data[0].color} />
+                                <Cell key="cell-1" fill={data[1].color} stroke={data[1].color}/>
+                            </Pie>
+                          </PieChart>
+                        </ResponsiveContainer>
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold">
+                          {stat.title} el {stat.percentage}%
+                        </h3>
+                        <p className="text-primary-foreground/80 text-sm mt-1">{stat.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-              <p className="text-center text-muted-foreground mt-12 max-w-lg mx-auto">
-                   {selectedStat ? (
-                      <>
-                         {selectedStat.description}
-                      </>
-                  ) : (
-                      defaultStatText
-                  )}
-              </p>
             </div>
         </section>
         
-        <div className="max-w-7xl mx-auto p-4 sm:p-8 space-y-12">
+        <div className="max-w-7xl mx-auto p-4 sm:p-8 space-y-12 mt-12">
             <section>
               <div className="flex gap-6">
                 <div className="w-[30%]">
@@ -263,7 +246,7 @@ export default function CursosPage() {
                 <div className="w-[70%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
                     <Image
-                      src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzYzNzMxODc2fDA&ixlib=rb-4.1.0&q=80&w=1080"
                       alt="ADN Banesco Seguros"
                       layout="fill"
                       objectFit="cover"
