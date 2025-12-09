@@ -14,7 +14,7 @@ import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 
 
 const technologies = [
-  { name: 'AppSheet', iconUrl: 'https://logowik.com/content/uploads/images/appsheet-new-20229859.jpg', dataAiHint: 'appsheet logo' },
+  { name: 'AppSheet', iconUrl: 'https://numericoach.fr/wp-content/uploads/2024/05/image-1024x1024.png', dataAiHint: 'appsheet logo' },
   { name: 'TypeScript', iconUrl: 'https://cdn.worldvectorlogo.com/logos/typescript.svg', dataAiHint: 'typescript logo' },
   { name: 'Google Docs', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Google_Docs_logo_%282014-2020%29.svg/1481px-Google_Docs_logo_%282014-2020%29.svg.png', dataAiHint: 'google docs logo' },
   { name: 'VS Code', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png', dataAiHint: 'vs code logo' },
@@ -158,4 +158,5 @@ export default function CursosPage() {
     </div>
   );
 }
+
 
