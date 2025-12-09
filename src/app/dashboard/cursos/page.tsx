@@ -37,10 +37,11 @@ const adnCourses = [
 ];
 
 const trainingStats = [
-    { label: "Retención de Talento", value: 94, description: "de empleados se queda si se invierte en su desarrollo." },
-    { label: "Productividad", value: 25, description: "es el aumento potencial con e-learning bien aplicado." },
-    { label: "Satisfacción", value: 92, description: "de los colaboradores valora la formación planificada." },
-    { label: "Adopción Corporativa", value: 90, description: "de las empresas ya utilizan formación online." },
+    { label: "Retención de Talento", value: 94, description: "de empleados se queda si se invierte en su desarrollo.", color: "bg-primary", textColor: "text-primary-foreground" },
+    { label: "Satisfacción", value: 92, description: "de los colaboradores valora la formación planificada.", color: "bg-blue-500", textColor: "text-white" },
+    { label: "Adopción Corporativa", value: 90, description: "de las empresas ya utilizan formación online.", color: "bg-blue-400", textColor: "text-white" },
+    { label: "Productividad", value: 80, description: "de las empresas que invierten en capacitación superan al resto.", color: "bg-sky-400", textColor: "text-white" },
+    { label: "Mejora de Rendimiento", value: 25, description: "es el aumento potencial en la productividad con e-learning.", color: "bg-sky-300", textColor: "text-sky-800" },
 ];
 
 interface AdnCardProps {
@@ -174,34 +175,22 @@ export default function CursosPage() {
         </section>
 
         <section>
-            <Card className="bg-card shadow-lg rounded-2xl overflow-hidden">
-                <div className="grid md:grid-cols-2">
-                    <div className="bg-muted/50 p-8 md:p-12 flex flex-col justify-center items-center text-center">
-                         <div className="flex items-end gap-2">
-                            <div className="w-8 h-24 bg-sky-300 rounded-md" />
-                            <div className="w-8 h-40 bg-blue-600 rounded-md" />
-                         </div>
-                        <p className="text-8xl font-extrabold text-foreground mt-4">218%</p>
-                        <p className="text-muted-foreground font-medium">Aumento potencial de ingresos</p>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h3 className="text-sm font-semibold uppercase text-primary tracking-widest">Estadísticas de Formación</h3>
+              <h4 className="text-3xl font-bold text-foreground mt-2">Impacto de la Capacitación en Cifras</h4>
+            </div>
+            <div className="flex items-end justify-center gap-2 h-[450px]">
+                {trainingStats.map((stat, index) => (
+                    <div 
+                        key={stat.label} 
+                        className={cn("flex-1 rounded-t-lg p-6 flex flex-col justify-end text-left transition-all duration-300 ease-in-out hover:flex-grow-[1.2]", stat.color)}
+                        style={{ height: `${20 + (index * 15)}%` }}
+                    >
+                        <p className={cn("text-5xl font-extrabold", stat.textColor)}>{stat.value}%</p>
+                        <p className={cn("text-sm mt-2 max-w-[150px]", stat.textColor)}>{stat.label}</p>
                     </div>
-                    <div className="p-8 md:p-12">
-                        <h3 className="text-sm font-semibold uppercase text-primary tracking-widest">Estadísticas de Formación</h3>
-                        <h4 className="text-2xl font-bold text-foreground mt-2 mb-6">Impacto en Cifras</h4>
-                        <div className="space-y-6">
-                            {trainingStats.map(stat => (
-                                <div key={stat.label}>
-                                    <div className="flex justify-between items-center mb-1">
-                                        <p className="text-sm font-medium text-foreground">{stat.label}</p>
-                                        <p className="text-sm font-semibold text-primary">{stat.value}%</p>
-                                    </div>
-                                    <Progress value={stat.value} />
-                                    <p className="text-xs text-muted-foreground mt-1">{stat.description}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </Card>
+                ))}
+            </div>
         </section>
         
         <section>
