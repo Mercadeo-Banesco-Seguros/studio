@@ -178,11 +178,11 @@ export default function CursosPage() {
                 <div className="w-[30%] flex flex-col gap-6">
                     <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
                         <Image
-                            src="https://images.unsplash.com/photo-1561347981-969c80cf4463?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb2RlJTIwZXRoaWNzfGVufDB8fHx8MTc2NTM5MjU3MXww&ixlib=rb-4.1.0&q=80&w=1080"
+                            src="https://img.freepik.com/free-photo/view-3d-justice-scales_23-2151228100.jpg"
                             alt="Código de Ética"
                             layout="fill"
                             objectFit="cover"
-                            data-ai-hint="code ethics"
+                            data-ai-hint="justice scales"
                         />
                         <div className="absolute inset-0 bg-blue-900/40" />
                         <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
@@ -199,11 +199,11 @@ export default function CursosPage() {
                     </Card>
                     <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
                         <Image
-                            src="https://images.unsplash.com/photo-1710264144788-c2301607d735?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbnN1cmFuY2UlMjBwcm9kdWN0c3xlbnwwfHx8fDE3NjUzOTI1NzF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                            src="https://paraleloestudio.com/wp-content/uploads/salon-belleza-sala-tratamientos-scaled-thegem-blog-default.jpg"
                             alt="Nuestros Productos"
                             layout="fill"
                             objectFit="cover"
-                            data-ai-hint="insurance products"
+                            data-ai-hint="treatment room"
                         />
                         <div className="absolute inset-0 bg-blue-900/40" />
                         <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
@@ -374,56 +374,6 @@ export default function CursosPage() {
         
         <div className="max-w-7xl mx-auto p-4 sm:p-8 space-y-12 mt-12">
             <section>
-              <div className="flex gap-6">
-                 <div className="w-[70%]">
-                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
-                    <Image 
-                      src="https://www.shutterstock.com/image-photo/concentrated-young-female-student-engaged-600nw-2458397479.jpg"
-                      alt="E-learning"
-                      layout="fill"
-                      objectFit="cover"
-                      data-ai-hint="e-learning development"
-                      className="brightness-50"
-                    />
-                    <div className="relative z-10 p-8 md:p-12">
-                        <Badge variant="outline" className="text-white border-white/50 mb-4">Cursos Disponibles</Badge>
-                        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra<br/> Academia Banesco Seguros</h1>
-                        <div className="pt-8">
-                            <Button asChild className="text-xs font-light">
-                                <Link href="#">
-                                    Acceder
-                                </Link>
-                            </Button>
-                        </div>
-                    </div>
-                  </Card>
-                </div>
-                 <div className="w-[30%]">
-                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
-                    <Image 
-                      src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8bGFwdG9wfGVufDB8fHx8MTc2NTM3OTM2Mnww&ixlib=rb-4.1.0&q=80&w=1080"
-                      alt="Revisar Cursos"
-                      layout="fill"
-                      objectFit="cover"
-                      data-ai-hint="e-learning development"
-                      className="brightness-50"
-                    />
-                    <div className="relative z-10 p-8 md:p-12">
-                        <Badge variant="outline" className="text-white border-white/50 mb-4">Revisar</Badge>
-                        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Nuestros Cursos <br/> Disponibles</h1>
-                        <div className="pt-8">
-                            <Button asChild className="text-xs font-light">
-                                <Link href="#">
-                                    Acceder
-                                </Link>
-                            </Button>
-                        </div>
-                    </div>
-                  </Card>
-                </div>
-              </div>
-            </section>
-            <section>
                 <h3 className="text-center text-xl text-foreground mb-6">
                     <span className="font-bold">Domina</span> las herramientas del <span className="font-bold">futuro</span>
                 </h3>
@@ -456,3 +406,6 @@ export default function CursosPage() {
 
 
 
+
+
+    
