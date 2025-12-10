@@ -154,7 +154,7 @@ export default function CursosPage() {
             <section>
               <div className="flex gap-6">
                 <div className="w-[70%]">
-                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[500px] flex flex-col justify-end text-left">
+                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[600px] flex flex-col justify-end text-left">
                     <Image
                       src="https://images.unsplash.com/photo-1681127910416-f18e60b0ba1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8RE5BfGVufDB8fHx8MTc2NTM4MDMwMnww&ixlib=rb-4.1.0&q=80&w=1080"
                       alt="ADN Banesco Seguros"
@@ -178,7 +178,7 @@ export default function CursosPage() {
                   </Card>
                 </div>
                 <div className="w-[30%] flex flex-col gap-6">
-                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
+                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105 min-h-[600px]">
                         <Image
                             src="https://img.freepik.com/free-photo/view-3d-justice-scales_23-2151228100.jpg"
                             alt="Código de Ética"
@@ -199,7 +199,7 @@ export default function CursosPage() {
                             </div>
                         </div>
                     </Card>
-                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
+                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105 min-h-[600px]">
                         <Image
                             src="https://paraleloestudio.com/wp-content/uploads/salon-belleza-sala-tratamientos-scaled-thegem-blog-default.jpg"
                             alt="Nuestros Productos"
@@ -460,5 +460,6 @@ export default function CursosPage() {
     
 
     
+
 
 
