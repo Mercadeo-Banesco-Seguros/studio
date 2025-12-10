@@ -375,44 +375,47 @@ export default function CursosPage() {
         
         <div id="cursos" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
           <SectionWrapper>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
-                       <Image
-                          src="https://images.unsplash.com/photo-1549692520-3532a2295a05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhY2FkZW15fGVufDB8fHx8MTc2NTM4MTU3OHww&ixlib=rb-4.1.0&q=80&w=1080"
-                          alt="Visita Nuestra Academia Banesco Seguros"
-                          layout="fill"
-                          objectFit="cover"
-                          className="transition-transform duration-300 group-hover:scale-105"
-                          data-ai-hint="academy learning"
-                       />
-                       <div className="absolute inset-0 bg-black/40" />
-                       <div className="relative text-white">
-                          <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Academia Banesco Seguros</Badge>
-                          
-                          <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Visita Nuestra Academia Banesco Seguros</h3>
-                          <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
-                              <Link href="#">Acceder</Link>
-                          </Button>
-                      </div>
-                  </Card>
-                   <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
-                       <Image
-                          src="https://images.unsplash.com/photo-1544716278-e513176f20b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y291cnNlfGVufDB8fHx8MTc2NTM4MTU3OHww&ixlib=rb-4.1.0&q=80&w=1080"
-                          alt="Revisar Cursos Disponibles"
-                          layout="fill"
-                          objectFit="cover"
-                          className="transition-transform duration-300 group-hover:scale-105"
-                          data-ai-hint="available courses"
-                       />
-                       <div className="absolute inset-0 bg-black/40" />
-                       <div className="relative text-white">
-                          <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Cursos Disponibles</Badge>
-                           <h3 className="text-2xl font-bold tracking-tight">Revisar Cursos Disponibles</h3>
-                           <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
-                              <Link href="#">Acceder</Link>
-                          </Button>
-                      </div>
-                  </Card>
+              <div className="flex flex-col md:flex-row gap-6">
+                  <div className="md:w-[70%]">
+                    <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
+                        <Image
+                            src="https://images.unsplash.com/photo-1549692520-3532a2295a05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhY2FkZW15fGVufDB8fHx8MTc2NTM4MTU3OHww&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Visita Nuestra Academia Banesco Seguros"
+                            layout="fill"
+                            objectFit="cover"
+                            className="transition-transform duration-300 group-hover:scale-105"
+                            data-ai-hint="academy learning"
+                        />
+                        <div className="absolute inset-0 bg-black/40" />
+                        <div className="relative text-white">
+                            <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Academia Banesco Seguros</Badge>
+                            <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Visita Nuestra Academia Banesco Seguros</h3>
+                            <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
+                                <Link href="#">Acceder</Link>
+                            </Button>
+                        </div>
+                    </Card>
+                  </div>
+                   <div className="md:w-[30%]">
+                        <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
+                            <Image
+                                src="https://images.unsplash.com/photo-1544716278-e513176f20b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y291cnNlfGVufDB8fHx8MTc2NTM4MTU3OHww&ixlib-rb-4.1.0&q=80&w=1080"
+                                alt="Revisar Cursos Disponibles"
+                                layout="fill"
+                                objectFit="cover"
+                                className="transition-transform duration-300 group-hover:scale-105"
+                                data-ai-hint="available courses"
+                            />
+                            <div className="absolute inset-0 bg-black/40" />
+                            <div className="relative text-white">
+                                <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Cursos Disponibles</Badge>
+                                <h3 className="text-2xl font-bold tracking-tight">Revisar Cursos Disponibles</h3>
+                                <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
+                                <Link href="#">Acceder</Link>
+                                </Button>
+                            </div>
+                        </Card>
+                   </div>
               </div>
           </SectionWrapper>
         </div>
