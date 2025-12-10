@@ -379,15 +379,15 @@ export default function CursosPage() {
                   <div className="md:w-[70%]">
                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
                         <Image
-                            src="https://plus.unsplash.com/premium_photo-1664372145537-bd55c09328fb?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2hpY2ElMjBlc3R1ZGlhbmRvfGVufDB8fDB8fHww"
+                            src="https://cdn.lecturio.com/assets/Student-blog-header-study-ergonomics.jpg"
                             alt="Visita Nuestra Academia Banesco Seguros"
                             layout="fill"
                             objectFit="cover"
                             className="transition-transform duration-300 group-hover:scale-105"
                             data-ai-hint="academy learning"
                         />
-                        <div className="absolute inset-0 bg-black/40" />
-                        <div className="relative text-white">
+                         <div className="absolute inset-0 bg-black/40" />
+                         <div className="relative text-white">
                             <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Academia Banesco Seguros</Badge>
                             
                             <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Visita Nuestra Academia Banesco Seguros</h3>
@@ -460,4 +460,5 @@ export default function CursosPage() {
     
 
     
+
 
