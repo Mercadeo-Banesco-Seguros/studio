@@ -88,9 +88,9 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 
 const activityHighlights = [
   { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'gym fitness' },
-  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
+  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
   { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
-  { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
+  { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
 ];
 
 const AnimatedContactButton = ({ href, type, label, number, icon: Icon, className, iconClassName }: {
@@ -486,7 +486,7 @@ export default function DashboardPage() {
                          <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" />
                     </Card>
                      <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out z-10 group-hover:scale-110">
-                         <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
+                         <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
                     </Card>
                      <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-12 group-hover:rotate-[15deg] group-hover:translate-x-12">
                          <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
@@ -717,50 +717,42 @@ export default function DashboardPage() {
 
         {/* Cursos Section */}
         <div id="cursos" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-          <SectionWrapper>
-              <div className="flex flex-col md:flex-row gap-6">
-                  <div className="md:w-[70%]">
-                    <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
-                        <Image
-                            src="https://cdn.lecturio.com/assets/Student-blog-header-study-ergonomics.jpg"
-                            alt="Visita Nuestra Academia Banesco Seguros"
-                            layout="fill"
-                            objectFit="cover"
-                            className="transition-transform duration-300 group-hover:scale-105"
-                            data-ai-hint="academy learning"
-                        />
-                         <div className="absolute inset-0 bg-black/40" />
-                         <div className="relative text-white">
-                            <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Academia Banesco Seguros</Badge>
-                            
-                            <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Visita Nuestra Academia <br/> Banesco Seguros</h3>
-                            <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
-                                <Link href="#">Acceder</Link>
-                            </Button>
-                        </div>
-                    </Card>
-                  </div>
-                   <div className="md:w-[30%]">
-                        <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
-                            <Image
-                                src="https://images.unsplash.com/photo-1544716278-e513176f20b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y291cnNlfGVufDB8fHx8MTc2NTM4MTU3OHww&ixlib=rb-4.1.0&q=80&w=1080"
-                                alt="Revisar Cursos Disponibles"
-                                layout="fill"
-                                objectFit="cover"
-                                className="transition-transform duration-300 group-hover:scale-105"
-                                data-ai-hint="available courses"
+          <SectionWrapper
+            title="Cursos y Formación"
+            description="Amplía tus habilidades con nuestra selección de cursos destacados."
+          >
+            <div className="relative">
+              <div className="w-full flex justify-center">
+                 <div className="w-[80%] max-w-4xl relative">
+                  <div className="transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentCourseIndex * 100}%)`}}>
+                    <div className="flex">
+                      {mockCourses.map((course, index) => (
+                        <div key={course.id} className="w-full flex-shrink-0 px-2">
+                           <NewCourseCard 
+                              title={course.title}
+                              category={course.category}
+                              details={[course.duration]}
+                              imageUrl={course.imageUrl}
+                              dataAiHint={course.dataAiHint}
                             />
-                            <div className="absolute inset-0 bg-black/40" />
-                            <div className="relative text-white">
-                                <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Cursos Disponibles</Badge>
-                                <h3 className="text-2xl font-bold tracking-tight">Revisar Cursos Disponibles</h3>
-                                <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
-                                <Link href="#">Acceder</Link>
-                                </Button>
-                            </div>
-                        </Card>
-                   </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                 </div>
               </div>
+              <Button variant="outline" size="icon" className="absolute left-0 top-1/2 -translate-y-1/2 rounded-full" onClick={() => handleCourseChange('prev')}>
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              <Button variant="outline" size="icon" className="absolute right-0 top-1/2 -translate-y-1/2 rounded-full" onClick={() => handleCourseChange('next')}>
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
+            <div className="text-center mt-8">
+              <Button asChild>
+                <Link href="/dashboard/cursos">Ver todos los cursos</Link>
+              </Button>
+            </div>
           </SectionWrapper>
         </div>
 
@@ -997,3 +989,5 @@ export default function DashboardPage() {
     </div>
   );
 }
+
+    
