@@ -194,7 +194,7 @@ export const NewCourseCard = ({ title, category, details, imageUrl, dataAiHint, 
                     data-ai-hint={dataAiHint}
                 />
             )}
-            <div className={cn("absolute inset-0 z-0", !isLight && "bg-gradient-to-t from-black/50 to-transparent")} />
+            <div className={cn("absolute inset-0 z-0", !isLight && "bg-gradient-to-t from-black/60 to-black/20")} />
 
             <div className="relative z-10 grid grid-cols-3 gap-4 items-center h-full">
                 <div className="col-span-2 flex flex-col h-full justify-between">
@@ -231,5 +231,3 @@ export const NewCourseCard = ({ title, category, details, imageUrl, dataAiHint, 
         </Card>
     )
 }
-
-    
