@@ -156,7 +156,7 @@ export default function CursosPage() {
                 <div className="w-[70%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[600px] flex flex-col justify-end text-left">
                     <Image
-                      src="https://images.unsplash.com/photo-1681127910416-f018e60b0ba1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8RE5BfGVufDB8fHx8MTc2NTM4MDMwMnww&ixlib=rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxidXNpbmVzcyUyMHRlYW18ZW58MHx8fHwxNzY1MzgxMjYyfDA&ixlib=rb-4.1.0&q=80&w=1080"
                       alt="ADN Banesco Seguros"
                       layout="fill"
                       objectFit="cover"
@@ -373,7 +373,7 @@ export default function CursosPage() {
             </div>
         </section>
         
-        <div id="cursos" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+        <div id="cursos" className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionWrapper>
               <div className="flex gap-6">
                   <div className="w-[70%]">
