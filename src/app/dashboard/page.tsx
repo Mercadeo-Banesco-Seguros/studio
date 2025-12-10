@@ -885,9 +885,9 @@ export default function DashboardPage() {
                               <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4 text-white">
                                   {wellnessSlides[activeWellnessSlide].title}
                               </h2>
-                              <Button asChild size="sm" variant="outline" className="mt-6 bg-white/10 text-white border-white/20 hover:bg-white/20">
+                              <Button asChild size="sm" variant="outline" className="mt-6 bg-white/10 text-white border-white/20 hover:bg-white/20 font-light text-xs">
                                 <Link href={wellnessSlides[activeWellnessSlide].href}>
-                                    Explorar <ArrowRight className="ml-2 h-4 w-4" />
+                                    Explorar
                                 </Link>
                               </Button>
                           </div>
