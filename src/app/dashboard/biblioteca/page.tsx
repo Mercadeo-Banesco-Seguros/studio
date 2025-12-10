@@ -31,7 +31,7 @@ export default function BibliotecaPage() {
                         <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">
                             Biblioteca de Gestión Documental
                         </h1>
-                        <p className="mt-6 max-w-md text-lg text-white/80">
+                        <p className="mt-6 max-w-md text-base text-white/80">
                             Esta sección administra y centraliza toda la documentación corporativa. Garantiza que usted acceda siempre a la versión vigente, válida y autorizada de cada documento, optimizando la eficiencia y la toma de decisiones.
                         </p>
                         <div className="mt-10">
