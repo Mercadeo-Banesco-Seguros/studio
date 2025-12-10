@@ -166,7 +166,7 @@ export default function CursosPage() {
                       <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">ADN Banesco<br/>Seguros</h1>
                        <p className="mt-4 max-w-xl text-primary-foreground/80">Conoce los principios que nos guían y forman la base de nuestra organización.</p>
                       <div className="pt-8">
-                        <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
+                        <Button asChild className="text-xs font-light bg-primary text-primary-foreground hover:bg-primary/90">
                           <Link href="#">
                             Conocer más
                           </Link>
@@ -401,7 +401,7 @@ export default function CursosPage() {
                  <div className="w-[30%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
                     <Image 
-                      src="https://www.ceupe.com/images/easyblog_articles/3074/b2ap3_amp_formacion-in-company-vs-formacion-externa.jpg"
+                      src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8bGFwdG9wfGVufDB8fHx8MTc2NTM3OTM2Mnww&ixlib=rb-4.1.0&q=80&w=1080"
                       alt="E-learning"
                       layout="fill"
                       objectFit="cover"
