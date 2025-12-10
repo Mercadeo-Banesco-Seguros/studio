@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useRef, useState, useEffect, useMemo } from 'react';
@@ -13,7 +12,9 @@ import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Progress } from '@/components/ui/progress';
-
+import { SectionWrapper } from "@/components/dashboard/section-wrapper";
+import { NewCourseCard } from "@/components/dashboard/course-card";
+import { Bot } from "lucide-react";
 
 const technologies = [
   { name: 'AppSheet', iconUrl: 'https://numericoach.fr/wp-content/uploads/2024/05/image-1024x1024.png', 'data-ai-hint': 'appsheet logo' },
@@ -154,7 +155,7 @@ export default function CursosPage() {
                 <div className="w-[70%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[500px] flex flex-col justify-end text-left">
                     <Image
-                      src="https://images.unsplash.com/photo-1681127910416-f18e60b0ba1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8RE5BfGVufDB8fHx8MTc2NTM4MDMwMnww&ixlib=rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1681127910416-f018e60b0ba1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8RE5BfGVufDB8fHx8MTc2NTM4MDMwMnww&ixlib=rb-4.1.0&q=80&w=1080"
                       alt="ADN Banesco Seguros"
                       layout="fill"
                       objectFit="cover"
@@ -223,7 +224,53 @@ export default function CursosPage() {
             </section>
         </div>
       </div>
-
+        <div id="cursos" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+          <SectionWrapper>
+              <div className="grid lg:grid-cols-2 gap-6">
+                  <div className="p-6 flex flex-col justify-center">
+                      <Badge variant="outline" className="text-primary w-fit">Actívate</Badge>
+                      <h2 className="text-5xl font-bold tracking-tight mt-4 text-foreground">
+                        ¡Aprende algo <br/> nuevo cada día!
+                      </h2>
+                      <p className="mt-2 text-muted-foreground">Explora nuestros cursos y desarrolla nuevas habilidades.</p>
+                      <Button asChild variant="default" className="rounded-full font-light mt-6 w-fit text-xs">
+                          <Link href="/dashboard/cursos">Cursos Disponibles</Link>
+                      </Button>
+                  </div>
+                  <NewCourseCard
+                      title="Google Workspace"
+                      category="Potencia tu Productividad"
+                      details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
+                      imageUrl="https://i.pinimg.com/736x/d9/82/35/d9823577cf4f4512cbb7d63d8b7057de.jpg"
+                      dataAiHint="collaboration tools"
+                      className="bg-secondary text-secondary-foreground min-h-[400px]"
+                      imageClassName="opacity-30"
+                      availability={75}
+                  />
+                  <NewCourseCard
+                      title="Inteligencia Artificial"
+                      category="El Futuro es Ahora"
+                      details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
+                      className="bg-secondary text-secondary-foreground min-h-[400px]"
+                      imageUrl="https://blogs.worldbank.org/content/dam/sites/blogs/img/detail/mgr/id4d_0.jpg"
+                      dataAiHint="artificial intelligence"
+                      imageClassName="opacity-30"
+                      icon={Bot}
+                      availability={40}
+                  />
+                   <NewCourseCard
+                      title="Comunicaciones Efectivas"
+                      category="Mejora tus Habilidades"
+                      details={["Presentaciones", "Feedback", "Oratoria"]}
+                      className="bg-secondary text-secondary-foreground min-h-[400px]"
+                      imageUrl="https://thumbs.dreamstime.com/b/concepto-de-equipo-trabajo-educaci%C3%B3n-empresarial-internet-surfing-project-tecnolog%C3%ADa-la-informaci%C3%B3n-empresarios-reflexivos-386326178.jpg"
+                      dataAiHint="public speaking"
+                      imageClassName="opacity-30"
+                      availability={90}
+                  />
+              </div>
+          </SectionWrapper>
+        </div>
         <section className="w-full bg-primary text-primary-foreground py-16 md:py-24">
             <div className="container mx-auto px-4 sm:px-8">
               <div className="text-center max-w-3xl mx-auto mb-12">
