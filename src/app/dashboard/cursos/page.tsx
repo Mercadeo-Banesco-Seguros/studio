@@ -178,7 +178,7 @@ export default function CursosPage() {
                   </Card>
                 </div>
                 <div className="w-[30%] flex flex-col gap-6">
-                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105 min-h-[600px]">
+                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
                         <Image
                             src="https://img.freepik.com/free-photo/view-3d-justice-scales_23-2151228100.jpg"
                             alt="Código de Ética"
@@ -199,7 +199,7 @@ export default function CursosPage() {
                             </div>
                         </div>
                     </Card>
-                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105 min-h-[600px]">
+                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
                         <Image
                             src="https://paraleloestudio.com/wp-content/uploads/salon-belleza-sala-tratamientos-scaled-thegem-blog-default.jpg"
                             alt="Nuestros Productos"
@@ -460,6 +460,7 @@ export default function CursosPage() {
     
 
     
+
 
 
 
