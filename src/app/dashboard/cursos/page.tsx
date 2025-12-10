@@ -152,50 +152,48 @@ export default function CursosPage() {
             <section>
               <div className="flex gap-6">
                 <div className="w-[30%] flex flex-col gap-6">
-                    <div className="flex-1 flex flex-col gap-6">
-                        <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
-                            <Image
-                                src="https://www.sage.com/es-es/blog/wp-content/uploads/sites/8/2017/12/ThinkstockPhotos-692732544.jpg"
-                                alt="Código de Ética"
-                                layout="fill"
-                                objectFit="cover"
-                                data-ai-hint="code ethics"
-                            />
-                            <div className="absolute inset-0 bg-blue-900/40" />
-                            <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
-                                <div>
-                                    <Badge variant="outline" className="text-white border-white/50 mb-2">Código de Ética</Badge>
-                                    <h2 className="text-2xl font-bold text-white">Principios y Valores</h2>
-                                </div>
-                                <div className="mt-auto">
-                                    <Button asChild className="text-xs font-light">
-                                        <Link href="#">Explorar</Link>
-                                    </Button>
-                                </div>
+                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
+                        <Image
+                            src="https://www.sage.com/es-es/blog/wp-content/uploads/sites/8/2017/12/ThinkstockPhotos-692732544.jpg"
+                            alt="Código de Ética"
+                            layout="fill"
+                            objectFit="cover"
+                            data-ai-hint="code ethics"
+                        />
+                        <div className="absolute inset-0 bg-blue-900/40" />
+                        <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
+                            <div>
+                                <Badge variant="outline" className="text-white border-white/50 mb-2">Código de Ética</Badge>
+                                <h2 className="text-2xl font-bold text-white">Principios y Valores</h2>
                             </div>
-                        </Card>
-                        <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
-                            <Image
-                                src="https://www.puntoseguro.com/blog/wp-content/uploads/2015/04/tipos-de-seguros-1.jpg"
-                                alt="Nuestros Productos"
-                                layout="fill"
-                                objectFit="cover"
-                                data-ai-hint="insurance products"
-                            />
-                            <div className="absolute inset-0 bg-blue-900/40" />
-                            <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
-                                <div>
-                                    <Badge variant="outline" className="text-white border-white/50 mb-2">Nuestros Productos</Badge>
-                                    <h2 className="text-2xl font-bold text-white">Soluciones y Cobertura</h2>
-                                </div>
-                                <div className="mt-auto">
-                                    <Button asChild className="text-xs font-light">
-                                        <Link href="#">Conocer más</Link>
-                                    </Button>
-                                </div>
+                            <div className="mt-auto">
+                                <Button asChild className="text-xs font-light bg-primary text-primary-foreground hover:bg-primary/90">
+                                    <Link href="#">Explorar</Link>
+                                </Button>
                             </div>
-                        </Card>
-                    </div>
+                        </div>
+                    </Card>
+                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
+                        <Image
+                            src="https://plus.unsplash.com/premium_photo-1701856761166-0a751ba4da2a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8"
+                            alt="Nuestros Productos"
+                            layout="fill"
+                            objectFit="cover"
+                            data-ai-hint="insurance products"
+                        />
+                        <div className="absolute inset-0 bg-blue-900/40" />
+                        <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
+                            <div>
+                                <Badge variant="outline" className="text-white border-white/50 mb-2">Nuestros Productos</Badge>
+                                <h2 className="text-2xl font-bold text-white">Soluciones y Cobertura</h2>
+                            </div>
+                            <div className="mt-auto">
+                                <Button asChild className="text-xs font-light bg-primary text-primary-foreground hover:bg-primary/90">
+                                    <Link href="#">Conocer más</Link>
+                                </Button>
+                            </div>
+                        </div>
+                    </Card>
                 </div>
                 <div className="w-[70%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left">
@@ -212,7 +210,7 @@ export default function CursosPage() {
                       <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">ADN Banesco<br/>Seguros</h1>
                        <p className="mt-4 max-w-xl text-primary-foreground/80">Conoce los principios que nos guían y forman la base de nuestra organización.</p>
                       <div className="pt-8">
-                        <Button asChild className="text-xs font-light">
+                        <Button asChild className="text-xs font-light bg-primary text-primary-foreground hover:bg-primary/90">
                           <Link href="#">
                             Conocer más
                           </Link>
