@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useRef, useState, useEffect, useMemo } from 'react';
@@ -87,8 +88,8 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 
 const activityHighlights = [
   { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'gym fitness' },
-  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
-  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
+  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
+  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
   { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
 ];
 
@@ -717,48 +718,48 @@ export default function DashboardPage() {
         {/* Cursos Section */}
         <div id="cursos" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
           <SectionWrapper>
-              <div className="grid lg:grid-cols-2 gap-6">
-                  <div className="p-6 flex flex-col justify-center">
-                      <Badge variant="outline" className="text-primary w-fit">Actívate</Badge>
-                      <h2 className="text-5xl font-bold tracking-tight mt-4 text-foreground">
-                        ¡Aprende algo <br/> nuevo cada día!
-                      </h2>
-                      <p className="mt-2 text-muted-foreground">Explora nuestros cursos y desarrolla nuevas habilidades.</p>
-                      <Button asChild variant="default" className="rounded-full font-light mt-6 w-fit text-xs">
-                          <Link href="/dashboard/cursos">Cursos Disponibles</Link>
-                      </Button>
+              <div className="flex flex-col md:flex-row gap-6">
+                  <div className="md:w-[70%]">
+                    <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
+                        <Image
+                            src="https://cdn.lecturio.com/assets/Student-blog-header-study-ergonomics.jpg"
+                            alt="Visita Nuestra Academia Banesco Seguros"
+                            layout="fill"
+                            objectFit="cover"
+                            className="transition-transform duration-300 group-hover:scale-105"
+                            data-ai-hint="academy learning"
+                        />
+                         <div className="absolute inset-0 bg-black/40" />
+                         <div className="relative text-white">
+                            <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Academia Banesco Seguros</Badge>
+                            
+                            <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Visita Nuestra Academia <br/> Banesco Seguros</h3>
+                            <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
+                                <Link href="#">Acceder</Link>
+                            </Button>
+                        </div>
+                    </Card>
                   </div>
-                  <NewCourseCard
-                      title="Google Workspace"
-                      category="Potencia tu Productividad"
-                      details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
-                      imageUrl="https://i.pinimg.com/736x/d9/82/35/d9823577cf4f4512cbb7d63d8b7057de.jpg"
-                      dataAiHint="collaboration tools"
-                      className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageClassName="opacity-30"
-                      availability={75}
-                  />
-                  <NewCourseCard
-                      title="Inteligencia Artificial"
-                      category="El Futuro es Ahora"
-                      details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
-                      className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://blogs.worldbank.org/content/dam/sites/blogs/img/detail/mgr/id4d_0.jpg"
-                      dataAiHint="artificial intelligence"
-                      imageClassName="opacity-30"
-                      icon={Bot}
-                      availability={40}
-                  />
-                   <NewCourseCard
-                      title="Comunicaciones Efectivas"
-                      category="Mejora tus Habilidades"
-                      details={["Presentaciones", "Feedback", "Oratoria"]}
-                      className="bg-secondary text-secondary-foreground min-h-[400px]"
-                      imageUrl="https://thumbs.dreamstime.com/b/concepto-de-equipo-trabajo-educaci%C3%B3n-empresarial-internet-surfing-project-tecnolog%C3%ADa-la-informaci%C3%B3n-empresarios-reflexivos-386326178.jpg"
-                      dataAiHint="public speaking"
-                      imageClassName="opacity-30"
-                      availability={90}
-                  />
+                   <div className="md:w-[30%]">
+                        <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
+                            <Image
+                                src="https://images.unsplash.com/photo-1544716278-e513176f20b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y291cnNlfGVufDB8fHx8MTc2NTM4MTU3OHww&ixlib=rb-4.1.0&q=80&w=1080"
+                                alt="Revisar Cursos Disponibles"
+                                layout="fill"
+                                objectFit="cover"
+                                className="transition-transform duration-300 group-hover:scale-105"
+                                data-ai-hint="available courses"
+                            />
+                            <div className="absolute inset-0 bg-black/40" />
+                            <div className="relative text-white">
+                                <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Cursos Disponibles</Badge>
+                                <h3 className="text-2xl font-bold tracking-tight">Revisar Cursos Disponibles</h3>
+                                <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
+                                <Link href="#">Acceder</Link>
+                                </Button>
+                            </div>
+                        </Card>
+                   </div>
               </div>
           </SectionWrapper>
         </div>
@@ -826,7 +827,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[600px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
