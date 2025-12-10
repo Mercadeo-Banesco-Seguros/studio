@@ -23,7 +23,7 @@ const technologies = [
   { name: 'Flutter', iconUrl: 'https://cdn.worldvectorlogo.com/logos/flutter.svg', 'data-ai-hint': 'flutter logo' },
   { name: 'Microsoft Fabric', iconUrl: 'https://www.brainsell.com/wp-content/uploads/2023/12/Fabric_final_x256.png', 'data-ai-hint': 'microsoft fabric logo' },
   { name: 'Google Sites', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Google_Sites_2020_Logo.svg/1489px-Google_Sites_2020_Logo.svg.png', 'data-ai-hint': 'google sites logo' },
-  { name: 'Microsoft Copilot', iconUrl: 'https://1000logos.net/wp-content/uploads/2023/11/Copilot-Logo.png', 'data-ai-hint': 'microsoft copilot logo' },
+  { name: 'Microsoft Copilot', iconUrl: 'https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/copilot-color.png', 'data-ai-hint': 'microsoft copilot logo' },
   { name: 'Gemini', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Gemini_icon_2025.svg/2048px-Google_Gemini_icon_2025.svg.png', 'data-ai-hint': 'google gemini logo' },
   { name: 'Gmail', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png', 'data-ai-hint': 'gmail logo' },
   { name: 'Power BI', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/2048px-New_Power_BI_Logo.svg.png', 'data-ai-hint': 'power bi logo' },
@@ -151,10 +151,34 @@ export default function CursosPage() {
         <div className="max-w-7xl mx-auto space-y-12">
             <section>
               <div className="flex gap-6">
+                <div className="w-[70%]">
+                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left">
+                    <Image
+                      src="https://images.unsplash.com/photo-1680792563719-288027b2a090?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8YWRufGVufDB8fHx8MTc2NTMwOTYxNXww&ixlib=rb-4.1.0&q=80&w=1080"
+                      alt="ADN Banesco Seguros"
+                      layout="fill"
+                      objectFit="cover"
+                      data-ai-hint="business team"
+                      className="brightness-50"
+                    />
+                    <div className="relative z-10 p-8 md:p-12">
+                      <Badge variant="outline" className="text-white border-white/50 mb-4">Cultura Corporativa</Badge>
+                      <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">ADN Banesco<br/>Seguros</h1>
+                       <p className="mt-4 max-w-xl text-primary-foreground/80">Conoce los principios que nos guían y forman la base de nuestra organización.</p>
+                      <div className="pt-8">
+                        <Button asChild className="text-xs font-light bg-primary text-primary-foreground hover:bg-primary/90">
+                          <Link href="#">
+                            Conocer más
+                          </Link>
+                        </Button>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
                 <div className="w-[30%] flex flex-col gap-6">
                     <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
                         <Image
-                            src="https://www.sage.com/es-es/blog/wp-content/uploads/sites/8/2017/12/ThinkstockPhotos-692732544.jpg"
+                            src="https://wallpapers.com/images/featured/azul-claro-2iuzyh711jo9bmgo.jpg"
                             alt="Código de Ética"
                             layout="fill"
                             objectFit="cover"
@@ -194,30 +218,6 @@ export default function CursosPage() {
                             </div>
                         </div>
                     </Card>
-                </div>
-                <div className="w-[70%]">
-                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left">
-                    <Image
-                      src="https://images.unsplash.com/photo-1680792563719-288027b2a090?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8YWRufGVufDB8fHx8MTc2NTMwOTYxNXww&ixlib=rb-4.1.0&q=80&w=1080"
-                      alt="ADN Banesco Seguros"
-                      layout="fill"
-                      objectFit="cover"
-                      data-ai-hint="business team"
-                      className="brightness-50"
-                    />
-                    <div className="relative z-10 p-8 md:p-12">
-                      <Badge variant="outline" className="text-white border-white/50 mb-4">Cultura Corporativa</Badge>
-                      <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">ADN Banesco<br/>Seguros</h1>
-                       <p className="mt-4 max-w-xl text-primary-foreground/80">Conoce los principios que nos guían y forman la base de nuestra organización.</p>
-                      <div className="pt-8">
-                        <Button asChild className="text-xs font-light bg-primary text-primary-foreground hover:bg-primary/90">
-                          <Link href="#">
-                            Conocer más
-                          </Link>
-                        </Button>
-                      </div>
-                    </div>
-                  </Card>
                 </div>
               </div>
             </section>
@@ -375,7 +375,7 @@ export default function CursosPage() {
         <div className="max-w-7xl mx-auto p-4 sm:p-8 space-y-12 mt-12">
             <section>
               <div className="flex gap-6">
-                <div className="w-[70%]">
+                <div className="w-[100%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
                     <Image 
                       src="https://www.shutterstock.com/image-photo/concentrated-young-female-student-engaged-600nw-2458397479.jpg"
@@ -397,29 +397,6 @@ export default function CursosPage() {
                         </div>
                     </div>
                   </Card>
-                </div>
-                <div className="w-[30%]">
-                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col items-start justify-end text-left transition-transform hover:scale-105">
-                        <Image
-                            src="https://capacitacion.uc.cl/images/cursos/Por_qu%C3%A9_deber%C3%ADas_aprender_a_programar_en_Python.jpg"
-                            alt="Cursos disponibles"
-                            layout="fill"
-                            objectFit="cover"
-                            data-ai-hint="business team"
-                            className="brightness-50"
-                        />
-                        <div className="relative z-10 p-8 w-full">
-                            <Badge variant="outline" className="text-white border-white/50 mb-4">Cursos Disponibles</Badge>
-                            <h2 className="text-3xl font-bold">Revisar Cursos<br/>Disponibles</h2>
-                            <div className="pt-8">
-                               <Button asChild className="text-xs font-light">
-                                   <Link href="/dashboard/cursos/google-workspace">
-                                       Acceder
-                                   </Link>
-                               </Button>
-                            </div>
-                        </div>
-                    </Card>
                 </div>
               </div>
             </section>
