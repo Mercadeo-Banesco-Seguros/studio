@@ -379,7 +379,7 @@ export default function CursosPage() {
                   <div className="md:w-[70%]">
                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
                         <Image
-                            src="https://images.unsplash.com/photo-1549692520-3532a2295a05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhY2FkZW15fGVufDB8fHx8MTc2NTM4MTU3OHww&ixlib=rb-4.1.0&q=80&w=1080"
+                            src="https://plus.unsplash.com/premium_photo-1664372145537-bd55c09328fb?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2hpY2ElMjBlc3R1ZGlhbmRvfGVufDB8fDB8fHww"
                             alt="Visita Nuestra Academia Banesco Seguros"
                             layout="fill"
                             objectFit="cover"
@@ -389,6 +389,7 @@ export default function CursosPage() {
                         <div className="absolute inset-0 bg-black/40" />
                         <div className="relative text-white">
                             <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Academia Banesco Seguros</Badge>
+                            
                             <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Visita Nuestra Academia Banesco Seguros</h3>
                             <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
                                 <Link href="#">Acceder</Link>
@@ -399,7 +400,7 @@ export default function CursosPage() {
                    <div className="md:w-[30%]">
                         <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
                             <Image
-                                src="https://images.unsplash.com/photo-1544716278-e513176f20b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y291cnNlfGVufDB8fHx8MTc2NTM4MTU3OHww&ixlib-rb-4.1.0&q=80&w=1080"
+                                src="https://images.unsplash.com/photo-1544716278-e513176f20b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y291cnNlfGVufDB8fHx8MTc2NTM4MTU3OHww&ixlib=rb-4.1.0&q=80&w=1080"
                                 alt="Revisar Cursos Disponibles"
                                 layout="fill"
                                 objectFit="cover"
@@ -459,3 +460,4 @@ export default function CursosPage() {
     
 
     
+
