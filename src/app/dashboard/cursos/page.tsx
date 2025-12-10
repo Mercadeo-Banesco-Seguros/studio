@@ -178,48 +178,50 @@ export default function CursosPage() {
                   </Card>
                 </div>
                 <div className="w-[30%] flex flex-col gap-6">
-                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
-                        <Image
-                            src="https://img.freepik.com/free-photo/view-3d-justice-scales_23-2151228100.jpg"
-                            alt="Código de Ética"
-                            layout="fill"
-                            objectFit="cover"
-                            data-ai-hint="justice scales"
-                        />
-                        <div className="absolute inset-0 bg-blue-900/40" />
-                        <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
-                            <div>
-                                <Badge variant="outline" className="text-white border-white/50 mb-2">Principios y Valores</Badge>
-                                <h2 className="text-3xl font-bold text-white">Código de Ética</h2>
+                    <div className="flex-1 flex flex-col gap-6">
+                        <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
+                            <Image
+                                src="https://img.freepik.com/free-photo/view-3d-justice-scales_23-2151228100.jpg"
+                                alt="Código de Ética"
+                                layout="fill"
+                                objectFit="cover"
+                                data-ai-hint="justice scales"
+                            />
+                            <div className="absolute inset-0 bg-blue-900/40" />
+                            <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
+                                <div>
+                                    <Badge variant="outline" className="text-white border-white/50 mb-2">Principios y Valores</Badge>
+                                    <h2 className="text-3xl font-bold text-white">Código de Ética</h2>
+                                </div>
+                                <div className="mt-auto">
+                                    <Button asChild className="text-xs font-light bg-primary text-primary-foreground hover:bg-primary/90">
+                                        <Link href="#">Explorar</Link>
+                                    </Button>
+                                </div>
                             </div>
-                            <div className="mt-auto">
-                                <Button asChild className="text-xs font-light bg-primary text-primary-foreground hover:bg-primary/90">
-                                    <Link href="#">Explorar</Link>
-                                </Button>
+                        </Card>
+                        <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
+                            <Image
+                                src="https://paraleloestudio.com/wp-content/uploads/salon-belleza-sala-tratamientos-scaled-thegem-blog-default.jpg"
+                                alt="Nuestros Productos"
+                                layout="fill"
+                                objectFit="cover"
+                                data-ai-hint="treatment room"
+                            />
+                            <div className="absolute inset-0 bg-blue-900/40" />
+                            <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
+                                <div>
+                                    <Badge variant="outline" className="text-white border-white/50 mb-2">Soluciones y Cobertura</Badge>
+                                    <h2 className="text-3xl font-bold text-white">Nuestros Productos</h2>
+                                </div>
+                                <div className="mt-auto">
+                                    <Button asChild className="text-xs font-light bg-primary text-primary-foreground hover:bg-primary/90">
+                                        <Link href="#">Conocer más</Link>
+                                    </Button>
+                                </div>
                             </div>
-                        </div>
-                    </Card>
-                    <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
-                        <Image
-                            src="https://paraleloestudio.com/wp-content/uploads/salon-belleza-sala-tratamientos-scaled-thegem-blog-default.jpg"
-                            alt="Nuestros Productos"
-                            layout="fill"
-                            objectFit="cover"
-                            data-ai-hint="treatment room"
-                        />
-                        <div className="absolute inset-0 bg-blue-900/40" />
-                        <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
-                            <div>
-                                <Badge variant="outline" className="text-white border-white/50 mb-2">Soluciones y Cobertura</Badge>
-                                <h2 className="text-3xl font-bold text-white">Nuestros Productos</h2>
-                            </div>
-                            <div className="mt-auto">
-                                <Button asChild className="text-xs font-light bg-primary text-primary-foreground hover:bg-primary/90">
-                                    <Link href="#">Conocer más</Link>
-                                </Button>
-                            </div>
-                        </div>
-                    </Card>
+                        </Card>
+                    </div>
                 </div>
               </div>
             </section>
@@ -390,7 +392,7 @@ export default function CursosPage() {
                          <div className="relative text-white">
                             <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Academia Banesco Seguros</Badge>
                             
-                            <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Visita Nuestra Academia <br/> Banesco Seguros</h3>
+                            <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Visita Nuestra Academia <br /> Banesco Seguros</h3>
                             <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
                                 <Link href="#">Acceder</Link>
                             </Button>
@@ -400,7 +402,7 @@ export default function CursosPage() {
                    <div className="w-[30%]">
                         <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
                             <Image
-                                src="https://images.unsplash.com/photo-1544716278-e513176f20b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y291cnNlfGVufDB8fHx8MTc2NTM4MTU3OHww&ixlib=rb-4.1.0&q=80&w=1080"
+                                src="https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                                 alt="Revisar Cursos Disponibles"
                                 layout="fill"
                                 objectFit="cover"
@@ -448,23 +450,3 @@ export default function CursosPage() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-
-
-
-
-    
