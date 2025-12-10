@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import React from 'react';
 import Image from 'next/image';
+import { Badge } from "@/components/ui/badge";
 
 export default function BibliotecaPage() {
     return (
@@ -24,6 +25,9 @@ export default function BibliotecaPage() {
                 <div className="grid md:grid-cols-2 gap-16 items-center">
                     {/* Left side content */}
                     <div className="text-left">
+                        <Badge variant="outline" className="mb-4 border-white text-white">
+                            Impulsado por la Unidad de Procesos
+                        </Badge>
                         <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">
                             Biblioteca de Gestión Documental
                         </h1>
