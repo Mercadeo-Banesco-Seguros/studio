@@ -187,8 +187,8 @@ export default function CursosPage() {
                         <div className="absolute inset-0 bg-blue-900/40" />
                         <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
                             <div>
-                                <Badge variant="outline" className="text-white border-white/50 mb-2">Código de Ética</Badge>
-                                <h2 className="text-2xl font-bold text-white">Principios y Valores</h2>
+                                <Badge variant="outline" className="text-white border-white/50 mb-2">Principios y Valores</Badge>
+                                <h2 className="text-2xl font-bold text-white">Código de Ética</h2>
                             </div>
                             <div className="mt-auto">
                                 <Button asChild className="text-xs font-light bg-primary text-primary-foreground hover:bg-primary/90">
@@ -449,4 +449,5 @@ export default function CursosPage() {
     </div>
   );
 }
+
 
