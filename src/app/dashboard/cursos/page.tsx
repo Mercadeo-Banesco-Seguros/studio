@@ -154,7 +154,7 @@ export default function CursosPage() {
                 <div className="w-[70%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left">
                     <Image
-                      src="https://images.unsplash.com/photo-1680792563719-288027b2a090?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8YWRufGVufDB8fHx8MTc2NTMwOTYxNXww&ixlib=rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1681127910416-f18e60b0ba1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8RE5BfGVufDB8fHx8MTc2NTM4MDMwMnww&ixlib=rb-4.1.0&q=80&w=1080"
                       alt="ADN Banesco Seguros"
                       layout="fill"
                       objectFit="cover"
@@ -166,7 +166,7 @@ export default function CursosPage() {
                       <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">ADN Banesco<br/>Seguros</h1>
                        <p className="mt-4 max-w-xl text-primary-foreground/80">Conoce los principios que nos guían y forman la base de nuestra organización.</p>
                       <div className="pt-8">
-                        <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
+                        <Button asChild className="text-xs font-light bg-primary text-primary-foreground hover:bg-primary/90">
                           <Link href="#">
                             Conocer más
                           </Link>
@@ -449,6 +449,7 @@ export default function CursosPage() {
     </div>
   );
 }
+
 
 
 
