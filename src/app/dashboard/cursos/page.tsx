@@ -208,8 +208,8 @@ export default function CursosPage() {
                         <div className="absolute inset-0 bg-blue-900/40" />
                         <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
                             <div>
-                                <Badge variant="outline" className="text-white border-white/50 mb-2">Nuestros Productos</Badge>
-                                <h2 className="text-2xl font-bold text-white">Soluciones y Cobertura</h2>
+                                <Badge variant="outline" className="text-white border-white/50 mb-2">Soluciones y Cobertura</Badge>
+                                <h2 className="text-2xl font-bold text-white">Nuestros Productos</h2>
                             </div>
                             <div className="mt-auto">
                                 <Button asChild className="text-xs font-light bg-primary text-primary-foreground hover:bg-primary/90">
@@ -402,7 +402,7 @@ export default function CursosPage() {
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
                     <Image 
                       src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8bGFwdG9wfGVufDB8fHx8MTc2NTM3OTM2Mnww&ixlib=rb-4.1.0&q=80&w=1080"
-                      alt="E-learning"
+                      alt="Revisar Cursos"
                       layout="fill"
                       objectFit="cover"
                       data-ai-hint="e-learning development"
@@ -449,3 +449,4 @@ export default function CursosPage() {
     </div>
   );
 }
+
