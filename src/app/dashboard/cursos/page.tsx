@@ -421,7 +421,7 @@ export default function CursosPage() {
           </SectionWrapper>
         </div>
 
-        <div className="max-w-7xl mx-auto p-4 sm:p-8 space-y-12 mt-12">
+        <div className="max-w-7xl mx-auto p-4 sm:p-8 space-y-12">
             <section>
                 <h3 className="text-center text-xl text-foreground mb-6">
                     <span className="font-bold">Domina</span> las herramientas del <span className="font-bold">futuro</span>
@@ -460,6 +460,7 @@ export default function CursosPage() {
     
 
     
+
 
 
 
