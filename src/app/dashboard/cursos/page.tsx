@@ -179,7 +179,7 @@ export default function CursosPage() {
                 </div>
                 <div className="w-[30%] flex flex-col gap-6">
                     <div className="flex-1 flex flex-col gap-6">
-                        <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
+                        <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105 h-1/2">
                             <Image
                                 src="https://img.freepik.com/free-photo/view-3d-justice-scales_23-2151228100.jpg"
                                 alt="Código de Ética"
@@ -200,7 +200,7 @@ export default function CursosPage() {
                                 </div>
                             </div>
                         </Card>
-                        <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
+                        <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105 h-1/2">
                             <Image
                                 src="https://paraleloestudio.com/wp-content/uploads/salon-belleza-sala-tratamientos-scaled-thegem-blog-default.jpg"
                                 alt="Nuestros Productos"
@@ -393,7 +393,7 @@ export default function CursosPage() {
                             <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Academia Banesco Seguros</Badge>
                             
                             <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Visita Nuestra Academia <br /> Banesco Seguros</h3>
-                            <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
+                            <Button asChild className="mt-4 font-light text-xs bg-primary text-primary-foreground hover:bg-primary/90">
                                 <Link href="#">Acceder</Link>
                             </Button>
                         </div>
@@ -413,11 +413,11 @@ export default function CursosPage() {
                             <div className="relative text-white">
                                 <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Cursos Disponibles</Badge>
                                 <h3 className="text-2xl font-bold tracking-tight">Revisar Cursos Disponibles</h3>
-                                <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
+                                <Button asChild className="mt-4 font-light text-xs bg-primary text-primary-foreground hover:bg-primary/90">
                                 <Link href="#">Acceder</Link>
-                                </Button>
-                            </div>
-                        </Card>
+                            </Button>
+                        </div>
+                    </Card>
                    </div>
               </div>
           </SectionWrapper>
