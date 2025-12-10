@@ -178,7 +178,7 @@ export default function CursosPage() {
                 <div className="w-[30%] flex flex-col gap-6">
                     <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
                         <Image
-                            src="https://wallpapers.com/images/featured/azul-claro-2iuzyh711jo9bmgo.jpg"
+                            src="https://images.unsplash.com/photo-1561347981-969c80cf4463?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb2RlJTIwZXRoaWNzfGVufDB8fHx8MTc2NTM5MjU3MXww&ixlib=rb-4.1.0&q=80&w=1080"
                             alt="Código de Ética"
                             layout="fill"
                             objectFit="cover"
@@ -199,7 +199,7 @@ export default function CursosPage() {
                     </Card>
                     <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card flex-1 flex flex-col text-left transition-transform hover:scale-105">
                         <Image
-                            src="https://plus.unsplash.com/premium_photo-1701856761166-0a751ba4da2a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8"
+                            src="https://images.unsplash.com/photo-1710264144788-c2301607d735?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbnN1cmFuY2UlMjBwcm9kdWN0c3xlbnwwfHx8fDE3NjUzOTI1NzF8MA&ixlib=rb-4.1.0&q=80&w=1080"
                             alt="Nuestros Productos"
                             layout="fill"
                             objectFit="cover"
@@ -401,7 +401,7 @@ export default function CursosPage() {
                  <div className="w-[30%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
                     <Image 
-                      src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8bGFwdG9wfGVufDB8fHx8MTc2NTM3OTM2Mnww&ixlib-rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8bGFwdG9wfGVufDB8fHx8MTc2NTM3OTM2Mnww&ixlib=rb-4.1.0&q=80&w=1080"
                       alt="Revisar Cursos"
                       layout="fill"
                       objectFit="cover"
@@ -449,6 +449,7 @@ export default function CursosPage() {
     </div>
   );
 }
+
 
 
 
