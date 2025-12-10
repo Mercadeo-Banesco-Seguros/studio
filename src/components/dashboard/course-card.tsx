@@ -10,6 +10,7 @@ import { Clock, Tag, PlayCircle, BookOpen, User, Users, Calendar, BarChart2 } fr
 import { Progress } from "../ui/progress";
 import { cn } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
+import React, { useState, useEffect, useRef } from 'react';
 
 interface CourseCardProps {
   course: Course;
@@ -47,48 +48,120 @@ export function CourseCard({ course }: CourseCardProps) {
   );
 }
 
-const AvailabilityRing = ({ percentage }: { percentage: number }) => {
-  const radius = 60;
-  const stroke = 8;
-  const normalizedRadius = radius - stroke / 2;
-  const circumference = normalizedRadius * 2 * Math.PI;
-  const strokeDashoffset = circumference - (percentage / 100) * circumference;
+const useAnimatedNumber = (end: number, duration = 1500) => {
+    const [count, setCount] = useState(0);
+    const ref = useRef<HTMLDivElement>(null);
 
-  return (
-    <div className="relative flex items-center justify-center w-36 h-36 flex-shrink-0">
-      <svg
-        height={radius * 2}
-        width={radius * 2}
-        className="transform -rotate-90"
-      >
-        <circle
-          stroke="hsla(var(--primary-foreground), 0.2)"
-          fill="transparent"
-          strokeWidth={stroke}
-          r={normalizedRadius}
-          cx={radius}
-          cy={radius}
-        />
-        <circle
-          stroke="hsl(var(--primary-foreground))"
-          fill="transparent"
-          strokeWidth={stroke}
-          strokeDasharray={circumference + ' ' + circumference}
-          style={{ strokeDashoffset }}
-          strokeLinecap="round"
-          r={normalizedRadius}
-          cx={radius}
-          cy={radius}
-          className="transition-all duration-700 ease-out"
-        />
-      </svg>
-      <span className="absolute text-2xl font-bold text-primary-foreground">
-        {percentage}%
-      </span>
-    </div>
-  );
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    let start = 0;
+                    const endValue = end;
+                    if (start === endValue) return;
+
+                    const range = endValue - start;
+                    const increment = endValue > start ? 1 : -1;
+                    const stepTime = Math.abs(Math.floor(duration / range));
+                    
+                    const timer = setInterval(() => {
+                        start += increment;
+                        setCount(start);
+                        if (start === endValue) {
+                            clearInterval(timer);
+                        }
+                    }, stepTime);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        const currentRef = ref.current;
+        if (currentRef) {
+            observer.observe(currentRef);
+        }
+
+        return () => {
+            if (currentRef) {
+                observer.unobserve(currentRef);
+            }
+        };
+    }, [end, duration]);
+
+    return { count, ref };
 };
 
+
+const ProgressRing = ({ percentage, isLight = false }: { percentage: number, isLight?: boolean }) => {
+    const { count: animatedNumber, ref } = useAnimatedNumber(percentage);
+    const [animatedProgress, setAnimatedProgress] = useState(0);
+
+    const radius = 60;
+    const stroke = 8;
+    const normalizedRadius = radius - stroke / 2;
+    const circumference = normalizedRadius * 2 * Math.PI;
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setAnimatedProgress(percentage);
+                observer.disconnect();
+            }
+        }, { threshold: 0.1 });
+        
+        const currentRef = ref.current;
+        if(currentRef) {
+            observer.observe(currentRef);
+        }
+
+        return () => {
+            if(currentRef) {
+                observer.unobserve(currentRef);
+            }
+        }
+    }, [percentage, ref]);
+
+    const strokeDashoffset = circumference - (animatedProgress / 100) * circumference;
+
+    const strokeColor = isLight ? 'hsl(var(--primary))' : 'hsl(var(--primary-foreground))';
+    const trackColor = isLight ? 'hsla(var(--primary), 0.2)' : 'hsla(var(--primary-foreground), 0.2)';
+    const textColor = isLight ? 'hsl(var(--primary))' : 'hsl(var(--primary-foreground))';
+
+    return (
+        <div ref={ref} className="relative flex items-center justify-center w-36 h-36 flex-shrink-0">
+            <svg
+                height={radius * 2}
+                width={radius * 2}
+                className="transform -rotate-90"
+            >
+                <circle
+                    stroke={trackColor}
+                    fill="transparent"
+                    strokeWidth={stroke}
+                    r={normalizedRadius}
+                    cx={radius}
+                    cy={radius}
+                />
+                <circle
+                    stroke={strokeColor}
+                    fill="transparent"
+                    strokeWidth={stroke}
+                    strokeDasharray={circumference + ' ' + circumference}
+                    style={{ strokeDashoffset }}
+                    strokeLinecap="round"
+                    r={normalizedRadius}
+                    cx={radius}
+                    cy={radius}
+                    className="transition-all duration-700 ease-out"
+                />
+            </svg>
+            <span className="absolute text-2xl font-bold" style={{ color: textColor }}>
+                {animatedNumber}%
+            </span>
+        </div>
+    );
+};
 
 interface NewCourseCardProps {
     title: string;
@@ -121,7 +194,7 @@ export const NewCourseCard = ({ title, category, details, imageUrl, dataAiHint, 
                     data-ai-hint={dataAiHint}
                 />
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-0" />
+            <div className={cn("absolute inset-0 z-0", !isLight && "bg-gradient-to-t from-black/50 to-transparent")} />
 
             <div className="relative z-10 grid grid-cols-3 gap-4 items-center h-full">
                 <div className="col-span-2 flex flex-col h-full justify-between">
@@ -142,7 +215,7 @@ export const NewCourseCard = ({ title, category, details, imageUrl, dataAiHint, 
                             <Button variant={isLight ? "secondary" : "secondary"} size="sm" className={cn("text-xs font-light", !isLight && "bg-white/20 text-white hover:bg-white/30")}>
                                 Vista Previa
                             </Button>
-                            <Button variant="link" size="sm" className={cn("text-xs font-light", mutedTextColorClass)}>
+                            <Button variant="link" size="sm" className={cn("text-xs font-light", mutedTextColorClass, !isLight && "text-white/80 hover:text-white")}>
                                 Detalles
                             </Button>
                         </div>
@@ -151,10 +224,12 @@ export const NewCourseCard = ({ title, category, details, imageUrl, dataAiHint, 
 
                 {availability !== undefined && (
                   <div className="col-span-1 flex items-center justify-center">
-                    <AvailabilityRing percentage={availability} />
+                    <ProgressRing percentage={availability} isLight={isLight}/>
                   </div>
                 )}
             </div>
         </Card>
     )
 }
+
+    
