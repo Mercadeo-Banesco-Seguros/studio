@@ -284,7 +284,7 @@ export const mockActivities: Activity[] = [
     title: "Yoga",
     date: "2025-07-01",
     location: "Triadas - Ciudad Banesco",
-    imageUrl: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx5b2dhfGVufDB8fHx8MTc1MDk0NDg2M3ww&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx5b2dhfGVufDB8fHx8MTc1MDk0NDg2M3ww&ixlib=rb-4.1.0&q=80&w=1080",
     dataAiHint: "yoga fitness",
     description: "¡Conecta tu cuerpo y mente!\nAcompáñanos en la clase de yoga, conformada por una serie de ejercicios físicos y de respiración diseñados para disminuir el estrés y las dolencias corporales, con el propósito de mejorar la salud, tanto física como mental.\nPara asistir a las clases solo necesitas:\n- Un mat o esterilla de yoga.\n- Ropa deportiva y cómoda, preferiblemente licras o monos largos y camisas cómodas.\n- Una botella de agua para tu hidratación.\n\nDónde y cuándo son las clases:\nLunes y miércoles, 5:00 P.M."
   },
@@ -293,7 +293,7 @@ export const mockActivities: Activity[] = [
     title: "Ejercicios funcionales",
     date: "2025-07-01",
     location: "Terraza - Ciudad Banesco",
-    imageUrl: "https://images.unsplash.com/photo-1591291621164-2c6367723315?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGNlcmNpc2V8ZW58MHx8fHwxNzUwOTQ0OTE1fDA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1591291621164-2c6367723315?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGNlcmNpc2V8ZW58MHx8fHwxNzUwOTQ0OTE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
     dataAiHint: "functional training",
     description: "¡Mejora tu rendimiento físico y cuida tu salud!\n\nTe invitamos a participar en la actividad de entrenamiento funcional y en circuito, la cual ayuda a mejorar las capacidades físicas como  fuerza, resistencia, velocidad, coordinación y flexibilidad. Se puede realizar con o sin implementos.\nPara asistir a las clases solo necesitas:\n- Ropa deportiva y cómoda, preferiblemente licras o monos largos y camisas cómodas.\n- Una botella de agua para tu hidratación.\n\nDónde y cuándo son las clases:\nLunes y miércoles, 5:00 P.M.",
     isRecommended: true,
@@ -820,7 +820,7 @@ export const mockDressCodeItemsDamas: DressCodeItem[] = [
     id: "DCD005",
     title: "Atuendo Deportivo",
     description: "Viernes activo con estilo. Conjuntos deportivos cómodos, leggings, tops y zapatillas son bienvenidos para cerrar la semana con energía.",
-    imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_82b8ry82b8ry82b8-Photoroom.png?raw=true",
+    imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_851tlb851tlb851t-Photoroom.png?raw=true",
     dataAiHint: "female sportswear",
     day: "Viernes"
   }
@@ -890,7 +890,7 @@ export const mockPlaylist: PlaylistItem[] = [
     id: "P001", 
     title: "Clásicos en Inglés", 
     description: "Los éxitos que marcaron una época.",
-    albumArtUrl: "https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib-rb-4.1.0&q=80&w=1080", 
+    albumArtUrl: "https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib=rb-4.1.0&q=80&w=1080", 
     linkUrl: "#", 
     dataAiHint: "classic rock" 
   },
@@ -963,7 +963,6 @@ export const mockCustomerFeedback: CustomerFeedback[] = [
     
     
     
-    
 
   
 
@@ -994,6 +993,7 @@ export const mockCustomerFeedback: CustomerFeedback[] = [
 
 
     
+
 
 
 
