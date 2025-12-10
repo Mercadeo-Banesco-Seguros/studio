@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -39,8 +40,8 @@ const SPECIFIC_EVENT_STYLES: { [title: string]: { bg: string; text: string; labe
   "Beneficios Sociales": { bg: 'bg-[#59D1FF]', text: 'text-white', label: '' },
   "Asignación Especial": { bg: 'bg-[#1a61ab]', text: 'text-white', label: '' },
   "Pago Quincena": { bg: 'bg-[#128d5d]', text: 'text-white', label: '' },
-  "Complemento Alimentación": { bg: 'bg-[#e95e0f]', text: 'text-white', label: '' },
-  "Beneficio Alimentación": { bg: 'bg-[#e95e0f]', text: 'text-white', label: '' },
+  "Complemento Alimentación": { bg: 'bg-[#8265E6]', text: 'text-white', label: '' },
+  "Beneficio Alimentación": { bg: 'bg-[#8265E6]', text: 'text-white', label: '' },
   "Feriado Bancario": { bg: 'bg-slate-700', text: 'text-white', label: '' },
 };
 

@@ -41,8 +41,8 @@ const SPECIFIC_EVENT_STYLES: { [title: string]: { bg: string; text: string; labe
   "Beneficios Sociales": { bg: 'bg-[#59D1FF]', text: 'text-white', label: '' },
   "Asignación Especial": { bg: 'bg-[#1a61ab]', text: 'text-white', label: '' },
   "Pago Quincena": { bg: 'bg-accent', text: 'text-accent-foreground', label: '' },
-  "Complemento Alimentación": { bg: 'bg-orange-500', text: 'text-white', label: '' },
-  "Beneficio Alimentación": { bg: 'bg-orange-500', text: 'text-white', label: '' },
+  "Complemento Alimentación": { bg: 'bg-[#8265E6]', text: 'text-white', label: '' },
+  "Beneficio Alimentación": { bg: 'bg-[#8265E6]', text: 'text-white', label: '' },
   "Feriado Bancario": { bg: 'bg-slate-700', text: 'text-white', label: '' },
 };
 
@@ -57,7 +57,7 @@ function getEventRenderProps(event: CalendarEvent): { bg: string; text: string; 
   
   // Highest priority: Specific titles for Alimentación
   if (title.includes('alimentación')) {
-    const specificStyle = SPECIFIC_EVENT_STYLES[event.title] || { bg: 'bg-orange-500', text: 'text-white', label: '' };
+    const specificStyle = SPECIFIC_EVENT_STYLES[event.title] || { bg: 'bg-[#8265E6]', text: 'text-white', label: '' };
     return { ...EVENT_ITEM_STYLES.PAGO, ...specificStyle };
   }
 
