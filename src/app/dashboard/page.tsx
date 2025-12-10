@@ -547,7 +547,7 @@ export default function DashboardPage() {
                             }}
                             className={cn(
                                 "font-light text-xs bg-white hover:bg-white/90",
-                                dressCodeView === 'damas' ? "text-pink-600" : "text-primary"
+                                dressCodeView === 'damas' ? "text-purple-600" : "text-primary"
                             )}>
                             Explorar Guía
                         </Button>
