@@ -151,6 +151,77 @@ export default function CursosPage() {
         <div className="max-w-7xl mx-auto space-y-12">
             <section>
               <div className="flex gap-6">
+                 <div className="w-[70%]">
+                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
+                    <Image 
+                      src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8bGFwdG9wfGVufDB8fHx8MTc2NTM3OTM2Mnww&ixlib=rb-4.1.0&q=80&w=1080"
+                      alt="Revisar Cursos"
+                      layout="fill"
+                      objectFit="cover"
+                      data-ai-hint="e-learning development"
+                      className="brightness-50"
+                    />
+                    <div className="relative z-10 p-8 md:p-12">
+                        <Badge variant="outline" className="text-white border-white/50 mb-4">Revisar</Badge>
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Nuestros Cursos <br/> Disponibles</h1>
+                        <div className="pt-8">
+                            <Button asChild className="text-xs font-light">
+                                <Link href="#">
+                                    Acceder
+                                </Link>
+                            </Button>
+                        </div>
+                    </div>
+                  </Card>
+                </div>
+                 <div className="w-[30%]">
+                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
+                    <Image 
+                      src="https://www.shutterstock.com/image-photo/concentrated-young-female-student-engaged-600nw-2458397479.jpg"
+                      alt="E-learning"
+                      layout="fill"
+                      objectFit="cover"
+                      data-ai-hint="e-learning development"
+                      className="brightness-50"
+                    />
+                    <div className="relative z-10 p-8 md:p-12">
+                        <Badge variant="outline" className="text-white border-white/50 mb-4">Cursos Disponibles</Badge>
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra<br/> Academia Banesco Seguros</h1>
+                        <div className="pt-8">
+                            <Button asChild className="text-xs font-light">
+                                <Link href="#">
+                                    Acceder
+                                </Link>
+                            </Button>
+                        </div>
+                    </div>
+                  </Card>
+                </div>
+              </div>
+            </section>
+            <section>
+                <h3 className="text-center text-xl text-foreground mb-6">
+                    <span className="font-bold">Domina</span> las herramientas del <span className="font-bold">futuro</span>
+                </h3>
+                <div
+                    className="relative w-full overflow-hidden"
+                    style={{
+                        maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+                    }}
+                >
+                    <div className="animate-scroll flex gap-16 py-8">
+                        {[...technologies, ...technologies].map((tech, index) => (
+                            <div key={`${tech.name}-${index}`} className="flex-shrink-0">
+                                <div className={cn("relative h-16 w-16 transition-all hover:scale-110", tech.name === 'Power BI' && 'w-20')}>
+                                    <Image src={tech.iconUrl} alt={tech.name} layout="fill" objectFit="contain" data-ai-hint={tech['data-ai-hint']} />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+            <section>
+              <div className="flex gap-6">
                 <div className="w-[70%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[400px] flex flex-col justify-end text-left">
                     <Image
@@ -188,7 +259,7 @@ export default function CursosPage() {
                         <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
                             <div>
                                 <Badge variant="outline" className="text-white border-white/50 mb-2">Principios y Valores</Badge>
-                                <h2 className="text-2xl font-bold text-white">Código de Ética</h2>
+                                <h2 className="text-3xl font-bold text-white">Código de Ética</h2>
                             </div>
                             <div className="mt-auto">
                                 <Button asChild className="text-xs font-light bg-primary text-primary-foreground hover:bg-primary/90">
@@ -209,7 +280,7 @@ export default function CursosPage() {
                         <div className="relative z-10 p-6 w-full flex flex-col h-full justify-between">
                             <div>
                                 <Badge variant="outline" className="text-white border-white/50 mb-2">Soluciones y Cobertura</Badge>
-                                <h2 className="text-2xl font-bold text-white">Nuestros Productos</h2>
+                                <h2 className="text-3xl font-bold text-white">Nuestros Productos</h2>
                             </div>
                             <div className="mt-auto">
                                 <Button asChild className="text-xs font-light bg-primary text-primary-foreground hover:bg-primary/90">
@@ -449,5 +520,6 @@ export default function CursosPage() {
     </div>
   );
 }
+
 
 
