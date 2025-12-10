@@ -489,7 +489,7 @@ export default function DashboardPage() {
                          <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
                     </Card>
                      <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-12 group-hover:rotate-[15deg] group-hover:translate-x-12">
-                         <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
+                         <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
                     </Card>
                 </div>
             </div>
@@ -735,7 +735,6 @@ export default function DashboardPage() {
               
               <div className="grid grid-cols-1 gap-6">
                 <NewCourseCard
-                  isLight
                   category="Potencia tu Productividad"
                   title="Google Workspace"
                   details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
@@ -803,7 +802,7 @@ export default function DashboardPage() {
                   description="Guías detalladas para la gestión de siniestros y solicitudes."
                   buttonText="Consultar"
                   imageUrl="https://media.gettyimages.com/id/1448588965/es/v%C3%ADdeo/equipo-de-negocios-tel%C3%A9fono-y-hablando-sobre-idea-sitio-web-y-estrategia-de-planificaci%C3%B3n.jpg?s=640x640&k=20&c=wkYmdkUqKON-XHA_-PHWKtzqzK14Og9ZdMHm8vICH9M="
-                  data-ai-hint="documents folder"
+                  dataAiHint="documents folder"
                 />
                  <HcmCard
                   type="main"
