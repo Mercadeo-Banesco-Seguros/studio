@@ -212,7 +212,7 @@ export default function CursosPage() {
                                 <h2 className="text-2xl font-bold text-white">Soluciones y Cobertura</h2>
                             </div>
                             <div className="mt-auto">
-                                <Button asChild className="text-xs font-light bg-primary text-primary-foreground hover:bg-primary/90">
+                                <Button asChild className="text-xs font-light bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm">
                                     <Link href="#">Conocer más</Link>
                                 </Button>
                             </div>
@@ -375,7 +375,7 @@ export default function CursosPage() {
         <div className="max-w-7xl mx-auto p-4 sm:p-8 space-y-12 mt-12">
             <section>
               <div className="flex gap-6">
-                <div className="w-[100%]">
+                <div className="w-[50%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
                     <Image 
                       src="https://www.shutterstock.com/image-photo/concentrated-young-female-student-engaged-600nw-2458397479.jpg"
@@ -388,6 +388,29 @@ export default function CursosPage() {
                     <div className="relative z-10 p-8 md:p-12">
                         <Badge variant="outline" className="text-white border-white/50 mb-4">Cursos Disponibles</Badge>
                         <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Visita Nuestra<br/> Academia Banesco Seguros</h1>
+                        <div className="pt-8">
+                            <Button asChild className="text-xs font-light">
+                                <Link href="#">
+                                    Acceder
+                                </Link>
+                            </Button>
+                        </div>
+                    </div>
+                  </Card>
+                </div>
+                 <div className="w-[50%]">
+                  <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-card min-h-[400px] flex flex-col justify-end text-left">
+                    <Image 
+                      src="https://www.ceupe.com/images/easyblog_articles/3074/b2ap3_amp_formacion-in-company-vs-formacion-externa.jpg"
+                      alt="E-learning"
+                      layout="fill"
+                      objectFit="cover"
+                      data-ai-hint="e-learning development"
+                      className="brightness-50"
+                    />
+                    <div className="relative z-10 p-8 md:p-12">
+                        <Badge variant="outline" className="text-white border-white/50 mb-4">Revisar</Badge>
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Nuestros Cursos <br/> Disponibles</h1>
                         <div className="pt-8">
                             <Button asChild className="text-xs font-light">
                                 <Link href="#">
