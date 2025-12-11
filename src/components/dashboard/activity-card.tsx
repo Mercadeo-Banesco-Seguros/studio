@@ -17,7 +17,7 @@ export function ActivityCard({ activity }: ActivityCardProps) {
     <Link href={`/dashboard/actividades/${activity.id}`} className="group block h-full">
       <Card 
         className={cn(
-          "group relative w-full overflow-hidden rounded-2xl bg-card shadow-md transition-all duration-300 h-96"
+          "group relative w-80 overflow-hidden rounded-2xl bg-card shadow-md transition-all duration-300 h-96"
         )}
       >
         <Image
