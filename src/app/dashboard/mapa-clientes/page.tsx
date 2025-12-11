@@ -35,6 +35,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ClipboardCheck } from "lucide-react";
 import { Skeleton } from '@/components/ui/skeleton';
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 
 
 const commercialProcessSteps = [
@@ -272,8 +273,7 @@ export default function NosotrosPage() {
       icon: Banknote,
     },
   ];
-
-  let totalEventCounter = 0;
+  
   const iconBgColors = [
     'bg-blue-100', 'bg-blue-200', 'bg-sky-200', 'bg-sky-300', 
     'bg-sky-400', 'bg-sky-500', 'bg-blue-600', 'bg-blue-700', 
@@ -349,7 +349,7 @@ export default function NosotrosPage() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24 bg-muted/20">
+        <section className="py-16 md:py-24 bg-muted/20 overflow-hidden">
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <p className="text-lg font-semibold text-primary">Historia</p>
@@ -360,59 +360,50 @@ export default function NosotrosPage() {
                         Desde nuestra fundación hasta hoy, hemos evolucionado para adaptarnos a los nuevos tiempos, manteniendo siempre nuestro compromiso con la excelencia y la innovación.
                     </p>
                 </div>
-                <div className="relative space-y-12">
-                    <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-border -translate-x-1/2 hidden md:block"></div>
-                    {timelineData.map((decade, decadeIndex) => {
-                        const isFirstDecade = decadeIndex === 0;
-                        return (
-                            <div key={decade.decade} className="relative">
-                                <div className={cn("sticky z-10 mb-8 md:text-center", isFirstDecade ? "top-28 md:top-32" : "top-28 md:top-32")}>
+            </div>
+            <ScrollArea className="w-full">
+                <div className="relative w-max mx-auto py-12 px-20">
+                    <div className="absolute top-1/2 left-0 h-1 w-full bg-border -translate-y-1/2"></div>
+                    <div className="flex gap-20">
+                        {timelineData.map((decade, decadeIndex) => (
+                            <div key={decade.decade} className="flex flex-col items-center relative pt-8">
+                                <div className="absolute top-0 -translate-y-full">
                                     <Badge variant="default" className="text-sm shadow-sm bg-primary text-primary-foreground hover:bg-primary/90">{decade.title}</Badge>
                                 </div>
-                                <div className="space-y-8">
-                                    {decade.events.map((event) => {
-                                        const isOdd = totalEventCounter % 2 !== 0;
-                                        const Icon = event.icon;
-                                        const bgColor = iconBgColors[totalEventCounter % iconBgColors.length];
-                                        const isDarkBg = totalEventCounter >= 6;
-                                        totalEventCounter++;
-                                        return (
-                                            <div key={event.title} className={cn("flex md:items-center w-full", isOdd ? "md:flex-row-reverse" : "md:flex-row")}>
-                                                <div className="hidden md:flex w-1/2"></div>
-                                                <div className={cn(
-                                                    "hidden md:flex w-12 h-12 rounded-full items-center justify-center flex-shrink-0 z-10",
-                                                    bgColor,
-                                                    isDarkBg ? 'text-white' : 'text-primary-foreground'
-                                                )}>
-                                                    <Icon className={cn("h-6 w-6", isDarkBg ? 'text-white' : 'text-blue-800')} />
-                                                </div>
-                                                <div className="w-full md:w-1/2 md:px-8">
-                                                    <Card className="shadow-lg rounded-2xl bg-card">
-                                                        <CardHeader>
-                                                            <div className="flex items-start gap-4">
-                                                                <div className={cn("md:hidden flex-shrink-0 w-10 h-10 rounded-lg items-center justify-center flex", bgColor)}>
-                                                                    <Icon className={cn("h-5 w-5", isDarkBg ? 'text-white' : 'text-blue-800')} />
-                                                                </div>
-                                                                <div>
-                                                                    <CardDescription>{event.year}</CardDescription>
-                                                                    <CardTitle>{event.title}</CardTitle>
-                                                                </div>
-                                                            </div>
-                                                        </CardHeader>
-                                                        <CardContent>
-                                                            <p className="text-sm text-muted-foreground">{event.description}</p>
-                                                        </CardContent>
-                                                    </Card>
-                                                </div>
+                                {decade.events.map((event, eventIndex) => {
+                                    const isOdd = eventIndex % 2 !== 0;
+                                    const Icon = event.icon;
+                                    const bgColorIndex = decadeIndex * 2 + eventIndex;
+                                    const bgColor = iconBgColors[bgColorIndex % iconBgColors.length];
+                                    const isDarkBg = bgColorIndex >= 6;
+                                    return (
+                                        <div key={event.title} className={cn("relative w-80", isOdd ? "mt-16" : "mb-16")}>
+                                            <div className="absolute top-1/2 left-1/2 w-1 h-8 bg-border -translate-x-1/2" style={{ top: isOdd ? 'auto' : '100%', bottom: isOdd ? '100%' : 'auto' }}></div>
+                                            <div className={cn(
+                                                "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center z-10",
+                                                bgColor,
+                                                isDarkBg ? 'text-white' : 'text-primary-foreground'
+                                            )}>
+                                                <Icon className={cn("h-6 w-6 text-white")} />
                                             </div>
-                                        )
-                                    })}
-                                </div>
+                                            <Card className="shadow-lg rounded-2xl bg-card">
+                                                <CardHeader>
+                                                    <CardDescription>{event.year}</CardDescription>
+                                                    <CardTitle>{event.title}</CardTitle>
+                                                </CardHeader>
+                                                <CardContent>
+                                                    <p className="text-sm text-muted-foreground">{event.description}</p>
+                                                </CardContent>
+                                            </Card>
+                                        </div>
+                                    )
+                                })}
                             </div>
-                        )
-                    })}
+                        ))}
+                    </div>
                 </div>
-            </div>
+                <ScrollBar orientation="horizontal" />
+            </ScrollArea>
         </section>
         
         <section className="py-16 md:py-24 bg-background">
