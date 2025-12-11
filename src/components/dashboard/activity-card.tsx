@@ -52,7 +52,7 @@ export function ActivityCard({ activity }: ActivityCardProps) {
             </Badge>
         </div>
         
-        <h3 className="text-xl font-bold text-foreground mb-1">{activity.title}</h3>
+        <h3 className="text-2xl font-bold text-foreground mb-1 tracking-tight">{activity.title}</h3>
         <p className="text-sm text-muted-foreground">{shortDescription}</p>
       </CardContent>
     </Card>
