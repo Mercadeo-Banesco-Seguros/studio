@@ -165,7 +165,7 @@ export default function BienestarPage() {
           </div>
            <div className="relative h-96 w-full rounded-2xl overflow-hidden group">
               <Image
-                  src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(53).png?raw=true"
+                  src="https://images.unsplash.com/photo-1562016600-ece13e8ba570?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhZ3VhfGVufDB8fHx8MTc2NTQ2NjUwNXww&ixlib-rb-4.1.0&q=80&w=1080"
                   alt="Persona practicando yoga al aire libre"
                   layout="fill"
                   objectFit="contain"
@@ -340,3 +340,5 @@ export default function BienestarPage() {
     </div>
   );
 }
+
+    
