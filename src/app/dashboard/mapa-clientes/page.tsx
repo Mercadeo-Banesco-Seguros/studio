@@ -353,7 +353,7 @@ export default function NosotrosPage() {
         <section className="bg-primary text-primary-foreground py-24">
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <p className="text-lg font-semibold text-primary-foreground/80">Historia</p>
+                    <p className="text-lg font-semibold text-primary-foreground/80">Historia de Banesco Seguros</p>
                     <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight mt-2">
                         Un Viaje a Través del Tiempo
                     </h3>
@@ -364,7 +364,7 @@ export default function NosotrosPage() {
 
                 <div className="relative w-full">
                     <ScrollArea className="w-full">
-                        <div className="flex items-start gap-4 pb-8 px-4">
+                        <div className="flex items-center gap-4 w-max px-4 h-[250px]">
                             {timelineData.flatMap((decade, decadeIndex) => 
                                 decade.events.map((event, eventIndex) => {
                                     const overallIndex = timelineData.slice(0, decadeIndex).reduce((acc, d) => acc + d.events.length, 0) + eventIndex;
@@ -383,7 +383,7 @@ export default function NosotrosPage() {
                                                 <p className="text-sm text-primary-foreground/80">{event.description}</p>
                                             </div>
                                              {eventIndex < decade.events.length - 1 || decadeIndex < timelineData.length - 1 ? (
-                                              <Separator orientation="vertical" className="h-auto bg-primary-foreground/20 w-px mx-8" />
+                                              <Separator orientation="vertical" className="h-full bg-primary-foreground/20 w-px mx-8" />
                                             ) : null}
                                         </React.Fragment>
                                     );
