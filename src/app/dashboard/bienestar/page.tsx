@@ -93,7 +93,7 @@ export default function BienestarPage() {
                 date: format(event.date, "d 'de' MMMM", { locale: es }),
                 description: event.description || `Un evento especial programado para el ${format(event.date, "PPP", { locale: es })}.`,
                 imageUrl: isChristmas 
-                    ? "https://images.unsplash.com/photo-1575881447663-83863d159516?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    ? "https://cdn.shopify.com/s/files/1/0411/7381/1350/files/origen_del_arbol_de_navidad_-_alblanc1.jpg?v=1637495190"
                     : "https://images.unsplash.com/photo-1601276174812-63280a55656e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkZXNjYW5zb3xlbnwwfHx8fDE3NjU0ODc0ODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
                 dataAiHint: isChristmas ? "christmas tree" : "celebration event"
             }});
@@ -208,14 +208,14 @@ export default function BienestarPage() {
             Galería de Recuerdos
           </h2>
           <div className="relative h-[22rem] w-full flex items-center justify-center group">
-            <Card className="absolute w-48 h-72 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out -rotate-12 -translate-x-32 group-hover:rotate-0 group-hover:translate-x-0">
+            <Card className="absolute w-48 h-72 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out -rotate-12 group-hover:rotate-0 group-hover:translate-x-0">
                 <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" />
             </Card>
             <Card className="absolute w-56 h-80 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out z-10 group-hover:scale-90">
                 <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
             </Card>
-            <Card className="absolute w-48 h-72 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-12 translate-x-32 group-hover:rotate-0 group-hover:translate-x-0">
-                <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
+            <Card className="absolute w-48 h-72 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-12 group-hover:rotate-0 group-hover:translate-x-0">
+                <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
             </Card>
           </div>
         </div>
@@ -390,3 +390,5 @@ export default function BienestarPage() {
     </div>
   );
 }
+
+    
