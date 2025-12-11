@@ -177,20 +177,20 @@ export default function BienestarPage() {
       </section>
 
       {/* Galería de Recuerdos Section */}
-      <section className="py-16 sm:py-24 bg-primary text-primary-foreground">
+      <section className="py-12 sm:py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <Badge variant="secondary" className="bg-white/10 text-white hover:bg-white/20 mb-4">Actividades Corporativas</Badge>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-12">
             Galería de Recuerdos
           </h2>
           <div className="relative h-[30rem] w-full flex items-center justify-center group">
-            <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-[-15deg] -translate-x-40 group-hover:-rotate-12 group-hover:translate-x-0">
+            <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out group-hover:rotate-0 group-hover:translate-x-0 -rotate-12 -translate-x-40">
                 <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" />
             </Card>
-            <Card className="absolute w-72 h-[28rem] rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out z-10 scale-110 group-hover:scale-100">
+            <Card className="absolute w-72 h-[28rem] rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out z-10 group-hover:scale-110 scale-100">
                 <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
             </Card>
-            <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-[15deg] translate-x-40 group-hover:rotate-12 group-hover:translate-x-0">
+            <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out group-hover:rotate-0 group-hover:translate-x-0 rotate-12 translate-x-40">
                 <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
             </Card>
           </div>
