@@ -5,7 +5,7 @@ import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Leaf, Users, BrainCircuit, ToyBrick, Mail, Briefcase, ChevronLeft, ChevronRight, Star, Smile, Meh, Frown, Send, Gift, PartyPopper, Award, MapPin, Clock } from "lucide-react";
+import { ArrowRight, Leaf, Users, BrainCircuit, ToyBrick, Mail, Briefcase, ChevronLeft, ChevronRight, Star, Smile, Meh, Frown, Send, Gift, PartyPopper, Award, MapPin, Clock, Utensils } from "lucide-react";
 import { ActivityCard } from "@/components/dashboard/activity-card";
 import { mockActivities } from "@/lib/placeholder-data";
 import { Button } from '@/components/ui/button';
@@ -396,6 +396,7 @@ export default function BienestarPage() {
     
 
     
+
 
 
 
