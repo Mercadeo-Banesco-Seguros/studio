@@ -104,19 +104,19 @@ export const HcmCard = ({
                         
                         <div className="space-y-4">
                             <AnimatedContactButton
-                                href="https://wa.me/584142398416"
+                                href="https://wa.me/584242668446"
                                 type="whatsapp"
-                                label="Soporte 24/7"
-                                number="(0414) 239.84.16"
+                                label="Whatsapp"
+                                number="0424-Contigo (2668446)"
                                 icon={WhatsAppIcon}
                                 className="bg-secondary"
                                 iconClassName="text-primary"
                             />
                             <AnimatedContactButton
-                                href="tel:08007348767"
+                                href="tel:05007258300"
                                 type="phone"
-                                label="Llamada Gratuita"
-                                number="0-800-SEGUROS"
+                                label="Central telefónica"
+                                number="0500-7258300"
                                 icon={Phone}
                                 className="bg-secondary"
                                 iconClassName="text-primary"
