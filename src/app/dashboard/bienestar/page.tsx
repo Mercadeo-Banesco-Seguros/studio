@@ -150,9 +150,9 @@ export default function BienestarPage() {
       <section className="py-24 sm:py-32">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <Badge variant="outline" className="mb-4">Bienestar Banesco</Badge>
+            <Badge variant="outline" className="mb-4">Banesco Seguros</Badge>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Un Espacio Para Tu Bienestar Integral
+              Un Espacio para Tu Bienestar Integral
             </h1>
             <p className="mt-4 text-muted-foreground max-w-md">
               Creamos oportunidades para que puedas construir un estilo de vida saludable y equilibrado, fomentando tanto tu desarrollo personal como profesional.
@@ -163,13 +163,13 @@ export default function BienestarPage() {
               </Link>
             </Button>
           </div>
-           <div className="relative h-96 w-full rounded-2xl overflow-hidden group border-none shadow-lg">
+           <div className="relative h-96 w-full rounded-2xl overflow-hidden group">
               <Image
                   src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(53).png?raw=true"
                   alt="Persona practicando yoga al aire libre"
                   layout="fill"
-                  objectFit="cover"
-                  data-ai-hint="yoga wellness"
+                  objectFit="contain"
+                  data-ai-hint="people in a boat"
                   className="transition-transform duration-500 ease-in-out group-hover:scale-105"
               />
           </div>
