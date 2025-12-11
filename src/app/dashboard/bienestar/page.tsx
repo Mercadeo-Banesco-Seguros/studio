@@ -172,7 +172,6 @@ export default function BienestarPage() {
                   data-ai-hint="yoga wellness"
                   className="transition-transform duration-500 ease-in-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
         </div>
       </section>
