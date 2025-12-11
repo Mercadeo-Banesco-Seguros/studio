@@ -280,7 +280,7 @@ export default function NosotrosPage() {
         <section className="relative h-[600px] w-full group">
           <Link href="/dashboard/objetivos-smart" className="absolute inset-0 z-10" aria-label="Explorar desafíos estratégicos" />
           <Image 
-            src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb21wYW55fGVufDB8fHx8MTc1MDkwMzI3Nnww&ixlib-rb-4.1.0&q=80&w=1080"
+            src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb21wYW55fGVufDB8fHx8MTc1MDkwMzI3Nnww&ixlib=rb-4.1.0&q=80&w=1080"
             alt="Visión de la empresa"
             layout="fill"
             objectFit="cover"
@@ -358,7 +358,7 @@ export default function NosotrosPage() {
                 {timelineData.map((decade, decadeIndex) => (
                     <div key={decade.decade} className="relative">
                         <div className="sticky top-28 md:top-32 z-10 mb-8 md:text-center">
-                          <Badge variant="secondary" className="text-sm bg-background border shadow-sm">{decade.title}</Badge>
+                          <Badge variant="default" className="text-sm shadow-sm">{decade.title}</Badge>
                         </div>
                         <div className="space-y-8">
                             {decade.events.map((event, eventIndex) => {
