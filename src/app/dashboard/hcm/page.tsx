@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight, ShieldCheck, FileText, Stethoscope, Search, Mess
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { Badge } from '@/components/ui/badge';
 
 const hcmActions = [
     {
