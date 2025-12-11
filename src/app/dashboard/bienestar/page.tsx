@@ -163,18 +163,16 @@ export default function BienestarPage() {
               </Link>
             </Button>
           </div>
-           <div className="grid grid-cols-2 gap-4">
-              <Card className="relative overflow-hidden rounded-2xl group border-none shadow-lg h-96 col-span-2">
-                <Image
-                    src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(53).png?raw=true"
-                    alt="Persona practicando yoga al aire libre"
-                    layout="fill"
-                    objectFit="cover"
-                    data-ai-hint="yoga wellness"
-                    className="transition-transform duration-500 ease-in-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-              </Card>
+           <div className="relative h-96 w-full rounded-2xl overflow-hidden group border-none shadow-lg">
+              <Image
+                  src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(53).png?raw=true"
+                  alt="Persona practicando yoga al aire libre"
+                  layout="fill"
+                  objectFit="cover"
+                  data-ai-hint="yoga wellness"
+                  className="transition-transform duration-500 ease-in-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
         </div>
       </section>
