@@ -157,9 +157,9 @@ export default function BienestarPage() {
             <p className="mt-4 text-muted-foreground max-w-md">
               Creamos oportunidades para que puedas construir un estilo de vida saludable y equilibrado, fomentando tanto tu desarrollo personal como profesional.
             </p>
-            <Button asChild size="lg" className="mt-8">
+             <Button asChild size="lg" className="mt-8 font-light">
               <Link href="#explorar-actividades">
-                Explorar Actividades <ArrowRight className="ml-2 h-4 w-4" />
+                Explorar Actividades
               </Link>
             </Button>
           </div>
