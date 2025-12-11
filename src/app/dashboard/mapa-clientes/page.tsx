@@ -361,9 +361,9 @@ export default function NosotrosPage() {
                     </p>
                 </div>
 
-                <div className="relative w-full">
-                    <ScrollArea className="w-full pb-8">
-                        <div className="flex items-center gap-4 w-max px-4">
+                <div className="relative w-full h-[250px]">
+                    <ScrollArea className="w-full h-full pb-8">
+                        <div className="flex items-center gap-4 w-max px-4 h-full">
                             {timelineData.flatMap((decade, decadeIndex) => 
                                 decade.events.map((event, eventIndex) => {
                                     const overallIndex = timelineData.slice(0, decadeIndex).reduce((acc, d) => acc + d.events.length, 0) + eventIndex;
@@ -502,3 +502,5 @@ export default function NosotrosPage() {
     </div>
   );
 }
+
+    
