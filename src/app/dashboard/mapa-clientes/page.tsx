@@ -273,6 +273,20 @@ export default function NosotrosPage() {
     },
   ];
 
+  let totalEventCounter = 0;
+  const cardColors = [
+    { bg: 'bg-blue-100', text: 'text-blue-800', description: 'text-blue-600', year: 'text-blue-400' },
+    { bg: 'bg-blue-200', text: 'text-blue-900', description: 'text-blue-700', year: 'text-blue-500' },
+    { bg: 'bg-sky-200', text: 'text-sky-900', description: 'text-sky-700', year: 'text-sky-500' },
+    { bg: 'bg-sky-300', text: 'text-sky-900', description: 'text-sky-800', year: 'text-sky-600' },
+    { bg: 'bg-sky-400', text: 'text-white', description: 'text-sky-100', year: 'text-sky-200' },
+    { bg: 'bg-secondary', text: 'text-secondary-foreground', description: 'text-secondary-foreground/80', year: 'text-secondary-foreground/60' },
+    { bg: 'bg-blue-600', text: 'text-white', description: 'text-blue-100', year: 'text-blue-200' },
+    { bg: 'bg-blue-700', text: 'text-white', description: 'text-blue-100', year: 'text-blue-200' },
+    { bg: 'bg-primary/90', text: 'text-primary-foreground', description: 'text-primary-foreground/80', year: 'text-primary-foreground/70' },
+    { bg: 'bg-primary', text: 'text-primary-foreground', description: 'text-primary-foreground/80', year: 'text-primary-foreground/70' },
+  ];
+
   return (
     <div className="bg-background">
       <div className="space-y-12">
@@ -358,12 +372,14 @@ export default function NosotrosPage() {
                 {timelineData.map((decade, decadeIndex) => (
                     <div key={decade.decade} className="relative">
                         <div className="sticky top-28 md:top-32 z-10 mb-8 md:text-center">
-                          <Badge variant="default" className="text-sm shadow-sm">{decade.title}</Badge>
+                          <Badge variant="default" className="text-sm shadow-sm bg-primary text-primary-foreground hover:bg-primary/90">{decade.title}</Badge>
                         </div>
                         <div className="space-y-8">
                             {decade.events.map((event, eventIndex) => {
-                                const isOdd = eventIndex % 2 !== 0;
+                                const isOdd = totalEventCounter % 2 !== 0;
                                 const Icon = event.icon;
+                                const colorSet = cardColors[totalEventCounter % cardColors.length];
+                                totalEventCounter++;
                                 return (
                                     <div key={event.title} className={cn("flex md:items-center w-full", isOdd ? "md:flex-row-reverse" : "md:flex-row")}>
                                       <div className="hidden md:flex w-1/2"></div>
@@ -371,13 +387,13 @@ export default function NosotrosPage() {
                                           <Icon className="h-6 w-6 text-primary" />
                                       </div>
                                       <div className="w-full md:w-1/2 md:px-8">
-                                          <Card className="shadow-lg">
+                                          <Card className={cn("shadow-lg rounded-2xl", colorSet.bg)}>
                                               <CardHeader>
-                                                  <CardDescription>{event.year}</CardDescription>
-                                                  <CardTitle>{event.title}</CardTitle>
+                                                  <CardDescription className={cn(colorSet.year)}>{event.year}</CardDescription>
+                                                  <CardTitle className={cn(colorSet.text)}>{event.title}</CardTitle>
                                               </CardHeader>
                                               <CardContent>
-                                                  <p className="text-muted-foreground text-sm">{event.description}</p>
+                                                  <p className={cn("text-sm", colorSet.description)}>{event.description}</p>
                                               </CardContent>
                                           </Card>
                                       </div>
