@@ -33,14 +33,20 @@ export function MenuItemCard({ item, isCurrentDay }: MenuItemCardProps) {
           "group relative w-full h-full overflow-hidden rounded-2xl bg-card shadow-md transition-all duration-300"
         )}
       >
-        <Image
-          src={item.imageUrl}
-          alt={item.name}
-          layout="fill"
-          objectFit="cover"
-          data-ai-hint={item.dataAiHint}
-          className="transition-transform duration-500 group-hover:scale-105"
-        />
+        {item.imageUrl ? (
+            <Image
+              src={item.imageUrl}
+              alt={item.name}
+              layout="fill"
+              objectFit="cover"
+              data-ai-hint={item.dataAiHint}
+              className="transition-transform duration-500 group-hover:scale-105"
+            />
+        ) : (
+            <div className="w-full h-full flex items-center justify-center bg-muted">
+                <Utensils className="h-16 w-16 text-muted-foreground/50" />
+            </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent" />
 
         <CardContent className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
