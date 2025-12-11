@@ -21,7 +21,13 @@ import {
   Plus,
   Banknote,
   FileBarChart,
-  Target
+  Target,
+  Rocket,
+  Flag,
+  Globe,
+  Award,
+  Laptop,
+  Zap,
 } from "lucide-react";
 import { getTeamMembers, type TeamMember } from '@/ai/flows/get-team-members-flow';
 import { cn } from '@/lib/utils';
@@ -114,6 +120,93 @@ const StatCard = ({ value, prefix, suffix, description }: { value: number, prefi
   );
 };
 
+const timelineData = [
+  {
+    decade: "1990s",
+    title: "El Nacimiento y los Fundamentos",
+    events: [
+      {
+        year: "1993",
+        title: "Fundación y Establecimiento",
+        description: "La compañía obtuvo la autorización para constituirse y realizó su Registro Mercantil, iniciando formalmente sus operaciones como parte del naciente grupo financiero Banesco.",
+        icon: Flag,
+      },
+      {
+        year: "1994-1999",
+        title: "Construcción de la Cartera Inicial",
+        description: "Durante la última mitad de la década, la compañía se enfocó en establecer sus productos básicos (como seguros de automóviles, vida y patrimoniales) y en construir una red de clientes y de comercialización sólida.",
+        icon: Target,
+      },
+    ]
+  },
+  {
+    decade: "2000s",
+    title: "Crecimiento y Expansión",
+    events: [
+      {
+        year: "2004-2006",
+        title: "Aceleración del Crecimiento",
+        description: "Banesco Seguros ingresó a una fase de crecimiento acelerado, reportando aumentos de primas muy superiores a los del promedio del sector, lo que marcó su ascenso en el mercado.",
+        icon: Rocket,
+      },
+      {
+        year: "2007",
+        title: "Consolidación en el Top 10",
+        description: "Gracias a su crecimiento sostenido, la compañía se afianzó de manera constante entre las 10 principales aseguradoras de Venezuela por el volumen de primas cobradas.",
+        icon: Award,
+      },
+      {
+        year: "2008",
+        title: "Expansión Regional a Panamá",
+        description: "Siguiendo la estrategia de internacionalización del grupo, se estableció Banesco Seguros en Panamá, siendo su primer paso para diversificar sus mercados fuera de Venezuela.",
+        icon: Globe,
+      },
+      {
+        year: "2009",
+        title: "Posicionamiento Histórico",
+        description: "La empresa alcanzó una posición de liderazgo importante, ubicándose como la sexta aseguradora más grande del mercado venezolano.",
+        icon: TrendingUp,
+      },
+    ]
+  },
+  {
+    decade: "2010s",
+    title: "Internacionalización y Digitalización",
+    events: [
+      {
+        year: "2013",
+        title: "Expansión a República Dominicana",
+        description: "La compañía continuó su crecimiento internacional con el inicio de operaciones en República Dominicana, ampliando su alcance en el Caribe.",
+        icon: Globe,
+      },
+      {
+        year: "2014",
+        title: "Lanzamiento de Servicios Digitales",
+        description: "Se implementaron plataformas como Banesco Seguros Online, permitiendo a los clientes realizar autogestión de trámites, consultas y reportes de siniestros de manera más eficiente.",
+        icon: Laptop,
+      },
+    ]
+  },
+  {
+    decade: "2020s",
+    title: "Optimización y Adaptación",
+    events: [
+      {
+        year: "2020-Presente",
+        title: "Enfoque en Optimización Tecnológica",
+        description: "Se ha puesto énfasis en la modernización de la infraestructura tecnológica, la automatización de procesos internos y la búsqueda de eficiencias operativas para mejorar la atención y reducir costos.",
+        icon: Zap,
+      },
+      {
+        year: "2020-Presente",
+        title: "Adaptación a Nuevas Tendencias",
+        description: "La compañía ha trabajado en ajustar y desarrollar su oferta de productos para cubrir nuevos riesgos asociados al contexto actual, como la necesidad de mayor cobertura de salud y ciberseguridad.",
+        icon: Workflow,
+      },
+    ]
+  }
+];
+
 
 export default function NosotrosPage() {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
@@ -187,7 +280,7 @@ export default function NosotrosPage() {
         <section className="relative h-[600px] w-full group">
           <Link href="/dashboard/objetivos-smart" className="absolute inset-0 z-10" aria-label="Explorar desafíos estratégicos" />
           <Image 
-            src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb21wYW55fGVufDB8fHx8MTc1MDkwMzI3Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+            src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb21wYW55fGVufDB8fHx8MTc1MDkwMzI3Nnww&ixlib-rb-4.1.0&q=80&w=1080"
             alt="Visión de la empresa"
             layout="fill"
             objectFit="cover"
@@ -245,6 +338,55 @@ export default function NosotrosPage() {
               {statsData.map((stat, index) => (
                 <StatCard key={index} {...stat} />
               ))}
+            </div>
+          </div>
+        </section>
+
+         <section className="py-16 md:py-24 bg-muted/20">
+          <div className="container mx-auto px-4">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <p className="text-lg font-semibold text-primary">Historia</p>
+              <h3 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight mt-2">
+                Un Viaje a Través del Tiempo
+              </h3>
+               <p className="mt-6 text-muted-foreground text-base leading-relaxed max-w-2xl mx-auto">
+                Desde nuestra fundación hasta hoy, hemos evolucionado para adaptarnos a los nuevos tiempos, manteniendo siempre nuestro compromiso con la excelencia y la innovación.
+              </p>
+            </div>
+            <div className="relative space-y-12">
+               <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-border -translate-x-1/2 hidden md:block"></div>
+                {timelineData.map((decade, decadeIndex) => (
+                    <div key={decade.decade} className="relative">
+                        <div className="sticky top-28 md:top-32 z-10 mb-8 md:text-center">
+                          <Badge variant="secondary" className="text-sm bg-background border shadow-sm">{decade.title}</Badge>
+                        </div>
+                        <div className="space-y-8">
+                            {decade.events.map((event, eventIndex) => {
+                                const isOdd = eventIndex % 2 !== 0;
+                                const Icon = event.icon;
+                                return (
+                                    <div key={event.title} className={cn("flex md:items-center w-full", isOdd ? "md:flex-row-reverse" : "md:flex-row")}>
+                                      <div className="hidden md:flex w-1/2"></div>
+                                      <div className="hidden md:flex w-12 h-12 rounded-full bg-background border-2 border-primary items-center justify-center flex-shrink-0 z-10">
+                                          <Icon className="h-6 w-6 text-primary" />
+                                      </div>
+                                      <div className="w-full md:w-1/2 md:px-8">
+                                          <Card className="shadow-lg">
+                                              <CardHeader>
+                                                  <CardDescription>{event.year}</CardDescription>
+                                                  <CardTitle>{event.title}</CardTitle>
+                                              </CardHeader>
+                                              <CardContent>
+                                                  <p className="text-muted-foreground text-sm">{event.description}</p>
+                                              </CardContent>
+                                          </Card>
+                                      </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                ))}
             </div>
           </div>
         </section>
