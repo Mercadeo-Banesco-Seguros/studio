@@ -208,9 +208,9 @@ export default function BienestarPage() {
               <p className="mt-4 text-muted-foreground max-w-md">
                 Mantente al día con las celebraciones y fechas especiales que tenemos en Banesco Seguros.
               </p>
-              <Button asChild variant="link" className="mt-8 px-0">
+              <Button asChild size="lg" className="mt-8 font-light">
                 <Link href="/dashboard/calendario">
-                  Ver Calendario Completo <ArrowRight className="ml-2 h-4 w-4" />
+                  Ver Calendario Completo
                 </Link>
               </Button>
             </div>
