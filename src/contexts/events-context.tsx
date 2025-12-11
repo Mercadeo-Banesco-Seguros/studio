@@ -3,7 +3,7 @@
 
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { getCalendarEvents } from '@/ai/flows/get-calendar-events-flow';
-import { parseISO } from 'date-fns';
+import { parseISO, setYear, getMonth, getDate } from 'date-fns';
 import { Cake } from 'lucide-react';
 
 // Define the event structure, ensuring it's comprehensive for both mock and user events
@@ -37,37 +37,45 @@ export const EventsProvider = ({ children }: { children: ReactNode }) => {
       try {
         const rawEventsData = await getCalendarEvents();
         const processedEvents: CalendarEvent[] = [];
+        const currentYear = new Date().getFullYear();
+        const yearsToGenerate = [currentYear - 1, currentYear, currentYear + 1, currentYear + 2]; // Generate for a few years around the current one
 
         rawEventsData.forEach(dayData => {
-          const eventDate = parseISO(dayData.date);
+          const originalDate = parseISO(dayData.date);
           
-          // Process regular events
+          // Process regular events - these happen only on the specified date
           dayData.events.forEach((eventTitle, index) => {
             if (eventTitle) {
               processedEvents.push({
                 id: `gs-event-${dayData.date}-${index}`,
-                date: eventDate,
+                date: originalDate,
                 title: eventTitle,
                 description: `Evento programado: ${eventTitle}`,
                 color: 'bg-purple-500', // Default color
                 isUserEvent: false,
-                time: eventDate.toTimeString().substring(0, 5) === '00:00' ? undefined : eventDate.toTimeString().substring(0, 5),
+                time: originalDate.toTimeString().substring(0, 5) === '00:00' ? undefined : originalDate.toTimeString().substring(0, 5),
               });
             }
           });
 
-          // Process birthdays
+          // Process birthdays - make them recur every year
           dayData.birthdays.forEach((birthdayName, index) => {
             if (birthdayName) {
-              processedEvents.push({
-                id: `gs-bday-${dayData.date}-${index}`,
-                date: eventDate,
-                title: `Cumpleaños de ${birthdayName}`,
-                description: `¡Felicidades a ${birthdayName}!`,
-                color: 'bg-pink-500',
-                isUserEvent: false,
-                category: 'birthday',
-                icon: Cake,
+              const month = getMonth(originalDate);
+              const day = getDate(originalDate);
+
+              yearsToGenerate.forEach(year => {
+                 const birthdayDate = new Date(year, month, day);
+                 processedEvents.push({
+                    id: `gs-bday-${year}-${month}-${day}-${index}`,
+                    date: birthdayDate,
+                    title: `Cumpleaños de ${birthdayName}`,
+                    description: `¡Felicidades a ${birthdayName}!`,
+                    color: 'bg-pink-500',
+                    isUserEvent: false,
+                    category: 'birthday',
+                    icon: Cake,
+                });
               });
             }
           });
@@ -75,6 +83,7 @@ export const EventsProvider = ({ children }: { children: ReactNode }) => {
         
         setAllEvents(prevEvents => {
           const userEvents = prevEvents.filter(e => e.isUserEvent);
+          // Combine fetched events with existing user-created events
           return [...processedEvents, ...userEvents];
         });
 
