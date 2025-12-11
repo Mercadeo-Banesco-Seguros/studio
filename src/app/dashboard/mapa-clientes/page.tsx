@@ -274,17 +274,10 @@ export default function NosotrosPage() {
   ];
 
   let totalEventCounter = 0;
-  const cardColors = [
-    { bg: 'bg-blue-100', text: 'text-blue-800', description: 'text-blue-600', year: 'text-blue-400' },
-    { bg: 'bg-blue-200', text: 'text-blue-900', description: 'text-blue-700', year: 'text-blue-500' },
-    { bg: 'bg-sky-200', text: 'text-sky-900', description: 'text-sky-700', year: 'text-sky-500' },
-    { bg: 'bg-sky-300', text: 'text-sky-900', description: 'text-sky-800', year: 'text-sky-600' },
-    { bg: 'bg-sky-400', text: 'text-white', description: 'text-sky-100', year: 'text-sky-200' },
-    { bg: 'bg-secondary', text: 'text-secondary-foreground', description: 'text-secondary-foreground/80', year: 'text-secondary-foreground/60' },
-    { bg: 'bg-blue-600', text: 'text-white', description: 'text-blue-100', year: 'text-blue-200' },
-    { bg: 'bg-blue-700', text: 'text-white', description: 'text-blue-100', year: 'text-blue-200' },
-    { bg: 'bg-primary/90', text: 'text-primary-foreground', description: 'text-primary-foreground/80', year: 'text-primary-foreground/70' },
-    { bg: 'bg-primary', text: 'text-primary-foreground', description: 'text-primary-foreground/80', year: 'text-primary-foreground/70' },
+  const iconBgColors = [
+    'bg-blue-100', 'bg-blue-200', 'bg-sky-200', 'bg-sky-300', 
+    'bg-sky-400', 'bg-sky-500', 'bg-blue-600', 'bg-blue-700', 
+    'bg-primary/90', 'bg-primary'
   ];
 
   return (
@@ -356,55 +349,70 @@ export default function NosotrosPage() {
           </div>
         </section>
 
-         <section className="py-16 md:py-24 bg-muted/20">
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <p className="text-lg font-semibold text-primary">Historia</p>
-              <h3 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight mt-2">
-                Un Viaje a Través del Tiempo
-              </h3>
-               <p className="mt-6 text-muted-foreground text-base leading-relaxed max-w-2xl mx-auto">
-                Desde nuestra fundación hasta hoy, hemos evolucionado para adaptarnos a los nuevos tiempos, manteniendo siempre nuestro compromiso con la excelencia y la innovación.
-              </p>
+        <section className="py-16 md:py-24 bg-muted/20">
+            <div className="container mx-auto px-4">
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <p className="text-lg font-semibold text-primary">Historia</p>
+                    <h3 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight mt-2">
+                        Un Viaje a Través del Tiempo
+                    </h3>
+                    <p className="mt-6 text-muted-foreground text-base leading-relaxed max-w-2xl mx-auto">
+                        Desde nuestra fundación hasta hoy, hemos evolucionado para adaptarnos a los nuevos tiempos, manteniendo siempre nuestro compromiso con la excelencia y la innovación.
+                    </p>
+                </div>
+                <div className="relative space-y-12">
+                    <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-border -translate-x-1/2 hidden md:block"></div>
+                    {timelineData.map((decade, decadeIndex) => {
+                        const isFirstDecade = decadeIndex === 0;
+                        return (
+                            <div key={decade.decade} className="relative">
+                                <div className={cn("sticky z-10 mb-8 md:text-center", isFirstDecade ? "top-28 md:top-32" : "top-28 md:top-32")}>
+                                    <Badge variant="default" className="text-sm shadow-sm bg-primary text-primary-foreground hover:bg-primary/90">{decade.title}</Badge>
+                                </div>
+                                <div className="space-y-8">
+                                    {decade.events.map((event) => {
+                                        const isOdd = totalEventCounter % 2 !== 0;
+                                        const Icon = event.icon;
+                                        const bgColor = iconBgColors[totalEventCounter % iconBgColors.length];
+                                        const isDarkBg = totalEventCounter >= 6;
+                                        totalEventCounter++;
+                                        return (
+                                            <div key={event.title} className={cn("flex md:items-center w-full", isOdd ? "md:flex-row-reverse" : "md:flex-row")}>
+                                                <div className="hidden md:flex w-1/2"></div>
+                                                <div className={cn(
+                                                    "hidden md:flex w-12 h-12 rounded-full items-center justify-center flex-shrink-0 z-10",
+                                                    bgColor,
+                                                    isDarkBg ? 'text-white' : 'text-primary-foreground'
+                                                )}>
+                                                    <Icon className={cn("h-6 w-6", isDarkBg ? 'text-white' : 'text-blue-800')} />
+                                                </div>
+                                                <div className="w-full md:w-1/2 md:px-8">
+                                                    <Card className="shadow-lg rounded-2xl bg-card">
+                                                        <CardHeader>
+                                                            <div className="flex items-start gap-4">
+                                                                <div className={cn("md:hidden flex-shrink-0 w-10 h-10 rounded-lg items-center justify-center flex", bgColor)}>
+                                                                    <Icon className={cn("h-5 w-5", isDarkBg ? 'text-white' : 'text-blue-800')} />
+                                                                </div>
+                                                                <div>
+                                                                    <CardDescription>{event.year}</CardDescription>
+                                                                    <CardTitle>{event.title}</CardTitle>
+                                                                </div>
+                                                            </div>
+                                                        </CardHeader>
+                                                        <CardContent>
+                                                            <p className="text-sm text-muted-foreground">{event.description}</p>
+                                                        </CardContent>
+                                                    </Card>
+                                                </div>
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
-            <div className="relative space-y-12">
-               <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-border -translate-x-1/2 hidden md:block"></div>
-                {timelineData.map((decade, decadeIndex) => (
-                    <div key={decade.decade} className="relative">
-                        <div className="sticky top-28 md:top-32 z-10 mb-8 md:text-center">
-                          <Badge variant="default" className="text-sm shadow-sm bg-primary text-primary-foreground hover:bg-primary/90">{decade.title}</Badge>
-                        </div>
-                        <div className="space-y-8">
-                            {decade.events.map((event, eventIndex) => {
-                                const isOdd = totalEventCounter % 2 !== 0;
-                                const Icon = event.icon;
-                                const colorSet = cardColors[totalEventCounter % cardColors.length];
-                                totalEventCounter++;
-                                return (
-                                    <div key={event.title} className={cn("flex md:items-center w-full", isOdd ? "md:flex-row-reverse" : "md:flex-row")}>
-                                      <div className="hidden md:flex w-1/2"></div>
-                                      <div className="hidden md:flex w-12 h-12 rounded-full bg-background border-2 border-primary items-center justify-center flex-shrink-0 z-10">
-                                          <Icon className="h-6 w-6 text-primary" />
-                                      </div>
-                                      <div className="w-full md:w-1/2 md:px-8">
-                                          <Card className={cn("shadow-lg rounded-2xl", colorSet.bg)}>
-                                              <CardHeader>
-                                                  <CardDescription className={cn(colorSet.year)}>{event.year}</CardDescription>
-                                                  <CardTitle className={cn(colorSet.text)}>{event.title}</CardTitle>
-                                              </CardHeader>
-                                              <CardContent>
-                                                  <p className={cn("text-sm", colorSet.description)}>{event.description}</p>
-                                              </CardContent>
-                                          </Card>
-                                      </div>
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    </div>
-                ))}
-            </div>
-          </div>
         </section>
         
         <section className="py-16 md:py-24 bg-background">
