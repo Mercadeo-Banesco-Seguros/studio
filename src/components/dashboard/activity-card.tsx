@@ -4,56 +4,42 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import type { Activity } from "@/lib/placeholder-data";
-import { MapPin, CalendarDays, Clock, Tag } from "lucide-react";
+import { Button } from "../ui/button";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 interface ActivityCardProps {
   activity: Activity;
 }
 
 export function ActivityCard({ activity }: ActivityCardProps) {
-  const scheduleLines = activity.description
-    .split('Dónde y cuándo son las clases:')[1]
-    ?.trim()
-    .split('\n') || [];
-  const time = scheduleLines[0] || "5:00 PM";
-  
-  const shortDescription = activity.description.split('\n')[0];
-
   return (
     <Card 
       className={cn(
-        "group relative w-full overflow-hidden rounded-2xl bg-card shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+        "group relative w-full overflow-hidden rounded-2xl bg-card shadow-md transition-all duration-300 h-96"
       )}
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden">
-        <Image
-          src={activity.imageUrl}
-          alt={activity.title}
-          layout="fill"
-          objectFit="cover"
-          data-ai-hint={activity.dataAiHint}
-          className="transition-transform duration-500 group-hover:scale-105"
-        />
-      </div>
+      <Image
+        src={activity.imageUrl}
+        alt={activity.title}
+        layout="fill"
+        objectFit="cover"
+        data-ai-hint={activity.dataAiHint}
+        className="transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
-      <CardContent className="p-4">
-        <div className="flex items-center gap-2 mb-3">
-            <Badge variant="secondary" className="flex items-center gap-1.5 text-xs font-normal">
-                <Tag className="h-3 w-3" />
-                {activity.category}
-            </Badge>
-             <Badge variant="secondary" className="flex items-center gap-1.5 text-xs font-normal">
-                <MapPin className="h-3 w-3" />
-                {activity.location}
-            </Badge>
-             <Badge variant="secondary" className="flex items-center gap-1.5 text-xs font-normal">
-                <Clock className="h-3 w-3" />
-                {time}
-            </Badge>
+      <CardContent className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
+        <div>
+            <Badge variant="secondary" className="bg-white/20 backdrop-blur-sm text-xs">{activity.category}</Badge>
+            <h3 className="text-2xl font-bold mt-2">{activity.title}</h3>
         </div>
-        
-        <h3 className="text-2xl font-bold text-foreground mb-1 tracking-tight">{activity.title}</h3>
-        <p className="text-sm text-muted-foreground">{shortDescription}</p>
+        <div className="mt-4">
+             <Button variant="ghost" className="text-white h-auto p-0 hover:bg-transparent hover:text-white group/link">
+                Ver más
+                <ArrowRight className="ml-2 h-4 w-4 transform transition-transform group-hover/link:translate-x-1" />
+            </Button>
+        </div>
       </CardContent>
     </Card>
   );

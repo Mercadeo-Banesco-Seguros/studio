@@ -50,6 +50,7 @@ export default function BienestarPage() {
     const [satisfaction, setSatisfaction] = useState<Satisfaction>(null);
     const [comment, setComment] = useState('');
     const { toast } = useToast();
+    const activitiesScrollRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const dayName = new Date().toLocaleDateString('es-ES', { weekday: 'long' });
@@ -111,6 +112,17 @@ export default function BienestarPage() {
             left: direction === 'left' ? -scrollAmount : scrollAmount,
             behavior: 'smooth',
         });
+        }
+    };
+    
+    const handleActivitiesScroll = (direction: 'left' | 'right') => {
+        const viewport = activitiesScrollRef.current?.querySelector<HTMLDivElement>('[data-radix-scroll-area-viewport]');
+        if (viewport) {
+            const scrollAmount = viewport.offsetWidth;
+            viewport.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth',
+            });
         }
     };
     
@@ -184,14 +196,14 @@ export default function BienestarPage() {
             Galería de Recuerdos
           </h2>
           <div className="relative h-[30rem] w-full flex items-center justify-center group">
-            <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-[-12deg] -translate-x-40 group-hover:rotate-0 group-hover:translate-x-0">
+            <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out -rotate-12 group-hover:rotate-0 group-hover:-translate-x-0 -translate-x-40">
                 <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" />
             </Card>
             <Card className="absolute w-80 h-[30rem] rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out z-10 scale-100 group-hover:scale-110">
-                <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
+                <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
             </Card>
-            <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-12 translate-x-40 group-hover:rotate-0 group-hover:translate-x-0">
-                <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
+            <Card className="absolute w-64 h-96 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-12 group-hover:rotate-0 group-hover:translate-x-0 translate-x-40">
+                <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
             </Card>
           </div>
         </div>
@@ -236,22 +248,39 @@ export default function BienestarPage() {
       </section>
 
       {/* Activities Section */}
-      <div id="explorar-actividades" className="scroll-mt-20 py-24 sm:py-32">
-        <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-                <Badge variant="outline">Actividades</Badge>
-                <h2 className="text-3xl font-bold tracking-tight mt-2">Explora Nuestras Actividades</h2>
-                <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
-                    Sumérgete en un mundo de bienestar y desarrollo con nuestras actividades diseñadas para ti.
-                </p>
-            </div>
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {mockActivities.map((activity) => (
-                    <ActivityCard key={activity.id} activity={activity} />
-                ))}
+        <div id="explorar-actividades" className="scroll-mt-20 py-24 sm:py-32">
+            <div className="container mx-auto px-4">
+                <div className="flex justify-between items-center mb-8">
+                    <div>
+                        <Badge variant="outline">Actividades</Badge>
+                        <h2 className="text-3xl font-bold tracking-tight mt-2">Explora Nuestras Actividades</h2>
+                        <p className="mt-2 text-muted-foreground max-w-2xl">
+                            Sumérgete en un mundo de bienestar y desarrollo con nuestras actividades diseñadas para ti.
+                        </p>
+                    </div>
+                    <div className="hidden md:flex items-center gap-2">
+                        <Button variant="outline" size="icon" onClick={() => handleActivitiesScroll('left')}>
+                            <ChevronLeft className="h-4 w-4" />
+                        </Button>
+                        <Button variant="outline" size="icon" onClick={() => handleActivitiesScroll('right')}>
+                            <ChevronRight className="h-4 w-4" />
+                        </Button>
+                    </div>
+                </div>
+                <div ref={activitiesScrollRef}>
+                    <ScrollArea className="w-full">
+                        <div className="flex w-max space-x-6 pb-4">
+                            {mockActivities.map((activity) => (
+                               <div key={activity.id} className="w-80 flex-shrink-0">
+                                 <ActivityCard activity={activity} />
+                               </div>
+                            ))}
+                        </div>
+                        <ScrollBar orientation="horizontal" />
+                    </ScrollArea>
+                </div>
             </div>
         </div>
-      </div>
       
       {/* Menu Section */}
       <SectionWrapper
