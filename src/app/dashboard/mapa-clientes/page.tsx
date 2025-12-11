@@ -360,50 +360,32 @@ export default function NosotrosPage() {
                         Desde nuestra fundación hasta hoy, hemos evolucionado para adaptarnos a los nuevos tiempos, manteniendo siempre nuestro compromiso con la excelencia y la innovación.
                     </p>
                 </div>
-            </div>
-            <ScrollArea className="w-full">
-                <div className="relative w-max mx-auto py-12 px-20">
-                    <div className="absolute top-1/2 left-0 h-1 w-full bg-border -translate-y-1/2"></div>
-                    <div className="flex gap-20">
-                        {timelineData.map((decade, decadeIndex) => (
-                            <div key={decade.decade} className="flex flex-col items-center relative pt-8">
-                                <div className="absolute top-0 -translate-y-full">
-                                    <Badge variant="default" className="text-sm shadow-sm bg-primary text-primary-foreground hover:bg-primary/90">{decade.title}</Badge>
-                                </div>
-                                {decade.events.map((event, eventIndex) => {
-                                    const isOdd = eventIndex % 2 !== 0;
-                                    const Icon = event.icon;
-                                    const bgColorIndex = decadeIndex * 2 + eventIndex;
-                                    const bgColor = iconBgColors[bgColorIndex % iconBgColors.length];
-                                    const isDarkBg = bgColorIndex >= 6;
+
+                <div className="relative w-full">
+                    <ScrollArea className="w-full pb-8">
+                        <div className="flex items-center gap-4 w-max px-4">
+                            {timelineData.flatMap((decade, decadeIndex) => 
+                                decade.events.map((event, eventIndex) => {
+                                    const overallIndex = timelineData.slice(0, decadeIndex).reduce((acc, d) => acc + d.events.length, 0) + eventIndex;
                                     return (
-                                        <div key={event.title} className={cn("relative w-80", isOdd ? "mt-16" : "mb-16")}>
-                                            <div className="absolute top-1/2 left-1/2 w-1 h-8 bg-border -translate-x-1/2" style={{ top: isOdd ? 'auto' : '100%', bottom: isOdd ? '100%' : 'auto' }}></div>
-                                            <div className={cn(
-                                                "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center z-10",
-                                                bgColor,
-                                                isDarkBg ? 'text-white' : 'text-primary-foreground'
-                                            )}>
-                                                <Icon className={cn("h-6 w-6 text-white")} />
+                                        <div key={event.title} className="w-80 flex-shrink-0">
+                                            <div className="flex items-center mb-4">
+                                                <div className="text-4xl font-bold text-foreground opacity-30 mr-4">
+                                                    {String(overallIndex + 1).padStart(2, '0')}
+                                                </div>
+                                                <div className="h-px flex-grow bg-border"></div>
                                             </div>
-                                            <Card className="shadow-lg rounded-2xl bg-card">
-                                                <CardHeader>
-                                                    <CardDescription>{event.year}</CardDescription>
-                                                    <CardTitle>{event.title}</CardTitle>
-                                                </CardHeader>
-                                                <CardContent>
-                                                    <p className="text-sm text-muted-foreground">{event.description}</p>
-                                                </CardContent>
-                                            </Card>
+                                            <h4 className="font-bold text-lg mb-2">{event.title}</h4>
+                                            <p className="text-sm text-muted-foreground">{event.description}</p>
                                         </div>
-                                    )
-                                })}
-                            </div>
-                        ))}
-                    </div>
+                                    );
+                                })
+                            )}
+                        </div>
+                        <ScrollBar orientation="horizontal" />
+                    </ScrollArea>
                 </div>
-                <ScrollBar orientation="horizontal" />
-            </ScrollArea>
+            </div>
         </section>
         
         <section className="py-16 md:py-24 bg-background">
