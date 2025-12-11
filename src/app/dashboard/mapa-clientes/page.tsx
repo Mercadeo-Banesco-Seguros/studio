@@ -36,6 +36,7 @@ import { Badge } from '@/components/ui/badge';
 import { ClipboardCheck } from "lucide-react";
 import { Skeleton } from '@/components/ui/skeleton';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
+import { Separator } from '@/components/ui/separator';
 
 
 const commercialProcessSteps = [
@@ -349,40 +350,47 @@ export default function NosotrosPage() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24 bg-muted/20 overflow-hidden">
+        <section className="bg-primary text-primary-foreground py-24">
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <p className="text-lg font-semibold text-primary">Historia</p>
-                    <h3 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight mt-2">
+                    <p className="text-lg font-semibold text-primary-foreground/80">Historia</p>
+                    <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight mt-2">
                         Un Viaje a Través del Tiempo
                     </h3>
-                    <p className="mt-6 text-muted-foreground text-base leading-relaxed max-w-2xl mx-auto">
+                    <p className="mt-6 text-primary-foreground/80 text-base leading-relaxed max-w-2xl mx-auto">
                         Desde nuestra fundación hasta hoy, hemos evolucionado para adaptarnos a los nuevos tiempos, manteniendo siempre nuestro compromiso con la excelencia y la innovación.
                     </p>
                 </div>
 
-                <div className="relative w-full h-[250px]">
-                    <ScrollArea className="w-full h-full pb-8">
-                        <div className="flex items-center gap-4 w-max px-4 h-full">
+                <div className="relative w-full">
+                    <ScrollArea className="w-full">
+                        <div className="flex items-start gap-4 pb-8 px-4">
                             {timelineData.flatMap((decade, decadeIndex) => 
                                 decade.events.map((event, eventIndex) => {
                                     const overallIndex = timelineData.slice(0, decadeIndex).reduce((acc, d) => acc + d.events.length, 0) + eventIndex;
                                     return (
-                                        <div key={event.title} className="w-80 flex-shrink-0">
-                                            <div className="flex items-center mb-4">
-                                                <div className="text-4xl font-bold text-foreground opacity-30 mr-4">
-                                                    {String(overallIndex + 1).padStart(2, '0')}
+                                        <React.Fragment key={event.title}>
+                                            <div className="w-80 flex-shrink-0">
+                                                <div className="flex items-center gap-4 mb-4">
+                                                    <div className="text-4xl font-bold text-primary-foreground/50">
+                                                        {String(overallIndex + 1).padStart(2, '0')}
+                                                    </div>
+                                                    <div>
+                                                        <Badge variant="secondary" className="bg-white/10 text-white font-normal text-xs">{event.year}</Badge>
+                                                    </div>
                                                 </div>
-                                                <div className="h-px flex-grow bg-border"></div>
+                                                <h4 className="font-bold text-lg mb-2">{event.title}</h4>
+                                                <p className="text-sm text-primary-foreground/80">{event.description}</p>
                                             </div>
-                                            <h4 className="font-bold text-lg mb-2">{event.title}</h4>
-                                            <p className="text-sm text-muted-foreground">{event.description}</p>
-                                        </div>
+                                             {eventIndex < decade.events.length - 1 || decadeIndex < timelineData.length - 1 ? (
+                                              <Separator orientation="vertical" className="h-auto bg-primary-foreground/20 w-px mx-8" />
+                                            ) : null}
+                                        </React.Fragment>
                                     );
                                 })
                             )}
                         </div>
-                        <ScrollBar orientation="horizontal" />
+                        <ScrollBar orientation="horizontal" className="bg-primary-foreground/20" />
                     </ScrollArea>
                 </div>
             </div>
@@ -502,5 +510,3 @@ export default function NosotrosPage() {
     </div>
   );
 }
-
-    
