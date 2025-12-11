@@ -164,17 +164,17 @@ export default function BienestarPage() {
             </Button>
           </div>
            <div className="grid grid-cols-2 gap-4">
-             {isLoadingEvents ? (
-                <Skeleton className="h-96 w-full rounded-2xl col-span-2" />
-             ) : importantEvents.length > 0 ? (
-                <EventHighlightCard {...importantEvents[0]} />
-             ) : (
-                <Card className="col-span-2 flex flex-col items-center justify-center text-center text-muted-foreground p-8 bg-muted/50 rounded-2xl min-h-[384px]">
-                  <Star className="h-12 w-12 mb-4 text-primary/50" />
-                  <h3 className="text-xl font-semibold text-foreground">No hay eventos destacados</h3>
-                  <p className="max-w-md mt-2">No se encontraron eventos especiales para este mes.</p>
-                </Card>
-             )}
+              <Card className="relative overflow-hidden rounded-2xl group border-none shadow-lg h-96 col-span-2">
+                <Image
+                    src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2120&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Persona practicando yoga al aire libre"
+                    layout="fill"
+                    objectFit="cover"
+                    data-ai-hint="yoga wellness"
+                    className="transition-transform duration-500 ease-in-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              </Card>
           </div>
         </div>
       </section>
