@@ -31,8 +31,8 @@ export function ActivityCard({ activity }: ActivityCardProps) {
 
       <CardContent className="relative z-10 flex flex-col justify-end h-full p-6 text-white">
         <div>
-            <Badge variant="secondary" className="bg-white/20 backdrop-blur-sm text-xs">{activity.category}</Badge>
-            <h3 className="text-2xl font-bold mt-2">{activity.title}</h3>
+            <Badge variant="default" className="text-xs">{activity.category}</Badge>
+            <h3 className="text-2xl font-bold mt-2 tracking-tight">{activity.title}</h3>
         </div>
         <div className="mt-4">
              <Button variant="ghost" className="text-white h-auto p-0 hover:bg-transparent hover:text-white group/link">
