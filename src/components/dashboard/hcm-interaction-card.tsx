@@ -87,7 +87,7 @@ export const HcmCard = ({
                         <h3 className="text-4xl md:text-5xl font-bold my-2">{title}</h3>
                         <div className="flex gap-4 mt-4">
                             <Button asChild variant="secondary" className="bg-white text-primary hover:bg-white/90 font-light">
-                                <Link href="#">{buttonText}</Link>
+                                <Link href="/dashboard/hcm">{buttonText}</Link>
                             </Button>
                             <Button onClick={() => setIsFlipped(true)} variant="outline" className="bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white font-light">
                                 Contacto
@@ -107,7 +107,7 @@ export const HcmCard = ({
                                 href="https://wa.me/584242668446"
                                 type="whatsapp"
                                 label="Whatsapp"
-                                number="0424-Contigo (2668446)"
+                                number="0424-CONTIGO (2668446)"
                                 icon={WhatsAppIcon}
                                 className="bg-secondary"
                                 iconClassName="text-primary"
@@ -116,7 +116,7 @@ export const HcmCard = ({
                                 href="tel:05007258300"
                                 type="phone"
                                 label="Central telefónica"
-                                number="0500-7258300"
+                                number="0500-SALUD-00 (7258300)"
                                 icon={Phone}
                                 className="bg-secondary"
                                 iconClassName="text-primary"
