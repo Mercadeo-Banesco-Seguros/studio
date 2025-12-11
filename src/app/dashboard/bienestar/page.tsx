@@ -177,7 +177,7 @@ export default function BienestarPage() {
       </section>
 
       {/* Galería de Recuerdos Section */}
-      <section className="py-24 sm:py-32 bg-primary text-primary-foreground">
+      <section className="py-16 sm:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <Badge variant="secondary" className="bg-white/10 text-white hover:bg-white/20 mb-4">Actividades Corporativas</Badge>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-12">
