@@ -11,25 +11,28 @@ import Link from 'next/link';
 
 interface InteractiveMenuBannerProps {
   menuItems: MenuItem[];
-  selectedDay?: string;
+  selectedDay: string;
+  onDayChange: (day: string) => void;
 }
 
 const normalizeDayName = (name: string) => {
   if (!name) return '';
   return name
     .toLowerCase()
-    .normalize("NFD") // Decompose accented characters
-    .replace(/[\u0300-\u036f]/g, "") // Remove diacritical marks
-    .replace(/[^a-z]/g, ''); // remove non-alphabetic chars
+    .normalize("NFD") 
+    .replace(/[\u0300-\u036f]/g, "") 
+    .replace(/[^a-z]/g, '');
 };
 
-export const InteractiveMenuBanner = ({ menuItems, selectedDay: propSelectedDay }: InteractiveMenuBannerProps) => {
+const weekDays = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
+
+export const InteractiveMenuBanner = ({ menuItems, selectedDay, onDayChange }: InteractiveMenuBannerProps) => {
   const [selectedType, setSelectedType] = useState<'Clásico' | 'Dieta' | 'Ejecutivo'>('Clásico');
   const [isAnimating, setIsAnimating] = useState(false);
   const [currentDayName, setCurrentDayName] = useState('');
   
   useEffect(() => {
-    const dayToUse = propSelectedDay || new Date().toLocaleDateString('es-ES', { weekday: 'long' });
+    const dayToUse = selectedDay || new Date().toLocaleDateString('es-ES', { weekday: 'long' });
     const normalizedDay = normalizeDayName(dayToUse);
     setCurrentDayName(normalizedDay);
 
@@ -46,7 +49,7 @@ export const InteractiveMenuBanner = ({ menuItems, selectedDay: propSelectedDay 
             setSelectedType('Clásico');
         }
     }
-  }, [menuItems, propSelectedDay]);
+  }, [menuItems, selectedDay]);
 
   const selectedMenuItem = useMemo(() => {
     return menuItems.find(item => {
@@ -105,6 +108,27 @@ export const InteractiveMenuBanner = ({ menuItems, selectedDay: propSelectedDay 
         />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+        <div className="absolute top-8 right-8 z-30">
+            <div className="flex flex-wrap items-center justify-center gap-2 bg-white/10 backdrop-blur-sm p-1 rounded-full">
+                {weekDays.map(day => (
+                    <Button 
+                        key={day} 
+                        size="sm" 
+                        variant={selectedDay === day ? 'default' : 'ghost'} 
+                        onClick={() => onDayChange(day)} 
+                        className={cn(
+                            "rounded-full font-light text-xs",
+                            selectedDay === day 
+                                ? 'bg-white text-primary' 
+                                : 'text-white/80 hover:bg-white/20 hover:text-white'
+                        )}
+                    >
+                        {day}
+                    </Button>
+                ))}
+            </div>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-12 items-center">
           
           {/* Left Side: Main Image */}
