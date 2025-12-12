@@ -168,7 +168,7 @@ export default function BienestarPage() {
           <div>
             <Badge variant="outline" className="mb-4">Banesco Seguros</Badge>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Un Espacio para Tu Bienestar Integral
+              Un Espacio para <br /> Tu Bienestar Integral
             </h1>
             <p className="mt-4 text-muted-foreground max-w-md">
               Creamos oportunidades para que puedas construir un estilo de vida saludable y equilibrado, fomentando tanto tu desarrollo personal como profesional.
@@ -207,7 +207,7 @@ export default function BienestarPage() {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-12">
             Galería de Recuerdos
           </h2>
-          <div className="relative h-[22rem] w-full flex items-center justify-center group">
+           <div className="relative h-[22rem] w-full flex items-center justify-center group">
               <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out -rotate-15 -translate-x-48 group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90">
                   <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" />
               </Card>
@@ -319,7 +319,7 @@ export default function BienestarPage() {
                 {isLoadingMenu ? (
                   Array.from({ length: 5 }).map((_, index) => (
                     <div key={index} className="w-80 flex-shrink-0">
-                        <Skeleton className="h-[420px] w-full rounded-2xl" />
+                        <Skeleton className="h-96 w-full rounded-2xl" />
                     </div>
                   ))
                 ) : filteredMenuItems.length > 0 ? (
@@ -396,6 +396,7 @@ export default function BienestarPage() {
     
 
     
+
 
 
 
