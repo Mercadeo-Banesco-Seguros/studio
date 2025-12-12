@@ -11,6 +11,7 @@ import Link from 'next/link';
 
 interface InteractiveMenuBannerProps {
   menuItems: MenuItem[];
+  selectedDay?: string;
 }
 
 const normalizeDayName = (name: string) => {
@@ -22,54 +23,43 @@ const normalizeDayName = (name: string) => {
     .replace(/[^a-z]/g, ''); // remove non-alphabetic chars
 };
 
-export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps) => {
+export const InteractiveMenuBanner = ({ menuItems, selectedDay: propSelectedDay }: InteractiveMenuBannerProps) => {
   const [selectedType, setSelectedType] = useState<'Clásico' | 'Dieta' | 'Ejecutivo'>('Clásico');
   const [isAnimating, setIsAnimating] = useState(false);
   const [currentDayName, setCurrentDayName] = useState('');
   
   useEffect(() => {
-    const dayName = new Date().toLocaleDateString('es-ES', { weekday: 'long' });
-    const normalizedToday = normalizeDayName(dayName);
-    setCurrentDayName(normalizedToday);
+    const dayToUse = propSelectedDay || new Date().toLocaleDateString('es-ES', { weekday: 'long' });
+    const normalizedDay = normalizeDayName(dayToUse);
+    setCurrentDayName(normalizedDay);
 
-    // Find the classic menu for today to set as default if available
-    const todaysClassicMenu = menuItems.find(item => {
-        const normalizedItemDay = normalizeDayName(item.day);
-        return normalizedItemDay === normalizedToday && item.type === 'Clásico';
-    });
+    const dayMenus = menuItems.filter(item => normalizeDayName(item.day) === normalizedDay);
 
-    if (todaysClassicMenu) {
+    const classicMenuExists = dayMenus.some(item => item.type === 'Clásico');
+    if (classicMenuExists) {
         setSelectedType('Clásico');
     } else {
-        // Fallback to the first available menu type for today
-        const firstAvailableMenu = menuItems.find(item => {
-            const normalizedItemDay = normalizeDayName(item.day);
-            return normalizedItemDay === normalizedToday;
-        });
-        if(firstAvailableMenu) {
-            setSelectedType(firstAvailableMenu.type);
+        const firstAvailableType = dayMenus[0]?.type;
+        if(firstAvailableType) {
+            setSelectedType(firstAvailableType);
         } else {
-            // If no menu for today, default to classic
             setSelectedType('Clásico');
         }
     }
-  }, [menuItems]);
+  }, [menuItems, propSelectedDay]);
 
   const selectedMenuItem = useMemo(() => {
     return menuItems.find(item => {
         const normalizedItemDay = normalizeDayName(item.day);
         return normalizedItemDay === currentDayName && item.type === selectedType;
-    }) || menuItems.find(item => item.type === selectedType) || null; // Fallback to first available of type
+    });
   }, [menuItems, selectedType, currentDayName]);
 
   const getThumbnailMenu = (type: 'Clásico' | 'Dieta' | 'Ejecutivo') => {
-    // Prioritize today's menu for the thumbnail
-    const todaysMenu = menuItems.find(item => {
+    return menuItems.find(item => {
       const normalizedItemDay = normalizeDayName(item.day);
       return normalizedItemDay === currentDayName && item.type === type;
     });
-    // Fallback to the first available menu of that type
-    return todaysMenu || menuItems.find(item => item.type === type) || null;
   };
   
   const classicMenu = useMemo(() => getThumbnailMenu('Clásico'), [menuItems, currentDayName]);
@@ -88,14 +78,19 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
 
   const handleNext = () => {
     const types: ('Clásico' | 'Dieta' | 'Ejecutivo')[] = ['Clásico', 'Dieta', 'Ejecutivo'];
-    const currentIndex = types.indexOf(selectedType);
-    const nextIndex = (currentIndex + 1) % types.length;
-    handleThumbnailClick(types[nextIndex]);
+    const availableTypes = types.filter(t => getThumbnailMenu(t));
+    if (availableTypes.length === 0) return;
+
+    const currentIndex = availableTypes.indexOf(selectedType);
+    const nextIndex = (currentIndex + 1) % availableTypes.length;
+    handleThumbnailClick(availableTypes[nextIndex]);
   };
   
   if (!menuItems || menuItems.length === 0) {
-    return null; // Don't render anything if there's no menu
+    return null;
   }
+  
+  const thumbnails = [classicMenu, dietaMenu, ejecutivoMenu].filter(Boolean) as MenuItem[];
 
   return (
     <section className="relative w-full bg-primary text-primary-foreground overflow-hidden min-h-[600px] flex items-center">
@@ -114,7 +109,7 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
           
           {/* Left Side: Main Image */}
           <div className="relative h-96 w-full transform -translate-y-4 md:translate-y-0">
-             {selectedMenuItem && selectedMenuItem.imageUrl && (
+             {selectedMenuItem && selectedMenuItem.imageUrl ? (
               <div className={cn("transition-opacity duration-300 w-full h-full", isAnimating ? "opacity-0" : "opacity-100")}>
                 <Image
                     src={selectedMenuItem.imageUrl}
@@ -124,16 +119,25 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
                     data-ai-hint={selectedMenuItem.dataAiHint || 'food plate'}
                 />
               </div>
+            ) : (
+                 <div className="flex items-center justify-center h-full w-full">
+                    <p className="text-white/80">No hay menú de este tipo para el día seleccionado.</p>
+                </div>
             )}
           </div>
 
           {/* Right Side: Details & Thumbnails */}
           <div className="relative">
-            {selectedMenuItem && (
+            {selectedMenuItem ? (
                 <div className={cn("transition-opacity duration-300 text-white", isAnimating ? "opacity-0" : "opacity-100")}>
                     <p className="text-sm font-light text-white/80 mb-2">Menú {selectedMenuItem.type.toLowerCase()}</p>
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">{selectedMenuItem.name}</h2>
                     <p className="text-sm text-white/80 max-w-sm mb-8">{selectedMenuItem.description}</p>
+                </div>
+            ) : (
+                <div className="text-white">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4">No hay menú</h2>
+                     <p className="text-sm text-white/80 max-w-sm mb-8">No hay menú disponible para el día y tipo seleccionado.</p>
                 </div>
             )}
 
@@ -145,30 +149,31 @@ export const InteractiveMenuBanner = ({ menuItems }: InteractiveMenuBannerProps)
                 </Button>
                 
                 {/* Thumbnails */}
-                <div className="flex items-center gap-3">
-                  {[classicMenu, dietaMenu, ejecutivoMenu].map(menu => {
-                    if (!menu || !menu.imageUrl) return null;
-                    const isSelected = selectedType === menu.type;
-                    return (
-                      <button
-                        key={menu.id}
-                        onClick={() => handleThumbnailClick(menu.type)}
-                        className={cn(
-                          "relative h-20 w-20 rounded-xl overflow-hidden border-2 transition-all duration-300 ease-in-out transform hover:scale-105",
-                          isSelected ? "border-white shadow-2xl scale-105" : "border-transparent opacity-60 hover:opacity-100"
-                        )}
-                      >
-                        <Image
-                          src={menu.imageUrl}
-                          alt={`Thumbnail of ${menu.name}`}
-                          layout="fill"
-                          objectFit="cover"
-                          data-ai-hint={menu.dataAiHint || 'food plate'}
-                        />
-                      </button>
-                    )
-                  })}
-                </div>
+                {thumbnails.length > 0 && (
+                    <div className="flex items-center gap-3">
+                    {thumbnails.map(menu => {
+                        const isSelected = selectedType === menu.type;
+                        return (
+                        <button
+                            key={menu.id}
+                            onClick={() => handleThumbnailClick(menu.type)}
+                            className={cn(
+                            "relative h-20 w-20 rounded-xl overflow-hidden border-2 transition-all duration-300 ease-in-out transform hover:scale-105",
+                            isSelected ? "border-white shadow-2xl scale-105" : "border-transparent opacity-60 hover:opacity-100"
+                            )}
+                        >
+                            <Image
+                            src={menu.imageUrl}
+                            alt={`Thumbnail of ${menu.name}`}
+                            layout="fill"
+                            objectFit="cover"
+                            data-ai-hint={menu.dataAiHint || 'food plate'}
+                            />
+                        </button>
+                        )
+                    })}
+                    </div>
+                )}
             </div>
 
             <Button size="icon" variant="ghost" className="absolute -right-4 top-1/2 -translate-y-1/2 rounded-full h-12 w-12 text-white/50 hover:bg-white/10 hover:text-white" onClick={handleNext}>

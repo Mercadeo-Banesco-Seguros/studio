@@ -26,6 +26,7 @@ import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import { InteractiveMenuCard } from '@/components/dashboard/interactive-menu-card';
+import { InteractiveMenuBanner } from '@/components/dashboard/interactive-menu-banner';
 
 const ESPECIAL_KEYWORDS = ['día de', 'feriado', 'conmemorativo', 'aniversario', 'independencia', 'mujer', 'trabajador', 'resistencia', 'navidad', 'noche buena', 'festivo', 'resultados anuales', 'carnavales', 'santo', 'batalla', 'natalicio', 'año nuevo', 'fin de año'];
 
@@ -205,14 +206,14 @@ export default function BienestarPage() {
             Galería de Recuerdos
           </h2>
            <div className="relative h-[22rem] w-full flex items-center justify-center group">
-              <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out -rotate-12 translate-x-[-12rem] group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90">
+              <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out -rotate-15 -translate-x-12 group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90">
                   <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" />
               </Card>
-              <Card className="absolute w-80 h-56 rounded-2xl overflow-hidden shadow-2xl transform z-10 scale-100 group-hover:scale-90 transition-transform duration-500 ease-in-out">
+              <Card className="absolute w-80 h-56 rounded-2xl overflow-hidden shadow-2xl transform z-10 scale-110 group-hover:scale-90 transition-transform duration-500 ease-in-out">
                   <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
               </Card>
-              <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-12 translate-x-[12rem] group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90">
-                  <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
+              <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-15 translate-x-12 group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90">
+                  <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
               </Card>
           </div>
         </div>
@@ -290,35 +291,34 @@ export default function BienestarPage() {
         </div>
       
       {/* Menu Section */}
-      <SectionWrapper
-        title="Menú Semanal del Comedor"
-        description="Descubre las deliciosas opciones que tenemos para ti durante toda la semana."
-        className="bg-muted/50"
-      >
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-            {weekDays.map(day => (
-                <Button key={day} size="sm" variant={selectedDay === day ? 'default' : 'outline'} onClick={() => setSelectedDay(day)}>
-                    {day}
-                </Button>
-            ))}
-        </div>
-        
-        <div className="flex gap-6 w-full">
-            {isLoadingMenu ? (
-                Array.from({ length: 3 }).map((_, index) => (
-                    <Skeleton key={index} className="h-96 flex-1 rounded-2xl" />
-                ))
-            ) : filteredMenuItems.length > 0 ? (
-                filteredMenuItems.map((item) => (
-                    <InteractiveMenuCard key={item.id} item={item} />
-                ))
-            ) : (
-                <div className="w-full text-center py-16 text-muted-foreground">
-                  <p>No hay menú disponible para el día de hoy: {selectedDay}.</p>
+      <div id="menu" className="scroll-mt-20">
+          {isLoadingMenu ? (
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <Skeleton className="h-[600px] w-full rounded-2xl" />
+            </div>
+          ) : allMenuItems.length > 0 ? (
+            <>
+                <div className="bg-primary/5 py-4">
+                    <div className="container mx-auto px-4 flex flex-wrap items-center justify-center gap-2">
+                        {weekDays.map(day => (
+                            <Button key={day} size="sm" variant={selectedDay === day ? 'default' : 'ghost'} onClick={() => setSelectedDay(day)} className={cn(selectedDay === day ? 'bg-primary' : 'text-primary')}>
+                                {day}
+                            </Button>
+                        ))}
+                    </div>
                 </div>
-            )}
+                <InteractiveMenuBanner menuItems={allMenuItems} selectedDay={selectedDay} />
+            </>
+          ) : (
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <Card className="col-span-full">
+                  <CardContent className="p-8 text-center text-muted-foreground">
+                    <p>No hay menú disponible para hoy. Por favor, consulte el menú semanal completo.</p>
+                  </CardContent>
+                </Card>
+            </div>
+          )}
         </div>
-      </SectionWrapper>
 
       {/* Feedback Section */}
       <div id="empezar" className="scroll-mt-20 py-24 sm:py-32">
