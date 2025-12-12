@@ -25,6 +25,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
+import { InteractiveMenuCard } from '@/components/dashboard/interactive-menu-card';
 
 const ESPECIAL_KEYWORDS = ['día de', 'feriado', 'conmemorativo', 'aniversario', 'independencia', 'mujer', 'trabajador', 'resistencia', 'navidad', 'noche buena', 'festivo', 'resultados anuales', 'carnavales', 'santo', 'batalla', 'natalicio', 'año nuevo', 'fin de año'];
 
@@ -37,11 +38,10 @@ const normalizeDayName = (name: string) => {
 
 type Satisfaction = 'happy' | 'neutral' | 'sad' | null;
 
+const weekDays = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
 
 export default function BienestarPage() {
-    const menuScrollAreaRef = useRef<HTMLDivElement>(null);
-    const [selectedMenu, setSelectedMenu] = useState<'Clásico' | 'Dieta' | 'Ejecutivo'>('Clásico');
-    const [currentDayName, setCurrentDayName] = useState('');
+    const [selectedDay, setSelectedDay] = useState(weekDays[0]);
     const [allMenuItems, setAllMenuItems] = useState<MenuItem[]>([]);
     const [isLoadingMenu, setIsLoadingMenu] = useState(true);
     const { allEvents } = useEvents();
@@ -53,8 +53,14 @@ export default function BienestarPage() {
     const activitiesScrollRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const dayName = new Date().toLocaleDateString('es-ES', { weekday: 'long' });
-        setCurrentDayName(dayName.charAt(0).toUpperCase() + dayName.slice(1));
+        const today = new Date();
+        const dayName = today.toLocaleDateString('es-ES', { weekday: 'long' });
+        const capitalizedDay = dayName.charAt(0).toUpperCase() + dayName.slice(1);
+        if (weekDays.includes(capitalizedDay)) {
+            setSelectedDay(capitalizedDay);
+        } else {
+            setSelectedDay('Lunes'); // Default to Monday if it's weekend
+        }
         
         const fetchMenu = async () => {
           setIsLoadingMenu(true);
@@ -107,17 +113,6 @@ export default function BienestarPage() {
             }, 1500);
         }
     }, [allEvents]);
-
-    const handleMenuScroll = (direction: 'left' | 'right') => {
-        const viewport = menuScrollAreaRef.current?.querySelector<HTMLDivElement>('[data-radix-scroll-area-viewport]');
-        if (viewport) {
-        const scrollAmount = 344;
-        viewport.scrollBy({
-            left: direction === 'left' ? -scrollAmount : scrollAmount,
-            behavior: 'smooth',
-        });
-        }
-    };
     
     const handleActivitiesScroll = (direction: 'left' | 'right') => {
         const viewport = activitiesScrollRef.current?.querySelector<HTMLDivElement>('[data-radix-scroll-area-viewport]');
@@ -157,7 +152,9 @@ export default function BienestarPage() {
         setComment('');
     };
 
-    const filteredMenuItems = allMenuItems.filter(item => item.type === selectedMenu);
+    const filteredMenuItems = useMemo(() => {
+        return allMenuItems.filter(item => normalizeDayName(item.day) === normalizeDayName(selectedDay));
+    }, [allMenuItems, selectedDay]);
 
   return (
     <div className="bg-background text-foreground">
@@ -208,14 +205,14 @@ export default function BienestarPage() {
             Galería de Recuerdos
           </h2>
            <div className="relative h-[22rem] w-full flex items-center justify-center group">
-              <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out -rotate-15 translate-x-[-12rem] group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90">
+              <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out -rotate-12 translate-x-[-12rem] group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90">
                   <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" />
               </Card>
               <Card className="absolute w-80 h-56 rounded-2xl overflow-hidden shadow-2xl transform z-10 scale-100 group-hover:scale-90 transition-transform duration-500 ease-in-out">
                   <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
               </Card>
-              <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-15 translate-x-[12rem] group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90">
-                  <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
+              <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-12 translate-x-[12rem] group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90">
+                  <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
               </Card>
           </div>
         </div>
@@ -298,42 +295,28 @@ export default function BienestarPage() {
         description="Descubre las deliciosas opciones que tenemos para ti durante toda la semana."
         className="bg-muted/50"
       >
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-            <div className="flex items-center gap-2 flex-wrap">
-                <Button size="sm" variant={selectedMenu === 'Clásico' ? 'default' : 'outline'} onClick={() => setSelectedMenu('Clásico')}>Clásico</Button>
-                <Button size="sm" variant={selectedMenu === 'Dieta' ? 'default' : 'outline'} onClick={() => setSelectedMenu('Dieta')}>Dieta</Button>
-                <Button size="sm" variant={selectedMenu === 'Ejecutivo' ? 'default' : 'outline'} onClick={() => setSelectedMenu('Ejecutivo')}>Ejecutivo</Button>
-            </div>
-            <div className="flex items-center gap-2">
-                <Button variant="outline" size="icon" onClick={() => handleMenuScroll('left')}>
-                <ChevronLeft className="h-4 w-4" />
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
+            {weekDays.map(day => (
+                <Button key={day} size="sm" variant={selectedDay === day ? 'default' : 'outline'} onClick={() => setSelectedDay(day)}>
+                    {day}
                 </Button>
-                <Button variant="outline" size="icon" onClick={() => handleMenuScroll('right')}>
-                <ChevronRight className="h-4 w-4" />
-                </Button>
-            </div>
+            ))}
         </div>
-        <div ref={menuScrollAreaRef}>
-            <ScrollArea className="w-full">
-            <div className="flex w-max space-x-6 py-4">
-                {isLoadingMenu ? (
-                  Array.from({ length: 5 }).map((_, index) => (
-                    <div key={index} className="w-80 flex-shrink-0">
-                        <Skeleton className="h-96 w-full rounded-2xl" />
-                    </div>
-                  ))
-                ) : filteredMenuItems.length > 0 ? (
-                  filteredMenuItems.map((item) => (
-                    <div key={item.id} className="w-80 flex-shrink-0 h-96">
-                        <MenuItemCard item={item} isCurrentDay={normalizeDayName(currentDayName) === normalizeDayName(item.day)} />
-                    </div>
-                  ))
-                ) : (
-                  <p className="text-muted-foreground">No hay menú de tipo "{selectedMenu}" disponible.</p>
-                )}
-            </div>
-            <ScrollBar orientation="horizontal" />
-            </ScrollArea>
+        
+        <div className="flex gap-6 w-full">
+            {isLoadingMenu ? (
+                Array.from({ length: 3 }).map((_, index) => (
+                    <Skeleton key={index} className="h-96 flex-1 rounded-2xl" />
+                ))
+            ) : filteredMenuItems.length > 0 ? (
+                filteredMenuItems.map((item) => (
+                    <InteractiveMenuCard key={item.id} item={item} />
+                ))
+            ) : (
+                <div className="w-full text-center py-16 text-muted-foreground">
+                  <p>No hay menú disponible para el día de hoy: {selectedDay}.</p>
+                </div>
+            )}
         </div>
       </SectionWrapper>
 
