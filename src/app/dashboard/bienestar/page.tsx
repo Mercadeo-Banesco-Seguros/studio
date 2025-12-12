@@ -206,13 +206,13 @@ export default function BienestarPage() {
             Galería de Recuerdos
           </h2>
            <div className="relative h-[22rem] w-full flex items-center justify-center group">
-              <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out -rotate-15 -translate-x-12 group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90">
+              <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out -rotate-15 -translate-x-32 group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90">
                   <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" />
               </Card>
               <Card className="absolute w-80 h-56 rounded-2xl overflow-hidden shadow-2xl transform z-10 scale-110 group-hover:scale-90 transition-transform duration-500 ease-in-out">
                   <Image src="https://images.unsplash.com/photo-1529156069898-4242e48c6db7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib=rb-4.1.0&q=80&w=1080" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" />
               </Card>
-              <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-15 translate-x-12 group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90">
+              <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out rotate-15 translate-x-32 group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90">
                   <Image src="https://images.unsplash.com/photo-1600880292210-f75bb6c1c4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWFtfGVufDB8fHx8MTc2MTE4MTQxM3ww&ixlib-rb-4.1.0&q=80&w=1080" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" />
               </Card>
           </div>
@@ -327,7 +327,7 @@ export default function BienestarPage() {
                         data-ai-hint="happy person"
                     />
                 </div>
-                <div className="max-w-md">
+                <div>
                     <Badge>Feedback</Badge>
                     <h2 className="text-3xl font-bold tracking-tight mt-2">Tu Opinión Nos Importa</h2>
                     <p className="text-muted-foreground mt-4">
