@@ -206,13 +206,13 @@ export default function BienestarPage() {
             Galería de Recuerdos
           </h2>
            <div className="relative h-[22rem] w-full flex items-center justify-center group">
-              <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90 -rotate-15 -translate-x-40">
+              <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90 -rotate-15 -translate-x-60">
                   <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Iniciativa%20Dulce%20o%20Truco%20BSV%20(2).jpg?raw=true" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" quality={100} />
               </Card>
               <Card className="absolute w-80 h-56 rounded-2xl overflow-hidden shadow-2xl transform z-10 scale-110 group-hover:scale-90 transition-transform duration-500 ease-in-out">
                   <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Octubre%20Rosa%202025%20(3).jpg?raw=true" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" quality={100} />
               </Card>
-              <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90 rotate-15 translate-x-40">
+              <Card className="absolute w-72 h-48 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90 rotate-15 translate-x-60">
                   <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Semana%20Huella.%20Mural.%202025%20(2).jpg?raw=true" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" quality={100} />
               </Card>
           </div>
