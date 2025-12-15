@@ -21,6 +21,7 @@ interface HcmCardProps {
   badgeIcon?: LucideIcon;
   imageUrl?: string;
   dataAiHint?: string;
+  href?: string;
 }
 
 const AnimatedContactButton = ({ href, type, label, number, icon: Icon, className, iconClassName }: {
@@ -69,7 +70,8 @@ export const HcmCard = ({
     badgeText, 
     badgeIcon: BadgeIcon,
     imageUrl, 
-    dataAiHint 
+    dataAiHint,
+    href = "#"
 }: HcmCardProps) => {
     const [isFlipped, setIsFlipped] = useState(false);
 
@@ -172,7 +174,7 @@ export const HcmCard = ({
             <h3 className="text-xl font-bold">{title}</h3>
             <p className="text-sm text-white/80 mt-1 mb-4">{description}</p>
             <Button asChild variant="default" className="font-light text-xs">
-              <Link href="#">
+              <Link href={href}>
                   {buttonText}
               </Link>
             </Button>
