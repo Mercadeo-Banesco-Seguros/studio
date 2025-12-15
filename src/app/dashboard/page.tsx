@@ -88,7 +88,7 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 
 const activityHighlights = [
   { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'gym fitness' },
-  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
+  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
   { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
   { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
 ];
@@ -739,7 +739,7 @@ export default function DashboardPage() {
                   title="Google Workspace"
                   details={["Sheets, Docs, Slides", "Aumenta tu eficiencia"]}
                   imageUrl="https://i.pinimg.com/736x/d0/c3/16/d0c316aeb4b444d186e33ddf42155105.jpg"
-                  dataAiHint="google workspace logo"
+                  data-ai-hint="google workspace logo"
                   availability={75}
                   className="min-h-[250px]"
                 />
@@ -752,7 +752,7 @@ export default function DashboardPage() {
                     title="Inteligencia Artificial"
                     details={["12 lecciones", "Nivel: Intermedio", "Aprende con IA"]}
                     imageUrl="https://i.pinimg.com/1200x/6a/58/b1/6a58b18b7ee53873c8566d1f5a7e3f7f.jpg"
-                    dataAiHint="artificial intelligence concept"
+                    data-ai-hint="artificial intelligence concept"
                     icon={Bot}
                     availability={40}
                     className="min-h-[250px]"
@@ -762,7 +762,7 @@ export default function DashboardPage() {
                     title="Comunicaciones Efectivas"
                     details={["Presentaciones", "Feedback", "Oratoria"]}
                     imageUrl="https://i.pinimg.com/736x/0a/10/0b/0a100b3550116c21c68a67fa05cbf017.jpg"
-                    dataAiHint="effective communication"
+                    data-ai-hint="effective communication"
                     icon={MessageSquare}
                     availability={90}
                     className="min-h-[250px]"
@@ -805,7 +805,7 @@ export default function DashboardPage() {
                   description="Guías detalladas para la gestión de siniestros y solicitudes."
                   buttonText="Consultar"
                   imageUrl="https://media.gettyimages.com/id/1448588965/es/v%C3%ADdeo/equipo-de-negocios-tel%C3%A9fono-y-hablando-sobre-idea-sitio-web-y-estrategia-de-planificaci%C3%B3n.jpg?s=640x640&k=20&c=wkYmdkUqKON-XHA_-PHWKtzqzK14Og9ZdMHm8vICH9M="
-                  dataAiHint="documents folder"
+                  data-ai-hint="documents folder"
                 />
                  <HcmCard
                   type="main"
@@ -823,7 +823,7 @@ export default function DashboardPage() {
                   description="Encuentra proveedores de servicios médicos en nuestra red nacional."
                   buttonText="Consultar"
                   imageUrl="https://t3.ftcdn.net/jpg/07/61/33/64/360_F_761336400_z0Vn5l3jVyiHhYDG2pH0SAdys3NMxOck.jpg"
-                  dataAiHint="clinic interior"
+                  data-ai-hint="clinic interior"
                 />
               </div>
             </div>
@@ -936,10 +936,19 @@ export default function DashboardPage() {
         </div>
 
         {/* Conectados Section */}
-        <section id="conectados" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-            <div className="relative bg-primary rounded-2xl shadow-lg text-white p-8 md:p-12 min-h-[600px] flex items-center overflow-hidden">
-                {/* Background Elements */}
-                <div className="absolute top-0 right-0 h-full w-full pointer-events-none">
+        <section id="conectados" className="w-full mt-24">
+            <Card className="relative text-white overflow-hidden min-h-[600px] flex items-center justify-center rounded-none">
+                <Image
+                    src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
+                    alt="Abstract background"
+                    layout="fill"
+                    objectFit="cover"
+                    className="z-0"
+                    data-ai-hint="abstract waves"
+                />
+                <div className="absolute inset-0 bg-transparent z-0" />
+                
+                <div className="absolute top-0 right-0 h-full w-1/2 pointer-events-none">
                     <div className="absolute -right-20 bottom-0 w-[520px] h-[390px] transform translate-y-1/4">
                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_p9zcfep9zcfep9zc-Photoroom.png?raw=true" alt="Arbusto decorativo" layout="fill" objectFit="contain" data-ai-hint="bush leaves" />
                     </div>
@@ -949,24 +958,25 @@ export default function DashboardPage() {
                     <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(54).png?raw=true" alt="Logo Conecta2" width={96} height={20} />
                 </div>
 
-                {/* Explorer Image */}
-                <div className="absolute right-0 w-[1200px] h-[1200px] pointer-events-none transform translate-y-[10%]">
+                <div className="absolute right-0 w-[1200px] h-[1200px] pointer-events-none transform -bottom-1/2">
                      <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_x9qrv7x9qrv7x9qr%20(1)-Photoroom.png?raw=true" alt="Explorador con linterna" layout="fill" objectFit="contain" data-ai-hint="explorer character" />
                 </div>
 
-                {/* Content */}
-                <div className="relative z-10 w-full md:w-1/2">
-                    <div className="w-28 mb-6">
-                        <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BS%20Logo%20horizontal%20blanco.png?raw=true" alt="Logo Banesco Seguros" width={112} height={26} />
-                    </div>
+                <div className="relative z-10 w-full h-full p-8 flex flex-col items-center justify-center text-center">
                     
-                    <Badge variant="outline" className="border-white/50 text-white mb-4">Expedición por Nuestro ADN</Badge>
-                    <h2 className="text-4xl md:text-5xl font-bold max-w-lg">¿Ya sabes cuántos ConectCoins tienes?</h2>
-                    <Button variant="secondary" className="mt-6 bg-white text-primary hover:bg-white/90">
-                        Explorar Misiones
-                    </Button>
+                    <div className="w-1/2 text-left">
+                         <div className="w-28 mb-6">
+                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BS%20Logo%20horizontal%20blanco.png?raw=true" alt="Logo Banesco Seguros" width={112} height={26} />
+                        </div>
+                        
+                        <Badge variant="outline" className="border-white/50 text-white mb-4">Expedición por Nuestro ADN</Badge>
+                        <h2 className="text-4xl md:text-5xl font-bold max-w-lg">¿Ya sabes cuántos ConectCoins tienes?</h2>
+                        <Button variant="secondary" className="mt-6 bg-white text-primary hover:bg-white/90">
+                            Explorar Misiones
+                        </Button>
+                    </div>
                 </div>
-            </div>
+            </Card>
         </section>
       
         {/* Playlist Section */}
