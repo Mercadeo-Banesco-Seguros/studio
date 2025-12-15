@@ -174,7 +174,7 @@ export default function DepartmentRequestPage() {
 
   return (
     <div className="container mx-auto py-8 px-4 space-y-8">
-      <div>
+      <div className="md:col-span-2">
         <Button asChild variant="link" className="mb-6 text-muted-foreground hover:no-underline p-0 h-auto text-xs">
           <Link href="/dashboard/requerimientos" className="flex items-center gap-2 group">
             <span className="flex items-center justify-center h-8 w-8 rounded-full bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary transition-colors">
