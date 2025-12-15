@@ -88,9 +88,9 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 
 
 const activityHighlights = [
-  { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', "data-ai-hint": 'gym fitness' },
-  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', "data-ai-hint": 'meditation nature' },
-  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib=rb-4.1.0&q=80&w=1080', "data-ai-hint": 'event celebration' },
+  { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib-rb-4.1.0&q=80&w=1080', "data-ai-hint": 'gym fitness' },
+  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib-rb-4.1.0&q=80&w=1080', "data-ai-hint": 'meditation nature' },
+  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib-rb-4.1.0&q=80&w=1080', "data-ai-hint": 'event celebration' },
   { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib-rb-4.1.0&q=80&w=1080', "data-ai-hint": 'books library' }
 ];
 
@@ -950,24 +950,24 @@ export default function DashboardPage() {
                 <div className="absolute inset-0 bg-transparent z-0" />
                 
                 <div className="absolute top-0 right-0 h-full w-1/2 pointer-events-none">
-                    <div className="absolute -right-20 -bottom-1/2 w-[520px] h-[390px]">
+                    <div className="absolute -right-20 w-[520px] h-[390px] translate-y-[-15%]">
                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_p9zcfep9zcfep9zc-Photoroom.png?raw=true" alt="Arbusto decorativo" layout="fill" objectFit="contain" data-ai-hint="bush leaves" />
                     </div>
                 </div>
                 
-                 <div className="absolute top-8 right-8 w-24 z-20">
-                    <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(54).png?raw=true" alt="Logo Conecta2" width={96} height={20} />
+                 <div className="absolute top-8 right-24 w-28 z-20">
+                    
                 </div>
                 
-                <div className="absolute right-0 w-[1200px] h-[1200px] -bottom-1/2 pointer-events-none">
+                 <div className="absolute right-0 w-[1200px] h-[1200px] pointer-events-none translate-y-[15%]">
                      <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_x9qrv7x9qrv7x9qr%20(1)-Photoroom.png?raw=true" alt="Explorador con linterna" layout="fill" objectFit="contain" data-ai-hint="explorer character" />
                 </div>
 
-                <div className="relative z-10 w-full h-full p-8 flex flex-col items-center justify-center text-center">
+                <div className="relative z-10 w-full h-full p-24 flex items-center justify-start text-left">
                     
-                    <div className="w-1/2 text-left">
+                    <div className="w-1/2">
                         <Badge variant="outline" className="border-white/50 text-white mb-4">Expedición por Nuestro ADN</Badge>
-                        <h2 className="text-4xl md:text-5xl font-bold max-w-lg">¿Ya sabes cuántos ConectCoins tienes?</h2>
+                        <h2 className="text-5xl md:text-6xl font-bold max-w-xl tracking-tight">¿Ya sabes cuántos<br/>ConectCoins tienes?</h2>
                         <Button variant="secondary" className="mt-6 bg-white text-primary hover:bg-white/90">
                             <Link href="https://sites.google.com/banescoseguros.com/conectados/aventura" target="_blank" rel="noopener noreferrer">Explorar Misiones</Link>
                         </Button>
