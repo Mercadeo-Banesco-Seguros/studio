@@ -24,19 +24,19 @@ const renderDepartmentContent = (department: (typeof mockDepartments)[0]) => {
              return (
               <Card 
                   key={index} 
-                  className="bg-card shadow-sm hover:bg-muted/50 transition-all duration-300 group cursor-pointer"
+                  className="bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 transition-all duration-300 group cursor-pointer"
                 >
                 <CardContent className="p-4 flex items-center justify-between">
                   <div className="flex items-center gap-4 flex-grow min-w-0">
-                      <div className="p-2.5 bg-muted rounded-md group-hover:bg-primary/10 flex-shrink-0 transition-colors">
-                          <RequestIcon className="h-5 w-5 text-primary transition-colors" />
+                      <div className="p-2.5 bg-primary-foreground/20 rounded-md flex-shrink-0 transition-colors">
+                          <RequestIcon className="h-5 w-5 text-primary-foreground transition-colors" />
                       </div>
                       <div className="min-w-0">
                           <h3 className="font-semibold text-base truncate">{req.title}</h3>
                       </div>
                   </div>
                   <div className="flex items-center gap-2 flex-shrink-0 ml-4">
-                      <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-1" />
+                      <ArrowRight className="h-4 w-4 text-primary-foreground/70 transition-transform group-hover:translate-x-1" />
                   </div>
                 </CardContent>
               </Card>
@@ -174,7 +174,7 @@ export default function DepartmentRequestPage() {
 
   return (
     <div className="container mx-auto py-8 px-4 space-y-8">
-      <div className="md:col-span-2">
+      <div className="w-full">
         <Button asChild variant="link" className="mb-6 text-muted-foreground hover:no-underline p-0 h-auto text-xs">
           <Link href="/dashboard/requerimientos" className="flex items-center gap-2 group">
             <span className="flex items-center justify-center h-8 w-8 rounded-full bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary transition-colors">
