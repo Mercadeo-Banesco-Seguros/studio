@@ -17,35 +17,31 @@ const renderDepartmentContent = (department: (typeof mockDepartments)[0]) => {
   switch (department.id) {
     case 'capital-humano':
       return (
-        <>
+        <div className="space-y-4">
           {department.requests?.map((req, index) => {
              const RequestIcon = req.icon || defaultIcon;
              return (
               <Card 
                   key={index} 
-                  className="bg-card shadow-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 group cursor-pointer flex flex-col h-full"
+                  className="bg-card shadow-sm hover:bg-muted/50 transition-all duration-300 group cursor-pointer"
                 >
-                <CardContent className="p-4 flex items-center justify-between flex-grow">
+                <CardContent className="p-4 flex items-center justify-between">
                   <div className="flex items-center gap-4 flex-grow min-w-0">
-                      <div className="p-2 bg-muted rounded-md group-hover:bg-primary-foreground/10 flex-shrink-0">
-                          <RequestIcon className="h-5 w-5 text-primary group-hover:text-primary-foreground" />
+                      <div className="p-2.5 bg-muted rounded-md group-hover:bg-primary/10 flex-shrink-0">
+                          <RequestIcon className="h-5 w-5 text-primary" />
                       </div>
                       <div className="min-w-0">
-                          <h3 className="font-semibold text-sm truncate">{req.title}</h3>
-                          <p className="text-muted-foreground text-xs group-hover:text-primary-foreground/80 truncate">Haga clic para iniciar su gestión.</p>
+                          <h3 className="font-semibold text-base truncate">{req.title}</h3>
                       </div>
                   </div>
                   <div className="flex items-center gap-2 flex-shrink-0 ml-4">
-                      <span className="text-xs font-medium text-primary group-hover:text-primary-foreground">
-                         {req.type === 'info' ? 'Consultar' : 'Solicitar'}
-                      </span>
-                      <ArrowRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:text-primary-foreground transition-opacity" />
+                      <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-1" />
                   </div>
                 </CardContent>
               </Card>
              )
           })}
-        </>
+        </div>
       );
     case 'mercadeo':
         return (
@@ -188,38 +184,34 @@ export default function DepartmentRequestPage() {
         </Button>
       </div>
 
-      <Card className="bg-foreground text-background rounded-2xl overflow-hidden">
-         <div className="p-8 md:p-12 relative">
-             <div className="absolute inset-0 bg-gradient-to-br from-foreground to-neutral-800 opacity-50"></div>
-             <div className="relative">
-                <h1 className="text-3xl md:text-4xl font-bold mb-3">{department.name}</h1>
-                <p className="max-w-2xl text-background/80 mb-6 text-sm">{department.description}</p>
-                 <div className="flex gap-4 items-center">
-                    {department.id === 'capital-humano' && (
-                       <>
-                        <Button asChild variant="ghost" size="icon" className="text-background/80 hover:text-background hover:bg-white/10">
-                          <Link href="mailto:capital_humano_ve@banescoseguros.com">
-                              <Mail className="h-5 w-5" />
-                              <span className="sr-only">Enviar correo a Capital Humano</span>
-                          </Link>
-                        </Button>
-                        <Button asChild variant="ghost" size="icon" className="text-background/80 hover:text-background hover:bg-white/10">
-                          <Link href="tel:+582125011111">
-                              <Phone className="h-5 w-5" />
-                              <span className="sr-only">Llamar a Capital Humano</span>
-                          </Link>
-                        </Button>
-                      </>
-                    )}
-                </div>
-             </div>
-         </div>
-      </Card>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="md:col-span-1">
+          <h1 className="text-4xl font-bold mb-3">{department.name}</h1>
+          <p className="text-muted-foreground text-sm">{department.description}</p>
+          <div className="flex gap-2 items-center mt-6">
+              {department.id === 'capital-humano' && (
+                <>
+                  <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-full">
+                    <Link href="mailto:capital_humano_ve@banescoseguros.com">
+                        <Mail className="h-5 w-5" />
+                        <span className="sr-only">Enviar correo a Capital Humano</span>
+                    </Link>
+                  </Button>
+                  <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-full">
+                    <Link href="tel:+582125011111">
+                        <Phone className="h-5 w-5" />
+                        <span className="sr-only">Llamar a Capital Humano</span>
+                    </Link>
+                  </Button>
+                </>
+              )}
+          </div>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {renderDepartmentContent(department)}
+        <div className="md:col-span-2">
+            {renderDepartmentContent(department)}
+        </div>
       </div>
-
     </div>
   );
 }
