@@ -1,5 +1,5 @@
 
-import { Users, Megaphone, FolderKanban, Shield, BarChart2, Briefcase, FileText, Bot, BookOpen, Scale, FileSignature, HardHat, Plane, Cpu, PiggyBank, CreditCard, Landmark, CalendarClock, MessageCircleQuestion, Bell, Utensils, Star, Video, Presentation, Image as ImageIcon, Code, Music, AlertTriangle, CheckCircle, CalendarDays, MessageSquare as MessageSquareIcon, Music2, Home, User, Cog, Lightbulb, Handshake, Award, FileBarChart, AppWindow } from 'lucide-react';
+import { Users, Megaphone, FolderKanban, Shield, BarChart2, Briefcase, FileText, Bot, BookOpen, Scale, FileSignature, HardHat, Plane, Cpu, PiggyBank, CreditCard, Landmark, CalendarClock, MessageCircleQuestion, Bell, Utensils, Star, Video, Presentation, Image as ImageIcon, Code, Music, AlertTriangle, CheckCircle, CalendarDays, MessageSquare as MessageSquareIcon, Music2, Home, User, Cog, Lightbulb, Handshake, Award, FileBarChart, AppWindow, Mail } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface Course {
@@ -169,7 +169,7 @@ export const mockCourses: Course[] = [
     id: "google-forms",
     title: "Google Forms",
     description: "Aprovecha los formularios para levantar información y lograr enlaces con otros aplicativos.",
-    imageUrl: "https://images.unsplash.com/photo-1516383274235-5f42d6c6426d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3VydmV5fGVufDB8fHx8MTc1NDMzODkyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1516383274235-5f42d6c6426d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3VydmV5fGVufDB8fHx8MTc1NDMzODkyNHww&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "survey form",
     category: "Google Workspace",
     duration: "Auto-gestionado",
@@ -209,7 +209,7 @@ export const mockCourses: Course[] = [
     id: "presentaciones-efectivas",
     title: "Presentaciones Efectivas",
     description: "En este curso obtendrás las habilidades para el diseño de presentaciones corporativas que permitirán alinear la comunicación dentro de la organización adaptándola a las necesidades de la audiencia a la que se dirija.",
-    imageUrl: "https://images.unsplash.com/photo-1541872705-1f73c6400ec9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3BlZWNofGVufDB8fHx8MTc1NDM0MjE4M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1541872705-1f73c6400ec9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3BlZWNofGVufDB8fHx8MTc1NDM0MjE4M3ww&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "conference presentation",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -366,6 +366,9 @@ export const mockDepartments: Department[] = [
     description: "Canaliza comunicados masivos, SMS, mailings y gestiona redes sociales.",
     category: "Comercial",
     icon: Megaphone,
+    requests: [
+        { title: "Solicitudes de Comunicaciones y Mercadeo BSV", type: 'request', icon: Megaphone, link: "https://docs.google.com/forms/d/e/1FAIpQLSd155PWPqbsS3NrBcXuvUm6oYnRlsx_NAfh_sV97SEAGUNx9w/viewform" },
+    ]
   },
   {
     id: "pmo",
@@ -878,7 +881,7 @@ export const mockPlaylist: PlaylistItem[] = [
     id: "P001", 
     title: "Clásicos en Inglés", 
     description: "Los éxitos que marcaron una época.",
-    albumArtUrl: "https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib-rb-4.1.0&q=80&w=1080", 
+    albumArtUrl: "https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib=rb-4.1.0&q=80&w=1080", 
     linkUrl: "#", 
     dataAiHint: "classic rock" 
   },
@@ -980,6 +983,7 @@ export const mockCustomerFeedback: CustomerFeedback[] = [
 
 
     
+
 
 
 
