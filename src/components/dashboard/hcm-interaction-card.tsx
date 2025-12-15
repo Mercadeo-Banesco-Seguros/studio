@@ -174,7 +174,7 @@ export const HcmCard = ({
             <h3 className="text-xl font-bold">{title}</h3>
             <p className="text-sm text-white/80 mt-1 mb-4">{description}</p>
             <Button asChild variant="default" className="font-light text-xs">
-              <Link href={href}>
+              <Link href={href} target="_blank" rel="noopener noreferrer">
                   {buttonText}
               </Link>
             </Button>
