@@ -209,7 +209,7 @@ export const mockCourses: Course[] = [
     id: "presentaciones-efectivas",
     title: "Presentaciones Efectivas",
     description: "En este curso obtendrás las habilidades para el diseño de presentaciones corporativas que permitirán alinear la comunicación dentro de la organización adaptándola a las necesidades de la audiencia a la que se dirija.",
-    imageUrl: "https://images.unsplash.com/photo-1541872705-1f73c6400ec9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3BlZWNofGVufDB8fHx8MTc1NDM0MjE4M3ww&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1541872705-1f73c6400ec9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3BlZWNofGVufDB8fHx8MTc1NDM0MjE4M3ww&ixlib=rb-4.1.0&q=80&w=1080",
     dataAiHint: "conference presentation",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -350,15 +350,15 @@ export const mockDepartments: Department[] = [
     category: "Capital Humano",
     icon: Users,
     requests: [
-      { title: "Solicitud de Prestaciones Sociales", type: 'request', icon: PiggyBank },
-      { title: "Solicitud de Carta de Trabajo", type: 'request', icon: FileText },
-      { title: "Solicitud de Carnet y Tarjeta Todoticket", type: 'request', icon: CreditCard },
-      { title: "Solicitud de IVSS y FAOV", type: 'request', icon: Landmark },
-      { title: "Solicitud de Vacaciones y Permisos", type: 'request', icon: Plane },
-      { title: "Inquietudes o Sugerencias", type: 'request', icon: MessageCircleQuestion },
-      { title: "Actividades de Clima e Integración", type: 'info', icon: Bell },
-      { title: "Postúlate", type: 'request', icon: Briefcase },
-      { title: "Encuesta de Satisfacción", type: 'request', icon: Users },
+      { title: "Solicitud de Prestaciones Sociales", type: 'request', icon: PiggyBank, link: "https://docs.google.com/forms/d/e/1FAIpQLSf0whQXOwXe2KbRzwhkVby_OOk3HvMlcZPdm6EyNDhRHlE52A/viewform" },
+      { title: "Solicitud de Carta de Trabajo", type: 'request', icon: FileText, link: "https://docs.google.com/forms/d/e/1FAIpQLSeM3k2NGUtiIgUv9ChZay7sKVyfSo7j-r4ggi-VNMG1hnbPPA/viewform" },
+      { title: "Solicitud de Carnet y Tarjeta Todoticket", type: 'request', icon: CreditCard, link: "https://docs.google.com/forms/d/e/1FAIpQLSeM3k2NGUtiIgUv9ChZay7sKVyfSo7j-r4ggi-VNMG1hnbPPA/viewform" },
+      { title: "Solicitud de IVSS y FAOV", type: 'request', icon: Landmark, link: "https://sites.google.com/banescoseguros.com/gestion/unidad-de-capital-humano/ivssfaov" },
+      { title: "Solicitud de Vacaciones y Permisos", type: 'request', icon: Plane, link: "/dashboard/vacaciones" },
+      { title: "Inquietudes o Sugerencias", type: 'request', icon: MessageCircleQuestion, link: "https://sites.google.com/banescoseguros.com/gestion/unidad-de-capital-humano/sugerencias" },
+      { title: "Actividades de Clima e Integración", type: 'info', icon: Bell, link: "https://docs.google.com/forms/d/e/1FAIpQLSdQNLYr3NxrOoOMXhsqWmzFZyirBQ8el4AyARA6ttrTukZh_w/viewform" },
+      { title: "Postúlate", type: 'request', icon: Briefcase, link: "https://drive.google.com/drive/folders/11w0q8PNbqfv1xyct4zL9Q8K2FN93b19N" },
+      { title: "Encuesta de Satisfacción", type: 'request', icon: Users, link: "https://docs.google.com/forms/d/e/1FAIpQLSeuhyfU9huC76eFaBj9NlRUCWhUXxq9TJkD_iUpdB3oi4YdXg/viewform" },
       { title: "Horario del Comedor", type: 'info', icon: Utensils },
     ]
   },
@@ -904,7 +904,7 @@ export const mockPlaylist: PlaylistItem[] = [
     id: "P003", 
     title: "Salsa y Merengue", 
     description: "Ritmos latinos para subir el ánimo.",
-    albumArtUrl: "https://images.unsplash.com/photo-1570299437488-d430e1e677c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdWJhfGVufDB8fHx8MTc1MjYwNzI5Mnww&ixlib=rb-4.1.0&q=80&w=1080", 
+    albumArtUrl: "https://images.unsplash.com/photo-1570299437488-d430e1e677c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdWJhfGVufDB8fHx8MTc1MjYwNzI5Mnww&ixlib-rb-4.1.0&q=80&w=1080", 
     linkUrl: "#", 
     dataAiHint: "latin dance" 
   },
@@ -990,6 +990,7 @@ export const mockCustomerFeedback: CustomerFeedback[] = [
 
 
     
+
 
 
 
