@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 const renderDepartmentContent = (department: (typeof mockDepartments)[0]) => {
   const defaultIcon = department.icon || AlertTriangle;
@@ -184,8 +185,8 @@ export default function DepartmentRequestPage() {
         </Button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div className="md:col-span-1">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+        <div className="md:col-span-1 sticky top-28 h-fit">
           <h1 className="text-4xl font-bold mb-3">{department.name}</h1>
           <p className="text-muted-foreground text-sm">{department.description}</p>
           <div className="flex gap-2 items-center mt-6">
@@ -209,7 +210,9 @@ export default function DepartmentRequestPage() {
         </div>
 
         <div className="md:col-span-2">
-            {renderDepartmentContent(department)}
+            <ScrollArea className="h-[calc(100vh-10rem)]">
+                {renderDepartmentContent(department)}
+            </ScrollArea>
         </div>
       </div>
     </div>
