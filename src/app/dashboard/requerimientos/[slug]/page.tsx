@@ -2,6 +2,7 @@
 'use client';
 
 import React from 'react';
+import { useParams } from 'next/navigation';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import { mockDepartments } from "@/lib/placeholder-data";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,10 +11,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-
-interface DepartmentPageProps {
-  params: { slug: string };
-}
 
 const renderDepartmentContent = (department: (typeof mockDepartments)[0]) => {
   const defaultIcon = department.icon || AlertTriangle;
@@ -154,8 +151,10 @@ const renderDepartmentContent = (department: (typeof mockDepartments)[0]) => {
 };
 
 
-export default function DepartmentRequestPage({ params }: DepartmentPageProps) {
-  const department = mockDepartments.find(d => d.id === params.slug);
+export default function DepartmentRequestPage() {
+  const params = useParams();
+  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
+  const department = mockDepartments.find(d => d.id === slug);
   
   if (!department) {
     return (
