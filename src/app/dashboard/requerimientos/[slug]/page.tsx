@@ -13,7 +13,7 @@ import { cn } from '@/lib/utils';
 import { Checkbox } from '@/components/ui/checkbox';
 
 
-const renderDepartmentContent = (department: (typeof mockDepartments)[0], selectedId: string | null, setSelectedId: (id: string | null) => void) => {
+const renderDepartmentContent = (department: (typeof mockDepartments)[0]) => {
   const defaultIcon = department.icon || AlertTriangle;
   switch (department.id) {
     case 'capital-humano':
@@ -21,26 +21,41 @@ const renderDepartmentContent = (department: (typeof mockDepartments)[0], select
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {department.requests?.map((req, index) => {
              const RequestIcon = req.icon || defaultIcon;
-             const isSelected = selectedId === req.title;
-             return (
-              <div 
-                  key={index} 
+             const cardContent = (
+                <div 
                   className={cn(
-                    "group relative p-4 rounded-lg border transition-all cursor-pointer",
-                    isSelected ? "bg-background/90 text-foreground border-transparent" : "bg-primary-foreground/10 hover:bg-primary-foreground/20 border-primary-foreground/20 text-primary-foreground"
+                    "group relative p-4 rounded-lg border transition-all h-full flex flex-col",
+                    req.link
+                      ? "bg-primary-foreground/10 hover:bg-primary-foreground/20 border-primary-foreground/20 text-primary-foreground cursor-pointer"
+                      : "bg-primary-foreground/5 border-primary-foreground/10 text-primary-foreground/50 cursor-not-allowed"
                   )}
-                  onClick={() => setSelectedId(isSelected ? null : req.title)}
                 >
-                <div className="flex items-start gap-4">
-                    <RequestIcon className={cn("h-5 w-5 mt-1 flex-shrink-0", isSelected ? "text-primary" : "text-primary-foreground/80")} />
-                    <div className="flex-grow">
-                        <h3 className={cn("font-semibold")}>{req.title}</h3>
-                        <p className={cn("text-xs mt-1", isSelected ? "text-muted-foreground" : "text-primary-foreground/70")}>{req.type === 'request' ? 'Formulario de solicitud' : 'Información'}</p>
-                    </div>
-                </div>
-                <Checkbox checked={isSelected} className={cn("absolute top-4 right-4", isSelected ? "border-primary text-primary" : "border-primary-foreground/50 text-primary-foreground")} />
+                  <div className="flex items-start gap-4 flex-grow">
+                      <RequestIcon className={cn("h-5 w-5 mt-1 flex-shrink-0", req.link ? "text-primary-foreground/80" : "text-primary-foreground/40")} />
+                      <div className="flex-grow">
+                          <h3 className={cn("font-semibold")}>{req.title}</h3>
+                          <p className={cn("text-xs mt-1", req.link ? "text-primary-foreground/70" : "text-primary-foreground/50")}>{req.type === 'request' ? 'Formulario de solicitud' : 'Información'}</p>
+                      </div>
+                  </div>
+                  {req.link && (
+                    <ArrowRight className="absolute top-4 right-4 h-5 w-5 text-primary-foreground/50 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  )}
               </div>
-             )
+             );
+
+             if (req.link) {
+                return (
+                    <Link href={req.link} key={index} target="_blank" rel="noopener noreferrer" className="block h-full">
+                        {cardContent}
+                    </Link>
+                )
+             }
+             
+             return (
+                <div key={index} className="h-full">
+                    {cardContent}
+                </div>
+            );
           })}
         </div>
       );
@@ -69,7 +84,6 @@ interface DepartmentPageProps {
 export default function DepartmentRequestPage({ params }: DepartmentPageProps) {
   const { slug } = useParams() as { slug: string };
   const department = mockDepartments.find(d => d.id === slug);
-  const [selectedId, setSelectedId] = React.useState<string | null>(null);
   
   if (!department) {
     return (
@@ -96,7 +110,7 @@ export default function DepartmentRequestPage({ params }: DepartmentPageProps) {
                 <CardDescription className="text-primary-foreground/80 mt-2 max-w-2xl">{department.description}</CardDescription>
             </CardHeader>
             <CardContent className="mt-8 p-0">
-                {renderDepartmentContent(department, selectedId, setSelectedId)}
+                {renderDepartmentContent(department)}
             </CardContent>
              <div className="flex items-center justify-between mt-8 p-0">
                 <Button asChild variant="ghost" className="text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10">
@@ -104,10 +118,6 @@ export default function DepartmentRequestPage({ params }: DepartmentPageProps) {
                         <ArrowLeft className="mr-2 h-4 w-4"/>
                         Volver
                     </Link>
-                </Button>
-                <Button variant="secondary" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-                    Siguiente
-                    <ArrowRight className="ml-2 h-4 w-4"/>
                 </Button>
             </div>
         </div>
