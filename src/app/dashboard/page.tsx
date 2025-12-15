@@ -89,7 +89,7 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 const activityHighlights = [
   { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'gym fitness' },
   { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
-  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
+  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
   { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
 ];
 
@@ -833,7 +833,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[600px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
@@ -937,19 +937,19 @@ export default function DashboardPage() {
 
         {/* Conectados Section */}
         <section id="conectados" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-            <div className="relative bg-primary rounded-2xl shadow-lg text-white p-8 md:p-12 min-h-[400px] flex items-center overflow-hidden">
+            <div className="relative bg-primary rounded-2xl shadow-lg text-white p-8 md:p-12 min-h-[600px] flex items-center overflow-hidden">
                 {/* Background Elements */}
-                <div className="absolute top-0 right-0 h-full w-1/2">
+                <div className="absolute top-0 right-0 h-full w-full md:w-1/2 pointer-events-none">
                     <div className="absolute -right-24 bottom-0 w-[400px] h-[300px]">
                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_p9zcfep9zcfep9zc-Photoroom.png?raw=true" alt="Arbusto decorativo" layout="fill" objectFit="contain" data-ai-hint="bush leaves" />
                     </div>
-                    <div className="absolute right-20 bottom-0 w-[350px] h-[450px]">
+                    <div className="absolute right-1/2 top-1/2 -translate-y-1/2 translate-x-1/4 w-[350px] h-[450px]">
                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_x9qrv7x9qrv7x9qr%20(1)-Photoroom.png?raw=true" alt="Explorador con linterna" layout="fill" objectFit="contain" data-ai-hint="explorer character" />
                     </div>
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 w-full">
+                <div className="relative z-10 w-full md:w-1/2">
                     <div className="flex justify-between items-start mb-6">
                         <div className="w-28">
                             <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BS%20Logo%20horizontal%20blanco.png?raw=true" alt="Logo Banesco Seguros" width={112} height={26} />
