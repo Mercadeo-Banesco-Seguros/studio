@@ -88,8 +88,8 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 
 const activityHighlights = [
   { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'gym fitness' },
-  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
-  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
+  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
+  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
   { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
 ];
 
@@ -481,7 +481,7 @@ export default function DashboardPage() {
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-2">Galería de Recuerdos</h2>
                     <p className="mt-4 text-muted-foreground max-w-md">Revive los momentos clave y las experiencias compartidas que definen la solidez de Banesco Seguros. Esta galería celebra la excelencia, el compromiso y la trayectoria de nuestro equipo. Un testimonio visual de los logros que construimos juntos.</p>
                 </div>
-                 <div className="relative h-[30rem] w-full flex items-center justify-center group">
+                 <div className="relative h-[22rem] w-full flex items-center justify-center group">
                     <Card className="absolute w-80 h-56 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90 -rotate-15 -translate-x-60">
                          <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Iniciativa%20Dulce%20o%20Truco%20BSV%20(2).jpg?raw=true" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" unoptimized />
                     </Card>
@@ -943,13 +943,14 @@ export default function DashboardPage() {
                     <div className="absolute -right-24 bottom-0 w-[400px] h-[300px]">
                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_p9zcfep9zcfep9zc-Photoroom.png?raw=true" alt="Arbusto decorativo" layout="fill" objectFit="contain" data-ai-hint="bush leaves" />
                     </div>
-                     <div className="absolute top-8 right-8 w-24">
-                        <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(54).png?raw=true" alt="Logo Conecta2" width={96} height={20} />
-                    </div>
                 </div>
                 
+                 <div className="absolute top-8 right-8 w-24 z-20">
+                    <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(54).png?raw=true" alt="Logo Conecta2" width={96} height={20} />
+                </div>
+
                 {/* Explorer Image */}
-                <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 w-[700px] h-[900px] pointer-events-none">
+                <div className="absolute bottom-0 right-0 w-[1200px] h-[1200px] pointer-events-none">
                      <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_x9qrv7x9qrv7x9qr%20(1)-Photoroom.png?raw=true" alt="Explorador con linterna" layout="fill" objectFit="contain" data-ai-hint="explorer character" />
                 </div>
 
