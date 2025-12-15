@@ -104,7 +104,7 @@ export default function DepartmentRequestPage({ params }: DepartmentPageProps) {
 
   return (
     <Card className="w-full bg-primary text-primary-foreground rounded-none border-0 min-h-[calc(100vh-6rem)]">
-        <div className="container mx-auto py-12 px-4">
+        <div className="container mx-auto py-24 px-4">
             <CardHeader className="p-0">
                 <CardTitle className="text-3xl font-bold tracking-tight">{department.name}</CardTitle>
                 <CardDescription className="text-primary-foreground/80 mt-2 max-w-2xl">{department.description}</CardDescription>
