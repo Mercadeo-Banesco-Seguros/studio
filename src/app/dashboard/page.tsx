@@ -823,7 +823,7 @@ export default function DashboardPage() {
                   description="Encuentra proveedores de servicios médicos en nuestra red nacional."
                   buttonText="Consultar"
                   imageUrl="https://t3.ftcdn.net/jpg/07/61/33/64/360_F_761336400_z0Vn5l3jVyiHhYDG2pH0SAdys3NMxOck.jpg"
-                  data-ai-hint="clinic interior"
+                  dataAiHint="clinic interior"
                 />
               </div>
             </div>
@@ -937,7 +937,7 @@ export default function DashboardPage() {
 
         {/* Conectados Section */}
         <section id="conectados" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-            <div className="relative bg-primary rounded-2xl shadow-lg text-white p-8 md:p-12 min-h-[300px] flex items-center overflow-hidden">
+            <div className="relative bg-primary rounded-2xl shadow-lg text-white p-8 md:p-12 min-h-[400px] flex items-center overflow-hidden">
                 {/* Background Elements */}
                 <div className="absolute top-0 right-0 h-full w-1/2">
                     <div className="absolute -right-24 bottom-0 w-[400px] h-[300px]">
