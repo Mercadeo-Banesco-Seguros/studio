@@ -18,7 +18,7 @@ const renderDepartmentContent = (department: (typeof mockDepartments)[0]) => {
   switch (department.id) {
     case 'capital-humano':
       return (
-        <div className="space-y-4">
+        <div className="space-y-4 max-w-md mx-auto">
           {department.requests?.map((req, index) => {
              const RequestIcon = req.icon || defaultIcon;
              return (
@@ -28,8 +28,8 @@ const renderDepartmentContent = (department: (typeof mockDepartments)[0]) => {
                 >
                 <CardContent className="p-4 flex items-center justify-between">
                   <div className="flex items-center gap-4 flex-grow min-w-0">
-                      <div className="p-2.5 bg-muted rounded-md group-hover:bg-primary/10 flex-shrink-0">
-                          <RequestIcon className="h-5 w-5 text-primary" />
+                      <div className="p-2.5 bg-muted rounded-md group-hover:bg-primary/10 flex-shrink-0 transition-colors">
+                          <RequestIcon className="h-5 w-5 text-primary transition-colors" />
                       </div>
                       <div className="min-w-0">
                           <h3 className="font-semibold text-base truncate">{req.title}</h3>
