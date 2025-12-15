@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams } from 'next/navigation';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import { mockDepartments } from "@/lib/placeholder-data";
@@ -30,18 +30,18 @@ const renderDepartmentContent = (department: (typeof mockDepartments)[0], select
                   key={index} 
                   className={cn(
                     "group relative p-4 rounded-lg border transition-all cursor-pointer",
-                    isSelected ? "bg-primary text-primary-foreground ring-2 ring-primary ring-offset-2 ring-offset-background" : "bg-card hover:bg-muted"
+                    isSelected ? "bg-foreground text-background border-foreground" : "bg-card hover:bg-muted"
                   )}
                   onClick={() => setSelectedId(isSelected ? null : req.title)}
                 >
                 <div className="flex items-start gap-4">
-                    <RequestIcon className={cn("h-5 w-5 mt-1 flex-shrink-0", isSelected ? "text-primary-foreground/80" : "text-primary")} />
+                    <RequestIcon className={cn("h-5 w-5 mt-1 flex-shrink-0", isSelected ? "text-background/80" : "text-primary")} />
                     <div className="flex-grow">
-                        <h3 className={cn("font-semibold", isSelected ? "text-primary-foreground" : "text-foreground")}>{req.title}</h3>
-                        <p className={cn("text-xs mt-1", isSelected ? "text-primary-foreground/70" : "text-muted-foreground")}>{req.type === 'request' ? 'Formulario de solicitud' : 'Información'}</p>
+                        <h3 className={cn("font-semibold", isSelected ? "text-background" : "text-foreground")}>{req.title}</h3>
+                        <p className={cn("text-xs mt-1", isSelected ? "text-background/70" : "text-muted-foreground")}>{req.type === 'request' ? 'Formulario de solicitud' : 'Información'}</p>
                     </div>
                 </div>
-                <Checkbox checked={isSelected} className={cn("absolute top-4 right-4", isSelected ? "border-primary-foreground text-primary-foreground" : "")} />
+                <Checkbox checked={isSelected} className={cn("absolute top-4 right-4", isSelected ? "border-background text-background" : "")} />
               </div>
              )
           })}
@@ -151,11 +151,14 @@ const renderDepartmentContent = (department: (typeof mockDepartments)[0], select
 };
 
 
-export default function DepartmentRequestPage() {
-  const params = useParams();
-  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
+interface DepartmentPageProps {
+  params: { slug: string };
+}
+
+export default function DepartmentRequestPage({ params }: DepartmentPageProps) {
+  const { slug } = useParams() as { slug: string };
   const department = mockDepartments.find(d => d.id === slug);
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [selectedId, setSelectedId] = React.useState<string | null>(null);
   
   if (!department) {
     return (
