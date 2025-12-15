@@ -1,5 +1,5 @@
 
-import { Users, Megaphone, FolderKanban, Shield, BarChart2, Briefcase, FileText, Bot, BookOpen, Scale, FileSignature, HardHat, Plane, Cpu, PiggyBank, CreditCard, Landmark, CalendarClock, MessageCircleQuestion, Bell, Utensils, Star, Video, Presentation, Image as ImageIcon, Code, Music, AlertTriangle, CheckCircle, CalendarDays, MessageSquare as MessageSquareIcon, Music2, Home, User, Cog, Lightbulb, Handshake, Award, FileBarChart, AppWindow, Mail } from 'lucide-react';
+import { Users, Megaphone, FolderKanban, Shield, BarChart2, Briefcase, FileText, Bot, BookOpen, Scale, FileSignature, HardHat, Plane, Cpu, PiggyBank, CreditCard, Landmark, CalendarClock, MessageCircleQuestion, Bell, Utensils, Star, Video, Presentation, Image as ImageIcon, Code, Music, AlertTriangle, CheckCircle, CalendarDays, MessageSquare as MessageSquareIcon, Music2, Home, User, Cog, Lightbulb, Handshake, Award, FileBarChart, AppWindow, Mail, ClipboardList } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface Course {
@@ -179,7 +179,7 @@ export const mockCourses: Course[] = [
     id: "pensamiento-estrategico",
     title: "Pensamiento Estratégico",
     description: "Asigna prioridades en el destino de los recursos, donde mejora el desempeño de la organización, así permitiendo a la empresa enfrentarse a los principales problemas de la organización, al cambio en el entorno y ver las oportunidades y detectar las amenazas.",
-    imageUrl: "https://images.unsplash.com/photo-1730804518415-75297e8d2a41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHV6emxlfGVufDB8fHx8fDE3NTQzMzk2ODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1730804518415-75297e8d2a41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHV6emxlfGVufDB8fHx8fDE3NTQzMzk2ODl8MA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "strategy plan",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -189,7 +189,7 @@ export const mockCourses: Course[] = [
     id: "balanced-scorecard",
     title: "Balanced Scorecard",
     description: "Es herramienta de planeación estratégica que permite a la empresa crear y controlar sus propios indicadores de gestión relacionados dentro de cuatro perspectiva: Financiera, Procesos Internos, Cliente y Formación y Crecimiento",
-    imageUrl: "https://images.unsplash.com/photo-1556155092-8707de31f9c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZXRyaWNzfGVufDB8fHx8fDE3NTQzNDAzMjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1556155092-8707de31f9c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZXRyaWNzfGVufDB8fHx8fDE3NTQzNDAzMjd8MA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "balance chart",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -376,6 +376,12 @@ export const mockDepartments: Department[] = [
     description: "Gestiona y prioriza los proyectos tecnológicos de la organización.",
     category: "Proyectos",
     icon: FolderKanban,
+    requests: [
+      { title: "Formulario para Postulación de Iniciativas", type: 'request', icon: FileSignature, link: "https://docs.google.com/forms/d/e/1FAIpQLSezxTbTDmrxKJxhqLcrSp90Ynh1kmIjksiiF7d0KmpEBlnznQ/viewform" },
+      { title: "Repositorio de Cortes PMO BSV", type: 'info', icon: FolderKanban, link: "https://drive.google.com/drive/folders/1QN7LFnD-WpuBLqtyvcDWevlXZThGDjWH" },
+      { title: "Plantillas para Gestión de Proyectos", type: 'info', icon: FileText, link: "https://drive.google.com/drive/folders/1fOupHyOb-EGE9y_KXKwYiJ41iZUApeb3" },
+      { title: "Backlog de Priorización de Requerimientos", type: 'info', icon: ClipboardList, link: "https://docs.google.com/spreadsheets/d/1IJv_zFPfKCbNSXAgOkMt6e9YiIZUaVshha6wM4qzrsw/edit?usp=sharing" },
+    ]
   },
   {
     id: "seguridad-informacion",
@@ -983,6 +989,7 @@ export const mockCustomerFeedback: CustomerFeedback[] = [
 
 
     
+
 
 
 
