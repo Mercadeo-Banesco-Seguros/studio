@@ -89,8 +89,8 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 
 const activityHighlights = [
   { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', "data-ai-hint": 'gym fitness' },
-  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', "data-ai-hint": 'meditation nature' },
-  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib=rb-4.1.0&q=80&w=1080', "data-ai-hint": 'event celebration' },
+  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib-rb-4.1.0&q=80&w=1080', "data-ai-hint": 'meditation nature' },
+  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib-rb-4.1.0&q=80&w=1080', "data-ai-hint": 'event celebration' },
   { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib-rb-4.1.0&q=80&w=1080', "data-ai-hint": 'books library' }
 ];
 
@@ -938,7 +938,7 @@ export default function DashboardPage() {
 
         {/* Conectados Section */}
         <section id="conectados" className="w-full mt-24">
-          <Card className="relative text-white overflow-hidden min-h-[600px] flex items-center justify-center rounded-none">
+          <Card className="relative text-white overflow-hidden min-h-[600px] flex items-center justify-start rounded-none">
             <Image
               src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
               alt="Abstract background"
@@ -964,8 +964,17 @@ export default function DashboardPage() {
                 <Badge variant="outline" className="border-white/50 text-white mb-4">
                   Expedición por Nuestro ADN
                 </Badge>
+                <div className="relative w-28 h-auto mb-4">
+                  <Image 
+                    src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Conectados%20Letras%20Blancas.png?raw=true" 
+                    alt="Logo Conectados" 
+                    width={110} 
+                    height={23}
+                    data-ai-hint="conectados logo"
+                  />
+                </div>
                 <h2 className="text-5xl md:text-6xl font-bold max-w-xl tracking-tight">
-                  ¿Ya sabes cuántos<br/>ConectCoins tienes?
+                  Ya conoces tu posición en el Ranking?
                 </h2>
                 <Button asChild variant="secondary" className="mt-6 bg-white text-primary hover:bg-white/90">
                     <Link href="https://sites.google.com/banescoseguros.com/conectados/aventura" target="_blank" rel="noopener noreferrer">Explorar Misiones</Link>
@@ -1043,4 +1052,5 @@ export default function DashboardPage() {
     </div>
   );
 }
+
 
