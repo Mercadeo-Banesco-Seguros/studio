@@ -219,7 +219,7 @@ export const mockCourses: Course[] = [
     id: "plan-de-desarrollo",
     title: "Plan de Desarrollo",
     description: "Aquí podrás  obtener algunos tips para el desarrollo de tu eficiencia, agilidad y el balance entre el trabajo y las exigencias del puesto.",
-    imageUrl: "https://images.unsplash.com/photo-1730382624709-81e52dd294d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9ncmVzc3xlbnwwfHx8fDE3NTQzNDMyNDh8MA&ixlib.rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1730382624709-81e52dd294d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9ncmVzc3xlbnwwfHx8fDE3NTQzNDMyNDh8MA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "growth plan",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -249,7 +249,7 @@ export const mockCourses: Course[] = [
     id: "reuniones-efectivas",
     title: "Reuniones Efectivas",
     description: "Aquí podrás  obtener tips de como tener una reunión efectiva, donde es importante considerar que una gran parte de la eficacia y productividad del equipo de trabajo se obtiene a partir de la efectividad con que se desarrollan estas reuniones.",
-    imageUrl: "https://images.unsplash.com/photo-1553877522-43269d4ea984?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyZXVuaSVDMyVCM258ZW58MHx8fHwxNzU0NDIwMzY0fDA&ixlib.rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1553877522-43269d4ea984?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyZXVuaSVDMyVCM258ZW58MHx8fHwxNzU0NDIwMzY0fDA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "effective meeting",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -359,14 +359,6 @@ export const mockDepartments: Department[] = [
       { title: "Postúlate", type: 'request', icon: Briefcase, link: "https://drive.google.com/drive/folders/11w0q8PNbqfv1xyct4zL9Q8K2FN93b19N" },
       { title: "Encuesta de Satisfacción", type: 'request', icon: Users, link: "https://docs.google.com/forms/d/e/1FAIpQLSeuhyfU9huC76eFaBj9NlRUCWhUXxq9TJkD_iUpdB3oi4YdXg/viewform" },
     ]
-  },
-  {
-    id: "vacaciones",
-    name: "Gestión de Vacaciones",
-    description: "Planifica y solicita tus días libres y consulta tu saldo disponible.",
-    category: "Capital Humano",
-    icon: Plane,
-    directLink: "/dashboard/vacaciones"
   },
   {
     id: "mercadeo",
@@ -886,7 +878,7 @@ export const mockPlaylist: PlaylistItem[] = [
     id: "P001", 
     title: "Clásicos en Inglés", 
     description: "Los éxitos que marcaron una época.",
-    albumArtUrl: "https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib=rb-4.1.0&q=80&w=1080", 
+    albumArtUrl: "https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib-rb-4.1.0&q=80&w=1080", 
     linkUrl: "#", 
     dataAiHint: "classic rock" 
   },
@@ -988,6 +980,7 @@ export const mockCustomerFeedback: CustomerFeedback[] = [
 
 
     
+
 
 
 
