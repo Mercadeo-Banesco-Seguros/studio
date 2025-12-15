@@ -36,7 +36,7 @@ export default function BibliotecaPage() {
                         </p>
                         <div className="mt-10">
                             <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-light text-xs rounded-full">
-                                <Link href="https://www.appsheet.com/start/410a1959-0f25-4a71-8e93-d61b3d312d8a" target="_blank" rel="noopener noreferrer">
+                                <Link href="https://www.appsheet.com/start/ce842c69-2210-4519-b586-a0ec8733dcdb" target="_blank" rel="noopener noreferrer">
                                     Empezar
                                 </Link>
                             </Button>
