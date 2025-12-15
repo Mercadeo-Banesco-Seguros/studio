@@ -1,52 +1,55 @@
 
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
 import { mockDepartments } from "@/lib/placeholder-data";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { AlertTriangle, ArrowRight, Mail, Phone, ArrowLeft } from "lucide-react";
+import { AlertTriangle, ArrowRight, Mail, Phone, ArrowLeft, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { cn } from '@/lib/utils';
+import { Checkbox } from '@/components/ui/checkbox';
 
-const renderDepartmentContent = (department: (typeof mockDepartments)[0]) => {
+
+const renderDepartmentContent = (department: (typeof mockDepartments)[0], selectedId: string | null, setSelectedId: (id: string | null) => void) => {
   const defaultIcon = department.icon || AlertTriangle;
   switch (department.id) {
     case 'capital-humano':
       return (
-        <div className="space-y-4 max-w-md mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {department.requests?.map((req, index) => {
              const RequestIcon = req.icon || defaultIcon;
+             const isSelected = selectedId === req.title;
              return (
-              <Card 
+              <div 
                   key={index} 
-                  className="bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 transition-all duration-300 group cursor-pointer"
+                  className={cn(
+                    "group relative p-4 rounded-lg border transition-all cursor-pointer",
+                    isSelected ? "bg-primary text-primary-foreground ring-2 ring-primary ring-offset-2 ring-offset-background" : "bg-card hover:bg-muted"
+                  )}
+                  onClick={() => setSelectedId(isSelected ? null : req.title)}
                 >
-                <CardContent className="p-4 flex items-center justify-between">
-                  <div className="flex items-center gap-4 flex-grow min-w-0">
-                      <div className="p-2.5 bg-primary-foreground/20 rounded-md flex-shrink-0 transition-colors">
-                          <RequestIcon className="h-5 w-5 text-primary-foreground transition-colors" />
-                      </div>
-                      <div className="min-w-0">
-                          <h3 className="font-semibold text-base truncate">{req.title}</h3>
-                      </div>
-                  </div>
-                  <div className="flex items-center gap-2 flex-shrink-0 ml-4">
-                      <ArrowRight className="h-4 w-4 text-primary-foreground/70 transition-transform group-hover:translate-x-1" />
-                  </div>
-                </CardContent>
-              </Card>
+                <div className="flex items-start gap-4">
+                    <RequestIcon className={cn("h-5 w-5 mt-1 flex-shrink-0", isSelected ? "text-primary-foreground/80" : "text-primary")} />
+                    <div className="flex-grow">
+                        <h3 className={cn("font-semibold", isSelected ? "text-primary-foreground" : "text-foreground")}>{req.title}</h3>
+                        <p className={cn("text-xs mt-1", isSelected ? "text-primary-foreground/70" : "text-muted-foreground")}>{req.type === 'request' ? 'Formulario de solicitud' : 'Información'}</p>
+                    </div>
+                </div>
+                <Checkbox checked={isSelected} className={cn("absolute top-4 right-4", isSelected ? "border-primary-foreground text-primary-foreground" : "")} />
+              </div>
              )
           })}
         </div>
       );
     case 'mercadeo':
         return (
-            <Card className="col-span-1 md:col-span-2 lg:col-span-3">
+            <Card className="col-span-1 md:col-span-2 lg:col-span-3 bg-muted/50">
                 <CardHeader>
                      <div className="p-2 bg-muted rounded-md w-fit">
                         <defaultIcon className="h-5 w-5 text-primary" />
@@ -66,7 +69,7 @@ const renderDepartmentContent = (department: (typeof mockDepartments)[0]) => {
                         <li>Redes Sociales</li>
                     </ul>
                     <p className="font-semibold text-foreground pt-4">Para hacer una solicitud, por favor llene el siguiente formulario:</p>
-                     <Card className="border-dashed border-2 mt-4">
+                     <Card className="border-dashed border-2 mt-4 bg-background">
                         <CardContent className="p-6 text-center">
                             <AlertTriangle className="mx-auto h-12 w-12 text-amber-500 mb-4" />
                             <h3 className="text-xl font-semibold mb-2">Formulario en Construcción</h3>
@@ -80,7 +83,7 @@ const renderDepartmentContent = (department: (typeof mockDepartments)[0]) => {
         );
     case 'pmo':
         return (
-            <Card className="col-span-1 md:col-span-2 lg:col-span-3">
+            <Card className="col-span-1 md:col-span-2 lg:col-span-3 bg-muted/50">
                 <CardHeader>
                      <div className="p-2 bg-muted rounded-md w-fit">
                         <defaultIcon className="h-5 w-5 text-primary" />
@@ -132,7 +135,7 @@ const renderDepartmentContent = (department: (typeof mockDepartments)[0]) => {
         )
     default:
       return (
-        <Card className="border-dashed border-2 col-span-1 md:col-span-2 lg:col-span-3">
+        <Card className="border-dashed border-2 col-span-1 md:col-span-2 lg:col-span-3 bg-muted/50">
           <CardContent className="p-6 text-center">
             <AlertTriangle className="mx-auto h-12 w-12 text-amber-500 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Página en Construcción</h3>
@@ -152,6 +155,7 @@ export default function DepartmentRequestPage() {
   const params = useParams();
   const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
   const department = mockDepartments.find(d => d.id === slug);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
   
   if (!department) {
     return (
@@ -173,48 +177,28 @@ export default function DepartmentRequestPage() {
 
 
   return (
-    <div className="container mx-auto py-8 px-4 space-y-8">
-      <div className="w-full">
-        <Button asChild variant="link" className="mb-6 text-muted-foreground hover:no-underline p-0 h-auto text-xs">
-          <Link href="/dashboard/requerimientos" className="flex items-center gap-2 group">
-            <span className="flex items-center justify-center h-8 w-8 rounded-full bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary transition-colors">
-              <ArrowLeft className="h-4 w-4" />
-            </span>
-            <span className="opacity-0 group-hover:opacity-100 transition-opacity">Volver al portal de requerimientos</span>
-          </Link>
-        </Button>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-        <div className="md:col-span-1 sticky top-28 h-fit">
-          <h1 className="text-4xl font-bold mb-3">{department.name}</h1>
-          <p className="text-muted-foreground text-sm">{department.description}</p>
-          <div className="flex gap-2 items-center mt-6">
-              {department.id === 'capital-humano' && (
-                <>
-                  <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-full">
-                    <Link href="mailto:capital_humano_ve@banescoseguros.com">
-                        <Mail className="h-5 w-5" />
-                        <span className="sr-only">Enviar correo a Capital Humano</span>
+    <div className="container mx-auto py-12 px-4 flex items-center justify-center min-h-[calc(100vh-10rem)]">
+        <Card className="w-full max-w-4xl p-6 md:p-8">
+            <CardHeader>
+                <CardTitle className="text-2xl font-bold">{department.name}</CardTitle>
+                <CardDescription>{department.description}</CardDescription>
+            </CardHeader>
+            <CardContent>
+                {renderDepartmentContent(department, selectedId, setSelectedId)}
+            </CardContent>
+             <div className="flex items-center justify-between mt-8">
+                <Button asChild variant="ghost" className="text-muted-foreground">
+                    <Link href="/dashboard/requerimientos">
+                        <ArrowLeft className="mr-2 h-4 w-4"/>
+                        Volver
                     </Link>
-                  </Button>
-                  <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-full">
-                    <Link href="tel:+582125011111">
-                        <Phone className="h-5 w-5" />
-                        <span className="sr-only">Llamar a Capital Humano</span>
-                    </Link>
-                  </Button>
-                </>
-              )}
-          </div>
-        </div>
-
-        <div className="md:col-span-2">
-            <ScrollArea className="h-[calc(100vh-10rem)]">
-                {renderDepartmentContent(department)}
-            </ScrollArea>
-        </div>
-      </div>
+                </Button>
+                <Button>
+                    Siguiente
+                    <ArrowRight className="ml-2 h-4 w-4"/>
+                </Button>
+            </div>
+        </Card>
     </div>
   );
 }
