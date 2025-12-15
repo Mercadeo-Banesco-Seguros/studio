@@ -965,10 +965,6 @@ export default function DashboardPage() {
                 <div className="relative z-10 w-full h-full p-8 flex flex-col items-center justify-center text-center">
                     
                     <div className="w-1/2 text-left">
-                         <div className="w-28 mb-6">
-                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BS%20Logo%20horizontal%20blanco.png?raw=true" alt="Logo Banesco Seguros" width={112} height={26} />
-                        </div>
-                        
                         <Badge variant="outline" className="border-white/50 text-white mb-4">Expedición por Nuestro ADN</Badge>
                         <h2 className="text-4xl md:text-5xl font-bold max-w-lg">¿Ya sabes cuántos ConectCoins tienes?</h2>
                         <Button variant="secondary" className="mt-6 bg-white text-primary hover:bg-white/90">
