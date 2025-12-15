@@ -169,7 +169,7 @@ export const mockCourses: Course[] = [
     id: "google-forms",
     title: "Google Forms",
     description: "Aprovecha los formularios para levantar información y lograr enlaces con otros aplicativos.",
-    imageUrl: "https://images.unsplash.com/photo-1516383274235-5f42d6c6426d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3VydmV5fGVufDB8fHx8MTc1NDMzODkyNHww&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1516383274235-5f42d6c6426d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3VydmV5fGVufDB8fHx8MTc1NDMzODkyNHww&ixlib=rb-4.1.0&q=80&w=1080",
     dataAiHint: "survey form",
     category: "Google Workspace",
     duration: "Auto-gestionado",
@@ -219,7 +219,7 @@ export const mockCourses: Course[] = [
     id: "plan-de-desarrollo",
     title: "Plan de Desarrollo",
     description: "Aquí podrás  obtener algunos tips para el desarrollo de tu eficiencia, agilidad y el balance entre el trabajo y las exigencias del puesto.",
-    imageUrl: "https://images.unsplash.com/photo-1730382624709-81e52dd294d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9ncmVzc3xlbnwwfHx8fDE3NTQzNDMyNDh8MA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1730382624709-81e52dd294d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9ncmVzc3xlbnwwfHx8fDE3NTQzNDMyNDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
     dataAiHint: "growth plan",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -418,14 +418,6 @@ export const mockDepartments: Department[] = [
     description: "Análisis de datos y estrategias para el desarrollo comercial.",
     category: "Comercial",
     icon: FileText,
-  },
-  {
-    id: "biblioteca-digital",
-    name: "Biblioteca Digital",
-    description: "Acceso a documentos y recursos digitales de la empresa.",
-    directLink: "/dashboard/biblioteca",
-    category: "Otros",
-    icon: BookOpen,
   },
   {
     id: "consultoria-juridica",
@@ -896,7 +888,7 @@ export const mockPlaylist: PlaylistItem[] = [
     id: "P001", 
     title: "Clásicos en Inglés", 
     description: "Los éxitos que marcaron una época.",
-    albumArtUrl: "https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib-rb-4.1.0&q=80&w=1080", 
+    albumArtUrl: "https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8MTc1MjYwNzA5MXww&ixlib=rb-4.1.0&q=80&w=1080", 
     linkUrl: "#", 
     dataAiHint: "classic rock" 
   },
@@ -912,7 +904,7 @@ export const mockPlaylist: PlaylistItem[] = [
     id: "P003", 
     title: "Salsa y Merengue", 
     description: "Ritmos latinos para subir el ánimo.",
-    albumArtUrl: "https://images.unsplash.com/photo-1570299437488-d430e1e677c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdWJhfGVufDB8fHx8MTc1MjYwNzI5Mnww&ixlib-rb-4.1.0&q=80&w=1080", 
+    albumArtUrl: "https://images.unsplash.com/photo-1570299437488-d430e1e677c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdWJhfGVufDB8fHx8MTc1MjYwNzI5Mnww&ixlib=rb-4.1.0&q=80&w=1080", 
     linkUrl: "#", 
     dataAiHint: "latin dance" 
   },
@@ -998,6 +990,7 @@ export const mockCustomerFeedback: CustomerFeedback[] = [
 
 
     
+
 
 
 
