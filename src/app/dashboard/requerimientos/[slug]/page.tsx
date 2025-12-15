@@ -15,8 +15,8 @@ import { Checkbox } from '@/components/ui/checkbox';
 
 const renderDepartmentContent = (department: (typeof mockDepartments)[0]) => {
   const defaultIcon = department.icon || AlertTriangle;
-  switch (department.id) {
-    case 'capital-humano':
+  // Check if requests exist and have content
+  if (department.requests && department.requests.length > 0) {
       return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {department.requests?.map((req, index) => {
@@ -59,21 +59,21 @@ const renderDepartmentContent = (department: (typeof mockDepartments)[0]) => {
           })}
         </div>
       );
-    default:
-      return (
-        <Card className="border-dashed border-2 col-span-1 md:col-span-2 lg:col-span-3 bg-primary-foreground/10 text-primary-foreground">
-          <CardContent className="p-6 text-center">
-            <AlertTriangle className="mx-auto h-12 w-12 text-amber-300 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Página en Construcción</h3>
-            <p className="text-primary-foreground/80">
-              El contenido específico para <span className="font-medium">{department.name}</span> está actualmente en desarrollo.
-              <br />
-              Por favor, vuelva más tarde.
-            </p>
-          </CardContent>
-        </Card>
-      );
   }
+  // Default content if no requests are defined
+  return (
+    <Card className="border-dashed border-2 col-span-1 md:col-span-2 lg:col-span-3 bg-primary-foreground/10 text-primary-foreground">
+      <CardContent className="p-6 text-center">
+        <AlertTriangle className="mx-auto h-12 w-12 text-amber-300 mb-4" />
+        <h3 className="text-xl font-semibold mb-2">Página en Construcción</h3>
+        <p className="text-primary-foreground/80">
+          El contenido específico para <span className="font-medium">{department.name}</span> está actualmente en desarrollo.
+          <br />
+          Por favor, vuelva más tarde.
+        </p>
+      </CardContent>
+    </Card>
+  );
 };
 
 
@@ -104,7 +104,7 @@ export default function DepartmentRequestPage({ params }: DepartmentPageProps) {
 
   return (
     <Card className="w-full bg-primary text-primary-foreground rounded-none border-0 min-h-[calc(100vh-6rem)]">
-        <div className="container mx-auto py-24 px-4">
+      <div className="container mx-auto py-24 px-4">
             <CardHeader className="p-0">
                 <CardTitle className="text-3xl font-bold tracking-tight">{department.name}</CardTitle>
                 <CardDescription className="text-primary-foreground/80 mt-2 max-w-2xl">{department.description}</CardDescription>
@@ -120,7 +120,7 @@ export default function DepartmentRequestPage({ params }: DepartmentPageProps) {
                     </Link>
                 </Button>
             </div>
-        </div>
+      </div>
     </Card>
   );
 }
