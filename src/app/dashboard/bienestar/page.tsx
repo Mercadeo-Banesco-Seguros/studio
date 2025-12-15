@@ -318,15 +318,16 @@ export default function BienestarPage() {
       <div id="empezar" className="scroll-mt-20 py-24 sm:py-32">
         <div className="container mx-auto px-4">
            <div className="grid md:grid-cols-2 gap-16 items-center">
-                <div>
+                <div className="relative rounded-2xl overflow-hidden h-[700px]">
                      <Image
-                        src="https://img.freepik.com/foto-gratis/amigos-sesion-estudio-aprendiendo-mostrando-signo-paz_23-2149265835.jpg?semt=ais_hybrid&w=740&q=80"
+                        src="https://cdn.connectamericas.com/sites/default/files/ThinkstockPhotos-508454788.jpg"
                         alt="Persona sonriendo"
-                        width={600}
-                        height={700}
-                        className="rounded-2xl object-cover"
+                        layout="fill"
+                        objectFit="cover"
+                        className="object-cover"
                         data-ai-hint="happy person"
                     />
+                    <div className="absolute inset-0 bg-blue-900/40"></div>
                 </div>
                 <div>
                     <Badge>Feedback</Badge>
