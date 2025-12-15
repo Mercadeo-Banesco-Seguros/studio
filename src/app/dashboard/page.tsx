@@ -950,7 +950,7 @@ export default function DashboardPage() {
                 </div>
 
                 {/* Explorer Image */}
-                <div className="absolute -bottom-1/2 right-0 w-[1200px] h-[1200px] pointer-events-none">
+                <div className="absolute right-0 w-[1200px] h-[1200px] pointer-events-none transform translate-y-[15%]">
                      <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_x9qrv7x9qrv7x9qr%20(1)-Photoroom.png?raw=true" alt="Explorador con linterna" layout="fill" objectFit="contain" data-ai-hint="explorer character" />
                 </div>
 
