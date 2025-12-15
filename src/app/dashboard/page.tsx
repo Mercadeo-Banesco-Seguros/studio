@@ -89,8 +89,8 @@ import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
 const activityHighlights = [
   { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'gym fitness' },
   { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8fDE3NTk3NTg5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'meditation nature' },
-  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
-  { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
+  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519671482722-b30be252074d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxldmVudHxlbnwwfHx8fDE3NTk3NTkwMTB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'event celebration' },
+  { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTk3NTkwNDB8MA&ixlib-rb-4.1.0&q=80&w=1080', dataAiHint: 'books library' }
 ];
 
 const AnimatedContactButton = ({ href, type, label, number, icon: Icon, className, iconClassName }: {
@@ -483,13 +483,13 @@ export default function DashboardPage() {
                 </div>
                  <div className="relative h-[30rem] w-full flex items-center justify-center group">
                     <Card className="absolute w-80 h-56 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90 -rotate-15 -translate-x-60">
-                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Iniciativa%20Dulce%20o%20Truco%20BSV%20(2).jpg?raw=true" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" quality={100} unoptimized />
+                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Iniciativa%20Dulce%20o%20Truco%20BSV%20(2).jpg?raw=true" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" unoptimized />
                     </Card>
                      <Card className="absolute w-96 h-64 rounded-2xl overflow-hidden shadow-2xl transform z-10 scale-110 group-hover:scale-90 transition-transform duration-500 ease-in-out">
-                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Octubre%20Rosa%202025%20(3).jpg?raw=true" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" quality={100} unoptimized />
+                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Octubre%20Rosa%202025%20(3).jpg?raw=true" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" unoptimized />
                     </Card>
                      <Card className="absolute w-80 h-56 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90 rotate-15 translate-x-60">
-                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Semana%20Huella.%20Mural.%202025%20(2).jpg?raw=true" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" quality={100} unoptimized />
+                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Semana%20Huella.%20Mural.%202025%20(2).jpg?raw=true" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" unoptimized />
                     </Card>
                 </div>
             </div>
@@ -959,7 +959,7 @@ export default function DashboardPage() {
                         </div>
                     </div>
                     <Badge variant="outline" className="border-white/50 text-white mb-4">Expedición por Nuestro ADN</Badge>
-                    <h2 className="text-4xl md:text-5xl font-bold max-w-md">¿Ya sabes cuántos ConectCoins tienes?</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold max-w-lg">¿Ya sabes cuántos ConectCoins tienes?</h2>
                     <Button variant="secondary" className="mt-6 bg-white text-primary hover:bg-white/90">
                         Explorar Misiones
                     </Button>
