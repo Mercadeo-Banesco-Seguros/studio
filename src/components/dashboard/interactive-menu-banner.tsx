@@ -110,7 +110,7 @@ export const InteractiveMenuBanner = ({ menuItems, selectedDay, onDayChange, sho
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         {showDayFilter && onDayChange && selectedDay && (
-            <div className="absolute top-4 right-8 z-30">
+            <div className="absolute top-[-4rem] left-1/2 -translate-x-1/2 z-30">
                 <div className="flex flex-wrap items-center justify-center gap-2 bg-white/10 backdrop-blur-sm p-1 rounded-full">
                     {weekDays.map(day => (
                         <Button 
