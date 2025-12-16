@@ -454,35 +454,36 @@ export default function NosotrosPage() {
           </div>
         </section>
 
-        <section className="relative py-16 md:py-24 bg-primary text-primary-foreground overflow-hidden">
-            <div className="absolute top-0 right-0 h-full w-1/2 bg-white hidden lg:block" />
-            <div className="container mx-auto px-4 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
-                    <div className="text-left">
-                        <Badge variant="secondary" className="bg-white/20 mb-4 text-white">Estadísticas y Resultados</Badge>
-                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-                            Seguimiento de Nuestros Objetivos
-                        </h2>
-                        <p className="mt-6 max-w-lg text-base text-primary-foreground/80">
-                            Enfocados en tus necesidades, cada dashboard ofrece soluciones y estrategias para asegurar un crecimiento sostenido.
-                        </p>
-                        <Button asChild size="lg" className="mt-8 bg-white text-primary hover:bg-white/90">
-                            <Link href="/dashboard/objetivos">
-                                Explorar Recursos
-                            </Link>
-                        </Button>
+        <section className="py-16 md:py-24 bg-muted/20">
+            <div className="container mx-auto px-4">
+                <Card className="bg-primary text-primary-foreground rounded-2xl shadow-xl overflow-hidden">
+                    <div className="grid lg:grid-cols-2 items-center">
+                        <div className="p-8 md:p-12 order-2 lg:order-1">
+                            <Badge variant="secondary" className="bg-white/20 mb-4 text-white">Estadísticas y Resultados</Badge>
+                            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+                                Seguimiento de Nuestros Objetivos
+                            </h2>
+                            <p className="mt-6 max-w-lg text-base text-primary-foreground/80">
+                                Enfocados en tus necesidades, cada dashboard ofrece soluciones y estrategias para asegurar un crecimiento sostenido.
+                            </p>
+                            <Button asChild size="lg" className="mt-8 bg-white text-primary hover:bg-white/90">
+                                <Link href="/dashboard/objetivos">
+                                    Explorar Recursos
+                                </Link>
+                            </Button>
+                        </div>
+                        <div className="relative h-80 lg:h-[28rem] w-full order-1 lg:order-2">
+                             <Image 
+                                src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_gfxkuxgfxkuxgfxk-Photoroom.png?raw=true"
+                                alt="Seguimiento de objetivos"
+                                layout="fill"
+                                objectFit="contain"
+                                data-ai-hint="character with orbs"
+                                className="drop-shadow-2xl"
+                            />
+                        </div>
                     </div>
-                    <div className="relative h-80 lg:h-[28rem] w-full">
-                        <Image 
-                            src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_gfxkuxgfxkuxgfxk-Photoroom.png?raw=true"
-                            alt="Seguimiento de objetivos"
-                            layout="fill"
-                            objectFit="contain"
-                            data-ai-hint="character with orbs"
-                            className="drop-shadow-2xl"
-                        />
-                    </div>
-                </div>
+                </Card>
             </div>
         </section>
 
