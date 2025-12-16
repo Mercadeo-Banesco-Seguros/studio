@@ -1,4 +1,5 @@
 
+
 import { Users, Megaphone, FolderKanban, Shield, BarChart2, Briefcase, FileText, Bot, BookOpen, Scale, FileSignature, HardHat, Plane, Cpu, PiggyBank, CreditCard, Landmark, CalendarClock, MessageCircleQuestion, Bell, Utensils, Star, Video, Presentation, Image as ImageIcon, Code, Music, AlertTriangle, CheckCircle, CalendarDays, MessageSquare as MessageSquareIcon, Music2, Home, User, Cog, Lightbulb, Handshake, Award, FileBarChart, AppWindow, Mail, ClipboardList, Network, Gift, PartyPopper } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -373,15 +374,9 @@ export const mockDepartments: Department[] = [
   {
     id: "pmo",
     name: "Gestión de Proyectos",
-    description: "Gestiona y prioriza los proyectos estratégicos de la organización.",
+    description: "La Unidad Oficina de Proyectos (PMO) impulsa la ejecución exitosa de proyectos, requerimientos e iniciativas estratégicas en Banesco Seguros. Gestiona desde la planificación hasta la evaluación, buscando eficiencia, rentabilidad, logro de beneficios, documentación y entrega de resultados de alto valor. Para ello, la Unidad PMO supervisa la ejecución de todos los proyectos y requerimientos, identificando y aplicando las metodologías y herramientas más adecuadas para una gestión óptima. Coordinando recursos y articulando la participación entre unidades para mantener comunicaciones fluidas sobre el estado de los proyectos, sus posibles desviaciones, riesgos y las alternativas de mejora. Proveemos servicios e información a través de los siguientes vínculos:",
     category: "Proyectos",
     icon: FolderKanban,
-    requests: [
-      { title: "Formulario para Postulación de Iniciativas", type: 'request', icon: FileSignature, link: "https://docs.google.com/forms/d/e/1FAIpQLSezxTbTDmrxKJxhqLcrSp90Ynh1kmIjksiiF7d0KmpEBlnznQ/viewform" },
-      { title: "Repositorio de Cortes PMO BSV", type: 'info', icon: FolderKanban, link: "https://drive.google.com/drive/folders/1QN7LFnD-WpuBLqtyvcDWevlXZThGDjWH" },
-      { title: "Plantillas para Gestión de Proyectos", type: 'info', icon: FileText, link: "https://drive.google.com/drive/folders/1fOupHyOb-EGE9y_KXKwYiJ41iZUApeb3" },
-      { title: "Backlog de Priorización de Requerimientos", type: 'info', icon: ClipboardList, link: "https://docs.google.com/spreadsheets/d/1IJv_zFPfKCbNSXAgOkMt6e9YiIZUaVshha6wM4qzrsw/edit?usp=sharing" },
-    ]
   },
   {
     id: "seguridad-informacion",
@@ -400,6 +395,10 @@ export const mockDepartments: Department[] = [
     description: "Procesos de control y auditoría interna.",
     category: "Seguridad",
     icon: BarChart2,
+    requests: [
+      { title: "Site de Riesgo", type: 'info', icon: FileBarChart, link: "https://sites.google.com/banescoseguros.com/sitederiesgo/inicio" },
+      { title: "Herramienta GRC-SIRO", type: 'request', icon: AppWindow, link: "https://adfs.banesco.com/adfs/ls?SAMLRequest=lZHLbsIwEEV%2FxZp9nkACFgmiIFQkqiISuuimcswEIiU29Tion9%2FwVLup1J0fc%2BfOnDuefDU1O6GhSqsEAtcHhkrqXaX2CWzzhTOESTom0dThkU9be1Ab%2FGyRLOuEivj1J4HWKK4FVcSVaJC4lTybvqx46Pr8aLTVUtfApkRobGc104raBk2G5lRJ3G5WCRysPRL3vEIoJKkJ9yd0qTLaaciVuvHOZy%2FrDKezDNi8G6JSwl4Gv2vFriT31uCiOT94NQFbaCPxskACpagJgS3nCXwU8S4syqKMo8jHojfox30ph3IXR6NggGVU%2BrEQYdlxWRK1uFRkhbIJhH44cILQCaI86PNgxAcjd9gbvgNb39Z9qtQV419simsR8ec8Xzvr1ywH9naPoyuAB%2FyLvfkHdnGHDWmXQOg2REdRqTOWsferafq4%2F0w4%2FQY%3D&RelayState=%2Fsiro%2F" },
+    ]
   },
   {
     id: "procura",
