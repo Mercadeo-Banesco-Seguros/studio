@@ -124,13 +124,19 @@ export function Header() {
         'acerca de': 'about-us',
         'nosotros': 'about-us',
         'mision': 'about-us',
-        'valores': 'about-us',
+        'nuestra mision': 'about-us',
         'oferta de valor': 'about-us',
+        'nuestra oferta de valor': 'about-us',
         'pilares': 'about-us',
+        'nuestros pilares': 'about-us',
         'vestimenta': 'dress-code',
+        'viste seguro': 'dress-code',
+        'codigo de vestimenta': 'dress-code',
         'ropa': 'dress-code',
         'vacaciones': 'vacaciones',
+        'gestion de vacaciones': 'vacaciones',
         'requerimientos': 'requerimientos',
+        'portal de requerimientos': 'requerimientos',
         'solicitudes': 'requerimientos',
         'cursos': 'cursos',
         'activate': 'cursos',
@@ -140,6 +146,7 @@ export function Header() {
         'hcm': 'poliza',
         'seguro': 'poliza',
         'ejecutivo': 'espacio-ejecutivo',
+        'espacio ejecutivo': 'espacio-ejecutivo',
         'gerencia': 'espacio-ejecutivo',
         'actividades': 'actividades',
         'bienestar': 'actividades',
@@ -152,20 +159,23 @@ export function Header() {
         'ayuda': 'faq',
       };
       
-      let elementId = normalizedSearchTerm;
-      for (const key in sectionMap) {
+      let elementId: string | undefined = undefined;
+
+      // Find the best match
+      for (const key of Object.keys(sectionMap).sort((a, b) => b.length - a.length)) {
           if (normalizedSearchTerm.includes(key)) {
               elementId = sectionMap[key];
               break;
           }
       }
 
-      const element = document.getElementById(elementId);
-
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setIsSearchPopoverOpen(false);
-        setSearchTerm('');
+      if (elementId) {
+        const element = document.getElementById(elementId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setIsSearchPopoverOpen(false);
+            setSearchTerm('');
+        }
       } else {
         toast({
             title: "No se encontró la sección",
