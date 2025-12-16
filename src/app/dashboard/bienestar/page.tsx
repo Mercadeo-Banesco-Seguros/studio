@@ -187,9 +187,9 @@ export default function BienestarPage() {
               </Link>
             </Button>
           </div>
-           <div className="relative h-[32rem] w-full rounded-2xl overflow-hidden group">
+           <div className="relative h-[36rem] w-full rounded-2xl overflow-hidden group mt-12 md:mt-0">
               <Image
-                  src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_tapbk9tapbk9tapb-Photoroom.png?raw=true"
+                  src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_iwdpqriwdpqriwdp.png?raw=true"
                   alt="Persona practicando yoga al aire libre"
                   layout="fill"
                   objectFit="contain"
@@ -379,6 +379,8 @@ export default function BienestarPage() {
     </div>
   );
 }
+
+    
 
     
 
