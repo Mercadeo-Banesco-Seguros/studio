@@ -15,6 +15,61 @@ import { Checkbox } from '@/components/ui/checkbox';
 
 const renderDepartmentContent = (department: (typeof mockDepartments)[0]) => {
   const defaultIcon = department.icon || AlertTriangle;
+  
+  if (department.id === 'pmo') {
+    return (
+        <div>
+            <p className="text-primary-foreground/80 mt-2 max-w-4xl whitespace-pre-wrap">
+                La Unidad Oficina de Proyectos (PMO) impulsa la ejecución exitosa de proyectos, requerimientos e iniciativas estratégicas en Banesco Seguros. Gestiona desde la planificación hasta la evaluación, buscando eficiencia, rentabilidad, logro de beneficios, documentación y entrega de resultados de alto valor.
+                {'\n\n'}
+                Para ello, la Unidad PMO supervisa la ejecución de todos los proyectos y requerimientos, identificando y aplicando las metodologías y herramientas más adecuadas para una gestión óptima. Coordinando recursos y articulando la participación entre unidades para mantener comunicaciones fluidas sobre el estado de los proyectos, sus posibles desviaciones, riesgos y las alternativas de mejora.
+                {'\n\n'}
+                Proveemos servicios e información a través de los siguientes vínculos:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+              {department.requests?.map((req, index) => {
+                 const RequestIcon = req.icon || defaultIcon;
+                 const cardContent = (
+                    <div 
+                      className={cn(
+                        "group relative p-4 rounded-lg border transition-all h-full flex flex-col",
+                        req.link
+                          ? "bg-primary-foreground/10 hover:bg-primary-foreground/20 border-primary-foreground/20 text-primary-foreground cursor-pointer"
+                          : "bg-primary-foreground/5 border-primary-foreground/10 text-primary-foreground/50 cursor-not-allowed"
+                      )}
+                    >
+                      <div className="flex items-start gap-4 flex-grow">
+                          <RequestIcon className={cn("h-5 w-5 mt-1 flex-shrink-0", req.link ? "text-primary-foreground/80" : "text-primary-foreground/40")} />
+                          <div className="flex-grow">
+                              <h3 className={cn("font-semibold")}>{req.title}</h3>
+                              <p className={cn("text-xs mt-1", req.link ? "text-primary-foreground/70" : "text-primary-foreground/50")}>{req.type === 'request' ? 'Formulario de solicitud' : 'Información'}</p>
+                          </div>
+                      </div>
+                      {req.link && (
+                        <ArrowRight className="absolute top-4 right-4 h-5 w-5 text-primary-foreground/50 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      )}
+                  </div>
+                 );
+
+                 if (req.link) {
+                    return (
+                        <Link href={req.link} key={index} target="_blank" rel="noopener noreferrer" className="block h-full">
+                            {cardContent}
+                        </Link>
+                    )
+                 }
+                 
+                 return (
+                    <div key={index} className="h-full">
+                        {cardContent}
+                    </div>
+                );
+              })}
+            </div>
+        </div>
+    );
+  }
+
   // Check if requests exist and have content
   if (department.requests && department.requests.length > 0) {
       return (
@@ -103,11 +158,13 @@ export default function DepartmentRequestPage({ params }: DepartmentPageProps) {
 
 
   return (
-    <Card className="w-full bg-primary text-primary-foreground rounded-none border-0 min-h-[calc(100vh-6rem)]">
+    <Card className="w-full bg-primary text-primary-foreground rounded-none border-0 min-h-screen">
       <div className="container mx-auto py-24 px-4">
             <CardHeader className="p-0">
                 <CardTitle className="text-3xl font-bold tracking-tight">{department.name}</CardTitle>
-                <CardDescription className="text-primary-foreground/80 mt-2 max-w-2xl">{department.description}</CardDescription>
+                {department.id !== 'pmo' && (
+                  <CardDescription className="text-primary-foreground/80 mt-2 max-w-2xl">{department.description}</CardDescription>
+                )}
             </CardHeader>
             <CardContent className="mt-8 p-0">
                 {renderDepartmentContent(department)}

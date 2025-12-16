@@ -139,7 +139,7 @@ export const mockCourses: Course[] = [
     id: "google-sites",
     title: "Google Sites",
     description: "Aprende a crear un Site y los trucos para pasar de Nivel Básico a Avanzado en pocas horas.",
-    imageUrl: "https://images.unsplash.com/photo-1472289065668-ce650ac443d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1472289065668-ce650ac443d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
     dataAiHint: "web design",
     category: "Google Workspace",
     duration: "Auto-gestionado",
@@ -149,7 +149,7 @@ export const mockCourses: Course[] = [
     id: "google-sheets",
     title: "Sheets",
     description: "Aprender a aprovechar Sheets para optimizar tu tiempo y aprender lo más avanzado del aplicativo en pocas horas.",
-    imageUrl: "https://images.unsplash.com/photo-1658203897339-0b8c64a42fba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxleGNlbHxlbnwwfHx8fDE3NTQzMzc0NTB8MA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1658203897339-0b8c64a42fba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxleGNlbHxlbnwwfHx8fDE3NTQzMzc0NTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
     dataAiHint: "spreadsheet data",
     category: "Google Workspace",
     duration: "Auto-gestionado",
@@ -346,7 +346,7 @@ export const mockDepartments: Department[] = [
   {
     id: "capital-humano",
     name: "Capital Humano",
-    description: "Pensando en tu comodidad y bienestar, hemos creado este portal para que realices tus gestiones de forma simple, directa y accesible.",
+    description: "Gestión de talento, beneficios y desarrollo profesional.",
     category: "Capital Humano",
     icon: Users,
     requests: [
@@ -373,7 +373,7 @@ export const mockDepartments: Department[] = [
   {
     id: "pmo",
     name: "Gestión de Proyectos",
-    description: "La Unidad Oficina de Proyectos (PMO) impulsa la ejecución exitosa de proyectos, requerimientos e iniciativas estratégicas en Banesco Seguros. Gestiona desde la planificación hasta la evaluación, buscando eficiencia, rentabilidad, logro de beneficios, documentación y entrega de resultados de alto valor. Para ello, la Unidad PMO supervisa la ejecución de todos los proyectos y requerimientos, identificando y aplicando las metodologías y herramientas más adecuadas para una gestión óptima. Coordinando recursos y articulando la participación entre unidades para mantener comunicaciones fluidas sobre el estado de los proyectos, sus posibles desviaciones, riesgos y las alternativas de mejora. Proveemos servicios e información a través de los siguientes vínculos:",
+    description: "Gestiona y prioriza los proyectos tecnológicos de la organización.",
     category: "Proyectos",
     icon: FolderKanban,
     requests: [
