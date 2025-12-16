@@ -161,8 +161,18 @@ export default function BienestarPage() {
     <div className="bg-background text-foreground">
       
       {/* Hero Section */}
-      <section className="py-24 sm:py-32 bg-gradient-to-br from-accent to-secondary text-white">
-        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+       <section className="relative py-24 sm:py-32 text-primary-foreground overflow-hidden">
+        <Image
+          src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
+          alt="Abstract background"
+          layout="fill"
+          objectFit="cover"
+          className="z-0"
+          data-ai-hint="abstract waves"
+        />
+        <div className="absolute inset-0 bg-blue-900/40 z-0" />
+
+        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center relative z-10">
           <div>
             <Badge variant="outline" className="mb-4 border-white/50 text-white">Banesco Seguros</Badge>
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
@@ -179,10 +189,10 @@ export default function BienestarPage() {
           </div>
            <div className="relative h-[32rem] w-full rounded-2xl overflow-hidden group">
               <Image
-                  src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(56).png?raw=true"
+                  src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_tapbk9tapbk9tapb-Photoroom.png?raw=true"
                   alt="Persona practicando yoga al aire libre"
                   layout="fill"
-                  objectFit="cover"
+                  objectFit="contain"
                   data-ai-hint="person doing yoga"
                   className="transition-transform duration-500 ease-in-out group-hover:scale-105"
               />
@@ -369,5 +379,7 @@ export default function BienestarPage() {
     </div>
   );
 }
+
+    
 
     
