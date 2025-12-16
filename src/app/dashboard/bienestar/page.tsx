@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useRef, useEffect, useMemo } from 'react';
@@ -161,7 +160,7 @@ export default function BienestarPage() {
     <div className="bg-background text-foreground">
       
       {/* Hero Section */}
-      <section className="py-24 sm:py-32 bg-blue-600 text-white">
+      <section className="py-24 sm:py-32 bg-gradient-to-br from-accent to-secondary text-white">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
           <div>
             <Badge variant="outline" className="mb-4 border-white/50 text-white">Banesco Seguros</Badge>
