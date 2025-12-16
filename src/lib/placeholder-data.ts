@@ -394,13 +394,6 @@ export const mockDepartments: Department[] = [
         { title: "El Portal de Peticiones", type: 'request', icon: FileSignature, link: "https://sweb8061.intra.banesco.com/launchpad/org/banesco" },
     ]
   },
-   {
-    id: "ti",
-    name: "Tecnología de la Información",
-    description: "Soporte técnico, gestión de equipos y software.",
-    category: "Seguridad",
-    icon: Cpu,
-  },
   {
     id: "control",
     name: "Control",
