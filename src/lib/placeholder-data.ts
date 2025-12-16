@@ -347,7 +347,7 @@ export const mockDepartments: Department[] = [
   {
     id: "capital-humano",
     name: "Capital Humano",
-    description: "Gestión de talento, beneficios y desarrollo profesional.",
+    description: "Pensando en tu comodidad y bienestar, hemos creado este portal para que realices tus gestiones de forma simple, directa y accesible.",
     category: "Capital Humano",
     icon: Users,
     requests: [
@@ -433,6 +433,9 @@ export const mockDepartments: Department[] = [
     description: "Asesoramiento y gestión de asuntos legales.",
     category: "Legal",
     icon: Scale,
+    requests: [
+      { title: "Requerimientos a Consultoría Jurídica", type: 'request', icon: FileSignature, link: "https://docs.google.com/forms/d/e/1FAIpQLSfC5Tbf3qespf0FeLx9BXGZwN8tIEENUz6Ri1I9ohszJH0yuA/viewform" },
+    ]
   },
   {
     id: "sistematica-comercial",
@@ -440,14 +443,17 @@ export const mockDepartments: Department[] = [
     description: "Recursos y herramientas para el equipo comercial.",
     category: "Comercial",
     icon: HardHat,
+    directLink: "https://sites.google.com/banescoseguros.com/sistematica-comercial-ve",
   },
   {
     id: "suscripcion",
     name: "Suscripción",
     description: "Procesos de suscripción y emisión de pólizas.",
-    directLink: "/dashboard/suscripcion",
     category: "Otros",
     icon: FileSignature,
+    requests: [
+        { title: "Inspección Patrimonial", type: 'request', icon: FileSignature, link: "https://docs.google.com/forms/d/e/1FAIpQLSdn0upZT7HPmVSMtoL6m-LkvrbCehBaIsXMNM9LADZORefl4w/viewform" },
+    ]
   },
   {
     id: "robotizacion",
@@ -455,6 +461,9 @@ export const mockDepartments: Department[] = [
     description: "Información y estado de los proyectos de automatización (RPA).",
     category: "Proyectos",
     icon: Bot,
+    requests: [
+        { title: "Site de Robotización", type: 'info', icon: Bot, link: "https://sites.google.com/banescoseguros.com/rpabanescosegurosvenezuela/inicio" },
+    ]
   },
   {
     id: "actuarial",
