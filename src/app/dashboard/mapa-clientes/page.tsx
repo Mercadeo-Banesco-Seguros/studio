@@ -454,56 +454,36 @@ export default function NosotrosPage() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 lg:gap-24 items-center">
-              
-              <div className="mb-12 lg:mb-0">
-                <Badge variant="outline" className="mb-4">ÁREAS</Badge>
-                <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight mb-6">
-                  Seguimiento de Nuestros Objetivos
-                </h2>
-                <p className="text-muted-foreground text-base leading-relaxed max-w-lg">
-                  Enfocados en tus necesidades, cada dashboard ofrece soluciones y estrategias para asegurar un crecimiento sostenido.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {serviceCategories.map((category) => (
-                  <Link href={category.href} key={category.title} className="block group">
-                    <Card className={cn(
-                        "h-full p-6 rounded-2xl border-border/60 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg",
-                        category.highlighted 
-                          ? "bg-primary text-primary-foreground hover:bg-primary/90" 
-                          : "bg-card hover:bg-muted/50"
-                      )}
-                    >
-                      <div className={cn(
-                          "flex items-center justify-center h-12 w-12 rounded-xl mb-6",
-                          category.highlighted ? "bg-white/20" : "bg-primary/10"
-                        )}
-                      >
-                        <category.icon className={cn(
-                          "h-6 w-6",
-                          category.highlighted ? "text-primary-foreground" : "text-primary"
-                        )} />
-                      </div>
-                      <h3 className="font-bold text-lg mb-2">
-                        {category.title}
-                      </h3>
-                      <p className={cn(
-                        "text-sm leading-relaxed",
-                        category.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"
-                      )}>
-                        {category.description}
-                      </p>
-                    </Card>
-                  </Link>
-                ))}
-              </div>
-
+        <section className="relative py-16 md:py-24 bg-primary text-primary-foreground overflow-hidden">
+            <div className="absolute top-0 right-0 h-full w-1/2 bg-white hidden lg:block" />
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <div className="text-left">
+                        <Badge variant="secondary" className="bg-white/20 mb-4 text-white">Estadísticas y Resultados</Badge>
+                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+                            Seguimiento de Nuestros Objetivos
+                        </h2>
+                        <p className="mt-6 max-w-lg text-base text-primary-foreground/80">
+                            Enfocados en tus necesidades, cada dashboard ofrece soluciones y estrategias para asegurar un crecimiento sostenido.
+                        </p>
+                        <Button asChild size="lg" className="mt-8 bg-white text-primary hover:bg-white/90">
+                            <Link href="/dashboard/objetivos">
+                                Explorar Recursos
+                            </Link>
+                        </Button>
+                    </div>
+                    <div className="relative h-80 lg:h-[28rem] w-full">
+                        <Image 
+                            src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_gfxkuxgfxkuxgfxk-Photoroom.png?raw=true"
+                            alt="Seguimiento de objetivos"
+                            layout="fill"
+                            objectFit="contain"
+                            data-ai-hint="character with orbs"
+                            className="drop-shadow-2xl"
+                        />
+                    </div>
+                </div>
             </div>
-          </div>
         </section>
 
       </div>
