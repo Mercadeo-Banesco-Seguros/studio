@@ -428,7 +428,7 @@ export default function NosotrosPage() {
                         <div key={`${employee.Correo}-${index}`} className="group flex flex-col aspect-square lg:aspect-[6/7]">
                             <div className="relative w-full aspect-square overflow-hidden mb-4 bg-muted rounded-2xl">
                                 <Image
-                                src={employee.ImageUrl || 'https://images.unsplash.com/photo-1596367407372-96cb88503db6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxCTEFOQ098ZW58MHx8fHwxNzU3MzYzNTMxfDA&ixlib-rb-4.1.0&q=80&w=1080'}
+                                src={employee.ImageUrl || 'https://images.unsplash.com/photo-1596367407372-96cb88503db6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxCTEFOQ098ZW58MHx8fHwxNzU3MzYzNTMxfDA&ixlib=rb-4.1.0&q=80&w=1080'}
                                 alt={`Portrait of ${employee.Nombre}`}
                                 layout="fill"
                                 objectFit="cover"
@@ -455,35 +455,43 @@ export default function NosotrosPage() {
         </section>
 
         <section className="bg-muted/20">
-            <div className="w-full">
-                <Card className="bg-primary text-primary-foreground rounded-none shadow-xl overflow-hidden">
-                    <div className="container mx-auto px-4 grid lg:grid-cols-2 items-center">
-                        <div className="p-8 md:p-12 order-2 lg:order-1">
-                            <Badge variant="secondary" className="bg-white/20 mb-4 text-white">Estadísticas y Resultados</Badge>
-                            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-                                Seguimiento de Nuestros Objetivos
-                            </h2>
-                            <p className="mt-6 max-w-lg text-base text-primary-foreground/80">
-                                Enfocados en tus necesidades, cada dashboard ofrece soluciones y estrategias para asegurar un crecimiento sostenido.
-                            </p>
-                            <Button asChild size="lg" className="mt-8 bg-white text-primary hover:bg-white/90">
-                                <Link href="/dashboard/objetivos">
-                                    Explorar Recursos
-                                </Link>
-                            </Button>
-                        </div>
-                        <div className="relative h-80 lg:h-[42rem] w-full order-1 lg:order-2">
-                             <Image 
-                                src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_gfxkuxgfxkuxgfxk-Photoroom.png?raw=true"
-                                alt="Seguimiento de objetivos"
-                                layout="fill"
-                                objectFit="contain"
-                                data-ai-hint="character with orbs"
-                                className="drop-shadow-2xl lg:translate-y-8"
-                            />
-                        </div>
+            <div className="relative w-full text-white">
+                <Image
+                    src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
+                    alt="Fondo abstracto de ondas"
+                    layout="fill"
+                    objectFit="cover"
+                    className="z-0"
+                    data-ai-hint="abstract waves"
+                    quality={100}
+                />
+                <div className="absolute inset-0 bg-blue-900/40 z-0" />
+                <div className="relative z-10 container mx-auto px-4 grid lg:grid-cols-2 items-center">
+                    <div className="p-8 md:p-12 order-2 lg:order-1">
+                        <Badge variant="secondary" className="bg-white/20 mb-4 text-white">Estadísticas y Resultados</Badge>
+                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+                            Seguimiento de Nuestros Objetivos
+                        </h2>
+                        <p className="mt-6 max-w-lg text-base text-primary-foreground/80">
+                            Enfocados en tus necesidades, cada dashboard ofrece soluciones y estrategias para asegurar un crecimiento sostenido.
+                        </p>
+                        <Button asChild size="lg" className="mt-8 bg-white text-primary hover:bg-white/90">
+                            <Link href="/dashboard/objetivos">
+                                Explorar Recursos
+                            </Link>
+                        </Button>
                     </div>
-                </Card>
+                    <div className="relative h-80 lg:h-[42rem] w-full order-1 lg:order-2">
+                        <Image 
+                            src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_gfxkuxgfxkuxgfxk-Photoroom.png?raw=true"
+                            alt="Seguimiento de objetivos"
+                            layout="fill"
+                            objectFit="contain"
+                            data-ai-hint="character with orbs"
+                            className="drop-shadow-2xl lg:translate-y-8"
+                        />
+                    </div>
+                </div>
             </div>
         </section>
 
