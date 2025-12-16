@@ -428,7 +428,7 @@ export default function NosotrosPage() {
                         <div key={`${employee.Correo}-${index}`} className="group flex flex-col aspect-square lg:aspect-[6/7]">
                             <div className="relative w-full aspect-square overflow-hidden mb-4 bg-muted rounded-2xl">
                                 <Image
-                                src={employee.ImageUrl || 'https://images.unsplash.com/photo-1596367407372-96cb88503db6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxCTEFOQ098ZW58MHx8fHwxNzU3MzYzNTMxfDA&ixlib=rb-4.1.0&q=80&w=1080'}
+                                src={employee.ImageUrl || 'https://images.unsplash.com/photo-1596367407372-96cb88503db6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxCTEFOQ098ZW58MHx8fHwxNzU3MzYzNTMxfDA&ixlib-rb-4.1.0&q=80&w=1080'}
                                 alt={`Portrait of ${employee.Nombre}`}
                                 layout="fill"
                                 objectFit="cover"
@@ -454,7 +454,7 @@ export default function NosotrosPage() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24 bg-muted/20">
+        <section className="bg-muted/20">
             <div className="w-full">
                 <Card className="bg-primary text-primary-foreground rounded-none shadow-xl overflow-hidden">
                     <div className="container mx-auto px-4 grid lg:grid-cols-2 items-center">
@@ -479,7 +479,7 @@ export default function NosotrosPage() {
                                 layout="fill"
                                 objectFit="contain"
                                 data-ai-hint="character with orbs"
-                                className="drop-shadow-2xl"
+                                className="drop-shadow-2xl lg:translate-y-8"
                             />
                         </div>
                     </div>
