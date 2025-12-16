@@ -161,17 +161,17 @@ export default function BienestarPage() {
     <div className="bg-background text-foreground">
       
       {/* Hero Section */}
-      <section className="py-24 sm:py-32">
+      <section className="py-24 sm:py-32 bg-blue-600 text-white">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <Badge variant="outline" className="mb-4">Banesco Seguros</Badge>
+            <Badge variant="outline" className="mb-4 border-white/50 text-white">Banesco Seguros</Badge>
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
               Un Espacio para <br /> Tu Bienestar Integral
             </h1>
-            <p className="mt-4 text-muted-foreground max-w-md">
+            <p className="mt-4 text-white/80 max-w-md">
               Creamos oportunidades para que puedas construir un estilo de vida saludable y equilibrado, fomentando tanto tu desarrollo personal como profesional.
             </p>
-             <Button asChild size="lg" className="mt-8 font-light">
+             <Button asChild size="lg" className="mt-8 font-light bg-white text-primary hover:bg-white/90">
               <Link href="#explorar-actividades">
                 Explorar Actividades
               </Link>
