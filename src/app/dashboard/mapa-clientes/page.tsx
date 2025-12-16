@@ -472,7 +472,7 @@ export default function NosotrosPage() {
                                 </Link>
                             </Button>
                         </div>
-                        <div className="relative h-80 lg:h-[28rem] w-full order-1 lg:order-2">
+                        <div className="relative h-80 lg:h-[42rem] w-full order-1 lg:order-2">
                              <Image 
                                 src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_gfxkuxgfxkuxgfxk-Photoroom.png?raw=true"
                                 alt="Seguimiento de objetivos"
