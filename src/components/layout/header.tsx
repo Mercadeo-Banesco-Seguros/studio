@@ -118,23 +118,56 @@ export function Header() {
 
   const handleSearch = () => {
     if (pathname === '/dashboard') {
-      const normalizedSearchTerm = searchTerm.toLowerCase().trim();
-      const element = document.getElementById(normalizedSearchTerm);
+      const normalizedSearchTerm = searchTerm.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+      const sectionMap: { [key: string]: string } = {
+        'acerca de': 'about-us',
+        'nosotros': 'about-us',
+        'mision': 'about-us',
+        'valores': 'about-us',
+        'vestimenta': 'dress-code',
+        'ropa': 'dress-code',
+        'vacaciones': 'vacaciones',
+        'requerimientos': 'requerimientos',
+        'solicitudes': 'requerimientos',
+        'cursos': 'cursos',
+        'activate': 'cursos',
+        'menu': 'menu',
+        'comedor': 'menu',
+        'poliza': 'poliza',
+        'hcm': 'poliza',
+        'seguro': 'poliza',
+        'ejecutivo': 'espacio-ejecutivo',
+        'gerencia': 'espacio-ejecutivo',
+        'actividades': 'actividades',
+        'bienestar': 'actividades',
+        'conectados': 'conectados',
+        'ranking': 'conectados',
+        'playlist': 'playlist',
+        'musica': 'playlist',
+        'faq': 'faq',
+        'preguntas': 'faq',
+        'ayuda': 'faq',
+      };
+      
+      const elementId = sectionMap[normalizedSearchTerm] || normalizedSearchTerm;
+      const element = document.getElementById(elementId);
+
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         setIsSearchPopoverOpen(false);
         setSearchTerm('');
       } else {
         toast({
             title: "No se encontró la sección",
-            description: `No se pudo encontrar una sección llamada "${searchTerm}" en esta página.`,
+            description: `No se pudo encontrar una sección para "${searchTerm}".`,
             variant: "destructive"
         })
       }
     } else {
         toast({
             title: "Búsqueda no disponible",
-            description: "La búsqueda por sección solo está disponible en la página principal.",
+            description: "La búsqueda por sección solo está disponible en la página principal del dashboard.",
         })
     }
   };
