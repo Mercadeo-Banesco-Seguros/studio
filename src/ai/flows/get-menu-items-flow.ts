@@ -27,7 +27,7 @@ export type MenuItemsResponse = z.infer<typeof MenuItemsResponseSchema>;
 
 // The main exported function that the frontend will call
 export async function getMenuItems(): Promise<MenuItemsResponse> {
-  const scriptUrl = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL;
+  const scriptUrl = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL || "TU_URL_DE_IMPLEMENTACIÓN_AQUÍ";
 
   if (!scriptUrl || scriptUrl === "TU_URL_DE_IMPLEMENTACIÓN_AQUÍ") {
     console.error("Apps Script URL is not configured. Returning mock data.");

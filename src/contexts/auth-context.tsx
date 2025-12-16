@@ -8,7 +8,7 @@ import { useToast } from '@/hooks/use-toast';
 // Real API calls to Google Apps Script
 const api = {
   async register(email: string, password: string): Promise<{ success: boolean; message: string }> {
-    const scriptUrl = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL;
+    const scriptUrl = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL || "TU_URL_DE_IMPLEMENTACIÓN_AQUÍ";
     if (!scriptUrl || scriptUrl === "TU_URL_DE_IMPLEMENTACIÓN_AQUÍ") {
       throw new Error("La URL de Apps Script no está configurada. Por favor, añádala a las variables de entorno de su hosting.");
     }
@@ -25,7 +25,7 @@ const api = {
   },
   
   async login(email: string, password: string): Promise<{ success: boolean; message: string }> {
-    const scriptUrl = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL;
+    const scriptUrl = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL || "TU_URL_DE_IMPLEMENTACIÓN_AQUÍ";
     if (!scriptUrl || scriptUrl === "TU_URL_DE_IMPLEMENTACIÓN_AQUÍ") {
       throw new Error("La URL de Apps Script no está configurada. Por favor, añádala a las variables de entorno de su hosting.");
     }

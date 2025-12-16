@@ -29,7 +29,7 @@ export type CustomerFeedbackResponse = z.infer<typeof CustomerFeedbackResponseSc
  * It fetches data from the dedicated feedback Apps Script.
  */
 export async function getCustomerFeedback(): Promise<CustomerFeedbackResponse> {
-  const scriptUrl = process.env.NEXT_PUBLIC_FEEDBACK_APPS_SCRIPT_URL;
+  const scriptUrl = process.env.NEXT_PUBLIC_FEEDBACK_APPS_SCRIPT_URL || "TU_NUEVA_URL_DE_IMPLEMENTACIÓN_AQUÍ";
 
   // Check if the URL is configured in the environment variables
   if (!scriptUrl || scriptUrl === "TU_NUEVA_URL_DE_IMPLEMENTACIÓN_AQUÍ") {

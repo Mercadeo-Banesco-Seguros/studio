@@ -50,7 +50,7 @@ function transformGoogleDriveUrl(url: string): string {
  * It fetches data from the dedicated team Apps Script.
  */
 export async function getTeamMembers(): Promise<TeamMembersResponse> {
-  const scriptUrl = process.env.NEXT_PUBLIC_TEAM_APPS_SCRIPT_URL;
+  const scriptUrl = process.env.NEXT_PUBLIC_TEAM_APPS_SCRIPT_URL || "TU_URL_DE_APPS_SCRIPT_PARA_EQUIPO_AQUÍ";
 
   // Check if the URL is configured in the environment variables
   if (!scriptUrl || scriptUrl === "TU_URL_DE_APPS_SCRIPT_PARA_EQUIPO_AQUÍ") {

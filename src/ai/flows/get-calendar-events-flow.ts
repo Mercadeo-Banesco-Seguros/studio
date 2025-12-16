@@ -22,7 +22,7 @@ export type CalendarEventsResponse = z.infer<typeof CalendarEventsResponseSchema
 
 // The main exported function that the frontend will call
 export async function getCalendarEvents(): Promise<CalendarEventsResponse> {
-  const scriptUrl = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL;
+  const scriptUrl = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL || "TU_URL_DE_IMPLEMENTACIÓN_AQUÍ";
 
   if (!scriptUrl || scriptUrl === "TU_URL_DE_IMPLEMENTACIÓN_AQUÍ") {
     console.error("Apps Script URL is not configured.");
