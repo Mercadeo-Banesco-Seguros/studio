@@ -179,7 +179,7 @@ export default function BienestarPage() {
           </div>
            <div className="relative h-[32rem] w-full rounded-2xl overflow-hidden group">
               <Image
-                  src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_iwdpqriwdpqriwdp.png?raw=true"
+                  src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(56).png?raw=true"
                   alt="Persona practicando yoga al aire libre"
                   layout="fill"
                   objectFit="cover"
