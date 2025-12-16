@@ -139,7 +139,7 @@ export const mockCourses: Course[] = [
     id: "google-sites",
     title: "Google Sites",
     description: "Aprende a crear un Site y los trucos para pasar de Nivel Básico a Avanzado en pocas horas.",
-    imageUrl: "https://images.unsplash.com/photo-1472289065668-ce650ac443d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1472289065668-ce650ac443d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
     dataAiHint: "web design",
     category: "Google Workspace",
     duration: "Auto-gestionado",
@@ -149,7 +149,7 @@ export const mockCourses: Course[] = [
     id: "google-sheets",
     title: "Sheets",
     description: "Aprender a aprovechar Sheets para optimizar tu tiempo y aprender lo más avanzado del aplicativo en pocas horas.",
-    imageUrl: "https://images.unsplash.com/photo-1658203897339-0b8c64a42fba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxleGNlbHxlbnwwfHx8fDE3NTQzMzc0NTB8MA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1658203897339-0b8c64a42fba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxleGNlbHxlbnwwfHx8fDE3NTQzMzc0NTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
     dataAiHint: "spreadsheet data",
     category: "Google Workspace",
     duration: "Auto-gestionado",
@@ -373,7 +373,7 @@ export const mockDepartments: Department[] = [
   {
     id: "pmo",
     name: "Gestión de Proyectos",
-    description: "Gestiona y prioriza los proyectos tecnológicos de la organización.",
+    description: "Gestiona y prioriza los proyectos estratégicos de la organización.",
     category: "Proyectos",
     icon: FolderKanban,
     requests: [
@@ -389,6 +389,10 @@ export const mockDepartments: Department[] = [
     description: "Portal de peticiones y gestión de la seguridad de la información.",
     category: "Seguridad",
     icon: Shield,
+    directLink: "https://sweb8061.intra.banesco.com/launchpad/org/banesco",
+    requests: [
+        { title: "El Portal de Peticiones", type: 'request', icon: FileSignature, link: "https://sweb8061.intra.banesco.com/launchpad/org/banesco" },
+    ]
   },
    {
     id: "ti",
@@ -961,3 +965,5 @@ export const mockCustomerFeedback: CustomerFeedback[] = [
     
     
   
+
+    
