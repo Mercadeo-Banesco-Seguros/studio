@@ -179,7 +179,7 @@ export default function BienestarPage() {
           </div>
            <div className="relative h-[32rem] w-full rounded-2xl overflow-hidden group">
               <Image
-                  src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_tapbk9tapbk9tapb-Photoroom.png?raw=true"
+                  src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(56).png?raw=true"
                   alt="Persona practicando yoga al aire libre"
                   layout="fill"
                   objectFit="cover"
@@ -327,7 +327,6 @@ export default function BienestarPage() {
                         className="object-cover"
                         data-ai-hint="happy person"
                     />
-                    <div className="absolute inset-0 bg-blue-900/40"></div>
                 </div>
                 <div>
                     <Badge>Feedback</Badge>
@@ -370,3 +369,5 @@ export default function BienestarPage() {
     </div>
   );
 }
+
+    
