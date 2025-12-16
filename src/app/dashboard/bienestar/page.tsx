@@ -192,7 +192,7 @@ export default function BienestarPage() {
                   src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_tapbk9tapbk9tapb-Photoroom.png?raw=true"
                   alt="Persona practicando yoga al aire libre"
                   layout="fill"
-                  objectFit="contain"
+                  objectFit="cover"
                   data-ai-hint="person doing yoga"
                   className="transition-transform duration-500 ease-in-out group-hover:scale-105"
               />
@@ -385,4 +385,3 @@ export default function BienestarPage() {
     
 
     
-
