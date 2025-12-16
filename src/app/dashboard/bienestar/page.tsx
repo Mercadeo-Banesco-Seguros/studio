@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useRef, useEffect, useMemo } from 'react';
@@ -319,7 +320,7 @@ export default function BienestarPage() {
            <div className="grid md:grid-cols-2 gap-16 items-center">
                 <div className="relative rounded-2xl overflow-hidden h-[700px]">
                      <Image
-                        src="https://cdn.connectamericas.com/sites/default/files/ThinkstockPhotos-508454788.jpg"
+                        src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(55).png?raw=true"
                         alt="Persona sonriendo"
                         layout="fill"
                         objectFit="cover"
