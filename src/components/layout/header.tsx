@@ -125,6 +125,8 @@ export function Header() {
         'nosotros': 'about-us',
         'mision': 'about-us',
         'valores': 'about-us',
+        'oferta de valor': 'about-us',
+        'pilares': 'about-us',
         'vestimenta': 'dress-code',
         'ropa': 'dress-code',
         'vacaciones': 'vacaciones',
@@ -150,7 +152,14 @@ export function Header() {
         'ayuda': 'faq',
       };
       
-      const elementId = sectionMap[normalizedSearchTerm] || normalizedSearchTerm;
+      let elementId = normalizedSearchTerm;
+      for (const key in sectionMap) {
+          if (normalizedSearchTerm.includes(key)) {
+              elementId = sectionMap[key];
+              break;
+          }
+      }
+
       const element = document.getElementById(elementId);
 
       if (element) {
