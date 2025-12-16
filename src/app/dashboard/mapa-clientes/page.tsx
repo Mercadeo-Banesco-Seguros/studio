@@ -455,9 +455,9 @@ export default function NosotrosPage() {
         </section>
 
         <section className="py-16 md:py-24 bg-muted/20">
-            <div className="container mx-auto px-4">
-                <Card className="bg-primary text-primary-foreground rounded-2xl shadow-xl overflow-hidden">
-                    <div className="grid lg:grid-cols-2 items-center">
+            <div className="w-full">
+                <Card className="bg-primary text-primary-foreground rounded-none shadow-xl overflow-hidden">
+                    <div className="container mx-auto px-4 grid lg:grid-cols-2 items-center">
                         <div className="p-8 md:p-12 order-2 lg:order-1">
                             <Badge variant="secondary" className="bg-white/20 mb-4 text-white">Estadísticas y Resultados</Badge>
                             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
