@@ -14,7 +14,7 @@ import { cn } from '@/lib/utils';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Progress } from '@/components/ui/progress';
 import { SectionWrapper } from "@/components/dashboard/section-wrapper";
-import { NewCourseCard } from "@/components/dashboard/course-card";
+import { NewCourseCard } from "@/components/dashboard/new-course-card";
 import { Bot } from "lucide-react";
 
 const technologies = [
@@ -156,7 +156,7 @@ export default function CursosPage() {
                 <div className="w-[70%]">
                   <Card className="relative rounded-2xl shadow-lg overflow-hidden bg-primary text-primary-foreground min-h-[600px] flex flex-col justify-end text-left">
                     <Image
-                      src="https://images.unsplash.com/photo-1681127910416-f18e60b0ba1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8ZG5hfGVufDB8fHx8MTc2NTgyODAzMnww&ixlib=rb-4.1.0&q=80&w=1080"
+                      src="https://images.unsplash.com/photo-1681127910416-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8ZG5hfGVufDB8fHx8MTc2NTgyODAzMnww&ixlib=rb-4.1.0&q=80&w=1080"
                       alt="ADN Banesco Seguros"
                       layout="fill"
                       objectFit="cover"
