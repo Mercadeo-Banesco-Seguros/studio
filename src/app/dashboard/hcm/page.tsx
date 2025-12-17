@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
 const hcmActions = [
     {
@@ -90,6 +91,19 @@ const contactMethods = [
     }
 ]
 
+const coverageData = [
+  { service: "Hospitalización y Cirugía", coverage: "1.500$ por patología" },
+  { service: "Maternidad", coverage: "1.500$" },
+  { service: "Atención Primaria de Salud (APS)", coverage: "12 órdenes anuales (3 órdenes mensuales no acumulativas) ó 1.000$" },
+  { service: "Retiro de Medicamentos (Telemedi)", coverage: "12 órdenes anuales (2 órdenes mensuales no acumulativas) ó 1.000$" },
+  { service: "Servicios Odontológicos", coverage: "Se activa por evento" },
+  { service: "Servicios Oftalmológicos", coverage: "Se activa por evento" },
+  { service: "Servicios Funerarios", coverage: "1.000$" },
+  { service: "Telemedicina", coverage: "Ilimitada" },
+  { service: "Atención Médica Domiciliaria", coverage: "Ilimitada" },
+];
+
+
 export default function HcmPage() {
     return (
         <div className="container mx-auto py-8 px-4 space-y-12">
@@ -141,6 +155,31 @@ export default function HcmPage() {
                     </Link>
                 ))}
             </div>
+
+            <Card>
+                <CardHeader>
+                    <CardTitle>Cobertura de la Póliza Básica</CardTitle>
+                    <CardDescription>Resumen de los beneficios y límites de tu plan.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <Table>
+                        <TableHeader>
+                            <TableRow>
+                                <TableHead className="w-[300px]">Servicio</TableHead>
+                                <TableHead>Cobertura</TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {coverageData.map((item) => (
+                                <TableRow key={item.service}>
+                                    <TableCell className="font-medium">{item.service}</TableCell>
+                                    <TableCell>{item.coverage}</TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </CardContent>
+            </Card>
 
             <div className="grid md:grid-cols-2 gap-12 items-start pt-12">
                  <div>
