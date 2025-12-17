@@ -168,6 +168,35 @@ const medicineRequestSteps = [
     },
 ];
 
+const avalRequestSteps = [
+    {
+        step: "01",
+        color: "text-blue-600",
+        description: <>Presiona la opción <span className="font-bold">"Notificación Siniestros"</span> en el menú que está del lado izquierdo, selecciona la opción <span className="font-bold">"Personas"</span>, y luego <span className="font-bold">"Carta Aval"</span>.</>
+    },
+    {
+        step: "02",
+        color: "text-purple-600",
+        description: <>Selecciona el beneficiario al que corresponda el siniestro y pulsa <span className="font-bold">"Siguiente"</span>.</>
+    },
+    {
+        step: "03",
+        color: "text-sky-500",
+        description: <>Complete los campos con la información solicitada (detalles del siniestro, datos de medico tratante, datos de contacto y estatus de COVID 19).</>
+    },
+    {
+        step: "04",
+        color: "text-indigo-600",
+        description: <>Carga los archivos solicitados y selecciona <span className="font-bold">"Siguiente"</span>. Verifica la información registrada y presiona <span className="font-bold">"Editar"</span> en caso de error o <span className="font-bold">"Notificar"</span> en caso de estar de acuerdo.</>
+    },
+    {
+        step: "05",
+        color: "text-teal-600",
+        description: <>Verifica el número del siniestro. Para finalizar presiona <span className="font-bold">"Aceptar"</span>.</>
+    },
+];
+
+
 const DentalProtocolStep = ({ step, color, description, isLast }: { step: string; color: string; description: React.ReactNode; isLast: boolean }) => (
     <div className="relative pl-16">
         <div className="absolute left-0 top-0 flex items-center">
@@ -180,6 +209,17 @@ const DentalProtocolStep = ({ step, color, description, isLast }: { step: string
 );
 
 const MedicineRequestStep = ({ step, color, description, isLast }: { step: string; color: string; description: React.ReactNode; isLast: boolean }) => (
+    <div className="relative pl-16">
+        <div className="absolute left-0 top-0 flex items-center">
+            <div className={cn("text-3xl font-bold", color)}>{step}</div>
+            <div className={cn("w-0 h-0 border-y-[18px] border-y-transparent border-l-[18px]", color.replace("text-", "border-l-"))}></div>
+        </div>
+        {!isLast && <div className="absolute left-4 top-12 bottom-[-2rem] w-0.5 bg-border -translate-x-1/2"></div>}
+        <div className="text-sm text-muted-foreground pt-1">{description}</div>
+    </div>
+);
+
+const AvalRequestStep = ({ step, color, description, isLast }: { step: string; color: string; description: React.ReactNode; isLast: boolean }) => (
     <div className="relative pl-16">
         <div className="absolute left-0 top-0 flex items-center">
             <div className={cn("text-3xl font-bold", color)}>{step}</div>
@@ -375,6 +415,28 @@ export default function HcmPage() {
                      <p className="text-center text-xs text-muted-foreground mt-12">
                         En caso de presentar error o problemas puedes comunicarte al Call Center de Telemedi al 0212-287.9261 / 0212-287.9262 / 02128195301.99.19.
                     </p>
+                </CardContent>
+            </Card>
+
+            <Card className="mt-12">
+                <CardHeader>
+                    <CardTitle>Paso a Paso para la Solicitud de Carta Aval</CardTitle>
+                    <CardDescription>
+                        Ingresa a Banesco SegurOnline y sigue estos sencillos pasos:
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-6">
+                    <div className="space-y-12">
+                        {avalRequestSteps.map((step, index) => (
+                            <AvalRequestStep
+                                key={step.step}
+                                step={step.step}
+                                color={step.color}
+                                description={step.description}
+                                isLast={index === avalRequestSteps.length - 1}
+                            />
+                        ))}
+                    </div>
                 </CardContent>
             </Card>
 
