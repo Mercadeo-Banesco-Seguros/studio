@@ -156,30 +156,46 @@ export default function HcmPage() {
                 ))}
             </div>
 
-            <Card>
-                <CardHeader>
-                    <CardTitle>Cobertura de la Póliza Básica</CardTitle>
-                    <CardDescription>Resumen de los beneficios y límites de tu plan.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <Table>
-                        <TableHeader>
-                            <TableRow>
-                                <TableHead className="w-[300px]">Servicio</TableHead>
-                                <TableHead>Cobertura</TableHead>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                            {coverageData.map((item) => (
-                                <TableRow key={item.service}>
-                                    <TableCell className="font-medium">{item.service}</TableCell>
-                                    <TableCell>{item.coverage}</TableCell>
+            <div className="grid md:grid-cols-5 gap-8 items-start">
+              <div className="md:col-span-3">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Cobertura de la Póliza Básica</CardTitle>
+                        <CardDescription>Resumen de los beneficios y límites de tu plan.</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <Table>
+                            <TableHeader>
+                                <TableRow>
+                                    <TableHead className="w-[250px]">Servicio</TableHead>
+                                    <TableHead>Cobertura</TableHead>
                                 </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </CardContent>
-            </Card>
+                            </TableHeader>
+                            <TableBody>
+                                {coverageData.map((item) => (
+                                    <TableRow key={item.service}>
+                                        <TableCell className="font-medium">{item.service}</TableCell>
+                                        <TableCell>{item.coverage}</TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </CardContent>
+                </Card>
+              </div>
+              <div className="md:col-span-2">
+                <div className="relative h-full w-full min-h-[300px] rounded-2xl overflow-hidden">
+                   <Image 
+                      src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(44).png?raw=true"
+                      alt="Salud y bienestar"
+                      layout="fill"
+                      objectFit="contain"
+                      data-ai-hint="health wellbeing"
+                      className="drop-shadow-2xl"
+                    />
+                </div>
+              </div>
+            </div>
 
             <div className="grid md:grid-cols-2 gap-12 items-start pt-12">
                  <div>
