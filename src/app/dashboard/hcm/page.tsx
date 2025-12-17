@@ -112,6 +112,35 @@ const coveredPathologies = [
     { category: "Otras Patologías y Urgencias", items: ["Otitis en menores hasta doce años", "Intoxicaciones alimentarias que dificulten la respiración", "Envenenamientos", "Obstrucción de la vía aérea por cuerpo extraño / Dificultad para respirar / Asfixia", "Trombosis venosa profunda / Lesiones vasculares (arteriales y/o venosas)", "Celulitis periorbitaria", "COVID-19 (2do y 3er nivel)", "Hernias atascadas (umbilicales, inguinales y crurales)", "Retención aguda de orina", "Infecciones urinarias en menores de 12 años y en adultos mayores de 60 años"] },
 ];
 
+const dentalProtocolSteps = [
+    {
+        step: "01",
+        color: "text-blue-600",
+        description: <>Escribe a través del <span className="font-bold">Whatsapp al 0424-127.14.22</span>, para recibir el menú y marca la <span className="font-bold">opción 2 "Solicitud de Cita"</span>, luego marca el número de la especialidad "Odontología" e indica tus datos para el registro de tu solicitud.</>
+    },
+    {
+        step: "02",
+        color: "text-purple-600",
+        description: <>Recibirás un listado de centros odontológicos <span className="font-bold">selecciona el de tu preferencia</span> y <span className="font-bold">llama directamente al centro</span> para solicitar una cita.</>
+    },
+    {
+        step: "03",
+        color: "text-sky-500",
+        description: <>Luego de coordinar la cita, escribe nuevamente al Whatsapp (0424-127.14.22) y marca la <span className="font-bold">opción 3 "Generar Orden de Atención"</span>, completa los datos solicitados (centro de atención, nombre del odontólogo, fecha y hora de la cita, tipo de orden de atención (emergencia, tratamiento)) y listo, recibirás la orden de atención.</>
+    }
+];
+
+const DentalProtocolStep = ({ step, color, description, isLast }: { step: string; color: string; description: React.ReactNode; isLast: boolean }) => (
+    <div className="relative pl-16">
+        <div className="absolute left-0 top-0 flex items-center">
+            <div className={cn("text-3xl font-bold", color)}>{step}</div>
+            <div className={cn("w-0 h-0 border-y-[18px] border-y-transparent border-l-[18px]", color.replace("text-", "border-l-"))}></div>
+        </div>
+        {!isLast && <div className="absolute left-4 top-12 bottom-[-2rem] w-0.5 bg-border -translate-x-1/2"></div>}
+        <p className="text-sm text-muted-foreground pt-1">{description}</p>
+    </div>
+);
+
 
 export default function HcmPage() {
     return (
@@ -252,6 +281,29 @@ export default function HcmPage() {
                     </Card>
                 </div>
             </div>
+
+            <Card className="mt-12">
+                <CardHeader>
+                    <CardTitle>Cobertura y protocolo de Atención Odontológica</CardTitle>
+                    <CardDescription>
+                        Tu póliza básica HCM te brinda cobertura de servicio odontológico en los siguientes casos. <Link href="#" className="text-primary underline">Clic aquí</Link> para ver cobertura.
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-6">
+                    <p className="font-semibold text-foreground mb-8">Sigue estos sencillos pasos para solicitar tu cita:</p>
+                    <div className="space-y-12">
+                        {dentalProtocolSteps.map((step, index) => (
+                            <DentalProtocolStep
+                                key={step.step}
+                                step={step.step}
+                                color={step.color}
+                                description={step.description}
+                                isLast={index === dentalProtocolSteps.length - 1}
+                            />
+                        ))}
+                    </div>
+                </CardContent>
+            </Card>
 
             <div className="grid md:grid-cols-2 gap-12 items-start pt-12">
                  <div>
