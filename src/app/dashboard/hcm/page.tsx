@@ -130,6 +130,44 @@ const dentalProtocolSteps = [
     }
 ];
 
+const medicineRequestSteps = [
+    {
+        step: "01",
+        color: "text-blue-600",
+        description: <>Ingresa al portal con tu cédula o correo y la contraseña inicial (Telemed*23 con la T mayúscula) y selecciona en el menú izquierdo <span className="font-bold">“Medicamentos Póliza”</span></>
+    },
+    {
+        step: "02",
+        color: "text-purple-600",
+        description: <>Da clic en <span className="font-bold">“Nueva Solicitud de Medicamentos”</span> y completa todos los datos solicitados</>
+    },
+    {
+        step: "03",
+        color: "text-sky-500",
+        description: (
+            <>
+                Deberás cargar los documentos requeridos (Estos soportes deben estar en formato PDF.):
+                <ul className="list-disc pl-5 mt-2">
+                    <li>Cédula de identidad</li>
+                    <li>Informe médico</li>
+                    <li>Récipe e indicaciones</li>
+                    <li>Partida de nacimiento en caso de menor de edad.</li>
+                </ul>
+            </>
+        )
+    },
+    {
+        step: "04",
+        color: "text-indigo-600",
+        description: <>Una vez cargados todos los datos y requisitos da clic a <span className="font-bold">“Guardar”</span>. Podrás ver el registro de la solicitud en la página de inicio de la sección “Medicamentos póliza” para validar el estatus.</>
+    },
+    {
+        step: "05",
+        color: "text-teal-600",
+        description: <>Una vez aprobada tu solicitud serás contactado para la coordinar la entrega de los medicamentos o en caso de <span className="font-bold">antibóticos</span>, recibirás las indicaciones de retiro en la farmacia indicada más cercana.</>
+    },
+];
+
 const DentalProtocolStep = ({ step, color, description, isLast }: { step: string; color: string; description: React.ReactNode; isLast: boolean }) => (
     <div className="relative pl-16">
         <div className="absolute left-0 top-0 flex items-center">
@@ -141,6 +179,16 @@ const DentalProtocolStep = ({ step, color, description, isLast }: { step: string
     </div>
 );
 
+const MedicineRequestStep = ({ step, color, description, isLast }: { step: string; color: string; description: React.ReactNode; isLast: boolean }) => (
+    <div className="relative pl-16">
+        <div className="absolute left-0 top-0 flex items-center">
+            <div className={cn("text-3xl font-bold", color)}>{step}</div>
+            <div className={cn("w-0 h-0 border-y-[18px] border-y-transparent border-l-[18px]", color.replace("text-", "border-l-"))}></div>
+        </div>
+        {!isLast && <div className="absolute left-4 top-12 bottom-[-2rem] w-0.5 bg-border -translate-x-1/2"></div>}
+        <div className="text-sm text-muted-foreground pt-1">{description}</div>
+    </div>
+);
 
 export default function HcmPage() {
     return (
@@ -302,6 +350,31 @@ export default function HcmPage() {
                             />
                         ))}
                     </div>
+                </CardContent>
+            </Card>
+
+            <Card className="mt-12">
+                <CardHeader>
+                    <CardTitle>Paso a paso para la Solicitud de Medicinas</CardTitle>
+                    <CardDescription>
+                        En la página web de nuestro aliado Telemedi podrán ingresar al portal para <span className="font-bold text-primary">solicitar la entrega de medicamentos</span> en cualquier momento, <span className="font-bold text-primary">cargando los requisitos</span> para registrar la solicitud. Una vez aprobada, serán contactados para coordinar la entrega a través de delivery o en farmacia cercana en caso de medicamentos que requieren récipe físico para su entrega. Adicionalmente, nuestra app permite <span className="font-bold text-primary">solicitar la atención médica inicial por videollamada, en caso de malestar o emergencia</span>.
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-6">
+                    <div className="space-y-12">
+                        {medicineRequestSteps.map((step, index) => (
+                            <MedicineRequestStep
+                                key={step.step}
+                                step={step.step}
+                                color={step.color}
+                                description={step.description}
+                                isLast={index === medicineRequestSteps.length - 1}
+                            />
+                        ))}
+                    </div>
+                     <p className="text-center text-xs text-muted-foreground mt-12">
+                        En caso de presentar error o problemas puedes comunicarte al Call Center de Telemedi al 0212-287.9261 / 0212-287.9262 / 02128195301.99.19.
+                    </p>
                 </CardContent>
             </Card>
 
