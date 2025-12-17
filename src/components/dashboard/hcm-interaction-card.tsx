@@ -45,7 +45,7 @@ const contactInfo = {
         title: "Mensajería Instantánea",
         icon: WhatsAppIcon,
         items: [
-            { label: "WhatsApp", value: "0424-CONTIGO", href: "https://wa.me/584242668446" },
+            { label: "WhatsApp", value: "0424-2668446", href: "https://wa.me/584242668446" },
         ]
     },
     gestionDigital: {
