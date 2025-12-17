@@ -196,6 +196,53 @@ const avalRequestSteps = [
     },
 ];
 
+const reimbursementRequestSteps = [
+    {
+        step: "01",
+        color: "text-blue-800",
+        description: <>Presiona la opción <span className="font-bold">"Notificación Siniestros"</span> en el menú que está del lado izquierdo, selecciona la opción <span className="font-bold">"Personas"</span>, y luego <span className="font-bold">"Reembolso"</span>.</>
+    },
+    {
+        step: "02",
+        color: "text-purple-600",
+        description: <>Selecciona el beneficiario al que corresponda el siniestro y pulsa <span className="font-bold">"Siguiente"</span>.</>
+    },
+    {
+        step: "03",
+        color: "text-purple-400",
+        description: <>Complete los campos con la información solicitada (detalles del siniestro, datos de medico tratante, datos de contacto y estatus de COVID 19).</>
+    },
+    {
+        step: "04",
+        color: "text-sky-500",
+        description: <>Selecciona la cuenta domiciliada. En caso de no tenerla o requerir modificación, completa los campos indicados. Presiona <span className="font-bold">"Siguiente"</span> para continuar.</>
+    },
+    {
+        step: "05",
+        color: "text-indigo-600",
+        description: <>Carga los archivos solicitados y selecciona <span className="font-bold">"Siguiente"</span>. Verifica la información registrada y presiona <span className="font-bold">"Editar"</span> en caso de error o <span className="font-bold">"Notificar"</span> en caso de estar de acuerdo.</>
+    },
+    {
+        step: "06",
+        color: "text-blue-800",
+        description: <>Verifica el número del siniestro. Para finalizar presiona <span className="font-bold">"Aceptar"</span>.</>
+    }
+];
+
+const StepDiagram = ({ steps, StepComponent }: { steps: any[], StepComponent: React.ElementType }) => (
+    <div className="space-y-12">
+        {steps.map((step, index) => (
+            <StepComponent
+                key={step.step}
+                step={step.step}
+                color={step.color}
+                description={step.description}
+                isLast={index === steps.length - 1}
+            />
+        ))}
+    </div>
+);
+
 
 const DentalProtocolStep = ({ step, color, description, isLast }: { step: string; color: string; description: React.ReactNode; isLast: boolean }) => (
     <div className="relative pl-16">
@@ -229,6 +276,17 @@ const AvalRequestStep = ({ step, color, description, isLast }: { step: string; c
         <div className="text-sm text-muted-foreground pt-1">{description}</div>
     </div>
 );
+
+const ReimbursementRequestStep = ({ step, color, description, isLast }: { step: string; color: string; description: React.ReactNode; isLast: boolean }) => (
+    <div className="relative pl-16">
+        <div className="absolute left-0 top-0 flex items-center">
+             <div className={cn("flex items-center justify-center w-10 h-10 rounded-full text-lg font-bold text-white", color.replace('text-', 'bg-'))}>{step}</div>
+        </div>
+        {!isLast && <div className="absolute left-5 top-12 bottom-[-2rem] w-px bg-border -translate-x-1/2"></div>}
+        <div className="text-sm text-muted-foreground pt-2.5">{description}</div>
+    </div>
+);
+
 
 export default function HcmPage() {
     return (
@@ -379,17 +437,7 @@ export default function HcmPage() {
                 </CardHeader>
                 <CardContent className="pt-6">
                     <p className="font-semibold text-foreground mb-8">Sigue estos sencillos pasos para solicitar tu cita:</p>
-                    <div className="space-y-12">
-                        {dentalProtocolSteps.map((step, index) => (
-                            <DentalProtocolStep
-                                key={step.step}
-                                step={step.step}
-                                color={step.color}
-                                description={step.description}
-                                isLast={index === dentalProtocolSteps.length - 1}
-                            />
-                        ))}
-                    </div>
+                    <StepDiagram steps={dentalProtocolSteps} StepComponent={DentalProtocolStep} />
                 </CardContent>
             </Card>
 
@@ -401,17 +449,7 @@ export default function HcmPage() {
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="pt-6">
-                    <div className="space-y-12">
-                        {medicineRequestSteps.map((step, index) => (
-                            <MedicineRequestStep
-                                key={step.step}
-                                step={step.step}
-                                color={step.color}
-                                description={step.description}
-                                isLast={index === medicineRequestSteps.length - 1}
-                            />
-                        ))}
-                    </div>
+                    <StepDiagram steps={medicineRequestSteps} StepComponent={MedicineRequestStep} />
                      <p className="text-center text-xs text-muted-foreground mt-12">
                         En caso de presentar error o problemas puedes comunicarte al Call Center de Telemedi al 0212-287.9261 / 0212-287.9262 / 02128195301.99.19.
                     </p>
@@ -426,19 +464,22 @@ export default function HcmPage() {
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="pt-6">
-                    <div className="space-y-12">
-                        {avalRequestSteps.map((step, index) => (
-                            <AvalRequestStep
-                                key={step.step}
-                                step={step.step}
-                                color={step.color}
-                                description={step.description}
-                                isLast={index === avalRequestSteps.length - 1}
-                            />
-                        ))}
-                    </div>
+                    <StepDiagram steps={avalRequestSteps} StepComponent={AvalRequestStep} />
                 </CardContent>
             </Card>
+
+             <Card className="mt-12">
+                <CardHeader>
+                    <CardTitle>Paso a Paso para Solicitud de Reembolsos</CardTitle>
+                    <CardDescription>
+                        Ingresa a Banesco SegurOnline y sigue estos sencillos pasos:
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-6">
+                    <StepDiagram steps={reimbursementRequestSteps} StepComponent={ReimbursementRequestStep} />
+                </CardContent>
+            </Card>
+
 
             <div className="grid md:grid-cols-2 gap-12 items-start pt-12">
                  <div>
@@ -484,3 +525,5 @@ export default function HcmPage() {
         </div>
     );
 }
+
+    
