@@ -80,7 +80,7 @@ const contactMethods = [
     {
         icon: MessageSquare,
         title: "WhatsApp",
-        details: "0424-CONTIGO (2668446)",
+        details: "0424-2668446",
         href: "https://wa.me/584242668446"
     },
     {
@@ -101,6 +101,15 @@ const coverageData = [
   { service: "Servicios Funerarios", coverage: "1.000$" },
   { service: "Telemedicina", coverage: "Ilimitada" },
   { service: "Atención Médica Domiciliaria", coverage: "Ilimitada" },
+];
+
+const coveredPathologies = [
+    { category: "Cardiovasculares y Respiratorias", items: ["Infarto", "Crisis hipertensiva", "Dolor torácico", "Crisis asmática", "EPOC / EBOC (Descompensado)", "Arritmias cardíacas / Trastornos del ritmo cardíaco"] },
+    { category: "Traumatismos y Lesiones", items: ["Politraumatismos", "Traumatismo de tórax", "Fracturas cerradas o simples", "Fracturas abiertas", "Fracturas desplazadas", "Luxaciones", "Quemaduras", "Heridas (no incluyen las ocasionadas por armas de fuego)", "Traumatismos y/o lesiones oculares (por sustancias químicas o cuerpos extraños)", "Traumatismos (general)", "Amputaciones por accidentes o enfermedad"] },
+    { category: "Abdominales y Gastrointestinales", items: ["Apendicitis", "Peritonitis", "Obstrucción intestinal", "Litiasis renal / Cólicos nefríticos", "Litiasis vesicular / Cálculos biliares (episodio agudo)", "Colitis ulcerosa", "Infecciones intestinales", "Hemorragia digestiva inferior o superior", "Síndromes diarreicos en menores hasta 12 años y adultos a partir de 60 años", "Intolerancia a la vía oral - Deshidratación moderada a severa"] },
+    { category: "Gineco-Obstétricas", items: ["Embarazo ectópico roto", "Sangrados genitales", "Abortos espontáneos"] },
+    { category: "Neurológicas y Sistémicas", items: ["ACV / ECV", "Meningitis", "Síncopes / Desmayos / Pérdida del conocimiento / Confusiones / Convulsiones", "Síndromes febriles en menores hasta doce años", "Síndromes metabólicos / Diabetes descompensada"] },
+    { category: "Otras Patologías y Urgencias", items: ["Otitis en menores hasta doce años", "Intoxicaciones alimentarias que dificulten la respiración", "Envenenamientos", "Obstrucción de la vía aérea por cuerpo extraño / Dificultad para respirar / Asfixia", "Trombosis venosa profunda / Lesiones vasculares (arteriales y/o venosas)", "Celulitis periorbitaria", "COVID-19 (2do y 3er nivel)", "Hernias atascadas (umbilicales, inguinales y crurales)", "Retención aguda de orina", "Infecciones urinarias en menores de 12 años y en adultos mayores de 60 años"] },
 ];
 
 
@@ -195,6 +204,53 @@ export default function HcmPage() {
                     />
                 </div>
               </div>
+            </div>
+
+            <div className="grid md:grid-cols-5 gap-8 items-start pt-8">
+                <div className="md:col-span-2 md:order-2">
+                    <div className="relative h-full w-full min-h-[300px] rounded-2xl overflow-hidden">
+                        <Image 
+                            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkb2N0b3J8ZW58MHx8fHwxNzYzMjAwOTk4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Doctor revisando documentos"
+                            layout="fill"
+                            objectFit="cover"
+                            data-ai-hint="doctor documents"
+                            className="rounded-2xl"
+                        />
+                    </div>
+                </div>
+                <div className="md:col-span-3 md:order-1">
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Patologías de Emergencias Médicas Cubiertas</CardTitle>
+                            <CardDescription>Aquí tienes la lista de las patologías cubiertas por la Póliza de urgencias y emergencias médicas.</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <Table>
+                                <TableHeader>
+                                    <TableRow>
+                                        <TableHead className="w-[250px]">Categoría</TableHead>
+                                        <TableHead>Patologías Cubiertas</TableHead>
+                                    </TableRow>
+                                </TableHeader>
+                                <TableBody>
+                                    {coveredPathologies.map((category) => (
+                                        <TableRow key={category.category}>
+                                            <TableCell className="font-medium align-top">{category.category}</TableCell>
+                                            <TableCell>
+                                                <ul className="list-disc pl-5 space-y-1">
+                                                    {category.items.map((item) => (
+                                                        <li key={item}>{item}</li>
+                                                    ))}
+                                                </ul>
+                                            </TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </CardContent>
+                    </Card>
+                </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-12 items-start pt-12">
