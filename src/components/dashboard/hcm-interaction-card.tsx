@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, ArrowLeft, Phone, MessageSquare as WhatsAppIcon, Mail } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Phone, MessageSquare as WhatsAppIcon, Mail, Laptop, Users, Globe, Building } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { LucideIcon } from 'lucide-react';
 import Link from 'next/link';
@@ -24,41 +24,39 @@ interface HcmCardProps {
   href?: string;
 }
 
-const AnimatedContactButton = ({ href, type, label, number, icon: Icon, className, iconClassName }: {
-  href: string;
-  type: 'whatsapp' | 'phone' | 'email';
-  label: string;
-  number: string;
-  icon: React.ElementType;
-  className: string;
-  iconClassName: string;
-}) => {
-  return (
-    <Link
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={cn(
-        "relative flex w-[280px] items-center justify-start rounded-full p-2 text-white shadow-lg transition-all duration-300 hover:brightness-110 overflow-hidden h-[56px] group",
-        className
-      )}
-    >
-      <div className="pl-4 transition-opacity duration-200 text-left">
-        <p className="text-[10px]">{label}</p>
-        <p className={cn("font-semibold", type === 'email' ? "text-[11px]" : "text-xs")}>{number}</p>
-      </div>
-
-      <div
-        className={cn(
-          "absolute top-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white transition-transform duration-300 ease-in-out",
-          "transform -translate-y-1/2 right-2 group-hover:scale-110",
-        )}
-      >
-         <Icon className={cn("h-4 w-4", iconClassName)} />
-      </div>
-    </Link>
-  );
-};
+const contactInfo = {
+    atencionMedica: {
+        title: "Atención Médica",
+        icon: Building,
+        items: [
+            { label: "Línea gratuita", value: "0800-836.36.33", href: "tel:08008363633" },
+            { label: "Teléfono local", value: "0212-822.12.50", href: "tel:02128221250" },
+            { label: "Teléfono local", value: "0212-313.55.67", href: "tel:02123135567" },
+        ]
+    },
+    centroContacto: {
+        title: "Centro de Contacto (24H)",
+        icon: Phone,
+        items: [
+            { label: "Teléfono", value: "0500-7258300", href: "tel:05007258300" },
+        ]
+    },
+    mensajeria: {
+        title: "Mensajería Instantánea",
+        icon: WhatsAppIcon,
+        items: [
+            { label: "WhatsApp", value: "0424-CONTIGO", href: "https://wa.me/584242668446" },
+        ]
+    },
+    gestionDigital: {
+        title: "Gestión Digital",
+        icon: Laptop,
+        items: [
+            { label: "Portal Autogestión", value: "Banesco SegurOnline", href: "#" },
+            { label: "Redes Sociales", value: "@banescoseguros", href: "#" },
+        ]
+    }
+}
 
 
 export const HcmCard = ({ 
@@ -100,41 +98,35 @@ export const HcmCard = ({
 
                 {/* Back of the card */}
                 <div className="absolute w-full h-full backface-hidden rotate-y-180">
-                     <Card className="bg-primary text-primary-foreground rounded-2xl shadow-lg flex flex-col items-center justify-center text-center p-8 h-full">
-                        <h3 className="text-3xl font-bold">EN CASO DE EMERGENCIA</h3>
-                        <p className="text-primary-foreground/80 mt-2 mb-8">Comunícate con nosotros para reportar siniestros o solicitar atención médica inmediata.</p>
-                        
-                        <div className="space-y-4">
-                            <AnimatedContactButton
-                                href="https://wa.me/584242668446"
-                                type="whatsapp"
-                                label="Whatsapp"
-                                number="0424-CONTIGO (2668446)"
-                                icon={WhatsAppIcon}
-                                className="bg-secondary"
-                                iconClassName="text-primary"
-                            />
-                            <AnimatedContactButton
-                                href="tel:05007258300"
-                                type="phone"
-                                label="Central telefónica"
-                                number="0500-SALUD-00 (7258300)"
-                                icon={Phone}
-                                className="bg-secondary"
-                                iconClassName="text-primary"
-                            />
-                             <AnimatedContactButton
-                                href="mailto:servicios@banescoseguros.com"
-                                type="email"
-                                label="Correo Electrónico"
-                                number="servicios@banescoseguros.com"
-                                icon={Mail}
-                                className="bg-secondary"
-                                iconClassName="text-primary"
-                            />
+                     <Card className="bg-primary text-primary-foreground rounded-2xl shadow-lg flex flex-col items-center justify-center p-8 h-full">
+                        <div className='absolute top-6 left-6 text-left'>
+                            <h3 className="text-xl font-bold">Contacto de Emergencia</h3>
+                            <p className="text-primary-foreground/80 text-xs max-w-xs">Comunícate con nosotros para reportar siniestros o solicitar atención médica inmediata.</p>
                         </div>
-
-                        <Button onClick={() => setIsFlipped(false)} variant="ghost" className="mt-8 text-white hover:text-white hover:bg-white/10">
+                        
+                        <div className="w-full max-w-md space-y-4 pt-16">
+                            {Object.values(contactInfo).map((category) => {
+                                const CategoryIcon = category.icon;
+                                return (
+                                <div key={category.title} className="flex items-start gap-4">
+                                    <div className="w-8 h-8 rounded-full bg-white/10 flex-shrink-0 flex items-center justify-center">
+                                       <CategoryIcon className="h-4 w-4" />
+                                    </div>
+                                    <div className='text-left'>
+                                        <p className="font-semibold text-sm">{category.title}</p>
+                                        <div className='text-xs text-primary-foreground/80 space-y-0.5'>
+                                            {category.items.map(item => (
+                                                <a key={item.value} href={item.href} target="_blank" rel="noopener noreferrer" className="block hover:text-white transition-colors">
+                                                    {item.label}: <span className='font-medium'>{item.value}</span>
+                                                </a>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            )})}
+                        </div>
+                        
+                        <Button onClick={() => setIsFlipped(false)} variant="ghost" className="mt-8 text-white hover:text-white hover:bg-white/10 absolute bottom-6">
                             <ArrowLeft className="mr-2 h-4 w-4" />
                             Volver
                         </Button>
