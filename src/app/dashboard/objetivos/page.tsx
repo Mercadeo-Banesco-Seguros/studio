@@ -32,39 +32,18 @@ import {
   MoreHorizontal,
   Check,
   X as XIcon,
+  Megaphone,
+  FileCheck2,
+  FileBarChart,
+  Workflow,
+  GraduationCap,
+  Banknote
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Tooltip as ShadTooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { getCommercialData, type CommercialData } from '@/ai/flows/get-commercial-data-flow';
 import { Skeleton } from '@/components/ui/skeleton';
-
-
-// --- MOCK DATA ---
-const salesTrendData = [
-  { name: 'Ene', Ventas: 2300, "Mes Anterior": 1900 },
-  { name: 'Feb', Ventas: 2100, "Mes Anterior": 2200 },
-  { name: 'Mar', Ventas: 3200, "Mes Anterior": 2500 },
-  { name: 'Abr', Ventas: 2800, "Mes Anterior": 3000 },
-  { name: 'May', Ventas: 3500, "Mes Anterior": 3100 },
-  { name: 'Jun', Ventas: 4100, "Mes Anterior": 3600 },
-];
-
-const topExecutivesData = [
-  { name: 'Ana Pérez', sales: 120000, avatar: 'AP' },
-  { name: 'Carlos Rivas', sales: 110000, avatar: 'CR' },
-  { name: 'Sofía Castillo', sales: 95000, avatar: 'SC' },
-  { name: 'Luis Mendez', sales: 80000, avatar: 'LM' },
-];
-
-const salesForceData = [
-    { month: 'Ene', value: 250, budget: 400 },
-    { month: 'Feb', value: 280, budget: 400 },
-    { month: 'Mar', value: 350, budget: 400 },
-    { month: 'Abr', value: 320, budget: 400 },
-    { month: 'May', value: 410, budget: 400 },
-    { month: 'Jun', value: 450, budget: 400 },
-];
 
 const formatCurrency = (value: number) => {
   return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(value);
@@ -79,8 +58,52 @@ const menuItems = [
   { name: 'Proyectos', icon: FolderKanban, href: '#' },
 ];
 
-// --- AUTHENTICATION COMPONENT ---
 const CORRECT_COMBINATION = [12, 34, 56];
+
+const serviceCategories = [
+    {
+      title: "Gerencia Comercial",
+      description: "Planes estratégicos de ventas que se alinean con tus objetivos.",
+      icon: TrendingUp,
+      id: 'comercial',
+    },
+    {
+      title: "Mercadeo",
+      description: "Guía experta para optimizar el rendimiento de tus campañas.",
+      icon: Megaphone,
+      id: 'mercadeo'
+    },
+    {
+      title: "Suscripción",
+      description: "Soluciones tecnológicas innovadoras para mejorar la eficiencia.",
+      icon: FileCheck2,
+      id: 'suscripcion'
+    },
+    {
+      title: "Actuarial",
+      description: "Análisis y modelos para la evaluación de riesgos y la fijación de tarifas.",
+      icon: FileBarChart,
+      id: 'actuarial'
+    },
+     {
+      title: "Procesos",
+      description: "Optimiza los flujos de trabajo para una mayor eficiencia operativa.",
+      icon: Workflow,
+      id: 'procesos'
+    },
+    {
+      title: "Capital Humano",
+      description: "Potencia el talento y fomenta un ambiente laboral de excelencia.",
+      icon: GraduationCap,
+      id: 'capital-humano'
+    },
+    {
+      title: "Finanzas",
+      description: "Gestión y análisis de los recursos financieros de la compañía.",
+      icon: Banknote,
+      id: 'finanzas'
+    },
+];
 
 const PinTumber = ({ value, isFocused, onClick }: { value: number; isFocused: boolean; onClick: () => void }) => {
   const formatNumber = (num: number) => num.toString().padStart(2, '0');
@@ -102,7 +125,6 @@ const PinTumber = ({ value, isFocused, onClick }: { value: number; isFocused: bo
     </button>
   );
 };
-
 
 const AuthToggle = ({ onCheck, onError, onIdle }: { onCheck: () => boolean; onError: () => void; onIdle: () => void; }) => {
     const [status, setStatus] = useState<'idle' | 'checking' | 'success' | 'error'>('idle');
@@ -157,8 +179,8 @@ const AuthToggle = ({ onCheck, onError, onIdle }: { onCheck: () => boolean; onEr
 };
 
 
-// --- MAIN COMPONENT ---
 export default function GerenciaComercialDashboard() {
+  const [selectedArea, setSelectedArea] = useState<string | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [combination, setCombination] = useState([0, 0, 0]);
   const [isError, setIsError] = useState(false);
@@ -186,6 +208,7 @@ export default function GerenciaComercialDashboard() {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (!selectedArea || isAuthenticated) return;
       if (focusedIndex === null) return;
       
       e.preventDefault();
@@ -199,7 +222,6 @@ export default function GerenciaComercialDashboard() {
             newCombination[focusedIndex] = parseInt(newBuffer, 10);
             setCombination(newCombination);
             setInputBuffer('');
-            // Move to next input
             setFocusedIndex((prev) => (prev !== null ? (prev + 1) % 3 : 0));
           }
         }
@@ -211,10 +233,6 @@ export default function GerenciaComercialDashboard() {
         setFocusedIndex((prev) => (prev !== null ? (prev + 1) % 3 : 0));
       } else if (e.key === 'ArrowLeft') {
         setFocusedIndex((prev) => (prev !== null ? (prev - 1 + 3) % 3 : 0));
-      } else if (e.key === 'Enter') {
-        // The toggle now handles the check
-      } else if (e.key === 'Backspace') {
-        setInputBuffer(inputBuffer.slice(0, -1));
       }
     };
 
@@ -222,7 +240,7 @@ export default function GerenciaComercialDashboard() {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [focusedIndex, inputBuffer, combination, handleArrowChange, checkCombination]);
+  }, [focusedIndex, inputBuffer, combination, handleArrowChange, checkCombination, selectedArea, isAuthenticated]);
   
   const [activeTab, setActiveTab] = useState('General');
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
@@ -236,7 +254,6 @@ export default function GerenciaComercialDashboard() {
           setDashboardData(data);
         } catch (error) {
           console.error("Error fetching commercial data:", error);
-          // Handle error state if needed
         } finally {
           setIsLoading(false);
         }
@@ -245,6 +262,45 @@ export default function GerenciaComercialDashboard() {
     }
   }, [isAuthenticated]);
 
+
+  if (!selectedArea) {
+    return (
+        <div className="flex flex-col items-center justify-center min-h-screen bg-muted p-4">
+            <div className="text-center mb-8">
+                <h1 className="text-3xl font-bold text-foreground">Selecciona una Gerencia</h1>
+                <p className="text-muted-foreground">Elige el área a la que deseas acceder.</p>
+            </div>
+            <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {serviceCategories.map((cat) => {
+                    const Icon = cat.icon;
+                    return (
+                        <Card 
+                            key={cat.id} 
+                            onClick={() => setSelectedArea(cat.id)}
+                            className="group cursor-pointer transition-all duration-300 flex flex-col text-left rounded-2xl h-full relative bg-card shadow-sm hover:shadow-xl hover:-translate-y-1 hover:bg-primary hover:text-primary-foreground"
+                        >
+                            <CardContent className="p-6 flex flex-col flex-grow">
+                                <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-muted group-hover:bg-primary-foreground/20 mb-4">
+                                    <Icon className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+                                </div>
+                                <div className="flex-grow">
+                                    <p className="font-semibold mb-1 text-lg">{cat.title}</p>
+                                    <p className="text-xs text-muted-foreground group-hover:text-primary-foreground/80">{cat.description}</p>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    );
+                })}
+            </div>
+             <Button asChild variant="link" className="mt-8">
+                <Link href="/dashboard/mapa-clientes">
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                    Volver
+                </Link>
+            </Button>
+        </div>
+    );
+  }
 
   if (!isAuthenticated) {
     return (
@@ -282,6 +338,10 @@ export default function GerenciaComercialDashboard() {
                   onIdle={() => setIsError(false)} 
                 />
             </div>
+            <Button variant="link" className="mt-8" onClick={() => setSelectedArea(null)}>
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Volver a seleccionar área
+            </Button>
         </div>
       </div>
     );
@@ -570,3 +630,4 @@ export default function GerenciaComercialDashboard() {
     
 
     
+
