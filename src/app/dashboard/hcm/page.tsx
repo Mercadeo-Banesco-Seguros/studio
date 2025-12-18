@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowLeft, ArrowRight, ShieldCheck, FileText, Stethoscope, Search, MessageSquare, Phone, Mail, HelpCircle, FilePlus2, Receipt, Hospital, Landlord, HeartPulse, User, Cross, Coins, HandCoins, BookUser, Ambulance, Info } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ShieldCheck, FileText, Stethoscope, Search, MessageSquare, Phone, Mail, HelpCircle, FilePlus2, Receipt, Hospital, Landlord, HeartPulse, User, Cross, Coins, HandCoins, BookUser, Ambulance, Info, Building, LifeBuoy, FileBarChart, Laptop } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
@@ -92,11 +92,17 @@ const contactMethods = [
 ]
 
 const coverageData = [
-  { service: "Hospitalización, Cirugía y Maternidad", value: "1.500", unit: "$", icon: Hospital, description: "por patología" },
-  { service: "Atención Primaria de Salud (APS)", value: "1.000", unit: "$", icon: HeartPulse, description: "o 12 órdenes anuales" },
-  { service: "Servicios Funerarios", value: "1.000", unit: "$", icon: Cross, description: "por evento" },
-  { service: "Servicios Odontológicos y Oftalmológicos", value: "", unit: "Por Evento", icon: User, description: "Activación por uso" },
+  { service: "Hospitalización y Cirugía", value: "1.500", unit: "$", description: "por patología" },
+  { service: "Maternidad", value: "1.500", unit: "$", description: "" },
+  { service: "Atención Primaria de Salud (APS)", value: "1.000", unit: "$", description: "ó 12 órdenes anuales (3/mes no acumulativas)" },
+  { service: "Retiro de Medicamentos (Telemedi)", value: "1.000", unit: "$", description: "ó 12 órdenes anuales (2/mes no acumulativas)" },
+  { service: "Servicios Odontológicos", value: null, unit: "Por Evento", description: "Se activa por evento" },
+  { service: "Servicios Oftalmológicos", value: null, unit: "Por Evento", description: "Se activa por evento" },
+  { service: "Servicios Funerarios", value: "1.000", unit: "$", description: "" },
+  { service: "Telemedicina", value: null, unit: "Ilimitada", description: "" },
+  { service: "Atención Médica Domiciliaria", value: null, unit: "Ilimitada", description: "" },
 ];
+
 
 const coveredPathologies = [
     { category: "Cardiovasculares y Respiratorias", items: ["Infarto", "Crisis hipertensiva", "Dolor torácico", "Crisis asmática", "EPOC / EBOC (Descompensado)", "Arritmias cardíacas / Trastornos del ritmo cardíaco"] },
@@ -243,7 +249,7 @@ const StepCard = ({ step, title, color, description }: { step: string; title: st
         </div>
         <div className="absolute left-4 top-10 bottom-0 w-px bg-border -translate-x-1/2"></div>
         <h4 className="font-semibold text-foreground text-base">{title}</h4>
-        <p className="text-sm text-muted-foreground mt-1">{description}</p>
+        <div className="text-sm text-muted-foreground mt-1">{description}</div>
     </div>
 );
 
@@ -251,58 +257,61 @@ const StepCard = ({ step, title, color, description }: { step: string; title: st
 export default function HcmPage() {
     return (
         <div className="bg-background">
-            <div className="mb-8 container mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-                <Button asChild variant="link" className="text-muted-foreground hover:no-underline p-0 h-auto text-xs">
-                    <Link href="/dashboard" className="flex items-center gap-2 group">
-                        <span className="flex items-center justify-center h-8 w-8 rounded-full bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary transition-colors">
-                            <ArrowLeft className="h-4 w-4" />
-                        </span>
-                        <span className="opacity-0 group-hover:opacity-100 transition-opacity">Volver al Inicio</span>
-                    </Link>
-                </Button>
-            </div>
-
-            <header className="py-12 bg-muted/50 border-y">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <Badge variant="secondary">Póliza Colectiva de Salud</Badge>
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-foreground mt-4">Tu Bienestar, Nuestra Prioridad</h1>
-                    <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
+            <header className="relative py-24 sm:py-32 text-primary-foreground overflow-hidden">
+                <Image
+                    src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
+                    alt="Abstract background"
+                    layout="fill"
+                    objectFit="cover"
+                    className="z-0"
+                    data-ai-hint="abstract waves"
+                />
+                <div className="absolute inset-0 bg-blue-900/40 z-0" />
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <Badge variant="outline" className="mb-4 border-white/50 text-white">Póliza Colectiva de Salud</Badge>
+                    <h1 className="text-4xl md:text-5xl font-extrabold mt-4">Tu Bienestar, Nuestra Prioridad</h1>
+                    <p className="mt-4 max-w-2xl mx-auto">
                         Bienvenido a tu centro de gestión de la póliza de Hospitalización, Cirugía y Maternidad. Aquí encontrarás todo lo que necesitas para administrar tu salud de forma rápida y sencilla.
                     </p>
                 </div>
             </header>
             
-            <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-16">
+            <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-24">
                 
                 <section>
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold tracking-tight">Cobertura de la Póliza Básica</h2>
                         <p className="text-muted-foreground mt-2">Resumen de los beneficios y límites de tu plan.</p>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {coverageData.map((item) => {
-                            const Icon = item.icon;
-                            return(
-                            <Card key={item.service} className="p-6 text-center border-border/60 shadow-sm">
-                                <div className="flex justify-center mb-4">
-                                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 text-primary">
-                                        <Icon className="h-6 w-6" />
-                                    </div>
-                                </div>
-                                <h3 className="font-semibold text-lg text-foreground">{item.service}</h3>
-                                {item.value ? (
-                                    <p className="text-4xl font-extrabold text-primary mt-2">
-                                        {item.unit === '$' && item.unit}
-                                        {item.value}
-                                        {item.unit !== '$' && <span className="text-2xl ml-1">{item.unit}</span>}
-                                    </p>
-                                ) : (
-                                    <p className="text-2xl font-bold text-primary mt-2">{item.unit}</p>
-                                )}
-                                <p className="text-xs text-muted-foreground mt-1">{item.description}</p>
-                            </Card>
-                        )}
-                        )}
+                     <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                             <Table>
+                                <TableHeader>
+                                    <TableRow>
+                                        <TableHead className="text-left">Servicio</TableHead>
+                                        <TableHead className="text-right">Cobertura</TableHead>
+                                    </TableRow>
+                                </TableHeader>
+                                <TableBody>
+                                    {coverageData.map((item) => (
+                                        <TableRow key={item.service}>
+                                            <TableCell className="font-medium text-left">{item.service}</TableCell>
+                                            <TableCell className="text-right">{item.value ? `${item.unit}${item.value}` : item.unit}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </div>
+                         <div className="relative h-80 w-full rounded-2xl overflow-hidden hidden md:block">
+                            <Image
+                                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkb2N0b3J8ZW58MHx8fHwxNzU4NjQ0MjY4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                                alt="Doctor y paciente"
+                                layout="fill"
+                                objectFit="cover"
+                                data-ai-hint="doctor patient"
+                                className="rounded-2xl"
+                            />
+                        </div>
                     </div>
                 </section>
                 
@@ -315,9 +324,9 @@ export default function HcmPage() {
                         {hcmActions.map((action) => (
                             <Link href={action.href} key={action.title} target="_blank" rel="noopener noreferrer" className="block group">
                                 <Card className="h-full rounded-2xl border-border/60 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary">
-                                    <CardContent className="p-6">
-                                        <div className="flex items-center justify-center h-12 w-12 rounded-xl mb-6 bg-muted">
-                                            <action.icon className={cn("h-6 w-6 text-primary")} />
+                                    <CardContent className="p-6 text-center">
+                                        <div className="flex items-center justify-center h-16 w-16 rounded-full mb-6 bg-muted mx-auto">
+                                            <action.icon className={cn("h-8 w-8 text-primary")} />
                                         </div>
                                         <h3 className="font-bold text-base mb-2 text-foreground">{action.title}</h3>
                                         <p className="text-sm leading-relaxed text-muted-foreground">{action.description}</p>
@@ -333,8 +342,8 @@ export default function HcmPage() {
                         <h2 className="text-3xl font-bold tracking-tight">Protocolos y Procedimientos</h2>
                         <p className="text-muted-foreground mt-2">Sigue estos sencillos pasos para realizar tus gestiones.</p>
                     </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-                        <Card>
+                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+                        <Card className="shadow-sm">
                             <CardHeader>
                                 <CardTitle>Solicitud de Carta Aval</CardTitle>
                             </CardHeader>
@@ -342,7 +351,7 @@ export default function HcmPage() {
                                 {avalRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
                             </CardContent>
                         </Card>
-                        <Card>
+                        <Card className="shadow-sm">
                             <CardHeader>
                                 <CardTitle>Solicitud de Reembolso</CardTitle>
                             </CardHeader>
@@ -351,7 +360,7 @@ export default function HcmPage() {
                             </CardContent>
                         </Card>
                         <div className="space-y-8">
-                             <Card>
+                             <Card className="shadow-sm">
                                 <CardHeader>
                                     <CardTitle>Atención Odontológica</CardTitle>
                                 </CardHeader>
@@ -359,7 +368,7 @@ export default function HcmPage() {
                                     {dentalProtocolSteps.map((step) => <StepCard key={step.step} {...step} />)}
                                 </CardContent>
                             </Card>
-                             <Card>
+                             <Card className="shadow-sm">
                                 <CardHeader>
                                     <CardTitle>Solicitud de Medicinas</CardTitle>
                                 </CardHeader>
@@ -371,37 +380,49 @@ export default function HcmPage() {
                     </div>
                 </section>
                 
-                <section>
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>Patologías de Emergencias Médicas Cubiertas</CardTitle>
-                            <CardDescription>Lista de patologías cubiertas por la Póliza de urgencias y emergencias médicas.</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <Table>
-                                <TableHeader>
-                                    <TableRow>
-                                        <TableHead className="w-[250px]">Categoría</TableHead>
-                                        <TableHead>Patologías Cubiertas</TableHead>
-                                    </TableRow>
-                                </TableHeader>
-                                <TableBody>
-                                    {coveredPathologies.map((category) => (
-                                        <TableRow key={category.category}>
-                                            <TableCell className="font-medium align-top">{category.category}</TableCell>
-                                            <TableCell>
-                                                <ul className="list-disc pl-5 space-y-1">
-                                                    {category.items.map((item) => (
-                                                        <li key={item}>{item}</li>
-                                                    ))}
-                                                </ul>
-                                            </TableCell>
+                 <section>
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <div className="relative h-96 w-full rounded-2xl overflow-hidden hidden md:block">
+                            <Image
+                                src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkb2N0b3J8ZW58MHx8fHwxNzU4NjQ0MjY4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                                alt="Equipo médico"
+                                layout="fill"
+                                objectFit="cover"
+                                data-ai-hint="medical team"
+                                className="rounded-2xl"
+                            />
+                        </div>
+                        <div>
+                             <CardHeader className="p-0">
+                                <CardTitle>Patologías de Emergencias Cubiertas</CardTitle>
+                                <CardDescription>Lista de patologías cubiertas por la Póliza de urgencias y emergencias médicas.</CardDescription>
+                            </CardHeader>
+                            <CardContent className="p-0 mt-4">
+                                <Table>
+                                    <TableHeader>
+                                        <TableRow>
+                                            <TableHead className="w-[250px]">Categoría</TableHead>
+                                            <TableHead>Patologías Cubiertas</TableHead>
                                         </TableRow>
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        </CardContent>
-                    </Card>
+                                    </TableHeader>
+                                    <TableBody>
+                                        {coveredPathologies.map((category) => (
+                                            <TableRow key={category.category}>
+                                                <TableCell className="font-medium align-top">{category.category}</TableCell>
+                                                <TableCell>
+                                                    <ul className="list-disc pl-5 space-y-1 text-xs">
+                                                        {category.items.map((item) => (
+                                                            <li key={item}>{item}</li>
+                                                        ))}
+                                                    </ul>
+                                                </TableCell>
+                                            </TableRow>
+                                        ))}
+                                    </TableBody>
+                                </Table>
+                            </CardContent>
+                        </div>
+                    </div>
                 </section>
 
 
