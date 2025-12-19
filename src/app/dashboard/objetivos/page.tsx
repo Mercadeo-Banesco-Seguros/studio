@@ -301,7 +301,7 @@ export default function GerenciaComercialDashboard() {
                     isCenter ? "z-10" : "z-0",
                   )}
                   style={{
-                    transform: `translateX(${offset * 40}%) scale(${isCenter ? 1 : 0.8})`,
+                    transform: `translateX(${offset * 70}%) scale(${isCenter ? 1 : 0.8})`,
                     opacity: isHidden ? 0 : 1,
                     filter: isCenter ? 'none' : 'blur(2px)',
                   }}
