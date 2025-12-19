@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
@@ -37,7 +36,9 @@ import {
   FileBarChart,
   Workflow,
   GraduationCap,
-  Banknote
+  Banknote,
+  ArrowRight,
+  Bookmark
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
@@ -270,25 +271,43 @@ export default function GerenciaComercialDashboard() {
                 <h1 className="text-3xl font-bold text-foreground">Selecciona una Gerencia</h1>
                 <p className="text-muted-foreground">Elige el área a la que deseas acceder.</p>
             </div>
-            <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {serviceCategories.map((cat) => {
                     const Icon = cat.icon;
                     return (
-                        <Card 
-                            key={cat.id} 
-                            onClick={() => setSelectedArea(cat.id)}
-                            className="group cursor-pointer transition-all duration-300 flex flex-col text-left rounded-2xl h-full relative bg-primary text-primary-foreground shadow-sm hover:shadow-xl hover:-translate-y-1 hover:bg-primary/90"
+                        <div 
+                          key={cat.id} 
+                          onClick={() => setSelectedArea(cat.id)}
+                          className="group relative cursor-pointer overflow-hidden rounded-2xl bg-[#1C1C1C] p-6 shadow-lg transition-all duration-300 hover:shadow-2xl h-80 flex flex-col justify-between"
                         >
-                            <CardContent className="p-6 flex flex-col flex-grow">
-                                <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-primary-foreground/20 mb-4">
-                                    <Icon className="h-6 w-6 text-primary-foreground" />
+                          <div
+                            className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-white/5 transition-all duration-500 group-hover:scale-[8]"
+                          ></div>
+                          <div className="absolute inset-0 bg-repeat bg-center opacity-5" style={{backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.2\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Ccircle cx=\'13\' cy=\'13\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E")'}}></div>
+
+                          <div className="relative z-10 flex justify-between items-start">
+                            <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center backdrop-blur-sm">
+                                <Icon className="h-6 w-6 text-white" />
+                            </div>
+                            <Button variant="ghost" size="sm" className="bg-white/10 text-white/80 h-8 px-3 text-xs rounded-full backdrop-blur-sm hover:bg-white/20 hover:text-white">
+                                <Bookmark className="h-3 w-3 mr-1.5"/>
+                                Guardar
+                            </Button>
+                          </div>
+                          
+                          <div className="relative z-10">
+                            <h3 className="text-xl font-bold text-white">{cat.title}</h3>
+                            <p className="text-sm text-white/60 mt-1 max-w-xs">{cat.description}</p>
+                          </div>
+
+                           <div className="relative z-10 border-t border-white/10 pt-4 flex items-center justify-between">
+                                <div>
                                 </div>
-                                <div className="flex-grow">
-                                    <p className="font-semibold mb-1 text-lg">{cat.title}</p>
-                                    <p className="text-xs text-primary-foreground/80">{cat.description}</p>
-                                </div>
-                            </CardContent>
-                        </Card>
+                                <Button size="sm" className="bg-white text-black hover:bg-gray-200 rounded-full text-xs h-9 px-5">
+                                    Acceder
+                                </Button>
+                           </div>
+                        </div>
                     );
                 })}
             </div>
@@ -614,19 +633,3 @@ export default function GerenciaComercialDashboard() {
     </div>
   );
 }
-    
-
-    
-
-
-
-
-
-
-    
-
-
-
-    
-
-    
