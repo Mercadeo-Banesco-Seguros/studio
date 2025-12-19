@@ -344,10 +344,6 @@ export default function GerenciaComercialDashboard() {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-muted p-4 overflow-hidden">
         <div className="w-full max-w-7xl">
-          <div className="text-center mb-12">
-            <h1 className="text-3xl font-bold text-foreground">Selecciona una Gerencia</h1>
-            <p className="text-muted-foreground">Elige el área a la que deseas acceder.</p>
-          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {serviceCategories.map((cat, index) => (
