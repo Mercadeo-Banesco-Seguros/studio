@@ -360,7 +360,7 @@ export default function GerenciaComercialDashboard() {
   
   const transitionRef = useRef<NodeJS.Timeout>();
   useEffect(() => {
-      if (currentIndex === 0 || currentIndex === extendedCategories.length - 1) {
+      if (currentIndex === middleIndex - 1 || currentIndex === middleIndex + serviceCategories.length) {
           setDisableTransition(true);
           transitionRef.current = setTimeout(() => {
               setCurrentIndex(middleIndex);
@@ -368,7 +368,7 @@ export default function GerenciaComercialDashboard() {
           }, 500);
       }
       return () => clearTimeout(transitionRef.current);
-  }, [currentIndex, middleIndex, extendedCategories.length]);
+  }, [currentIndex, middleIndex, extendedCategories.length, serviceCategories.length]);
 
 
   if (!selectedArea) {
@@ -405,7 +405,7 @@ export default function GerenciaComercialDashboard() {
                     else setCurrentIndex(index);
                   }}
                 >
-                    <Card className="w-96 h-[420px] rounded-3xl bg-primary text-primary-foreground p-6 flex flex-col shadow-2xl">
+                    <Card className="w-[28rem] h-[420px] rounded-3xl bg-primary text-primary-foreground p-6 flex flex-col shadow-2xl">
                         <CardHeader className="p-0">
                            <div className="flex gap-2 mb-4">
                                 {cat.tags.map(tag => (
@@ -793,5 +793,7 @@ export default function GerenciaComercialDashboard() {
     </div>
   );
 }
+
+    
 
     
