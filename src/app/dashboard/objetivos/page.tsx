@@ -291,7 +291,7 @@ export default function GerenciaComercialDashboard() {
                             </div>
                             <Button variant="ghost" size="sm" className="bg-white/10 text-white/80 h-8 px-3 text-xs rounded-full backdrop-blur-sm hover:bg-white/20 hover:text-white">
                                 <Bookmark className="h-3 w-3 mr-1.5"/>
-                                Guardar
+                                Solicitar Acceso
                             </Button>
                           </div>
                           
