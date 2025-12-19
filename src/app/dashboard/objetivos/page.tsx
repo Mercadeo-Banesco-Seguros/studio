@@ -278,7 +278,7 @@ export default function GerenciaComercialDashboard() {
                         <div 
                           key={cat.id} 
                           onClick={() => setSelectedArea(cat.id)}
-                          className="group relative cursor-pointer overflow-hidden rounded-2xl bg-[#1C1C1C] p-6 shadow-lg transition-all duration-300 hover:shadow-2xl h-80 flex flex-col justify-between"
+                          className="group relative cursor-pointer overflow-hidden rounded-2xl bg-primary p-6 shadow-lg transition-all duration-300 hover:shadow-2xl h-80 flex flex-col justify-between"
                         >
                           <div
                             className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-white/5 transition-all duration-500 group-hover:scale-[8]"
