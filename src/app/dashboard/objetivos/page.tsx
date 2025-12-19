@@ -45,6 +45,7 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Tooltip as ShadTooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { getCommercialData, type CommercialData } from '@/ai/flows/get-commercial-data-flow';
 import { Skeleton } from '@/components/ui/skeleton';
+import { useToast } from '@/hooks/use-toast';
 
 const formatCurrency = (value: number) => {
   return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(value);
@@ -189,6 +190,7 @@ export default function GerenciaComercialDashboard() {
   const [inputBuffer, setInputBuffer] = useState('');
   const [dashboardData, setDashboardData] = useState<CommercialData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const { toast } = useToast();
 
   const handleArrowChange = (index: number, delta: number) => {
     const newCombination = [...combination];
@@ -277,7 +279,13 @@ export default function GerenciaComercialDashboard() {
                     return (
                         <div 
                           key={cat.id} 
-                          onClick={() => setSelectedArea(cat.id)}
+                          onClick={(e) => {
+                            // Don't trigger area selection if the request access button is clicked
+                            if ((e.target as HTMLElement).closest('button')?.dataset.action === 'request-access') {
+                              return;
+                            }
+                            setSelectedArea(cat.id)
+                          }}
                           className="group relative cursor-pointer overflow-hidden rounded-2xl bg-primary p-6 shadow-lg transition-all duration-300 hover:shadow-2xl h-80 flex flex-col justify-between"
                         >
                           <div
@@ -289,10 +297,20 @@ export default function GerenciaComercialDashboard() {
                             <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center backdrop-blur-sm">
                                 <Icon className="h-6 w-6 text-white" />
                             </div>
-                            <Button variant="ghost" size="sm" className="bg-white/10 text-white/80 h-8 px-3 text-xs rounded-full backdrop-blur-sm hover:bg-white/20 hover:text-white">
-                                <Bookmark className="h-3 w-3 mr-1.5"/>
+                            <Button
+                                variant="ghost"
+                                size="sm"
+                                className="bg-white/10 text-white/80 h-8 px-3 text-xs rounded-full backdrop-blur-sm hover:bg-white/20 hover:text-white"
+                                data-action="request-access"
+                                onClick={() => {
+                                  toast({
+                                    title: "Acceso Solicitado",
+                                    description: `Se ha enviado tu solicitud de acceso para la gerencia de ${cat.title}.`,
+                                  });
+                                }}
+                              >
                                 Solicitar Acceso
-                            </Button>
+                              </Button>
                           </div>
                           
                           <div className="relative z-10">
