@@ -267,6 +267,7 @@ export default function GerenciaComercialDashboard() {
   const [isLoading, setIsLoading] = useState(true);
   const { toast } = useToast();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [disableTransition, setDisableTransition] = useState(false);
 
   const extendedCategories = React.useMemo(() => [...serviceCategories, ...serviceCategories, ...serviceCategories], []);
   const middleIndex = serviceCategories.length;
@@ -349,25 +350,28 @@ export default function GerenciaComercialDashboard() {
   }, [isAuthenticated]);
 
 
-  if (!selectedArea) {
-    const handleNext = () => {
+  const handleNext = () => {
       setCurrentIndex((prevIndex) => prevIndex + 1);
-    };
+  };
 
-    const handlePrev = () => {
+  const handlePrev = () => {
       setCurrentIndex((prevIndex) => prevIndex - 1);
-    };
-    
-    const transitionRef = useRef<NodeJS.Timeout>();
-    useEffect(() => {
-        if (currentIndex === middleIndex + serviceCategories.length || currentIndex === middleIndex - serviceCategories.length) {
-            transitionRef.current = setTimeout(() => {
-                setCurrentIndex(middleIndex);
-            }, 500);
-        }
-        return () => clearTimeout(transitionRef.current);
-    }, [currentIndex, middleIndex]);
+  };
+  
+  const transitionRef = useRef<NodeJS.Timeout>();
+  useEffect(() => {
+      if (currentIndex === 0 || currentIndex === extendedCategories.length - 1) {
+          setDisableTransition(true);
+          transitionRef.current = setTimeout(() => {
+              setCurrentIndex(middleIndex);
+              setDisableTransition(false);
+          }, 500);
+      }
+      return () => clearTimeout(transitionRef.current);
+  }, [currentIndex, middleIndex, extendedCategories.length]);
 
+
+  if (!selectedArea) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-muted p-4 overflow-hidden">
         <div className="w-full max-w-5xl">
@@ -387,14 +391,14 @@ export default function GerenciaComercialDashboard() {
                 <div
                   key={`${cat.id}-${index}`}
                   className={cn(
-                    "absolute transition-all duration-500 ease-in-out cursor-pointer",
+                    "absolute cursor-pointer",
+                    !disableTransition && "transition-all duration-500 ease-in-out",
                     isCenter ? "z-10" : "z-0",
                   )}
                   style={{
                     transform: `translateX(${offset * 150}%) scale(${isCenter ? 1 : 0.8})`,
                     opacity: isVisible ? 1 : 0,
                     filter: isCenter ? 'none' : 'blur(2px) grayscale(50%)',
-                    transition: (currentIndex === middleIndex + serviceCategories.length - 1 && index === 0) || (currentIndex === middleIndex && index === extendedCategories.length - 1) ? 'none' : undefined,
                   }}
                   onClick={() => {
                     if (isCenter) setSelectedArea(cat.id);
