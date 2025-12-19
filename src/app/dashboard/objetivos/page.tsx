@@ -360,15 +360,23 @@ export default function GerenciaComercialDashboard() {
   
   const transitionRef = useRef<NodeJS.Timeout>();
   useEffect(() => {
-      if (currentIndex === middleIndex - 1 || currentIndex === middleIndex + serviceCategories.length) {
+      if (currentIndex === middleIndex + serviceCategories.length) {
           setDisableTransition(true);
           transitionRef.current = setTimeout(() => {
               setCurrentIndex(middleIndex);
               setDisableTransition(false);
           }, 500);
       }
+
+      if (currentIndex === middleIndex - 1) {
+          setDisableTransition(true);
+          transitionRef.current = setTimeout(() => {
+              setCurrentIndex(middleIndex + serviceCategories.length - 1);
+              setDisableTransition(false);
+          }, 500);
+      }
       return () => clearTimeout(transitionRef.current);
-  }, [currentIndex, middleIndex, extendedCategories.length, serviceCategories.length]);
+  }, [currentIndex, middleIndex, serviceCategories.length]);
 
 
   if (!selectedArea) {
@@ -396,7 +404,7 @@ export default function GerenciaComercialDashboard() {
                     isCenter ? "z-10" : "z-0",
                   )}
                   style={{
-                    transform: `translateX(${offset * 150}%) scale(${isCenter ? 1 : 0.8})`,
+                    transform: `translateX(${offset * 80}%) scale(${isCenter ? 1 : 0.8})`,
                     opacity: isVisible ? 1 : 0,
                     filter: isCenter ? 'none' : 'blur(2px) grayscale(50%)',
                   }}
@@ -443,9 +451,9 @@ export default function GerenciaComercialDashboard() {
                                 Acceder
                             </Button>
                             <Button 
-                                variant="outline" 
+                                variant="ghost" 
                                 size="sm" 
-                                className="bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white font-light rounded-full text-xs"
+                                className="bg-white/10 text-white/80 h-8 px-3 text-xs rounded-full backdrop-blur-sm hover:bg-white/20 hover:text-white"
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     toast({
@@ -793,7 +801,3 @@ export default function GerenciaComercialDashboard() {
     </div>
   );
 }
-
-    
-
-    
