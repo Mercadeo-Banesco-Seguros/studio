@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
   AreaChart,
@@ -39,7 +39,8 @@ import {
   Banknote,
   ArrowRight,
   Bookmark,
-  ChevronRight
+  ChevronRight,
+  Save
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
@@ -67,96 +68,103 @@ const CORRECT_COMBINATION = [12, 34, 56];
 const serviceCategories = [
     {
       title: "Comercial",
+      description: "Planes estratégicos de ventas que se alinean con tus objetivos.",
       tags: ["Ventas", "Desarrollo", "Mercadeo"],
       icon: TrendingUp,
       id: 'comercial',
       chartData: [
-        { name: 'Ene', value1: 40, value2: 24, value3: 24 },
-        { name: 'Feb', value1: 30, value2: 13, value3: 40 },
-        { name: 'Mar', value1: 20, value2: 50, value3: 28 },
-        { name: 'Abr', value1: 27, value2: 39, value3: 35 },
-        { name: 'May', value1: 18, value2: 48, value3: 25 },
-        { name: 'Jun', value1: 23, value2: 38, value3: 30 },
-        { name: 'Jul', value1: 34, value2: 43, value3: 15 },
+        { name: 'Ene', value1: 40, value2: 24 },
+        { name: 'Feb', value1: 30, value2: 13 },
+        { name: 'Mar', value1: 20, value2: 50 },
+        { name: 'Abr', value1: 27, value2: 39 },
+        { name: 'May', value1: 18, value2: 48 },
+        { name: 'Jun', value1: 23, value2: 38 },
+        { name: 'Jul', value1: 34, value2: 43 },
       ]
     },
     {
       title: "Mercadeo",
+      description: "Guía experta para optimizar el rendimiento de tus campañas.",
       tags: ["Campañas", "Contenido", "Digital"],
       icon: Megaphone,
       id: 'mercadeo',
       chartData: [
-        { name: 'Ene', value1: 20, value2: 34, value3: 14 },
-        { name: 'Feb', value1: 40, value2: 23, value3: 30 },
-        { name: 'Mar', value1: 30, value2: 60, value3: 18 },
-        { name: 'Abr', value1: 47, value2: 29, value3: 45 },
-        { name: 'May', value1: 28, value2: 38, value3: 35 },
-        { name: 'Jun', value1: 33, value2: 28, value3: 40 },
-        { name: 'Jul', value1: 44, value2: 33, value3: 25 },
+        { name: 'Ene', value1: 20, value2: 34 },
+        { name: 'Feb', value1: 40, value2: 23 },
+        { name: 'Mar', value1: 30, value2: 60 },
+        { name: 'Abr', value1: 47, value2: 29 },
+        { name: 'May', value1: 28, value2: 38 },
+        { name: 'Jun', value1: 33, value2: 28 },
+        { name: 'Jul', value1: 44, value2: 33 },
       ]
     },
     {
       title: "Suscripción",
+      description: "Soluciones tecnológicas innovadoras para mejorar la eficiencia.",
       tags: ["Salud", "Auto", "Patrimoniales"],
       icon: FileCheck2,
       id: 'suscripcion',
        chartData: [
-        { name: 'Ene', value1: 50, value2: 30, value3: 14 },
-        { name: 'Feb', value1: 40, value2: 23, value3: 20 },
-        { name: 'Mar', value1: 25, value2: 55, value3: 38 },
-        { name: 'Abr', value1: 37, value2: 49, value3: 25 },
-        { name: 'May', value1: 28, value2: 38, value3: 45 },
-        { name: 'Jun', value1: 43, value2: 28, value3: 30 },
-        { name: 'Jul', value1: 34, value2: 53, value3: 15 },
+        { name: 'Ene', value1: 50, value2: 30 },
+        { name: 'Feb', value1: 40, value2: 23 },
+        { name: 'Mar', value1: 25, value2: 55 },
+        { name: 'Abr', value1: 37, value2: 49 },
+        { name: 'May', value1: 28, value2: 38 },
+        { name: 'Jun', value1: 43, value2: 28 },
+        { name: 'Jul', value1: 34, value2: 53 },
       ]
     },
     {
       title: "Actuarial",
+      description: "Análisis y modelos para la evaluación de riesgos y la fijación de tarifas.",
       tags: ["Riesgo", "Tarifas", "Modelos"],
       icon: FileBarChart,
       id: 'actuarial',
        chartData: [
-        { name: 'Ene', value1: 10, value2: 44, value3: 24 },
-        { name: 'Feb', value1: 35, value2: 23, value3: 30 },
-        { name: 'Mar', value1: 20, value2: 60, value3: 48 },
-        { name: 'Abr', value1: 27, value2: 39, value3: 25 },
-        { name: 'May', value1: 38, value2: 28, value3: 15 },
-        { name: 'Jun', value1: 23, value2: 48, value3: 30 },
-        { name: 'Jul', value1: 34, value2: 23, value3: 45 },
+        { name: 'Ene', value1: 10, value2: 44 },
+        { name: 'Feb', value1: 35, value2: 23 },
+        { name: 'Mar', value1: 20, value2: 60 },
+        { name: 'Abr', value1: 27, value2: 39 },
+        { name: 'May', value1: 38, value2: 28 },
+        { name: 'Jun', value1: 23, value2: 48 },
+        { name: 'Jul', value1: 34, value2: 23 },
       ]
     },
      {
       title: "Procesos",
+      description: "Optimiza los flujos de trabajo para una mayor eficiencia operativa.",
       tags: ["Flujos", "Mejora", "Eficiencia"],
       icon: Workflow,
       id: 'procesos',
        chartData: [
-        { name: 'Ene', value1: 30, value2: 14, value3: 34 },
-        { name: 'Feb', value1: 20, value2: 33, value3: 40 },
-        { name: 'Mar', value1: 40, value2: 40, value3: 28 },
-        { name: 'Abr', value1: 17, value2: 49, value3: 35 },
-        { name: 'May', value1: 48, value2: 28, value3: 15 },
-        { name: 'Jun', value1: 33, value2: 38, value3: 30 },
-        { name: 'Jul', value1: 24, value2: 43, value3: 25 },
+        { name: 'Ene', value1: 30, value2: 14 },
+        { name: 'Feb', value1: 20, value2: 33 },
+        { name: 'Mar', value1: 40, value2: 40 },
+        { name: 'Abr', value1: 17, value2: 49 },
+        { name: 'May', value1: 48, value2: 28 },
+        { name: 'Jun', value1: 33, value2: 38 },
+        { name: 'Jul', value1: 24, value2: 43 },
       ]
     },
     {
       title: "Capital Humano",
+      description: "Potencia el talento y fomenta un ambiente laboral de excelencia.",
       tags: ["Talento", "Cultura", "Desarrollo"],
       icon: GraduationCap,
       id: 'capital-humano',
        chartData: [
-        { name: 'Ene', value1: 40, value2: 24, value3: 24 },
-        { name: 'Feb', value1: 30, value2: 13, value3: 40 },
-        { name: 'Mar', value1: 20, value2: 50, value3: 28 },
-        { name: 'Abr', value1: 27, value2: 39, value3: 35 },
-        { name: 'May', value1: 18, value2: 48, value3: 25 },
-        { name: 'Jun', value1: 23, value2: 38, value3: 30 },
-        { name: 'Jul', value1: 34, value2: 43, value3: 15 },
+        { name: 'Ene', value1: 40, value2: 24 },
+        { name: 'Feb', value1: 30, value2: 13 },
+        { name: 'Mar', value1: 20, value2: 50 },
+        { name: 'Abr', value1: 27, value2: 39 },
+        { name: 'May', value1: 18, value2: 48 },
+        { name: 'Jun', value1: 23, value2: 38 },
+        { name: 'Jul', value1: 34, value2: 43 },
       ]
     },
     {
       title: "Finanzas",
+      description: "Gestión y análisis de los recursos financieros de la compañía.",
       tags: ["Cifras", "Riesgo", "Siniestralidad"],
       icon: Banknote,
       id: 'finanzas',
@@ -364,7 +372,7 @@ export default function GerenciaComercialDashboard() {
                     isCenter ? "z-10" : "z-0",
                   )}
                   style={{
-                    transform: `translateX(${offset * 80}%) scale(${isCenter ? 1 : 0.8})`,
+                    transform: `translateX(${offset * 100}%) scale(${isCenter ? 1 : 0.8})`,
                     opacity: isHidden ? 0 : 1,
                     filter: isCenter ? 'none' : 'blur(2px) grayscale(50%)',
                   }}
@@ -388,29 +396,20 @@ export default function GerenciaComercialDashboard() {
                                 <AreaChart data={cat.chartData} margin={{ top: 10, right: 0, left: 0, bottom: 0 }}>
                                     <defs>
                                         <linearGradient id={`colorValue1_${cat.id}`} x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="5%" stopColor="#00A9E0" stopOpacity={0.4}/>
-                                            <stop offset="95%" stopColor="#00A9E0" stopOpacity={0}/>
+                                            <stop offset="5%" stopColor="hsl(var(--primary-foreground))" stopOpacity={0.4}/>
+                                            <stop offset="95%" stopColor="hsl(var(--primary-foreground))" stopOpacity={0}/>
                                         </linearGradient>
                                         <linearGradient id={`colorValue2_${cat.id}`} x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="5%" stopColor="#4DD7F9" stopOpacity={0.3}/>
-                                            <stop offset="95%" stopColor="#4DD7F9" stopOpacity={0}/>
+                                            <stop offset="5%" stopColor="hsl(var(--primary-foreground))" stopOpacity={0.3}/>
+                                            <stop offset="95%" stopColor="hsl(var(--primary-foreground))" stopOpacity={0}/>
                                         </linearGradient>
-                                        {cat.chartData[0].value3 !== undefined && (
-                                        <linearGradient id={`colorValue3_${cat.id}`} x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="5%" stopColor="#B3EFFF" stopOpacity={0.2}/>
-                                            <stop offset="95%" stopColor="#B3EFFF" stopOpacity={0}/>
-                                        </linearGradient>
-                                        )}
                                     </defs>
-                                    <Area type="monotone" dataKey="value1" stroke="#00A9E0" strokeWidth={2} fillOpacity={1} fill={`url(#colorValue1_${cat.id})`} />
-                                    <Area type="monotone" dataKey="value2" stroke="#4DD7F9" strokeWidth={2} fillOpacity={1} fill={`url(#colorValue2_${cat.id})`} />
-                                    {cat.chartData[0].value3 !== undefined && (
-                                      <Area type="monotone" dataKey="value3" stroke="#B3EFFF" strokeWidth={2} fillOpacity={1} fill={`url(#colorValue3_${cat.id})`} />
-                                    )}
+                                    <Area type="monotone" dataKey="value1" stroke="hsl(var(--primary-foreground))" strokeWidth={2} fillOpacity={1} fill={`url(#colorValue1_${cat.id})`} />
+                                    <Area type="monotone" dataKey="value2" stroke="hsl(var(--primary-foreground))" strokeWidth={2} strokeOpacity={0.5} fillOpacity={1} fill={`url(#colorValue2_${cat.id})`} />
                                 </AreaChart>
                             </ResponsiveContainer>
                         </CardContent>
-                        <div className="flex justify-between items-center p-0">
+                        <CardFooter className="flex justify-between items-center p-0">
                              <Button
                                 variant="secondary"
                                 size="sm"
@@ -433,7 +432,7 @@ export default function GerenciaComercialDashboard() {
                             >
                                 Solicitar Acceso
                             </Button>
-                        </div>
+                        </CardFooter>
                     </Card>
                 </div>
               );
