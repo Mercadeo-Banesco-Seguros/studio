@@ -277,15 +277,15 @@ export default function GerenciaComercialDashboard() {
                         <Card 
                             key={cat.id} 
                             onClick={() => setSelectedArea(cat.id)}
-                            className="group cursor-pointer transition-all duration-300 flex flex-col text-left rounded-2xl h-full relative bg-card shadow-sm hover:shadow-xl hover:-translate-y-1 hover:bg-primary hover:text-primary-foreground"
+                            className="group cursor-pointer transition-all duration-300 flex flex-col text-left rounded-2xl h-full relative bg-primary text-primary-foreground shadow-sm hover:shadow-xl hover:-translate-y-1 hover:bg-primary/90"
                         >
                             <CardContent className="p-6 flex flex-col flex-grow">
-                                <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-muted group-hover:bg-primary-foreground/20 mb-4">
-                                    <Icon className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+                                <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-primary-foreground/20 mb-4">
+                                    <Icon className="h-6 w-6 text-primary-foreground" />
                                 </div>
                                 <div className="flex-grow">
                                     <p className="font-semibold mb-1 text-lg">{cat.title}</p>
-                                    <p className="text-xs text-muted-foreground group-hover:text-primary-foreground/80">{cat.description}</p>
+                                    <p className="text-xs text-primary-foreground/80">{cat.description}</p>
                                 </div>
                             </CardContent>
                         </Card>
