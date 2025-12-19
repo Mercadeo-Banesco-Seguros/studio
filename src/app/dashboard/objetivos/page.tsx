@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -38,7 +38,8 @@ import {
   GraduationCap,
   Banknote,
   ArrowRight,
-  Bookmark
+  Bookmark,
+  ChevronRight
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
@@ -191,6 +192,7 @@ export default function GerenciaComercialDashboard() {
   const [dashboardData, setDashboardData] = useState<CommercialData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const { toast } = useToast();
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleArrowChange = (index: number, delta: number) => {
     const newCombination = [...combination];
@@ -267,75 +269,100 @@ export default function GerenciaComercialDashboard() {
 
 
   if (!selectedArea) {
+    const handleNext = () => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % serviceCategories.length);
+    };
+
+    const handlePrev = () => {
+      setCurrentIndex((prevIndex) => (prevIndex - 1 + serviceCategories.length) % serviceCategories.length);
+    };
+
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-muted p-4">
-            <div className="text-center mb-8">
-                <h1 className="text-3xl font-bold text-foreground">Selecciona una Gerencia</h1>
-                <p className="text-muted-foreground">Elige el área a la que deseas acceder.</p>
-            </div>
-            <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {serviceCategories.map((cat) => {
-                    const Icon = cat.icon;
-                    return (
-                        <div 
-                          key={cat.id} 
+      <div className="flex flex-col items-center justify-center min-h-screen bg-muted p-4 overflow-hidden">
+        <div className="w-full max-w-5xl">
+          <div className="text-center mb-12">
+            <h1 className="text-3xl font-bold text-foreground">Selecciona una Gerencia</h1>
+            <p className="text-muted-foreground">Elige el área a la que deseas acceder.</p>
+          </div>
+          
+          <div className="relative h-[450px] flex items-center justify-center">
+            {serviceCategories.map((cat, index) => {
+              const Icon = cat.icon;
+              const offset = index - currentIndex;
+              const isCenter = index === currentIndex;
+              const isAdjacent = Math.abs(offset) === 1;
+              const isHidden = Math.abs(offset) > 1;
+
+              return (
+                <div
+                  key={cat.id}
+                  className={cn(
+                    "absolute transition-all duration-500 ease-in-out cursor-pointer",
+                    isCenter ? "z-10" : "z-0",
+                  )}
+                  style={{
+                    transform: `translateX(${offset * 40}%) scale(${isCenter ? 1 : 0.8})`,
+                    opacity: isHidden ? 0 : 1,
+                    filter: isCenter ? 'none' : 'blur(2px)',
+                  }}
+                  onClick={() => {
+                    if (isCenter) setSelectedArea(cat.id);
+                    else setCurrentIndex(index);
+                  }}
+                >
+                  <Card 
+                    className={cn(
+                      "w-80 h-[400px] transition-all duration-300 shadow-lg flex flex-col justify-between",
+                      isCenter ? "bg-card" : "bg-card/50"
+                    )}
+                  >
+                    <CardHeader>
+                      <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mb-4">
+                          <Icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <CardTitle>{cat.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground text-sm">{cat.description}</p>
+                    </CardContent>
+                    <CardFooter>
+                       <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-xs"
+                          data-action="request-access"
                           onClick={(e) => {
-                            // Don't trigger area selection if the request access button is clicked
-                            if ((e.target as HTMLElement).closest('button')?.dataset.action === 'request-access') {
-                              return;
-                            }
-                            setSelectedArea(cat.id)
+                            e.stopPropagation();
+                            toast({
+                              title: "Acceso Solicitado",
+                              description: `Se ha enviado tu solicitud de acceso para la gerencia de ${cat.title}.`,
+                            });
                           }}
-                          className="group relative cursor-pointer overflow-hidden rounded-2xl bg-primary p-6 shadow-lg transition-all duration-300 hover:shadow-2xl h-80 flex flex-col justify-between"
                         >
-                          <div
-                            className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-white/5 transition-all duration-500 group-hover:scale-[8]"
-                          ></div>
-                          <div className="absolute inset-0 bg-repeat bg-center opacity-5" style={{backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.2\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Ccircle cx=\'13\' cy=\'13\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E")'}}></div>
-
-                          <div className="relative z-10 flex justify-between items-start">
-                            <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center backdrop-blur-sm">
-                                <Icon className="h-6 w-6 text-white" />
-                            </div>
-                            <Button
-                                variant="ghost"
-                                size="sm"
-                                className="bg-white/10 text-white/80 h-8 px-3 text-xs rounded-full backdrop-blur-sm hover:bg-white/20 hover:text-white"
-                                data-action="request-access"
-                                onClick={() => {
-                                  toast({
-                                    title: "Acceso Solicitado",
-                                    description: `Se ha enviado tu solicitud de acceso para la gerencia de ${cat.title}.`,
-                                  });
-                                }}
-                              >
-                                Solicitar Acceso
-                              </Button>
-                          </div>
-                          
-                          <div className="relative z-10">
-                            <h3 className="text-xl font-bold text-white">{cat.title}</h3>
-                            <p className="text-sm text-white/60 mt-1 max-w-xs">{cat.description}</p>
-                          </div>
-
-                           <div className="relative z-10 border-t border-white/10 pt-4 flex items-center justify-between">
-                                <div>
-                                </div>
-                                <Button size="sm" className="bg-white text-black hover:bg-gray-200 rounded-full text-xs h-9 px-5">
-                                    Acceder
-                                </Button>
-                           </div>
-                        </div>
-                    );
-                })}
-            </div>
-             <Button asChild variant="link" className="mt-8">
-                <Link href="/dashboard/mapa-clientes">
-                    <ArrowLeft className="mr-2 h-4 w-4" />
-                    Volver
-                </Link>
+                          Solicitar Acceso
+                        </Button>
+                    </CardFooter>
+                  </Card>
+                </div>
+              );
+            })}
+          </div>
+          <div className="flex justify-center items-center gap-4 mt-8">
+            <Button variant="outline" size="icon" onClick={handlePrev}>
+              <ChevronLeftIcon className="h-4 w-4" />
             </Button>
+            <Button variant="outline" size="icon" onClick={handleNext}>
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+          </div>
         </div>
+        <Button asChild variant="link" className="mt-12">
+          <Link href="/dashboard/mapa-clientes">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Volver
+          </Link>
+        </Button>
+      </div>
     );
   }
 
