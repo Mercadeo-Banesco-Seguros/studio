@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
   AreaChart,
@@ -47,6 +47,7 @@ import { Tooltip as ShadTooltip, TooltipContent, TooltipProvider, TooltipTrigger
 import { getCommercialData, type CommercialData } from '@/ai/flows/get-commercial-data-flow';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useToast } from '@/hooks/use-toast';
+import { Badge } from '@/components/ui/badge';
 
 const formatCurrency = (value: number) => {
   return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(value);
@@ -65,46 +66,109 @@ const CORRECT_COMBINATION = [12, 34, 56];
 
 const serviceCategories = [
     {
-      title: "Gerencia Comercial",
-      description: "Planes estratégicos de ventas que se alinean con tus objetivos.",
+      title: "Comercial",
+      tags: ["Ventas", "Desarrollo", "Mercadeo"],
       icon: TrendingUp,
       id: 'comercial',
+      chartData: [
+        { name: 'Ene', value1: 40, value2: 24, value3: 24 },
+        { name: 'Feb', value1: 30, value2: 13, value3: 40 },
+        { name: 'Mar', value1: 20, value2: 50, value3: 28 },
+        { name: 'Abr', value1: 27, value2: 39, value3: 35 },
+        { name: 'May', value1: 18, value2: 48, value3: 25 },
+        { name: 'Jun', value1: 23, value2: 38, value3: 30 },
+        { name: 'Jul', value1: 34, value2: 43, value3: 15 },
+      ]
     },
     {
       title: "Mercadeo",
-      description: "Guía experta para optimizar el rendimiento de tus campañas.",
+      tags: ["Campañas", "Contenido", "Digital"],
       icon: Megaphone,
-      id: 'mercadeo'
+      id: 'mercadeo',
+      chartData: [
+        { name: 'Ene', value1: 20, value2: 34, value3: 14 },
+        { name: 'Feb', value1: 40, value2: 23, value3: 30 },
+        { name: 'Mar', value1: 30, value2: 60, value3: 18 },
+        { name: 'Abr', value1: 47, value2: 29, value3: 45 },
+        { name: 'May', value1: 28, value2: 38, value3: 35 },
+        { name: 'Jun', value1: 33, value2: 28, value3: 40 },
+        { name: 'Jul', value1: 44, value2: 33, value3: 25 },
+      ]
     },
     {
       title: "Suscripción",
-      description: "Soluciones tecnológicas innovadoras para mejorar la eficiencia.",
+      tags: ["Salud", "Auto", "Patrimoniales"],
       icon: FileCheck2,
-      id: 'suscripcion'
+      id: 'suscripcion',
+       chartData: [
+        { name: 'Ene', value1: 50, value2: 30, value3: 14 },
+        { name: 'Feb', value1: 40, value2: 23, value3: 20 },
+        { name: 'Mar', value1: 25, value2: 55, value3: 38 },
+        { name: 'Abr', value1: 37, value2: 49, value3: 25 },
+        { name: 'May', value1: 28, value2: 38, value3: 45 },
+        { name: 'Jun', value1: 43, value2: 28, value3: 30 },
+        { name: 'Jul', value1: 34, value2: 53, value3: 15 },
+      ]
     },
     {
       title: "Actuarial",
-      description: "Análisis y modelos para la evaluación de riesgos y la fijación de tarifas.",
+      tags: ["Riesgo", "Tarifas", "Modelos"],
       icon: FileBarChart,
-      id: 'actuarial'
+      id: 'actuarial',
+       chartData: [
+        { name: 'Ene', value1: 10, value2: 44, value3: 24 },
+        { name: 'Feb', value1: 35, value2: 23, value3: 30 },
+        { name: 'Mar', value1: 20, value2: 60, value3: 48 },
+        { name: 'Abr', value1: 27, value2: 39, value3: 25 },
+        { name: 'May', value1: 38, value2: 28, value3: 15 },
+        { name: 'Jun', value1: 23, value2: 48, value3: 30 },
+        { name: 'Jul', value1: 34, value2: 23, value3: 45 },
+      ]
     },
      {
       title: "Procesos",
-      description: "Optimiza los flujos de trabajo para una mayor eficiencia operativa.",
+      tags: ["Flujos", "Mejora", "Eficiencia"],
       icon: Workflow,
-      id: 'procesos'
+      id: 'procesos',
+       chartData: [
+        { name: 'Ene', value1: 30, value2: 14, value3: 34 },
+        { name: 'Feb', value1: 20, value2: 33, value3: 40 },
+        { name: 'Mar', value1: 40, value2: 40, value3: 28 },
+        { name: 'Abr', value1: 17, value2: 49, value3: 35 },
+        { name: 'May', value1: 48, value2: 28, value3: 15 },
+        { name: 'Jun', value1: 33, value2: 38, value3: 30 },
+        { name: 'Jul', value1: 24, value2: 43, value3: 25 },
+      ]
     },
     {
       title: "Capital Humano",
-      description: "Potencia el talento y fomenta un ambiente laboral de excelencia.",
+      tags: ["Talento", "Cultura", "Desarrollo"],
       icon: GraduationCap,
-      id: 'capital-humano'
+      id: 'capital-humano',
+       chartData: [
+        { name: 'Ene', value1: 40, value2: 24, value3: 24 },
+        { name: 'Feb', value1: 30, value2: 13, value3: 40 },
+        { name: 'Mar', value1: 20, value2: 50, value3: 28 },
+        { name: 'Abr', value1: 27, value2: 39, value3: 35 },
+        { name: 'May', value1: 18, value2: 48, value3: 25 },
+        { name: 'Jun', value1: 23, value2: 38, value3: 30 },
+        { name: 'Jul', value1: 34, value2: 43, value3: 15 },
+      ]
     },
     {
       title: "Finanzas",
-      description: "Gestión y análisis de los recursos financieros de la compañía.",
+      tags: ["Cifras", "Riesgo", "Siniestralidad"],
       icon: Banknote,
-      id: 'finanzas'
+      id: 'finanzas',
+       chartData: [
+        { name: 'Ene', value1: 20, value2: 40 },
+        { name: 'Feb', value1: 35, value2: 20 },
+        { name: 'Mar', value1: 45, value2: 60 },
+        { name: 'Abr', value1: 30, value2: 45 },
+        { name: 'May', value1: 50, value2: 30 },
+        { name: 'Jun', value1: 60, value2: 50 },
+        { name: 'Jul', value1: 40, value2: 70 },
+      ]
     },
 ];
 
@@ -287,7 +351,6 @@ export default function GerenciaComercialDashboard() {
           
           <div className="relative h-[450px] flex items-center justify-center">
             {serviceCategories.map((cat, index) => {
-              const Icon = cat.icon;
               const offset = index - currentIndex;
               const isCenter = index === currentIndex;
               const isAdjacent = Math.abs(offset) === 1;
@@ -301,48 +364,77 @@ export default function GerenciaComercialDashboard() {
                     isCenter ? "z-10" : "z-0",
                   )}
                   style={{
-                    transform: `translateX(${offset * 70}%) scale(${isCenter ? 1 : 0.8})`,
+                    transform: `translateX(${offset * 80}%) scale(${isCenter ? 1 : 0.8})`,
                     opacity: isHidden ? 0 : 1,
-                    filter: isCenter ? 'none' : 'blur(2px)',
+                    filter: isCenter ? 'none' : 'blur(2px) grayscale(50%)',
                   }}
                   onClick={() => {
                     if (isCenter) setSelectedArea(cat.id);
                     else setCurrentIndex(index);
                   }}
                 >
-                  <Card 
-                    className={cn(
-                      "w-80 h-[400px] transition-all duration-300 shadow-lg flex flex-col justify-between p-6 rounded-2xl",
-                      isCenter ? "bg-primary text-primary-foreground" : "bg-card/50"
-                    )}
-                  >
-                    <CardHeader>
-                      <div className="w-12 h-12 rounded-lg bg-primary-foreground/20 flex items-center justify-center mb-4">
-                          <Icon className="h-6 w-6 text-primary-foreground" />
-                      </div>
-                      <CardTitle>{cat.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-primary-foreground/80 text-sm">{cat.description}</p>
-                    </CardContent>
-                    <CardFooter>
-                       <Button
-                          variant="ghost"
-                          size="sm"
-                          className="bg-white/10 text-white/80 h-8 px-3 text-xs rounded-full backdrop-blur-sm hover:bg-white/20 hover:text-white"
-                          data-action="request-access"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            toast({
-                              title: "Acceso Solicitado",
-                              description: `Se ha enviado tu solicitud de acceso para la gerencia de ${cat.title}.`,
-                            });
-                          }}
-                        >
-                          Solicitar Acceso
-                        </Button>
-                    </CardFooter>
-                  </Card>
+                    <Card className="w-96 h-[420px] rounded-3xl bg-primary text-primary-foreground p-6 flex flex-col shadow-2xl">
+                        <CardHeader className="p-0">
+                           <div className="flex gap-2 mb-4">
+                                {cat.tags.map(tag => (
+                                    <Badge key={tag} variant="secondary" className="bg-white/10 text-white font-light text-[10px] rounded-md">{tag}</Badge>
+                                ))}
+                            </div>
+                            <CardDescription className="text-primary-foreground/80">Gerencia</CardDescription>
+                            <CardTitle className="text-3xl font-bold">{cat.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent className="flex-grow p-0 flex items-center justify-center -mx-6">
+                            <ResponsiveContainer width="100%" height={150}>
+                                <AreaChart data={cat.chartData} margin={{ top: 10, right: 0, left: 0, bottom: 0 }}>
+                                    <defs>
+                                        <linearGradient id={`colorValue1_${cat.id}`} x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="5%" stopColor="#00A9E0" stopOpacity={0.4}/>
+                                            <stop offset="95%" stopColor="#00A9E0" stopOpacity={0}/>
+                                        </linearGradient>
+                                        <linearGradient id={`colorValue2_${cat.id}`} x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="5%" stopColor="#4DD7F9" stopOpacity={0.3}/>
+                                            <stop offset="95%" stopColor="#4DD7F9" stopOpacity={0}/>
+                                        </linearGradient>
+                                        {cat.chartData[0].value3 !== undefined && (
+                                        <linearGradient id={`colorValue3_${cat.id}`} x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="5%" stopColor="#B3EFFF" stopOpacity={0.2}/>
+                                            <stop offset="95%" stopColor="#B3EFFF" stopOpacity={0}/>
+                                        </linearGradient>
+                                        )}
+                                    </defs>
+                                    <Area type="monotone" dataKey="value1" stroke="#00A9E0" strokeWidth={2} fillOpacity={1} fill={`url(#colorValue1_${cat.id})`} />
+                                    <Area type="monotone" dataKey="value2" stroke="#4DD7F9" strokeWidth={2} fillOpacity={1} fill={`url(#colorValue2_${cat.id})`} />
+                                    {cat.chartData[0].value3 !== undefined && (
+                                      <Area type="monotone" dataKey="value3" stroke="#B3EFFF" strokeWidth={2} fillOpacity={1} fill={`url(#colorValue3_${cat.id})`} />
+                                    )}
+                                </AreaChart>
+                            </ResponsiveContainer>
+                        </CardContent>
+                        <div className="flex justify-between items-center p-0">
+                             <Button
+                                variant="secondary"
+                                size="sm"
+                                className="bg-white text-primary hover:bg-white/90 font-light rounded-full text-xs"
+                                onClick={(e) => { e.stopPropagation(); setSelectedArea(cat.id); }}
+                            >
+                                Acceder
+                            </Button>
+                            <Button 
+                                variant="outline" 
+                                size="sm" 
+                                className="bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white font-light rounded-full text-xs"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    toast({
+                                        title: "Acceso Solicitado",
+                                        description: `Se ha enviado tu solicitud de acceso para la gerencia de ${cat.title}.`,
+                                    });
+                                }}
+                            >
+                                Solicitar Acceso
+                            </Button>
+                        </div>
+                    </Card>
                 </div>
               );
             })}
