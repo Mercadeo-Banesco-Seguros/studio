@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
@@ -40,7 +41,8 @@ import {
   ArrowRight,
   Bookmark,
   ChevronRight,
-  Save
+  Save,
+  Flag
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
@@ -266,6 +268,13 @@ export default function GerenciaComercialDashboard() {
   const { toast } = useToast();
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const extendedCategories = React.useMemo(() => [...serviceCategories, ...serviceCategories, ...serviceCategories], []);
+  const middleIndex = serviceCategories.length;
+
+  useEffect(() => {
+    setCurrentIndex(middleIndex);
+  }, [middleIndex]);
+
   const handleArrowChange = (index: number, delta: number) => {
     const newCombination = [...combination];
     newCombination[index] = (newCombination[index] + delta + 100) % 100;
@@ -342,12 +351,22 @@ export default function GerenciaComercialDashboard() {
 
   if (!selectedArea) {
     const handleNext = () => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % serviceCategories.length);
+      setCurrentIndex((prevIndex) => prevIndex + 1);
     };
 
     const handlePrev = () => {
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + serviceCategories.length) % serviceCategories.length);
+      setCurrentIndex((prevIndex) => prevIndex - 1);
     };
+    
+    const transitionRef = useRef<NodeJS.Timeout>();
+    useEffect(() => {
+        if (currentIndex === middleIndex + serviceCategories.length || currentIndex === middleIndex - serviceCategories.length) {
+            transitionRef.current = setTimeout(() => {
+                setCurrentIndex(middleIndex);
+            }, 500);
+        }
+        return () => clearTimeout(transitionRef.current);
+    }, [currentIndex, middleIndex]);
 
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-muted p-4 overflow-hidden">
@@ -358,23 +377,24 @@ export default function GerenciaComercialDashboard() {
           </div>
           
           <div className="relative h-[450px] flex items-center justify-center">
-            {serviceCategories.map((cat, index) => {
+            {extendedCategories.map((cat, index) => {
               const offset = index - currentIndex;
               const isCenter = index === currentIndex;
-              const isAdjacent = Math.abs(offset) === 1;
-              const isHidden = Math.abs(offset) > 1;
+              
+              const isVisible = Math.abs(offset) <= 2;
 
               return (
                 <div
-                  key={cat.id}
+                  key={`${cat.id}-${index}`}
                   className={cn(
                     "absolute transition-all duration-500 ease-in-out cursor-pointer",
                     isCenter ? "z-10" : "z-0",
                   )}
                   style={{
-                    transform: `translateX(${offset * 100}%) scale(${isCenter ? 1 : 0.8})`,
-                    opacity: isHidden ? 0 : 1,
+                    transform: `translateX(${offset * 150}%) scale(${isCenter ? 1 : 0.8})`,
+                    opacity: isVisible ? 1 : 0,
                     filter: isCenter ? 'none' : 'blur(2px) grayscale(50%)',
+                    transition: (currentIndex === middleIndex + serviceCategories.length - 1 && index === 0) || (currentIndex === middleIndex && index === extendedCategories.length - 1) ? 'none' : undefined,
                   }}
                   onClick={() => {
                     if (isCenter) setSelectedArea(cat.id);
@@ -769,3 +789,5 @@ export default function GerenciaComercialDashboard() {
     </div>
   );
 }
+
+    
