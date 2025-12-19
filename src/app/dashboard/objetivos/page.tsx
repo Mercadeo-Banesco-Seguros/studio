@@ -257,7 +257,7 @@ const AuthToggle = ({ onCheck, onError, onIdle }: { onCheck: () => boolean; onEr
 
 
 export default function GerenciaComercialDashboard() {
-  const [selectedArea, setSelectedArea] = useState<string | null>(null);
+  const [selectedArea, setSelectedArea] = useState<(typeof serviceCategories)[number] | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [combination, setCombination] = useState([0, 0, 0]);
   const [isError, setIsError] = useState(false);
@@ -344,13 +344,12 @@ export default function GerenciaComercialDashboard() {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-muted p-4 overflow-hidden">
         <div className="w-full max-w-7xl">
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {serviceCategories.map((cat, index) => (
                 <div
                   key={`${cat.id}-${index}`}
                   className="cursor-pointer group"
-                  onClick={() => setSelectedArea(cat.id)}
+                  onClick={() => setSelectedArea(cat)}
                 >
                     <Card className="w-full h-full rounded-3xl bg-primary text-primary-foreground p-6 flex flex-col shadow-2xl transition-transform duration-300 group-hover:-translate-y-2">
                         <CardHeader className="p-0">
@@ -385,7 +384,7 @@ export default function GerenciaComercialDashboard() {
                                 variant="secondary"
                                 size="sm"
                                 className="bg-white text-primary hover:bg-white/90 font-light rounded-full text-xs"
-                                onClick={(e) => { e.stopPropagation(); setSelectedArea(cat.id); }}
+                                onClick={(e) => { e.stopPropagation(); setSelectedArea(cat); }}
                             >
                                 Acceder
                             </Button>
@@ -410,11 +409,13 @@ export default function GerenciaComercialDashboard() {
           </div>
 
         </div>
-        <Button asChild variant="link" className="mt-12">
-          <Link href="/dashboard/mapa-clientes">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Volver
-          </Link>
+        <Button asChild variant="link" className="mt-12 text-muted-foreground hover:no-underline p-0 h-auto text-xs">
+            <Link href="/dashboard/mapa-clientes" className="flex items-center gap-2 group">
+                <span className="flex items-center justify-center h-8 w-8 rounded-full bg-background text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+                    <ArrowLeft className="h-4 w-4" />
+                </span>
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity">Volver</span>
+            </Link>
         </Button>
       </div>
     );
