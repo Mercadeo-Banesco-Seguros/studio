@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
   AreaChart,
@@ -312,24 +312,24 @@ export default function GerenciaComercialDashboard() {
                 >
                   <Card 
                     className={cn(
-                      "w-80 h-[400px] transition-all duration-300 shadow-lg flex flex-col justify-between",
-                      isCenter ? "bg-card" : "bg-card/50"
+                      "w-80 h-[400px] transition-all duration-300 shadow-lg flex flex-col justify-between p-6 rounded-2xl",
+                      isCenter ? "bg-primary text-primary-foreground" : "bg-card/50"
                     )}
                   >
                     <CardHeader>
-                      <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mb-4">
-                          <Icon className="h-6 w-6 text-primary" />
+                      <div className="w-12 h-12 rounded-lg bg-primary-foreground/20 flex items-center justify-center mb-4">
+                          <Icon className="h-6 w-6 text-primary-foreground" />
                       </div>
                       <CardTitle>{cat.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground text-sm">{cat.description}</p>
+                      <p className="text-primary-foreground/80 text-sm">{cat.description}</p>
                     </CardContent>
                     <CardFooter>
                        <Button
                           variant="ghost"
                           size="sm"
-                          className="text-xs"
+                          className="bg-white/10 text-white/80 h-8 px-3 text-xs rounded-full backdrop-blur-sm hover:bg-white/20 hover:text-white"
                           data-action="request-access"
                           onClick={(e) => {
                             e.stopPropagation();
