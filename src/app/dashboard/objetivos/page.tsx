@@ -266,15 +266,6 @@ export default function GerenciaComercialDashboard() {
   const [dashboardData, setDashboardData] = useState<CommercialData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const { toast } = useToast();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [disableTransition, setDisableTransition] = useState(false);
-
-  const extendedCategories = React.useMemo(() => [...serviceCategories, ...serviceCategories, ...serviceCategories], []);
-  const middleIndex = serviceCategories.length;
-
-  useEffect(() => {
-    setCurrentIndex(middleIndex);
-  }, [middleIndex]);
 
   const handleArrowChange = (index: number, delta: number) => {
     const newCombination = [...combination];
@@ -349,71 +340,23 @@ export default function GerenciaComercialDashboard() {
     }
   }, [isAuthenticated]);
 
-
-  const handleNext = () => {
-      setCurrentIndex((prevIndex) => prevIndex + 1);
-  };
-
-  const handlePrev = () => {
-      setCurrentIndex((prevIndex) => prevIndex - 1);
-  };
-  
-  const transitionRef = useRef<NodeJS.Timeout>();
-  useEffect(() => {
-      if (currentIndex === middleIndex + serviceCategories.length) {
-          setDisableTransition(true);
-          transitionRef.current = setTimeout(() => {
-              setCurrentIndex(middleIndex);
-              setDisableTransition(false);
-          }, 500);
-      }
-
-      if (currentIndex === middleIndex - 1) {
-          setDisableTransition(true);
-          transitionRef.current = setTimeout(() => {
-              setCurrentIndex(middleIndex + serviceCategories.length - 1);
-              setDisableTransition(false);
-          }, 500);
-      }
-      return () => clearTimeout(transitionRef.current);
-  }, [currentIndex, middleIndex, serviceCategories.length]);
-
-
   if (!selectedArea) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-muted p-4 overflow-hidden">
-        <div className="w-full max-w-5xl">
+        <div className="w-full max-w-7xl">
           <div className="text-center mb-12">
             <h1 className="text-3xl font-bold text-foreground">Selecciona una Gerencia</h1>
             <p className="text-muted-foreground">Elige el área a la que deseas acceder.</p>
           </div>
           
-          <div className="relative h-[450px] flex items-center justify-center">
-            {extendedCategories.map((cat, index) => {
-              const offset = index - currentIndex;
-              const isCenter = index === currentIndex;
-              
-              const isVisible = Math.abs(offset) <= 2;
-
-              return (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {serviceCategories.map((cat, index) => (
                 <div
                   key={`${cat.id}-${index}`}
-                  className={cn(
-                    "absolute cursor-pointer",
-                    !disableTransition && "transition-all duration-500 ease-in-out",
-                    isCenter ? "z-10" : "z-0",
-                  )}
-                  style={{
-                    transform: `translateX(${offset * 80}%) scale(${isCenter ? 1 : 0.8})`,
-                    opacity: isVisible ? 1 : 0,
-                    filter: isCenter ? 'none' : 'blur(2px) grayscale(50%)',
-                  }}
-                  onClick={() => {
-                    if (isCenter) setSelectedArea(cat.id);
-                    else setCurrentIndex(index);
-                  }}
+                  className="cursor-pointer group"
+                  onClick={() => setSelectedArea(cat.id)}
                 >
-                    <Card className="w-[28rem] h-[420px] rounded-3xl bg-primary text-primary-foreground p-6 flex flex-col shadow-2xl">
+                    <Card className="w-full h-full rounded-3xl bg-primary text-primary-foreground p-6 flex flex-col shadow-2xl transition-transform duration-300 group-hover:-translate-y-2">
                         <CardHeader className="p-0">
                            <div className="flex gap-2 mb-4">
                                 {cat.tags.map(tag => (
@@ -423,7 +366,7 @@ export default function GerenciaComercialDashboard() {
                             <CardDescription className="text-primary-foreground/80">Gerencia</CardDescription>
                             <CardTitle className="text-3xl font-bold">{cat.title}</CardTitle>
                         </CardHeader>
-                        <CardContent className="flex-grow p-0 flex items-center justify-center -mx-6">
+                        <CardContent className="flex-grow p-0 flex items-center justify-center -mx-6 my-4">
                             <ResponsiveContainer width="100%" height={150}>
                                 <AreaChart data={cat.chartData} margin={{ top: 10, right: 0, left: 0, bottom: 0 }}>
                                     <defs>
@@ -467,17 +410,9 @@ export default function GerenciaComercialDashboard() {
                         </CardFooter>
                     </Card>
                 </div>
-              );
-            })}
+              ))}
           </div>
-          <div className="flex justify-center items-center gap-4 mt-8">
-            <Button variant="outline" size="icon" onClick={handlePrev}>
-              <ChevronLeftIcon className="h-4 w-4" />
-            </Button>
-            <Button variant="outline" size="icon" onClick={handleNext}>
-              <ChevronRight className="h-4 w-4" />
-            </Button>
-          </div>
+
         </div>
         <Button asChild variant="link" className="mt-12">
           <Link href="/dashboard/mapa-clientes">
