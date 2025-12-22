@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
   AreaChart,
@@ -379,7 +379,7 @@ export default function GerenciaComercialDashboard() {
                                 </AreaChart>
                             </ResponsiveContainer>
                         </CardContent>
-                        <CardFooter className="flex justify-between items-center p-0">
+                        <CardContent className="flex justify-between items-center p-0">
                              <Button
                                 variant="secondary"
                                 size="sm"
@@ -402,12 +402,11 @@ export default function GerenciaComercialDashboard() {
                             >
                                 Solicitar Acceso
                             </Button>
-                        </CardFooter>
+                        </CardContent>
                     </Card>
                 </div>
               ))}
           </div>
-
         </div>
         <Button asChild variant="link" className="mt-12 text-muted-foreground hover:no-underline p-0 h-auto text-xs">
             <Link href="/dashboard/mapa-clientes" className="flex items-center gap-2 group">
@@ -457,9 +456,17 @@ export default function GerenciaComercialDashboard() {
                   onIdle={() => setIsError(false)} 
                 />
             </div>
-            <Button variant="link" className="mt-8" onClick={() => setSelectedArea(null)}>
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Volver a seleccionar área
+            <Button
+              variant="link"
+              className="mt-8 text-muted-foreground hover:no-underline p-0 h-auto text-xs group"
+              onClick={() => setSelectedArea(null)}
+            >
+              <div className="flex items-center gap-2">
+                <span className="flex items-center justify-center h-8 w-8 rounded-full bg-background text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+                  <ArrowLeft className="h-4 w-4" />
+                </span>
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity">Volver a seleccionar área</span>
+              </div>
             </Button>
         </div>
       </div>
