@@ -284,7 +284,7 @@ export default function HcmPage() {
                         <p className="text-muted-foreground mt-2">Resumen de los beneficios y límites de tu plan.</p>
                     </div>
                     <div className="max-w-4xl mx-auto">
-                        <Card className="bg-muted/50 rounded-2xl overflow-hidden">
+                        <Card className="bg-muted rounded-2xl overflow-hidden">
                             <CardContent className="p-0">
                                 <Table>
                                     <TableHeader>
@@ -373,7 +373,7 @@ export default function HcmPage() {
                 </section>
                 
                  <section>
-                    <Card className="rounded-2xl shadow-sm bg-muted/50 overflow-hidden">
+                    <Card className="rounded-2xl shadow-sm bg-muted overflow-hidden">
                          <CardHeader className="text-center mb-8 px-6 pt-8">
                             <CardTitle className="text-3xl font-bold tracking-tight">Patologías de Emergencias Cubiertas</CardTitle>
                             <CardDescription className="text-muted-foreground mt-2">Lista de patologías cubiertas por la Póliza de urgencias y emergencias médicas.</CardDescription>
@@ -451,3 +451,5 @@ export default function HcmPage() {
         </div>
     );
 }
+
+    
