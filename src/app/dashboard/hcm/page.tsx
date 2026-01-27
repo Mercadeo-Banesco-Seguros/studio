@@ -283,23 +283,27 @@ export default function HcmPage() {
                         <h2 className="text-3xl font-bold tracking-tight">Cobertura de la Póliza Básica</h2>
                         <p className="text-muted-foreground mt-2">Resumen de los beneficios y límites de tu plan.</p>
                     </div>
-                     <div className="max-w-4xl mx-auto">
-                        <Table>
-                            <TableHeader>
-                                <TableRow>
-                                    <TableHead className="text-left">Servicio</TableHead>
-                                    <TableHead className="text-right">Cobertura</TableHead>
-                                </TableRow>
-                            </TableHeader>
-                            <TableBody>
-                                {coverageData.map((item) => (
-                                    <TableRow key={item.service}>
-                                        <TableCell className="font-medium text-left">{item.service}</TableCell>
-                                        <TableCell className="text-right">{item.value ? `${item.unit}${item.value}` : item.unit}</TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
+                    <div className="max-w-4xl mx-auto">
+                        <Card className="bg-primary text-primary-foreground rounded-2xl overflow-hidden">
+                            <CardContent className="p-0">
+                                <Table>
+                                    <TableHeader>
+                                        <TableRow className="border-b-primary-foreground/20">
+                                            <TableHead className="text-left text-primary-foreground/80">Servicio</TableHead>
+                                            <TableHead className="text-right text-primary-foreground/80">Cobertura</TableHead>
+                                        </TableRow>
+                                    </TableHeader>
+                                    <TableBody>
+                                        {coverageData.map((item, index) => (
+                                            <TableRow key={item.service} className={cn(index !== coverageData.length - 1 && "border-b-primary-foreground/20")}>
+                                                <TableCell className="font-medium text-left">{item.service}</TableCell>
+                                                <TableCell className="text-right">{item.value ? `${item.unit}${item.value}` : item.unit}</TableCell>
+                                            </TableRow>
+                                        ))}
+                                    </TableBody>
+                                </Table>
+                            </CardContent>
+                        </Card>
                     </div>
                 </section>
                 
@@ -369,22 +373,22 @@ export default function HcmPage() {
                 </section>
                 
                  <section>
-                    <div>
-                         <CardHeader className="p-0 text-center mb-12">
+                    <Card className="rounded-2xl shadow-sm bg-primary text-primary-foreground overflow-hidden">
+                         <CardHeader className="text-center mb-8 px-6 pt-8">
                             <CardTitle className="text-3xl font-bold tracking-tight">Patologías de Emergencias Cubiertas</CardTitle>
-                            <CardDescription className="text-muted-foreground mt-2">Lista de patologías cubiertas por la Póliza de urgencias y emergencias médicas.</CardDescription>
+                            <CardDescription className="text-primary-foreground/80 mt-2">Lista de patologías cubiertas por la Póliza de urgencias y emergencias médicas.</CardDescription>
                         </CardHeader>
-                        <CardContent className="p-0 mt-4">
+                        <CardContent className="p-0">
                             <Table>
                                 <TableHeader>
-                                    <TableRow>
-                                        <TableHead className="w-[250px]">Categoría</TableHead>
-                                        <TableHead>Patologías Cubiertas</TableHead>
+                                    <TableRow className="border-b-primary-foreground/20">
+                                        <TableHead className="w-[250px] text-primary-foreground/80">Categoría</TableHead>
+                                        <TableHead className="text-primary-foreground/80">Patologías Cubiertas</TableHead>
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
-                                    {coveredPathologies.map((category) => (
-                                        <TableRow key={category.category}>
+                                    {coveredPathologies.map((category, index) => (
+                                        <TableRow key={category.category} className={cn(index !== coveredPathologies.length - 1 && "border-b-primary-foreground/20")}>
                                             <TableCell className="font-medium align-top">{category.category}</TableCell>
                                             <TableCell>
                                                 <ul className="list-disc pl-5 space-y-1 text-xs">
@@ -398,7 +402,7 @@ export default function HcmPage() {
                                 </TableBody>
                             </Table>
                         </CardContent>
-                    </div>
+                    </Card>
                 </section>
 
 
@@ -447,5 +451,7 @@ export default function HcmPage() {
         </div>
     );
 }
+
+    
 
     
