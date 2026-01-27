@@ -381,47 +381,35 @@ export default function HcmPage() {
                 </section>
                 
                  <section>
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div className="relative h-96 w-full rounded-2xl overflow-hidden hidden md:block">
-                            <Image
-                                src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkb2N0b3J8ZW58MHx8fHwxNzU4NjQ0MjY4fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                                alt="Equipo médico"
-                                layout="fill"
-                                objectFit="cover"
-                                data-ai-hint="medical team"
-                                className="rounded-2xl"
-                            />
-                        </div>
-                        <div>
-                             <CardHeader className="p-0">
-                                <CardTitle>Patologías de Emergencias Cubiertas</CardTitle>
-                                <CardDescription>Lista de patologías cubiertas por la Póliza de urgencias y emergencias médicas.</CardDescription>
-                            </CardHeader>
-                            <CardContent className="p-0 mt-4">
-                                <Table>
-                                    <TableHeader>
-                                        <TableRow>
-                                            <TableHead className="w-[250px]">Categoría</TableHead>
-                                            <TableHead>Patologías Cubiertas</TableHead>
+                    <div>
+                         <CardHeader className="p-0 text-center mb-12">
+                            <CardTitle className="text-3xl font-bold tracking-tight">Patologías de Emergencias Cubiertas</CardTitle>
+                            <CardDescription className="text-muted-foreground mt-2">Lista de patologías cubiertas por la Póliza de urgencias y emergencias médicas.</CardDescription>
+                        </CardHeader>
+                        <CardContent className="p-0 mt-4">
+                            <Table>
+                                <TableHeader>
+                                    <TableRow>
+                                        <TableHead className="w-[250px]">Categoría</TableHead>
+                                        <TableHead>Patologías Cubiertas</TableHead>
+                                    </TableRow>
+                                </TableHeader>
+                                <TableBody>
+                                    {coveredPathologies.map((category) => (
+                                        <TableRow key={category.category}>
+                                            <TableCell className="font-medium align-top">{category.category}</TableCell>
+                                            <TableCell>
+                                                <ul className="list-disc pl-5 space-y-1 text-xs">
+                                                    {category.items.map((item) => (
+                                                        <li key={item}>{item}</li>
+                                                    ))}
+                                                </ul>
+                                            </TableCell>
                                         </TableRow>
-                                    </TableHeader>
-                                    <TableBody>
-                                        {coveredPathologies.map((category) => (
-                                            <TableRow key={category.category}>
-                                                <TableCell className="font-medium align-top">{category.category}</TableCell>
-                                                <TableCell>
-                                                    <ul className="list-disc pl-5 space-y-1 text-xs">
-                                                        {category.items.map((item) => (
-                                                            <li key={item}>{item}</li>
-                                                        ))}
-                                                    </ul>
-                                                </TableCell>
-                                            </TableRow>
-                                        ))}
-                                    </TableBody>
-                                </Table>
-                            </CardContent>
-                        </div>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </CardContent>
                     </div>
                 </section>
 
