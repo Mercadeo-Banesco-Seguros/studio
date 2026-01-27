@@ -74,7 +74,7 @@ const contactMethods = [
     {
         icon: Phone,
         title: "Central Telefónica",
-        details: "0500-SALUD-00 (0500-7258300)",
+        details: "0500-7258300",
         href: "tel:05007258300"
     },
     {
