@@ -283,35 +283,23 @@ export default function HcmPage() {
                         <h2 className="text-3xl font-bold tracking-tight">Cobertura de la Póliza Básica</h2>
                         <p className="text-muted-foreground mt-2">Resumen de los beneficios y límites de tu plan.</p>
                     </div>
-                     <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div>
-                             <Table>
-                                <TableHeader>
-                                    <TableRow>
-                                        <TableHead className="text-left">Servicio</TableHead>
-                                        <TableHead className="text-right">Cobertura</TableHead>
+                     <div className="max-w-4xl mx-auto">
+                        <Table>
+                            <TableHeader>
+                                <TableRow>
+                                    <TableHead className="text-left">Servicio</TableHead>
+                                    <TableHead className="text-right">Cobertura</TableHead>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                                {coverageData.map((item) => (
+                                    <TableRow key={item.service}>
+                                        <TableCell className="font-medium text-left">{item.service}</TableCell>
+                                        <TableCell className="text-right">{item.value ? `${item.unit}${item.value}` : item.unit}</TableCell>
                                     </TableRow>
-                                </TableHeader>
-                                <TableBody>
-                                    {coverageData.map((item) => (
-                                        <TableRow key={item.service}>
-                                            <TableCell className="font-medium text-left">{item.service}</TableCell>
-                                            <TableCell className="text-right">{item.value ? `${item.unit}${item.value}` : item.unit}</TableCell>
-                                        </TableRow>
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        </div>
-                         <div className="relative h-80 w-full rounded-2xl overflow-hidden hidden md:block">
-                            <Image
-                                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkb2N0b3J8ZW58MHx8fHwxNzU4NjQ0MjY4fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                                alt="Doctor y paciente"
-                                layout="fill"
-                                objectFit="cover"
-                                data-ai-hint="doctor patient"
-                                className="rounded-2xl"
-                            />
-                        </div>
+                                ))}
+                            </TableBody>
+                        </Table>
                     </div>
                 </section>
                 
@@ -459,3 +447,5 @@ export default function HcmPage() {
         </div>
     );
 }
+
+    
