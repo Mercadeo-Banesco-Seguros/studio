@@ -41,28 +41,6 @@ type Satisfaction = 'happy' | 'neutral' | 'sad' | null;
 
 const weekDays = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
 
-const getMonthlyThematicImage = (events: { title: string }[]): { imageUrl: string; dataAiHint: string } | null => {
-    const titles = events.map(e => e.title.toLowerCase());
-    
-    if (titles.some(t => t.includes('navidad') || t.includes('noche buena'))) {
-        return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_ka2ygrka2ygrka2y-Photoroom.png?raw=true", dataAiHint: "christmas tree" };
-    }
-    if (titles.some(t => t.includes('carnaval'))) {
-        return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_zb4dnhzb4dnhzb4d-Photoroom.png?raw=true", dataAiHint: "carnival mask" };
-    }
-    if (titles.some(t => t.includes('halloween'))) {
-        return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(59).png?raw=true", dataAiHint: "halloween pumpkin" };
-    }
-    if (titles.some(t => t.includes('independencia'))) {
-        return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_wr32ivwr32ivwr32-Photoroom.png?raw=true", dataAiHint: "venezuela flag" };
-    }
-    if (titles.some(t => t.includes('pascua') || t.includes('semana santa') || t.includes('santo'))) {
-        return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_juve0ejuve0ejuve-Photoroom.png?raw=true", dataAiHint: "easter eggs" };
-    }
-    return null;
-};
-
-
 export default function BienestarPage() {
     const [selectedDay, setSelectedDay] = useState(weekDays[0]);
     const [allMenuItems, setAllMenuItems] = useState<MenuItem[]>([]);
@@ -74,12 +52,6 @@ export default function BienestarPage() {
     const [comment, setComment] = useState('');
     const { toast } = useToast();
     const activitiesScrollRef = useRef<HTMLDivElement>(null);
-
-    const getEventImage = (title: string): { imageUrl: string; dataAiHint: string } => {
-        // This function now only returns a generic fallback image.
-        // All thematic logic is handled by getMonthlyThematicImage.
-        return { imageUrl: "https://images.unsplash.com/photo-1601276174812-63280a55656e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkZXNjYW5zb3xlbnwwfHx8fDE3NjU0ODc0ODV8MA&ixlib=rb-4.1.0&q=80&w=1080", dataAiHint: "celebration event" };
-    };
 
     useEffect(() => {
         const today = new Date();
@@ -121,10 +93,9 @@ export default function BienestarPage() {
                 })
                 .sort((a, b) => a.date.getTime() - b.date.getTime());
 
-            const monthlyThematicImage = getMonthlyThematicImage(specialEventsThisMonth);
-
             const formattedEvents = specialEventsThisMonth.slice(0, 2).map(event => {
-              const { imageUrl, dataAiHint } = monthlyThematicImage || getEventImage(event.title);
+              const imageUrl = "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_zb4dnhzb4dnhzb4d-Photoroom.png?raw=true";
+              const dataAiHint = "carnival mask";
               return {
                 title: event.title,
                 date: format(event.date, "d 'de' MMMM", { locale: es }),
