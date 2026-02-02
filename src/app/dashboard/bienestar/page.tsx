@@ -53,6 +53,47 @@ export default function BienestarPage() {
     const { toast } = useToast();
     const activitiesScrollRef = useRef<HTMLDivElement>(null);
 
+    const getEventImage = (title: string): { imageUrl: string; dataAiHint: string } => {
+        const lowerTitle = title.toLowerCase();
+
+        if (lowerTitle.includes('carnaval')) {
+            return { 
+                imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_zb4dnhzb4dnhzb4d-Photoroom.png?raw=true", 
+                dataAiHint: "carnival mask" 
+            };
+        }
+        if (lowerTitle.includes('independencia')) {
+            return { 
+                imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_wr32ivwr32ivwr32-Photoroom.png?raw=true", 
+                dataAiHint: "independence day" 
+            };
+        }
+        if (lowerTitle.includes('pascua') || lowerTitle.includes('semana santa')) {
+            return { 
+                imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_juve0ejuve0ejuve-Photoroom.png?raw=true", 
+                dataAiHint: "easter celebration" 
+            };
+        }
+        if (lowerTitle.includes('halloween')) {
+            return { 
+                imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(59).png?raw=true", 
+                dataAiHint: "halloween pumpkin" 
+            };
+        }
+        if (lowerTitle.includes('navidad') || lowerTitle.includes('noche buena') || lowerTitle.includes('año nuevo')) {
+            return { 
+                imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_ka2ygrka2ygrka2y-Photoroom.png?raw=true',
+                "dataAiHint": 'Christmas tree' 
+            };
+        }
+        
+        // Default fallback image as suggested
+        return { 
+            imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1000", 
+            dataAiHint: "celebration" 
+        };
+    };
+
     useEffect(() => {
         const today = new Date();
         const dayName = today.toLocaleDateString('es-ES', { weekday: 'long' });
@@ -94,8 +135,7 @@ export default function BienestarPage() {
                 .sort((a, b) => a.date.getTime() - b.date.getTime());
 
             const formattedEvents = specialEventsThisMonth.slice(0, 2).map(event => {
-              const imageUrl = "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_zb4dnhzb4dnhzb4d-Photoroom.png?raw=true";
-              const dataAiHint = "carnival mask";
+              const { imageUrl, dataAiHint } = getEventImage(event.title);
               return {
                 title: event.title,
                 date: format(event.date, "d 'de' MMMM", { locale: es }),
