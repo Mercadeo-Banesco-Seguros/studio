@@ -336,7 +336,7 @@ export default function HcmPage() {
                                 Cobertura de la <br /> Póliza Básica
                             </h2>
                         </div>
-                        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 lg:pl-16">
                             {allCoverageItems.map((item, index) => (
                                 <div key={`coverage-${index}`}>
                                     <p className="text-3xl font-extrabold tracking-tighter">{item.amount}</p>
