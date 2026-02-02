@@ -76,22 +76,8 @@ export default function BienestarPage() {
     const activitiesScrollRef = useRef<HTMLDivElement>(null);
 
     const getEventImage = (title: string): { imageUrl: string; dataAiHint: string } => {
-        const lowerTitle = title.toLowerCase();
-        if (lowerTitle.includes('navidad')) {
-            return { imageUrl: "https://cdn.shopify.com/s/files/1/0411/7381/1350/files/origen_del_arbol_de_navidad_-_alblanc1.jpg?v=1637495190", dataAiHint: "christmas tree" };
-        }
-        if (lowerTitle.includes('carnaval')) {
-            return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_zb4dnhzb4dnhzb4d-Photoroom.png?raw=true", dataAiHint: "carnival mask" };
-        }
-        if (lowerTitle.includes('independencia')) {
-            return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_wr32ivwr32ivwr32-Photoroom.png?raw=true", dataAiHint: "venezuela flag" };
-        }
-        if (lowerTitle.includes('pascua') || lowerTitle.includes('semana santa') || lowerTitle.includes('santo')) {
-            return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_juve0ejuve0ejuve-Photoroom.png?raw=true", dataAiHint: "easter eggs" };
-        }
-        if (lowerTitle.includes('halloween')) {
-            return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(59).png?raw=true", dataAiHint: "halloween pumpkin" };
-        }
+        // This function now only returns a generic fallback image.
+        // All thematic logic is handled by getMonthlyThematicImage.
         return { imageUrl: "https://images.unsplash.com/photo-1601276174812-63280a55656e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkZXNjYW5zb3xlbnwwfHx8fDE3NjU0ODc0ODV8MA&ixlib=rb-4.1.0&q=80&w=1080", dataAiHint: "celebration event" };
     };
 
@@ -421,3 +407,5 @@ export default function BienestarPage() {
     </div>
   );
 }
+
+    
