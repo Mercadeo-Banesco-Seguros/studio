@@ -295,7 +295,7 @@ export default function HcmPage() {
                     >
                         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full grid md:grid-cols-2 items-center">
                             <div className="text-left">
-                                <h1 className="text-5xl md:text-6xl font-extrabold tracking-widest leading-none">
+                                <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-none">
                                     Nuestra <br/> Póliza de Salud
                                 </h1>
                             </div>
@@ -491,5 +491,3 @@ export default function HcmPage() {
         </div>
     );
 }
-
-    
