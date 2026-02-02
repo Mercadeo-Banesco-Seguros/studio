@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -119,8 +120,8 @@ const contactMethods = [
 const allCoverageItems = [
   { amount: "USD 3000", service: "Hospitalización y Cirugía" },
   { amount: "USD 2000", service: "Maternidad" },
-  { amount: "USD 1000", service: "Atención Primaria Salud" },
-  { amount: "USD 1000", service: "Retiro Medicamentos" },
+  { amount: "USD 1000", service: "Atención Primaria Salud", note: "(12 Órdenes Anuales o 3 Órdenes Mensuales No Acumulativas)" },
+  { amount: "USD 1000", service: "Retiro Medicamentos", note: "(12 Órdenes Anuales o 2 Órdenes Mensuales No Acumulativas)" },
   { amount: "Por evento", service: "Servicios Odontológicos" },
   { amount: "Por evento", service: "Retiro Medicamentos" },
   { amount: "USD 1000", service: "Servicios Funerarios" },
@@ -310,7 +311,7 @@ export default function HcmPage() {
                             </div>
                             <div className={cn("relative h-full w-full hidden md:flex items-center justify-center", slide.imageOrder)}>
                                  {slide.imageUrl && (
-                                     <div className={cn("relative", slide.id === 2 ? "w-[580px] h-[580px]" : "w-[400px] h-[400px]", slide.imageClassName)}>
+                                     <div className={cn("relative w-[580px] h-[580px]", slide.imageClassName)}>
                                          <Image
                                             src={slide.imageUrl}
                                             alt={slide.dataAiHint || 'HCM Banner Image'}
@@ -341,6 +342,7 @@ export default function HcmPage() {
                                 <div key={`coverage-${index}`}>
                                     <p className="text-3xl font-extrabold tracking-tighter">{item.amount}</p>
                                     <p className="text-sm text-primary/80">{item.service}</p>
+                                    {item.note && <p className="text-xs text-primary/60 mt-1">{item.note}</p>}
                                 </div>
                             ))}
                         </div>
