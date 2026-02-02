@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -335,7 +336,7 @@ export default function HcmPage() {
                 <section>
                     <div className="grid lg:grid-cols-4 gap-8 xl:gap-16 items-center text-primary">
                         <div className="lg:col-span-2">
-                            <h2 className="text-5xl font-extrabold tracking-tighter leading-none">
+                            <h2 className="text-6xl font-extrabold tracking-tighter leading-none">
                                 Cobertura de la <br /> Póliza Básica
                             </h2>
                         </div>
