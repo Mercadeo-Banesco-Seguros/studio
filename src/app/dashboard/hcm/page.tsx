@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -27,8 +28,8 @@ const slides = [
       id: 2,
       title: "Gestiona tu salud de forma rápida y sencilla.",
       gradient: 'bg-gradient-to-l from-[#345cff] to-[#c1caf1]',
-      imageUrl: '',
-      dataAiHint: '',
+      imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(61).png?raw=true',
+      dataAiHint: 'digital health',
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
       textAlign: 'text-right',
