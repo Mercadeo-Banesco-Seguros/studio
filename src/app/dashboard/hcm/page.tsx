@@ -15,7 +15,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 const slides = [
     {
       id: 1,
-      title: (<>Nuestra <br/> Póliza de Salud</>),
+      title: "Conoce Nuestra Póliza de Salud!",
       gradient: 'bg-gradient-to-r from-[#345cff] to-[#c1caf1]',
       imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(60).png?raw=true',
       dataAiHint: 'health shield',
