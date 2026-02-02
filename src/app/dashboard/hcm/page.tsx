@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -11,6 +11,22 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+
+const slides = [
+    {
+      id: 1,
+      gradient: 'bg-gradient-to-r from-[#345cff] to-[#c1caf1]',
+      imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(60).png?raw=true',
+      dataAiHint: 'health shield',
+    },
+    {
+      id: 2,
+      gradient: 'bg-gradient-to-l from-[#345cff] to-[#c1caf1]',
+      imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_3kl1tx3kl1tx3kl1-Photoroom.png?raw=true',
+      dataAiHint: 'health protection',
+    },
+];
+
 
 const hcmActions = [
     {
@@ -255,25 +271,49 @@ const StepCard = ({ step, title, color, description }: { step: string; title: st
 
 
 export default function HcmPage() {
+    const [activeSlide, setActiveSlide] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveSlide((prev) => (prev + 1) % slides.length);
+        }, 10000); // Change slide every 10 seconds
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div className="bg-background">
-            <header className="relative py-24 sm:py-32 text-primary-foreground overflow-hidden">
-                <Image
-                    src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
-                    alt="Abstract background"
-                    layout="fill"
-                    objectFit="cover"
-                    className="z-0"
-                    data-ai-hint="abstract waves"
-                />
-                <div className="absolute inset-0 bg-blue-900/40 z-0" />
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                    <Badge variant="outline" className="mb-4 border-white/50 text-white">Póliza Colectiva de Salud</Badge>
-                    <h1 className="text-4xl md:text-5xl font-extrabold mt-4">Tu Bienestar, Nuestra Prioridad</h1>
-                    <p className="mt-4 max-w-2xl mx-auto">
-                        Bienvenido a tu centro de gestión de la póliza de Hospitalización, Cirugía y Maternidad. Aquí encontrarás todo lo que necesitas para administrar tu salud de forma rápida y sencilla.
-                    </p>
-                </div>
+            <header className="relative w-full h-[500px] text-white overflow-hidden">
+                {slides.map((slide, index) => (
+                    <div
+                        key={slide.id}
+                        className={cn(
+                            'absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out',
+                            slide.gradient,
+                            activeSlide === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                        )}
+                    >
+                        <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full grid md:grid-cols-2 items-center">
+                            <div className="text-left">
+                                <h1 className="text-5xl md:text-6xl font-extrabold tracking-widest leading-none">
+                                    Nuestra <br/> Póliza de Salud
+                                </h1>
+                            </div>
+                            <div className="relative h-full w-full hidden md:flex items-center justify-center">
+                                 <div className="relative w-[400px] h-[400px]">
+                                     <Image
+                                        src={slide.imageUrl}
+                                        alt={slide.dataAiHint}
+                                        layout="fill"
+                                        objectFit="contain"
+                                        data-ai-hint={slide.dataAiHint}
+                                        priority={index === 0}
+                                    />
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </header>
             
             <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-24">
