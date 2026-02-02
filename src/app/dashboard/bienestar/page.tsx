@@ -45,7 +45,7 @@ const getMonthlyThematicImage = (events: { title: string }[]): { imageUrl: strin
     const titles = events.map(e => e.title.toLowerCase());
     
     if (titles.some(t => t.includes('navidad'))) {
-        return { imageUrl: "https://cdn.shopify.com/s/files/1/0411/7381/1350/files/origen_del_arbol_de_navidad_-_alblanc1.jpg?v=1637495190", dataAiHint: "christmas tree" };
+        return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_zb4dnhzb4dnhzb4d-Photoroom.png?raw=true", dataAiHint: "carnival mask" };
     }
     if (titles.some(t => t.includes('carnaval'))) {
         return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_zb4dnhzb4dnhzb4d-Photoroom.png?raw=true", dataAiHint: "carnival mask" };
