@@ -44,8 +44,8 @@ const weekDays = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
 const getMonthlyThematicImage = (events: { title: string }[]): { imageUrl: string; dataAiHint: string } | null => {
     const titles = events.map(e => e.title.toLowerCase());
     
-    if (titles.some(t => t.includes('navidad'))) {
-        return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_zb4dnhzb4dnhzb4d-Photoroom.png?raw=true", dataAiHint: "carnival mask" };
+    if (titles.some(t => t.includes('navidad') || t.includes('noche buena'))) {
+        return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_ka2ygrka2ygrka2y-Photoroom.png?raw=true", dataAiHint: "christmas tree" };
     }
     if (titles.some(t => t.includes('carnaval'))) {
         return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_zb4dnhzb4dnhzb4d-Photoroom.png?raw=true", dataAiHint: "carnival mask" };
@@ -286,10 +286,10 @@ export default function BienestarPage() {
                   <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Iniciativa%20Dulce%20o%20Truco%20BSV%20(2).jpg?raw=true" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" quality={100} unoptimized />
               </Card>
               <Card className="absolute w-96 h-64 rounded-2xl overflow-hidden shadow-2xl transform z-10 scale-110 group-hover:scale-90 transition-transform duration-500 ease-in-out">
-                  <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Octubre%20Rosa%202025%20(3).jpg?raw=true" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" quality={100} unoptimized />
+                  <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/IMG_20251115_120042.jpg?raw=true" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" quality={100} unoptimized />
               </Card>
               <Card className="absolute w-80 h-56 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90 rotate-15 translate-x-60">
-                  <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Semana%20Huella.%20Mural.%202025%20(2).jpg?raw=true" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" quality={100} unoptimized />
+                  <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Octubre%20Rosa%202025%20(3).jpg?raw=true" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" quality={100} unoptimized />
               </Card>
           </div>
         </div>
@@ -407,5 +407,3 @@ export default function BienestarPage() {
     </div>
   );
 }
-
-    
