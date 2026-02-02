@@ -15,15 +15,23 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 const slides = [
     {
       id: 1,
+      title: (<>Nuestra <br/> Póliza de Salud</>),
       gradient: 'bg-gradient-to-r from-[#345cff] to-[#c1caf1]',
       imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(60).png?raw=true',
       dataAiHint: 'health shield',
+      textOrder: 'md:order-1',
+      imageOrder: 'md:order-2',
+      textAlign: 'text-left'
     },
     {
       id: 2,
+      title: "Gestiona tu salud de forma rápida y sencilla.",
       gradient: 'bg-gradient-to-l from-[#345cff] to-[#c1caf1]',
       imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_3kl1tx3kl1tx3kl1-Photoroom.png?raw=true',
       dataAiHint: 'health protection',
+      textOrder: 'md:order-2',
+      imageOrder: 'md:order-1',
+      textAlign: 'text-right'
     },
 ];
 
@@ -294,12 +302,12 @@ export default function HcmPage() {
                         )}
                     >
                         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full grid md:grid-cols-2 items-center">
-                            <div className="text-left">
+                            <div className={cn(slide.textAlign, slide.textOrder)}>
                                 <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-none">
-                                    Nuestra <br/> Póliza de Salud
+                                    {slide.title}
                                 </h1>
                             </div>
-                            <div className="relative h-full w-full hidden md:flex items-center justify-center">
+                            <div className={cn("relative h-full w-full hidden md:flex items-center justify-center", slide.imageOrder)}>
                                  <div className="relative w-[400px] h-[400px]">
                                      <Image
                                         src={slide.imageUrl}
