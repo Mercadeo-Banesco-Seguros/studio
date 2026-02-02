@@ -120,12 +120,13 @@ const coverageColumn1 = [
   { amount: "USD 3000", service: "Hospitalización y Cirugía" },
   { amount: "USD 2000", service: "Maternidad" },
   { amount: "USD 1000", service: "Atención Primaria Salud" },
-  { amount: "USD 1000", service: "Servicios Funerarios" },
+  { amount: "USD 1000", service: "Retiro Medicamentos" },
+  { amount: "Por evento", service: "Servicios Odontológicos" },
 ];
 
 const coverageColumn2 = [
-  { amount: "Por evento", service: "Servicios Odontológicos" },
-  { amount: "USD 1000", service: "Retiro Medicamentos" },
+  { amount: "Por evento", service: "Retiro Medicamentos" },
+  { amount: "USD 1000", service: "Servicios Funerarios" },
   { amount: "Ilimitado", service: "Telemedicina" },
   { amount: "Ilimitado", service: "Atención Domiciliaria" },
 ];
