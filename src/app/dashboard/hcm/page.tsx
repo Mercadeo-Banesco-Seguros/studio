@@ -126,7 +126,7 @@ const coverageColumn1 = [
 
 const coverageColumn2 = [
   { amount: "Por evento", service: "Servicios Odontológicos" },
-  { amount: "Por evento", service: "Retiro Medicamentos" },
+  { amount: "USD 1000", service: "Retiro Medicamentos" },
   { amount: "Ilimitado", service: "Telemedicina" },
   { amount: "Ilimitado", service: "Atención Domiciliaria" },
 ];
@@ -333,8 +333,8 @@ export default function HcmPage() {
             <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-24">
                 
                 <section>
-                    <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-center text-primary">
-                        <div className="lg:col-span-1">
+                    <div className="grid lg:grid-cols-4 gap-8 xl:gap-16 items-center text-primary">
+                        <div className="lg:col-span-2">
                             <h2 className="text-5xl font-extrabold tracking-tighter leading-none">
                                 Cobertura de la <br /> Póliza Básica
                             </h2>
@@ -502,7 +502,3 @@ export default function HcmPage() {
         </div>
     );
 }
-
-    
-
-    
