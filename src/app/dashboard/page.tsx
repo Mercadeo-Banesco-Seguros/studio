@@ -613,7 +613,7 @@ export default function DashboardPage() {
                             
                             <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Planifica tus Próximas Vacaciones</h3>
                             <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
-                                <Link href="/dashboard/vacaciones">Gestionar</Link>
+                                <Link href="https://docs.google.com/forms/d/e/1FAIpQLSdVQd6O7sLc7p6OJiatIA1XqC7hhaixpZzusYM6g7eidIwCEw/viewform" target="_blank" rel="noopener noreferrer">Gestionar</Link>
                             </Button>
                         </div>
                     </Card>
@@ -630,7 +630,7 @@ export default function DashboardPage() {
                             <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Capital Humano</Badge>
                              <h3 className="text-2xl font-bold tracking-tight">Consultar Días Disponibles</h3>
                              <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
-                                <Link href="/dashboard/vacaciones">Consultar</Link>
+                                <Link href="https://lookerstudio.google.com/u/0/reporting/c140be02-5b6a-4610-a708-6316f359a09c/page/fkvxC" target="_blank" rel="noopener noreferrer">Consultar</Link>
                             </Button>
                         </div>
                     </Card>
@@ -1057,6 +1057,7 @@ export default function DashboardPage() {
     </div>
   );
 }
+
 
 
 
