@@ -33,7 +33,7 @@ const slides = [
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
       textAlign: 'text-right',
-      imageClassName: 'translate-y-12'
+      imageClassName: 'translate-y-12 w-[580px] h-[580px]'
     },
 ];
 
@@ -117,16 +117,18 @@ const contactMethods = [
     }
 ]
 
-const coverageData = [
-  { service: "Hospitalización y Cirugía", value: "1.500", unit: "$", description: "por patología" },
-  { service: "Maternidad", value: "1.500", unit: "$", description: "" },
-  { service: "Atención Primaria de Salud (APS)", value: "1.000", unit: "$", description: "ó 12 órdenes anuales (3/mes no acumulativas)" },
-  { service: "Retiro de Medicamentos (Telemedi)", value: "1.000", unit: "$", description: "ó 12 órdenes anuales (2/mes no acumulativas)" },
-  { service: "Servicios Odontológicos", value: null, unit: "Por Evento", description: "Se activa por evento" },
-  { service: "Servicios Oftalmológicos", value: null, unit: "Por Evento", description: "Se activa por evento" },
-  { service: "Servicios Funerarios", value: "1.000", unit: "$", description: "" },
-  { service: "Telemedicina", value: null, unit: "Ilimitada", description: "" },
-  { service: "Atención Médica Domiciliaria", value: null, unit: "Ilimitada", description: "" },
+const coverageColumn1 = [
+  { amount: "USD 3000", service: "Hospitalización y Cirugía" },
+  { amount: "USD 2000", service: "Maternidad" },
+  { amount: "USD 1000", service: "Atención Primaria Salud" },
+  { amount: "USD 1000", service: "Servicios Funerarios" },
+];
+
+const coverageColumn2 = [
+  { amount: "Por evento", service: "Servicios Odontológicos" },
+  { amount: "Por evento", service: "Retiro Medicamentos" },
+  { amount: "Ilimitado", service: "Telemedicina" },
+  { amount: "Ilimitado", service: "Atención Domiciliaria" },
 ];
 
 
@@ -331,31 +333,28 @@ export default function HcmPage() {
             <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-24">
                 
                 <section>
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold tracking-tight">Cobertura de la Póliza Básica</h2>
-                        <p className="text-muted-foreground mt-2">Resumen de los beneficios y límites de tu plan.</p>
-                    </div>
-                    <div className="max-w-4xl mx-auto">
-                        <Card className="bg-muted rounded-2xl overflow-hidden">
-                            <CardContent className="p-0">
-                                <Table>
-                                    <TableHeader>
-                                        <TableRow className="border-b-0">
-                                            <TableHead className="text-left text-muted-foreground">Servicio</TableHead>
-                                            <TableHead className="text-right text-muted-foreground">Cobertura</TableHead>
-                                        </TableRow>
-                                    </TableHeader>
-                                    <TableBody>
-                                        {coverageData.map((item) => (
-                                            <TableRow key={item.service} className="border-b-0">
-                                                <TableCell className="font-medium text-left">{item.service}</TableCell>
-                                                <TableCell className="text-right">{item.value ? `${item.unit}${item.value}` : item.unit}</TableCell>
-                                            </TableRow>
-                                        ))}
-                                    </TableBody>
-                                </Table>
-                            </CardContent>
-                        </Card>
+                    <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-center text-primary">
+                        <div className="lg:col-span-1">
+                            <h2 className="text-5xl font-extrabold tracking-tighter leading-none">
+                                Cobertura de la <br /> Póliza Básica
+                            </h2>
+                        </div>
+                        <div className="space-y-8">
+                            {coverageColumn1.map((item, index) => (
+                                <div key={`col1-${index}`}>
+                                    <p className="text-3xl font-extrabold tracking-tighter">{item.amount}</p>
+                                    <p className="text-sm text-primary/80">{item.service}</p>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="space-y-8">
+                            {coverageColumn2.map((item, index) => (
+                                <div key={`col2-${index}`}>
+                                    <p className="text-3xl font-extrabold tracking-tighter">{item.amount}</p>
+                                    <p className="text-sm text-primary/80">{item.service}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </section>
                 
