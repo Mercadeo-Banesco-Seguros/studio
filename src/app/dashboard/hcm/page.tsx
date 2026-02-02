@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -117,15 +116,12 @@ const contactMethods = [
     }
 ]
 
-const coverageColumn1 = [
+const allCoverageItems = [
   { amount: "USD 3000", service: "Hospitalización y Cirugía" },
   { amount: "USD 2000", service: "Maternidad" },
   { amount: "USD 1000", service: "Atención Primaria Salud" },
   { amount: "USD 1000", service: "Retiro Medicamentos" },
   { amount: "Por evento", service: "Servicios Odontológicos" },
-];
-
-const coverageColumn2 = [
   { amount: "Por evento", service: "Retiro Medicamentos" },
   { amount: "USD 1000", service: "Servicios Funerarios" },
   { amount: "Ilimitado", service: "Telemedicina" },
@@ -334,23 +330,15 @@ export default function HcmPage() {
             <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-24">
                 
                 <section>
-                    <div className="grid lg:grid-cols-4 gap-8 xl:gap-16 items-center text-primary">
-                        <div className="lg:col-span-2">
+                    <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-center text-primary">
+                        <div className="lg:col-span-1">
                             <h2 className="text-6xl font-extrabold tracking-tighter leading-none">
                                 Cobertura de la <br /> Póliza Básica
                             </h2>
                         </div>
-                        <div className="space-y-8">
-                            {coverageColumn1.map((item, index) => (
-                                <div key={`col1-${index}`}>
-                                    <p className="text-3xl font-extrabold tracking-tighter">{item.amount}</p>
-                                    <p className="text-sm text-primary/80">{item.service}</p>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="space-y-8">
-                            {coverageColumn2.map((item, index) => (
-                                <div key={`col2-${index}`}>
+                        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {allCoverageItems.map((item, index) => (
+                                <div key={`coverage-${index}`}>
                                     <p className="text-3xl font-extrabold tracking-tighter">{item.amount}</p>
                                     <p className="text-sm text-primary/80">{item.service}</p>
                                 </div>
