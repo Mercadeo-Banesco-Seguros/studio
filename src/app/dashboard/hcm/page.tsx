@@ -27,8 +27,8 @@ const slides = [
       id: 2,
       title: "Gestiona tu salud de forma rápida y sencilla.",
       gradient: 'bg-gradient-to-l from-[#345cff] to-[#c1caf1]',
-      imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_3kl1tx3kl1tx3kl1-Photoroom.png?raw=true',
-      dataAiHint: 'health protection',
+      imageUrl: '',
+      dataAiHint: '',
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
       textAlign: 'text-right',
@@ -309,16 +309,18 @@ export default function HcmPage() {
                                 </h1>
                             </div>
                             <div className={cn("relative h-full w-full hidden md:flex items-center justify-center", slide.imageOrder)}>
-                                 <div className={cn("relative w-[400px] h-[400px]", slide.imageClassName)}>
-                                     <Image
-                                        src={slide.imageUrl}
-                                        alt={slide.dataAiHint}
-                                        layout="fill"
-                                        objectFit="contain"
-                                        data-ai-hint={slide.dataAiHint}
-                                        priority={index === 0}
-                                    />
-                                 </div>
+                                 {slide.imageUrl && (
+                                     <div className={cn("relative w-[400px] h-[400px]", slide.imageClassName)}>
+                                         <Image
+                                            src={slide.imageUrl}
+                                            alt={slide.dataAiHint || 'HCM Banner Image'}
+                                            layout="fill"
+                                            objectFit="contain"
+                                            data-ai-hint={slide.dataAiHint}
+                                            priority={index === 0}
+                                        />
+                                     </div>
+                                 )}
                             </div>
                         </div>
                     </div>
