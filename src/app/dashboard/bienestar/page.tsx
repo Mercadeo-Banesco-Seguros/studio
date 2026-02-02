@@ -41,6 +41,28 @@ type Satisfaction = 'happy' | 'neutral' | 'sad' | null;
 
 const weekDays = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
 
+const getMonthlyThematicImage = (events: { title: string }[]): { imageUrl: string; dataAiHint: string } | null => {
+    const titles = events.map(e => e.title.toLowerCase());
+    
+    if (titles.some(t => t.includes('navidad'))) {
+        return { imageUrl: "https://cdn.shopify.com/s/files/1/0411/7381/1350/files/origen_del_arbol_de_navidad_-_alblanc1.jpg?v=1637495190", dataAiHint: "christmas tree" };
+    }
+    if (titles.some(t => t.includes('carnaval'))) {
+        return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_zb4dnhzb4dnhzb4d-Photoroom.png?raw=true", dataAiHint: "carnival mask" };
+    }
+    if (titles.some(t => t.includes('halloween'))) {
+        return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(59).png?raw=true", dataAiHint: "halloween pumpkin" };
+    }
+    if (titles.some(t => t.includes('independencia'))) {
+        return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_wr32ivwr32ivwr32-Photoroom.png?raw=true", dataAiHint: "venezuela flag" };
+    }
+    if (titles.some(t => t.includes('pascua') || t.includes('semana santa') || t.includes('santo'))) {
+        return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_juve0ejuve0ejuve-Photoroom.png?raw=true", dataAiHint: "easter eggs" };
+    }
+    return null;
+};
+
+
 export default function BienestarPage() {
     const [selectedDay, setSelectedDay] = useState(weekDays[0]);
     const [allMenuItems, setAllMenuItems] = useState<MenuItem[]>([]);
@@ -113,8 +135,10 @@ export default function BienestarPage() {
                 })
                 .sort((a, b) => a.date.getTime() - b.date.getTime());
 
+            const monthlyThematicImage = getMonthlyThematicImage(specialEventsThisMonth);
+
             const formattedEvents = specialEventsThisMonth.slice(0, 2).map(event => {
-              const { imageUrl, dataAiHint } = getEventImage(event.title);
+              const { imageUrl, dataAiHint } = monthlyThematicImage || getEventImage(event.title);
               return {
                 title: event.title,
                 date: format(event.date, "d 'de' MMMM", { locale: es }),
