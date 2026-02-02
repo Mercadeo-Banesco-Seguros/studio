@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -21,7 +20,8 @@ const slides = [
       dataAiHint: 'health shield',
       textOrder: 'md:order-1',
       imageOrder: 'md:order-2',
-      textAlign: 'text-left'
+      textAlign: 'text-left',
+      imageClassName: ''
     },
     {
       id: 2,
@@ -31,7 +31,8 @@ const slides = [
       dataAiHint: 'health protection',
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
-      textAlign: 'text-right'
+      textAlign: 'text-right',
+      imageClassName: 'translate-y-12'
     },
 ];
 
@@ -308,7 +309,7 @@ export default function HcmPage() {
                                 </h1>
                             </div>
                             <div className={cn("relative h-full w-full hidden md:flex items-center justify-center", slide.imageOrder)}>
-                                 <div className="relative w-[400px] h-[400px]">
+                                 <div className={cn("relative w-[400px] h-[400px]", slide.imageClassName)}>
                                      <Image
                                         src={slide.imageUrl}
                                         alt={slide.dataAiHint}
