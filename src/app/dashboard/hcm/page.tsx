@@ -311,7 +311,7 @@ export default function HcmPage() {
                             </div>
                             <div className={cn("relative h-full w-full hidden md:flex items-center justify-center", slide.imageOrder)}>
                                  {slide.imageUrl && (
-                                     <div className={cn("relative w-[400px] h-[400px]", slide.imageClassName)}>
+                                     <div className={cn("relative", slide.id === 2 ? "w-[520px] h-[520px]" : "w-[400px] h-[400px]", slide.imageClassName)}>
                                          <Image
                                             src={slide.imageUrl}
                                             alt={slide.dataAiHint || 'HCM Banner Image'}
@@ -503,3 +503,5 @@ export default function HcmPage() {
         </div>
     );
 }
+
+    
