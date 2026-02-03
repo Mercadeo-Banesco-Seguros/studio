@@ -131,13 +131,22 @@ const allCoverageItems = [
 const dentalCoverageItems = [
     { amount: '1 evento', service: 'Consulta Diagnóstica (Odontología General)' },
     { amount: '4 eventos', service: 'Radiografía Coronal y/o Periapical', note: '(2 Diagnósticos / 2 en el Alta)' },
-    { amount: '1 evento total', service: 'Prevención y Sellantes', note: 'Tartrectomía, Flúor, Sellantes.' },
+    { amount: '1 evento total', service: 'Tartrectomía y Profilaxis', note: '(Prevención y Sellantes)' },
+    { amount: '1 evento total', service: 'Flúor Aplicación Tópica', note: '(hasta los 12 años)' },
+    { amount: '1 evento total', service: 'Sellantes de Fosas y Fisuras', note: '(hasta los 12 años)' },
     { amount: 'Ilimitados', service: 'Emergencia Endodóntica' },
     { amount: 'Ilimitados', service: 'Emergencia Periodontal' },
     { amount: 'Ilimitados', service: 'Emergencia Protésica' },
-    { amount: 'Límite 3 eventos', service: 'Restauraciones y Cirugía' },
-    { amount: 'Límite 1 evento', service: 'Tratamientos de Conducto' },
-    { amount: 'Cubierto', service: 'Odontopediatría', note: 'Endodoncia y Pulpotomía.' },
+    { amount: 'Límite 3 eventos', service: 'Restauración en Resina/Amalgama (Clase I y II)'},
+    { amount: 'Límite 3 eventos', service: 'Restauración en Resina/Amalgama (Clase Mod VI)'},
+    { amount: 'Límite 3 eventos', service: 'Restauración en Resinas (Clase III y IV)'},
+    { amount: 'Límite 3 eventos', service: 'Restauración Clase V (Resinas/Vidrios Ionómeros)'},
+    { amount: 'Límite 3 eventos', service: 'Exodoncia Simple'},
+    { amount: 'Límite 3 eventos', service: 'Extracción de 3eros. Molares Simples'},
+    { amount: 'Límite 1 evento', service: 'Endodoncia Monorradicular'},
+    { amount: 'Límite 1 evento', service: 'Endodoncia Birradicular'},
+    { amount: 'Límite 1 evento', service: 'Endodoncia Multiarticular'},
+    { amount: 'Cubierto', service: 'Odontopediatría (Endodoncia y Pulpotomía)'}
 ];
 
 const coveredPathologies = [
@@ -359,7 +368,7 @@ export default function HcmPage() {
                 </section>
                 
                 <section>
-                    <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-center">
+                    <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-start">
                         <div className="lg:col-span-1">
                             <h2 className="text-6xl font-extrabold tracking-tighter leading-none text-primary">
                                 Cobertura de la <br /> Póliza Básica
@@ -378,14 +387,14 @@ export default function HcmPage() {
                 </section>
 
                 <section>
-                    <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-center">
+                    <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-start">
                         <div className="lg:col-span-1">
                             <h2 className="text-6xl font-extrabold tracking-tighter leading-none text-primary">
                                 Cobertura Odontológica
                             </h2>
                             <p className="text-muted-foreground mt-4">100% de cobertura en todos los rubros.</p>
                         </div>
-                        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 lg:pl-16">
+                         <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 lg:pl-16">
                             {dentalCoverageItems.map((item, index) => (
                                 <div key={`dental-coverage-${index}`}>
                                     <p className="text-3xl font-extrabold tracking-tighter text-foreground">{item.amount}</p>
@@ -519,6 +528,8 @@ export default function HcmPage() {
             </div>
         </div>
     );
+
+    
 
     
 
