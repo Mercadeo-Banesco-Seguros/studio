@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -30,7 +31,7 @@ const slides = [
       dataAiHint: 'digital health',
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
-      imageClassName: 'w-[480px] h-[480px] -translate-y-8'
+      imageClassName: 'w-[480px] h-[480px]'
     },
 ];
 
@@ -433,44 +434,50 @@ export default function HcmPage() {
                 </section>
 
                 <section>
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold tracking-tight">Protocolos y Procedimientos</h2>
-                        <p className="text-muted-foreground mt-2">Sigue estos sencillos pasos para realizar tus gestiones.</p>
+                    <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-start">
+                        <div className="lg:col-span-1">
+                            <h2 className="text-5xl font-extrabold tracking-tighter leading-none text-primary">
+                                Protocolos y <br /> Procedimientos
+                            </h2>
+                            <p className="text-muted-foreground mt-4">Sigue estos sencillos pasos para realizar tus gestiones.</p>
+                        </div>
+                        <div className="lg:col-span-2">
+                            <Accordion type="single" collapsible className="w-full">
+                                <AccordionItem value="aval">
+                                    <AccordionTrigger className="text-lg font-semibold">Solicitud de Carta Aval</AccordionTrigger>
+                                    <AccordionContent>
+                                        <div className="pt-4">
+                                            {avalRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
+                                        </div>
+                                    </AccordionContent>
+                                </AccordionItem>
+                                <AccordionItem value="reembolso">
+                                    <AccordionTrigger className="text-lg font-semibold">Solicitud de Reembolso</AccordionTrigger>
+                                    <AccordionContent>
+                                        <div className="pt-4">
+                                            {reimbursementRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
+                                        </div>
+                                    </AccordionContent>
+                                </AccordionItem>
+                                <AccordionItem value="odontologica">
+                                    <AccordionTrigger className="text-lg font-semibold">Atención Odontológica</AccordionTrigger>
+                                    <AccordionContent>
+                                        <div className="pt-4">
+                                            {dentalProtocolSteps.map((step) => <StepCard key={step.step} {...step} />)}
+                                        </div>
+                                    </AccordionContent>
+                                </AccordionItem>
+                                <AccordionItem value="medicinas">
+                                    <AccordionTrigger className="text-lg font-semibold">Solicitud de Medicinas</AccordionTrigger>
+                                    <AccordionContent>
+                                       <div className="pt-4">
+                                            {medicineRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
+                                        </div>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
+                        </div>
                     </div>
-                    <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
-                        <AccordionItem value="aval">
-                            <AccordionTrigger className="text-lg font-semibold">Solicitud de Carta Aval</AccordionTrigger>
-                            <AccordionContent>
-                                <div className="pt-4">
-                                    {avalRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
-                                </div>
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="reembolso">
-                            <AccordionTrigger className="text-lg font-semibold">Solicitud de Reembolso</AccordionTrigger>
-                            <AccordionContent>
-                                <div className="pt-4">
-                                    {reimbursementRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
-                                </div>
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="odontologica">
-                            <AccordionTrigger className="text-lg font-semibold">Atención Odontológica</AccordionTrigger>
-                            <AccordionContent>
-                                <div className="pt-4">
-                                    {dentalProtocolSteps.map((step) => <StepCard key={step.step} {...step} />)}
-                                </div>
-                            </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="medicinas">
-                            <AccordionTrigger className="text-lg font-semibold">Solicitud de Medicinas</AccordionTrigger>
-                            <AccordionContent>
-                               <div className="pt-4">
-                                    {medicineRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
-                                </div>
-                            </AccordionContent>
-                        </AccordionItem>
-                    </Accordion>
                 </section>
                 
                  <section>
@@ -552,3 +559,5 @@ export default function HcmPage() {
         </div>
     );
 }
+
+    
