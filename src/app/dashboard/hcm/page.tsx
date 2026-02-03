@@ -448,7 +448,7 @@ export default function HcmPage() {
                 <section>
                     <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-start">
                         <div className="lg:col-span-1">
-                             <h2 className="text-5xl font-extrabold tracking-tighter leading-none text-primary">
+                            <h2 className="text-5xl font-extrabold tracking-tighter leading-none text-primary">
                                 Protocolos y <br /> Procedimientos
                             </h2>
                             <p className="text-muted-foreground mt-4">Sigue estos sencillos pasos para realizar tus gestiones.</p>
@@ -492,37 +492,43 @@ export default function HcmPage() {
                     </div>
                 </section>
                 
-                 <section>
-                    <Card className="rounded-2xl shadow-sm bg-muted overflow-hidden">
-                         <CardHeader className="text-center mb-8 px-6 pt-8">
-                            <CardTitle className="text-3xl font-bold tracking-tight">Patologías de Emergencias Cubiertas</CardTitle>
-                            <CardDescription className="text-muted-foreground mt-2">Lista de patologías cubiertas por la Póliza de urgencias y emergencias médicas.</CardDescription>
-                        </CardHeader>
-                        <CardContent className="p-0">
-                            <Table>
-                                <TableHeader>
-                                    <TableRow className="border-b-0">
-                                        <TableHead className="w-[250px] text-muted-foreground">Categoría</TableHead>
-                                        <TableHead className="text-muted-foreground">Patologías Cubiertas</TableHead>
-                                    </TableRow>
-                                </TableHeader>
-                                <TableBody>
-                                    {coveredPathologies.map((category) => (
-                                        <TableRow key={category.category} className="border-b-0">
-                                            <TableCell className="font-medium align-top">{category.category}</TableCell>
-                                            <TableCell>
-                                                <ul className="list-disc pl-5 space-y-1 text-xs">
-                                                    {category.items.map((item) => (
-                                                        <li key={item}>{item}</li>
-                                                    ))}
-                                                </ul>
-                                            </TableCell>
-                                        </TableRow>
-                                    ))}
-                                </TableBody>
-                            </Table>
-                        </CardContent>
-                    </Card>
+                <section>
+                    <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-start">
+                        <div className="lg:col-span-1">
+                            <h2 className="text-5xl font-extrabold tracking-tighter leading-none text-primary">
+                                Patologías de Emergencias Cubiertas
+                            </h2>
+                            <p className="text-muted-foreground mt-4">Lista de patologías cubiertas por la Póliza de urgencias y emergencias médicas.</p>
+                        </div>
+                        <div className="lg:col-span-2 lg:pl-16">
+                            <Card className="rounded-2xl shadow-sm bg-muted overflow-hidden">
+                                <CardContent className="p-0">
+                                    <Table>
+                                        <TableHeader>
+                                            <TableRow>
+                                                <TableHead className="w-[250px] p-6">Categoría</TableHead>
+                                                <TableHead className="p-6">Patologías Cubiertas</TableHead>
+                                            </TableRow>
+                                        </TableHeader>
+                                        <TableBody>
+                                            {coveredPathologies.map((category) => (
+                                                <TableRow key={category.category} className="last:border-b-0">
+                                                    <TableCell className="font-medium align-top p-6">{category.category}</TableCell>
+                                                    <TableCell className="p-6">
+                                                        <ul className="list-disc pl-5 space-y-1 text-xs text-muted-foreground">
+                                                            {category.items.map((item) => (
+                                                                <li key={item}>{item}</li>
+                                                            ))}
+                                                        </ul>
+                                                    </TableCell>
+                                                </TableRow>
+                                            ))}
+                                        </TableBody>
+                                    </Table>
+                                </CardContent>
+                            </Card>
+                        </div>
+                    </div>
                 </section>
 
 
