@@ -21,7 +21,7 @@ const slides = [
       dataAiHint: 'health shield',
       textOrder: 'md:order-1',
       imageOrder: 'md:order-2',
-      imageClassName: 'w-[560px] h-[560px]'
+      imageClassName: 'w-[500px] h-[500px]'
     },
     {
       id: 2,
@@ -31,7 +31,7 @@ const slides = [
       dataAiHint: 'digital health',
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
-      imageClassName: 'w-[480px] h-[480px] pt-[22rem]'
+      imageClassName: 'w-[480px] h-[480px] translate-y-24'
     },
 ];
 
