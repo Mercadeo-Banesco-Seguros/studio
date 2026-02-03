@@ -21,7 +21,7 @@ const slides = [
       dataAiHint: 'health shield',
       textOrder: 'md:order-1',
       imageOrder: 'md:order-2',
-      imageClassName: 'w-[336px] h-[336px]'
+      imageClassName: 'w-[235px] h-[235px]'
     },
     {
       id: 2,
@@ -31,7 +31,7 @@ const slides = [
       dataAiHint: 'digital health',
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
-      imageClassName: 'w-[480px] h-[480px] md:translate-y-4'
+      imageClassName: 'w-[480px] h-[480px]'
     },
 ];
 
@@ -365,7 +365,7 @@ export default function HcmPage() {
                                                 objectFit="contain"
                                             />
                                         </div>
-                                        <h3 className="font-bold text-base mb-2 text-foreground">{action.title}</h3>
+                                        <h3 className="font-bold text-lg tracking-tight mb-2 text-foreground">{action.title}</h3>
                                         <p className="text-sm leading-relaxed text-muted-foreground">{action.description}</p>
                                     </CardContent>
                                 </Card>
