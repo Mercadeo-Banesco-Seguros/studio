@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -30,7 +31,7 @@ const slides = [
       dataAiHint: 'digital health',
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
-      imageClassName: 'w-[480px] h-[480px] pt-32'
+      imageClassName: 'w-[480px] h-[480px] pt-52'
     },
 ];
 
