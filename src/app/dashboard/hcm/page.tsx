@@ -22,7 +22,7 @@ const slides = [
       textOrder: 'md:order-1',
       imageOrder: 'md:order-2',
       textAlign: 'text-left',
-      imageClassName: 'w-[400px] h-[400px] -translate-y-8'
+      imageClassName: 'w-[400px] h-[400px]'
     },
     {
       id: 2,
@@ -33,7 +33,7 @@ const slides = [
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
       textAlign: 'text-right',
-      imageClassName: 'w-[680px] h-[680px]'
+      imageClassName: 'w-[680px] h-[680px] translate-y-8'
     },
 ];
 
@@ -311,7 +311,7 @@ export default function HcmPage() {
                             </div>
                             <div className={cn("relative h-full w-full hidden md:flex items-center justify-center", slide.imageOrder)}>
                                  {slide.imageUrl && (
-                                     <div className={cn("relative w-[480px] h-[480px]", slide.imageClassName)}>
+                                     <div className={cn("relative", slide.imageClassName)}>
                                          <Image
                                             src={slide.imageUrl}
                                             alt={slide.dataAiHint || 'HCM Banner Image'}
@@ -331,10 +331,6 @@ export default function HcmPage() {
             <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-24">
                 
                 <section>
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold tracking-tight">Gestiones Principales</h2>
-                        <p className="text-muted-foreground mt-2">Accede directamente a las operaciones más frecuentes.</p>
-                    </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {hcmActions.map((action) => (
                             <Link href={action.href} key={action.title} target="_blank" rel="noopener noreferrer" className="block group">
