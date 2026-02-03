@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -32,7 +33,7 @@ const slides = [
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
       textAlign: 'text-right',
-      imageClassName: 'w-[480px] h-[480px]'
+      imageClassName: 'w-[480px] h-[480px] md:translate-y-8'
     },
 ];
 
