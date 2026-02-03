@@ -21,7 +21,7 @@ const slides = [
       dataAiHint: 'health shield',
       textOrder: 'md:order-1',
       imageOrder: 'md:order-2',
-      imageClassName: 'w-[400px] h-[400px]'
+      imageClassName: 'w-[480px] h-[480px]'
     },
     {
       id: 2,
@@ -31,7 +31,7 @@ const slides = [
       dataAiHint: 'digital health',
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
-      imageClassName: 'w-[480px] h-[480px]'
+      imageClassName: 'w-[480px] h-[480px] pt-16'
     },
 ];
 
@@ -330,7 +330,7 @@ export default function HcmPage() {
                                     {slide.title}
                                 </h1>
                             </div>
-                            <div className={cn("relative h-full w-full hidden md:flex items-center justify-center", slide.imageOrder, slide.id === 2 ? 'pt-16' : '')}>
+                            <div className={cn("relative h-full w-full hidden md:flex items-center justify-center", slide.imageOrder)}>
                                  {slide.imageUrl && (
                                      <div className={cn("relative", slide.imageClassName)}>
                                          <Image
@@ -441,10 +441,10 @@ export default function HcmPage() {
                             </h2>
                             <p className="text-muted-foreground mt-4">Sigue estos sencillos pasos para realizar tus gestiones.</p>
                         </div>
-                        <div className="lg:col-span-2">
+                        <div className="lg:col-span-2 lg:pl-16">
                             <Accordion type="single" collapsible className="w-full">
                                 <AccordionItem value="aval">
-                                    <AccordionTrigger className="text-lg font-semibold">Solicitud de Carta Aval</AccordionTrigger>
+                                    <AccordionTrigger className="text-lg font-semibold tracking-tight">Solicitud de Carta Aval</AccordionTrigger>
                                     <AccordionContent>
                                         <div className="pt-4">
                                             {avalRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
@@ -452,7 +452,7 @@ export default function HcmPage() {
                                     </AccordionContent>
                                 </AccordionItem>
                                 <AccordionItem value="reembolso">
-                                    <AccordionTrigger className="text-lg font-semibold">Solicitud de Reembolso</AccordionTrigger>
+                                    <AccordionTrigger className="text-lg font-semibold tracking-tight">Solicitud de Reembolso</AccordionTrigger>
                                     <AccordionContent>
                                         <div className="pt-4">
                                             {reimbursementRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
@@ -460,7 +460,7 @@ export default function HcmPage() {
                                     </AccordionContent>
                                 </AccordionItem>
                                 <AccordionItem value="odontologica">
-                                    <AccordionTrigger className="text-lg font-semibold">Atención Odontológica</AccordionTrigger>
+                                    <AccordionTrigger className="text-lg font-semibold tracking-tight">Atención Odontológica</AccordionTrigger>
                                     <AccordionContent>
                                         <div className="pt-4">
                                             {dentalProtocolSteps.map((step) => <StepCard key={step.step} {...step} />)}
@@ -468,7 +468,7 @@ export default function HcmPage() {
                                     </AccordionContent>
                                 </AccordionItem>
                                 <AccordionItem value="medicinas">
-                                    <AccordionTrigger className="text-lg font-semibold">Solicitud de Medicinas</AccordionTrigger>
+                                    <AccordionTrigger className="text-lg font-semibold tracking-tight">Solicitud de Medicinas</AccordionTrigger>
                                     <AccordionContent>
                                        <div className="pt-4">
                                             {medicineRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
@@ -559,5 +559,7 @@ export default function HcmPage() {
         </div>
     );
 }
+
+    
 
     
