@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -21,7 +20,7 @@ const slides = [
       dataAiHint: 'health shield',
       textOrder: 'md:order-1',
       imageOrder: 'md:order-2',
-      imageClassName: 'w-[520px] h-[520px]'
+      imageClassName: 'w-[560px] h-[560px]'
     },
     {
       id: 2,
@@ -31,7 +30,7 @@ const slides = [
       dataAiHint: 'digital health',
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
-      imageClassName: 'w-[480px] h-[480px] pt-16'
+      imageClassName: 'w-[480px] h-[480px] pt-32'
     },
 ];
 
@@ -413,7 +412,7 @@ export default function HcmPage() {
                             </h2>
                             <p className="text-muted-foreground mt-4">Detalle de la cobertura para servicios odontológicos.</p>
                         </div>
-                        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 lg:pl-16">
+                         <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 lg:pl-16">
                             {dentalCoverageItems.flatMap(category => category.items).map((item, index) => (
                                 <div key={`dental-coverage-${index}`}>
                                     <p className="text-3xl font-extrabold tracking-tighter text-foreground">{item.amount}</p>
@@ -448,7 +447,7 @@ export default function HcmPage() {
                 <section>
                     <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-start">
                         <div className="lg:col-span-1">
-                            <h2 className="text-5xl font-extrabold tracking-tighter leading-none text-primary">
+                             <h2 className="text-5xl font-extrabold tracking-tighter leading-none text-primary">
                                 Protocolos y <br /> Procedimientos
                             </h2>
                             <p className="text-muted-foreground mt-4">Sigue estos sencillos pasos para realizar tus gestiones.</p>
