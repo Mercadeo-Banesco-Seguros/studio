@@ -33,7 +33,7 @@ const slides = [
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
       textAlign: 'text-right',
-      imageClassName: 'translate-y-12 w-[580px] h-[580px]'
+      imageClassName: 'translate-y-12 w-[680px] h-[680px]'
     },
 ];
 
@@ -311,7 +311,7 @@ export default function HcmPage() {
                             </div>
                             <div className={cn("relative h-full w-full hidden md:flex items-center justify-center", slide.imageOrder)}>
                                  {slide.imageUrl && (
-                                     <div className={cn("relative w-[580px] h-[580px]", slide.imageClassName)}>
+                                     <div className={cn("relative w-[480px] h-[480px]", slide.imageClassName)}>
                                          <Image
                                             src={slide.imageUrl}
                                             alt={slide.dataAiHint || 'HCM Banner Image'}
