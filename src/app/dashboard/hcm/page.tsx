@@ -21,7 +21,7 @@ const slides = [
       dataAiHint: 'health shield',
       textOrder: 'md:order-1',
       imageOrder: 'md:order-2',
-      imageClassName: 'w-[480px] h-[480px]'
+      imageClassName: 'w-[520px] h-[520px]'
     },
     {
       id: 2,
@@ -559,7 +559,3 @@ export default function HcmPage() {
         </div>
     );
 }
-
-    
-
-    
