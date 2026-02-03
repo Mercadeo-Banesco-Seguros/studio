@@ -22,7 +22,7 @@ const slides = [
       textOrder: 'md:order-1',
       imageOrder: 'md:order-2',
       textAlign: 'text-left',
-      imageClassName: 'w-[480px] h-[480px]'
+      imageClassName: 'w-[520px] h-[520px]'
     },
     {
       id: 2,
@@ -33,7 +33,7 @@ const slides = [
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
       textAlign: 'text-right',
-      imageClassName: 'w-[480px] h-[480px] md:-translate-y-8'
+      imageClassName: 'w-[480px] h-[480px] md:translate-y-8'
     },
 ];
 
@@ -390,7 +390,7 @@ export default function HcmPage() {
                             {allCoverageItems.map((item, index) => (
                                 <div key={`coverage-${index}`}>
                                     <p className="text-3xl font-extrabold tracking-tighter text-foreground">{item.amount}</p>
-                                    <p className="text-sm text-muted-foreground">{item.service}</p>
+                                    <p className="text-sm text-foreground">{item.service}</p>
                                     {item.note && <p className="text-xs text-muted-foreground/80 mt-1">{item.note}</p>}
                                 </div>
                             ))}
