@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowLeft, ArrowRight, ShieldCheck, FileText, Stethoscope, Search, MessageSquare, Phone, Mail, HelpCircle, FilePlus2, Receipt, Hospital, Landlord, HeartPulse, User, Cross, Coins, HandCoins, BookUser, Ambulance, Info, Building, LifeBuoy, FileBarChart, Laptop } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ShieldCheck, FileText, Stethoscope, Search, MessageSquare, Phone, Mail, HelpCircle, FilePlus2, Receipt, Hospital, Landlord, HeartPulse, User, Cross, Coins, HandCoins, BookUser, Ambulance, Info, Building, LifeBuoy, FileBarChart, Laptop, Calculator } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
@@ -21,8 +21,7 @@ const slides = [
       dataAiHint: 'health shield',
       textOrder: 'md:order-1',
       imageOrder: 'md:order-2',
-      textAlign: 'text-left',
-      imageClassName: 'w-[520px] h-[520px]'
+      imageClassName: 'w-[480px] h-[480px]'
     },
     {
       id: 2,
@@ -32,7 +31,6 @@ const slides = [
       dataAiHint: 'digital health',
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
-      textAlign: 'text-right',
       imageClassName: 'w-[480px] h-[480px] md:translate-y-8'
     },
 ];
@@ -40,20 +38,12 @@ const slides = [
 
 const hcmActions = [
     {
-        title: "Solicitar Clave de Emergencia",
-        description: "Genera una clave para atención médica inmediata.",
-        icon: FilePlus2,
-        href: "https://www.banesconline.com/rw/personas/solicitud-de-cartas-avales-y-claves-de-emergencia",
+        title: "Solicitar Medicinas",
+        description: "Solicita el envío de tus medicamentos a domicilio o farmacia.",
+        icon: Ambulance,
+        href: "#",
         bgColor: "bg-red-50",
         iconColor: "text-red-600"
-    },
-    {
-        title: "Gestionar Reembolsos",
-        description: "Sube tus facturas y sigue el estado de tus solicitudes.",
-        icon: Receipt,
-        href: "https://www.banesconline.com/rw/personas/solicitud-de-reembolsos",
-        bgColor: "bg-blue-50",
-        iconColor: "text-blue-600"
     },
     {
         title: "Buscar Proveedores",
@@ -70,6 +60,14 @@ const hcmActions = [
         href: "https://www.banesconline.com/rw/seguros/condiciones-generales-y-particulares",
         bgColor: "bg-indigo-50",
         iconColor: "text-indigo-600"
+    },
+    {
+        title: "Calculadora de Excesos",
+        description: "Calcula los montos excedentes de tus gastos médicos.",
+        icon: Calculator,
+        href: "#",
+        bgColor: "bg-blue-50",
+        iconColor: "text-blue-600"
     }
 ];
 
@@ -390,7 +388,7 @@ export default function HcmPage() {
                             {allCoverageItems.map((item, index) => (
                                 <div key={`coverage-${index}`}>
                                     <p className="text-3xl font-extrabold tracking-tighter text-foreground">{item.amount}</p>
-                                    <p className="text-sm text-foreground">{item.service}</p>
+                                    <p className="text-sm text-muted-foreground">{item.service}</p>
                                     {item.note && <p className="text-xs text-muted-foreground/80 mt-1">{item.note}</p>}
                                 </div>
                             ))}
