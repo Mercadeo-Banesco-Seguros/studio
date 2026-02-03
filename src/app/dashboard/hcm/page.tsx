@@ -22,7 +22,7 @@ const slides = [
       textOrder: 'md:order-1',
       imageOrder: 'md:order-2',
       textAlign: 'text-left',
-      imageClassName: 'w-[350px] h-[350px]'
+      imageClassName: 'w-[480px] h-[480px]'
     },
     {
       id: 2,
@@ -33,7 +33,7 @@ const slides = [
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
       textAlign: 'text-right',
-      imageClassName: 'w-[480px] h-[480px] md:translate-y-8'
+      imageClassName: 'w-[480px] h-[480px] md:-translate-y-8'
     },
 ];
 
@@ -302,6 +302,17 @@ const StepCard = ({ step, title, color, description }: { step: string; title: st
 
 export default function HcmPage() {
     const [activeSlide, setActiveSlide] = useState(0);
+    const oftalmologicaCoverageItems = [
+      { amount: '100%', service: 'Consulta Oftalmológica' },
+      { amount: '100%', service: 'Consulta Subespecialista' },
+      { amount: '100%', service: 'Consulta Oftalmológica Sucesiva' },
+      { amount: '100%', service: 'Emergencia general' },
+      { amount: '100%', service: 'Emergencia con procedimiento' },
+      { amount: '100%', service: 'Emergencia causada a terceros' },
+      { amount: '100%', service: 'Emergencia con procedimiento causado a terceros' },
+      { amount: 'USD 40', service: 'Lentes Correctivos', note: '(Cristales o Cristales y Montura)' },
+    ];
+
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -407,6 +418,25 @@ export default function HcmPage() {
                     </div>
                 </section>
 
+                 <section>
+                    <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-start">
+                        <div className="lg:col-span-1">
+                            <h2 className="text-5xl font-extrabold tracking-tighter leading-none text-primary">
+                                Cobertura Oftalmológica
+                            </h2>
+                            <p className="text-muted-foreground mt-4">Toda la cobertura de consultas y emergencias mencionada a continuación es al 100%.</p>
+                        </div>
+                         <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 lg:pl-16">
+                            {oftalmologicaCoverageItems.map((item, index) => (
+                                <div key={`oftalmologica-coverage-${index}`}>
+                                    <p className="text-3xl font-extrabold tracking-tighter text-foreground">{item.amount}</p>
+                                    <p className="text-sm text-muted-foreground">{item.service}</p>
+                                    {item.note && <p className="text-xs text-muted-foreground/80 mt-1">{item.note}</p>}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
 
                 <section>
                     <div className="text-center mb-12">
@@ -529,3 +559,4 @@ export default function HcmPage() {
             </div>
         </div>
     );
+}
