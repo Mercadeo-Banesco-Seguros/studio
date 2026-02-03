@@ -21,7 +21,7 @@ const slides = [
       textOrder: 'md:order-1',
       imageOrder: 'md:order-2',
       textAlign: 'text-left',
-      imageClassName: 'w-[280px] h-[280px]'
+      imageClassName: 'w-[350px] h-[350px]'
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ const slides = [
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
       textAlign: 'text-right',
-      imageClassName: 'w-[680px] h-[680px]'
+      imageClassName: 'w-[480px] h-[480px]'
     },
 ];
 
@@ -389,7 +389,7 @@ export default function HcmPage() {
                 <section>
                     <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-start">
                         <div className="lg:col-span-1">
-                            <h2 className="text-6xl font-extrabold tracking-tighter leading-none text-primary">
+                            <h2 className="text-5xl font-extrabold tracking-tighter leading-none text-primary">
                                 Cobertura Odontológica
                             </h2>
                             <p className="text-muted-foreground mt-4">100% de cobertura en todos los rubros.</p>
