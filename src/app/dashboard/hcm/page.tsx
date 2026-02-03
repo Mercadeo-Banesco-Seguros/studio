@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -33,7 +32,7 @@ const slides = [
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
       textAlign: 'text-right',
-      imageClassName: 'w-[680px] h-[680px] translate-y-8'
+      imageClassName: 'w-[680px] h-[680px]'
     },
 ];
 
@@ -123,6 +122,7 @@ const allCoverageItems = [
   { amount: "USD 1000", service: "Atención Primaria Salud", note: "(12 Órdenes Anuales o 3 Órdenes Mensuales No Acumulativas)" },
   { amount: "USD 1000", service: "Retiro Medicamentos", note: "(12 Órdenes Anuales o 2 Órdenes Mensuales No Acumulativas)" },
   { amount: "Por evento", service: "Servicios Odontológicos" },
+  { amount: "Por evento", service: "Retiro Medicamentos" },
   { amount: "USD 1000", service: "Servicios Funerarios" },
   { amount: "Ilimitado", service: "Telemedicina" },
   { amount: "Ilimitado", service: "Atención Domiciliaria" },
@@ -370,7 +370,7 @@ export default function HcmPage() {
                 <section>
                     <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-start">
                         <div className="lg:col-span-1">
-                            <h2 className="text-6xl font-extrabold tracking-tighter leading-none text-primary">
+                            <h2 className="text-5xl font-extrabold tracking-tighter leading-none text-primary">
                                 Cobertura de la <br /> Póliza Básica
                             </h2>
                         </div>
@@ -528,9 +528,3 @@ export default function HcmPage() {
             </div>
         </div>
     );
-
-    
-
-    
-
-    
