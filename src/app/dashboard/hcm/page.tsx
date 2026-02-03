@@ -20,7 +20,7 @@ const slides = [
       dataAiHint: 'health shield',
       textOrder: 'md:order-1',
       imageOrder: 'md:order-2',
-      imageClassName: 'w-[280px] h-[280px]'
+      imageClassName: 'w-[400px] h-[400px]'
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ const slides = [
       dataAiHint: 'digital health',
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
-      imageClassName: 'w-[480px] h-[480px]'
+      imageClassName: 'w-[480px] h-[480px] -translate-y-8'
     },
 ];
 
@@ -437,42 +437,40 @@ export default function HcmPage() {
                         <h2 className="text-3xl font-bold tracking-tight">Protocolos y Procedimientos</h2>
                         <p className="text-muted-foreground mt-2">Sigue estos sencillos pasos para realizar tus gestiones.</p>
                     </div>
-                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-                        <Card className="shadow-sm">
-                            <CardHeader>
-                                <CardTitle>Solicitud de Carta Aval</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                {avalRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
-                            </CardContent>
-                        </Card>
-                        <Card className="shadow-sm">
-                            <CardHeader>
-                                <CardTitle>Solicitud de Reembolso</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                {reimbursementRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
-                            </CardContent>
-                        </Card>
-                        <div className="space-y-8">
-                             <Card className="shadow-sm">
-                                <CardHeader>
-                                    <CardTitle>Atención Odontológica</CardTitle>
-                                </CardHeader>
-                                <CardContent>
+                    <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
+                        <AccordionItem value="aval">
+                            <AccordionTrigger className="text-lg font-semibold">Solicitud de Carta Aval</AccordionTrigger>
+                            <AccordionContent>
+                                <div className="pt-4">
+                                    {avalRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="reembolso">
+                            <AccordionTrigger className="text-lg font-semibold">Solicitud de Reembolso</AccordionTrigger>
+                            <AccordionContent>
+                                <div className="pt-4">
+                                    {reimbursementRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="odontologica">
+                            <AccordionTrigger className="text-lg font-semibold">Atención Odontológica</AccordionTrigger>
+                            <AccordionContent>
+                                <div className="pt-4">
                                     {dentalProtocolSteps.map((step) => <StepCard key={step.step} {...step} />)}
-                                </CardContent>
-                            </Card>
-                             <Card className="shadow-sm">
-                                <CardHeader>
-                                    <CardTitle>Solicitud de Medicinas</CardTitle>
-                                </CardHeader>
-                                <CardContent>
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="medicinas">
+                            <AccordionTrigger className="text-lg font-semibold">Solicitud de Medicinas</AccordionTrigger>
+                            <AccordionContent>
+                               <div className="pt-4">
                                     {medicineRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </div>
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
                 </section>
                 
                  <section>
