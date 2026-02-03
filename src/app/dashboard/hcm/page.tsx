@@ -22,7 +22,7 @@ const slides = [
       textOrder: 'md:order-1',
       imageOrder: 'md:order-2',
       textAlign: 'text-left',
-      imageClassName: 'w-[400px] h-[400px]'
+      imageClassName: 'w-[280px] h-[280px]'
     },
     {
       id: 2,
@@ -128,6 +128,63 @@ const allCoverageItems = [
   { amount: "Ilimitado", service: "Telemedicina" },
   { amount: "Ilimitado", service: "Atención Domiciliaria" },
 ];
+
+const dentalCoverageCategories = [
+    {
+        title: "Consultas y Diagnóstico",
+        items: [
+            "Consulta Diagnóstica (Odontología General): 1 evento.",
+            "Radiografía Coronal y/o Periapical (2 Diagnósticos / 2 en el Alta): 4 eventos."
+        ]
+    },
+    {
+        title: "Prevención y Sellantes",
+        subtitle: "Límite de 1 evento en total",
+        items: [
+            "Tartrectomía y Profilaxis.",
+            "Flúor Aplicación Tópica (hasta los 12 años).",
+            "Sellantes de Fosas y Fisuras (hasta los 12 años)."
+        ]
+    },
+    {
+        title: "Emergencias",
+        items: [
+            "Emergencia Endodóntica: Eventos ilimitados.",
+            "Emergencia Periodontal: Eventos ilimitados.",
+            "Emergencia Protésica: Eventos ilimitados."
+        ]
+    },
+     {
+        title: "Odontopediatría",
+        items: [
+            "Endodoncia y Pulpotomía - Curas Formocresoladas en Dientes Temporales."
+        ]
+    },
+    {
+        title: "Restauraciones y Cirugía",
+        subtitle: "Límite compartido de 3 eventos",
+        items: [
+            "Restauración en Resina y/o Amalgama en Dientes Posteriores Clase I y II.",
+            "Restauración en Resina y/o Amalgama en Dientes Posteriores Clase Mod (VI).",
+            "Restauración en Resinas en Dientes Anteriores Clase III y IV.",
+            "Restauración Clase V en Resinas y/o Vidrios Ionómeros.",
+            "Exodoncia Simple.",
+            "Extracción de 3eros. Molares Simples (Erupcionadas)."
+        ],
+        className: "md:col-span-2"
+    },
+    {
+        title: "Tratamientos de Conducto / Endodoncias",
+        subtitle: "Límite compartido de 1 evento",
+        items: [
+            "Tratamiento de Conducto o Endodoncia Monorradicular.",
+            "Tratamiento de Conducto o Endodoncia Birradicular.",
+            "Tratamiento de Conducto o Endodoncia Multiarticular."
+        ],
+        className: "md:col-span-2"
+    },
+];
+
 
 
 const coveredPathologies = [
@@ -368,6 +425,35 @@ export default function HcmPage() {
                 </section>
 
                 <section>
+                    <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-start">
+                        <div className="lg:col-span-1">
+                            <h2 className="text-6xl font-extrabold tracking-tighter leading-none text-primary">
+                                Cobertura Odontológica
+                            </h2>
+                            <p className="text-muted-foreground mt-4">100% de cobertura en todos los rubros</p>
+                        </div>
+                        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+                            {dentalCoverageCategories.map((category, index) => (
+                                <Card key={index} className={cn("h-full", category.className)}>
+                                    <CardHeader>
+                                        <CardTitle className="text-lg">{category.title}</CardTitle>
+                                        {category.subtitle && <CardDescription>{category.subtitle}</CardDescription>}
+                                    </CardHeader>
+                                    <CardContent>
+                                        <ul className={cn("space-y-2 text-sm text-muted-foreground list-disc pl-5", category.className?.includes('md:col-span-2') && 'columns-1 sm:columns-2')}>
+                                            {category.items.map((item, itemIndex) => (
+                                                <li key={itemIndex}>{item}</li>
+                                            ))}
+                                        </ul>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+
+                <section>
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold tracking-tight">Protocolos y Procedimientos</h2>
                         <p className="text-muted-foreground mt-2">Sigue estos sencillos pasos para realizar tus gestiones.</p>
@@ -488,4 +574,5 @@ export default function HcmPage() {
             </div>
         </div>
     );
-}
+
+    
