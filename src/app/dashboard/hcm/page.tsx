@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowLeft, ArrowRight, ShieldCheck, FileText, Stethoscope, Search, MessageSquare, Phone, Mail, HelpCircle, FilePlus2, Receipt, Hospital, Landlord, HeartPulse, User, Cross, Coins, HandCoins, BookUser, Ambulance, Info, Building, LifeBuoy, FileBarChart, Laptop, Calculator } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ShieldCheck, Stethoscope, MessageSquare, Phone, Mail, HelpCircle, FilePlus2, Receipt, Hospital, Landlord, HeartPulse, User, Cross, Coins, HandCoins, BookUser, Info, Building, LifeBuoy, FileBarChart, Laptop } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
@@ -21,7 +21,7 @@ const slides = [
       dataAiHint: 'health shield',
       textOrder: 'md:order-1',
       imageOrder: 'md:order-2',
-      imageClassName: 'w-[480px] h-[480px]'
+      imageClassName: 'w-[336px] h-[336px]'
     },
     {
       id: 2,
@@ -31,7 +31,7 @@ const slides = [
       dataAiHint: 'digital health',
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
-      imageClassName: 'w-[480px] h-[480px] md:translate-y-8'
+      imageClassName: 'w-[480px] h-[480px] md:translate-y-4'
     },
 ];
 
@@ -40,34 +40,26 @@ const hcmActions = [
     {
         title: "Solicitar Medicinas",
         description: "Solicita el envío de tus medicamentos a domicilio o farmacia.",
-        icon: Ambulance,
+        imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(62).png?raw=true",
         href: "#",
-        bgColor: "bg-red-50",
-        iconColor: "text-red-600"
     },
     {
         title: "Buscar Proveedores",
         description: "Encuentra médicos y clínicas en nuestra red de afiliados.",
-        icon: Search,
+        imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(63).png?raw=true",
         href: "https://www.banesconline.com/rw/seguros/directorio-de-clinicas-y-medicos",
-        bgColor: "bg-green-50",
-        iconColor: "text-green-600"
     },
     {
         title: "Consultar Cobertura",
         description: "Revisa los detalles y beneficios de tu póliza de salud.",
-        icon: FileText,
+        imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(64).png?raw=true",
         href: "https://www.banesconline.com/rw/seguros/condiciones-generales-y-particulares",
-        bgColor: "bg-indigo-50",
-        iconColor: "text-indigo-600"
     },
     {
         title: "Calculadora de Excesos",
         description: "Calcula los montos excedentes de tus gastos médicos.",
-        icon: Calculator,
+        imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(65).png?raw=true",
         href: "#",
-        bgColor: "bg-blue-50",
-        iconColor: "text-blue-600"
     }
 ];
 
@@ -365,8 +357,13 @@ export default function HcmPage() {
                             <Link href={action.href} key={action.title} target="_blank" rel="noopener noreferrer" className="block group">
                                 <Card className="h-full rounded-2xl border-border/60 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary">
                                     <CardContent className="p-6 text-center">
-                                        <div className="flex items-center justify-center h-16 w-16 rounded-full mb-6 bg-muted mx-auto">
-                                            <action.icon className={cn("h-8 w-8 text-primary")} />
+                                        <div className="relative h-20 w-20 mx-auto mb-6">
+                                            <Image
+                                                src={action.imageUrl}
+                                                alt={action.title}
+                                                layout="fill"
+                                                objectFit="contain"
+                                            />
                                         </div>
                                         <h3 className="font-bold text-base mb-2 text-foreground">{action.title}</h3>
                                         <p className="text-sm leading-relaxed text-muted-foreground">{action.description}</p>
