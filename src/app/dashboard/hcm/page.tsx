@@ -331,25 +331,6 @@ export default function HcmPage() {
             <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-24">
                 
                 <section>
-                    <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-center">
-                        <div className="lg:col-span-1">
-                            <h2 className="text-6xl font-extrabold tracking-tighter leading-none text-primary">
-                                Cobertura de la <br /> Póliza Básica
-                            </h2>
-                        </div>
-                        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 lg:pl-16">
-                            {allCoverageItems.map((item, index) => (
-                                <div key={`coverage-${index}`}>
-                                    <p className="text-3xl font-extrabold tracking-tighter text-foreground">{item.amount}</p>
-                                    <p className="text-sm text-muted-foreground">{item.service}</p>
-                                    {item.note && <p className="text-xs text-muted-foreground/80 mt-1">{item.note}</p>}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-                
-                <section>
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold tracking-tight">Gestiones Principales</h2>
                         <p className="text-muted-foreground mt-2">Accede directamente a las operaciones más frecuentes.</p>
@@ -368,6 +349,25 @@ export default function HcmPage() {
                                 </Card>
                             </Link>
                         ))}
+                    </div>
+                </section>
+                
+                <section>
+                    <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-center">
+                        <div className="lg:col-span-1">
+                            <h2 className="text-6xl font-extrabold tracking-tighter leading-none text-primary">
+                                Cobertura de la <br /> Póliza Básica
+                            </h2>
+                        </div>
+                        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 lg:pl-16">
+                            {allCoverageItems.map((item, index) => (
+                                <div key={`coverage-${index}`}>
+                                    <p className="text-3xl font-extrabold tracking-tighter text-foreground">{item.amount}</p>
+                                    <p className="text-sm text-muted-foreground">{item.service}</p>
+                                    {item.note && <p className="text-xs text-muted-foreground/80 mt-1">{item.note}</p>}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </section>
 
