@@ -120,24 +120,36 @@ const allCoverageItems = [
 ];
 
 const dentalCoverageItems = [
-    { amount: '1 evento', service: 'Consulta Diagnóstica (Odontología General)' },
-    { amount: '4 eventos', service: 'Radiografía Coronal y/o Periapical', note: '(2 Diagnósticos / 2 en el Alta)' },
-    { amount: '1 evento total', service: 'Tartrectomía y Profilaxis', note: '(Prevención y Sellantes)' },
-    { amount: '1 evento total', service: 'Flúor Aplicación Tópica', note: '(hasta los 12 años)' },
-    { amount: '1 evento total', service: 'Sellantes de Fosas y Fisuras', note: '(hasta los 12 años)' },
-    { amount: 'Ilimitados', service: 'Emergencia Endodóntica' },
-    { amount: 'Ilimitados', service: 'Emergencia Periodontal' },
-    { amount: 'Ilimitados', service: 'Emergencia Protésica' },
-    { amount: 'Límite 3 eventos', service: 'Restauración en Resina/Amalgama (Clase I y II)'},
-    { amount: 'Límite 3 eventos', service: 'Restauración en Resina/Amalgama (Clase Mod VI)'},
-    { amount: 'Límite 3 eventos', service: 'Restauración en Resinas (Clase III y IV)'},
-    { amount: 'Límite 3 eventos', service: 'Restauración Clase V (Resinas/Vidrios Ionómeros)'},
-    { amount: 'Límite 3 eventos', service: 'Exodoncia Simple'},
-    { amount: 'Límite 3 eventos', service: 'Extracción de 3eros. Molares Simples'},
-    { amount: 'Límite 1 evento', service: 'Endodoncia Monorradicular'},
-    { amount: 'Límite 1 evento', service: 'Endodoncia Birradicular'},
-    { amount: 'Límite 1 evento', service: 'Endodoncia Multiarticular'},
-    { amount: 'Cubierto', service: 'Odontopediatría (Endodoncia y Pulpotomía)'}
+    { category: "Consultas y Diagnóstico", items: [
+        { amount: '1 evento', service: 'Consulta Diagnóstica (Odontología General)' },
+        { amount: '4 eventos', service: 'Radiografía Coronal y/o Periapical', note: '(2 Diagnósticos / 2 en el Alta)' },
+    ]},
+    { category: "Prevención y Sellantes (Límite de 1 evento en total)", items: [
+        { amount: 'Incluido', service: 'Tartrectomía y Profilaxis' },
+        { amount: 'Incluido', service: 'Flúor Aplicación Tópica', note: '(hasta los 12 años)' },
+        { amount: 'Incluido', service: 'Sellantes de Fosas y Fisuras', note: '(hasta los 12 años)' },
+    ]},
+    { category: "Emergencias", items: [
+        { amount: 'Ilimitados', service: 'Emergencia Endodóntica' },
+        { amount: 'Ilimitados', service: 'Emergencia Periodontal' },
+        { amount: 'Ilimitados', service: 'Emergencia Protésica' },
+    ]},
+    { category: "Restauraciones y Cirugía (Límite compartido de 3 eventos)", items: [
+        { amount: 'Incluido', service: 'Restauración en Resina y/o Amalgama en Dientes Posteriores Clase I y II' },
+        { amount: 'Incluido', service: 'Restauración en Resina y/o Amalgama en Dientes Posteriores Clase Mod (VI)' },
+        { amount: 'Incluido', service: 'Restauración en Resinas en Dientes Anteriores Clase III y IV' },
+        { amount: 'Incluido', service: 'Restauración Clase V en Resinas y/o Vidrios Ionómeros' },
+        { amount: 'Incluido', service: 'Exodoncia Simple' },
+        { amount: 'Incluido', service: 'Extracción de 3eros. Molares Simples (Erupcionadas)' },
+    ]},
+    { category: "Tratamientos de Conducto / Endodoncias (Límite compartido de 1 evento)", items: [
+        { amount: 'Incluido', service: 'Tratamiento de Conducto o Endodoncia Monorradicular' },
+        { amount: 'Incluido', service: 'Tratamiento de Conducto o Endodoncia Birradicular' },
+        { amount: 'Incluido', service: 'Tratamiento de Conducto o Endodoncia Multiarticular' },
+    ]},
+    { category: "Odontopediatría", items: [
+        { amount: 'Cubierto', service: 'Endodoncia y Pulpotomía - Curas Formocresoladas en Dientes Temporales' },
+    ]},
 ];
 
 const coveredPathologies = [
@@ -399,10 +411,10 @@ export default function HcmPage() {
                             <h2 className="text-5xl font-extrabold tracking-tighter leading-none text-primary">
                                 Cobertura Odontológica
                             </h2>
-                            <p className="text-muted-foreground mt-4">100% de cobertura en todos los rubros.</p>
+                            <p className="text-muted-foreground mt-4">Detalle de la cobertura para servicios odontológicos.</p>
                         </div>
-                         <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 lg:pl-16">
-                            {dentalCoverageItems.map((item, index) => (
+                        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 lg:pl-16">
+                            {dentalCoverageItems.flatMap(category => category.items).map((item, index) => (
                                 <div key={`dental-coverage-${index}`}>
                                     <p className="text-3xl font-extrabold tracking-tighter text-foreground">{item.amount}</p>
                                     <p className="text-sm text-muted-foreground">{item.service}</p>
