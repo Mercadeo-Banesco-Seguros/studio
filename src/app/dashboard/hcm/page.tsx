@@ -22,7 +22,7 @@ const slides = [
       textOrder: 'md:order-1',
       imageOrder: 'md:order-2',
       textAlign: 'text-left',
-      imageClassName: ''
+      imageClassName: 'w-[400px] h-[400px] -translate-y-8'
     },
     {
       id: 2,
@@ -33,7 +33,7 @@ const slides = [
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
       textAlign: 'text-right',
-      imageClassName: 'translate-y-12 w-[680px] h-[680px]'
+      imageClassName: 'w-[680px] h-[680px]'
     },
 ];
 
