@@ -126,9 +126,11 @@
     .gallery-swiper {
         @apply pt-5 pb-16;
     }
+    .gallery-swiper .swiper-wrapper {
+        transition-timing-function: linear;
+    }
     .gallery-swiper .swiper-slide {
-        @apply flex justify-center items-center;
-        height: 400px;
+        @apply flex justify-center items-center h-[400px];
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         transform: scale(0.85);
         opacity: 0.5;

@@ -37,9 +37,9 @@ export const GalleryCarousel = () => {
         }}
         centeredSlides={true}
         grabCursor={true}
-        speed={800}
+        speed={5000}
         autoplay={{
-          delay: 3000,
+          delay: 1,
           disableOnInteraction: false,
           reverseDirection: true,
         }}
