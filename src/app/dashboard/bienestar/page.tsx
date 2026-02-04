@@ -22,6 +22,7 @@ import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import { InteractiveMenuBanner } from '@/components/dashboard/interactive-menu-banner';
+import { GalleryCarousel } from '@/components/dashboard/gallery-carousel';
 
 // Palabras clave para detectar eventos especiales
 const ESPECIAL_KEYWORDS = ['día de', 'feriado', 'conmemorativo', 'aniversario', 'independencia', 'mujer', 'trabajador', 'resistencia', 'navidad', 'noche buena', 'festivo', 'resultados anuales', 'carnavales', 'santo', 'semana santa', 'pascua', 'halloween', 'batalla', 'natalicio', 'año nuevo', 'fin de año'];
@@ -224,18 +225,8 @@ export default function BienestarPage() {
             {/* GALERÍA */}
             <section className="py-24 bg-muted/30">
                 <div className="container mx-auto px-4 text-center">
-                    <div className="flex justify-center gap-4 h-64 mb-12">
-                         <div className="w-64 h-full relative rounded-xl overflow-hidden -rotate-6 translate-y-4 shadow-xl">
-                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Iniciativa%20Dulce%20o%20Truco%20BSV%20(2).jpg?raw=true" layout="fill" objectFit="cover" alt="img" />
-                         </div>
-                         <div className="w-72 h-full relative rounded-xl overflow-hidden z-20 shadow-2xl scale-110">
-                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/IMG_20251115_120042.jpg?raw=true" layout="fill" objectFit="cover" alt="img" />
-                         </div>
-                         <div className="w-64 h-full relative rounded-xl overflow-hidden rotate-6 translate-y-4 shadow-xl">
-                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Octubre%20Rosa%202025%20(3).jpg?raw=true" layout="fill" objectFit="cover" alt="img" />
-                         </div>
-                    </div>
-                    <Button>Galería de Recuerdos</Button>
+                    <GalleryCarousel />
+                    <Button className="mt-8">Galería de Recuerdos</Button>
                 </div>
             </section>
 
