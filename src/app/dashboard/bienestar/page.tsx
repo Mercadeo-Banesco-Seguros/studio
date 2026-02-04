@@ -221,6 +221,24 @@ export default function BienestarPage() {
                 ))}
             </section>
 
+            {/* GALERÍA */}
+            <section className="py-24 bg-muted/30">
+                <div className="container mx-auto px-4 text-center">
+                    <div className="flex justify-center gap-4 h-64 mb-12">
+                         <div className="w-64 h-full relative rounded-xl overflow-hidden -rotate-6 translate-y-4 shadow-xl">
+                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Iniciativa%20Dulce%20o%20Truco%20BSV%20(2).jpg?raw=true" layout="fill" objectFit="cover" alt="img" />
+                         </div>
+                         <div className="w-72 h-full relative rounded-xl overflow-hidden z-20 shadow-2xl scale-110">
+                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/IMG_20251115_120042.jpg?raw=true" layout="fill" objectFit="cover" alt="img" />
+                         </div>
+                         <div className="w-64 h-full relative rounded-xl overflow-hidden rotate-6 translate-y-4 shadow-xl">
+                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Octubre%20Rosa%202025%20(3).jpg?raw=true" layout="fill" objectFit="cover" alt="img" />
+                         </div>
+                    </div>
+                    <Button>Galería de Recuerdos</Button>
+                </div>
+            </section>
+
             {/* EVENTOS */}
             <section className="py-24 bg-muted/50">
                 <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
@@ -237,25 +255,6 @@ export default function BienestarPage() {
                         <h2 className="text-4xl font-bold">Feriados y Eventos</h2>
                         <p className="mt-4 text-muted-foreground">Mantente al día con las fechas especiales del mes.</p>
                         <Button asChild className="mt-6" variant="outline"><Link href="/dashboard/calendario">Ver Calendario</Link></Button>
-                    </div>
-                </div>
-            </section>
-
-            {/* GALERÍA */}
-            <section className="py-24 relative overflow-hidden bg-primary">
-                <div className="container mx-auto px-4 text-center relative z-10 text-white">
-                    <h2 className="text-4xl font-bold mb-12">Galería de Recuerdos</h2>
-                    <div className="flex justify-center gap-4 h-64">
-                         {/* Imágenes de galería fijas */}
-                         <div className="w-64 h-full relative rounded-xl overflow-hidden -rotate-6 translate-y-4 shadow-xl">
-                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Iniciativa%20Dulce%20o%20Truco%20BSV%20(2).jpg?raw=true" layout="fill" objectFit="cover" alt="img" />
-                         </div>
-                         <div className="w-72 h-full relative rounded-xl overflow-hidden z-20 shadow-2xl scale-110">
-                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/IMG_20251115_120042.jpg?raw=true" layout="fill" objectFit="cover" alt="img" />
-                         </div>
-                         <div className="w-64 h-full relative rounded-xl overflow-hidden rotate-6 translate-y-4 shadow-xl">
-                            <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Octubre%20Rosa%202025%20(3).jpg?raw=true" layout="fill" objectFit="cover" alt="img" />
-                         </div>
                     </div>
                 </div>
             </section>
@@ -321,4 +320,5 @@ export default function BienestarPage() {
             </section>
         </div>
     );
-}
+
+    
