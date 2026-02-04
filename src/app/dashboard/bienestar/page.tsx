@@ -37,7 +37,6 @@ const slides = [
   {
     id: 1,
     title: (<>Un Espacio para <br /> Tu Bienestar Integral</>),
-    description: "Construye un estilo de vida saludable y equilibrado con nosotros.",
     imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vQUatlqD-MuBeilitACo34_2DfwkJSZF4g0k7aHwRISIv-GSuHyJANfJhuDCnxiWq8x_XAFtGykl6p8/pub?w=1440&h=1080",
     dataAiHint: "wellness character",
     gradient: "bg-gradient-to-r from-[#c1e4f1] to-[#349eff]",
@@ -47,7 +46,6 @@ const slides = [
   {
     id: 2,
     title: (<>Te acompañamos en cada <br/> etapa de crecimiento</>),
-    description: "Descubre herramientas y recursos para tu desarrollo profesional y personal.",
     imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vSS12ZF_8XD1Aip8eGtiaomWKIDFlwtIt1UD5cVNXfmJHmzFCQ1B_ivy-CXG1q-Cihi3rATsWtrG5-4/pub?w=960&h=720",
     dataAiHint: "growth character",
     gradient: "bg-gradient-to-l from-[#c1e4f1] to-[#349eff]",
@@ -204,12 +202,7 @@ export default function BienestarPage() {
                     >
                         <div className="container mx-auto px-4 h-full grid md:grid-cols-2 items-center">
                             <div className={cn("text-left", slide.textOrder)}>
-                                <Badge variant="outline" className="mb-4 border-white/50 text-white">Banesco Seguros</Badge>
                                 <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white">{slide.title}</h1>
-                                <p className="mt-4 text-white/80 max-w-md">{slide.description}</p>
-                                <Button asChild size="lg" className="mt-8 bg-white text-primary hover:bg-white/90">
-                                    <Link href="#explorar-actividades">Explorar Actividades</Link>
-                                </Button>
                             </div>
                             <div className={cn("relative h-full w-full hidden md:flex items-end justify-center", slide.imageOrder)}>
                                 <div className="relative w-full h-[500px]">
