@@ -130,6 +130,7 @@
         transition-timing-function: linear;
     }
     .gallery-swiper .swiper-slide {
+        width: 300px;
         @apply flex justify-center items-center h-[400px];
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         transform: scale(0.85);
