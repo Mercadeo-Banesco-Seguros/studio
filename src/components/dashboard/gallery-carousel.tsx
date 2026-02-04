@@ -34,7 +34,7 @@ export const GalleryCarousel = () => {
         className="gallery-swiper"
       >
         {galleryImages.map((src, index) => (
-          <SwiperSlide key={index} className="!w-[300px] !h-[400px]">
+          <SwiperSlide key={index}>
             <Card className="w-full h-full rounded-2xl shadow-lg">
               <CardContent className="p-0 h-full w-full rounded-2xl overflow-hidden">
                 <Image
