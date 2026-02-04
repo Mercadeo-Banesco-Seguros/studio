@@ -26,11 +26,10 @@ export const GalleryCarousel = () => {
         slidesPerView="auto"
         centeredSlides={true}
         grabCursor={true}
-        speed={5000}
+        speed={800}
         autoplay={{
-          delay: 1,
+          delay: 3000,
           disableOnInteraction: false,
-          reverseDirection: true,
         }}
         className="gallery-swiper"
       >
