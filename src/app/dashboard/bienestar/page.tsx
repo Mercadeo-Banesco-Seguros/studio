@@ -226,7 +226,7 @@ export default function BienestarPage() {
             <section className="py-24 bg-muted/30">
                 <div className="container mx-auto px-4 text-center">
                     <GalleryCarousel />
-                    <Button className="mt-8">Galería de Recuerdos</Button>
+                    <Button className="mt-8 rounded-full font-light">Galería de Recuerdos</Button>
                 </div>
             </section>
 
@@ -313,3 +313,4 @@ export default function BienestarPage() {
     );
 
     
+
