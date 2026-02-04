@@ -45,7 +45,7 @@ const slides = [
   },
   {
     id: 2,
-    title: (<>Te acompañamos en cada <br/> etapa de crecimiento</>),
+    title: (<>Recursos que Impulsan <br/> tu Crecimiento</>),
     imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vSS12ZF_8XD1Aip8eGtiaomWKIDFlwtIt1UD5cVNXfmJHmzFCQ1B_ivy-CXG1q-Cihi3rATsWtrG5-4/pub?w=960&h=720",
     dataAiHint: "growth character",
     gradient: "bg-gradient-to-l from-[#c1e4f1] to-[#349eff]",
