@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -23,7 +22,6 @@ export const GalleryCarousel = () => {
       <Swiper
         modules={[Autoplay]}
         loop={true}
-        loopedSlides={4}
         spaceBetween={30}
         slidesPerView="auto"
         centeredSlides={true}
