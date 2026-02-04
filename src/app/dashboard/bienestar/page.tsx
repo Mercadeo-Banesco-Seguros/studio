@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useRef, useEffect, useMemo } from 'react';
@@ -31,6 +32,25 @@ const normalizeDayName = (name: string) => {
 
 type Satisfaction = 'happy' | 'neutral' | 'sad' | null;
 const weekDays = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
+
+const slides = [
+  {
+    id: 1,
+    title: (<>Un Espacio para <br /> Tu Bienestar Integral</>),
+    description: "Construye un estilo de vida saludable y equilibrado con nosotros.",
+    imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vQUatlqD-MuBeilitACo34_2DfwkJSZF4g0k7aHwRISIv-GSuHyJANfJhuDCnxiWq8x_XAFtGykl6p8/pub?w=1440&h=1080",
+    dataAiHint: "wellness character",
+    gradient: "bg-gradient-to-r from-[#c1e4f1] to-[#349eff]",
+  },
+  {
+    id: 2,
+    title: (<>Te acompañamos en cada <br/> etapa de crecimiento</>),
+    description: "Descubre herramientas y recursos para tu desarrollo profesional y personal.",
+    imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vSS12ZF_8XD1Aip8eGtiaomWKIDFlwtIt1UD5cVNXfmJHmzFCQ1B_ivy-CXG1q-Cihi3rATsWtrG5-4/pub?w=960&h=720",
+    dataAiHint: "growth character",
+    gradient: "bg-gradient-to-l from-[#c1e4f1] to-[#349eff]",
+  }
+];
 
 /**
  * SOLUCIÓN AL PROBLEMA DEL ÁRBOL:
@@ -86,6 +106,14 @@ export default function BienestarPage() {
     const [comment, setComment] = useState('');
     const { toast } = useToast();
     const activitiesScrollRef = useRef<HTMLDivElement>(null);
+    const [activeSlide, setActiveSlide] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveSlide((prev) => (prev + 1) % slides.length);
+        }, 7000);
+        return () => clearInterval(interval);
+    }, []);
 
     useEffect(() => {
         const today = new Date();
@@ -160,22 +188,40 @@ export default function BienestarPage() {
     return (
         <div className="bg-background text-foreground">
             {/* HERO */}
-            <section className="relative py-24 sm:py-32 text-primary-foreground overflow-hidden">
-                <Image src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg" alt="BG" layout="fill" objectFit="cover" className="z-0" priority />
-                <div className="absolute inset-0 bg-blue-900/40 z-0" />
-                <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center relative z-10">
-                    <div>
-                        <Badge variant="outline" className="mb-4 border-white/50 text-white">Banesco Seguros</Badge>
-                        <h1 className="text-5xl md:text-6xl font-bold tracking-tight">Un Espacio para <br /> Tu Bienestar Integral</h1>
-                        <p className="mt-4 text-white/80 max-w-md">Construye un estilo de vida saludable y equilibrado con nosotros.</p>
-                        <Button asChild size="lg" className="mt-8 bg-white text-primary hover:bg-white/90">
-                            <Link href="#explorar-actividades">Explorar Actividades</Link>
-                        </Button>
+            <section className="relative h-[600px] w-full text-foreground overflow-hidden">
+                {slides.map((slide, index) => (
+                    <div
+                        key={slide.id}
+                        className={cn(
+                            'absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out',
+                            slide.gradient,
+                            activeSlide === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                        )}
+                    >
+                        <div className="container mx-auto px-4 h-full grid md:grid-cols-2 items-center">
+                            <div className="text-left">
+                                <Badge variant="outline" className="mb-4 border-white/50 text-white">Banesco Seguros</Badge>
+                                <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white">{slide.title}</h1>
+                                <p className="mt-4 text-white/80 max-w-md">{slide.description}</p>
+                                <Button asChild size="lg" className="mt-8 bg-white text-primary hover:bg-white/90">
+                                    <Link href="#explorar-actividades">Explorar Actividades</Link>
+                                </Button>
+                            </div>
+                            <div className="relative h-full w-full hidden md:flex items-end justify-center">
+                                <div className="relative w-full h-[500px]">
+                                    <Image
+                                        src={slide.imageUrl}
+                                        alt={slide.dataAiHint || 'Hero Image'}
+                                        layout="fill"
+                                        objectFit="contain"
+                                        data-ai-hint={slide.dataAiHint}
+                                        priority={index === 0}
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="relative h-[36rem] w-full rounded-2xl overflow-hidden shadow-2xl">
-                        <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_tapbk9tapbk9tapb-Photoroom.png?raw=true" alt="Yoga" layout="fill" objectFit="cover" />
-                    </div>
-                </div>
+                ))}
             </section>
 
             {/* EVENTOS */}
