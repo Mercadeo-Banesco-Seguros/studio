@@ -30,6 +30,7 @@ export const GalleryCarousel = () => {
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
+          reverseDirection: true,
         }}
         className="gallery-swiper"
       >
