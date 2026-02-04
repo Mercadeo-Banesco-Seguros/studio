@@ -23,7 +23,6 @@ export const GalleryCarousel = () => {
         modules={[Autoplay]}
         loop={true}
         spaceBetween={30}
-        slidesPerView={1}
         breakpoints={{
           // when window width is >= 768px
           768: {
