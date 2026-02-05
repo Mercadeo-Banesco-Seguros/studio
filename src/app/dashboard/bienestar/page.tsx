@@ -130,6 +130,13 @@ export default function BienestarPage() {
                 </div>
             </section>
 
+            {/* Actividades Section */}
+            <section className="bg-gradient-to-r from-[#c1e4f1] to-[#349eff]">
+                <div className="container mx-auto px-4">
+                    <ActivityCarousel />
+                </div>
+            </section>
+
             {/* Feriados y Eventos Section */}
             <section className="py-12 bg-muted/30">
                 <div className="container mx-auto px-4">
@@ -155,13 +162,6 @@ export default function BienestarPage() {
                             </div>
                         </div>
                     </Card>
-                </div>
-            </section>
-
-            {/* Actividades Section */}
-            <section className="bg-gradient-to-r from-[#c1e4f1] to-[#349eff]">
-                <div className="container mx-auto px-4">
-                    <ActivityCarousel />
                 </div>
             </section>
 
