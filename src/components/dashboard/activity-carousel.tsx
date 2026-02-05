@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -34,7 +35,7 @@ export const ActivityCarousel = () => {
                 layout="fill"
                 objectFit="contain"
                 data-ai-hint={activity.dataAiHint}
-                className="object-bottom"
+                className="object-bottom translate-y-8"
               />
             </div>
             <div>
