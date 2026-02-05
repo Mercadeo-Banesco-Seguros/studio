@@ -27,7 +27,7 @@ export const ActivityCarousel = () => {
     >
       {mockActivities.map((activity) => (
         <SwiperSlide key={activity.id}>
-          <div className="grid md:grid-cols-2 gap-12 items-center text-white">
+          <div className="grid md:grid-cols-2 gap-12 items-end text-white">
             <div className="relative h-96 w-full overflow-visible">
               <Image
                 src={activity.imageUrl}
