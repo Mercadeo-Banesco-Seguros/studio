@@ -138,7 +138,7 @@ export default function BienestarPage() {
             </section>
 
             {/* Feriados y Eventos Section */}
-            <section className="py-12 bg-muted/30">
+            <section className="pb-12 bg-muted/30">
                 <div className="container mx-auto px-4">
                     <Card className="p-8 rounded-2xl bg-transparent border-none shadow-none">
                         <div className="grid md:grid-cols-2 gap-8 items-center">
