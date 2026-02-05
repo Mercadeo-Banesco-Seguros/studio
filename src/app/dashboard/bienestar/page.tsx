@@ -129,32 +129,37 @@ export default function BienestarPage() {
                 </div>
             </section>
 
-            {/* New Integrated Events & Activities Section */}
-            <section className="py-24 bg-muted/50">
-                <div className="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-stretch">
-                    {/* Feriados y Eventos */}
-                    <Card className="relative rounded-2xl overflow-hidden shadow-lg border-none flex flex-col justify-between p-8 bg-card">
-                        <div>
-                            <h2 className="text-4xl font-bold">Feriados y Eventos</h2>
-                            <p className="mt-2 text-muted-foreground">
-                                Mantente al día con las fechas especiales del mes.
-                            </p>
-                            <Button asChild className="mt-6" variant="outline">
-                                <Link href="/dashboard/calendario">Ver Calendario</Link>
-                            </Button>
-                        </div>
-                        <div className="relative h-64 mt-8 -mb-8 -mr-8 self-end">
-                             <Image
-                                src="https://docs.google.com/drawings/d/e/2PACX-1vR5aZgHV3jK7mPbZmTMnqWFihBlFliaMpek4k6pdMQOhuzPgxuiONEdcH-SiVBmuOB6ir68T0bGmmYA/pub?w=1440&h=1080"
-                                alt="Feriados y Eventos"
-                                layout="fill"
-                                objectFit="contain"
-                                data-ai-hint="celebration characters"
-                            />
+            {/* Feriados y Eventos Section */}
+            <section className="py-12 bg-muted/30">
+                <div className="container mx-auto px-4">
+                    <Card className="p-8 rounded-2xl shadow-lg border-none bg-card">
+                        <div className="grid md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <h2 className="text-4xl font-bold">Feriados y Eventos</h2>
+                                <p className="mt-2 text-muted-foreground">
+                                    Mantente al día con las fechas especiales del mes.
+                                </p>
+                                <Button asChild className="mt-6" variant="outline">
+                                    <Link href="/dashboard/calendario">Calendario</Link>
+                                </Button>
+                            </div>
+                            <div className="relative h-64">
+                                <Image
+                                    src="https://docs.google.com/drawings/d/e/2PACX-1vR5aZgHV3jK7mPbZmTMnqWFihBlFliaMpek4k6pdMQOhuzPgxuiONEdcH-SiVBmuOB6ir68T0bGmmYA/pub?w=1440&h=1080"
+                                    alt="Feriados y Eventos"
+                                    layout="fill"
+                                    objectFit="contain"
+                                    data-ai-hint="celebration characters"
+                                />
+                            </div>
                         </div>
                     </Card>
+                </div>
+            </section>
 
-                    {/* Nuestras Actividades */}
+            {/* Actividades Section */}
+            <section className="py-12 bg-gradient-to-r from-[#c1e4f1] to-[#349eff]">
+                <div className="container mx-auto px-4">
                     <ActivityCarousel />
                 </div>
             </section>

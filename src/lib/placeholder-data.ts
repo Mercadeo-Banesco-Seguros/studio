@@ -24,6 +24,7 @@ export interface Activity {
   dataAiHint?: string;
   isRecommended?: boolean; // Added for recommended activities
   category: 'Salud' | 'Cultura' | 'Deporte';
+  time: string;
 }
 
 export interface DepartmentRequest {
@@ -190,7 +191,7 @@ export const mockCourses: Course[] = [
     id: "balanced-scorecard",
     title: "Balanced Scorecard",
     description: "Es herramienta de planeación estratégica que permite a la empresa crear y controlar sus propios indicadores de gestión relacionados dentro de cuatro perspectiva: Financiera, Procesos Internos, Cliente y Formación y Crecimiento",
-    imageUrl: "https://images.unsplash.com/photo-1556155092-8707de31f9c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZXRyaWNzfGVufDB8fHx8fDE3NTQzNDAzMjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1556155092-8707de31f9c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZXRyaWNzfGVufDB8fHx8fDE3NTQzNDAzMjd8MA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "balance chart",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -250,7 +251,7 @@ export const mockCourses: Course[] = [
     id: "reuniones-efectivas",
     title: "Reuniones Efectivas",
     description: "Aquí podrás  obtener tips de como tener una reunión efectiva, donde es importante considerar que una gran parte de la eficacia y productividad del equipo de trabajo se obtiene a partir de la efectividad con que se desarrollan estas reuniones.",
-    imageUrl: "https://images.unsplash.com/photo-1553877522-43269d4ea984?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyZXVuaSVDMyVCM258ZW58MHx8fHwxNzU0NDIwMzY0fDA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1553877522-43269d4ea984?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyZXVuaSVDMyVCM258ZW58MHx8fHwxNzU0NDIwMzY0fDA&ixlib.rb-4.1.0&q=80&w=1080",
     dataAiHint: "effective meeting",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -288,6 +289,7 @@ export const mockActivities: Activity[] = [
     imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vR8Jgeo9cLbKGIxdoEFuoypEpFZr4go6JQQtCaYKhcNxcfOcGAJA1GkFHLnBjdllmTL4h7K3nnfHtl5/pub?w=924&h=672",
     dataAiHint: "yoga fitness",
     description: "¡Conecta tu cuerpo y mente!\nAcompáñanos en la clase de yoga, conformada por una serie de ejercicios físicos y de respiración diseñados para disminuir el estrés y las dolencias corporales, con el propósito de mejorar la salud, tanto física como mental.\nPara asistir a las clases solo necesitas:\n- Un mat o esterilla de yoga.\n- Ropa deportiva y cómoda, preferiblemente licras o monos largos y camisas cómodas.\n- Una botella de agua para tu hidratación.\n\nDónde y cuándo son las clases:\nLunes y miércoles, 5:00 P.M.",
+    time: "Lunes y Miércoles, 5:00 PM",
     category: 'Salud',
   },
   {
@@ -298,6 +300,7 @@ export const mockActivities: Activity[] = [
     imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vToLB6evw766T6GuKnYbLmHxeY1rkMCgGhJpt7zl0ef0nR6NolOqna3AWtbbMiYsX-Niw-jcGAJyZQx/pub?w=960&h=720",
     dataAiHint: "functional training",
     description: "¡Mejora tu rendimiento físico y cuida tu salud!\n\nTe invitamos a participar en la actividad de entrenamiento funcional y en circuito, la cual ayuda a mejorar las capacidades físicas como  fuerza, resistencia, velocidad, coordinación y flexibilidad. Se puede realizar con o sin implementos.\nPara asistir a las clases solo necesitas:\n- Ropa deportiva y cómoda, preferiblemente licras o monos largos y camisas cómodas.\n- Una botella de agua para tu hidratación.\n\nDónde y cuándo son las clases:\nLunes y miércoles, 5:00 P.M.",
+    time: "Lunes y Miércoles, 5:00 PM",
     isRecommended: true,
     category: 'Deporte',
   },
@@ -309,6 +312,7 @@ export const mockActivities: Activity[] = [
     imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vQFnTLc2tZVFAu3O5cKTisITlKkSFiTPoEy9z4Cz062QMf4fVPktwWhCx60lQ1RdcHO6ZWS4b_pM6_L/pub?w=1440&h=1080",
     dataAiHint: "music lessons",
     description: "Si tienes talento para tocar un instrumento musical o quieres aprender, es tú momento.\nÚnete al grupo, no necesitas experiencia previa para formar parte de la actividad.\nPara asistir a las clases solo necesitas:\n- Una botella de agua para tu hidratación.\n\nDónde y cuándo son las clases:\nLunes o jueves, 5:00 P.M.",
+    time: "Lunes o Jueves, 5:00 PM",
     category: 'Cultura',
   },
   {
@@ -319,6 +323,7 @@ export const mockActivities: Activity[] = [
     imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vS-2SIXWbSHXnkH_G5JSw9sKGjBBU6W55JWe9qAkumq0cfBEvIkTIsp9Fgg9fMwtpSwkUJ1TQNDFRsK/pub?w=1440&h=1080",
     dataAiHint: "dance therapy",
     description: "Sorpréndete con la variedad de estilos y ritmos en nuestra clase de bailoterapia y disfruta de los múltiples beneficios de esta técnica:\n- Fortalece el corazón y la circulación de la sangre.\n- Reduce el estrés, la ansiedad y la tristeza.\n- Combate los dolores musculares.\nPara asistir a las clases solo necesitas:\n- Ropa deportiva y cómoda, preferiblemente licras o monos largos y camisas cómodas.\n- Una botella de agua para tu hidratación.\nDónde y cuándo son las clases:\nJueves, 5:00 P.M.",
+    time: "Jueves, 5:00 PM",
     category: 'Salud',
   },
   {
@@ -329,6 +334,7 @@ export const mockActivities: Activity[] = [
     imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vR_GHN3lNxFsHtVLpR9d3SKw0UUHql91MhxbGyHrq1b3IuVvAvqC9VF9FzTw-L7cZqmFAYGoqxtaYx1/pub?w=1440&h=1080",
     dataAiHint: "combat fitness",
     description: "Te invitamos a esta emocionante actividad física musicalizada, donde de forma equilibrada y en conjunto se estimulan capacidades, como la aérobica o cardiovascular, la resistencia muscular, flexibilidad y otra habilidades y destrezas de ejercicios tomados del Boxeo, las Artes marciales y la Danza aeróbica o gimnasia aeróbica.\n\nDónde y cuándo son las clases:\nMartes, 5:00 P.M.",
+    time: "Martes, 5:00 PM",
     category: 'Deporte',
   },
   {
@@ -339,6 +345,7 @@ export const mockActivities: Activity[] = [
     imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vRkNFQP3uAsHe8IyOwaO0lgsI6SIjeZmTwNaFmH7WhXBBoITRWZBxR1pUzmbVagRPqhk5SRy-cbH-gD/pub?w=1440&h=1080",
     dataAiHint: "theater workshop",
     description: "Te invitamos a esta maravillosa actividad, en la que desarrollarás competencias para romper el hielo, desenvolverte en diversos contextos con tranquilidad, mejorarás la dicción y oratoria para comunicarte asertivamente.  A partir del 12 de marzo.\n\nDónde y cuándo son las clases:\nMartes y Jueves, 5:00 P.M.",
+    time: "Martes y Jueves, 5:00 PM",
     category: 'Cultura',
   },
 ];
@@ -718,8 +725,8 @@ export const mockExecutiveCalendarEvents = [
     { id: "exec-pago-jun-11", date: "2025-06-11", title: "Pago Quincena", description: "Pago de la primera quincena para gerentes.", color: "bg-emerald-500" },
     { id: "exec-bono-jul-15", date: "2025-07-15", title: "Bono Gerencial", description: "Pago de bono por desempeño para la gerencia.", color: "bg-primary" },
     { id: "exec-reunion-jul-15", date: "2025-07-15", title: "Reunión de Directorio", description: "Reunión mensual del directorio.", color: "bg-rose-500", time: "09:00" },
-    { id: "exec-pago-jul-29", date: "2025-07-29", title: "Pago Quincena", description: "Pago de la segunda quincena para gerentes.", color: "bg-emerald-500" },
-    { id: "exec-resultados-ago-05", date: "2025-08-05", title: "Presentación Resultados Q3", description: "Presentación de resultados del tercer trimestre.", color: "bg-sky-500", time: "14:00" },
+    { id: "exec-pago-jul-29", date: new Date(2025, 6, 29), title: "Pago Quincena", description: "Pago de la segunda quincena para gerentes.", color: "bg-emerald-500" },
+    { id: "exec-resultados-ago-05", date: new Date(2025, 7, 5), title: "Presentación Resultados Q3", description: "Presentación de resultados del tercer trimestre.", color: "bg-sky-500", time: "14:00" },
 ];
 
 export const mockExecutiveMenuItems: MenuItem[] = [
@@ -982,5 +989,6 @@ export const mockCustomerFeedback: CustomerFeedback[] = [
   
 
     
+
 
 
