@@ -34,6 +34,7 @@ export const ActivityCarousel = () => {
                 layout="fill"
                 objectFit="contain"
                 data-ai-hint={activity.dataAiHint}
+                className="object-bottom"
               />
             </div>
             <div>
