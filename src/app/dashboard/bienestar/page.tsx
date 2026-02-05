@@ -144,7 +144,7 @@ export default function BienestarPage() {
                                     <Link href="/dashboard/calendario">Calendario</Link>
                                 </Button>
                             </div>
-                            <div className="relative h-96">
+                            <div className="relative h-[32rem]">
                                 <Image
                                     src="https://docs.google.com/drawings/d/e/2PACX-1vR5aZgHV3jK7mPbZmTMnqWFihBlFliaMpek4k6pdMQOhuzPgxuiONEdcH-SiVBmuOB6ir68T0bGmmYA/pub?w=1440&h=1080"
                                     alt="Feriados y Eventos"
