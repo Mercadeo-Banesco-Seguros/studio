@@ -141,7 +141,7 @@ export const mockCourses: Course[] = [
     id: "google-sites",
     title: "Google Sites",
     description: "Aprende a crear un Site y los trucos para pasar de Nivel Básico a Avanzado en pocas horas.",
-    imageUrl: "https://images.unsplash.com/photo-1472289065668-ce650ac443d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1472289065668-ce650ac443d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzU0MzM2OTA2fDA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "web design",
     category: "Google Workspace",
     duration: "Auto-gestionado",
@@ -151,7 +151,7 @@ export const mockCourses: Course[] = [
     id: "google-sheets",
     title: "Sheets",
     description: "Aprender a aprovechar Sheets para optimizar tu tiempo y aprender lo más avanzado del aplicativo en pocas horas.",
-    imageUrl: "https://images.unsplash.com/photo-1658203897339-0b8c64a42fba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxleGNlbHxlbnwwfHx8fDE3NTQzMzc0NTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1658203897339-0b8c64a42fba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxleGNlbHxlbnwwfHx8fDE3NTQzMzc0NTB8MA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "spreadsheet data",
     category: "Google Workspace",
     duration: "Auto-gestionado",
@@ -283,7 +283,7 @@ export const mockCourses: Course[] = [
 export const mockActivities: Activity[] = [
   {
     id: "A001",
-    title: "Yoga",
+    title: "Clases de Yoga",
     date: "2025-07-01",
     location: "Terraza",
     imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vR8Jgeo9cLbKGIxdoEFuoypEpFZr4go6JQQtCaYKhcNxcfOcGAJA1GkFHLnBjdllmTL4h7K3nnfHtl5/pub?w=924&h=672",
@@ -294,7 +294,7 @@ export const mockActivities: Activity[] = [
   },
   {
     id: "A002",
-    title: "Ejercicios funcionales",
+    title: "Ejercicios Funcionales",
     date: "2025-07-01",
     location: "Terraza",
     imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vToLB6evw766T6GuKnYbLmHxeY1rkMCgGhJpt7zl0ef0nR6NolOqna3AWtbbMiYsX-Niw-jcGAJyZQx/pub?w=960&h=720",
@@ -306,7 +306,7 @@ export const mockActivities: Activity[] = [
   },
   {
     id: "A003",
-    title: "Clases de cuatro",
+    title: "Clases de Cuatro",
     date: "2025-07-01",
     location: "Triadas",
     imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vQFnTLc2tZVFAu3O5cKTisITlKkSFiTPoEy9z4Cz062QMf4fVPktwWhCx60lQ1RdcHO6ZWS4b_pM6_L/pub?w=1440&h=1080",
@@ -317,7 +317,7 @@ export const mockActivities: Activity[] = [
   },
   {
     id: "A004",
-    title: "Clases de bailoterapia",
+    title: "Bailoterapia",
     date: "2025-07-01",
     location: "Terraza",
     imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vS-2SIXWbSHXnkH_G5JSw9sKGjBBU6W55JWe9qAkumq0cfBEvIkTIsp9Fgg9fMwtpSwkUJ1TQNDFRsK/pub?w=1440&h=1080",
@@ -328,7 +328,7 @@ export const mockActivities: Activity[] = [
   },
   {
     id: "A005",
-    title: "Cross combat",
+    title: "Cross Combat",
     date: "2025-07-01",
     location: "Terraza",
     imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vR_GHN3lNxFsHtVLpR9d3SKw0UUHql91MhxbGyHrq1b3IuVvAvqC9VF9FzTw-L7cZqmFAYGoqxtaYx1/pub?w=1440&h=1080",
@@ -339,7 +339,7 @@ export const mockActivities: Activity[] = [
   },
   {
     id: "A006",
-    title: "Teatro",
+    title: "Clases de Teatro",
     date: "2025-07-01",
     location: "Tríadas",
     imageUrl: "https://docs.google.com/drawings/d/e/2PACX-1vRkNFQP3uAsHe8IyOwaO0lgsI6SIjeZmTwNaFmH7WhXBBoITRWZBxR1pUzmbVagRPqhk5SRy-cbH-gD/pub?w=1440&h=1080",
@@ -989,6 +989,7 @@ export const mockCustomerFeedback: CustomerFeedback[] = [
   
 
     
+
 
 
 
