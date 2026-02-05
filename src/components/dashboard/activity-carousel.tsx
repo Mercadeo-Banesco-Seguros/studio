@@ -19,6 +19,9 @@ export const ActivityCarousel = () => {
         disableOnInteraction: false,
       }}
       effect="fade"
+      fadeEffect={{
+        crossFade: true,
+      }}
       className="w-full"
     >
       {mockActivities.map((activity) => (
