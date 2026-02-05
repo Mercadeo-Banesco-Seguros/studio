@@ -113,6 +113,7 @@ export default function BienestarPage() {
                                         objectFit="contain"
                                         data-ai-hint={slide.dataAiHint}
                                         priority={index === 0}
+                                        className="object-bottom"
                                     />
                                 </div>
                             </div>
@@ -158,7 +159,7 @@ export default function BienestarPage() {
             </section>
 
             {/* Actividades Section */}
-            <section className="py-12 bg-gradient-to-r from-[#c1e4f1] to-[#349eff]">
+            <section className="bg-gradient-to-r from-[#c1e4f1] to-[#349eff]">
                 <div className="container mx-auto px-4">
                     <ActivityCarousel />
                 </div>
@@ -206,3 +207,5 @@ export default function BienestarPage() {
         </div>
     );
 }
+
+    
