@@ -136,7 +136,7 @@ export default function BienestarPage() {
                     <Card className="p-8 rounded-2xl bg-transparent border-none shadow-none">
                         <div className="grid md:grid-cols-2 gap-8 items-center">
                             <div>
-                                <h2 className="text-4xl font-bold">Feriados y Eventos</h2>
+                                <h2 className="text-6xl font-bold">Feriados y Eventos</h2>
                                 <p className="mt-2 text-muted-foreground">
                                     Mantente al día con las fechas especiales del mes.
                                 </p>
