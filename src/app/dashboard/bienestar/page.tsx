@@ -5,34 +5,17 @@ import React, { useState, useRef, useEffect, useMemo } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, Star, Smile, Meh, Frown, Send } from "lucide-react";
-import { ActivityCard } from "@/components/dashboard/activity-card";
-import { mockActivities } from "@/lib/placeholder-data";
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { EventHighlightCard, type EventHighlightProps } from '@/components/dashboard/event-highlight-card';
-import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
+import { Card, CardContent } from '@/components/ui/card';
 import { getMenuItems } from '@/ai/flows/get-menu-items-flow';
 import type { MenuItem } from '@/ai/flows/get-menu-items-flow';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useEvents } from '@/contexts/events-context';
-import { format, getMonth, getYear } from 'date-fns';
-import { es } from 'date-fns/locale';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
-import { Badge } from '@/components/ui/badge';
 import { InteractiveMenuBanner } from '@/components/dashboard/interactive-menu-banner';
 import { GalleryCarousel } from '@/components/dashboard/gallery-carousel';
-
-// Palabras clave para detectar eventos especiales
-const ESPECIAL_KEYWORDS = ['día de', 'feriado', 'conmemorativo', 'aniversario', 'independencia', 'mujer', 'trabajador', 'resistencia', 'navidad', 'noche buena', 'festivo', 'resultados anuales', 'carnavales', 'santo', 'semana santa', 'pascua', 'halloween', 'batalla', 'natalicio', 'año nuevo', 'fin de año'];
-
-const normalizeDayName = (name: string) => {
-  return name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-};
-
-type Satisfaction = 'happy' | 'neutral' | 'sad' | null;
-const weekDays = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
+import { ActivityCarousel } from '@/components/dashboard/activity-carousel';
 
 const slides = [
   {
@@ -55,60 +38,16 @@ const slides = [
   }
 ];
 
-/**
- * SOLUCIÓN AL PROBLEMA DEL ÁRBOL:
- * Esta función ahora valida el mes para evitar errores de keywords.
- */
-const getEventImage = (title: string): { imageUrl: string; dataAiHint: string } => {
-    const lowerTitle = title.toLowerCase();
-    const currentMonth = new Date().getMonth(); // 0 = Enero, 1 = Febrero...
-
-    // 1. CARNAVAL (Solo si es Febrero o el título lo dice)
-    if (lowerTitle.includes('carnaval') || lowerTitle.includes('carnavales')) {
-        return { 
-            // CAMBIADO: Usamos una imagen de celebración real, no la del árbol (zb4d...)
-            imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_zb4dnhzb4dnhzb4d-Photoroom.png?raw=true", 
-            dataAiHint: "carnival celebration" 
-        };
-    }
-
-    // 2. NAVIDAD (BLOQUEADO: Solo se muestra en Diciembre - Mes 11)
-    if ((lowerTitle.includes('navidad') || lowerTitle.includes('noche buena')) && currentMonth === 11) {
-        return { 
-            imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_ka2ygrka2ygrka2y-Photoroom.png?raw=true',
-            dataAiHint: 'Christmas tree' 
-        };
-    }
-
-    // 3. OTROS EVENTOS
-    if (lowerTitle.includes('independencia')) {
-        return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_wr32ivwr32ivwr32-Photoroom.png?raw=true", dataAiHint: "independence day" };
-    }
-    if (lowerTitle.includes('pascua') || lowerTitle.includes('semana santa')) {
-        return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_juve0ejuve0ejuve-Photoroom.png?raw=true", dataAiHint: "easter celebration" };
-    }
-    if (lowerTitle.includes('halloween')) {
-        return { imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(59).png?raw=true", dataAiHint: "halloween pumpkin" };
-    }
-    
-    // FALLBACK: Imagen de bienestar genérica para cualquier otro caso
-    return { 
-        imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1000", 
-        dataAiHint: "general celebration" 
-    };
-};
+type Satisfaction = 'happy' | 'neutral' | 'sad' | null;
+const weekDays = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
 
 export default function BienestarPage() {
     const [selectedDay, setSelectedDay] = useState(weekDays[0]);
     const [allMenuItems, setAllMenuItems] = useState<MenuItem[]>([]);
     const [isLoadingMenu, setIsLoadingMenu] = useState(true);
-    const { allEvents } = useEvents();
-    const [importantEvents, setImportantEvents] = useState<EventHighlightProps[]>([]);
-    const [isLoadingEvents, setIsLoadingEvents] = useState(true);
     const [satisfaction, setSatisfaction] = useState<Satisfaction>(null);
     const [comment, setComment] = useState('');
     const { toast } = useToast();
-    const activitiesScrollRef = useRef<HTMLDivElement>(null);
     const [activeSlide, setActiveSlide] = useState(0);
 
     useEffect(() => {
@@ -137,46 +76,6 @@ export default function BienestarPage() {
         };
         fetchMenu();
     }, []);
-
-    useEffect(() => {
-        if (allEvents.length > 0) {
-            setIsLoadingEvents(true);
-            const now = new Date();
-            const currentMonth = getMonth(now);
-            const currentYear = getYear(now);
-
-            const eventsToShow = allEvents
-                .filter(event => {
-                    const eventMonth = getMonth(event.date);
-                    const eventYear = getYear(event.date);
-                    const isSpecial = ESPECIAL_KEYWORDS.some(kw => event.title.toLowerCase().includes(kw));
-                    return eventYear === currentYear && eventMonth === currentMonth && isSpecial;
-                })
-                .sort((a, b) => a.date.getTime() - b.date.getTime());
-
-            const formatted = eventsToShow.slice(0, 2).map(event => {
-              const { imageUrl, dataAiHint } = getEventImage(event.title);
-              return {
-                title: event.title,
-                date: format(event.date, "d 'de' MMMM", { locale: es }),
-                description: event.description || `Evento especial programado para el ${format(event.date, "d 'de' MMMM", { locale: es })}.`,
-                imageUrl,
-                dataAiHint
-              };
-            });
-
-            setImportantEvents(formatted);
-            setIsLoadingEvents(false);
-        }
-    }, [allEvents]);
-
-    const handleActivitiesScroll = (direction: 'left' | 'right') => {
-        const viewport = activitiesScrollRef.current?.querySelector<HTMLDivElement>('[data-radix-scroll-area-viewport]');
-        if (viewport) {
-            const scrollAmount = viewport.offsetWidth;
-            viewport.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
-        }
-    };
 
     const handleFeedbackSubmit = () => {
         if (!satisfaction || !comment.trim()) {
@@ -230,44 +129,34 @@ export default function BienestarPage() {
                 </div>
             </section>
 
-            {/* EVENTOS */}
+            {/* New Integrated Events & Activities Section */}
             <section className="py-24 bg-muted/50">
-                <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
-                    <div className="grid grid-cols-2 gap-4">
-                        {isLoadingEvents ? (
-                            <Skeleton className="h-96 w-full rounded-2xl col-span-2" />
-                        ) : importantEvents.length > 0 ? (
-                            importantEvents.map((ev, i) => <EventHighlightCard key={i} {...ev} />)
-                        ) : (
-                            <Card className="col-span-2 p-8 text-center"><Star className="mx-auto mb-4 opacity-20" />Sin eventos este mes</Card>
-                        )}
-                    </div>
-                    <div>
-                        <h2 className="text-4xl font-bold">Feriados y Eventos</h2>
-                        <p className="mt-4 text-muted-foreground">Mantente al día con las fechas especiales del mes.</p>
-                        <Button asChild className="mt-6" variant="outline"><Link href="/dashboard/calendario">Ver Calendario</Link></Button>
-                    </div>
-                </div>
-            </section>
+                <div className="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-stretch">
+                    {/* Feriados y Eventos */}
+                    <Card className="relative rounded-2xl overflow-hidden shadow-lg border-none flex flex-col justify-between p-8 bg-card">
+                        <div>
+                            <h2 className="text-4xl font-bold">Feriados y Eventos</h2>
+                            <p className="mt-2 text-muted-foreground">
+                                Mantente al día con las fechas especiales del mes.
+                            </p>
+                            <Button asChild className="mt-6" variant="outline">
+                                <Link href="/dashboard/calendario">Ver Calendario</Link>
+                            </Button>
+                        </div>
+                        <div className="relative h-64 mt-8 -mb-8 -mr-8 self-end">
+                             <Image
+                                src="https://docs.google.com/drawings/d/e/2PACX-1vR5aZgHV3jK7mPbZmTMnqWFihBlFliaMpek4k6pdMQOhuzPgxuiONEdcH-SiVBmuOB6ir68T0bGmmYA/pub?w=1440&h=1080"
+                                alt="Feriados y Eventos"
+                                layout="fill"
+                                objectFit="contain"
+                                data-ai-hint="celebration characters"
+                            />
+                        </div>
+                    </Card>
 
-            {/* ACTIVIDADES */}
-            <section id="explorar-actividades" className="py-24 container mx-auto px-4">
-                <div className="flex justify-between items-end mb-8">
-                    <div>
-                        <Badge>Bienestar</Badge>
-                        <h2 className="text-4xl font-bold mt-2">Nuestras Actividades</h2>
-                    </div>
-                    <div className="flex gap-2">
-                        <Button variant="outline" size="icon" onClick={() => handleActivitiesScroll('left')}><ChevronLeft /></Button>
-                        <Button variant="outline" size="icon" onClick={() => handleActivitiesScroll('right')}><ChevronRight /></Button>
-                    </div>
+                    {/* Nuestras Actividades */}
+                    <ActivityCarousel />
                 </div>
-                <ScrollArea ref={activitiesScrollRef}>
-                    <div className="flex space-x-6 pb-6">
-                        {mockActivities.map(act => <ActivityCard key={act.id} activity={act} />)}
-                    </div>
-                    <ScrollBar orientation="horizontal" />
-                </ScrollArea>
             </section>
 
             {/* MENÚ */}
@@ -311,6 +200,4 @@ export default function BienestarPage() {
             </section>
         </div>
     );
-
-    
-
+}
