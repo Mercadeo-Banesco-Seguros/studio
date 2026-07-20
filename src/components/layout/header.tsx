@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home, CalendarDays, Library, Menu, Search, Bell, Clock, LogOut, GraduationCap, Video, HeartHandshake, TrendingUp, Mail } from "lucide-react"; 
+import { Home, CalendarDays, Library, Menu, Search, Bell, Clock, LogOut, GraduationCap, Video, HeartHandshake, TrendingUp, Mail, AlertTriangle, ChevronRight } from "lucide-react"; 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import React, { useEffect, useState, useRef } from "react";
@@ -92,13 +92,13 @@ export function Header() {
       description: event.description,
       time: event.time ? format(new Date(`1970-01-01T${event.time}`), 'p', { locale: es }) : 'Todo el día',
       icon: CalendarDays,
-      iconColor: 'bg-rose-100 text-rose-500'
+      iconColor: 'bg-slate-50 text-slate-400'
     }));
 
     const combinedNotifications = [...initialMockNotifications];
     eventNotifications.forEach(en => {
       if (!combinedNotifications.some(cn => cn.id === en.id)) {
-        combinedNotifications.push(en);
+        combinedNotifications.unshift(en); // Show events at the top
       }
     });
     setNotifications(combinedNotifications);
@@ -221,26 +221,54 @@ export function Header() {
                   )}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-80 p-0 bg-[#003c71] border-white/10 text-white" sideOffset={12}>
-                <div className="flex items-center justify-between p-3 border-b border-white/10">
-                    <h4 className="text-[10px] font-light uppercase tracking-wider text-white/60">Notificaciones</h4>
-                    <span className="text-[10px] font-light bg-white/10 px-2 py-0.5 rounded-full">{notifications.length}</span>
+              <PopoverContent className="w-[360px] p-6 bg-white border-0 shadow-2xl rounded-[32px] text-foreground" sideOffset={12}>
+                <div className="flex items-center justify-between mb-1">
+                    <h4 className="text-xl font-bold text-slate-800">Notificaciones</h4>
+                    <Link href="#" className="text-xs text-slate-400 flex items-center gap-1 hover:text-slate-600 transition-colors">
+                      Ver todas <ChevronRight className="h-3 w-3" />
+                    </Link>
                 </div>
-                <ScrollArea className="h-64">
+                <p className="text-xs text-slate-400 mb-6 font-light">Actividad y actualizaciones</p>
+
+                {/* Construction Alert */}
+                <div className="bg-[#f3f6ff] border border-[#e5ebff] rounded-2xl p-4 flex gap-3 items-center mb-8">
+                    <div className="bg-white rounded-full p-2 text-blue-600 shadow-sm">
+                        <AlertTriangle className="h-4 w-4" />
+                    </div>
+                    <p className="text-[11px] text-blue-600 font-normal leading-relaxed">
+                        Este módulo de notificaciones se encuentra en construcción.
+                    </p>
+                </div>
+
+                <ScrollArea className="h-80 -mx-2 px-2">
                    {notifications.length > 0 ? (
-                        <div className="p-2 space-y-1">
-                        {notifications.map((notification) => (
-                            <div key={notification.id} className="flex items-start p-2 rounded-lg hover:bg-white/5 transition-colors">
-                                <div className="ml-2 flex-1">
-                                    <p className="text-xs font-light">{notification.title}</p>
-                                    <p className="text-[10px] text-white/50 line-clamp-1">{notification.description}</p>
-                                    <p className="text-[9px] text-white/30 mt-1 flex items-center uppercase tracking-tighter"><Clock className="mr-1 h-3 w-3" strokeWidth={1}/>{notification.time}</p>
+                        <div className="space-y-6 pb-4">
+                        {notifications.map((notification) => {
+                            const Icon = notification.icon;
+                            return (
+                                <div key={notification.id} className="group flex items-start gap-4 cursor-pointer">
+                                    <div className={cn("flex-shrink-0 h-10 w-10 rounded-full flex items-center justify-center transition-colors", notification.iconColor)}>
+                                        <Icon className="h-5 w-5" strokeWidth={1.5} />
+                                    </div>
+                                    <div className="flex-grow pt-0.5">
+                                        <div className="flex items-center gap-2 mb-1">
+                                            <p className="text-sm font-bold text-slate-800 leading-none">{notification.title}</p>
+                                            <span className="text-[10px] text-slate-300 flex items-center gap-1 whitespace-nowrap">
+                                                <span className="h-1 w-1 bg-slate-200 rounded-full"></span>
+                                                {notification.time}
+                                            </span>
+                                        </div>
+                                        <p className="text-[11px] text-slate-400 leading-snug line-clamp-2">{notification.description}</p>
+                                    </div>
+                                    <div className="pt-2">
+                                        <ChevronRight className="h-3 w-3 text-slate-200 opacity-0 group-hover:opacity-100 transition-all" />
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            )
+                        })}
                         </div>
                    ) : (
-                        <div className="text-center text-[11px] font-light text-white/40 py-12">
+                        <div className="text-center text-[11px] font-light text-slate-400 py-12">
                             Sin notificaciones pendientes
                         </div>
                    )}

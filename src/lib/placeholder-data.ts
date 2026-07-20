@@ -1,6 +1,5 @@
 
-
-import { Users, Megaphone, FolderKanban, Shield, BarChart2, Briefcase, FileText, Bot, BookOpen, Scale, FileSignature, HardHat, Plane, Cpu, PiggyBank, CreditCard, Landmark, CalendarClock, MessageCircleQuestion, Bell, Utensils, Star, Video, Presentation, Image as ImageIcon, Code, Music, AlertTriangle, CheckCircle, CalendarDays, MessageSquare as MessageSquareIcon, Music2, Home, User, Cog, Lightbulb, Handshake, Award, FileBarChart, AppWindow, Mail, ClipboardList, Network, Gift, PartyPopper } from 'lucide-react';
+import { Users, Megaphone, FolderKanban, Shield, BarChart2, Briefcase, FileText, Bot, BookOpen, Scale, FileSignature, HardHat, Plane, Cpu, PiggyBank, CreditCard, Landmark, CalendarClock, MessageCircleQuestion, Bell, Utensils, Star, Video, Presentation, Image as ImageIcon, Code, Music, AlertTriangle, CheckCircle, CalendarDays, MessageSquare as MessageSquareIcon, Music2, Home, User, Cog, Lightbulb, Handshake, Award, FileBarChart, AppWindow, Mail, ClipboardList, Network, Gift, PartyPopper, Database, Sparkles } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface Course {
@@ -201,7 +200,7 @@ export const mockCourses: Course[] = [
     id: "como-hacer-feedback",
     title: "¿Cómo hacer Feedback?",
     description: "Es importante tomar en consideración este proceso comunicativo, ya que es toda respuesta o reacción que el receptor envía al emisor de un mensaje. Si las partes no se entienden el mensaje no es claro; Aquí te dejamos algunas recomendaciones.",
-    imageUrl: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb211bmljYXRpb258ZW58MHx8fHwxNzU0MzQxNjIzfDA&ixlib.rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb211bmljYXRpb258ZW58MHx8fHwxNzU0MzQxNjIzfDA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "feedback conversation",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -211,7 +210,7 @@ export const mockCourses: Course[] = [
     id: "presentaciones-efectivas",
     title: "Presentaciones Efectivas",
     description: "En este curso obtendrás las habilidades para el diseño de presentaciones corporativas que permitirán alinear la comunicación dentro de la organización adaptándola a las necesidades de la audiencia a la que se dirija.",
-    imageUrl: "https://images.unsplash.com/photo-1541872705-1f73c6400ec9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3BlZWNofGVufDB8fHx8MTc1NDM0MjE4M3ww&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1541872705-1f73c6400ec9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3BlZWNofGVufDB8fHx8fDE3NTQzNDIxODN8MA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "conference presentation",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -251,7 +250,7 @@ export const mockCourses: Course[] = [
     id: "reuniones-efectivas",
     title: "Reuniones Efectivas",
     description: "Aquí podrás  obtener tips de como tener una reunión efectiva, donde es importante considerar que una gran parte de la eficacia y productividad del equipo de trabajo se obtiene a partir de la efectividad con que se desarrollan estas reuniones.",
-    imageUrl: "https://images.unsplash.com/photo-1553877522-43269d4ea984?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyZXVuaSVDMyVCM258ZW58MHx8fHwxNzU0NDIwMzY0fDA&ixlib.rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1553877522-43269d4ea984?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyZXVuaSVDMyVCM258ZW58MHx8fHwxNzU0NDIwMzY0fDA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "effective meeting",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -921,7 +920,7 @@ export const mockPlaylist: PlaylistItem[] = [
     id: "P002", 
     title: "Rock Suave", 
     description: "La selección perfecta para concentrarse.",
-    albumArtUrl: "https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxndWl0YXJ8ZW58MHx8fHwxNzUyNjA3MjEwfDA&ixlib.rb-4.1.0&q=80&w=1080", 
+    albumArtUrl: "https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxndWl0YXJ8ZW58MHx8fHwxNzUyNjA3MjEwfDA&ixlib-rb-4.1.0&q=80&w=1080", 
     linkUrl: "#", 
     dataAiHint: "soft rock" 
   },
@@ -946,13 +945,40 @@ export const mockPlaylist: PlaylistItem[] = [
     
 export const mockNotifications: NotificationItem[] = [
   {
-    id: 'update-music',
+    id: 'n1',
     type: 'update',
-    title: '¡Nueva Música en la Biblioteca!',
-    description: 'Hemos añadido nuevas playlists para que disfrutes mientras trabajas.',
-    time: 'Reciente',
-    icon: Music2,
-    iconColor: 'bg-purple-100 text-purple-500'
+    title: 'Cifras actualizadas',
+    description: 'Los tableros de producción ya reflejan el cierre de ayer.',
+    time: 'Hace 5m',
+    icon: Database,
+    iconColor: 'bg-slate-50 text-slate-400'
+  },
+  {
+    id: 'n2',
+    type: 'update',
+    title: 'Nueva funcionalidad',
+    description: 'Módulo de análisis de tubería optimizado ya disponible.',
+    time: 'Hoy',
+    icon: Sparkles,
+    iconColor: 'bg-slate-50 text-slate-400'
+  },
+  {
+    id: 'n3',
+    type: 'update',
+    title: 'Póliza renovada',
+    description: 'Corporación Polar C.A. ha renovado su póliza de Salud.',
+    time: 'Hace 1h',
+    icon: CheckCircle,
+    iconColor: 'bg-slate-50 text-slate-400'
+  },
+  {
+    id: 'n4',
+    type: 'update',
+    title: 'Reporte disponible',
+    description: 'El informe ejecutivo del Q1 ya está listo para descarga.',
+    time: 'Hace 3h',
+    icon: FileText,
+    iconColor: 'bg-slate-50 text-slate-400'
   }
 ];
 
@@ -966,30 +992,3 @@ export const mockCustomerFeedback: CustomerFeedback[] = [
   { id: 'cf2', name: 'José Pérez', avatar: 'JP', comment: 'La aplicación móvil es muy fácil de usar. Pude gestionar mi póliza y reportar un siniestro sin complicaciones.', nps: 9 },
   { id: 'cf3', name: 'Ana Sofía Rivas', avatar: 'AR', comment: 'Me gustaría que tuvieran más opciones de cobertura para viajes internacionales.', nps: 7 },
 ];
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  
-
-    
-
-
-
-
