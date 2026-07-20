@@ -2,19 +2,18 @@
 "use client";
 
 import Link from "next/link";
-import { Home, CalendarDays, FileText, Library, Menu, Search, Bell, Clock, Users, User, LogOut, GraduationCap, Activity, CircleCheckBig, Landmark, TrendingUp, Leaf, Mail, Film, Video, HeartHandshake } from "lucide-react"; 
+import { Home, CalendarDays, Library, Menu, Search, Bell, Clock, LogOut, GraduationCap, Video, HeartHandshake, TrendingUp, Mail } from "lucide-react"; 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import React, { useEffect, useState, useRef } from "react";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-import { useEvents, type CalendarEvent } from "@/contexts/events-context"; 
+import { useEvents } from "@/contexts/events-context"; 
 import { mockNotifications as initialMockNotifications, type NotificationItem } from "@/lib/placeholder-data";
-import { format, isToday, intervalToDuration, isPast } from "date-fns"; 
+import { format } from "date-fns"; 
 import { es } from "date-fns/locale"; 
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
@@ -30,7 +29,7 @@ import {
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const navItemsDesktop = [
-  { name: "General", href: "/dashboard", icon: Home, activePaths: ["/dashboard"] },
+  { name: "Home", href: "/dashboard", icon: Home, activePaths: ["/dashboard"] },
   { name: "Nosotros", href: "/dashboard/mapa-clientes", icon: TrendingUp, activePaths: ["/dashboard/mapa-clientes", "/dashboard/objetivos", "/dashboard/objetivos-smart"] },
   { name: "Calendario", href: "/dashboard/calendario", icon: CalendarDays, activePaths: ["/dashboard/calendario"] },
   { name: "Bienestar", href: "/dashboard/bienestar", icon: HeartHandshake, activePaths: ["/dashboard/bienestar", "/dashboard/actividades"] },
@@ -47,31 +46,30 @@ const UserProfileButton = () => {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="relative h-10 w-10 rounded-full group focus-visible:ring-0 focus-visible:ring-offset-0 transition-transform hover:scale-110 hover:bg-transparent">
-                    <Avatar className="h-9 w-9 transition-transform group-hover:scale-110 group-data-[state=open]:scale-110">
-                        <AvatarFallback className="bg-primary text-primary-foreground">{userInitials}</AvatarFallback>
+                <Button variant="ghost" className="relative h-8 w-8 rounded-full group focus-visible:ring-0 focus-visible:ring-offset-0 transition-transform hover:scale-110 hover:bg-transparent">
+                    <Avatar className="h-7 w-7 border border-white/10">
+                        <AvatarFallback className="bg-transparent text-white text-[10px] font-light">{userInitials}</AvatarFallback>
                     </Avatar>
                 </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-64" align="end" forceMount>
-                <DropdownMenuLabel className="font-normal">
+            <DropdownMenuContent className="w-56 mt-2 bg-[#003c71] text-white border-white/10" align="end" forceMount>
+                <DropdownMenuLabel className="font-light">
                     <div className="flex flex-col space-y-1">
-                        <p className="text-xs font-medium leading-none text-muted-foreground">Mi Cuenta</p>
-                        <p className="text-xs leading-none text-foreground truncate">
+                        <p className="text-[10px] font-light leading-none text-white/60 uppercase">Mi Cuenta</p>
+                        <p className="text-xs leading-none truncate mt-1">
                             {userEmail}
                         </p>
                     </div>
                 </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={logout} className="text-xs">
-                    <LogOut className="mr-2 h-4 w-4" />
+                <DropdownMenuSeparator className="bg-white/10" />
+                <DropdownMenuItem onClick={logout} className="text-xs focus:bg-white/10 focus:text-white cursor-pointer font-light">
+                    <LogOut className="mr-2 h-4 w-4" strokeWidth={1.5} />
                     <span>Cerrar sesión</span>
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     );
 };
-
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -82,18 +80,9 @@ export function Header() {
   const [searchTerm, setSearchTerm] = useState('');
   const { toast } = useToast();
   
-  const navRef = useRef<HTMLDivElement>(null);
-  
-  const navItemsMobile = [
-    ...navItemsDesktop,
-    { name: "Recordatorios", href: "#", icon: Bell, isReminders: true, activePaths: [] }, 
-    { name: "Buscar", href: "#", icon: Search, isSearch: true, activePaths: [] }, 
-  ];
-  
   useEffect(() => {
     const today = new Date();
     const todayStr = format(today, 'yyyy-MM-dd');
-
     const todaysEvents = allEvents.filter(event => format(event.date, 'yyyy-MM-dd') === todayStr);
 
     const eventNotifications: NotificationItem[] = todaysEvents.map(event => ({
@@ -112,115 +101,62 @@ export function Header() {
         combinedNotifications.push(en);
       }
     });
-    
     setNotifications(combinedNotifications);
   }, [allEvents]);
 
   const handleSearch = () => {
     if (pathname === '/dashboard') {
       const normalizedSearchTerm = searchTerm.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
       const sectionMap: { [key: string]: string } = {
-        'acerca de': 'about-us',
-        'nosotros': 'about-us',
-        'mision': 'about-us',
-        'nuestra mision': 'about-us',
-        'oferta de valor': 'about-us',
-        'nuestra oferta de valor': 'about-us',
-        'pilares': 'about-us',
-        'nuestros pilares': 'about-us',
-        'vestimenta': 'dress-code',
-        'viste seguro': 'dress-code',
-        'codigo de vestimenta': 'dress-code',
-        'ropa': 'dress-code',
-        'vacaciones': 'vacaciones',
-        'gestion de vacaciones': 'vacaciones',
-        'requerimientos': 'requerimientos',
-        'portal de requerimientos': 'requerimientos',
-        'solicitudes': 'requerimientos',
-        'cursos': 'cursos',
-        'activate': 'cursos',
-        'menu': 'menu',
-        'comedor': 'menu',
-        'poliza': 'poliza',
-        'hcm': 'poliza',
-        'seguro': 'poliza',
-        'ejecutivo': 'espacio-ejecutivo',
-        'espacio ejecutivo': 'espacio-ejecutivo',
-        'gerencia': 'espacio-ejecutivo',
-        'actividades': 'actividades',
-        'bienestar': 'actividades',
-        'conectados': 'conectados',
-        'ranking': 'conectados',
-        'playlist': 'playlist',
-        'musica': 'playlist',
-        'faq': 'faq',
-        'preguntas': 'faq',
-        'ayuda': 'faq',
+        'acerca de': 'about-us', 'nosotros': 'about-us', 'mision': 'about-us', 'oferta': 'about-us',
+        'vestimenta': 'dress-code', 'viste seguro': 'dress-code', 'vacaciones': 'vacaciones',
+        'requerimientos': 'requerimientos', 'cursos': 'cursos', 'menu': 'menu', 'poliza': 'poliza',
+        'ejecutivo': 'espacio-ejecutivo', 'actividades': 'actividades', 'conectados': 'conectados',
+        'playlist': 'playlist', 'faq': 'faq'
       };
       
-      let elementId: string | undefined = undefined;
-
-      // Find the best match
-      for (const key of Object.keys(sectionMap).sort((a, b) => b.length - a.length)) {
-          if (normalizedSearchTerm.includes(key)) {
-              elementId = sectionMap[key];
-              break;
-          }
-      }
-
+      let elementId = Object.keys(sectionMap).find(key => normalizedSearchTerm.includes(key));
       if (elementId) {
-        const element = document.getElementById(elementId);
+        const element = document.getElementById(sectionMap[elementId]);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth', block: 'start' });
             setIsSearchPopoverOpen(false);
             setSearchTerm('');
+            return;
         }
-      } else {
-        toast({
-            title: "No se encontró la sección",
-            description: `No se pudo encontrar una sección para "${searchTerm}".`,
-            variant: "destructive"
-        })
       }
+      toast({ title: "No encontrado", description: `No se encontró la sección "${searchTerm}"`, variant: "destructive" });
     } else {
-        toast({
-            title: "Búsqueda no disponible",
-            description: "La búsqueda por sección solo está disponible en la página principal del dashboard.",
-        })
+        toast({ title: "Búsqueda limitada", description: "La búsqueda solo funciona en el Dashboard principal." });
     }
   };
 
   const checkIsActive = (item: { name: string, href: string, activePaths: string[] }) => {
-    // Stricter check: only main pages of "Nosotros" and "Actívate" and their children are active.
     if (item.name === "Nosotros" || item.name === "Actívate") {
       return item.activePaths.some(p => pathname.startsWith(p));
     }
-    // For all other items, require an exact match.
     return pathname === item.href;
   };
 
-
-  const handleMobileLinkClick = () => {
-    setIsMobileMenuOpen(false);
-  };
-  
-  const handleArchiveAll = () => {
-    setNotifications([]);
-  };
-
   return (
-    <header className="sticky top-0 z-50 w-full flex h-24 items-center justify-center px-4">
-      <div className="flex items-center justify-center rounded-full bg-primary p-2 pl-8 pr-4 shadow-lg border-primary/80 gap-8">
-        <Link href="/dashboard" className="flex items-center justify-center mr-2">
-          <Image
-            src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/BANESCO%20LOGO%20BLANCO.png?raw=true"
-            alt="Banesco Seguros Logo"
-            width={22}
-            height={4}
-          />
+    <header className="sticky top-0 z-50 w-full flex h-20 items-center justify-center px-4">
+      <div className="flex items-center justify-center rounded-full bg-[#003c71] px-3 py-1.5 shadow-2xl border border-white/5 gap-2 md:gap-4 transition-all duration-500">
+        
+        {/* Logo Icon */}
+        <Link href="/dashboard" className="flex items-center justify-center ml-2 mr-1">
+          <div className="relative w-5 h-5">
+            <Image
+              src="https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_auto,s_webp:avif/banescointernacional.com/wp-content/uploads/2024/11/Isotipo.png"
+              alt="Banesco Isotipo"
+              layout="fill"
+              objectFit="contain"
+              className="brightness-0 invert"
+            />
+          </div>
         </Link>
-        <nav className="flex items-center justify-center gap-4" ref={navRef}>
+
+        {/* Main Navigation */}
+        <nav className="flex items-center justify-center gap-1">
             {navItemsDesktop.map((item) => {
               const isActive = checkIsActive(item);
               const Icon = item.icon;
@@ -228,98 +164,84 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  data-active={isActive}
                   className={cn(
-                    "relative flex items-center justify-center z-10 transition-all duration-300 rounded-full h-10",
+                    "relative flex items-center justify-center transition-all duration-300 rounded-full h-9",
                     isActive 
-                      ? "bg-primary-foreground text-primary px-6" 
-                      : "w-10 text-primary-foreground/70",
-                    !isActive && "hover:text-primary-foreground"
+                      ? "bg-white/10 text-white px-4" 
+                      : "w-9 text-white/50 hover:text-white hover:bg-white/5"
                   )}
                 >
-                  <div className="flex items-center justify-center gap-2">
-                    <Icon className={cn("h-4 w-4 flex-shrink-0 transition-all duration-300")} />
-                    <span className={cn(
-                        "text-[11px] font-light whitespace-nowrap transition-all duration-300",
-                        isActive ? "w-auto opacity-100 ml-2" : "w-0 opacity-0 ml-0"
-                    )}>
-                      {item.name}
-                    </span>
+                  <div className="flex items-center justify-center">
+                    <Icon className="h-4 w-4 flex-shrink-0" strokeWidth={1.5} />
+                    {isActive && (
+                      <span className="text-[11px] font-light whitespace-nowrap ml-2 animate-in fade-in slide-in-from-left-2 duration-300">
+                        {item.name}
+                      </span>
+                    )}
                   </div>
                 </Link>
               );
             })}
         </nav>
-        <div className="flex items-center gap-4 text-primary-foreground/70">
+
+        {/* Separator */}
+        <div className="h-6 w-[1px] bg-white/10 mx-1 hidden md:block"></div>
+
+        {/* Utilities */}
+        <div className="flex items-center gap-1">
             <Popover open={isSearchPopoverOpen} onOpenChange={setIsSearchPopoverOpen}>
               <PopoverTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 transition-transform hover:scale-110 hover:bg-transparent hover:text-primary-foreground">
-                  <Search className="h-4 w-4" />
+                <Button variant="ghost" size="icon" className="rounded-full h-8 w-8 text-white/50 hover:text-white hover:bg-white/10 transition-all">
+                  <Search className="h-4 w-4" strokeWidth={1.5} />
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-80">
-                <div className="grid gap-4">
-                  <div className="space-y-2">
-                    <h4 className="font-medium leading-none">Búsqueda Rápida</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Busca secciones en la página principal (ej. "cursos", "faq").
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Input 
-                      placeholder="Escribe aquí..." 
-                      className="flex-1"
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                      onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-                    />
-                    <Button onClick={handleSearch}>Buscar</Button>
-                  </div>
+              <PopoverContent className="w-72 bg-[#003c71] border-white/10 text-white" sideOffset={12}>
+                <div className="flex items-center gap-2">
+                  <Input 
+                    placeholder="Buscar sección..." 
+                    className="flex-1 bg-white/5 border-white/10 text-xs h-8 focus-visible:ring-white/20"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+                  />
+                  <Button size="sm" onClick={handleSearch} className="h-8 bg-white text-[#003c71] hover:bg-white/90 text-[10px] font-light">Ir</Button>
                 </div>
               </PopoverContent>
             </Popover>
             
             <Popover>
               <PopoverTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 relative transition-transform hover:scale-110 hover:bg-transparent hover:text-primary-foreground">
-                  <Bell className="h-4 w-4" />
+                <Button variant="ghost" size="icon" className="rounded-full h-8 w-8 relative text-white/50 hover:text-white hover:bg-white/10 transition-all">
+                  <Bell className="h-4 w-4" strokeWidth={1.5} />
                   {notifications.length > 0 && (
-                    <span className="absolute top-1.5 right-1.5 flex h-2.5 w-2.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
+                    <span className="absolute top-2 right-2 flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                     </span>
                   )}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-96 p-0">
-                <div className="flex items-center justify-between p-4 border-b">
-                    <h4 className="font-semibold">Notificaciones</h4>
-                    <Button variant="ghost" size="sm" onClick={handleArchiveAll} disabled={notifications.length === 0}>
-                        <Library className="mr-2 h-4 w-4"/> Archivar todo
-                    </Button>
+              <PopoverContent className="w-80 p-0 bg-[#003c71] border-white/10 text-white" sideOffset={12}>
+                <div className="flex items-center justify-between p-3 border-b border-white/10">
+                    <h4 className="text-[10px] font-light uppercase tracking-wider text-white/60">Notificaciones</h4>
+                    <span className="text-[10px] font-light bg-white/10 px-2 py-0.5 rounded-full">{notifications.length}</span>
                 </div>
-                <ScrollArea className="h-96">
+                <ScrollArea className="h-64">
                    {notifications.length > 0 ? (
-                        <div className="p-2">
-                        {notifications.map((notification) => {
-                            const Icon = notification.icon;
-                            return (
-                                <div key={notification.id} className="flex items-start p-3 rounded-lg hover:bg-muted">
-                                <div className={cn("flex h-8 w-8 shrink-0 items-center justify-center rounded-full", notification.iconColor)}>
-                                    <Icon className="h-4 w-4" />
+                        <div className="p-2 space-y-1">
+                        {notifications.map((notification) => (
+                            <div key={notification.id} className="flex items-start p-2 rounded-lg hover:bg-white/5 transition-colors">
+                                <div className="ml-2 flex-1">
+                                    <p className="text-xs font-light">{notification.title}</p>
+                                    <p className="text-[10px] text-white/50 line-clamp-1">{notification.description}</p>
+                                    <p className="text-[9px] text-white/30 mt-1 flex items-center uppercase tracking-tighter"><Clock className="mr-1 h-3 w-3" strokeWidth={1}/>{notification.time}</p>
                                 </div>
-                                <div className="ml-4 flex-1">
-                                    <p className="text-sm font-medium">{notification.title}</p>
-                                    <p className="text-sm text-muted-foreground">{notification.description}</p>
-                                    <p className="text-xs text-muted-foreground mt-1 flex items-center"><Clock className="mr-1.5 h-3 w-3"/>{notification.time}</p>
-                                </div>
-                                </div>
-                            )
-                        })}
+                            </div>
+                        ))}
                         </div>
                    ) : (
-                        <div className="text-center text-sm text-muted-foreground py-16">
-                            No tienes notificaciones nuevas.
+                        <div className="text-center text-[11px] font-light text-white/40 py-12">
+                            Sin notificaciones pendientes
                         </div>
                    )}
                 </ScrollArea>
@@ -328,67 +250,33 @@ export function Header() {
             
             <UserProfileButton />
         </div>
-      </div>
 
-      {/* Mobile Header */}
-      <div className="flex md:hidden w-full items-center justify-between">
-        <Link href="/dashboard" className="flex items-center space-x-2 flex-shrink-0">
-          <Image
-            src="https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_auto,s_webp:avif/banescointernacional.com/wp-content/uploads/2024/11/Isotipo.png"
-            alt="Banesco Seguros Logo"
-            width={32}
-            height={32}
-            className="h-8 w-auto"
-            priority
-          />
-        </Link>
-        <div className="flex items-center gap-2">
-          <UserProfileButton />
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Abrir menú</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col space-y-4 mt-8">
-                {navItemsMobile.map((item) => {
-                   const isActive = checkIsActive(item);
-                  return (
+        {/* Mobile Menu Trigger */}
+        <div className="md:hidden">
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="h-8 w-8 text-white/50 hover:text-white">
+                  <Menu className="h-5 w-5" strokeWidth={1.5} />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="bg-[#003c71] border-white/10 text-white w-72">
+                <div className="flex flex-col gap-4 mt-8">
+                  {navItemsDesktop.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={cn(
-                        "flex items-center space-x-2 p-2 rounded-md",
-                        isActive && item.href !== "#"
-                          ? "bg-accent text-accent-foreground font-semibold"
-                          : "hover:bg-accent hover:text-accent-foreground text-foreground"
-                      )}
-                      onClick={handleMobileLinkClick}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors font-light text-sm"
                     >
-                      <item.icon className={cn(
-                        "h-5 w-5",
-                        isActive && item.href !== "#"
-                          ? "text-accent-foreground"
-                          : "text-muted-foreground"
-                       )} />
-                      <span>{item.name}</span>
-                      {item.icon === Bell && notifications.length > 0 && (
-                         <span className="ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white">
-                           {notifications.length}
-                         </span>
-                      )}
+                      <item.icon className="h-5 w-5" strokeWidth={1.5} />
+                      {item.name}
                     </Link>
-                  );
-                  })}
-              </nav>
-            </SheetContent>
-          </Sheet>
+                  ))}
+                </div>
+              </SheetContent>
+            </Sheet>
         </div>
       </div>
     </header>
   );
 }
-
-    
