@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home, CalendarDays, Library, Menu, Search, Bell, Clock, LogOut, GraduationCap, Video, HeartHandshake, TrendingUp, Mail, AlertTriangle, ChevronRight } from "lucide-react"; 
+import { Home, CalendarDays, Library, Menu, Search, Bell, Clock, LogOut, GraduationCap, Video, HeartHandshake, TrendingUp, Mail, AlertTriangle, ChevronRight, Cake } from "lucide-react"; 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import React, { useEffect, useState, useRef } from "react";
@@ -74,7 +74,7 @@ const UserProfileButton = () => {
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [isSearchPopoverOpen, setIsSearchPopoverOpen] = useState(false);
-  const [notifications, setNotifications] = useState<NotificationItem[]>(initialMockNotifications);
+  const [notifications, setNotifications] = useState<NotificationItem[]>([]);
   const { allEvents } = useEvents();
   const pathname = usePathname();
   const [searchTerm, setSearchTerm] = useState('');
@@ -87,20 +87,15 @@ export function Header() {
 
     const eventNotifications: NotificationItem[] = todaysEvents.map(event => ({
       id: `event-${event.id}`,
-      type: 'event',
+      type: event.category === 'birthday' ? 'update' : 'event',
       title: event.title,
       description: event.description,
-      time: event.time ? format(new Date(`1970-01-01T${event.time}`), 'p', { locale: es }) : 'Todo el día',
-      icon: CalendarDays,
-      iconColor: 'bg-slate-50 text-slate-400'
+      time: event.time ? format(new Date(`1970-01-01T${event.time}`), 'p', { locale: es }) : 'Hoy',
+      icon: event.category === 'birthday' ? Cake : CalendarDays,
+      iconColor: event.category === 'birthday' ? 'bg-pink-50 text-pink-400' : 'bg-slate-50 text-slate-400'
     }));
 
-    const combinedNotifications = [...initialMockNotifications];
-    eventNotifications.forEach(en => {
-      if (!combinedNotifications.some(cn => cn.id === en.id)) {
-        combinedNotifications.unshift(en); // Show events at the top
-      }
-    });
+    const combinedNotifications = [...eventNotifications, ...initialMockNotifications];
     setNotifications(combinedNotifications);
   }, [allEvents]);
 
@@ -221,55 +216,54 @@ export function Header() {
                   )}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-[360px] p-6 bg-white border-0 shadow-2xl rounded-[32px] text-foreground" sideOffset={12}>
-                <div className="flex items-center justify-between mb-1">
-                    <h4 className="text-xl font-bold text-slate-800">Notificaciones</h4>
-                    <Link href="#" className="text-xs text-slate-400 flex items-center gap-1 hover:text-slate-600 transition-colors">
-                      Ver todas <ChevronRight className="h-3 w-3" />
+              <PopoverContent className="w-[340px] p-5 bg-white border-0 shadow-2xl rounded-[24px] text-foreground" sideOffset={12}>
+                <div className="flex items-center justify-between mb-0.5">
+                    <h4 className="text-lg font-bold text-slate-800 tracking-tight">Notificaciones</h4>
+                    <Link href="#" className="text-[10px] text-slate-400 flex items-center gap-0.5 hover:text-slate-600 transition-colors uppercase font-medium">
+                      Ver todas <ChevronRight className="h-2.5 w-2.5" />
                     </Link>
                 </div>
-                <p className="text-xs text-slate-400 mb-6 font-light">Actividad y actualizaciones</p>
+                <p className="text-[10px] text-slate-400 mb-5 font-light">Mantente al día con lo último</p>
 
                 {/* Construction Alert */}
-                <div className="bg-[#f3f6ff] border border-[#e5ebff] rounded-2xl p-4 flex gap-3 items-center mb-8">
-                    <div className="bg-white rounded-full p-2 text-blue-600 shadow-sm">
-                        <AlertTriangle className="h-4 w-4" />
+                <div className="bg-[#f3f6ff] border border-[#e5ebff] rounded-xl p-3.5 flex gap-2.5 items-center mb-6">
+                    <div className="bg-white rounded-full p-1.5 text-blue-600 shadow-sm flex-shrink-0">
+                        <AlertTriangle className="h-3.5 w-3.5" />
                     </div>
-                    <p className="text-[11px] text-blue-600 font-normal leading-relaxed">
-                        Este módulo de notificaciones se encuentra en construcción.
+                    <p className="text-[10px] text-blue-600 font-normal leading-tight">
+                        Este módulo se encuentra en construcción para alertas personalizadas.
                     </p>
                 </div>
 
-                <ScrollArea className="h-80 -mx-2 px-2">
+                <ScrollArea className="h-72 -mx-1 px-1">
                    {notifications.length > 0 ? (
-                        <div className="space-y-6 pb-4">
+                        <div className="space-y-5 pb-2">
                         {notifications.map((notification) => {
                             const Icon = notification.icon;
                             return (
-                                <div key={notification.id} className="group flex items-start gap-4 cursor-pointer">
-                                    <div className={cn("flex-shrink-0 h-10 w-10 rounded-full flex items-center justify-center transition-colors", notification.iconColor)}>
-                                        <Icon className="h-5 w-5" strokeWidth={1.5} />
+                                <div key={notification.id} className="group flex items-start gap-3.5 cursor-pointer">
+                                    <div className={cn("flex-shrink-0 h-9 w-9 rounded-full flex items-center justify-center transition-colors shadow-sm", notification.iconColor)}>
+                                        <Icon className="h-4 w-4" strokeWidth={1.5} />
                                     </div>
                                     <div className="flex-grow pt-0.5">
-                                        <div className="flex items-center gap-2 mb-1">
-                                            <p className="text-sm font-bold text-slate-800 leading-none">{notification.title}</p>
-                                            <span className="text-[10px] text-slate-300 flex items-center gap-1 whitespace-nowrap">
-                                                <span className="h-1 w-1 bg-slate-200 rounded-full"></span>
+                                        <div className="flex items-center justify-between mb-0.5">
+                                            <p className="text-[12px] font-bold text-slate-800 leading-none">{notification.title}</p>
+                                            <span className="text-[9px] text-slate-300 font-medium uppercase">
                                                 {notification.time}
                                             </span>
                                         </div>
-                                        <p className="text-[11px] text-slate-400 leading-snug line-clamp-2">{notification.description}</p>
+                                        <p className="text-[10px] text-slate-400 leading-snug line-clamp-2 pr-2">{notification.description}</p>
                                     </div>
                                     <div className="pt-2">
-                                        <ChevronRight className="h-3 w-3 text-slate-200 opacity-0 group-hover:opacity-100 transition-all" />
+                                        <ChevronRight className="h-3 w-3 text-slate-200 group-hover:text-slate-400 transition-colors" />
                                     </div>
                                 </div>
                             )
                         })}
                         </div>
                    ) : (
-                        <div className="text-center text-[11px] font-light text-slate-400 py-12">
-                            Sin notificaciones pendientes
+                        <div className="text-center text-[10px] font-light text-slate-400 py-10 italic">
+                            No hay novedades por ahora
                         </div>
                    )}
                 </ScrollArea>

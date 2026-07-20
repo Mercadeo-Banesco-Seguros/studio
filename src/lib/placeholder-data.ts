@@ -1,5 +1,5 @@
 
-import { Users, Megaphone, FolderKanban, Shield, BarChart2, Briefcase, FileText, Bot, BookOpen, Scale, FileSignature, HardHat, Plane, Cpu, PiggyBank, CreditCard, Landmark, CalendarClock, MessageCircleQuestion, Bell, Utensils, Star, Video, Presentation, Image as ImageIcon, Code, Music, AlertTriangle, CheckCircle, CalendarDays, MessageSquare as MessageSquareIcon, Music2, Home, User, Cog, Lightbulb, Handshake, Award, FileBarChart, AppWindow, Mail, ClipboardList, Network, Gift, PartyPopper, Database, Sparkles } from 'lucide-react';
+import { Users, Megaphone, FolderKanban, Shield, BarChart2, Briefcase, FileText, Bot, BookOpen, Scale, FileSignature, HardHat, Plane, Cpu, PiggyBank, CreditCard, Landmark, CalendarClock, MessageCircleQuestion, Bell, Utensils, Star, Video, Presentation, Image as ImageIcon, Code, Music, AlertTriangle, CheckCircle, CalendarDays, MessageSquare as MessageSquareIcon, Music2, Home, User, Cog, Lightbulb, Handshake, Award, FileBarChart, AppWindow, Mail, ClipboardList, Network, Gift, PartyPopper, Database, Sparkles, Library, Map } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface Course {
@@ -160,7 +160,7 @@ export const mockCourses: Course[] = [
     id: "google-slides",
     title: "Google Slides",
     description: "Crea presentaciones innovadoras, rápido y con tips para alcanzar los objetivos en el menor tiempo posible.",
-    imageUrl: "https://images.unsplash.com/photo-1658203897406-9ef9e2af686c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxN3x8ZXhjZWx8ZW58MHx8fHwxNzU0MzM3NDUwfDA&ixlib.rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1658203897406-9ef9e2af686c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxN3x8ZXhjZWx8ZW58MHx8fHwxNzU0MzM3NDUwfDA&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "presentation slides",
     category: "Google Workspace",
     duration: "Auto-gestionado",
@@ -180,7 +180,7 @@ export const mockCourses: Course[] = [
     id: "pensamiento-estrategico",
     title: "Pensamiento Estratégico",
     description: "Asigna prioridades en el destino de los recursos, donde mejora el desempeño de la organización, así permitiendo a la empresa enfrentarse a los principales problemas de la organización, al cambio en el entorno y ver las oportunidades y detectar las amenazas.",
-    imageUrl: "https://images.unsplash.com/photo-1730804518415-75297e8d2a41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHV6emxlfGVufDB8fHx8fDE3NTQzMzk2ODl8MA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1730804518415-75297e8d2a41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHV6emxlfGVufDB8fHx8MTc1NDM5Njg5OHww&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "strategy plan",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -190,7 +190,7 @@ export const mockCourses: Course[] = [
     id: "balanced-scorecard",
     title: "Balanced Scorecard",
     description: "Es herramienta de planeación estratégica que permite a la empresa crear y controlar sus propios indicadores de gestión relacionados dentro de cuatro perspectiva: Financiera, Procesos Internos, Cliente y Formación y Crecimiento",
-    imageUrl: "https://images.unsplash.com/photo-1556155092-8707de31f9c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZXRyaWNzfGVufDB8fHx8fDE3NTQzNDAzMjd8MA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1556155092-8707de31f9c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZXRyaWNzfGVufDB8fHx8MTc1NDM0MDMyN3ww&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "balance chart",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -210,7 +210,7 @@ export const mockCourses: Course[] = [
     id: "presentaciones-efectivas",
     title: "Presentaciones Efectivas",
     description: "En este curso obtendrás las habilidades para el diseño de presentaciones corporativas que permitirán alinear la comunicación dentro de la organización adaptándola a las necesidades de la audiencia a la que se dirija.",
-    imageUrl: "https://images.unsplash.com/photo-1541872705-1f73c6400ec9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3BlZWNofGVufDB8fHx8fDE3NTQzNDIxODN8MA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1541872705-1f73c6400ec9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8c3BlZWNofGVufDB8fHx8MTc1NDM0MjE4M3ww&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "conference presentation",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -260,7 +260,7 @@ export const mockCourses: Course[] = [
     id: "gestion-comercial",
     title: "Gestión Comercial",
     description: "Aquí podrás  obtener información de cuáles son nuestros productos, cómo manejar el Site de Sistemática, entre otros.",
-    imageUrl: "https://images.unsplash.com/photo-1634117622592-114e3024ff27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxncmFmaWNvfGVufDB8fHx8fDE3NTQ0MjEzMDN8MA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1634117622592-114e3024ff27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxncmFmaWNvfGVufDB8fHx8MTc1NDQyMTMwM3ww&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "sales management",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -270,7 +270,7 @@ export const mockCourses: Course[] = [
     id: "otras-opciones-desarrollo",
     title: "Otras opciones para tu desarrollo",
     description: "Aquí podrás encontrar el link de otras páginas que te ayudarán a tu crecimiento profesional.",
-    imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlLWxlYXJuaW5nfGVufDB8fHx8fDE3NTQ0MTM4OTB8MA&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlLWxlYXJuaW5nfGVufDB8fHx8MTc1NDQxMzg5MHww&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "e-learning development",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -945,40 +945,31 @@ export const mockPlaylist: PlaylistItem[] = [
     
 export const mockNotifications: NotificationItem[] = [
   {
-    id: 'n1',
+    id: 'news-1',
     type: 'update',
-    title: 'Cifras actualizadas',
-    description: 'Los tableros de producción ya reflejan el cierre de ayer.',
-    time: 'Hace 5m',
-    icon: Database,
-    iconColor: 'bg-slate-50 text-slate-400'
+    title: 'Nueva Biblioteca Digital',
+    description: 'Ya puedes acceder a todos los recursos multimedia corporativos.',
+    time: 'Nuevo',
+    icon: Library,
+    iconColor: 'bg-blue-50 text-blue-400'
   },
   {
-    id: 'n2',
+    id: 'news-2',
     type: 'update',
-    title: 'Nueva funcionalidad',
-    description: 'Módulo de análisis de tubería optimizado ya disponible.',
+    title: 'Actualización Mapa de Clientes',
+    description: 'Nuevas métricas regionales para 2026 disponibles ahora.',
     time: 'Hoy',
+    icon: Map,
+    iconColor: 'bg-green-50 text-green-400'
+  },
+  {
+    id: 'news-3',
+    type: 'update',
+    title: 'Cultura BSV',
+    description: 'Conoce los principios que nos guían en la sección ADN Banesco.',
+    time: 'Ayer',
     icon: Sparkles,
-    iconColor: 'bg-slate-50 text-slate-400'
-  },
-  {
-    id: 'n3',
-    type: 'update',
-    title: 'Póliza renovada',
-    description: 'Corporación Polar C.A. ha renovado su póliza de Salud.',
-    time: 'Hace 1h',
-    icon: CheckCircle,
-    iconColor: 'bg-slate-50 text-slate-400'
-  },
-  {
-    id: 'n4',
-    type: 'update',
-    title: 'Reporte disponible',
-    description: 'El informe ejecutivo del Q1 ya está listo para descarga.',
-    time: 'Hace 3h',
-    icon: FileText,
-    iconColor: 'bg-slate-50 text-slate-400'
+    iconColor: 'bg-purple-50 text-purple-400'
   }
 ];
 
