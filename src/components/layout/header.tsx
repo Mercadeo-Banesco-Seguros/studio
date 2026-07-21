@@ -170,7 +170,7 @@ export function Header() {
             <Input 
               ref={searchInputRef}
               placeholder="Buscar sección o palabra..." 
-              className="flex-1 bg-white/5 border-none text-white text-[10px] font-light h-9 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-white/30"
+              className="flex-1 bg-white/5 border-none text-white text-[10px] font-light h-9 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-white/30 placeholder:text-[10px] placeholder:font-light"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
