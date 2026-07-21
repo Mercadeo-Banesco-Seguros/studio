@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home, CalendarDays, Library, Menu, Search, Bell, Clock, LogOut, GraduationCap, Video, HeartHandshake, TrendingUp, Mail, AlertTriangle, ChevronRight, Cake, CreditCard } from "lucide-react"; 
+import { Home, CalendarDays, Library, Menu, Search, Bell, Clock, LogOut, GraduationCap, Video, HeartHandshake, TrendingUp, Mail, AlertTriangle, ChevronRight, Cake, CreditCard, X } from "lucide-react"; 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import React, { useEffect, useState, useRef } from "react";
@@ -73,12 +73,13 @@ const UserProfileButton = () => {
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-  const [isSearchPopoverOpen, setIsSearchPopoverOpen] = useState(false);
+  const [isSearchActive, setIsSearchActive] = useState(false);
   const [notifications, setNotifications] = useState<NotificationItem[]>([]);
   const { allEvents } = useEvents();
   const pathname = usePathname();
   const [searchTerm, setSearchTerm] = useState('');
   const { toast } = useToast();
+  const searchInputRef = useRef<HTMLInputElement>(null);
   
   useEffect(() => {
     const today = new Date();
@@ -116,7 +117,7 @@ export function Header() {
         const element = document.getElementById(sectionMap[elementId]);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            setIsSearchPopoverOpen(false);
+            setIsSearchActive(false);
             setSearchTerm('');
             return;
         }
@@ -124,6 +125,16 @@ export function Header() {
       toast({ title: "No encontrado", description: `No se encontró la sección "${searchTerm}"`, variant: "destructive" });
     } else {
         toast({ title: "Búsqueda limitada", description: "La búsqueda solo funciona en el Dashboard principal." });
+    }
+  };
+
+  const toggleSearch = () => {
+    if (isSearchActive) {
+      setIsSearchActive(false);
+      setSearchTerm('');
+    } else {
+      setIsSearchActive(true);
+      setTimeout(() => searchInputRef.current?.focus(), 100);
     }
   };
 
@@ -136,10 +147,13 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full flex h-20 items-center justify-center px-4">
-      <div className="flex items-center justify-center rounded-full bg-[#003c71] px-3 py-1.5 shadow-2xl border border-white/5 gap-2 md:gap-4 transition-all duration-500">
+      <div className={cn(
+        "flex items-center justify-center rounded-full bg-[#003c71] px-3 py-1.5 shadow-2xl border border-white/5 gap-2 md:gap-4 transition-all duration-500",
+        isSearchActive ? "w-full max-w-2xl" : "w-auto"
+      )}>
         
         {/* Logo Icon */}
-        <Link href="/dashboard" className="flex items-center justify-center ml-2 mr-1">
+        <Link href="/dashboard" className={cn("flex items-center justify-center ml-2 mr-1", isSearchActive && "hidden md:flex")}>
           <div className="relative w-5 h-5">
             <Image
               src="https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_auto,s_webp:avif/banescointernacional.com/wp-content/uploads/2024/11/Isotipo.png"
@@ -151,59 +165,64 @@ export function Header() {
           </div>
         </Link>
 
-        {/* Main Navigation */}
-        <nav className="flex items-center justify-center gap-1">
-            {navItemsDesktop.map((item) => {
-              const isActive = checkIsActive(item);
-              const Icon = item.icon;
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={cn(
-                    "relative flex items-center justify-center transition-all duration-300 rounded-full h-9",
-                    isActive 
-                      ? "bg-white/10 text-white px-4" 
-                      : "w-9 text-white/50 hover:text-white hover:bg-white/5"
-                  )}
-                >
-                  <div className="flex items-center justify-center">
-                    <Icon className="h-4 w-4 flex-shrink-0" strokeWidth={1.5} />
-                    {isActive && (
-                      <span className="text-[11px] font-light whitespace-nowrap ml-2 animate-in fade-in slide-in-from-left-2 duration-300">
-                        {item.name}
-                      </span>
+        {/* Search Mode or Main Navigation */}
+        {isSearchActive ? (
+          <div className="flex-1 flex items-center animate-in fade-in slide-in-from-left-4 duration-500">
+            <Input 
+              ref={searchInputRef}
+              placeholder="Buscar sección o palabra..." 
+              className="flex-1 bg-white/5 border-none text-white text-[11px] font-light h-9 focus-visible:ring-0 placeholder:text-white/30"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+            />
+          </div>
+        ) : (
+          <nav className="flex items-center justify-center gap-1 animate-in fade-in duration-500">
+              {navItemsDesktop.map((item) => {
+                const isActive = checkIsActive(item);
+                const Icon = item.icon;
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={cn(
+                      "relative flex items-center justify-center transition-all duration-300 rounded-full h-9",
+                      isActive 
+                        ? "bg-white/10 text-white px-4" 
+                        : "w-9 text-white/50 hover:text-white hover:bg-white/5"
                     )}
-                  </div>
-                </Link>
-              );
-            })}
-        </nav>
+                  >
+                    <div className="flex items-center justify-center">
+                      <Icon className="h-4 w-4 flex-shrink-0" strokeWidth={1.5} />
+                      {isActive && (
+                        <span className="text-[11px] font-light whitespace-nowrap ml-2 animate-in fade-in slide-in-from-left-2 duration-300">
+                          {item.name}
+                        </span>
+                      )}
+                    </div>
+                  </Link>
+                );
+              })}
+          </nav>
+        )}
 
         {/* Separator */}
-        <div className="h-6 w-[1px] bg-white/10 mx-1 hidden md:block"></div>
+        <div className={cn("h-6 w-[1px] bg-white/10 mx-1 hidden md:block", isSearchActive && "bg-white/20")}></div>
 
         {/* Utilities */}
         <div className="flex items-center gap-1">
-            <Popover open={isSearchPopoverOpen} onOpenChange={setIsSearchPopoverOpen}>
-              <PopoverTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full h-8 w-8 text-white/50 hover:text-white hover:bg-white/10 transition-all">
-                  <Search className="h-4 w-4" strokeWidth={1.5} />
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-72 bg-[#003c71] border-white/10 text-white" sideOffset={16}>
-                <div className="flex items-center gap-2">
-                  <Input 
-                    placeholder="Buscar sección..." 
-                    className="flex-1 bg-white/5 border-white/10 text-xs h-8 focus-visible:ring-white/20"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-                  />
-                  <Button size="sm" onClick={handleSearch} className="h-8 bg-white text-[#003c71] hover:bg-white/90 text-[10px] font-light">Ir</Button>
-                </div>
-              </PopoverContent>
-            </Popover>
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={toggleSearch}
+              className={cn(
+                "rounded-full h-8 w-8 transition-all",
+                isSearchActive ? "text-white bg-white/10" : "text-white/50 hover:text-white hover:bg-white/10"
+              )}
+            >
+              {isSearchActive ? <X className="h-4 w-4" strokeWidth={1.5} /> : <Search className="h-4 w-4" strokeWidth={1.5} />}
+            </Button>
             
             <Popover>
               <PopoverTrigger asChild>
@@ -217,14 +236,14 @@ export function Header() {
                   )}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-[340px] p-5 bg-white border-0 shadow-2xl rounded-[24px] text-foreground" sideOffset={20}>
+              <PopoverContent className="w-[340px] p-5 bg-white border-0 shadow-2xl rounded-[24px] text-foreground mt-4" sideOffset={8}>
                 <div className="flex items-center justify-between mb-0.5">
-                    <h4 className="text-base font-bold text-slate-800 tracking-tight">Notificaciones</h4>
+                    <h4 className="text-[13px] font-bold text-slate-800 tracking-tight">Notificaciones</h4>
                     <Link href="/dashboard/calendario" className="text-[10px] text-slate-400 flex items-center gap-0.5 hover:text-slate-600 transition-colors font-light">
                       Ver todas <ChevronRight className="h-2.5 w-2.5" />
                     </Link>
                 </div>
-                <p className="text-[10px] text-slate-400 mb-5 font-light">Mantente al día con lo último</p>
+                <p className="text-[10px] text-slate-400 mb-5 font-light">Actividad y actualizaciones</p>
 
                 {/* Construction Alert */}
                 <div className="bg-[#f3f6ff] border border-[#e5ebff] rounded-xl p-3 flex gap-2.5 items-center mb-6">
@@ -232,7 +251,7 @@ export function Header() {
                         <AlertTriangle className="h-3 w-3" />
                     </div>
                     <p className="text-[9px] text-blue-600 font-normal leading-tight">
-                        Este módulo se encuentra en construcción para alertas personalizadas.
+                        Este módulo de notificaciones se encuentra en construcción.
                     </p>
                 </div>
 
@@ -253,7 +272,7 @@ export function Header() {
                                                 {notification.time}
                                             </span>
                                         </div>
-                                        <p className="text-[9px] text-slate-400 leading-snug line-clamp-2 pr-2">{notification.description}</p>
+                                        <p className="text-[10px] text-slate-400 leading-snug line-clamp-2 pr-2">{notification.description}</p>
                                     </div>
                                     <div className="pt-2">
                                         <ChevronRight className="h-3 w-3 text-slate-200 group-hover:text-slate-400 transition-colors" />
@@ -275,30 +294,32 @@ export function Header() {
         </div>
 
         {/* Mobile Menu Trigger */}
-        <div className="md:hidden">
-            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-8 w-8 text-white/50 hover:text-white">
-                  <Menu className="h-5 w-5" strokeWidth={1.5} />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="bg-[#003c71] border-white/10 text-white w-72">
-                <div className="flex flex-col gap-4 mt-8">
-                  {navItemsDesktop.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors font-light text-sm"
-                    >
-                      <item.icon className="h-5 w-5" strokeWidth={1.5} />
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              </SheetContent>
-            </Sheet>
-        </div>
+        {!isSearchActive && (
+          <div className="md:hidden">
+              <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="h-8 w-8 text-white/50 hover:text-white">
+                    <Menu className="h-5 w-5" strokeWidth={1.5} />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="bg-[#003c71] border-white/10 text-white w-72">
+                  <div className="flex flex-col gap-4 mt-8">
+                    {navItemsDesktop.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors font-light text-sm"
+                      >
+                        <item.icon className="h-5 w-5" strokeWidth={1.5} />
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </SheetContent>
+              </Sheet>
+          </div>
+        )}
       </div>
     </header>
   );
