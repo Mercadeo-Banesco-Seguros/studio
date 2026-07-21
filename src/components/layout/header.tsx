@@ -191,7 +191,7 @@ export function Header() {
                   <Search className="h-4 w-4" strokeWidth={1.5} />
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-72 bg-[#003c71] border-white/10 text-white" sideOffset={12}>
+              <PopoverContent className="w-72 bg-[#003c71] border-white/10 text-white" sideOffset={16}>
                 <div className="flex items-center gap-2">
                   <Input 
                     placeholder="Buscar sección..." 
@@ -217,21 +217,21 @@ export function Header() {
                   )}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-[340px] p-5 bg-white border-0 shadow-2xl rounded-[24px] text-foreground" sideOffset={12}>
+              <PopoverContent className="w-[340px] p-5 bg-white border-0 shadow-2xl rounded-[24px] text-foreground" sideOffset={20}>
                 <div className="flex items-center justify-between mb-0.5">
-                    <h4 className="text-lg font-bold text-slate-800 tracking-tight">Notificaciones</h4>
-                    <Link href="/dashboard/calendario" className="text-[10px] text-slate-400 flex items-center gap-0.5 hover:text-slate-600 transition-colors uppercase font-medium">
+                    <h4 className="text-base font-bold text-slate-800 tracking-tight">Notificaciones</h4>
+                    <Link href="/dashboard/calendario" className="text-[10px] text-slate-400 flex items-center gap-0.5 hover:text-slate-600 transition-colors font-light">
                       Ver todas <ChevronRight className="h-2.5 w-2.5" />
                     </Link>
                 </div>
                 <p className="text-[10px] text-slate-400 mb-5 font-light">Mantente al día con lo último</p>
 
                 {/* Construction Alert */}
-                <div className="bg-[#f3f6ff] border border-[#e5ebff] rounded-xl p-3.5 flex gap-2.5 items-center mb-6">
-                    <div className="bg-white rounded-full p-1.5 text-blue-600 shadow-sm flex-shrink-0">
-                        <AlertTriangle className="h-3.5 w-3.5" />
+                <div className="bg-[#f3f6ff] border border-[#e5ebff] rounded-xl p-3 flex gap-2.5 items-center mb-6">
+                    <div className="bg-white rounded-full p-1 text-blue-600 shadow-sm flex-shrink-0">
+                        <AlertTriangle className="h-3 w-3" />
                     </div>
-                    <p className="text-[10px] text-blue-600 font-normal leading-tight">
+                    <p className="text-[9px] text-blue-600 font-normal leading-tight">
                         Este módulo se encuentra en construcción para alertas personalizadas.
                     </p>
                 </div>
@@ -248,12 +248,12 @@ export function Header() {
                                     </div>
                                     <div className="flex-grow pt-0.5">
                                         <div className="flex items-center justify-between mb-0.5">
-                                            <p className="text-[12px] font-bold text-slate-800 leading-none">{notification.title}</p>
-                                            <span className="text-[9px] text-slate-300 font-medium uppercase">
+                                            <p className="text-[11px] font-bold text-slate-800 leading-none">{notification.title}</p>
+                                            <span className="text-[8px] text-slate-300 font-medium uppercase">
                                                 {notification.time}
                                             </span>
                                         </div>
-                                        <p className="text-[10px] text-slate-400 leading-snug line-clamp-2 pr-2">{notification.description}</p>
+                                        <p className="text-[9px] text-slate-400 leading-snug line-clamp-2 pr-2">{notification.description}</p>
                                     </div>
                                     <div className="pt-2">
                                         <ChevronRight className="h-3 w-3 text-slate-200 group-hover:text-slate-400 transition-colors" />
