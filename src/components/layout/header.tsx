@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -25,8 +24,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Avatar, AvatarFallback } from "@/avatar";
+} from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const navItemsDesktop = [
   { name: "Home", href: "/dashboard", icon: Home, activePaths: ["/dashboard"] },
