@@ -26,7 +26,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/avatar";
 
 const navItemsDesktop = [
   { name: "Home", href: "/dashboard", icon: Home, activePaths: ["/dashboard"] },
@@ -171,7 +171,7 @@ export function Header() {
             <Input 
               ref={searchInputRef}
               placeholder="Buscar sección o palabra..." 
-              className="flex-1 bg-white/5 border-none text-white text-[11px] font-light h-9 focus-visible:ring-0 placeholder:text-white/30"
+              className="flex-1 bg-white/5 border-none text-white text-[11px] font-light h-9 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-white/30"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
@@ -236,11 +236,11 @@ export function Header() {
                   )}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-[340px] p-5 bg-white border-0 shadow-2xl rounded-[24px] text-foreground mt-4" sideOffset={8}>
+              <PopoverContent className="w-[340px] p-5 bg-white border-0 shadow-2xl rounded-[24px] text-foreground mt-6" sideOffset={8}>
                 <div className="flex items-center justify-between mb-0.5">
-                    <h4 className="text-[13px] font-bold text-slate-800 tracking-tight">Notificaciones</h4>
+                    <h4 className="text-[11px] font-bold text-slate-800 tracking-tight">Notificaciones</h4>
                     <Link href="/dashboard/calendario" className="text-[10px] text-slate-400 flex items-center gap-0.5 hover:text-slate-600 transition-colors font-light">
-                      Ver todas <ChevronRight className="h-2.5 w-2.5" />
+                      ver todas <ChevronRight className="h-2.5 w-2.5" />
                     </Link>
                 </div>
                 <p className="text-[10px] text-slate-400 mb-5 font-light">Actividad y actualizaciones</p>
@@ -267,8 +267,8 @@ export function Header() {
                                     </div>
                                     <div className="flex-grow pt-0.5">
                                         <div className="flex items-center justify-between mb-0.5">
-                                            <p className="text-[11px] font-bold text-slate-800 leading-none">{notification.title}</p>
-                                            <span className="text-[8px] text-slate-300 font-medium uppercase">
+                                            <p className="text-[10px] font-bold text-slate-800 leading-none">{notification.title}</p>
+                                            <span className="text-[9px] text-slate-300 font-medium uppercase">
                                                 {notification.time}
                                             </span>
                                         </div>
