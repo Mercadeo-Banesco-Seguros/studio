@@ -103,6 +103,7 @@ export interface NotificationItem {
   time: string;
   icon: LucideIcon;
   iconColor: string;
+  href?: string;
 }
 
 export interface CustomerFeedback {
@@ -270,7 +271,7 @@ export const mockCourses: Course[] = [
     id: "otras-opciones-desarrollo",
     title: "Otras opciones para tu desarrollo",
     description: "Aquí podrás encontrar el link de otras páginas que te ayudarán a tu crecimiento profesional.",
-    imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlLWxlYXJuaW5nfGVufDB8fHx8MTc1NDQxMzg5MHww&ixlib-rb-4.1.0&q=80&w=1080",
+    imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlLWxlYXJuaW5nfGVufDB8fHx8MTc1NDUxMzg5MHww&ixlib-rb-4.1.0&q=80&w=1080",
     dataAiHint: "e-learning development",
     category: "Desarrollo",
     duration: "Auto-gestionado",
@@ -392,7 +393,7 @@ export const mockDepartments: Department[] = [
   },
   {
     id: "seguridad-informacion",
-    name: "Seguridad de la Información",
+    name: "Security de la Información",
     description: "Portal de peticiones y gestión de la seguridad de la información.",
     category: "Seguridad",
     icon: Shield,
@@ -951,16 +952,18 @@ export const mockNotifications: NotificationItem[] = [
     description: 'Ya puedes acceder a todos los recursos multimedia corporativos.',
     time: 'Nuevo',
     icon: Library,
-    iconColor: 'bg-blue-50 text-blue-400'
+    iconColor: 'bg-blue-50 text-blue-400',
+    href: '/dashboard/biblioteca-digital'
   },
   {
     id: 'news-2',
     type: 'update',
-    title: 'Actualización Mapa de Clientes',
-    description: 'Nuevas métricas regionales para 2026 disponibles ahora.',
-    time: 'Hoy',
-    icon: Map,
-    iconColor: 'bg-green-50 text-green-400'
+    title: 'Próxima fecha de pago',
+    description: 'La próxima quincena está programada para el 15 de Junio.',
+    time: 'Pronto',
+    icon: CreditCard,
+    iconColor: 'bg-green-50 text-green-400',
+    href: '/dashboard/calendario'
   },
   {
     id: 'news-3',
@@ -969,7 +972,8 @@ export const mockNotifications: NotificationItem[] = [
     description: 'Conoce los principios que nos guían en la sección ADN Banesco.',
     time: 'Ayer',
     icon: Sparkles,
-    iconColor: 'bg-purple-50 text-purple-400'
+    iconColor: 'bg-purple-50 text-purple-400',
+    href: '/dashboard/cursos'
   }
 ];
 

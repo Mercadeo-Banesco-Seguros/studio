@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home, CalendarDays, Library, Menu, Search, Bell, Clock, LogOut, GraduationCap, Video, HeartHandshake, TrendingUp, Mail, AlertTriangle, ChevronRight, Cake } from "lucide-react"; 
+import { Home, CalendarDays, Library, Menu, Search, Bell, Clock, LogOut, GraduationCap, Video, HeartHandshake, TrendingUp, Mail, AlertTriangle, ChevronRight, Cake, CreditCard } from "lucide-react"; 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import React, { useEffect, useState, useRef } from "react";
@@ -92,7 +92,8 @@ export function Header() {
       description: event.description,
       time: event.time ? format(new Date(`1970-01-01T${event.time}`), 'p', { locale: es }) : 'Hoy',
       icon: event.category === 'birthday' ? Cake : CalendarDays,
-      iconColor: event.category === 'birthday' ? 'bg-pink-50 text-pink-400' : 'bg-slate-50 text-slate-400'
+      iconColor: event.category === 'birthday' ? 'bg-pink-50 text-pink-400' : 'bg-slate-50 text-slate-400',
+      href: '/dashboard/calendario'
     }));
 
     const combinedNotifications = [...eventNotifications, ...initialMockNotifications];
@@ -219,7 +220,7 @@ export function Header() {
               <PopoverContent className="w-[340px] p-5 bg-white border-0 shadow-2xl rounded-[24px] text-foreground" sideOffset={12}>
                 <div className="flex items-center justify-between mb-0.5">
                     <h4 className="text-lg font-bold text-slate-800 tracking-tight">Notificaciones</h4>
-                    <Link href="#" className="text-[10px] text-slate-400 flex items-center gap-0.5 hover:text-slate-600 transition-colors uppercase font-medium">
+                    <Link href="/dashboard/calendario" className="text-[10px] text-slate-400 flex items-center gap-0.5 hover:text-slate-600 transition-colors uppercase font-medium">
                       Ver todas <ChevronRight className="h-2.5 w-2.5" />
                     </Link>
                 </div>
@@ -241,7 +242,7 @@ export function Header() {
                         {notifications.map((notification) => {
                             const Icon = notification.icon;
                             return (
-                                <div key={notification.id} className="group flex items-start gap-3.5 cursor-pointer">
+                                <Link key={notification.id} href={notification.href || '#'} className="group flex items-start gap-3.5 cursor-pointer">
                                     <div className={cn("flex-shrink-0 h-9 w-9 rounded-full flex items-center justify-center transition-colors shadow-sm", notification.iconColor)}>
                                         <Icon className="h-4 w-4" strokeWidth={1.5} />
                                     </div>
@@ -257,7 +258,7 @@ export function Header() {
                                     <div className="pt-2">
                                         <ChevronRight className="h-3 w-3 text-slate-200 group-hover:text-slate-400 transition-colors" />
                                     </div>
-                                </div>
+                                </Link>
                             )
                         })}
                         </div>
