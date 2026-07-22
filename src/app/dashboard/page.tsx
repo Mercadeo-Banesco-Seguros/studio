@@ -8,62 +8,34 @@ import { mockCourses, mockActivities, mockDepartments, faqData, mockDressCodeIte
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import {
-  Landmark,
-  UsersRound,
-  Cpu,
-  GitFork,
-  ArrowRight,
-  Plane,
-  ShieldCheck,
-  FileText,
+  Home,
+  User,
+  Settings,
   HelpCircle,
   ChevronLeft,
   ChevronRight,
-  Sun,
-  Umbrella,
-  Ship,
-  Bike,
   Clock,
-  Hospital,
   MessageSquare,
-  Phone,
   Star,
   Check,
-  ArrowUpRight,
-  Users,
-  DollarSign,
-  Megaphone,
-  Settings,
-  LifeBuoy,
-  Mail,
-  BookCheck,
-  TrendingUp,
   Award,
   CalendarCheck,
   HeartHandshake,
   Dumbbell,
-  Music,
-  Drama,
-  Music2,
-  Home,
-  User,
-  Cog,
-  Lightbulb,
-  Shield,
-  Handshake,
-  Play,
-  ChefHat,
-  Briefcase,
-  Scale,
-  FolderKanban,
-  FileSignature,
-  Bot,
-  RefreshCw,
-  X,
-  ClipboardList,
-  Network,
+  BookCheck,
+  Utensils,
+  ShieldCheck,
+  FileText,
+  Video,
+  Library,
+  TrendingUp,
+  Mail,
+  Plane,
   Gift,
-  PartyPopper
+  PartyPopper,
+  Bot,
+  X,
+  Network
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -75,7 +47,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import type { MenuItem } from '@/ai/flows/get-menu-items-flow';
 import { getMenuItems } from '@/ai/flows/get-menu-items-flow';
 import { cn } from '@/lib/utils';
@@ -84,118 +55,15 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { InteractiveMenuBanner } from '@/components/dashboard/interactive-menu-banner';
 import { useToast } from '@/hooks/use-toast';
 import { HcmCard } from '@/components/dashboard/hcm-interaction-card';
-
-
-const activityHighlights = [
-  { title: "Salud Física", description: "Fortalece tu cuerpo y energía.", icon: Dumbbell, imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxneW18ZW58MHx8fHwxNzU5NzU4OTM0fDA&ixlib=rb-4.1.0&q=80&w=1080', "data-ai-hint": 'gym fitness' },
-  { title: "Salud Mental", description: "Encuentra paz y equilibrio.", icon: HeartHandshake, imageUrl: 'https://images.unsplash.com/photo-1474418397713-7e15e4371b67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZWRpdGF0aW9ufGVufDB8fHx8|1759758976|0&ixlib=rb-4.1.0&q=80&w=1080', "data-ai-hint": 'meditation nature' },
-  { title: "Eventos Especiales", description: "Celebra y conecta con el equipo.", icon: CalendarCheck, imageUrl: 'https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaXNjfGVufDB8fHx8|1752607091|0&ixlib=rb-4.1.0&q=80&w=1080', "data-ai-hint": 'event celebration' },
-  { title: "Formación y Cultura", description: "Crece profesional y personalmente.", icon: BookCheck, imageUrl: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rc3xlbnwwfHx8fDE3NTQzOTkwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080', "data-ai-hint": 'books library' }
-];
-
-const AnimatedContactButton = ({ href, type, label, number, icon: Icon, className, iconClassName }: {
-  href: string;
-  type: 'whatsapp' | 'phone' | 'email';
-  label: string;
-  number: string;
-  icon: React.ElementType;
-  className: string;
-  iconClassName: string;
-}) => {
-  const [isClicked, setIsClicked] = useState(false);
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    if (isClicked) return;
-
-    setIsClicked(true);
-
-    setTimeout(() => {
-      window.location.href = href;
-      setTimeout(() => {
-         setIsClicked(false);
-      }, 300);
-    }, 500);
-  };
-
-  return (
-    <Link
-      href={href}
-      onClick={handleClick}
-      className={cn(
-        "relative flex w-[280px] items-center justify-start rounded-full p-2 text-white shadow-lg transition-colors duration-300 hover:brightness-110 overflow-hidden h-[56px]",
-        className
-      )}
-    >
-      <div className={cn("pl-4 transition-opacity duration-200", isClicked ? "opacity-0" : "opacity-100")}>
-        <p className="text-[10px]">{label}</p>
-        <p className={cn("font-semibold", type === 'email' ? "text-[11px]" : "text-xs")}>{number}</p>
-      </div>
-
-      <div
-        className={cn(
-          "absolute top-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white transition-transform duration-300 ease-in-out",
-          "transform -translate-y-1/2",
-          isClicked ? "left-2" : "right-2",
-        )}
-      >
-         {isClicked ? <Check className="h-4 w-4 text-green-500" /> : <Icon className={cn("h-4 w-4", iconClassName)} />}
-      </div>
-    </Link>
-  );
-};
-
-const iconMap: { [key: string]: React.ElementType } = {
-  rh: Users,
-  it: Cpu,
-  finanzas: DollarSign,
-  marketing: Megaphone,
-  operaciones: Settings,
-  vacaciones: Plane,
-  hcm: ShieldCheck,
-  servicios: LifeBuoy
-};
-
-// Helper function to normalize day names for comparison
-const normalizeDayName = (name: string) => {
-  if (!name) return '';
-  return name
-    .toLowerCase()
-    .normalize("NFD") // Decompose accented characters
-    .replace(/[\u0000-\u007f]/g, "") // Remove diacritical marks
-    .replace(/[^a-z]/g, ''); // remove non-alphabetic chars
-};
-
-type AboutView = 'mision' | 'oferta' | 'pilares';
-
-const aboutContent: Record<AboutView, { title: string; description: string; image?: string; 'data-ai-hint'?: string, pilares?: { title: string; color: string; }[] }> = {
-  mision: {
-    title: "Nuestra Misión",
-    description: "Ser la empresa de seguros preferida del mercado, reconocida por su excelencia, calidad de servicio y compromiso con la satisfacción de nuestros clientes, intermediarios y colaboradores.",
-    image: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(48).png?raw=true",
-    'data-ai-hint': "target mission",
-  },
-  oferta: {
-    title: "Nuestra Oferta de Valor",
-    description: "Somos una empresa de seguros reconocida por su excelencia y calidad, orientada a satisfacer las necesidades de nuestros clientes, intermediarios y organización, brindando asesoría y protección con soluciones ágiles y oportunas.",
-    image: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(47).png?raw=true",
-    'data-ai-hint': "puzzle solution",
-  },
-  pilares: {
-    title: "Nuestros Pilares",
-    description: "Los 4 pilares fundamentales que sostienen nuestra cultura y guían cada una de nuestras acciones.",
-    image: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_6fia0y6fia0y6fia-Photoroom.png?raw=true",
-    'data-ai-hint': "company pillars",
-  },
-};
+import imageData from '@/app/lib/placeholder-images.json';
 
 const wellnessSlides = [
     {
       id: 'navidad',
       badge: 'Bienestar',
       title: (<>Explora los Próximos <br/> Eventos del Mes</>),
-      imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_zb4dnhzb4dnhzb4d-Photoroom.png?raw=true',
-      "data-ai-hint": 'carnival mask',
+      imageUrl: imageData.images.find(img => img.id === 'wellness-navidad')?.url || '',
+      "data-ai-hint": 'christmas gift',
       icon: Gift,
       href: "/dashboard/calendario"
     },
@@ -203,8 +71,8 @@ const wellnessSlides = [
       id: 'eventos',
       badge: 'Eventos Especiales',
       title: (<>Descubre Actividades <br/> ideales para ti</>),
-      imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_ln3mqjln3mqjln3m-Photoroom%20(1).png?raw=true',
-      "data-ai-hint": 'party popper illustration',
+      imageUrl: imageData.images.find(img => img.id === 'wellness-eventos')?.url || '',
+      "data-ai-hint": 'party celebration',
       icon: PartyPopper,
       href: "/dashboard/bienestar"
     },
@@ -212,21 +80,44 @@ const wellnessSlides = [
       id: 'actividades',
       badge: 'Actividades Recientes',
       title: (<>Herramientas que <br/> maximizan tu potencial</>),
-      imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_tzyaoetzyaoetzya-Photoroom.png?raw=true',
-      "data-ai-hint": 'activity award illustration',
+      imageUrl: imageData.images.find(img => img.id === 'wellness-actividades')?.url || '',
+      "data-ai-hint": 'activity award',
       icon: Award,
       href: "/dashboard/cursos"
     }
 ];
 
+const bannerWavesUrl = imageData.images.find(img => img.id === 'banner-waves')?.url || '';
+
+type AboutView = 'mision' | 'oferta' | 'pilares';
+
+const aboutContent: Record<AboutView, { title: string; description: string; image?: string; 'data-ai-hint'?: string }> = {
+  mision: {
+    title: "Nuestra Misión",
+    description: "Ser la empresa de seguros preferida del mercado, reconocida por su excelencia, calidad de servicio y compromiso con la satisfacción de nuestros clientes, intermediarios y colaboradores.",
+    image: imageData.images.find(img => img.id === 'about-mission')?.url || '',
+    'data-ai-hint': "mission target",
+  },
+  oferta: {
+    title: "Nuestra Oferta de Valor",
+    description: "Somos una empresa de seguros reconocida por su excelencia y calidad, orientada a satisfacer las necesidades de nuestros clientes, intermediarios y organización, brindando asesoría y protección con soluciones ágiles y oportunas.",
+    image: imageData.images.find(img => img.id === 'about-offer')?.url || '',
+    'data-ai-hint': "puzzle value",
+  },
+  pilares: {
+    title: "Nuestros Pilares",
+    description: "Los 4 pilares fundamentales que sostienen nuestra cultura y guían cada una de nuestras acciones.",
+    image: imageData.images.find(img => img.id === 'about-pillars')?.url || '',
+    'data-ai-hint': "pillars abstract",
+  },
+};
+
 export default function DashboardPage() {
-  const dressCodeScrollRef = useRef<HTMLDivElement>(null);
   const [currentDayName, setCurrentDayName] = useState('');
-  const [currentCourseIndex, setCurrentCourseIndex] = useState(0);
   const [currentTime, setCurrentTime] = useState('');
   const [heroImage, setHeroImage] = useState({
-    src: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(32).png?raw=true",
-    hint: "sun behind cloud"
+    src: imageData.images.find(img => img.id === 'hero-morning')?.url || '',
+    hint: "sun clouds"
   });
   const [heroGradient, setHeroGradient] = useState("from-[#84a9ff] to-[#f5f8ff]");
   const [activeFaqCategory, setActiveFaqCategory] = useState<'General' | 'Soporte' | 'Otros'>('General');
@@ -241,7 +132,16 @@ export default function DashboardPage() {
   const [currentDressCode, setCurrentDressCode] = useState<DressCodeItem | null>(null);
 
   const dressCodeItems = useMemo(() => {
-    return dressCodeView === 'caballeros' ? mockDressCodeItemsCaballeros : mockDressCodeItemsDamas;
+    // Injecting corrected URLs to mock data
+    const correctedM = mockDressCodeItemsCaballeros.map((item, idx) => {
+        const ids = ['dress-lunes-m', 'dress-martes-m', 'dress-miercoles-m', 'dress-jueves-m', 'dress-viernes-m'];
+        return { ...item, imageUrl: imageData.images.find(img => img.id === ids[idx])?.url || item.imageUrl };
+    });
+    const correctedF = mockDressCodeItemsDamas.map((item, idx) => {
+        const ids = ['dress-lunes-f', 'dress-martes-f', 'dress-miercoles-f', 'dress-jueves-f', 'dress-viernes-f'];
+        return { ...item, imageUrl: imageData.images.find(img => img.id === ids[idx])?.url || item.imageUrl };
+    });
+    return dressCodeView === 'caballeros' ? correctedM : correctedF;
   }, [dressCodeView]);
 
   const viewOrder: AboutView[] = ['mision', 'pilares', 'oferta'];
@@ -250,24 +150,12 @@ export default function DashboardPage() {
     pilares: 'Ver Pilares',
     oferta: 'Ver Oferta de Valor'
   };
-  
 
   const faqCategories = [
     { id: 'General', label: 'General', icon: Home },
     { id: 'Soporte', label: 'Soporte', icon: User },
     { id: 'Otros', label: 'Otros', icon: Cog },
   ];
-  
-  const handleCourseChange = (direction: 'next' | 'prev') => {
-    if (direction === 'next') {
-      setCurrentCourseIndex((prevIndex) => (prevIndex + 1) % mockCourses.length);
-    } else {
-      setCurrentCourseIndex((prevIndex) => (prevIndex - 1 + mockCourses.length) % mockCourses.length);
-    }
-  };
-
-
-  const currentCourse = mockCourses[currentCourseIndex];
 
   const handleCycleAboutView = () => {
     const currentIndex = viewOrder.indexOf(activeAboutView);
@@ -275,7 +163,7 @@ export default function DashboardPage() {
     setActiveAboutView(viewOrder[nextIndex]);
   };
   
-    const handleWellnessNav = (direction: 'prev' | 'next') => {
+  const handleWellnessNav = (direction: 'prev' | 'next') => {
     setActiveWellnessSlide(prev => {
       if (direction === 'next') {
         return (prev + 1) % wellnessSlides.length;
@@ -293,7 +181,6 @@ export default function DashboardPage() {
     const todayDressCode = dressCodeItems.find(item => item.day === capitalizedDayName);
     setCurrentDressCode(todayDressCode || dressCodeItems[0]);
 
-
     const updateTimeAndAssets = () => {
       const now = new Date();
       setCurrentTime(now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }));
@@ -301,33 +188,33 @@ export default function DashboardPage() {
       const currentHour = now.getHours();
       const timeInMinutes = currentHour * 60 + now.getMinutes();
       
-      const morningStart = 5 * 60; // 5:00 AM
-      const afternoonStart = 14 * 60 + 30; // 2:30 PM
-      const nightStart = 17 * 60 + 30; // 5:30 PM
+      const morningStart = 5 * 60;
+      const afternoonStart = 14 * 60 + 30;
+      const nightStart = 17 * 60 + 30;
 
       if (timeInMinutes >= morningStart && timeInMinutes < afternoonStart) {
         setHeroImage({
-          src: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(32).png?raw=true",
-          hint: "sun behind cloud"
+          src: imageData.images.find(img => img.id === 'hero-morning')?.url || '',
+          hint: "sun clouds"
         });
         setHeroGradient("from-[#84a9ff] to-[#f5f8ff]");
       } else if (timeInMinutes >= afternoonStart && timeInMinutes < nightStart) {
         setHeroImage({
-          src: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_rjwsk7rjwsk7rjws-Photoroom.png?raw=true",
-          hint: "sun setting"
+          src: imageData.images.find(img => img.id === 'hero-afternoon')?.url || '',
+          hint: "sunset sky"
         });
         setHeroGradient("from-[#e66074] to-[#ffe1a4]");
       } else {
         setHeroImage({
-          src: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_gkqyk1gkqyk1gkqy-Photoroom.png?raw=true",
-          hint: "moon and stars"
+          src: imageData.images.find(img => img.id === 'hero-night')?.url || '',
+          hint: "moon stars"
         });
         setHeroGradient("from-[#001f6a] to-[#6895fd]");
       }
     };
     
     updateTimeAndAssets();
-    const timerId = setInterval(updateTimeAndAssets, 60000); // Update every minute
+    const timerId = setInterval(updateTimeAndAssets, 60000);
     
     const fetchMenu = async () => {
       setIsLoadingMenu(true);
@@ -336,34 +223,23 @@ export default function DashboardPage() {
         setAllMenuItems(menus);
       } catch (error) {
         console.error("Failed to fetch menu items", error);
-        setAllMenuItems([]); // Ensure it's an empty array on error
+        setAllMenuItems([]);
       } finally {
         setIsLoadingMenu(false);
       }
     };
 
     fetchMenu();
-
-     return () => clearInterval(timerId); // Cleanup interval on component unmount
+    return () => clearInterval(timerId);
   }, [dressCodeItems]);
 
   useEffect(() => {
-    // Update currentDressCode when view changes (caballeros/damas)
     const todayDate = new Date();
     const dayName = todayDate.toLocaleDateString('es-ES', { weekday: 'long' });
     const capitalizedDayName = dayName.charAt(0).toUpperCase() + dayName.slice(1);
     const todayDressCode = dressCodeItems.find(item => item.day === capitalizedDayName);
     setCurrentDressCode(todayDressCode || dressCodeItems[0]);
   }, [dressCodeView, dressCodeItems]);
-  
-  const todaysMenus = useMemo(() => {
-    const dayName = new Date().toLocaleDateString('es-ES', { weekday: 'long' });
-    const normalizedToday = normalizeDayName(dayName);
-    return allMenuItems.filter(item => {
-        const normalizedItemDay = normalizeDayName(item.day);
-        return normalizedItemDay === normalizedToday;
-    });
-  }, [allMenuItems]);
 
   return (
     <div className="bg-background">
@@ -414,6 +290,7 @@ export default function DashboardPage() {
                             data-ai-hint={heroImage.hint}
                             key={heroImage.src}
                             quality={100}
+                            priority
                            />
                         </div>
                     </div>
@@ -425,7 +302,7 @@ export default function DashboardPage() {
         <div id="about-us" className="w-full py-12 md:py-16">
           <div className="relative overflow-hidden min-h-[600px] flex items-center">
             <Image
-              src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
+              src={bannerWavesUrl}
               alt="Abstract background"
               layout="fill"
               objectFit="cover"
@@ -483,13 +360,13 @@ export default function DashboardPage() {
                 </div>
                  <div className="relative h-[22rem] w-full flex items-center justify-center group">
                     <Card className="absolute w-80 h-56 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90 -rotate-15 -translate-x-60">
-                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Iniciativa%20Dulce%20o%20Truco%20BSV%20(2).jpg?raw=true" alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team picture" unoptimized quality={100} />
+                         <Image src={imageData.images.find(img => img.id === 'memory-1')?.url || ''} alt="Team photo 1" layout="fill" objectFit="cover" data-ai-hint="team celebration" unoptimized quality={100} />
                     </Card>
                      <Card className="absolute w-96 h-64 rounded-2xl overflow-hidden shadow-2xl transform z-10 scale-110 group-hover:scale-90 transition-transform duration-500 ease-in-out">
-                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/IMG_20251115_120042.jpg?raw=true" alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="team success" unoptimized quality={100} />
+                         <Image src={imageData.images.find(img => img.id === 'memory-2')?.url || ''} alt="Team photo 2" layout="fill" objectFit="cover" data-ai-hint="office meeting" unoptimized quality={100} />
                     </Card>
                      <Card className="absolute w-80 h-56 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 ease-in-out group-hover:rotate-0 group-hover:translate-x-0 group-hover:scale-90 rotate-15 translate-x-60">
-                         <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Octubre%20Rosa%202025%20(3).jpg?raw=true" alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="team collaboration" unoptimized quality={100} />
+                         <Image src={imageData.images.find(img => img.id === 'memory-3')?.url || ''} alt="Team photo 3" layout="fill" objectFit="cover" data-ai-hint="event pink" unoptimized quality={100} />
                     </Card>
                 </div>
             </div>
@@ -499,7 +376,7 @@ export default function DashboardPage() {
         <section id="dress-code" className="w-full mt-24">
           <div className="relative min-h-[700px] w-full flex flex-col justify-end overflow-hidden">
             <Image
-                src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
+                src={bannerWavesUrl}
                 alt="Fondo abstracto de vestimenta"
                 layout="fill"
                 objectFit="cover"
@@ -600,7 +477,7 @@ export default function DashboardPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
                          <Image
-                            src="https://4kwallpapers.com/images/wallpapers/beach-aerial-view-3840x2160-60.jpg"
+                            src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/beach-aerial-view-3840x2160-60.jpg"
                             alt="Planifica tus Próximas Vacaciones"
                             layout="fill"
                             objectFit="cover"
@@ -608,8 +485,7 @@ export default function DashboardPage() {
                          />
                          <div className="absolute inset-0 bg-black/40" />
                          <div className="relative text-white">
-                            <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Capital Humano</Badge>
-                            
+                            <Badge variant="outline" className="mb-2 border-white/50 text-white">Capital Humano</Badge>
                             <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Planifica tus Próximas Vacaciones</h3>
                             <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
                                 <Link href="https://script.google.com/a/macros/banescoseguros.com/s/AKfycbyLxxr9NCgE30NDposZWTFcRf4Ny0xqRD1WFH3tPwnT0EV4LFgmBbLtNJnzbd5SNnfb/exec" target="_blank" rel="noopener noreferrer">Gestionar</Link>
@@ -618,7 +494,7 @@ export default function DashboardPage() {
                     </Card>
                      <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
                          <Image
-                            src="https://plus.unsplash.com/premium_photo-1678727128583-b7bb1b4763b5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHHx"
+                            src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/days-available.jpg"
                             alt="Consultar Días Disponibles"
                             layout="fill"
                             objectFit="cover"
@@ -626,7 +502,7 @@ export default function DashboardPage() {
                          />
                          <div className="absolute inset-0 bg-black/40" />
                          <div className="relative text-white">
-                            <Badge variant="secondary" className="mb-2 bg-white/20 backdrop-blur-sm font-light text-white">Capital Humano</Badge>
+                            <Badge variant="outline" className="mb-2 border-white/50 text-white">Capital Humano</Badge>
                              <h3 className="text-2xl font-bold tracking-tight">Consultar Días Disponibles</h3>
                              <Button asChild variant="ghost" className="mt-4 font-light text-xs bg-white/20 text-white backdrop-blur-sm hover:bg-white/30">
                                 <Link href="https://script.google.com/a/macros/banescoseguros.com/s/AKfycbyLxxr9NCgE30NDposZWTFcRf4Ny0xqRD1WFH3tPwnT0EV4LFgmBbLtNJnzbd5SNnfb/exec" target="_blank" rel="noopener noreferrer">Consultar</Link>
@@ -641,7 +517,7 @@ export default function DashboardPage() {
         <section id="requerimientos" className="w-full mt-24">
             <Card className="relative text-white overflow-hidden min-h-[500px] flex items-center justify-center">
                 <Image
-                    src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
+                    src={bannerWavesUrl}
                     alt="Abstract background"
                     layout="fill"
                     objectFit="cover"
@@ -835,7 +711,7 @@ export default function DashboardPage() {
         <section id="espacio-ejecutivo" className="scroll-mt-20 w-full mt-24">
           <Card className="relative w-full overflow-hidden rounded-none bg-foreground text-primary-foreground shadow-2xl min-h-[600px] flex flex-col justify-center items-center text-center p-8 md:p-12 group">
               <Image
-                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxleGVjdXRpdmV8ZW58MHx8fHwxNzU2MTM2NDg3fDA&ixlib-rb-4.1.0&q=80&w=1080"
                   alt="Equipo ejecutivo en reunión"
                   layout="fill"
                   objectFit="cover"
@@ -861,7 +737,7 @@ export default function DashboardPage() {
             <SectionWrapper>
               <div className="relative rounded-2xl shadow-sm overflow-hidden group">
                   <Image
-                      src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
+                      src={bannerWavesUrl}
                       alt="Fondo abstracto de bienestar"
                       layout="fill"
                       objectFit="cover"
@@ -877,7 +753,7 @@ export default function DashboardPage() {
                           {wellnessSlides[activeWellnessSlide].imageUrl && (
                               <Image
                                   src={wellnessSlides[activeWellnessSlide].imageUrl}
-                                  alt={wellnessSlides[activeWellnessSlide].title as string}
+                                  alt={String(wellnessSlides[activeWellnessSlide].title)}
                                   layout="fill"
                                   objectFit="contain"
                                   data-ai-hint={wellnessSlides[activeWellnessSlide]['data-ai-hint']}
@@ -943,7 +819,7 @@ export default function DashboardPage() {
         <section id="conectados" className="w-full mt-24">
           <Card className="relative text-white overflow-hidden min-h-[600px] flex items-center justify-start rounded-none">
             <Image
-              src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
+              src={bannerWavesUrl}
               alt="Abstract background"
               layout="fill"
               objectFit="cover"
@@ -954,19 +830,19 @@ export default function DashboardPage() {
             
             <div className="absolute bottom-0 right-0 h-full w-1/2 pointer-events-none">
                 <div className="absolute bottom-0 -right-20 w-[520px] h-[390px] translate-y-[20%]">
-                    <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_p9zcfep9zcfep9zc-Photoroom.png?raw=true" alt="Arbusto decorativo" layout="fill" objectFit="contain" data-ai-hint="bush leaves" />
+                    <Image src={imageData.images.find(img => img.id === 'conectados-bush')?.url || ''} alt="Arbusto decorativo" layout="fill" objectFit="contain" data-ai-hint="bush leaves" />
                 </div>
             </div>
             
              <div className="absolute right-0 w-[1200px] h-[1200px] pointer-events-none translate-y-[15%]">
-                 <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_x9qrv7x9qrv7x9qr%20(1)-Photoroom.png?raw=true" alt="Explorador con linterna" layout="fill" objectFit="contain" data-ai-hint="explorer character" />
+                 <Image src={imageData.images.find(img => img.id === 'conectados-explorer')?.url || ''} alt="Explorador con linterna" layout="fill" objectFit="contain" data-ai-hint="explorer adventure" />
             </div>
 
             <div className="relative z-10 w-full h-full p-24 flex items-center justify-start text-left">
               <div className="absolute top-12 right-12 z-20">
                 <div className="relative w-28 h-auto">
                     <Image 
-                      src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(54).png?raw=true" 
+                      src={imageData.images.find(img => img.id === 'conectados-logo')?.url || ''} 
                       alt="Logo Conectados" 
                       width={110} 
                       height={23}

@@ -14,13 +14,8 @@ import {
   Users, 
   TrendingUp, 
   Gauge, 
-  ClipboardCheck, 
-  Zap, 
-  ListChecks, 
   Award, 
-  Workflow, 
   GraduationCap, 
-  Gem, 
   Gavel, 
   Calculator,
   Target,
@@ -29,25 +24,17 @@ import {
   Sparkles,
   Timer,
   MoreVertical,
-  ArrowRight,
-  Clock,
-  Heart,
-  MessageCircle,
   Smile,
   Meh,
-  Frown,
-  Quote,
-  Star
+  Frown
 } from "lucide-react";
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { cn } from '@/lib/utils';
-import type { LucideIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { npsData, mockCustomerFeedback as staticFeedback } from '@/lib/placeholder-data';
+import { npsData } from '@/lib/placeholder-data';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { getCustomerFeedback, type CustomerFeedback } from '@/ai/flows/get-customer-feedback-flow';
 import { Skeleton } from '@/components/ui/skeleton';
-
+import imageData from '@/app/lib/placeholder-images.json';
 
 const smartGoalsData = {
   S: {
@@ -168,7 +155,6 @@ const ProgressRing = ({ progress }: { progress: number }) => {
     const circumference = 2 * Math.PI * radius;
 
     useEffect(() => {
-        // This effect synchronizes the SVG stroke animation with the number animation trigger
         const observer = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) {
                 setAnimatedProgress(progress);
@@ -265,12 +251,13 @@ export default function ObjetivosSmartPage() {
       percentage: 0,
     });
     
-    const companyProgress = 58; // Static value as before
+    const companyProgress = 58;
+    const bannerUrl = imageData.images.find(img => img.id === 'banner-waves')?.url || '';
+    const characterUrl = imageData.images.find(img => img.id === 'smart-orbs')?.url || '';
 
     useEffect(() => {
         const now = new Date();
         const startOfYear = new Date(now.getFullYear(), 0, 1);
-        const endOfYear = new Date(now.getFullYear(), 11, 31);
         const dayOfYear = Math.ceil((now.getTime() - startOfYear.getTime()) / (1000 * 60 * 60 * 24));
         const totalDaysInYear = (startOfYear.getFullYear() % 4 === 0 && startOfYear.getFullYear() % 100 !== 0) || startOfYear.getFullYear() % 400 === 0 ? 366 : 365;
         const percentage = Math.round((dayOfYear / totalDaysInYear) * 100);
@@ -286,7 +273,7 @@ export default function ObjetivosSmartPage() {
           setCustomerFeedback(feedbackData);
         } catch (error) {
           console.error("Failed to fetch customer feedback:", error);
-          setCustomerFeedback([]); // Set to empty on error to avoid crash
+          setCustomerFeedback([]);
         } finally {
           setIsLoadingFeedback(false);
         }
@@ -296,16 +283,11 @@ export default function ObjetivosSmartPage() {
     
     const handleCategoryClick = (categoryKey: keyof typeof smartGoalsData) => {
         if (selectedCategory === categoryKey) {
-            setSelectedCategory(null); // Deselect if clicked again
+            setSelectedCategory(null);
         } else {
             setSelectedCategory(categoryKey);
         }
     };
-
-    const npsStatus = getNpsStatus(npsData.score);
-    
-    const companyProgressStatus = getStatus(companyProgress);
-    const yearProgressStatus = getStatus(yearProgress.percentage);
 
     const filteredFeedback = useMemo(() => {
         if (isLoadingFeedback) return [];
@@ -356,9 +338,8 @@ export default function ObjetivosSmartPage() {
 
             {/* Header */}
             <Card className="relative w-full overflow-hidden rounded-2xl bg-primary text-primary-foreground shadow-2xl min-h-[300px] flex flex-col justify-center p-8 md:p-12">
+              <Image src={bannerUrl} alt="Waves background" layout="fill" objectFit="cover" className="z-0 opacity-50" />
               <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-white/5 pointer-events-none"></div>
-              <div className="absolute right-10 top-10 w-60 h-60 rounded-full bg-white/5 pointer-events-none"></div>
-              <div className="absolute -left-10 bottom-10 w-40 h-40 rounded-full bg-white/5 pointer-events-none"></div>
 
               <div className="relative z-10 grid md:grid-cols-12 gap-8 items-center">
                   <div className="md:col-span-1">
@@ -480,23 +461,35 @@ export default function ObjetivosSmartPage() {
             </div>
 
             {/* Second Banner */}
-            <Card className="relative w-full overflow-hidden rounded-2xl bg-primary text-primary-foreground shadow-2xl min-h-[300px] flex flex-col justify-center p-8 md:p-12">
-              <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-white/5 pointer-events-none"></div>
-              <div className="absolute right-10 top-10 w-60 h-60 rounded-full bg-white/5 pointer-events-none"></div>
-              <div className="absolute -left-10 bottom-10 w-40 h-40 rounded-full bg-white/5 pointer-events-none"></div>
-
-              <div className="relative z-10 grid md:grid-cols-12 gap-8 items-center">
-                  <div className="md:col-span-1">
-                      <p className="text-8xl font-black text-white/80">02</p>
-                  </div>
-                  <div className="md:col-span-11 md:pl-8">
-                      <p className="text-primary-foreground/80 mb-2">En Sintonía con</p>
-                      <h1 className="text-4xl md:text-5xl font-bold">Nuestros Servicios</h1>
-                      <p className="mt-4 max-w-2xl text-primary-foreground/80">
-                          Descubre cómo cada uno de nuestros servicios contribuye a nuestra misión y al bienestar de nuestros clientes.
-                      </p>
-                  </div>
-              </div>
+            <Card className="relative w-full overflow-hidden rounded-2xl bg-primary text-primary-foreground shadow-2xl min-h-[400px] flex flex-col justify-center">
+                <Image src={bannerUrl} alt="Waves background" layout="fill" objectFit="cover" className="z-0" />
+                <div className="absolute inset-0 bg-blue-900/40 z-0" />
+                <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center px-8 md:px-12">
+                    <div className="order-2 md:order-1">
+                        <Badge variant="outline" className="text-white border-white/50 mb-4">Estadísticas y Resultados</Badge>
+                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
+                            Seguimiento de <br /> Nuestros Objetivos
+                        </h2>
+                        <p className="mt-6 max-w-lg text-base text-white/80">
+                            Enfocados en tus necesidades, cada dashboard ofrece soluciones y estrategias para asegurar un crecimiento sostenido.
+                        </p>
+                        <Button asChild size="lg" className="mt-8 bg-white text-primary hover:bg-white/90">
+                            <Link href="/dashboard/objetivos">
+                                Explorar Recursos
+                            </Link>
+                        </Button>
+                    </div>
+                    <div className="relative h-64 md:h-[28rem] w-full order-1 md:order-2">
+                        <Image 
+                            src={characterUrl}
+                            alt="Seguimiento de objetivos"
+                            layout="fill"
+                            objectFit="contain"
+                            data-ai-hint="character orbs"
+                            className="drop-shadow-2xl"
+                        />
+                    </div>
+                </div>
             </Card>
 
              {/* Client Section */}

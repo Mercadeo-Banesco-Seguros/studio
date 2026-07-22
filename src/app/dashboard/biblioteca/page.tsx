@@ -1,17 +1,20 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import React from 'react';
 import Image from 'next/image';
 import { Badge } from "@/components/ui/badge";
+import imageData from '@/app/lib/placeholder-images.json';
 
 export default function BibliotecaPage() {
+    const bannerUrl = imageData.images.find(img => img.id === 'banner-waves')?.url || '';
+    const shapesUrl = imageData.images.find(img => img.id === 'biblioteca-3d')?.url || '';
+
     return (
         <div className="relative w-full flex flex-col justify-center text-foreground overflow-hidden py-32">
             {/* Background Image */}
             <Image
-                src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/a94e961cef35a4a47aec5afb55bb61886af9bb26/Banners%20Home.svg"
+                src={bannerUrl}
                 alt="Fondo abstracto de ondas"
                 layout="fill"
                 objectFit="cover"
@@ -45,7 +48,7 @@ export default function BibliotecaPage() {
                     {/* Right side image */}
                     <div className="relative h-64 md:h-[28rem] w-full">
                          <Image
-                            src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(50).png?raw=true"
+                            src={shapesUrl}
                             alt="Abstract 3D shapes"
                             layout="fill"
                             objectFit="contain"

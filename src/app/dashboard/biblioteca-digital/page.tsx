@@ -35,6 +35,7 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
+import imageData from '@/app/lib/placeholder-images.json';
 
 const documentCategories: { name: DocumentResource['category'] | 'Destacados' | 'Todos', icon: LucideIcon }[] = [
     { name: 'Todos', icon: LayoutGrid },
@@ -57,7 +58,7 @@ const mainCategories = [
         title: 'Corporativo', 
         description: 'Generales', 
         icon: Megaphone, 
-        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(41).png?raw=true',
+        image: imageData.images.find(img => img.id === 'digital-corporativo')?.url || '',
         dataAiHint: 'megaphone illustration',
         badgeBg: 'bg-blue-600',
         badgeText: 'text-white'
@@ -67,7 +68,7 @@ const mainCategories = [
         title: 'Productos', 
         description: 'Información', 
         icon: ZoomIn, 
-        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(39).png?raw=true',
+        image: imageData.images.find(img => img.id === 'digital-productos')?.url || '',
         dataAiHint: 'magnifying glass',
         badgeBg: 'bg-sky-600',
         badgeText: 'text-white'
@@ -77,7 +78,7 @@ const mainCategories = [
         title: 'Marca', 
         description: 'Identidad', 
         icon: BadgeCheck, 
-        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(35).png?raw=true',
+        image: imageData.images.find(img => img.id === 'digital-marca')?.url || '',
         dataAiHint: 'verified badge',
         badgeBg: 'bg-sky-600',
         badgeText: 'text-white'
@@ -87,7 +88,7 @@ const mainCategories = [
         title: 'Finanzas', 
         description: 'Reportes', 
         icon: CircleDollarSign,
-        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(36).png?raw=true',
+        image: imageData.images.find(img => img.id === 'digital-finanzas')?.url || '',
         dataAiHint: 'money bills',
         badgeBg: 'bg-blue-600',
         badgeText: 'text-white'
@@ -97,7 +98,7 @@ const mainCategories = [
         title: 'Comercial', 
         description: 'Intermediación', 
         icon: ShoppingBag, 
-        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/Gemini_Generated_Image_gmx1ljgmx1ljgmx1-Photoroom.png?raw=true',
+        image: imageData.images.find(img => img.id === 'digital-comercial')?.url || '',
         dataAiHint: 'shopping bag',
         badgeBg: 'bg-blue-600',
         badgeText: 'text-white'
@@ -107,7 +108,7 @@ const mainCategories = [
         title: 'Desarrollo', 
         description: 'Crecimiento', 
         icon: Target, 
-        image: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(37).png?raw=true',
+        image: imageData.images.find(img => img.id === 'digital-desarrollo')?.url || '',
         dataAiHint: 'target icon',
         badgeBg: 'bg-indigo-600',
         badgeText: 'text-white'
@@ -115,8 +116,6 @@ const mainCategories = [
 ];
 
 const DocumentCard = ({ doc }: { doc: DocumentResource }) => {
-    const AreaIcon = doc.icon || FileText;
-
     const areaBadgeClass = "bg-primary text-primary-foreground";
     const categoryBadgeClasses: {[key: string]: string} = {
         'Documentos': "bg-blue-100 text-blue-800",
@@ -124,7 +123,6 @@ const DocumentCard = ({ doc }: { doc: DocumentResource }) => {
         'Manuales': "bg-pink-100 text-pink-800",
     }
     const categoryBadgeClass = categoryBadgeClasses[doc.category] || "bg-muted text-muted-foreground";
-
 
     return (
         <Card className="p-4 py-8 bg-card shadow-sm hover:shadow-lg transition-shadow duration-300 rounded-2xl cursor-pointer flex flex-col justify-between">
@@ -343,5 +341,3 @@ export default function BibliotecaDigitalPage() {
         </div>
     );
 }
-
-    

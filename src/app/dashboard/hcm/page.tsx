@@ -5,19 +5,19 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowLeft, ArrowRight, ShieldCheck, Stethoscope, MessageSquare, Phone, Mail, HelpCircle, FilePlus2, Receipt, Hospital, Landlord, HeartPulse, User, Cross, Coins, HandCoins, BookUser, Info, Building, LifeBuoy, FileBarChart, Laptop } from 'lucide-react';
+import { MessageSquare, Phone, Mail, HelpCircle } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { Badge } from '@/components/ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import imageData from '@/app/lib/placeholder-images.json';
 
 const slides = [
     {
       id: 1,
       title: "Conoce Nuestra Póliza de Salud!",
       gradient: 'bg-gradient-to-r from-[#345cff] to-[#c1caf1]',
-      imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(60).png?raw=true',
+      imageUrl: imageData.images.find(img => img.id === 'hcm-shield')?.url || '',
       dataAiHint: 'health shield',
       textOrder: 'md:order-1',
       imageOrder: 'md:order-2',
@@ -27,7 +27,7 @@ const slides = [
       id: 2,
       title: "Gestiona tu salud de forma rápida y sencilla.",
       gradient: 'bg-gradient-to-l from-[#345cff] to-[#c1caf1]',
-      imageUrl: 'https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(61).png?raw=true',
+      imageUrl: imageData.images.find(img => img.id === 'hcm-digital')?.url || '',
       dataAiHint: 'digital health',
       textOrder: 'md:order-2',
       imageOrder: 'md:order-1',
@@ -40,25 +40,25 @@ const hcmActions = [
     {
         title: "Solicitar Medicinas",
         description: "Solicita el envío de tus medicamentos a domicilio o farmacia.",
-        imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(62).png?raw=true",
+        imageUrl: imageData.images.find(img => img.id === 'hcm-meds')?.url || '',
         href: "#",
     },
     {
         title: "Buscar Proveedores",
         description: "Encuentra médicos y clínicas en nuestra red de afiliados.",
-        imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(63).png?raw=true",
+        imageUrl: imageData.images.find(img => img.id === 'hcm-providers')?.url || '',
         href: "https://www.banesconline.com/rw/seguros/directorio-de-clinicas-y-medicos",
     },
     {
         title: "Consultar Cobertura",
         description: "Revisa los detalles y beneficios de tu póliza de salud.",
-        imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(64).png?raw=true",
+        imageUrl: imageData.images.find(img => img.id === 'hcm-coverage')?.url || '',
         href: "https://www.banesconline.com/rw/seguros/condiciones-generales-y-particulares",
     },
     {
         title: "Calculadora de Excesos",
         description: "Calcula los montos excedentes de tus gastos médicos.",
-        imageUrl: "https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(65).png?raw=true",
+        imageUrl: imageData.images.find(img => img.id === 'hcm-calculator')?.url || '',
         href: "#",
     }
 ];
@@ -119,39 +119,6 @@ const allCoverageItems = [
   { amount: "Ilimitado", service: "Atención Domiciliaria" },
 ];
 
-const dentalCoverageItems = [
-    { category: "Consultas y Diagnóstico", items: [
-        { amount: '1 evento', service: 'Consulta Diagnóstica (Odontología General)' },
-        { amount: '4 eventos', service: 'Radiografía Coronal y/o Periapical', note: '(2 Diagnósticos / 2 en el Alta)' },
-    ]},
-    { category: "Prevención y Sellantes (Límite de 1 evento en total)", items: [
-        { amount: 'Incluido', service: 'Tartrectomía y Profilaxis' },
-        { amount: 'Incluido', service: 'Flúor Aplicación Tópica', note: '(hasta los 12 años)' },
-        { amount: 'Incluido', service: 'Sellantes de Fosas y Fisuras', note: '(hasta los 12 años)' },
-    ]},
-    { category: "Emergencias", items: [
-        { amount: 'Ilimitados', service: 'Emergencia Endodóntica' },
-        { amount: 'Ilimitados', service: 'Emergencia Periodontal' },
-        { amount: 'Ilimitados', service: 'Emergencia Protésica' },
-    ]},
-    { category: "Restauraciones y Cirugía (Límite compartido de 3 eventos)", items: [
-        { amount: 'Incluido', service: 'Restauración en Resina y/o Amalgama en Dientes Posteriores Clase I y II' },
-        { amount: 'Incluido', service: 'Restauración en Resina y/o Amalgama en Dientes Posteriores Clase Mod (VI)' },
-        { amount: 'Incluido', service: 'Restauración en Resinas en Dientes Anteriores Clase III y IV' },
-        { amount: 'Incluido', service: 'Restauración Clase V en Resinas y/o Vidrios Ionómeros' },
-        { amount: 'Incluido', service: 'Exodoncia Simple' },
-        { amount: 'Incluido', service: 'Extracción de 3eros. Molares Simples (Erupcionadas)' },
-    ]},
-    { category: "Tratamientos de Conducto / Endodoncias (Límite compartido de 1 evento)", items: [
-        { amount: 'Incluido', service: 'Tratamiento de Conducto o Endodoncia Monorradicular' },
-        { amount: 'Incluido', service: 'Tratamiento de Conducto o Endodoncia Birradicular' },
-        { amount: 'Incluido', service: 'Tratamiento de Conducto o Endodoncia Multiarticular' },
-    ]},
-    { category: "Odontopediatría", items: [
-        { amount: 'Cubierto', service: 'Endodoncia y Pulpotomía - Curas Formocresoladas en Dientes Temporales' },
-    ]},
-];
-
 const coveredPathologies = [
     { category: "Cardiovasculares y Respiratorias", items: ["Infarto", "Crisis hipertensiva", "Dolor torácico", "Crisis asmática", "EPOC / EBOC (Descompensado)", "Arritmias cardíacas / Trastornos del ritmo cardíaco"] },
     { category: "Traumatismos y Lesiones", items: ["Politraumatismos", "Traumatismo de tórax", "Fracturas cerradas o simples", "Fracturas abiertas", "Fracturas desplazadas", "Luxaciones", "Quemaduras", "Heridas (no incluyen las ocasionadas por armas de fuego)", "Traumatismos y/o lesiones oculares (por sustancias químicas o cuerpos extraños)", "Traumatismos (general)", "Amputaciones por accidentes o enfermedad"] },
@@ -159,135 +126,6 @@ const coveredPathologies = [
     { category: "Gineco-Obstétricas", items: ["Embarazo ectópico roto", "Sangrados genitales", "Abortos espontáneos"] },
     { category: "Neurológicas y Sistémicas", items: ["ACV / ECV", "Meningitis", "Síncopes / Desmayos / Pérdida del conocimiento / Confusiones / Convulsiones", "Síndromes febriles en menores hasta doce años", "Síndromes metabólicos / Diabetes descompensada"] },
     { category: "Otras Patologías y Urgencias", items: ["Otitis en menores hasta doce años", "Intoxicaciones alimentarias que dificulten la respiración", "Envenenamientos", "Obstrucción de la vía aérea por cuerpo extraño / Dificultad para respirar / Asfixia", "Trombosis venosa profunda / Lesiones vasculares (arteriales y/o venosas)", "Celulitis periorbitaria", "COVID-19 (2do y 3er nivel)", "Hernias atascadas (umbilicales, inguinales y crurales)", "Retención aguda de orina", "Infecciones urinarias en menores de 12 años y en adultos mayores de 60 años"] },
-];
-
-const dentalProtocolSteps = [
-    {
-        step: "01",
-        title: "Contacta por WhatsApp",
-        color: "text-blue-600",
-        description: <>Escribe al <span className="font-bold">0424-127.14.22</span>, marca la opción 2 "Solicitud de Cita" y luego "Odontología".</>
-    },
-    {
-        step: "02",
-        title: "Elige y Llama",
-        color: "text-purple-600",
-        description: <>Recibirás un listado de centros. <span className="font-bold">Selecciona el de tu preferencia</span> y <span className="font-bold">llama directamente</span> para agendar.</>
-    },
-    {
-        step: "03",
-        title: "Genera tu Orden",
-        color: "text-sky-500",
-        description: <>Vuelve al WhatsApp, marca la <span className="font-bold">opción 3 "Generar Orden"</span>, completa los datos de tu cita y listo, recibirás la orden de atención.</>
-    }
-];
-
-const medicineRequestSteps = [
-    {
-        step: "01",
-        title: "Inicia Sesión",
-        color: "text-blue-600",
-        description: <>Ingresa al portal de Telemedi, selecciona en el menú <span className="font-bold">“Medicamentos Póliza”</span> y haz clic en <span className="font-bold">“Nueva Solicitud”</span>.</>
-    },
-    {
-        step: "02",
-        title: "Carga Documentos",
-        color: "text-purple-600",
-        description: (
-            <>
-                Completa los datos y carga los documentos requeridos en formato PDF:
-                <ul className="list-disc pl-5 mt-2 text-xs">
-                    <li>Cédula de identidad</li>
-                    <li>Informe médico y récipe</li>
-                    <li>Partida de nacimiento (si es menor de edad)</li>
-                </ul>
-            </>
-        )
-    },
-    {
-        step: "03",
-        title: "Guarda y Valida",
-        color: "text-sky-500",
-        description: <>Haz clic en <span className="font-bold">“Guardar”</span>. Podrás ver el estatus de tu solicitud en la página de inicio de la sección “Medicamentos póliza”.</>
-    },
-    {
-        step: "04",
-        title: "Recibe tus Medicamentos",
-        color: "text-indigo-600",
-        description: <>Una vez aprobada, serás contactado para coordinar la entrega o el retiro en farmacia.</>
-    },
-];
-
-const avalRequestSteps = [
-    {
-        step: "01",
-        color: "text-blue-600",
-        title: "Notificar Siniestro",
-        description: <>Presiona la opción <span className="font-bold">"Notificación Siniestros"</span>, selecciona <span className="font-bold">"Personas"</span>, y luego <span className="font-bold">"Carta Aval"</span>.</>
-    },
-    {
-        step: "02",
-        color: "text-purple-600",
-        title: "Seleccionar Beneficiario",
-        description: <>Selecciona el beneficiario al que corresponda el siniestro y pulsa <span className="font-bold">"Siguiente"</span>.</>
-    },
-    {
-        step: "03",
-        color: "text-sky-500",
-        title: "Completar Información",
-        description: <>Complete los campos con la información solicitada (detalles del siniestro, datos de medico tratante, etc.).</>
-    },
-    {
-        step: "04",
-        color: "text-indigo-600",
-        title: "Cargar Documentos",
-        description: <>Carga los archivos solicitados, verifica la información registrada y presiona <span className="font-bold">"Notificar"</span>.</>
-    },
-    {
-        step: "05",
-        color: "text-teal-600",
-        title: "Confirmar",
-        description: <>Verifica el número del siniestro y para finalizar presiona <span className="font-bold">"Aceptar"</span>.</>
-    }
-];
-
-const reimbursementRequestSteps = [
-    {
-        step: "01",
-        color: "text-blue-800",
-        title: "Notificar Siniestro",
-        description: <>Presiona la opción <span className="font-bold">"Notificación Siniestros"</span>, selecciona la opción <span className="font-bold">"Personas"</span>, y luego <span className="font-bold">"Reembolso"</span>.</>
-    },
-    {
-        step: "02",
-        color: "text-purple-600",
-        title: "Seleccionar Beneficiario",
-        description: <>Selecciona el beneficiario al que corresponda el siniestro y pulsa <span className="font-bold">"Siguiente"</span>.</>
-    },
-    {
-        step: "03",
-        color: "text-sky-500",
-        title: "Completar Información",
-        description: <>Complete los campos con la información solicitada (detalles del siniestro, datos del médico tratante, etc.).</>
-    },
-    {
-        step: "04",
-        color: "text-indigo-600",
-        title: "Domiciliación",
-        description: <>Selecciona la cuenta domiciliada o registra una nueva. Presiona <span className="font-bold">"Siguiente"</span> para continuar.</>
-    },
-    {
-        step: "05",
-        color: "text-teal-600",
-        title: "Cargar Documentos",
-        description: <>Carga los archivos solicitados, verifica la información registrada y presiona <span className="font-bold">"Notificar"</span>.</>
-    },
-    {
-        step: "06",
-        color: "text-blue-800",
-        title: "Confirmar",
-        description: <>Verifica el número del siniestro. Para finalizar presiona <span className="font-bold">"Aceptar"</span>.</>
-    }
 ];
 
 const StepCard = ({ step, title, color, description }: { step: string; title: string; color: string; description: React.ReactNode }) => (
@@ -319,7 +157,7 @@ export default function HcmPage() {
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveSlide((prev) => (prev + 1) % slides.length);
-        }, 10000); // Change slide every 10 seconds
+        }, 10000);
 
         return () => clearInterval(interval);
     }, []);
@@ -337,7 +175,7 @@ export default function HcmPage() {
                         )}
                     >
                         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full grid md:grid-cols-2 items-center">
-                            <div className={cn(slide.textAlign, slide.textOrder)}>
+                            <div className={cn("text-left", slide.textOrder)}>
                                 <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-none">
                                     {slide.title}
                                 </h1>
@@ -347,7 +185,7 @@ export default function HcmPage() {
                                      <div className={cn("relative", slide.imageClassName)}>
                                          <Image
                                             src={slide.imageUrl}
-                                            alt={slide.dataAiHint || 'HCM Banner Image'}
+                                            alt={String(slide.dataAiHint) || 'HCM Banner Image'}
                                             layout="fill"
                                             objectFit="contain"
                                             data-ai-hint={slide.dataAiHint}
@@ -409,26 +247,6 @@ export default function HcmPage() {
                     <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-start">
                         <div className="lg:col-span-1">
                             <h2 className="text-5xl font-extrabold tracking-tighter leading-none text-primary">
-                                Cobertura Odontológica
-                            </h2>
-                            <p className="text-muted-foreground mt-4">Detalle de la cobertura para servicios odontológicos.</p>
-                        </div>
-                         <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 lg:pl-16">
-                            {dentalCoverageItems.flatMap(category => category.items).map((item, index) => (
-                                <div key={`dental-coverage-${index}`}>
-                                    <p className="text-3xl font-extrabold tracking-tighter text-foreground">{item.amount}</p>
-                                    <p className="text-sm text-muted-foreground">{item.service}</p>
-                                    {item.note && <p className="text-xs text-muted-foreground/80 mt-1">{item.note}</p>}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                 <section>
-                    <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-start">
-                        <div className="lg:col-span-1">
-                            <h2 className="text-5xl font-extrabold tracking-tighter leading-none text-primary">
                                 Cobertura Oftalmológica
                             </h2>
                             <p className="text-muted-foreground mt-4">Toda la cobertura de consultas y emergencias mencionada a continuación es al 100%.</p>
@@ -445,53 +263,6 @@ export default function HcmPage() {
                     </div>
                 </section>
 
-                <section>
-                    <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-start">
-                        <div className="lg:col-span-1">
-                            <h2 className="text-5xl font-extrabold tracking-tighter leading-none text-primary">
-                                Protocolos y <br /> Procedimientos
-                            </h2>
-                            <p className="text-muted-foreground mt-4">Sigue estos sencillos pasos para realizar tus gestiones.</p>
-                        </div>
-                        <div className="lg:col-span-2 lg:pl-16">
-                            <Accordion type="single" collapsible className="w-full">
-                                <AccordionItem value="aval">
-                                    <AccordionTrigger className="text-lg font-semibold tracking-tight">Solicitud de Carta Aval</AccordionTrigger>
-                                    <AccordionContent>
-                                        <div className="pt-4">
-                                            {avalRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
-                                        </div>
-                                    </AccordionContent>
-                                </AccordionItem>
-                                <AccordionItem value="reembolso">
-                                    <AccordionTrigger className="text-lg font-semibold tracking-tight">Solicitud de Reembolso</AccordionTrigger>
-                                    <AccordionContent>
-                                        <div className="pt-4">
-                                            {reimbursementRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
-                                        </div>
-                                    </AccordionContent>
-                                </AccordionItem>
-                                <AccordionItem value="odontologica">
-                                    <AccordionTrigger className="text-lg font-semibold tracking-tight">Atención Odontológica</AccordionTrigger>
-                                    <AccordionContent>
-                                        <div className="pt-4">
-                                            {dentalProtocolSteps.map((step) => <StepCard key={step.step} {...step} />)}
-                                        </div>
-                                    </AccordionContent>
-                                </AccordionItem>
-                                <AccordionItem value="medicinas">
-                                    <AccordionTrigger className="text-lg font-semibold tracking-tight">Solicitud de Medicinas</AccordionTrigger>
-                                    <AccordionContent>
-                                       <div className="pt-4">
-                                            {medicineRequestSteps.map((step) => <StepCard key={step.step} {...step} />)}
-                                        </div>
-                                    </AccordionContent>
-                                </AccordionItem>
-                            </Accordion>
-                        </div>
-                    </div>
-                </section>
-                
                 <section>
                     <div className="grid lg:grid-cols-3 gap-8 xl:gap-16 items-start">
                         <div className="lg:col-span-1">

@@ -1,0 +1,215 @@
+
+{
+  "images": [
+    {
+      "id": "hero-morning",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(32).png",
+      "keywords": "sun clouds"
+    },
+    {
+      "id": "hero-afternoon",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_rjwsk7rjwsk7rjws-Photoroom.png",
+      "keywords": "sunset sky"
+    },
+    {
+      "id": "hero-night",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_gkqyk1gkqyk1gkqy-Photoroom.png",
+      "keywords": "moon stars"
+    },
+    {
+      "id": "about-mission",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(48).png",
+      "keywords": "mission target"
+    },
+    {
+      "id": "about-offer",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(47).png",
+      "keywords": "puzzle value"
+    },
+    {
+      "id": "about-pillars",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_6fia0y6fia0y6fia-Photoroom.png",
+      "keywords": "pillars abstract"
+    },
+    {
+      "id": "memory-1",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Iniciativa%20Dulce%20o%20Truco%20BSV%20(2).jpg",
+      "keywords": "team celebration"
+    },
+    {
+      "id": "memory-2",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/IMG_20251115_120042.jpg",
+      "keywords": "office meeting"
+    },
+    {
+      "id": "memory-3",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Octubre%20Rosa%202025%20(3).jpg",
+      "keywords": "event pink"
+    },
+    {
+      "id": "banner-waves",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Banners%20Home.svg",
+      "keywords": "abstract waves"
+    },
+    {
+      "id": "wellness-navidad",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_zb4dnhzb4dnhzb4d-Photoroom.png",
+      "keywords": "christmas gift"
+    },
+    {
+      "id": "wellness-eventos",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_ln3mqjln3mqjln3m-Photoroom%20(1).png",
+      "keywords": "party celebration"
+    },
+    {
+      "id": "wellness-actividades",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_tzyaoetzyaoetzya-Photoroom.png",
+      "keywords": "activity award"
+    },
+    {
+      "id": "conectados-bush",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_p9zcfep9zcfep9zc-Photoroom.png",
+      "keywords": "bush leaves"
+    },
+    {
+      "id": "conectados-explorer",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_x9qrv7x9qrv7x9qr%20(1)-Photoroom.png",
+      "keywords": "explorer adventure"
+    },
+    {
+      "id": "conectados-logo",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(54).png",
+      "keywords": "conectados logo"
+    },
+    {
+      "id": "login-banner",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/PORTADA%20ENTORNO%20SEG.jpg",
+      "keywords": "office building"
+    },
+    {
+      "id": "biblioteca-3d",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(50).png",
+      "keywords": "abstract 3d"
+    },
+    {
+      "id": "digital-corporativo",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(41).png",
+      "keywords": "megaphone blue"
+    },
+    {
+      "id": "digital-productos",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(39).png",
+      "keywords": "search glass"
+    },
+    {
+      "id": "digital-marca",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(35).png",
+      "keywords": "check badge"
+    },
+    {
+      "id": "digital-finanzas",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(36).png",
+      "keywords": "money bills"
+    },
+    {
+      "id": "digital-comercial",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_gmx1ljgmx1ljgmx1-Photoroom.png",
+      "keywords": "shopping bag"
+    },
+    {
+      "id": "digital-desarrollo",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(37).png",
+      "keywords": "target arrow"
+    },
+    {
+      "id": "feedback-banner",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(55).png",
+      "keywords": "feedback people"
+    },
+    {
+      "id": "hcm-shield",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(60).png",
+      "keywords": "health shield"
+    },
+    {
+      "id": "hcm-digital",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(61).png",
+      "keywords": "digital health"
+    },
+    {
+      "id": "hcm-meds",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(62).png",
+      "keywords": "medicine pill"
+    },
+    {
+      "id": "hcm-providers",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(63).png",
+      "keywords": "doctor clinic"
+    },
+    {
+      "id": "hcm-coverage",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(64).png",
+      "keywords": "document check"
+    },
+    {
+      "id": "hcm-calculator",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/image-Photoroom%20(65).png",
+      "keywords": "calculator finance"
+    },
+    {
+      "id": "smart-orbs",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_9dgk9u9dgk9u9dgk-Photoroom.png",
+      "keywords": "character orbs"
+    },
+    {
+      "id": "dress-lunes-m",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_ruwheoruwheoruwh-Photoroom.png",
+      "keywords": "suit male"
+    },
+    {
+      "id": "dress-martes-m",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_qzecp6qzecp6qzec-Photoroom.png",
+      "keywords": "casual male"
+    },
+    {
+      "id": "dress-miercoles-m",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_xh0ronxh0ronxh0r-Photoroom.png",
+      "keywords": "elegant male"
+    },
+    {
+      "id": "dress-jueves-m",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_cps86vcps86vcps8-Photoroom.png",
+      "keywords": "sport male"
+    },
+    {
+      "id": "dress-viernes-m",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_6txkf46txkf46txk-Photoroom.png",
+      "keywords": "friday male"
+    },
+    {
+      "id": "dress-lunes-f",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_br9lsfbr9lsfbr9l-Photoroom.png",
+      "keywords": "suit female"
+    },
+    {
+      "id": "dress-martes-f",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Casual%20de%20negocios%202%20DAMA-Photoroom.png",
+      "keywords": "casual female"
+    },
+    {
+      "id": "dress-miercoles-f",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_8t6e9o8t6e9o8t6e-Photoroom.png",
+      "keywords": "elegant female"
+    },
+    {
+      "id": "dress-jueves-f",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_2gtngz2gtngz2gtn-Photoroom.png",
+      "keywords": "sport female"
+    },
+    {
+      "id": "dress-viernes-f",
+      "url": "https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/Gemini_Generated_Image_851tlb851tlb851t-Photoroom.png",
+      "keywords": "friday female"
+    }
+  ]
+}

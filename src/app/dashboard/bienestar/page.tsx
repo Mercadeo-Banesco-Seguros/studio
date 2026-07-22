@@ -1,11 +1,12 @@
+
 'use client';
 
-import React, { useState, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, Star, Smile, Meh, Frown, Send } from "lucide-react";
+import { Smile, Meh, Frown, Send } from "lucide-react";
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { getMenuItems } from '@/ai/flows/get-menu-items-flow';
 import type { MenuItem } from '@/ai/flows/get-menu-items-flow';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -13,8 +14,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 import { InteractiveMenuBanner } from '@/components/dashboard/interactive-menu-banner';
-import { GalleryCarousel } from '@/components/dashboard/gallery-carousel';
 import { ActivityCarousel } from '@/components/dashboard/activity-carousel';
+import imageData from '@/app/lib/placeholder-images.json';
 
 const slides = [
   {
@@ -48,6 +49,8 @@ export default function BienestarPage() {
     const [comment, setComment] = useState('');
     const { toast } = useToast();
     const [activeSlide, setActiveSlide] = useState(0);
+
+    const feedbackBannerUrl = imageData.images.find(img => img.id === 'feedback-banner')?.url || '';
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -107,7 +110,7 @@ export default function BienestarPage() {
                                 <div className="relative w-full h-[500px]">
                                     <Image
                                         src={slide.imageUrl}
-                                        alt={slide.dataAiHint || 'Hero Image'}
+                                        alt={String(slide.dataAiHint) || 'Hero Image'}
                                         layout="fill"
                                         objectFit="contain"
                                         data-ai-hint={slide.dataAiHint}
@@ -174,7 +177,7 @@ export default function BienestarPage() {
             <section className="py-24 container mx-auto px-4">
                 <div className="grid md:grid-cols-2 gap-12 items-center bg-card rounded-3xl overflow-hidden shadow-xl">
                     <div className="h-[500px] relative">
-                        <Image src="https://github.com/Rduque2025/web-assets-banesco-seguros/blob/main/image-Photoroom%20(55).png?raw=true" alt="Feedback" layout="fill" objectFit="cover" />
+                        <Image src={feedbackBannerUrl} alt="Feedback" layout="fill" objectFit="cover" data-ai-hint="feedback people" />
                     </div>
                     <div className="p-8">
                         <h2 className="text-3xl font-bold mb-4">¿Cómo podemos mejorar?</h2>
