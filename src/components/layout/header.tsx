@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -170,7 +171,7 @@ export function Header() {
             <Input 
               ref={searchInputRef}
               placeholder="Buscar sección o palabra..." 
-              className="flex-1 bg-white/5 border-none text-white text-[10px] font-light h-9 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-white/30 placeholder:text-[10px] placeholder:font-light"
+              className="flex-1 bg-transparent border-none text-white text-[10px] font-light h-9 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-white/30 placeholder:text-[10px] placeholder:font-light"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
@@ -216,8 +217,7 @@ export function Header() {
               size="icon" 
               onClick={toggleSearch}
               className={cn(
-                "rounded-full h-8 w-8 transition-all",
-                isSearchActive ? "text-white bg-white/10" : "text-white/50 hover:text-white hover:bg-white/10"
+                "rounded-full h-8 w-8 transition-all hover:bg-transparent text-white/50 hover:text-white"
               )}
             >
               {isSearchActive ? <X className="h-4 w-4" strokeWidth={1.5} /> : <Search className="h-4 w-4" strokeWidth={1.5} />}
