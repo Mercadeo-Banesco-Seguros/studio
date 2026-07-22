@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useRef, useEffect, useMemo } from 'react';
@@ -60,8 +59,8 @@ export default function BienestarPage() {
     useEffect(() => {
         const today = new Date();
         const dayName = today.toLocaleDateString('es-ES', { weekday: 'long' });
-        const capitalizedDay = dayName.charAt(0).toUpperCase() + dayName.slice(1);
-        setSelectedDay(weekDays.includes(capitalizedDay) ? capitalizedDay : 'Lunes');
+        const capitalizedDayName = dayName.charAt(0).toUpperCase() + dayName.slice(1);
+        setSelectedDay(weekDays.includes(capitalizedDayName) ? capitalizedDayName : 'Lunes');
         
         const fetchMenu = async () => {
           setIsLoadingMenu(true);
@@ -122,15 +121,8 @@ export default function BienestarPage() {
                 ))}
             </section>
 
-            {/* Actividades Section */}
-            <section className="bg-gradient-to-r from-[#c1e4f1] to-[#349eff] py-24">
-                <div className="container mx-auto px-4">
-                    <ActivityCarousel />
-                </div>
-            </section>
-
             {/* Feriados y Eventos Section */}
-            <section className="pb-12 bg-muted/30">
+            <section className="py-12 bg-muted/30">
                 <div className="container mx-auto px-4">
                     <Card className="p-8 rounded-2xl bg-transparent border-none shadow-none">
                         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -139,9 +131,11 @@ export default function BienestarPage() {
                                 <p className="mt-2 text-muted-foreground">
                                     Mantente al día con las fechas especiales del mes.
                                 </p>
-                                <Button asChild className="mt-6" variant="outline">
-                                    <Link href="/dashboard/calendario">Calendario</Link>
-                                </Button>
+                                <div className="mt-6">
+                                    <Button asChild variant="outline">
+                                        <Link href="/dashboard/calendario">Calendario</Link>
+                                    </Button>
+                                </div>
                             </div>
                             <div className="relative h-[32rem]">
                                 <Image
@@ -154,6 +148,13 @@ export default function BienestarPage() {
                             </div>
                         </div>
                     </Card>
+                </div>
+            </section>
+
+            {/* Actividades Section */}
+            <section className="bg-gradient-to-r from-[#c1e4f1] to-[#349eff] py-24">
+                <div className="container mx-auto px-4">
+                    <ActivityCarousel />
                 </div>
             </section>
 
