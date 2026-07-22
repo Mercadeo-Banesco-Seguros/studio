@@ -76,7 +76,7 @@ const UserProfileButton = () => {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-64 mt-4 bg-white p-6 border-0 shadow-2xl rounded-[24px]" align="end" forceMount>
-                <DropdownMenuLabel className="p-0 font-normal mb-6">
+                <DropdownMenuLabel className="p-0 font-normal mb-2">
                     <div className="flex flex-col space-y-0.5">
                         <p className="text-sm font-bold text-slate-800 leading-none">{displayName}</p>
                         <p className="text-[10px] font-light text-slate-400">
@@ -85,23 +85,6 @@ const UserProfileButton = () => {
                     </div>
                 </DropdownMenuLabel>
                 
-                <div className="space-y-1">
-                  <DropdownMenuItem className="flex items-center gap-3 px-0 py-2.5 text-slate-500 focus:bg-transparent focus:text-slate-800 cursor-pointer transition-colors font-light text-xs">
-                      <User className="h-4 w-4 text-slate-400" strokeWidth={1.5} />
-                      <span>Mi Perfil</span>
-                  </DropdownMenuItem>
-                  
-                  <DropdownMenuItem className="flex items-center gap-3 px-0 py-2.5 text-slate-500 focus:bg-transparent focus:text-slate-800 cursor-pointer transition-colors font-light text-xs">
-                      <Settings className="h-4 w-4 text-slate-400" strokeWidth={1.5} />
-                      <span>Configuración</span>
-                  </DropdownMenuItem>
-                  
-                  <DropdownMenuItem className="flex items-center gap-3 px-0 py-2.5 text-slate-500 focus:bg-transparent focus:text-slate-800 cursor-pointer transition-colors font-light text-xs">
-                      <HelpCircle className="h-4 w-4 text-slate-400" strokeWidth={1.5} />
-                      <span>Ayuda y Soporte</span>
-                  </DropdownMenuItem>
-                </div>
-
                 <DropdownMenuSeparator className="my-4 bg-slate-100" />
                 
                 <DropdownMenuItem onClick={logout} className="flex items-center gap-3 px-0 py-2 text-red-500 focus:bg-transparent focus:text-red-600 cursor-pointer transition-colors font-light text-xs">
