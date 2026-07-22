@@ -2,7 +2,29 @@
 "use client";
 
 import Link from "next/link";
-import { Home, CalendarDays, Library, Menu, Search, Bell, Clock, LogOut, GraduationCap, Video, HeartHandshake, TrendingUp, Mail, AlertTriangle, ChevronRight, Cake, CreditCard, X } from "lucide-react"; 
+import { 
+  Home, 
+  CalendarDays, 
+  Library, 
+  Menu, 
+  Search, 
+  Bell, 
+  Clock, 
+  LogOut, 
+  GraduationCap, 
+  Video, 
+  HeartHandshake, 
+  TrendingUp, 
+  Mail, 
+  AlertTriangle, 
+  ChevronRight, 
+  Cake, 
+  CreditCard, 
+  X, 
+  User, 
+  Settings, 
+  HelpCircle 
+} from "lucide-react"; 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import React, { useEffect, useState, useRef } from "react";
@@ -41,7 +63,8 @@ const navItemsDesktop = [
 
 const UserProfileButton = () => {
     const { userEmail, logout } = useAuth();
-    const userInitials = userEmail ? userEmail.substring(0, 2).toUpperCase() : 'U';
+    const userInitials = userEmail ? userEmail.substring(0, 2).toUpperCase() : 'RD';
+    const displayName = userEmail?.split('@')[0].split('.').map(n => n.charAt(0).toUpperCase() + n.slice(1)).join(' ') || "Rommer Duque";
 
     return (
         <DropdownMenu>
@@ -52,19 +75,38 @@ const UserProfileButton = () => {
                     </Avatar>
                 </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56 mt-2 bg-[#003c71] text-white border-white/10" align="end" forceMount>
-                <DropdownMenuLabel className="font-light">
-                    <div className="flex flex-col space-y-1">
-                        <p className="text-[10px] font-light leading-none text-white/60 uppercase">Mi Cuenta</p>
-                        <p className="text-xs leading-none truncate mt-1">
-                            {userEmail}
+            <DropdownMenuContent className="w-64 mt-4 bg-white p-6 border-0 shadow-2xl rounded-[24px]" align="end" forceMount>
+                <DropdownMenuLabel className="p-0 font-normal mb-6">
+                    <div className="flex flex-col space-y-0.5">
+                        <p className="text-sm font-bold text-slate-800 leading-none">{displayName}</p>
+                        <p className="text-[10px] font-light text-slate-400">
+                            Administrador
                         </p>
                     </div>
                 </DropdownMenuLabel>
-                <DropdownMenuSeparator className="bg-white/10" />
-                <DropdownMenuItem onClick={logout} className="text-xs focus:bg-white/10 focus:text-white cursor-pointer font-light">
-                    <LogOut className="mr-2 h-4 w-4" strokeWidth={1.5} />
-                    <span>Cerrar sesión</span>
+                
+                <div className="space-y-1">
+                  <DropdownMenuItem className="flex items-center gap-3 px-0 py-2.5 text-slate-500 focus:bg-transparent focus:text-slate-800 cursor-pointer transition-colors font-light text-xs">
+                      <User className="h-4 w-4 text-slate-400" strokeWidth={1.5} />
+                      <span>Mi Perfil</span>
+                  </DropdownMenuItem>
+                  
+                  <DropdownMenuItem className="flex items-center gap-3 px-0 py-2.5 text-slate-500 focus:bg-transparent focus:text-slate-800 cursor-pointer transition-colors font-light text-xs">
+                      <Settings className="h-4 w-4 text-slate-400" strokeWidth={1.5} />
+                      <span>Configuración</span>
+                  </DropdownMenuItem>
+                  
+                  <DropdownMenuItem className="flex items-center gap-3 px-0 py-2.5 text-slate-500 focus:bg-transparent focus:text-slate-800 cursor-pointer transition-colors font-light text-xs">
+                      <HelpCircle className="h-4 w-4 text-slate-400" strokeWidth={1.5} />
+                      <span>Ayuda y Soporte</span>
+                  </DropdownMenuItem>
+                </div>
+
+                <DropdownMenuSeparator className="my-4 bg-slate-100" />
+                
+                <DropdownMenuItem onClick={logout} className="flex items-center gap-3 px-0 py-2 text-red-500 focus:bg-transparent focus:text-red-600 cursor-pointer transition-colors font-light text-xs">
+                    <LogOut className="h-4 w-4 text-red-400" strokeWidth={1.5} />
+                    <span>Cerrar Sesión</span>
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
