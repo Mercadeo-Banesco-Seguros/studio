@@ -122,16 +122,8 @@ export default function BienestarPage() {
                 ))}
             </section>
 
-            {/* GALERÍA */}
-            <section className="py-24 bg-muted/30">
-                <div className="container mx-auto px-4 text-center">
-                    <GalleryCarousel />
-                    <Button className="mt-8 rounded-full font-light">Galería de Recuerdos</Button>
-                </div>
-            </section>
-
             {/* Actividades Section */}
-            <section className="bg-gradient-to-r from-[#c1e4f1] to-[#349eff]">
+            <section className="bg-gradient-to-r from-[#c1e4f1] to-[#349eff] py-24">
                 <div className="container mx-auto px-4">
                     <ActivityCarousel />
                 </div>
