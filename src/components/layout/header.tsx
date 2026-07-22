@@ -64,7 +64,6 @@ const navItemsDesktop = [
 const UserProfileButton = () => {
     const { userEmail, logout } = useAuth();
     const userInitials = userEmail ? userEmail.substring(0, 2).toUpperCase() : 'RD';
-    const displayName = userEmail?.split('@')[0].split('.').map(n => n.charAt(0).toUpperCase() + n.slice(1)).join(' ') || "Rommer Duque";
 
     return (
         <DropdownMenu>
@@ -77,10 +76,12 @@ const UserProfileButton = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-64 mt-4 bg-white p-6 border-0 shadow-2xl rounded-[24px]" align="end" forceMount>
                 <DropdownMenuLabel className="p-0 font-normal mb-2">
-                    <div className="flex flex-col space-y-0.5">
-                        <p className="text-sm font-bold text-slate-800 leading-none">{displayName}</p>
-                        <p className="text-[10px] font-light text-slate-400">
-                            Administrador
+                    <div className="flex flex-col space-y-1">
+                        <p className="text-[13px] font-normal text-slate-800 leading-tight tracking-tighter truncate" title={userEmail || ''}>
+                            {userEmail || "colaborador@banescoseguros.com"}
+                        </p>
+                        <p className="text-[10px] font-light text-slate-400 uppercase tracking-tight">
+                            Colaborador
                         </p>
                     </div>
                 </DropdownMenuLabel>
