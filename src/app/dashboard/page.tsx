@@ -242,6 +242,11 @@ export default function DashboardPage() {
     setCurrentDressCode(todayDressCode || dressCodeItems[0]);
   }, [dressCodeView, dressCodeItems]);
 
+  const vacationImages = {
+    beach: imageData.images.find(img => img.id === 'vacaciones-beach')?.url || '',
+    days: imageData.images.find(img => img.id === 'vacaciones-days')?.url || ''
+  };
+
   return (
     <div className="bg-background">
         
@@ -477,13 +482,15 @@ export default function DashboardPage() {
             <SectionWrapper>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
-                         <Image
-                            src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/beach-aerial-view-3840x2160-60.jpg"
-                            alt="Planifica tus Próximas Vacaciones"
-                            layout="fill"
-                            objectFit="cover"
-                            className="transition-transform duration-300 group-hover:scale-105"
-                         />
+                         {vacationImages.beach && (
+                           <Image
+                              src={vacationImages.beach}
+                              alt="Planifica tus Próximas Vacaciones"
+                              layout="fill"
+                              objectFit="cover"
+                              className="transition-transform duration-300 group-hover:scale-105"
+                           />
+                         )}
                          <div className="absolute inset-0 bg-black/40" />
                          <div className="relative text-white">
                             <Badge variant="outline" className="mb-2 border-white/50 text-white">Capital Humano</Badge>
@@ -494,13 +501,15 @@ export default function DashboardPage() {
                         </div>
                     </Card>
                      <Card className="relative p-8 rounded-2xl shadow-sm flex flex-col justify-end min-h-[500px] overflow-hidden group">
-                         <Image
-                            src="https://raw.githubusercontent.com/Rduque2025/web-assets-banesco-seguros/main/days-available.jpg"
-                            alt="Consultar Días Disponibles"
-                            layout="fill"
-                            objectFit="cover"
-                            className="transition-transform duration-300 group-hover:scale-105"
-                         />
+                         {vacationImages.days && (
+                           <Image
+                              src={vacationImages.days}
+                              alt="Consultar Días Disponibles"
+                              layout="fill"
+                              objectFit="cover"
+                              className="transition-transform duration-300 group-hover:scale-105"
+                           />
+                         )}
                          <div className="absolute inset-0 bg-black/40" />
                          <div className="relative text-white">
                             <Badge variant="outline" className="mb-2 border-white/50 text-white">Capital Humano</Badge>
