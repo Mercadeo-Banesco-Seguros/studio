@@ -11,6 +11,7 @@ import {
   Home,
   User,
   Settings,
+  Cog,
   HelpCircle,
   ChevronLeft,
   ChevronRight,
@@ -132,7 +133,6 @@ export default function DashboardPage() {
   const [currentDressCode, setCurrentDressCode] = useState<DressCodeItem | null>(null);
 
   const dressCodeItems = useMemo(() => {
-    // Injecting corrected URLs to mock data
     const correctedM = mockDressCodeItemsCaballeros.map((item, idx) => {
         const ids = ['dress-lunes-m', 'dress-martes-m', 'dress-miercoles-m', 'dress-jueves-m', 'dress-viernes-m'];
         return { ...item, imageUrl: imageData.images.find(img => img.id === ids[idx])?.url || item.imageUrl };
